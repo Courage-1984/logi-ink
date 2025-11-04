@@ -18,6 +18,13 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -46,6 +53,10 @@
         <div class="hero-background">
             <div class="grid-overlay"></div>
             <div class="particles"></div>
+            <!-- Fluid Shapes -->
+            <div class="fluid-shape fluid-shape-1"></div>
+            <div class="fluid-shape fluid-shape-2"></div>
+            <div class="fluid-shape fluid-shape-3"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text">
@@ -74,12 +85,12 @@
     <!-- Services Preview -->
     <section class="services-preview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-reveal-3d">
                 <h2 class="section-title">Our Specialized Services</h2>
                 <p class="section-subtitle">Cutting-edge solutions for the digital age</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -90,7 +101,7 @@
                     <p>Custom websites and web applications built with modern technologies</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -102,7 +113,7 @@
                     <p>Intuitive interfaces that delight users and drive engagement</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -113,7 +124,7 @@
                     <p>Strategic branding that positions you ahead of the competition</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -137,8 +148,9 @@
                 <p class="section-subtitle">Showcasing our latest innovations</p>
             </div>
             <div class="projects-preview">
-                <div class="project-card-large">
+                <div class="project-card-large mouse-tilt-container">
                     <div class="project-image">
+                        <img src="./assets/images/banners/banner_home.png" alt="Web Development Transforming Digital Experiences" />
                         <div class="project-overlay"></div>
                         <div class="project-tag">Latest</div>
                     </div>
@@ -195,6 +207,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
 
     <script src="script.js"></script>
 </body>

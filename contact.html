@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,136 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        .contact-section {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
-        }
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .contact-item {
-            background: rgba(22, 33, 62, 0.5);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        .contact-item:hover {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2);
-            transform: translateY(-5px);
-        }
-        .contact-item h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .contact-item p,
-        .contact-item a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            line-height: 1.8;
-        }
-        .contact-item a:hover {
-            color: var(--accent-cyan);
-            text-shadow: 0 0 10px var(--glow-cyan);
-        }
-        .contact-form {
-            background: rgba(22, 33, 62, 0.5);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 15px;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            color: var(--accent-cyan);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(10, 10, 10, 0.5);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 5px;
-            color: var(--text-primary);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-        }
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        .form-submit {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: transparent;
-            border: 2px solid var(--accent-cyan);
-            color: var(--accent-cyan);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .form-submit::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-cyan);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-        .form-submit:hover {
-            color: var(--bg-primary);
-            box-shadow: 0 0 30px var(--glow-cyan);
-        }
-        .form-submit:hover::before {
-            left: 0;
-        }
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -161,10 +45,13 @@
     </nav>
 
     <!-- Contact Hero -->
-    <section class="hero" style="min-height: 60vh; padding-top: 100px;">
+    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
         <div class="hero-background">
             <div class="grid-overlay"></div>
             <div class="particles"></div>
+            <!-- Fluid Shapes -->
+            <div class="fluid-shape fluid-shape-2"></div>
+            <div class="fluid-shape fluid-shape-3"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
@@ -181,19 +68,19 @@
     <section class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
-                <div class="contact-item">
+                <div class="contact-item mouse-tilt-container scroll-reveal-3d">
                     <h3>Email</h3>
                     <p><a href="mailto:hello@logi-ink.co.za">hello@logi-ink.co.za</a></p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item mouse-tilt-container scroll-reveal-3d">
                     <h3>Phone</h3>
                     <p><a href="tel:+27123456789">+27 12 345 6789</a></p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item mouse-tilt-container scroll-reveal-3d">
                     <h3>Address</h3>
                     <p>Johannesburg, South Africa<br>Office Hours: Mon-Fri 9AM-5PM</p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item mouse-tilt-container scroll-reveal-3d">
                     <h3>Social Media</h3>
                     <p>
                         <a href="#" target="_blank" style="margin-right: 1rem;">LinkedIn</a>
@@ -202,7 +89,7 @@
                     </p>
                 </div>
             </div>
-            <div class="contact-form">
+            <div class="contact-form mouse-tilt-container scroll-reveal-3d">
                 <form id="contactForm" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -262,6 +149,9 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
     <script src="script.js"></script>
     <script>
         function handleSubmit(event) {
@@ -272,5 +162,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>

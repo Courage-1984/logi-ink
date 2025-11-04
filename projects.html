@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         .projects-grid {
             display: grid;
@@ -15,6 +18,7 @@
             gap: 2rem;
             margin-top: 3rem;
         }
+
         .project-card {
             background: var(--bg-secondary);
             border-radius: 15px;
@@ -23,11 +27,13 @@
             transition: all 0.3s ease;
             position: relative;
         }
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
             border-color: var(--accent-cyan);
         }
+
         .project-image {
             width: 100%;
             height: 250px;
@@ -35,6 +41,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .project-overlay {
             position: absolute;
             width: 100%;
@@ -43,12 +50,15 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .project-card:hover .project-overlay {
             opacity: 1;
         }
+
         .project-content {
             padding: 2rem;
         }
+
         .project-category {
             color: var(--accent-cyan);
             font-weight: 700;
@@ -58,23 +68,27 @@
             display: block;
             margin-bottom: 1rem;
         }
+
         .project-content h3 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
+
         .project-content p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1rem;
         }
+
         .project-tag {
             background: rgba(0, 255, 255, 0.1);
             color: var(--accent-cyan);
@@ -85,7 +99,15 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -110,10 +132,13 @@
     </nav>
 
     <!-- Projects Hero -->
-    <section class="hero" style="min-height: 60vh; padding-top: 100px;">
+    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
         <div class="hero-background">
             <div class="grid-overlay"></div>
             <div class="particles"></div>
+            <!-- Fluid Shapes -->
+            <div class="fluid-shape fluid-shape-1"></div>
+            <div class="fluid-shape fluid-shape-2"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
@@ -134,7 +159,7 @@
                 <p class="section-subtitle">Transforming ideas into digital reality</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="project-image">
                         <div class="project-overlay"></div>
                     </div>
@@ -146,11 +171,12 @@
                             <span class="project-tag">MongoDB</span>
                         </div>
                         <h3>E-Commerce Platform</h3>
-                        <p>A revolutionary e-commerce platform with advanced filtering, real-time inventory, and seamless payment integration.</p>
+                        <p>A revolutionary e-commerce platform with advanced filtering, real-time inventory, and
+                            seamless payment integration.</p>
                         <a href="#" class="btn btn-outline">View Details →</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="project-image">
                         <div class="project-overlay"></div>
                     </div>
@@ -162,11 +188,12 @@
                             <span class="project-tag">Design System</span>
                         </div>
                         <h3>FinTech Mobile App</h3>
-                        <p>Modern banking app with intuitive interface design, focusing on user experience and security.</p>
+                        <p>Modern banking app with intuitive interface design, focusing on user experience and security.
+                        </p>
                         <a href="#" class="btn btn-outline">View Details →</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="project-image">
                         <div class="project-overlay"></div>
                     </div>
@@ -178,11 +205,12 @@
                             <span class="project-tag">Strategy</span>
                         </div>
                         <h3>Tech Startup Rebrand</h3>
-                        <p>Complete brand transformation for a tech startup, including logo, visual identity, and brand guidelines.</p>
+                        <p>Complete brand transformation for a tech startup, including logo, visual identity, and brand
+                            guidelines.</p>
                         <a href="#" class="btn btn-outline">View Details →</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="project-image">
                         <div class="project-overlay"></div>
                     </div>
@@ -198,7 +226,7 @@
                         <a href="#" class="btn btn-outline">View Details →</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="project-image">
                         <div class="project-overlay"></div>
                     </div>
@@ -210,11 +238,12 @@
                             <span class="project-tag">Android</span>
                         </div>
                         <h3>Fitness Tracking App</h3>
-                        <p>Cross-platform fitness app with workout tracking, progress analytics, and social features.</p>
+                        <p>Cross-platform fitness app with workout tracking, progress analytics, and social features.
+                        </p>
                         <a href="#" class="btn btn-outline">View Details →</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="project-image">
                         <div class="project-overlay"></div>
                     </div>
@@ -226,7 +255,8 @@
                             <span class="project-tag">Analytics</span>
                         </div>
                         <h3>Marketing Campaign</h3>
-                        <p>Comprehensive digital marketing campaign with content strategy, SEO, and social media management.</p>
+                        <p>Comprehensive digital marketing campaign with content strategy, SEO, and social media
+                            management.</p>
                         <a href="#" class="btn btn-outline">View Details →</a>
                     </div>
                 </div>
@@ -277,7 +307,10 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

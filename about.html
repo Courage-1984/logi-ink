@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -34,15 +45,19 @@
     </nav>
 
     <!-- About Hero -->
-    <section class="hero" style="min-height: 60vh; padding-top: 100px;">
+    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
         <div class="hero-background">
             <div class="grid-overlay"></div>
             <div class="particles"></div>
+            <!-- Fluid Shapes -->
+            <div class="fluid-shape fluid-shape-1"></div>
+            <div class="fluid-shape fluid-shape-3"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
                 <span class="text-reveal" style="color: var(--accent-cyan);">ABOUT</span>
-                <span class="text-reveal delay-1" style="color: var(--accent-magenta);">LOG<span class="logo-accent">I</span>-INK</span>
+                <span class="text-reveal delay-1" style="color: var(--accent-magenta);">LOG<span
+                        class="logo-accent">I</span>-INK</span>
             </h1>
             <p class="hero-subtitle fade-in delay-2">
                 Pioneering the future of digital experiences
@@ -58,12 +73,15 @@
             </div>
             <div style="max-width: 900px; margin: 0 auto; text-align: center;">
                 <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 2; margin-bottom: 2rem;">
-                    At Logi-Ink, we believe in pushing the boundaries of digital innovation. We craft immersive experiences 
+                    At Logi-Ink, we believe in pushing the boundaries of digital innovation. We craft immersive
+                    experiences
                     that not only engage but transform businesses, driving stronger connections and measurable results.
                 </p>
                 <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 2;">
-                    Our team combines cutting-edge technology with creative excellence, delivering solutions that stand out 
-                    in an ever-evolving digital landscape. We're not just developers and designers—we're digital architects 
+                    Our team combines cutting-edge technology with creative excellence, delivering solutions that stand
+                    out
+                    in an ever-evolving digital landscape. We're not just developers and designers—we're digital
+                    architects
                     building the future.
                 </p>
             </div>
@@ -77,44 +95,48 @@
                 <h2 class="section-title">Our Values</h2>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
                     </div>
                     <h3>Innovation</h3>
-                    <p>We stay ahead of the curve, embracing new technologies and creative approaches to solve complex challenges.</p>
+                    <p>We stay ahead of the curve, embracing new technologies and creative approaches to solve complex
+                        challenges.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
                         </svg>
                     </div>
                     <h3>Excellence</h3>
-                    <p>Every project is delivered with meticulous attention to detail and a commitment to exceeding expectations.</p>
+                    <p>Every project is delivered with meticulous attention to detail and a commitment to exceeding
+                        expectations.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
                     </div>
                     <h3>Partnership</h3>
-                    <p>We build lasting relationships with our clients, working collaboratively to achieve shared success.</p>
+                    <p>We build lasting relationships with our clients, working collaboratively to achieve shared
+                        success.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                         </svg>
                     </div>
                     <h3>Impact</h3>
@@ -135,17 +157,20 @@
                     <div class="service-card" style="text-align: center;">
                         <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">01</h3>
                         <h4 style="margin-bottom: 1rem;">Discovery</h4>
-                        <p>We dive deep into understanding your business, goals, and audience to create a strategic foundation.</p>
+                        <p>We dive deep into understanding your business, goals, and audience to create a strategic
+                            foundation.</p>
                     </div>
                     <div class="service-card" style="text-align: center;">
                         <h3 style="color: var(--accent-magenta); margin-bottom: 1rem;">02</h3>
                         <h4 style="margin-bottom: 1rem;">Design</h4>
-                        <p>Creative concepts are brought to life through innovative design that balances aesthetics with functionality.</p>
+                        <p>Creative concepts are brought to life through innovative design that balances aesthetics with
+                            functionality.</p>
                     </div>
                     <div class="service-card" style="text-align: center;">
                         <h3 style="color: var(--accent-green); margin-bottom: 1rem;">03</h3>
                         <h4 style="margin-bottom: 1rem;">Development</h4>
-                        <p>Cutting-edge technology is implemented with precision, ensuring robust and scalable solutions.</p>
+                        <p>Cutting-edge technology is implemented with precision, ensuring robust and scalable
+                            solutions.</p>
                     </div>
                     <div class="service-card" style="text-align: center;">
                         <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">04</h3>
@@ -200,7 +225,10 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -34,10 +45,13 @@
     </nav>
 
     <!-- Services Hero -->
-    <section class="hero" style="min-height: 60vh; padding-top: 100px;">
+    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
         <div class="hero-background">
             <div class="grid-overlay"></div>
             <div class="particles"></div>
+            <!-- Fluid Shapes -->
+            <div class="fluid-shape fluid-shape-1"></div>
+            <div class="fluid-shape fluid-shape-2"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
@@ -58,15 +72,17 @@
                 <p class="section-subtitle">End-to-end digital solutions for modern businesses</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Custom websites and web applications built with modern technologies. From responsive designs to complex web platforms, we create digital experiences that perform flawlessly across all devices.</p>
+                    <p>Custom websites and web applications built with modern technologies. From responsive designs to
+                        complex web platforms, we create digital experiences that perform flawlessly across all devices.
+                    </p>
                     <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--text-secondary);">
                         <li style="margin-bottom: 0.5rem;">• Responsive Web Design</li>
                         <li style="margin-bottom: 0.5rem;">• E-commerce Solutions</li>
@@ -74,16 +90,17 @@
                         <li style="margin-bottom: 0.5rem;">• API Integration</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <path d="M9 9h6v6H9z"/>
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <path d="M9 9h6v6H9z" />
                         </svg>
                     </div>
                     <h3>UI/UX Design</h3>
-                    <p>Intuitive interfaces that delight users and drive engagement. We combine user research, design thinking, and creative excellence to craft experiences that users love.</p>
+                    <p>Intuitive interfaces that delight users and drive engagement. We combine user research, design
+                        thinking, and creative excellence to craft experiences that users love.</p>
                     <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--text-secondary);">
                         <li style="margin-bottom: 0.5rem;">• User Research & Testing</li>
                         <li style="margin-bottom: 0.5rem;">• Interface Design</li>
@@ -91,15 +108,16 @@
                         <li style="margin-bottom: 0.5rem;">• Design Systems</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                         </svg>
                     </div>
                     <h3>Brand Strategy</h3>
-                    <p>Strategic branding that positions you ahead of the competition. We develop cohesive brand identities that resonate with your audience and drive business growth.</p>
+                    <p>Strategic branding that positions you ahead of the competition. We develop cohesive brand
+                        identities that resonate with your audience and drive business growth.</p>
                     <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--text-secondary);">
                         <li style="margin-bottom: 0.5rem;">• Brand Identity Design</li>
                         <li style="margin-bottom: 0.5rem;">• Visual Guidelines</li>
@@ -107,15 +125,17 @@
                         <li style="margin-bottom: 0.5rem;">• Rebranding Services</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                         </svg>
                     </div>
                     <h3>Digital Marketing</h3>
-                    <p>Data-driven campaigns that maximize your online presence. We leverage analytics and creative strategies to reach your target audience and drive conversions.</p>
+                    <p>Data-driven campaigns that maximize your online presence. We leverage analytics and creative
+                        strategies to reach your target audience and drive conversions.</p>
                     <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--text-secondary);">
                         <li style="margin-bottom: 0.5rem;">• SEO & Content Strategy</li>
                         <li style="margin-bottom: 0.5rem;">• Social Media Management</li>
@@ -123,17 +143,18 @@
                         <li style="margin-bottom: 0.5rem;">• Analytics & Reporting</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
                     </div>
                     <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform mobile applications that engage users on the go. We build apps that are fast, intuitive, and deliver exceptional user experiences.</p>
+                    <p>Native and cross-platform mobile applications that engage users on the go. We build apps that are
+                        fast, intuitive, and deliver exceptional user experiences.</p>
                     <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--text-secondary);">
                         <li style="margin-bottom: 0.5rem;">• iOS Development</li>
                         <li style="margin-bottom: 0.5rem;">• Android Development</li>
@@ -141,17 +162,19 @@
                         <li style="margin-bottom: 0.5rem;">• App Store Optimization</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
                     <div class="service-icon">
                         <div class="icon-glow"></div>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                            <line x1="12" y1="22.08" x2="12" y2="12" />
                         </svg>
                     </div>
                     <h3>Cloud Solutions</h3>
-                    <p>Scalable cloud infrastructure and services that grow with your business. We help you migrate, optimize, and manage cloud-based solutions for maximum efficiency.</p>
+                    <p>Scalable cloud infrastructure and services that grow with your business. We help you migrate,
+                        optimize, and manage cloud-based solutions for maximum efficiency.</p>
                     <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--text-secondary);">
                         <li style="margin-bottom: 0.5rem;">• Cloud Migration</li>
                         <li style="margin-bottom: 0.5rem;">• Infrastructure Setup</li>
@@ -173,22 +196,31 @@
             <div style="max-width: 1000px; margin: 0 auto;">
                 <div class="services-grid">
                     <div class="service-card" style="text-align: center;">
-                        <div style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">1</div>
+                        <div
+                            style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">
+                            1</div>
                         <h4>Consultation</h4>
-                        <p>We start by understanding your vision, goals, and challenges through detailed consultation.</p>
+                        <p>We start by understanding your vision, goals, and challenges through detailed consultation.
+                        </p>
                     </div>
                     <div class="service-card" style="text-align: center;">
-                        <div style="font-size: 3rem; color: var(--accent-magenta); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">2</div>
+                        <div
+                            style="font-size: 3rem; color: var(--accent-magenta); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">
+                            2</div>
                         <h4>Planning</h4>
                         <p>Strategic planning and roadmap development to ensure project success.</p>
                     </div>
                     <div class="service-card" style="text-align: center;">
-                        <div style="font-size: 3rem; color: var(--accent-green); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">3</div>
+                        <div
+                            style="font-size: 3rem; color: var(--accent-green); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">
+                            3</div>
                         <h4>Execution</h4>
                         <p>Agile development with regular updates and transparent communication.</p>
                     </div>
                     <div class="service-card" style="text-align: center;">
-                        <div style="font-size: 3rem; color: var(--accent-blue); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">4</div>
+                        <div
+                            style="font-size: 3rem; color: var(--accent-blue); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">
+                            4</div>
                         <h4>Launch & Support</h4>
                         <p>Seamless deployment followed by ongoing support and optimization.</p>
                     </div>
@@ -240,7 +272,10 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

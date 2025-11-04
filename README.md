@@ -2,7 +2,45 @@
 
 A modern, cyberpunk-themed website for Logi-Ink digital agency, featuring stunning animations, motion effects, and a sleek design.
 
-## Website Structure
+## 🏗️ Project Structure
+
+This project uses a **modular architecture** for better organization and maintainability:
+
+- **CSS:** Modular CSS files organized by component/feature (see `css/` directory)
+- **JavaScript:** ES6 modules organized by functionality (see `js/` directory)
+- **HTML:** Static HTML pages with reusable partials (see `partials/` directory)
+
+**For detailed structure and conventions, see [.cursorrules](.cursorrules)**
+
+## 🚀 Quick Start
+
+1. Open `index.html` in a web browser to view the site
+2. All pages are linked and functional
+3. Customize colors, text, and content as needed
+4. Add your actual images and logo once obtained
+
+## 📁 Directory Structure
+
+```
+logia-ink/
+├── css/                  # Modular CSS files
+│   ├── main.css         # Main entry point (imports all modules)
+│   ├── variables.css    # CSS custom properties
+│   ├── base.css         # Base/reset styles
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Page-specific styles
+│   └── utils/           # Utilities (animations, responsive, etc.)
+├── js/                  # Modular JavaScript (ES6 modules)
+│   ├── main.js          # Main entry point
+│   ├── core/            # Core functionality
+│   ├── utils/           # Utilities
+│   └── pages/           # Page-specific scripts
+├── partials/            # Reusable HTML components
+├── assets/              # Static assets (images, videos)
+└── *.html               # Page files
+```
+
+## 🎨 Website Structure
 
 - **Home** (`index.html`) - Hero section, services preview, and featured projects
 - **About** (`about.html`) - Company mission, values, and approach
@@ -10,7 +48,7 @@ A modern, cyberpunk-themed website for Logi-Ink digital agency, featuring stunni
 - **Projects** (`projects.html`) - Portfolio showcase
 - **Contact Us** (`contact.html`) - Contact form and information
 
-## Color Palette
+## 🎨 Color Palette
 
 The website uses a cyberpunk-inspired color scheme:
 
@@ -23,6 +61,8 @@ The website uses a cyberpunk-inspired color scheme:
   - Green: `#00ff00` (Electric Green)
   - Blue: `#0066ff` (Electric Blue)
   - Pink: `#ff0080` (Hot Pink)
+
+All colors are defined as CSS variables in `css/variables.css` - **modify colors there**, not throughout the codebase.
 
 ## Image Recommendations
 
@@ -143,23 +183,44 @@ To replace placeholder images:
 3. **Service Icons**: Replace SVG icons in the service cards
 4. **Logo**: Update the logo text or add an `<img>` tag in the navbar
 
-## Getting Started
+## 🛠️ Development
 
-1. Open `index.html` in a web browser to view the site
-2. All pages are linked and functional
-3. Customize colors, text, and content as needed
-4. Add your actual images and logo once obtained
+### CSS Changes
+- All CSS is modular - edit component files in `css/components/`
+- Colors are in `css/variables.css` - change them there
+- Import order matters in `css/main.css` - don't change unless you know what you're doing
 
-## Browser Support
+### JavaScript Changes
+- All JS is modular ES6 - edit modules in `js/core/` or `js/utils/`
+- Main entry point is `js/main.js`
+- Use `export function initModuleName()` pattern for new modules
+
+### Adding New Components
+1. Create CSS file in `css/components/component-name.css`
+2. Import it in `css/main.css`
+3. If it needs JS, create module in `js/core/` or `js/utils/`
+4. Export init function and import in `js/main.js`
+5. **Update `.cursorrules`** file with the new component
+
+See [.cursorrules](.cursorrules) for detailed guidelines.
+
+## 📖 Documentation
+
+- **[.cursorrules](.cursorrules)** - Complete project structure and conventions guide
+- **[STYLE_GUIDE.md](STYLE_GUIDE.md)** - Design system and component library
+- **[MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)** - Guide for migrating from old structure
+
+## 🌐 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## Notes
+## 📝 Notes
 
 - The contact form currently shows an alert on submission. You'll need to integrate it with a backend service (e.g., Formspree, Netlify Forms, or custom API)
 - All animations are CSS-based for optimal performance
 - The site is fully responsive and mobile-friendly
+- Uses ES6 modules - modern browsers only (or use a bundler for older browsers)
 

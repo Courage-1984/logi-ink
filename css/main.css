@@ -1,0 +1,39 @@
+/**
+ * Main CSS Entry Point
+ * Imports all CSS modules in the correct order
+ * 
+ * Order: Variables -> Base -> Components -> Animations -> Responsive
+ */
+
+/* 1. Variables - Must come first */
+@import url('./variables.css');
+
+/* 2. Base Styles */
+@import url('./base.css');
+
+/* 3. Component Styles */
+@import url('./components/navigation.css');
+@import url('./components/hero.css');
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/footer.css');
+@import url('./components/forms.css');
+@import url('./components/modals.css');
+@import url('./components/alerts.css');
+@import url('./components/badges.css');
+@import url('./components/tables.css');
+@import url('./components/tabs.css');
+@import url('./components/accordions.css');
+
+/* 4. Page-Specific Styles */
+@import url('./pages/contact.css');
+@import url('./pages/projects.css');
+
+/* 5. Animations & Effects */
+@import url('./utils/animations.css');
+@import url('./utils/cursor.css');
+@import url('./utils/3d-effects.css');
+@import url('./utils/fluid-effects.css');
+
+/* 6. Responsive Styles - Must come last */
+@import url('./utils/responsive.css');
