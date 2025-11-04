@@ -47,6 +47,8 @@
     <!-- Services Hero -->
     <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
         <div class="hero-background">
+            <!-- Three.js Canvas for Services Background -->
+            <canvas id="threejs-services-canvas" class="threejs-canvas"></canvas>
             <div class="grid-overlay"></div>
             <div class="particles"></div>
             <!-- Fluid Shapes -->
@@ -229,6 +231,151 @@
         </div>
     </section>
 
+    <!-- Technologies Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header scroll-reveal-3d">
+                <h2 class="section-title">Tools & Technologies</h2>
+                <p class="section-subtitle">Industry-leading tools we use to build exceptional solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d" style="text-align: center;">
+                    <div class="service-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3>Design Tools</h3>
+                    <p>Figma, Adobe XD, Sketch, InVision, Principle, Framer</p>
+                </div>
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d" style="text-align: center;">
+                    <div class="service-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <path d="M9 9h6v6H9z" />
+                        </svg>
+                    </div>
+                    <h3>Development</h3>
+                    <p>VS Code, Git, GitHub, Docker, Webpack, Vite, npm</p>
+                </div>
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d" style="text-align: center;">
+                    <div class="service-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h3>Analytics & SEO</h3>
+                    <p>Google Analytics, SEMrush, Ahrefs, Hotjar, Mixpanel</p>
+                </div>
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d" style="text-align: center;">
+                    <div class="service-icon">
+                        <div class="icon-glow"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                            <line x1="12" y1="22.08" x2="12" y2="12" />
+                        </svg>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Jira, Trello, Asana, Slack, Notion, Monday.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="featured-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about our services</p>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="services-grid" style="grid-template-columns: 1fr;">
+                    <div class="service-card mouse-tilt-container scroll-reveal-3d">
+                        <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">What industries do you serve?</h3>
+                        <p style="color: var(--text-secondary);">We work with clients across various industries
+                            including technology, e-commerce, healthcare, finance, education, and more. Our solutions
+                            are tailored to meet industry-specific needs.</p>
+                    </div>
+                    <div class="service-card mouse-tilt-container scroll-reveal-3d">
+                        <h3 style="color: var(--accent-magenta); margin-bottom: 1rem;">How long does a typical project
+                            take?</h3>
+                        <p style="color: var(--text-secondary);">Project timelines vary based on scope and complexity. A
+                            simple website may take 4-6 weeks, while a comprehensive web application could take 3-6
+                            months. We provide detailed timelines during the consultation phase.</p>
+                    </div>
+                    <div class="service-card mouse-tilt-container scroll-reveal-3d">
+                        <h3 style="color: var(--accent-green); margin-bottom: 1rem;">Do you provide ongoing support?
+                        </h3>
+                        <p style="color: var(--text-secondary);">Yes, we offer comprehensive maintenance and support
+                            packages to ensure your digital solution continues to perform optimally. This includes
+                            updates, security patches, and technical support.</p>
+                    </div>
+                    <div class="service-card mouse-tilt-container scroll-reveal-3d">
+                        <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">What is your pricing model?</h3>
+                        <p style="color: var(--text-secondary);">We offer flexible pricing based on project
+                            requirements. We provide detailed quotes after understanding your needs. Contact us for a
+                            customized estimate tailored to your project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header scroll-reveal-3d">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Real results from real clients</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div
+                            style="font-size: 3rem; color: var(--accent-cyan); font-family: 'Orbitron', sans-serif; font-weight: 900;">
+                            300%</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Increase in Online
+                            Sales</p>
+                    </div>
+                    <h3>E-Commerce Transformation</h3>
+                    <p style="color: var(--text-secondary);">Complete redesign and optimization resulted in a 300%
+                        increase in online sales and improved user experience.</p>
+                </div>
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div
+                            style="font-size: 3rem; color: var(--accent-magenta); font-family: 'Orbitron', sans-serif; font-weight: 900;">
+                            50%</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Reduction in Load
+                            Time</p>
+                    </div>
+                    <h3>Performance Optimization</h3>
+                    <p style="color: var(--text-secondary);">Optimized a client's web platform, reducing load times by
+                        50% and improving search engine rankings.</p>
+                </div>
+                <div class="service-card mouse-tilt-container card-3d scroll-reveal-3d">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div
+                            style="font-size: 3rem; color: var(--accent-green); font-family: 'Orbitron', sans-serif; font-weight: 900;">
+                            2M+</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Monthly Active Users
+                        </p>
+                    </div>
+                    <h3>Mobile App Launch</h3>
+                    <p style="color: var(--text-secondary);">Launched a mobile application that now serves over 2
+                        million active users with excellent ratings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -275,6 +422,8 @@
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to top"></a>
 
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
 

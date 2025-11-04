@@ -48,12 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Parallax Effect for Hero Section
+// Parallax Effect for Hero Section (excluding Three.js canvas containers)
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.hero-background');
 
     parallaxElements.forEach(element => {
+        // Skip parallax if this container has a Three.js canvas (let Three.js handle it)
+        const hasThreeJS = element.querySelector('canvas.threejs-canvas');
+        if (hasThreeJS) {
+            // Don't apply CSS parallax to Three.js containers - Three.js handles parallax
+            return;
+        }
+        
         const speed = 0.5;
         element.style.transform = `translateY(${scrolled * speed}px)`;
     });
@@ -203,44 +210,21 @@ if (backToTopButton) {
 }
 
 // Mouse Follow Effect
-const cursorFollow = document.querySelector('.cursor-follow');
 const cursorDot = document.querySelector('.cursor-dot');
 
-if (cursorFollow && cursorDot) {
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-
+if (cursorDot) {
     document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
     });
 
-    function animateCursor() {
-        cursorX += (mouseX - cursorX) * 0.1;
-        cursorY += (mouseY - cursorY) * 0.1;
-
-        cursorFollow.style.left = cursorX + 'px';
-        cursorFollow.style.top = cursorY + 'px';
-
-        requestAnimationFrame(animateCursor);
-    }
-
-    animateCursor();
-
-    // Hide cursor on interactive elements
+    // Scale cursor on interactive elements
     const interactiveElements = document.querySelectorAll('a, button, input, textarea, select');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursorFollow.style.transform = 'scale(1.5)';
             cursorDot.style.transform = 'scale(1.5)';
         });
         el.addEventListener('mouseleave', () => {
-            cursorFollow.style.transform = 'scale(1)';
             cursorDot.style.transform = 'scale(1)';
         });
     });
@@ -302,3 +286,293 @@ scrollRevealElements.forEach(el => {
     scrollRevealObserver.observe(el);
 });
 
+// Ripple Effect Handler
+function createRipple(event, element) {
+    const ripple = document.createElement('span');
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+
+    // Determine ripple color based on element class
+    if (element.classList.contains('btn-secondary')) {
+        ripple.classList.add('ripple-magenta');
+    } else if (element.classList.contains('btn-outline')) {
+        ripple.classList.add('ripple-green');
+    } else {
+        ripple.classList.add('ripple');
+    }
+
+    element.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Add ripple effect to buttons
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.classList.add('ripple-container');
+    btn.addEventListener('click', function(e) {
+        createRipple(e, this);
+    });
+});
+
+// Add ripple effect to cards
+document.querySelectorAll('.service-card, .project-card, .project-card-large').forEach(card => {
+    card.classList.add('ripple-container');
+    card.addEventListener('click', function(e) {
+        createRipple(e, this);
+    });
+});
+
+// Add ripple effect to form submissions
+document.querySelectorAll('.form-submit').forEach(btn => {
+    btn.classList.add('ripple-container');
+    btn.addEventListener('click', function(e) {
+        createRipple(e, this);
+    });
+});
+
+// Three.js Hero Background (index.html)
+function initThreeJSHero() {
+    const canvas = document.getElementById('threejs-hero-canvas');
+    if (!canvas) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Create particles
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 1000;
+    const posArray = new Float32Array(particlesCount * 3);
+
+    for (let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 20;
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.02,
+        color: 0x00ffff,
+        transparent: true,
+        opacity: 0.6,
+    });
+
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        particlesMesh.rotation.x += 0.001;
+        particlesMesh.rotation.y += 0.001;
+        renderer.render(scene, camera);
+    }
+
+    function handleResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+    animate();
+}
+
+// Three.js Services Background (services.html)
+function initThreeJSServices() {
+    const canvas = document.getElementById('threejs-services-canvas');
+    if (!canvas) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Create floating geometric shapes
+    const shapes = [];
+    const colors = [0x00ffff, 0xff00ff, 0x00ff00, 0x0066ff];
+
+    for (let i = 0; i < 15; i++) {
+        const geometry = new THREE.IcosahedronGeometry(Math.random() * 0.5 + 0.2, 0);
+        const material = new THREE.MeshBasicMaterial({
+            color: colors[Math.floor(Math.random() * colors.length)],
+            wireframe: true,
+            transparent: true,
+            opacity: 0.3,
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(
+            (Math.random() - 0.5) * 20,
+            (Math.random() - 0.5) * 20,
+            (Math.random() - 0.5) * 20
+        );
+        mesh.rotation.set(
+            Math.random() * Math.PI,
+            Math.random() * Math.PI,
+            Math.random() * Math.PI
+        );
+        scene.add(mesh);
+        shapes.push(mesh);
+    }
+
+    camera.position.z = 10;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        shapes.forEach((shape, i) => {
+            shape.rotation.x += 0.005;
+            shape.rotation.y += 0.005;
+            shape.position.y += Math.sin(Date.now() * 0.001 + i) * 0.001;
+        });
+        renderer.render(scene, camera);
+    }
+
+    function handleResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+    animate();
+}
+
+// Three.js Projects Background (projects.html)
+function initThreeJSProjects() {
+    const canvas = document.getElementById('threejs-projects-canvas');
+    if (!canvas) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    // Limit pixel ratio for better performance
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Create grid of torus shapes - reduced for better performance
+    const toruses = [];
+    const gridSize = 4; // Reduced from 5 to 4
+    const spacing = 2.5;
+
+    // Store initial z positions for smooth animation
+    const initialZPositions = [];
+
+    for (let x = 0; x < gridSize; x++) {
+        for (let y = 0; y < gridSize; y++) {
+            const geometry = new THREE.TorusGeometry(0.3, 0.1, 8, 20);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x00ffff,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.4,
+            });
+            const torus = new THREE.Mesh(geometry, material);
+            const initialZ = (Math.random() - 0.5) * 3; // Store initial z
+            torus.position.set(
+                (x - gridSize / 2) * spacing,
+                (y - gridSize / 2) * spacing,
+                initialZ
+            );
+            scene.add(torus);
+            toruses.push(torus);
+            initialZPositions.push(initialZ);
+        }
+    }
+
+    camera.position.z = 8;
+    const initialCameraY = 0;
+
+    let time = 0;
+    let scrollY = 0;
+    let targetScrollY = 0;
+    let smoothScrollY = 0;
+
+    // Smooth scroll tracking with requestAnimationFrame
+    function updateScroll() {
+        // Smooth interpolation
+        smoothScrollY += (targetScrollY - smoothScrollY) * 0.1;
+        requestAnimationFrame(updateScroll);
+    }
+
+    // Scroll event handler - throttled for performance
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            cancelAnimationFrame(scrollTimeout);
+        }
+        scrollTimeout = requestAnimationFrame(() => {
+            targetScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        });
+    }, { passive: true });
+
+    // Start smooth scroll tracking
+    updateScroll();
+
+    function animate() {
+        requestAnimationFrame(animate);
+        time += 0.01; // Slow, smooth time progression
+
+        // Apply smooth parallax to camera position
+        const parallaxOffset = smoothScrollY * 0.0005; // Subtle parallax effect
+        camera.position.y = initialCameraY + parallaxOffset;
+        
+        // Subtle rotation based on scroll for depth effect
+        const rotationOffset = smoothScrollY * 0.0001;
+        camera.rotation.z = rotationOffset;
+
+        toruses.forEach((torus, i) => {
+            // Much slower rotation
+            torus.rotation.x += 0.002;
+            torus.rotation.y += 0.002;
+            
+            // Smooth, time-based z-position animation (no random in loop)
+            const phase = i * 0.5; // Stagger animation per torus
+            torus.position.z = initialZPositions[i] + Math.sin(time + phase) * 0.3;
+        });
+        
+        renderer.render(scene, camera);
+    }
+
+    function handleResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+    animate();
+}
+
+// Initialize Three.js on page load
+function initThreeJS() {
+    if (typeof THREE === 'undefined') {
+        // Retry after a short delay if Three.js hasn't loaded yet
+        setTimeout(initThreeJS, 100);
+        return;
+    }
+
+    initThreeJSHero();
+    initThreeJSServices();
+    initThreeJSProjects();
+}
+
+// Wait for both DOM and Three.js to be ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThreeJS);
+} else {
+    // DOM is already ready, but Three.js might not be
+    setTimeout(initThreeJS, 100);
+}
