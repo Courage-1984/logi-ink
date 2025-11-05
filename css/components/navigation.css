@@ -61,6 +61,7 @@
     letter-spacing: 1px;
     position: relative;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .nav-link::after {
@@ -75,13 +76,33 @@
     transition: width 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
     color: var(--accent-cyan);
     text-shadow: 0 0 10px var(--glow-cyan);
 }
 
-.nav-link:hover::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Scroll-based color change effect for active nav link */
+.nav-link.active {
+    background: linear-gradient(90deg, #ed12ff 0%, #ed12ff var(--scroll-progress, 0%), var(--accent-cyan) var(--scroll-progress, 100%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    color: transparent; /* Ensure text is transparent */
+}
+
+.nav-link.active:hover {
+    background: linear-gradient(90deg, #ed12ff 0%, #ed12ff var(--scroll-progress, 0%), var(--accent-cyan) var(--scroll-progress, 100%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
 .nav-link.active::after {
     width: 100%;
 }

@@ -31,6 +31,19 @@
     z-index: -1;
 }
 
+/* Ripple wave animation on hero background */
+.hero-background::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    animation: ripple-wave 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
 /* Grid Overlay */
 .grid-overlay {
     position: absolute;

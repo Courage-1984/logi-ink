@@ -21,6 +21,11 @@
 }
 
 /* Footer Section */
+.footer-section {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
 .footer-section h3 {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
@@ -58,6 +63,26 @@
     color: var(--accent-cyan);
     text-shadow: 0 0 10px var(--glow-cyan);
     padding-left: 5px;
+}
+
+/* Scale/Grow effect for footer sections (random animation) */
+.footer-section:nth-child(2) {
+    animation: scaleGrow 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.footer-section:nth-child(4) {
+    animation: scaleGrow 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes scaleGrow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 /* Footer Bottom */

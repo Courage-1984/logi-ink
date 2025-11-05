@@ -264,3 +264,24 @@
     line-height: 1.8;
 }
 
+/* Scale/Grow effects for cards without special hover effects */
+/* Applied to cards at random positions - spread out across the page */
+.service-card:not(.mouse-tilt-container):nth-child(2) {
+    animation: cardScaleGrow 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.service-card:not(.mouse-tilt-container):nth-child(4) {
+    animation: cardScaleGrow 4s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+
+@keyframes cardScaleGrow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+

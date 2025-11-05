@@ -11,9 +11,11 @@ import { initMouseTilt } from './core/mouse-tilt.js';
 import { initInteractions } from './utils/interactions.js';
 import { initContactForm } from './pages/contact.js';
 import { initEasterEgg } from './core/easter-egg.js';
+import { initPageTransitions } from './core/page-transitions.js';
 
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    initPageTransitions();
     initNavigation();
     initScroll();
     initAnimations();

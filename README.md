@@ -47,18 +47,20 @@ logia-ink/
 │   ├── main.css         # Main entry point (imports all modules)
 │   ├── variables.css    # CSS custom properties
 │   ├── base.css         # Base/reset styles
-│   ├── components/      # Reusable UI components (19 components)
+│   ├── components/      # Reusable UI components (18 components)
 │   ├── pages/           # Page-specific styles
-│   └── utils/           # Utilities (animations, responsive, etc.)
+│   └── utils/           # Utilities (animations, responsive, etc. - 10 files)
 ├── js/                  # Modular JavaScript (ES6 modules)
 │   ├── main.js          # Main entry point
-│   ├── core/            # Core functionality modules
+│   ├── core/            # Core functionality modules (7 modules)
 │   ├── utils/           # Utility modules
 │   └── pages/           # Page-specific scripts
 ├── docs/                # Documentation files
 │   ├── BUILD_AND_DEPLOY.md
 │   ├── MIGRATION_GUIDE.md
 │   ├── STYLE_GUIDE.md
+│   ├── README_BUILD.md   # Quick build reference
+│   ├── ANIMATION_IMPROVEMENTS.md # Animation improvement guide
 │   └── ...              # Other documentation
 ├── scripts/             # Build and optimization scripts
 │   ├── optimize-images.js
@@ -75,7 +77,7 @@ logia-ink/
 
 - **Home** (`index.html`) - Hero section, services preview, and featured projects
 - **About** (`about.html`) - Company mission, values, and approach
-- **Services** (`services.html`) - Detailed service offerings and process
+- **Services** (`services.html`) - Detailed service offerings and process ✅ EXISTS
 - **Projects** (`projects.html`) - Portfolio showcase
 - **Contact Us** (`contact.html`) - Contact form and information
 
@@ -247,6 +249,13 @@ This project uses **Vite** for development and production builds:
 4. Export init function and import in `js/main.js`
 5. **Update `.cursor/rules/cursorrules.mdc`** file with the new component
 
+### Current Module Counts
+- **CSS Components:** 18 files in `css/components/`
+- **CSS Utils:** 10 files in `css/utils/`
+- **JS Core Modules:** 7 files in `js/core/` (navigation, scroll, animations, cursor, mouse-tilt, easter-egg, page-transitions)
+- **JS Utils:** 1 file in `js/utils/` (interactions)
+- **JS Pages:** 1 file in `js/pages/` (contact)
+
 See [.cursor/rules/cursorrules.mdc](.cursor/rules/cursorrules.mdc) for detailed guidelines.
 
 ## 📖 Documentation
@@ -254,8 +263,10 @@ See [.cursor/rules/cursorrules.mdc](.cursor/rules/cursorrules.mdc) for detailed 
 - **[.cursor/rules/cursorrules.mdc](.cursor/rules/cursorrules.mdc)** - Complete project structure and conventions guide
 - **[docs/STYLE_GUIDE.md](docs/STYLE_GUIDE.md)** - Design system and component library
 - **[docs/BUILD_AND_DEPLOY.md](docs/BUILD_AND_DEPLOY.md)** - Build and deployment guide
+- **[docs/README_BUILD.md](docs/README_BUILD.md)** - Quick build reference
 - **[docs/MIGRATION_GUIDE.md](docs/MIGRATION_GUIDE.md)** - Migration guide (completed)
 - **[docs/QUICK_START.md](docs/QUICK_START.md)** - Quick reference guide
+- **[docs/ANIMATION_IMPROVEMENTS.md](docs/ANIMATION_IMPROVEMENTS.md)** - Animation improvement guide
 
 ## 🌐 Browser Support
 

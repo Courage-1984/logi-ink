@@ -1,7 +1,40 @@
 /**
  * Interactions Module
- * Handles button hover effects and card interactions
+ * Handles button hover effects, card interactions, and ripple effects
  */
+
+/**
+ * Create a ripple effect on click
+ * @param {Event} event - The click event
+ * @param {HTMLElement} element - The element to create the ripple on
+ */
+function createRipple(event, element) {
+    const ripple = document.createElement('span');
+    const rect = element.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+
+    // Determine ripple color based on element class
+    if (element.classList.contains('btn-secondary')) {
+        ripple.classList.add('ripple-magenta');
+    } else if (element.classList.contains('btn-outline')) {
+        ripple.classList.add('ripple-green');
+    } else {
+        ripple.classList.add('ripple');
+    }
+
+    element.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
 
 export function initInteractions() {
     // Add glow effect to buttons on hover
@@ -44,6 +77,30 @@ export function initInteractions() {
             if (overlay) {
                 overlay.style.opacity = '0';
             }
+        });
+    });
+
+    // Add ripple effect to buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.classList.add('ripple-container');
+        btn.addEventListener('click', function(e) {
+            createRipple(e, this);
+        });
+    });
+
+    // Add ripple effect to cards
+    document.querySelectorAll('.service-card, .project-card, .project-card-large').forEach(card => {
+        card.classList.add('ripple-container');
+        card.addEventListener('click', function(e) {
+            createRipple(e, this);
+        });
+    });
+
+    // Add ripple effect to form submissions
+    document.querySelectorAll('.form-submit').forEach(btn => {
+        btn.classList.add('ripple-container');
+        btn.addEventListener('click', function(e) {
+            createRipple(e, this);
         });
     });
 }

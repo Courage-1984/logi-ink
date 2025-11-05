@@ -2,6 +2,9 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  // Base path for GitHub Pages (repository name)
+  base: '/logia-ink/',
+  
   // Root directory (where index.html is located)
   root: '.',
   

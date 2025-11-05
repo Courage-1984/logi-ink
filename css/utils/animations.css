@@ -406,3 +406,41 @@
     width: 100%;
 }
 
+/* ============================================
+   RIPPLE EFFECT STYLES
+   ============================================ */
+
+/* Ripple Container - Required for elements with ripple effect */
+.ripple-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ripple Element - Created dynamically by JavaScript */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Ripple Color Variants */
+.ripple-magenta {
+    background: rgba(255, 0, 255, 0.3);
+}
+
+.ripple-green {
+    background: rgba(0, 255, 0, 0.3);
+}
+
+.ripple-blue {
+    background: rgba(0, 102, 255, 0.3);
+}
+
+.ripple-pink {
+    background: rgba(255, 0, 128, 0.3);
+}
+
