@@ -1,0 +1,94 @@
+{
+    "task": "competitor_content_gap_analysis",
+    "crawler": {
+        "rateLimitPerSecond": 1,
+        "maxDepth": 3,
+        "maxPagesPerDomain": 500,
+        "respectRobotsTxt": true,
+        "sameOriginOnly": true,
+        "maxConcurrency": 2
+    },
+    "compareAgainst": "https://YOUR_SITE_URL/",
+    "domains": [
+        "https://tacticalmarketing.co.za/",
+        "https://www.quantratech.co.za/",
+        "https://www.lamusdesign.co.za/",
+        "https://www.itm.co.za/",
+        "https://webforce.co.za/",
+        "https://www.websitedesign.co.za/",
+        "https://allsortswebdesigners.co.za/",
+        "https://www.webdesignservices.co.za/",
+        "https://www.newperspectivestudio.co.za/",
+        "https://www.webpartner.co.za/",
+        "https://www.yeboapp.co.za/",
+        "https://www.smerocket.co.za/",
+        "https://clickresults.co.za/",
+        "https://blitssites.co.za/",
+        "https://magooze.co.za/"
+    ],
+    "extract": {
+        "fields": [
+            "title",
+            "meta.description",
+            "h1",
+            "text:first_300_words",
+            "canonical",
+            "internalLinks",
+            "structuredData"
+        ]
+    },
+    "analysis": {
+        "outputs": [
+            {
+                "type": "csv",
+                "filename": "competitor_crawl_results.csv",
+                "columns": [
+                    "domain",
+                    "page_title",
+                    "url",
+                    "path",
+                    "meta_description",
+                    "h1",
+                    "content_summary",
+                    "structured_data_present",
+                    "internal_links_count",
+                    "missing_vs_TARGET",
+                    "suggested_new_path",
+                    "priority",
+                    "estimated_effort",
+                    "notes"
+                ],
+                "defaults": {
+                    "priority": 3,
+                    "estimated_effort": "medium"
+                }
+            },
+            {
+                "type": "markdown",
+                "filename": "competitor_analysis.md",
+                "sections": [
+                    "executive_summary_top_5_opportunities",
+                    "per_domain_strengths_and_gaps",
+                    "aggregated_keyword_and_topic_gaps",
+                    "recommended_new_pages_with_titles_h1_meta_search_intent",
+                    "quick_win_action_list_prioritized"
+                ]
+            },
+            {
+                "type": "json",
+                "filename": "top_5_recommended_new_pages.json",
+                "fields": [
+                    "title",
+                    "suggested_slug",
+                    "priority",
+                    "effort",
+                    "search_intent"
+                ]
+            }
+        ]
+    },
+    "errorHandling": {
+        "logSkippedPages": true,
+        "noteCloudflareJSBlocks": true
+    }
+}

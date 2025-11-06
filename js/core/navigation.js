@@ -33,7 +33,26 @@ export function initNavigation() {
         });
     }
 
+    // Set active nav link based on current page
+    const setActiveNavLinkByPage = () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            // Remove active class first
+            link.classList.remove('active');
+            
+            // Check if this link matches the current page
+            if (href === currentPage || 
+                (currentPage === '' && (href === 'index.html' || href === '/'))) {
+                link.classList.add('active');
+            }
+        });
+    };
+
     // Active nav link highlighting based on scroll position with scroll-based color change
+    // This only updates the scroll progress for the already-active link
     const sections = document.querySelectorAll('section[id]');
     const navLinks2 = document.querySelectorAll('.nav-link');
 
@@ -74,7 +93,10 @@ export function initNavigation() {
         });
 
                 // Handle home page (when at top of page)
-                if (scrollPosition < 100 && !current) {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const isHomePage = currentPage === 'index.html' || currentPage === '';
+                
+                if (isHomePage && scrollPosition < 100 && !current) {
                     // Use overall page scroll progress for home
                     const documentHeight = document.documentElement.scrollHeight;
                     const totalScrollRange = documentHeight - windowHeight;
@@ -83,20 +105,23 @@ export function initNavigation() {
                     }
                 }
 
+                // Update scroll progress for active nav link
         navLinks2.forEach(link => {
-            link.classList.remove('active');
                     // Remove scroll progress style
                     link.style.setProperty('--scroll-progress', '0%');
                     
+                    // Only update scroll progress if this link is active
+                    if (link.classList.contains('active')) {
                     const href = link.getAttribute('href');
                     const isHomeLink = href === 'index.html' || href === '/' || 
                                       (link.textContent && link.textContent.trim().toLowerCase() === 'home');
                     
+                        // Update scroll progress for home page or section links
                     if (href === `#${current}` || 
-                        (isHomeLink && scrollPosition < 100 && !current)) {
-                link.classList.add('active');
+                            (isHomeLink && isHomePage && scrollPosition < 100 && !current)) {
                         // Apply scroll-based color change from left to right (#ed12ff to cyan)
                         link.style.setProperty('--scroll-progress', `${sectionScrollProgress}%`);
+                        }
             }
         });
                 
@@ -107,7 +132,11 @@ export function initNavigation() {
         }
     };
 
+    // Set active link based on current page on load
+    setActiveNavLinkByPage();
+    
+    // Update scroll progress on scroll
     window.addEventListener('scroll', updateActiveNavLink, { passive: true });
-    // Initial call
+    // Initial call for scroll progress
     updateActiveNavLink();
 }

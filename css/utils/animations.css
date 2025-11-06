@@ -7,6 +7,17 @@
  */
 
 /* ============================================
+   CSS CUSTOM PROPERTIES FOR ANIMATIONS
+   ============================================ */
+
+/* Enable angle animation for conic-gradient rotation */
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* ============================================
    KEYFRAME ANIMATIONS
    ============================================ */
 
@@ -64,6 +75,28 @@
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* Testimonial Gradient Move Animation (for testimonial cards) */
+@keyframes testimonialGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Rotate Gradient Animation (for expertise section cards) */
+@keyframes rotateGradient {
+    to {
+        --angle: 360deg;
     }
 }
 

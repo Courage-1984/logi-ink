@@ -52,6 +52,43 @@
     box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2);
 }
 
+/* Our Impact section - custom hover colors matching each card's number color */
+.service-card.mouse-tilt-container.impact-card-cyan:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 40px var(--glow-cyan);
+}
+
+.service-card.mouse-tilt-container.impact-card-magenta:hover {
+    border-color: var(--accent-magenta);
+    box-shadow: 0 10px 40px var(--glow-magenta);
+}
+
+.service-card.mouse-tilt-container.impact-card-green:hover {
+    border-color: var(--accent-green);
+    box-shadow: 0 10px 40px var(--glow-green);
+}
+
+.service-card.mouse-tilt-container.impact-card-blue:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 40px var(--glow-blue);
+}
+
+/* Success Stories section - custom hover colors matching each card's number color */
+.service-card.mouse-tilt-container.success-card-cyan:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 40px var(--glow-cyan);
+}
+
+.service-card.mouse-tilt-container.success-card-magenta:hover {
+    border-color: var(--accent-magenta);
+    box-shadow: 0 10px 40px var(--glow-magenta);
+}
+
+.service-card.mouse-tilt-container.success-card-green:hover {
+    border-color: var(--accent-green);
+    box-shadow: 0 10px 40px var(--glow-green);
+}
+
 .service-card:hover::before {
     opacity: 1;
 }
@@ -282,6 +319,143 @@
     }
     50% {
         transform: scale(1.03);
+    }
+}
+
+/* Testimonials Section - Hover Gradient Effect */
+/* Target testimonial cards ONLY in the Client Testimonials section */
+.testimonials-section .service-card {
+    position: relative;
+}
+
+/* Quotation SVG container - apply gradient to parent div */
+.testimonials-section .service-card > div:first-child {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+/* Gradient overlay for SVG on hover - using pseudo-element */
+.testimonials-section .service-card:hover > div:first-child::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(90deg,
+            var(--accent-cyan),
+            var(--accent-magenta),
+            var(--accent-green),
+            var(--accent-cyan));
+    background-size: 300% 100%;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z' fill='black'/%3E%3C/svg%3E");
+    mask-size: 40px 40px;
+    -webkit-mask-size: 40px 40px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    animation: testimonialGradientMove 3s ease infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* SVG styling on hover - make it transparent so gradient shows through */
+.testimonials-section .service-card:hover svg[viewBox="0 0 24 24"] {
+    fill: transparent;
+    filter: drop-shadow(0 0 10px var(--glow-cyan));
+    opacity: 1;
+    position: relative;
+    z-index: 0;
+}
+
+/* Person's name (h4) gradient effect on hover */
+.testimonials-section .service-card:hover h4 {
+    background: linear-gradient(90deg,
+            var(--accent-cyan),
+            var(--accent-magenta),
+            var(--accent-green),
+            var(--accent-cyan));
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: testimonialGradientMove 3s ease infinite;
+    text-shadow: none;
+}
+
+/* Expertise Section - Clockwise Rotating Gradient Glow */
+/* Target expertise cards ONLY in the Our Expertise section */
+.expertise-section .service-card {
+    position: relative;
+    overflow: visible !important;
+    transition: transform 0.35s ease;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* Override default ::before for expertise cards - The animated border layer - HIGH Z-INDEX */
+.expertise-section .service-card::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: -3px !important;
+    border-radius: 13px !important;
+    padding: 3px !important;
+    background: conic-gradient(
+        from var(--angle),
+        var(--accent-cyan),
+        var(--accent-magenta),
+        var(--accent-green),
+        var(--accent-blue),
+        var(--accent-pink),
+        var(--accent-cyan)
+    ) !important;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0) !important;
+    -webkit-mask-composite: xor !important;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0) !important;
+    mask-composite: exclude !important;
+    opacity: 0 !important;
+    transition: opacity 0.35s ease !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+    animation: rotateGradient 3.5s linear infinite !important;
+    animation-play-state: paused !important;
+}
+
+/* Hover Animation */
+.expertise-section .service-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.25), 0 0 50px rgba(255, 0, 255, 0.15);
+    border-color: transparent;
+}
+
+.expertise-section .service-card:hover::before {
+    opacity: 1 !important;
+    animation-play-state: running !important;
+}
+
+/* Ensure card content stays above the glow */
+.expertise-section .service-card > * {
+    position: relative;
+    z-index: 10001;
+}
+
+/* Disable heavy hover effects on touch devices */
+@media (hover: none) {
+    .expertise-section .service-card:hover::before {
+        animation: none;
+        opacity: 0;
+    }
+
+    .expertise-section .service-card:hover {
+        transform: none;
+        box-shadow: none;
     }
 }
 
