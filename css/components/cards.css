@@ -8,6 +8,7 @@
 /* Services Section */
 .services-preview {
     background: var(--bg-secondary);
+    padding-top: 3rem !important;
 }
 
 .services-grid {

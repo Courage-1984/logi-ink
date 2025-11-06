@@ -1,19 +1,465 @@
 /**
  * Contact Page Module
- * Handles contact form submission
+ * Handles contact form submission, validation, localStorage, and all form interactions
  */
 
+import { showToast } from '../utils/toast.js';
+
+// Form state
+let formData = {};
+const FORM_STORAGE_KEY = 'logi-ink-contact-form';
+const MAX_MESSAGE_LENGTH = 1000;
+
+/**
+ * Initialize contact form functionality
+ */
 export function initContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
     if (!contactForm) return;
 
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Add your form submission logic here
-        // Example: Send to Formspree, Netlify Forms, or custom API
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
+    // Load saved form data
+    loadFormData();
+
+    // Initialize form elements
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const subjectInput = document.getElementById('subject');
+    const messageTextarea = document.getElementById('message');
+    const submitButton = document.getElementById('submitButton');
+    const progressBar = document.getElementById('formProgressBar');
+
+    // Real-time validation
+    nameInput.addEventListener('blur', () => validateField(nameInput, 'name'));
+    nameInput.addEventListener('input', () => {
+        clearError(nameInput, 'name');
+        saveFormData();
+        updateProgress();
     });
+
+    emailInput.addEventListener('blur', () => validateField(emailInput, 'email'));
+    emailInput.addEventListener('input', () => {
+        clearError(emailInput, 'email');
+        saveFormData();
+        updateProgress();
+    });
+
+    phoneInput.addEventListener('blur', () => validateField(phoneInput, 'phone'));
+    phoneInput.addEventListener('input', () => {
+        clearError(phoneInput, 'phone');
+        saveFormData();
+        updateProgress();
+    });
+
+    subjectInput.addEventListener('blur', () => validateField(subjectInput, 'subject'));
+    subjectInput.addEventListener('input', () => {
+        clearError(subjectInput, 'subject');
+        saveFormData();
+        updateProgress();
+    });
+
+    messageTextarea.addEventListener('blur', () => validateField(messageTextarea, 'message'));
+    messageTextarea.addEventListener('input', () => {
+        clearError(messageTextarea, 'message');
+        updateCharacterCounter();
+        saveFormData();
+        updateProgress();
+    });
+
+    // Form submission
+    contactForm.addEventListener('submit', handleSubmit);
+
+    // Smooth scroll to form
+    initSmoothScroll();
+
+    // Initialize progress bar
+    updateProgress();
+
+    // Initialize typing animations for testimonials
+    initTestimonialTyping();
+}
+
+/**
+ * Validate a single form field
+ */
+function validateField(field, fieldName) {
+    const errorElement = document.getElementById(`${fieldName}-error`);
+    let isValid = true;
+    let errorMessage = '';
+
+    // Remove previous error state
+    field.closest('.form-group').classList.remove('error', 'success');
+
+    // Check required fields
+    if (field.hasAttribute('required') && !field.value.trim()) {
+        isValid = false;
+        errorMessage = `${getFieldLabel(fieldName)} is required`;
+    }
+
+    // Email validation
+    if (fieldName === 'email' && field.value.trim()) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid email address';
+        }
+    }
+
+    // Phone validation (optional but if provided, should be valid)
+    if (fieldName === 'phone' && field.value.trim()) {
+        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+        if (!phoneRegex.test(field.value)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid phone number';
+        }
+    }
+
+    // Message length validation
+    if (fieldName === 'message' && field.value.trim()) {
+        if (field.value.length > MAX_MESSAGE_LENGTH) {
+            isValid = false;
+            errorMessage = `Message must be less than ${MAX_MESSAGE_LENGTH} characters`;
+        }
+    }
+
+    // Display error or success
+    if (!isValid) {
+        field.closest('.form-group').classList.add('error');
+        errorElement.textContent = errorMessage;
+        errorElement.setAttribute('role', 'alert');
+        field.setAttribute('aria-invalid', 'true');
+    } else if (field.value.trim()) {
+        field.closest('.form-group').classList.add('success');
+        errorElement.textContent = '';
+        field.setAttribute('aria-invalid', 'false');
+    } else {
+        errorElement.textContent = '';
+        field.setAttribute('aria-invalid', 'false');
+    }
+
+    return isValid;
+}
+
+/**
+ * Clear error for a field
+ */
+function clearError(field, fieldName) {
+    const errorElement = document.getElementById(`${fieldName}-error`);
+    field.closest('.form-group').classList.remove('error');
+    errorElement.textContent = '';
+    field.setAttribute('aria-invalid', 'false');
+}
+
+/**
+ * Get field label for error messages
+ */
+function getFieldLabel(fieldName) {
+    const labels = {
+        name: 'Name',
+        email: 'Email',
+        phone: 'Phone',
+        subject: 'Subject',
+        message: 'Message'
+    };
+    return labels[fieldName] || fieldName;
+}
+
+/**
+ * Update character counter for message textarea
+ */
+function updateCharacterCounter() {
+    const messageTextarea = document.getElementById('message');
+    const countElement = document.getElementById('message-count');
+    if (!messageTextarea || !countElement) return;
+
+    const count = messageTextarea.value.length;
+    countElement.textContent = count;
+
+    // Update counter color based on length
+    const counter = document.getElementById('message-counter');
+    if (count > MAX_MESSAGE_LENGTH * 0.9) {
+        counter.style.color = 'var(--accent-pink)';
+    } else if (count > MAX_MESSAGE_LENGTH * 0.7) {
+        counter.style.color = 'var(--accent-magenta)';
+    } else {
+        counter.style.color = 'var(--text-secondary)';
+    }
+}
+
+/**
+ * Update form progress bar
+ */
+function updateProgress() {
+    const progressBar = document.getElementById('formProgressBar');
+    if (!progressBar) return;
+
+    const fields = ['name', 'email', 'subject', 'message'];
+    let filledCount = 0;
+
+    fields.forEach(fieldName => {
+        const field = document.getElementById(fieldName);
+        if (field && field.value.trim()) {
+            filledCount++;
+        }
+    });
+
+    const progress = (filledCount / fields.length) * 100;
+    progressBar.style.width = `${progress}%`;
+    progressBar.setAttribute('aria-valuenow', progress);
+}
+
+/**
+ * Handle form submission
+ */
+async function handleSubmit(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const submitButton = document.getElementById('submitButton');
+    const submitText = submitButton.querySelector('.submit-text');
+    const submitSpinner = submitButton.querySelector('.submit-spinner');
+
+    // Check honeypot field
+    const honeypot = document.getElementById('website');
+    if (honeypot && honeypot.value) {
+        // Bot detected - silently fail
+        showToast('Submission failed. Please try again.', 'error');
+        return;
+    }
+
+    // Validate all fields
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageTextarea = document.getElementById('message');
+
+    const isNameValid = validateField(nameInput, 'name');
+    const isEmailValid = validateField(emailInput, 'email');
+    const isSubjectValid = validateField(subjectInput, 'subject');
+    const isMessageValid = validateField(messageTextarea, 'message');
+
+    if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
+        showToast('Please fix the errors in the form before submitting.', 'error');
+        // Focus first invalid field
+        if (!isNameValid) nameInput.focus();
+        else if (!isEmailValid) emailInput.focus();
+        else if (!isSubjectValid) subjectInput.focus();
+        else if (!isMessageValid) messageTextarea.focus();
+        return;
+    }
+
+    // Show loading state
+    submitButton.disabled = true;
+    submitText.style.opacity = '0';
+    submitSpinner.style.display = 'block';
+    submitSpinner.style.opacity = '1';
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone') || '',
+        subject: formData.get('subject'),
+        message: formData.get('message')
+    };
+
+    try {
+        // Submit form (placeholder - replace with actual API endpoint)
+        await submitForm(data);
+
+        // Success
+        showToast('Thank you for your message! We will get back to you soon.', 'success', 5000);
+        form.reset();
+        clearFormData();
+        updateProgress();
+        updateCharacterCounter();
+
+        // Announce success to screen readers
+        const announcement = document.createElement('div');
+        announcement.setAttribute('role', 'status');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.className = 'sr-only';
+        announcement.textContent = 'Form submitted successfully';
+        document.body.appendChild(announcement);
+        setTimeout(() => announcement.remove(), 1000);
+
+    } catch (error) {
+        // Error
+        showToast('There was an error submitting your message. Please try again or contact us directly.', 'error', 7000);
+        console.error('Form submission error:', error);
+    } finally {
+        // Reset loading state
+        submitButton.disabled = false;
+        submitText.style.opacity = '1';
+        submitSpinner.style.opacity = '0';
+        setTimeout(() => {
+            submitSpinner.style.display = 'none';
+        }, 300);
+    }
+}
+
+/**
+ * Submit form data (placeholder - replace with actual API)
+ */
+async function submitForm(data) {
+    // TODO: Replace with actual form submission endpoint
+    // Examples:
+    // - Formspree: await fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(data) })
+    // - Netlify Forms: Use form with netlify attribute
+    // - Custom API: await fetch('YOUR_API_ENDPOINT', { method: 'POST', body: JSON.stringify(data) })
+
+    // Simulate API call
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // Simulate success (90% success rate for demo)
+            if (Math.random() > 0.1) {
+                resolve({ success: true });
+            } else {
+                reject(new Error('Submission failed'));
+            }
+        }, 1500);
+    });
+}
+
+/**
+ * Save form data to localStorage
+ */
+function saveFormData() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(data));
+    } catch (error) {
+        console.warn('Could not save form data to localStorage:', error);
+    }
+}
+
+/**
+ * Load form data from localStorage
+ */
+function loadFormData() {
+    try {
+        const saved = localStorage.getItem(FORM_STORAGE_KEY);
+        if (saved) {
+            const data = JSON.parse(saved);
+            if (data.name) document.getElementById('name').value = data.name;
+            if (data.email) document.getElementById('email').value = data.email;
+            if (data.phone) document.getElementById('phone').value = data.phone;
+            if (data.subject) document.getElementById('subject').value = data.subject;
+            if (data.message) document.getElementById('message').value = data.message;
+
+            // Update UI
+            updateProgress();
+            updateCharacterCounter();
+        }
+    } catch (error) {
+        console.warn('Could not load form data from localStorage:', error);
+    }
+}
+
+/**
+ * Clear form data from localStorage
+ */
+function clearFormData() {
+    try {
+        localStorage.removeItem(FORM_STORAGE_KEY);
+    } catch (error) {
+        console.warn('Could not clear form data from localStorage:', error);
+    }
+}
+
+/**
+ * Initialize smooth scroll to form
+ */
+function initSmoothScroll() {
+    const scrollButtons = document.querySelectorAll('.scroll-to-form');
+    scrollButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.getElementById('contactSection');
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Focus first form field for accessibility
+                setTimeout(() => {
+                    const firstInput = document.getElementById('name');
+                    if (firstInput) firstInput.focus();
+                }, 500);
+            }
+        });
+    });
+}
+
+/**
+ * Initialize typing animations for testimonials
+ */
+function initTestimonialTyping() {
+    const testimonialTexts = document.querySelectorAll('.testimonial-text[data-text]');
+    if (testimonialTexts.length === 0) return;
+
+    // Create Intersection Observer for testimonials
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+                const textElement = entry.target;
+                const fullText = textElement.getAttribute('data-text');
+                
+                // Mark as observed to prevent re-triggering
+                textElement.classList.add('typed');
+                
+                // Start typing animation
+                typeText(textElement, fullText);
+                
+                // Unobserve after animation starts
+                observer.unobserve(textElement);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all testimonial texts
+    testimonialTexts.forEach(text => {
+        // Clear text and prepare for typing animation
+        const fullText = text.getAttribute('data-text');
+        text.textContent = '';
+        text.classList.add('typing');
+        observer.observe(text);
+    });
+}
+
+/**
+ * Type text character by character
+ */
+function typeText(element, text) {
+    let index = 0;
+    const speed = 30; // milliseconds per character
+    
+    function type() {
+        if (index < text.length) {
+            element.textContent = text.substring(0, index + 1);
+            index++;
+            setTimeout(type, speed);
+        } else {
+            // Animation complete
+            element.classList.remove('typing');
+        }
+    }
+    
+    type();
 }
