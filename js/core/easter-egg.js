@@ -1,3 +1,5 @@
+import { isDevelopmentEnv } from '../utils/env.js';
+
 /**
  * Easter Egg Module
  * Handles the black hole vortex effect and Milky Way animation
@@ -406,7 +408,7 @@ async function initMilkyWay() {
     window.THREE = THREE;
   } catch (error) {
     // Three.js loading failed - gracefully degrade
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelopmentEnv()) {
       console.warn('[Easter Egg] Three.js loading failed:', error);
     }
     return;

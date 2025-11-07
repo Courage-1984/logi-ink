@@ -97,7 +97,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48-6L8_jSri.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/site-C9nXkXSk.webmanifest" />
+    <link rel="manifest" href="/assets/video/optimized/site.webmanifest" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -167,8 +167,8 @@
     <link rel="canonical" href="https://logi-ink.com/" />
 
     <!-- Main CSS -->
-    <script type="module" crossorigin src="/assets/js/main-kVTzYZua.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-B2YWwgqe.css">
+    <script type="module" crossorigin src="/assets/js/main-D1ORkO4B.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-8bR0oTP1.css">
   </head>
 
   <body>
@@ -369,6 +369,48 @@
 
       <!-- Technologies Section -->
       <section class="services-preview">
+        <!-- Video Background Overlay -->
+        <div class="section-video-background">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/assets/images/ripples-poster-BAf7uk11.jpg"
+            aria-label="Ripples background video"
+          >
+            <!-- WebM format (better compression, modern browsers) -->
+            <source
+              src="/assets/video/optimized/ripples-hq.webm"
+              type="video/webm"
+              media="(min-width: 1025px)"
+            />
+            <!-- High quality MP4 (desktop) -->
+            <source
+              src="/assets/video/optimized/ripples-hq.mp4"
+              type="video/mp4"
+              media="(min-width: 1025px)"
+            />
+            <!-- Medium quality MP4 (tablet) -->
+            <source
+              src="/assets/video/optimized/ripples-mq.mp4"
+              type="video/mp4"
+              media="(min-width: 769px)"
+            />
+            <!-- Low quality MP4 (mobile) -->
+            <source
+              src="/assets/video/optimized/ripples-lq.mp4"
+              type="video/mp4"
+            />
+            <!-- Fallback text -->
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Video Overlay (for text readability) -->
+        <div class="section-video-overlay"></div>
+
         <div class="container">
           <div class="section-header scroll-reveal-3d">
             <h2 class="section-title">Technologies We Master</h2>

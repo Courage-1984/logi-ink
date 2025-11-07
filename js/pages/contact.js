@@ -4,6 +4,7 @@
  */
 
 import { showToast } from '../utils/toast.js';
+import { isDevelopmentEnv } from '../utils/env.js';
 
 // Form state
 const formData = {};
@@ -302,7 +303,7 @@ async function handleSubmit(e) {
     showToast(errorMessage, 'error', 7000);
 
     // Log error for debugging (only in development)
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelopmentEnv()) {
       console.error('[Contact Form] Submission error:', error);
     }
 

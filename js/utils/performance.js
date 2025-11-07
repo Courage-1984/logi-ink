@@ -3,6 +3,8 @@
  * Tracks Web Vitals and performance metrics
  */
 
+import { isDevelopmentEnv } from './env.js';
+
 /**
  * Track Web Vitals (LCP, FID, CLS)
  * These are Core Web Vitals metrics that Google uses for search rankings
@@ -20,7 +22,7 @@ export function trackWebVitals() {
       const lcpValue = lastEntry.renderTime || lastEntry.loadTime;
 
       // Log LCP (you can send to analytics here)
-      if (process.env.NODE_ENV === 'development') {
+      if (isDevelopmentEnv()) {
         console.log('📊 LCP (Largest Contentful Paint):', lcpValue.toFixed(2), 'ms');
       }
 
@@ -37,7 +39,7 @@ export function trackWebVitals() {
     lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
   } catch (error) {
     // PerformanceObserver not supported or error
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelopmentEnv()) {
       console.warn('LCP tracking not available:', error);
     }
   }
@@ -54,7 +56,7 @@ export function trackWebVitals() {
       }
 
       // Log CLS (you can send to analytics here)
-      if (process.env.NODE_ENV === 'development') {
+      if (isDevelopmentEnv()) {
         console.log('📊 CLS (Cumulative Layout Shift):', clsValue.toFixed(4));
       }
 
@@ -70,7 +72,7 @@ export function trackWebVitals() {
 
     clsObserver.observe({ entryTypes: ['layout-shift'] });
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelopmentEnv()) {
       console.warn('CLS tracking not available:', error);
     }
   }
@@ -82,7 +84,7 @@ export function trackWebVitals() {
         const fid = entry.processingStart - entry.startTime;
 
         // Log FID (you can send to analytics here)
-        if (process.env.NODE_ENV === 'development') {
+        if (isDevelopmentEnv()) {
           console.log('📊 FID (First Input Delay):', fid.toFixed(2), 'ms');
         }
 
@@ -99,7 +101,7 @@ export function trackWebVitals() {
 
     fidObserver.observe({ entryTypes: ['first-input'] });
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelopmentEnv()) {
       console.warn('FID tracking not available:', error);
     }
   }
@@ -133,7 +135,7 @@ export function trackPageLoad() {
           loadTime: navigation.loadEventEnd - navigation.fetchStart,
         };
 
-        if (process.env.NODE_ENV === 'development') {
+        if (isDevelopmentEnv()) {
           console.log('📊 Page Load Metrics:', metrics);
         }
 

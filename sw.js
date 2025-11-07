@@ -131,6 +131,11 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Skip range requests (e.g., media seeking) to avoid caching partial responses
+  if (request.headers.has('range')) {
+    return;
+  }
+
   // Skip cross-origin requests (except for same-origin)
   if (url.origin !== location.origin) {
     return;
@@ -170,7 +175,7 @@ async function cacheFirst(request) {
 
   try {
     const response = await fetch(request);
-    if (response.ok) {
+    if (response && response.status === 200) {
       // Cache all successful responses
       cache.put(request, response.clone());
       console.log('[Service Worker] Cached:', request.url);
@@ -208,7 +213,7 @@ async function networkFirst(request) {
 
   try {
     const response = await fetch(request);
-    if (response.ok) {
+    if (response && response.status === 200) {
       cache.put(request, response.clone());
     }
     return response;
@@ -235,7 +240,7 @@ async function staleWhileRevalidate(request) {
   // Update cache in background (don't wait)
   const fetchPromise = fetch(request)
     .then(response => {
-      if (response.ok) {
+      if (response && response.status === 200) {
         cache.put(request, response.clone());
         console.log('[Service Worker] Updated cache:', request.url);
       }

@@ -3,6 +3,8 @@
  * Provides centralized error handling and logging
  */
 
+import { isDevelopmentEnv, isProductionEnv } from './env.js';
+
 /**
  * Handle JavaScript errors globally
  */
@@ -48,13 +50,13 @@ function handleError(errorInfo) {
   const { message, error, type } = errorInfo;
 
   // Log error in development
-  if (process.env.NODE_ENV === 'development') {
+  if (isDevelopmentEnv()) {
     console.error(`[Error Handler] ${type}:`, message, error);
   }
 
   // In production, you can send errors to a logging service
   // Example: Send to Sentry, LogRocket, or your own logging endpoint
-  if (process.env.NODE_ENV === 'production') {
+  if (isProductionEnv()) {
     // Uncomment and configure your error tracking service
     // sendToErrorTracking(errorInfo);
   }

@@ -1,3 +1,5 @@
+import { isDevelopmentEnv } from '../utils/env.js';
+
 /**
  * Service Worker Registration
  * Registers service worker and handles updates
@@ -25,7 +27,7 @@ export function registerServiceWorker() {
         .register(swPath)
         .then(reg => {
           registration = reg;
-          if (process.env.NODE_ENV === 'development') {
+          if (isDevelopmentEnv()) {
             console.log('[Service Worker] Registered:', reg.scope);
           }
 
@@ -44,7 +46,7 @@ export function registerServiceWorker() {
         })
         .catch(error => {
           // Service worker registration failed - site still works without it
-          if (process.env.NODE_ENV === 'development') {
+          if (isDevelopmentEnv()) {
             console.error('[Service Worker] Registration failed:', error);
           }
           // In production, fail silently - site works without service worker
@@ -52,7 +54,7 @@ export function registerServiceWorker() {
     });
   } catch (error) {
     // Service worker initialization failed - gracefully degrade
-    if (process.env.NODE_ENV === 'development') {
+    if (isDevelopmentEnv()) {
       console.error('[Service Worker] Initialization failed:', error);
     }
   }

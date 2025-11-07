@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import { visualizer } from 'rollup-plugin-visualizer';
 import viteImagemin from 'vite-plugin-imagemin';
 import viteCompression from 'vite-plugin-compression';
-import { copyFileSync, existsSync } from 'fs';
+import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'fs';
 
 export default defineConfig({
   // Base path for deployment
@@ -88,6 +88,10 @@ export default defineConfig({
           if (/woff2?|eot|ttf|otf/i.test(ext)) {
             return `assets/fonts/[name]-[hash][extname]`;
           }
+          // Video files - keep original names (already optimized)
+          if (/mp4|webm|ogg|mov|avi/i.test(ext)) {
+            return `assets/video/optimized/[name][extname]`;
+          }
           return `assets/[name]-[hash][extname]`;
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -163,6 +167,38 @@ export default defineConfig({
             console.log(`✅ Copied ${file} to dist/`);
           }
         });
+      },
+    },
+    // Custom plugin to copy optimized video files
+    {
+      name: 'copy-videos',
+      writeBundle() {
+        const videoDir = resolve(__dirname, 'assets/video/optimized');
+        const distVideoDir = resolve(__dirname, 'dist/assets/video/optimized');
+
+        // Create dist video directory if it doesn't exist
+        if (!existsSync(distVideoDir)) {
+          mkdirSync(distVideoDir, { recursive: true });
+        }
+
+        // Copy all files from optimized video directory
+        if (existsSync(videoDir)) {
+          const files = readdirSync(videoDir);
+          files.forEach(file => {
+            const src = resolve(videoDir, file);
+            const dest = resolve(distVideoDir, file);
+            const stats = statSync(src);
+
+            // Only copy files (not directories)
+            if (stats.isFile()) {
+              copyFileSync(src, dest);
+              const sizeMB = (stats.size / (1024 * 1024)).toFixed(2);
+              console.log(`✅ Copied ${file} to dist/assets/video/optimized/ (${sizeMB} MB)`);
+            }
+          });
+        } else {
+          console.warn('⚠️  Video directory not found: assets/video/optimized');
+        }
       },
     },
     // Image optimization plugin

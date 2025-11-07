@@ -108,10 +108,14 @@ logia-ink/
 │   │   ├── easter-egg.js
 │   │   ├── page-transitions.js
 │   │   └── service-worker.js
-│   ├── utils/            # Utility modules (3 files)
+│   ├── utils/            # Utility modules (7 files)
 │   │   ├── interactions.js
 │   │   ├── toast.js
-│   │   └── accessibility.js
+│   │   ├── accessibility.js
+│   │   ├── error-handler.js
+│   │   ├── performance.js
+│   │   ├── three-loader.js
+│   │   └── env.js
 │   └── pages/            # Page-specific scripts (2 files)
 │       ├── contact.js
 │       └── services.js
@@ -258,13 +262,14 @@ js/
 │   ├── page-transitions.js # ✅ EXISTS - Page transition animations
 │   ├── service-worker.js # ✅ EXISTS - Service worker registration and updates
 │   └── three-hero.js     # ✅ EXISTS - Three.js hero background animations (different per page)
-├── utils/                # ✅ EXISTS - Utility modules (6 files)
+├── utils/                # ✅ EXISTS - Utility modules (7 files)
 │   ├── interactions.js   # ✅ EXISTS - Button hover effects, card interactions
 │   ├── toast.js          # ✅ EXISTS - Toast notification system
 │   ├── accessibility.js  # ✅ EXISTS - Accessibility utilities (focus management, ARIA announcements)
 │   ├── error-handler.js  # ✅ EXISTS - Centralized error handling and logging
 │   ├── performance.js    # ✅ EXISTS - Web Vitals tracking and performance monitoring
-│   └── three-loader.js   # ✅ EXISTS - Dynamic Three.js loader with SRI support
+│   ├── three-loader.js   # ✅ EXISTS - Dynamic Three.js loader with SRI support
+│   └── env.js            # ✅ EXISTS - Environment detection helpers (browser-safe)
 └── pages/                # ✅ EXISTS - Page-specific modules (2 files)
     ├── contact.js        # ✅ EXISTS - Contact form handling
     └── services.js        # ✅ EXISTS - Service modals handling

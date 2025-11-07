@@ -1,14 +1,66 @@
 /**
  * Cards Component
  * Service cards, project cards, icons, and all card-related styles
- * 
+ *
  * Extracted from styles.css (lines: 558-792)
  */
 
 /* Services Section */
 .services-preview {
+  position: relative;
   background: var(--bg-secondary);
   padding-top: 3rem !important;
+  overflow: hidden;
+}
+
+/* Section Video Background Overlay */
+.section-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section-video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  /* Ensure video covers entire area */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Section Video Overlay (for text readability) */
+.section-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.7) 0%,
+    rgba(26, 26, 46, 0.6) 50%,
+    rgba(22, 33, 62, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure content is above video and overlay */
+.services-preview .container {
+  position: relative;
+  z-index: 2;
 }
 
 .services-grid {
