@@ -7,28 +7,27 @@
 
 /* Breadcrumbs */
 .breadcrumbs {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .breadcrumbs a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .breadcrumbs a:hover {
-    color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 .breadcrumbs span {
-    color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 .breadcrumbs .separator {
-    color: var(--text-muted);
+  color: var(--text-muted);
 }
-

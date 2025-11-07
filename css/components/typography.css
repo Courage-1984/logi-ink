@@ -7,139 +7,135 @@
 
 /* Code Block Styling */
 code {
-    background: rgba(0, 255, 255, 0.1);
-    color: var(--accent-cyan);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    border: 1px solid rgba(0, 255, 255, 0.2);
+  background: rgba(0, 255, 255, 0.1);
+  color: var(--accent-cyan);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  border: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 pre {
-    background: var(--bg-secondary);
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 1.5rem;
-    overflow-x: auto;
-    margin: 1.5rem 0;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
 }
 
 pre code {
-    background: transparent;
-    padding: 0;
-    border: none;
-    color: var(--text-primary);
-    display: block;
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: var(--text-primary);
+  display: block;
 }
 
 /* Blockquote Styling */
 blockquote {
-    border-left: 4px solid var(--accent-cyan);
-    padding-left: 2rem;
-    margin: 2rem 0;
-    font-style: italic;
-    color: var(--text-secondary);
-    background: rgba(0, 255, 255, 0.05);
-    padding: 1.5rem 2rem;
-    border-radius: 5px;
-    position: relative;
+  border-left: 4px solid var(--accent-cyan);
+  padding-left: 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: rgba(0, 255, 255, 0.05);
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  position: relative;
 }
 
 blockquote::before {
-    content: '"';
-    font-size: 4rem;
-    color: var(--accent-cyan);
-    position: absolute;
-    left: 0.5rem;
-    top: 0;
-    opacity: 0.3;
-    font-family: serif;
+  content: '"';
+  font-size: 4rem;
+  color: var(--accent-cyan);
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  opacity: 0.3;
+  font-family: serif;
 }
 
 /* List Styling Enhancements */
 ul:not(.nav-menu):not(.tab-list) li::marker {
-    color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 ol li::marker {
-    color: var(--accent-cyan);
-    font-weight: 700;
+  color: var(--accent-cyan);
+  font-weight: 700;
 }
 
 /* Definition List */
 dl {
-    margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 dt {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    color: var(--accent-cyan);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 dd {
-    margin-left: 2rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
+  margin-left: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
 }
 
 /* Highlight/Mark */
 mark {
-    background: rgba(0, 255, 255, 0.2);
-    color: var(--accent-cyan);
-    padding: 0.1rem 0.3rem;
-    border-radius: 3px;
+  background: rgba(0, 255, 255, 0.2);
+  color: var(--accent-cyan);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
 }
 
 /* Keyboard Keys */
 kbd {
-    background: var(--bg-secondary);
-    border: 1px solid var(--accent-cyan);
-    border-radius: 4px;
-    padding: 0.2rem 0.5rem;
-    font-family: 'Courier New', monospace;
-    font-size: 0.875rem;
-    color: var(--accent-cyan);
-    box-shadow: 0 2px 0 rgba(0, 255, 255, 0.3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--accent-cyan);
+  box-shadow: 0 2px 0 rgba(0, 255, 255, 0.3);
 }
 
 /* Abbreviation */
 abbr {
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: var(--accent-cyan);
-    cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--accent-cyan);
+  cursor: help;
 }
 
 /* Small Text */
 small {
-    font-size: 0.875rem;
-    color: var(--text-muted);
+  font-size: 0.875rem;
+  color: var(--text-muted);
 }
 
 /* Strong/Bold */
 strong {
-    font-weight: 700;
-    color: var(--text-primary);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 /* Emphasis/Italic */
 em {
-    font-style: italic;
-    color: var(--text-secondary);
+  font-style: italic;
+  color: var(--text-secondary);
 }
 
 /* Horizontal Rule */
 hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg,
-            transparent,
-            var(--accent-cyan),
-            transparent);
-    margin: 3rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  margin: 3rem 0;
 }
-

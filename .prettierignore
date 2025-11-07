@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Legacy files
+css/legacy/
+js/legacy/
+
+# Test files
+test-*.html
+
+# Documentation
+docs/
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.avif
+*.svg
+*.ico
+
+# Fonts
+*.woff
+*.woff2
+*.ttf
+*.otf
+*.eot
+
+# Stats
+stats.html
+

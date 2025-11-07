@@ -1,24 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logi-Ink - Digital Innovation & Creative Solutions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="apple-touch-icon" sizes="180x180" href="/logia-ink/assets/images/apple-touch-icon-PoLbYIIy.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/logia-ink/assets/images/favicon-32x32-YFpfnYRe.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/logia-ink/assets/images/favicon-16x16-TejiH9Rp.png">
-    <link rel="manifest" href="/logia-ink/assets/site-BwHFeIBa.webmanifest">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-  <script type="module" crossorigin src="/logia-ink/assets/js/main-hX8F74Zr.js"></script>
-  <link rel="stylesheet" crossorigin href="/logia-ink/assets/main-BrERpJZ_.css">
-</head>
 
-<body>
+    <!-- Security Headers -->
+    <!-- Note: X-Frame-Options only works via HTTP headers, not meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Logi-Ink is a digital innovation agency specializing in creative solutions, web development, and digital transformation. We bring your vision to life with cutting-edge technology and stunning design."
+    />
+    <meta
+      name="keywords"
+      content="digital agency, web development, creative solutions, digital innovation, web design, branding, digital transformation"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://logi-ink.com/" />
+    <meta property="og:title" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta
+      property="og:description"
+      content="Logi-Ink is a digital innovation agency specializing in creative solutions, web development, and digital transformation."
+    />
+    <meta
+      property="og:image"
+      content="https://logi-ink.com/assets/images/banners/banner_home.webp"
+    />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://logi-ink.com/" />
+    <meta name="twitter:title" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta
+      name="twitter:description"
+      content="Logi-Ink is a digital innovation agency specializing in creative solutions, web development, and digital transformation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://logi-ink.com/assets/images/banners/banner_home.webp"
+    />
+    <meta name="twitter:site" content="@logiink" />
+    <meta name="twitter:creator" content="@logiink" />
+
+    <!-- Preload critical resources -->
+
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/banner_home-Cph91jo0.webp"
+      fetchpriority="high"
+    />
+
+    <!-- Preload critical fonts (self-hosted WOFF2 - Subsetted) -->
+    <link
+      rel="preload"
+      href="data:font/woff2;base64,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"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Rajdhani-Regular-subset-eAD4TeI1.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
+
+    <!-- Prefetch likely next pages -->
+    <link rel="prefetch" href="/assets/about-C44ZCgaJ.html" />
+    <link rel="prefetch" href="/assets/services-BNHoZSW9.html" />
+    <link rel="prefetch" href="/assets/projects-CHQ-wero.html" />
+    <link rel="prefetch" href="/assets/contact-CK6q5stb.html" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site-B0V2IM4o.webmanifest" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Logi-Ink",
+        "alternateName": "Logi Ink",
+        "url": "https://logi-ink.com/",
+        "logo": "https://logi-ink.com/logo.png",
+        "description": "Digital Innovation & Creative Solutions - A digital agency specializing in web development, design, and digital transformation.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "contact@logi-ink.com"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Logi-Ink",
+        "url": "https://logi-ink.com/",
+        "description": "Digital Innovation & Creative Solutions - A digital agency specializing in web development, design, and digital transformation.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Logi-Ink"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://logi-ink.com/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Main CSS -->
+    <script type="module" crossorigin src="/assets/js/main-DAqLee6q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-ge28Vawv.css">
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ARIA Live Region for announcements -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress"></div>
 
@@ -28,399 +156,513 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
-                </a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
+          </a>
         </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <main id="main-content">
+      <section class="hero">
         <div class="hero-background">
-            <!-- Three.js Canvas for Hero Background -->
-            <canvas id="threejs-hero-canvas" class="threejs-canvas"></canvas>
-            <div class="grid-overlay"></div>
-            <div class="particles"></div>
-            <!-- Fluid Shapes -->
-            <div class="fluid-shape fluid-shape-1"></div>
-            <div class="fluid-shape fluid-shape-2"></div>
-            <div class="fluid-shape fluid-shape-3"></div>
+          <!-- Three.js Canvas for Hero Background -->
+          <canvas id="threejs-hero-canvas" class="threejs-canvas"></canvas>
+          <div class="grid-overlay"></div>
+          <div class="particles"></div>
+          <!-- Fluid Shapes -->
+          <div class="fluid-shape fluid-shape-1"></div>
+          <div class="fluid-shape fluid-shape-2"></div>
+          <div class="fluid-shape fluid-shape-3"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="text-reveal">DIGITAL</span>
-                    <span class="text-reveal delay-1">INNOVATION</span>
-                    <span class="text-reveal delay-2">& CREATIVE</span>
-                    <span class="text-reveal delay-3">SOLUTIONS</span>
-                </h1>
-                <p class="hero-subtitle fade-in delay-4">
-                    We craft immersive digital experiences that engage, inspire, and transform your business
-                </p>
-                <div class="hero-buttons fade-in delay-5">
-                    <a href="projects.html" class="btn btn-primary">View Our Work</a>
-                    <a href="contact.html" class="btn btn-secondary">Get Started</a>
-                </div>
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="text-reveal">DIGITAL</span>
+              <span class="text-reveal delay-1">INNOVATION</span>
+              <span class="text-reveal delay-2">& CREATIVE</span>
+              <span class="text-reveal delay-3">SOLUTIONS</span>
+            </h1>
+            <p class="hero-subtitle fade-in delay-4">
+              We craft immersive digital experiences that engage, inspire, and transform your
+              business
+            </p>
+            <div class="hero-buttons fade-in delay-5">
+              <a href="projects.html" class="btn btn-primary">View Our Work</a>
+              <a href="contact.html" class="btn btn-secondary">Get Started</a>
             </div>
+          </div>
         </div>
         <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Services Preview -->
-    <section class="services-preview specialized-services-section">
+      <!-- Services Preview -->
+      <section class="services-preview specialized-services-section">
         <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">Our Specialized Services</h2>
-                <p class="section-subtitle">Cutting-edge solutions for the digital age</p>
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <p class="section-subtitle">Cutting-edge solutions for the digital age</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Web Development</h3>
+              <p>Custom websites and web applications built with modern technologies</p>
+              <a href="services.html" class="service-link">Learn More →</a>
             </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Custom websites and web applications built with modern technologies</p>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                            <path d="M9 9h6v6H9z" />
-                        </svg>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Intuitive interfaces that delight users and drive engagement</p>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                    </div>
-                    <h3>Brand Strategy</h3>
-                    <p>Strategic branding that positions you ahead of the competition</p>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Data-driven campaigns that maximize your online presence</p>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3>UI/UX Design</h3>
+              <p>Intuitive interfaces that delight users and drive engagement</p>
+              <a href="services.html" class="service-link">Learn More →</a>
             </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3>Brand Strategy</h3>
+              <p>Strategic branding that positions you ahead of the competition</p>
+              <a href="services.html" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3>Digital Marketing</h3>
+              <p>Data-driven campaigns that maximize your online presence</p>
+              <a href="services.html" class="service-link">Learn More →</a>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Featured Projects -->
-    <section class="featured-projects">
+      <!-- Featured Projects -->
+      <section class="featured-projects">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Showcasing our latest innovations</p>
+          <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Showcasing our latest innovations</p>
+          </div>
+          <div class="projects-preview">
+            <div class="project-card-large mouse-tilt-container">
+              <div class="project-image">
+                <picture>
+                  <!-- AVIF format (best compression, modern browsers) -->
+                  <source
+                    type="image/avif"
+                    srcset="/assets/images/banner_home-480w-BlSJ67wS.avif 480w, /assets/images/banner_home-768w-D1O0h7W7.avif 768w, /assets/images/banner_home-1024w-Clx0zmYs.avif 1024w, /assets/images/banner_home-1280w-BBXCH3Th.avif 1280w"
+                    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px"
+                  />
+                  <!-- WebP format (fallback for older browsers) -->
+                  <source
+                    type="image/webp"
+                    srcset="/assets/images/banner_home-480w-DbMcob2A.webp 480w, /assets/images/banner_home-768w-DaGzDs1U.webp 768w, /assets/images/banner_home-1024w-ctqnVOdg.webp 1024w, /assets/images/banner_home-1280w-DvmZH9OR.webp 1280w"
+                    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px"
+                  />
+                  <!-- Original format (final fallback) -->
+                  <img
+                    src="/assets/images/banner_home-Cph91jo0.webp"
+                    fetchpriority="high"
+                    loading="eager"
+                    alt="Web Development Transforming Digital Experiences"
+                  />
+                </picture>
+                <div class="project-overlay project-card-large-overlay"></div>
+                <div class="project-tag">Latest</div>
+              </div>
+              <div class="project-content">
+                <span class="project-category">Web Development</span>
+                <h3>Transforming Digital Experiences</h3>
+                <p>
+                  Revolutionary platform that merges cutting-edge technology with intuitive design
+                </p>
+                <a href="projects.html" class="btn btn-outline">View Case Study →</a>
+              </div>
             </div>
-            <div class="projects-preview">
-                <div class="project-card-large mouse-tilt-container">
-                    <div class="project-image">
-                        <picture>
-                            <source type="image/webp" srcset="/logia-ink/assets/images/banner_home-480w-DbMcob2A.webp 480w, /logia-ink/assets/images/banner_home-768w-DaGzDs1U.webp 768w, /logia-ink/assets/images/banner_home-1024w-ctqnVOdg.webp 1024w, /logia-ink/assets/images/banner_home-1280w-DvmZH9OR.webp 1280w"
-                                sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px">
-                            <img src="/logia-ink/assets/images/banner_home-Cph91jo0.webp"
-                                alt="Web Development Transforming Digital Experiences" loading="lazy" />
-                        </picture>
-                        <div class="project-overlay"></div>
-                        <div class="project-tag">Latest</div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-category">Web Development</span>
-                        <h3>Transforming Digital Experiences</h3>
-                        <p>Revolutionary platform that merges cutting-edge technology with intuitive design</p>
-                        <a href="projects.html" class="btn btn-outline">View Case Study →</a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Technologies Section -->
-    <section class="services-preview">
+      <!-- Technologies Section -->
+      <section class="services-preview">
         <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">Technologies We Master</h2>
-                <p class="section-subtitle">Cutting-edge tools and frameworks for modern development</p>
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Technologies We Master</h2>
+            <p class="section-subtitle">Cutting-edge tools and frameworks for modern development</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Frontend</h3>
+              <p>React, Vue.js, Angular, Next.js, TypeScript, Tailwind CSS</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <h3>Frontend</h3>
-                    <p>React, Vue.js, Angular, Next.js, TypeScript, Tailwind CSS</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                            <path d="M9 9h6v6H9z" />
-                        </svg>
-                    </div>
-                    <h3>Backend</h3>
-                    <p>Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3>Mobile</h3>
-                    <p>React Native, Flutter, Swift, Kotlin, iOS, Android</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                            <line x1="12" y1="22.08" x2="12" y2="12" />
-                        </svg>
-                    </div>
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS, Azure, Docker, Kubernetes, CI/CD, Terraform</p>
-                </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3>Backend</h3>
+              <p>Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL</p>
             </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3>Mobile</h3>
+              <p>React Native, Flutter, Swift, Kotlin, iOS, Android</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3>Cloud & DevOps</h3>
+              <p>AWS, Azure, Docker, Kubernetes, CI/CD, Terraform</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Testimonials Section -->
-    <section class="featured-projects testimonials-section">
+      <!-- Testimonials Section -->
+      <section class="featured-projects testimonials-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Client Testimonials</h2>
-                <p class="section-subtitle">What our clients say about working with us</p>
+          <div class="section-header">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle">What our clients say about working with us</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d">
+              <div style="margin-bottom: 1.5rem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="var(--accent-cyan)"
+                  width="40"
+                  height="40"
+                  style="opacity: 0.5"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                "
+              >
+                "Logi-Ink transformed our digital presence completely. Their expertise and attention
+                to detail exceeded all expectations."
+              </p>
+              <div>
+                <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem">Sarah Johnson</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem">CEO, TechStart Inc.</p>
+              </div>
             </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div style="margin-bottom: 1.5rem;">
-                        <svg viewBox="0 0 24 24" fill="var(--accent-cyan)" width="40" height="40" style="opacity: 0.5;">
-                            <path
-                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
-                    </div>
-                    <p
-                        style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
-                        "Logi-Ink transformed our digital presence completely. Their expertise and attention to detail
-                        exceeded all expectations."
-                    </p>
-                    <div>
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Sarah Johnson</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">CEO, TechStart Inc.</p>
-                    </div>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div style="margin-bottom: 1.5rem;">
-                        <svg viewBox="0 0 24 24" fill="var(--accent-magenta)" width="40" height="40"
-                            style="opacity: 0.5;">
-                            <path
-                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
-                    </div>
-                    <p
-                        style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
-                        "Outstanding work from start to finish. The team's creative approach and technical expertise
-                        delivered remarkable results."
-                    </p>
-                    <div>
-                        <h4 style="color: var(--accent-magenta); margin-bottom: 0.5rem;">Michael Chen</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Founder, Digital Ventures</p>
-                    </div>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div style="margin-bottom: 1.5rem;">
-                        <svg viewBox="0 0 24 24" fill="var(--accent-green)" width="40" height="40"
-                            style="opacity: 0.5;">
-                            <path
-                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
-                    </div>
-                    <p
-                        style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
-                        "Professional, innovative, and results-driven. Logi-Ink helped us achieve our goals and more."
-                    </p>
-                    <div>
-                        <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">Emma Rodriguez</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Marketing Director, Global Brands</p>
-                    </div>
-                </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div style="margin-bottom: 1.5rem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="var(--accent-magenta)"
+                  width="40"
+                  height="40"
+                  style="opacity: 0.5"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                "
+              >
+                "Outstanding work from start to finish. The team's creative approach and technical
+                expertise delivered remarkable results."
+              </p>
+              <div>
+                <h4 style="color: var(--accent-magenta); margin-bottom: 0.5rem">Michael Chen</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem">Founder, Digital Ventures</p>
+              </div>
             </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div style="margin-bottom: 1.5rem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="var(--accent-green)"
+                  width="40"
+                  height="40"
+                  style="opacity: 0.5"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                "
+              >
+                "Professional, innovative, and results-driven. Logi-Ink helped us achieve our goals
+                and more."
+              </p>
+              <div>
+                <h4 style="color: var(--accent-green); margin-bottom: 0.5rem">Emma Rodriguez</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem">
+                  Marketing Director, Global Brands
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Stats Section -->
-    <section class="services-preview">
+      <!-- Stats Section -->
+      <section class="services-preview">
         <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">Our Impact</h2>
-                <p class="section-subtitle">Numbers that speak for themselves</p>
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Our Impact</h2>
+            <p class="section-subtitle">Numbers that speak for themselves</p>
+          </div>
+          <div class="services-grid">
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-cyan"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-cyan);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="150"
+                data-suffix="+"
+              >
+                0
+              </div>
+              <h3>Projects Delivered</h3>
+              <p style="color: var(--text-secondary)">
+                Successfully completed projects across various industries
+              </p>
             </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d impact-card-cyan" style="text-align: center;">
-                    <div class="count-number"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-cyan); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;"
-                        data-target="150" data-suffix="+">
-                        0
-                    </div>
-                    <h3>Projects Delivered</h3>
-                    <p style="color: var(--text-secondary);">Successfully completed projects across various industries
-                    </p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d impact-card-magenta" style="text-align: center;">
-                    <div class="count-number"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-magenta); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;"
-                        data-target="98" data-suffix="%">
-                        0
-                    </div>
-                    <h3>Client Satisfaction</h3>
-                    <p style="color: var(--text-secondary);">Clients who would recommend us to others</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d impact-card-green" style="text-align: center;">
-                    <div class="count-number"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-green); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;"
-                        data-target="50" data-suffix="+">
-                        0
-                    </div>
-                    <h3>Happy Clients</h3>
-                    <p style="color: var(--text-secondary);">Long-term partnerships built on trust and results</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d impact-card-blue" style="text-align: center;">
-                    <div class="count-number"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-blue); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;"
-                        data-target="5" data-suffix="+">
-                        0
-                    </div>
-                    <h3>Years Experience</h3>
-                    <p style="color: var(--text-secondary);">Delivering excellence in digital innovation</p>
-                </div>
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-magenta"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-magenta);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="98"
+                data-suffix="%"
+              >
+                0
+              </div>
+              <h3>Client Satisfaction</h3>
+              <p style="color: var(--text-secondary)">Clients who would recommend us to others</p>
             </div>
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-green"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-green);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="50"
+                data-suffix="+"
+              >
+                0
+              </div>
+              <h3>Happy Clients</h3>
+              <p style="color: var(--text-secondary)">
+                Long-term partnerships built on trust and results
+              </p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-blue"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-blue);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="5"
+                data-suffix="+"
+              >
+                0
+              </div>
+              <h3>Years Experience</h3>
+              <p style="color: var(--text-secondary)">
+                Delivering excellence in digital innovation
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+      <!-- CTA Section -->
+      <section class="cta-section">
         <!-- Top Curved Divider -->
         <div class="portal-divider portal-divider-top">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:var(--bg-secondary);stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:var(--bg-secondary);stop-opacity:0" />
-                    </linearGradient>
-                </defs>
-                <path d="M0,120 Q360,0 720,60 T1440,120 L1440,0 L0,0 Z" fill="url(#topGradient)" />
-            </svg>
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+              </linearGradient>
+            </defs>
+            <path d="M0,120 Q360,0 720,60 T1440,120 L1440,0 L0,0 Z" fill="url(#topGradient)" />
+          </svg>
         </div>
 
         <!-- Portal Glow Effect -->
         <div class="portal-glow"></div>
 
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Digital Presence?</h2>
-                <p>Let's collaborate on your next big idea</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
-            </div>
+          <div class="cta-content">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's collaborate on your next big idea</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
+          </div>
         </div>
 
         <!-- Bottom Curved Divider -->
         <div class="portal-divider portal-divider-bottom">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:var(--bg-secondary);stop-opacity:0" />
-                        <stop offset="100%" style="stop-color:var(--bg-secondary);stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <path d="M0,0 Q360,120 720,60 T1440,0 L1440,120 L0,120 Z" fill="url(#bottomGradient)" />
-            </svg>
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+                <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+              </linearGradient>
+            </defs>
+            <path d="M0,0 Q360,120 720,60 T1440,0 L1440,120 L0,120 Z" fill="url(#bottomGradient)" />
+          </svg>
         </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>LOG<span class="logo-accent">I</span>-INK</h3>
-                    <p>Digital innovation and creative solutions for the future.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#" target="_blank">LinkedIn</a></li>
-                        <li><a href="#" target="_blank">Twitter</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Logi-Ink. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>LOG<span class="logo-accent">I</span>-INK</h3>
+            <p>Digital innovation and creative solutions for the future.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+              <li><a href="#" target="_blank">Twitter</a></li>
+              <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Logi-Ink. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to top"></a>
 
-    <!-- Three.js CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</body>
-
+    <!-- Three.js CDN (async loading) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" async></script>
+  </body>
 </html>

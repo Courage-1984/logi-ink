@@ -7,20 +7,19 @@
 
 /* Empty State */
 .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--text-secondary);
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
 }
 
 .empty-state-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    opacity: 0.5;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
 }
 
 .empty-state h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--accent-cyan);
-    margin-bottom: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
 }
-

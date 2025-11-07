@@ -13,24 +13,24 @@
 
 /* Card 3D Effect */
 .card-3d {
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
 /* Only apply hover transform if mouse-tilt is not active (fallback for non-JS) */
 .card-3d:not(.mouse-tilt-container):hover {
-    transform: perspective(1000px) rotateY(5deg) rotateX(-5deg) translateZ(20px);
+  transform: perspective(1000px) rotateY(5deg) rotateX(-5deg) translateZ(20px);
 }
 
 /* Service Card 3D Effect - only sets transform-style, hover is in cards.css */
 .service-card {
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 /* Project Card 3D Effect - only sets transform-style, hover is in cards.css */
 .project-card-large,
 .project-card {
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 /* ============================================
@@ -39,20 +39,20 @@
 
 /* Float 3D Utility */
 .float-3d {
-    animation: float3D 6s ease-in-out infinite;
-    transform-style: preserve-3d;
+  animation: float3D 6s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
 
 /* Tilt 3D Utility */
 .tilt-3d {
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
 }
 
 /* Mouse Tilt Container */
 .mouse-tilt-container {
-    transform-style: preserve-3d;
-    transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
 }
 
 /* ============================================
@@ -61,13 +61,12 @@
 
 /* Scroll Reveal 3D Effect */
 .scroll-reveal-3d {
-    opacity: 0;
-    transform: perspective(1000px) rotateX(90deg) translateZ(100px);
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+  transform: perspective(1000px) rotateX(90deg) translateZ(100px);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .scroll-reveal-3d.visible {
-    opacity: 1;
-    transform: perspective(1000px) rotateX(0deg) translateZ(0px);
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translateZ(0px);
 }
-

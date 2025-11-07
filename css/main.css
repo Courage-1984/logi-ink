@@ -8,6 +8,9 @@
 /* 1. Variables - Must come first */
 @import url('./variables.css');
 
+/* 1.5. Fonts - Self-hosted fonts (@font-face declarations) */
+@import url('./fonts.css');
+
 /* 2. Base Styles */
 @import url('./base.css');
 
@@ -23,6 +26,7 @@
 @import url('./components/back-to-top.css');
 @import url('./components/modals.css');
 @import url('./components/alerts.css');
+@import url('./components/service-worker.css');
 @import url('./components/badges.css');
 @import url('./components/tables.css');
 @import url('./components/tabs.css');

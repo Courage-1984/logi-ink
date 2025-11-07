@@ -7,40 +7,39 @@
 
 /* Badge Base */
 .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid var(--accent-cyan);
-    color: var(--accent-cyan);
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 /* Badge Color Variants */
 .badge-magenta {
-    background: rgba(255, 0, 255, 0.1);
-    border-color: var(--accent-magenta);
-    color: var(--accent-magenta);
+  background: rgba(255, 0, 255, 0.1);
+  border-color: var(--accent-magenta);
+  color: var(--accent-magenta);
 }
 
 .badge-green {
-    background: rgba(0, 255, 0, 0.1);
-    border-color: var(--accent-green);
-    color: var(--accent-green);
+  background: rgba(0, 255, 0, 0.1);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
 }
 
 .badge-blue {
-    background: rgba(0, 102, 255, 0.1);
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
+  background: rgba(0, 102, 255, 0.1);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
 }
 
 .badge-pink {
-    background: rgba(255, 0, 128, 0.1);
-    border-color: var(--accent-pink);
-    color: var(--accent-pink);
+  background: rgba(255, 0, 128, 0.1);
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
 }
-

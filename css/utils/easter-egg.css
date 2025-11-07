@@ -5,52 +5,55 @@
 
 /* Black Hole Vortex Container */
 .easter-egg-vortex {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
 
 .easter-egg-vortex.active {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Vortex Effect - Sucking everything into center */
 .easter-egg-vortex::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, 
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.7) 30%,
-        rgba(0, 0, 0, 0.5) 60%,
-        rgba(0, 0, 0, 0) 100%);
-    transform: translate(-50%, -50%);
-    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1),
-                height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 30%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translate(-50%, -50%);
+  transition:
+    width 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .easter-egg-vortex.active::before {
-    width: 200vmax;
-    height: 200vmax;
+  width: 200vmax;
+  height: 200vmax;
 }
 
 /* Page content being sucked into galaxy vortex */
 body.easter-egg-active {
-    overflow: hidden !important;
-    position: fixed !important;
-    width: 100% !important;
-    height: 100% !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Hide all page content when Milky Way is active - including navbar, scroll buttons, cursor effects, sections, etc */
@@ -72,9 +75,10 @@ body.easter-egg-active .grid-overlay,
 body.easter-egg-active .particles,
 body.easter-egg-active .fluid-shape,
 body.easter-egg-active .scroll-indicator,
-body.easter-egg-active > *:not(.easter-egg-vortex):not(.milky-way-scene):not(.milky-way-menu):not(.milky-way-loading) {
-    animation: galaxyVortexDelete 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform-origin: center center;
+body.easter-egg-active
+  > *:not(.easter-egg-vortex):not(.milky-way-scene):not(.milky-way-menu):not(.milky-way-loading) {
+  animation: galaxyVortexDelete 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: center center;
 }
 
 /* After animation, hide everything completely */
@@ -96,116 +100,117 @@ body.easter-egg-active.milky-way-ready .grid-overlay,
 body.easter-egg-active.milky-way-ready .particles,
 body.easter-egg-active.milky-way-ready .fluid-shape,
 body.easter-egg-active.milky-way-ready .scroll-indicator,
-body.easter-egg-active.milky-way-ready > *:not(.easter-egg-vortex):not(.milky-way-scene):not(.milky-way-menu):not(.milky-way-loading) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+body.easter-egg-active.milky-way-ready
+  > *:not(.easter-egg-vortex):not(.milky-way-scene):not(.milky-way-menu):not(.milky-way-loading) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Hide vortex when Milky Way is ready so it doesn't block interaction */
 body.easter-egg-active.milky-way-ready .easter-egg-vortex {
-    opacity: 0 !important;
-    pointer-events: none !important;
-    z-index: -1 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
 }
 
 @keyframes galaxyVortexDelete {
-    0% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-        filter: blur(0px);
-    }
-    30% {
-        transform: scale(0.9) rotate(180deg);
-        opacity: 0.9;
-        filter: blur(2px);
-    }
-    60% {
-        transform: scale(0.5) rotate(360deg);
-        opacity: 0.5;
-        filter: blur(5px);
-    }
-    100% {
-        transform: scale(0) rotate(720deg);
-        opacity: 0;
-        filter: blur(10px);
-    }
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  30% {
+    transform: scale(0.9) rotate(180deg);
+    opacity: 0.9;
+    filter: blur(2px);
+  }
+  60% {
+    transform: scale(0.5) rotate(360deg);
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+  100% {
+    transform: scale(0) rotate(720deg);
+    opacity: 0;
+    filter: blur(10px);
+  }
 }
 
 /* Milky Way Scene Container */
 .milky-way-scene {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 99998 !important;
-    opacity: 0;
-    pointer-events: none;
-    background: transparent !important; /* Transparent background, not black */
-    transition: opacity 1s ease-in 1.5s;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99998 !important;
+  opacity: 0;
+  pointer-events: none;
+  background: transparent !important; /* Transparent background, not black */
+  transition: opacity 1s ease-in 1.5s;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
 .milky-way-scene.active {
-    opacity: 1 !important;
-    pointer-events: all !important;
-    display: block !important;
-    z-index: 99999 !important; /* Higher than vortex to ensure it's on top */
-    background: transparent !important; /* Remove dark background */
+  opacity: 1 !important;
+  pointer-events: all !important;
+  display: block !important;
+  z-index: 99999 !important; /* Higher than vortex to ensure it's on top */
+  background: transparent !important; /* Remove dark background */
 }
 
 .milky-way-scene canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-    cursor: crosshair;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
 }
 
 /* Show cursor in Milky Way */
 body.easter-egg-active.milky-way-ready {
-    cursor: default !important;
+  cursor: default !important;
 }
 
 body.easter-egg-active.milky-way-ready * {
-    cursor: inherit !important;
+  cursor: inherit !important;
 }
 
 .milky-way-scene.active {
-    cursor: default !important;
+  cursor: default !important;
 }
 
 .milky-way-scene.active canvas {
-    cursor: crosshair !important;
+  cursor: crosshair !important;
 }
 
 /* CRITICAL: Override cursor: none from base styles - must be at end of file with highest specificity */
 @media (hover: hover) and (pointer: fine) {
-    /* Force show cursor in Milky Way mode */
-    body.easter-egg-active.milky-way-ready html,
-    body.easter-egg-active.milky-way-ready body,
-    body.easter-egg-active.milky-way-ready html *,
-    body.easter-egg-active.milky-way-ready body *,
-    body.easter-egg-active.milky-way-ready * {
-        cursor: default !important;
-    }
-    
-    .milky-way-scene.active,
-    .milky-way-scene.active * {
-        cursor: default !important;
-    }
-    
-    .milky-way-scene.active canvas {
-        cursor: crosshair !important;
-    }
-    
-    .milky-way-menu,
-    .milky-way-menu * {
-        cursor: pointer !important;
-    }
+  /* Force show cursor in Milky Way mode */
+  body.easter-egg-active.milky-way-ready html,
+  body.easter-egg-active.milky-way-ready body,
+  body.easter-egg-active.milky-way-ready html *,
+  body.easter-egg-active.milky-way-ready body *,
+  body.easter-egg-active.milky-way-ready * {
+    cursor: default !important;
+  }
+
+  .milky-way-scene.active,
+  .milky-way-scene.active * {
+    cursor: default !important;
+  }
+
+  .milky-way-scene.active canvas {
+    cursor: crosshair !important;
+  }
+
+  .milky-way-menu,
+  .milky-way-menu * {
+    cursor: pointer !important;
+  }
 }
 
 /* Non-media query fallback for cursor visibility */
@@ -214,116 +219,131 @@ body.easter-egg-active.milky-way-ready body,
 body.easter-egg-active.milky-way-ready html *,
 body.easter-egg-active.milky-way-ready body *,
 body.easter-egg-active.milky-way-ready * {
-    cursor: default !important;
+  cursor: default !important;
 }
 
 .milky-way-scene.active,
 .milky-way-scene.active * {
-    cursor: default !important;
+  cursor: default !important;
 }
 
 .milky-way-scene.active canvas {
-    cursor: crosshair !important;
-    pointer-events: all !important;
+  cursor: crosshair !important;
+  pointer-events: all !important;
 }
 
 .milky-way-menu,
 .milky-way-menu * {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 /* Loading Animation - Improved and perfectly centered */
 .milky-way-loading {
-    position: fixed !important;
-    top: 50vh !important;
-    left: 50vw !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 999999 !important;
-    display: none !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 2.5rem !important;
-    pointer-events: none !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  position: fixed !important;
+  top: 50vh !important;
+  left: 50vw !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 999999 !important;
+  display: none !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2.5rem !important;
+  pointer-events: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .milky-way-loading.active {
-    display: flex !important;
+  display: flex !important;
 }
 
 .milky-way-loading-spinner {
-    width: 100px !important;
-    height: 100px !important;
-    border: 5px solid rgba(0, 255, 255, 0.1) !important;
-    border-top: 5px solid var(--accent-cyan) !important;
-    border-right: 5px solid var(--accent-magenta) !important;
-    border-radius: 50% !important;
-    animation: galaxySpin 1s linear infinite !important;
-    box-shadow: 0 0 40px var(--glow-cyan), 0 0 40px var(--glow-magenta), inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
-    position: relative !important;
-    /* Remove transform: none to allow animation to work */
+  width: 100px !important;
+  height: 100px !important;
+  border: 5px solid rgba(0, 255, 255, 0.1) !important;
+  border-top: 5px solid var(--accent-cyan) !important;
+  border-right: 5px solid var(--accent-magenta) !important;
+  border-radius: 50% !important;
+  animation: galaxySpin 1s linear infinite !important;
+  box-shadow:
+    0 0 40px var(--glow-cyan),
+    0 0 40px var(--glow-magenta),
+    inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
+  position: relative !important;
+  /* Remove transform: none to allow animation to work */
 }
 
 /* Removed ::before spinner - was creating extra non-spinning spinner */
 
 .milky-way-loading-text {
-    color: var(--accent-cyan) !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-    text-shadow: 0 0 15px var(--glow-cyan), 0 0 30px var(--glow-cyan) !important;
-    animation: galaxyPulse 2s ease-in-out infinite !important;
-    letter-spacing: 4px !important;
-    text-align: center !important;
-    white-space: nowrap !important;
+  color: var(--accent-cyan) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  text-shadow:
+    0 0 15px var(--glow-cyan),
+    0 0 30px var(--glow-cyan) !important;
+  animation: galaxyPulse 2s ease-in-out infinite !important;
+  letter-spacing: 4px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
 }
 
 @keyframes galaxySpin {
-    0% {
-        transform: rotate(0deg);
-        box-shadow: 0 0 40px var(--glow-cyan), 0 0 40px var(--glow-magenta), inset 0 0 20px rgba(0, 255, 255, 0.1);
-    }
-    50% {
-        box-shadow: 0 0 60px var(--glow-cyan), 0 0 60px var(--glow-magenta), inset 0 0 30px rgba(0, 255, 255, 0.2);
-    }
-    100% {
-        transform: rotate(360deg);
-        box-shadow: 0 0 40px var(--glow-cyan), 0 0 40px var(--glow-magenta), inset 0 0 20px rgba(0, 255, 255, 0.1);
-    }
+  0% {
+    transform: rotate(0deg);
+    box-shadow:
+      0 0 40px var(--glow-cyan),
+      0 0 40px var(--glow-magenta),
+      inset 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 60px var(--glow-cyan),
+      0 0 60px var(--glow-magenta),
+      inset 0 0 30px rgba(0, 255, 255, 0.2);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow:
+      0 0 40px var(--glow-cyan),
+      0 0 40px var(--glow-magenta),
+      inset 0 0 20px rgba(0, 255, 255, 0.1);
+  }
 }
 
 @keyframes galaxyPulse {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.6;
-        transform: scale(1.1);
-    }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
 }
 
 /* Milky Way Menu (3-dot menu) - Hidden by default */
 .milky-way-menu {
-    position: fixed;
-    bottom: 2rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: auto !important;
-    right: auto !important;
-    z-index: 2147483647 !important; /* Maximum z-index for fullscreen compatibility */
-    display: none !important;
-    opacity: 0 !important;
-    transition: opacity 0.3s ease-in 2.5s;
-    pointer-events: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: visible !important; /* Changed from hidden to visible for tooltips */
+  position: fixed;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: auto !important;
+  right: auto !important;
+  z-index: 2147483647 !important; /* Maximum z-index for fullscreen compatibility */
+  display: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease-in 2.5s;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: visible !important; /* Changed from hidden to visible for tooltips */
 }
 
 /* Ensure menu shows in fullscreen mode - target the document element */
@@ -339,17 +359,17 @@ body:fullscreen .milky-way-menu,
 body:-webkit-full-screen .milky-way-menu,
 body:-moz-full-screen .milky-way-menu,
 body:-ms-fullscreen .milky-way-menu {
-    z-index: 2147483647 !important;
-    position: fixed !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
-    bottom: 2rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: auto !important;
-    right: auto !important;
+  z-index: 2147483647 !important;
+  position: fixed !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: auto !important;
+  right: auto !important;
 }
 
 :fullscreen .milky-way-menu.active,
@@ -364,283 +384,299 @@ body:fullscreen .milky-way-menu.active,
 body:-webkit-full-screen .milky-way-menu.active,
 body:-moz-full-screen .milky-way-menu.active,
 body:-ms-fullscreen .milky-way-menu.active {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-    bottom: 2rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: auto !important;
-    right: auto !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: auto !important;
+  right: auto !important;
 }
 
 /* Show menu when Milky Way is ready - highest specificity - MUST BE FLEX */
 body.easter-egg-active.milky-way-ready .milky-way-menu.active {
-    display: flex !important;
-    flex-direction: row !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
-    visibility: visible !important;
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-    position: fixed !important;
-    bottom: 2rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: auto !important;
-    right: auto !important;
-    z-index: 2147483647 !important; /* Maximum z-index for fullscreen */
-    margin: 0 !important;
-    padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  visibility: visible !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  position: fixed !important;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: auto !important;
+  right: auto !important;
+  z-index: 2147483647 !important; /* Maximum z-index for fullscreen */
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 body.easter-egg-active.milky-way-ready .milky-way-menu.active .milky-way-menu-toggle {
-    display: flex !important;
-    flex-direction: row !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    z-index: 1 !important;
-    gap: 12px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: 1 !important;
+  gap: 12px !important;
 }
 
 /* Hide menu when Milky Way is not active */
 body:not(.easter-egg-active) .milky-way-menu,
 body:not(.milky-way-ready) .milky-way-menu,
 .milky-way-menu:not(.active) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Extra rule to ensure menu is hidden when not in active state */
 body:not(.easter-egg-active):not(.milky-way-ready) .milky-way-menu,
 .milky-way-menu:not(.active) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-    z-index: -1 !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -1 !important;
 }
 
 .milky-way-menu-toggle {
-    width: auto !important;
-    height: auto !important;
-    border: none !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    color: var(--accent-cyan) !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    gap: 12px !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    position: relative !important;
-    z-index: 1 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    backdrop-filter: none !important;
-    overflow: visible !important; /* Ensure tooltips are visible */
+  width: auto !important;
+  height: auto !important;
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: var(--accent-cyan) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  overflow: visible !important; /* Ensure tooltips are visible */
 }
 
 .milky-way-menu-toggle span {
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 50% !important;
-    display: block !important;
-    flex-shrink: 0 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    position: relative !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
 }
 
 /* Tooltip styles - positioned below dots to stay in view */
 .milky-way-menu-toggle span[data-tooltip] {
-    position: relative !important; /* Required for absolute positioning of tooltip */
-    overflow: visible !important;
+  position: relative !important; /* Required for absolute positioning of tooltip */
+  overflow: visible !important;
 }
 
 .milky-way-menu-toggle span[data-tooltip]::before {
-    content: attr(data-tooltip) !important;
-    position: fixed !important; /* Fixed to viewport */
-    bottom: calc(2rem + 12px + 12px) !important; /* ABOVE dots: menu bottom (2rem) + dot height (12px) + gap (12px) */
-    left: 50% !important; /* Center horizontally */
-    transform: translateX(-50%) !important; /* Center the tooltip itself */
-    top: auto !important;
-    right: auto !important;
-    background: rgba(10, 10, 10, 0.95) !important;
-    color: var(--text-primary) !important;
-    padding: 0.5rem 0.75rem !important;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    border-radius: 6px !important;
-    font-size: 0.75rem !important;
-    font-family: 'Rajdhani', sans-serif !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease !important;
-    z-index: 2147483647 !important;
-    border: 1px solid var(--accent-cyan) !important;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-    backdrop-filter: blur(10px) !important;
-    min-width: max-content !important;
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    box-sizing: border-box !important;
+  content: attr(data-tooltip) !important;
+  position: fixed !important; /* Fixed to viewport */
+  bottom: calc(
+    2rem + 12px + 12px
+  ) !important; /* ABOVE dots: menu bottom (2rem) + dot height (12px) + gap (12px) */
+  left: 50% !important; /* Center horizontally */
+  transform: translateX(-50%) !important; /* Center the tooltip itself */
+  top: auto !important;
+  right: auto !important;
+  background: rgba(10, 10, 10, 0.95) !important;
+  color: var(--text-primary) !important;
+  padding: 0.5rem 0.75rem !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  border-radius: 6px !important;
+  font-size: 0.75rem !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease !important;
+  z-index: 2147483647 !important;
+  border: 1px solid var(--accent-cyan) !important;
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  min-width: max-content !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .milky-way-menu-toggle span[data-tooltip]:hover::before {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(-50%) !important; /* Keep centered on hover */
-    bottom: calc(2rem + 12px + 12px) !important; /* ABOVE dots */
-    left: 50% !important; /* Center horizontally */
-    right: auto !important;
-    top: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) !important; /* Keep centered on hover */
+  bottom: calc(2rem + 12px + 12px) !important; /* ABOVE dots */
+  left: 50% !important; /* Center horizontally */
+  right: auto !important;
+  top: auto !important;
 }
 
 /* Tooltip arrow - pointing down to the dot (since tooltip is above) */
 .milky-way-menu-toggle span[data-tooltip]::after {
-    content: '';
-    position: fixed !important;
-    bottom: calc(2rem + 12px + 6px) !important; /* Position above dots, just below tooltip */
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 0 !important;
-    height: 0 !important;
-    border-left: 6px solid transparent !important;
-    border-right: 6px solid transparent !important;
-    border-top: 6px solid var(--accent-cyan) !important; /* Arrow pointing DOWN to dot */
-    border-bottom: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease !important;
-    z-index: 2147483647 !important;
+  content: '';
+  position: fixed !important;
+  bottom: calc(2rem + 12px + 6px) !important; /* Position above dots, just below tooltip */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+  border-top: 6px solid var(--accent-cyan) !important; /* Arrow pointing DOWN to dot */
+  border-bottom: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease !important;
+  z-index: 2147483647 !important;
 }
 
 .milky-way-menu-toggle span[data-tooltip]:hover::after {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(-50%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) !important;
 }
 
 /* First dot - Cyan */
 .milky-way-menu-toggle span:nth-child(1) {
-    background: var(--accent-cyan) !important;
-    box-shadow: 0 0 15px var(--accent-cyan), 
-                0 0 25px var(--glow-cyan), 
-                0 0 35px rgba(0, 255, 255, 0.4) !important;
+  background: var(--accent-cyan) !important;
+  box-shadow:
+    0 0 15px var(--accent-cyan),
+    0 0 25px var(--glow-cyan),
+    0 0 35px rgba(0, 255, 255, 0.4) !important;
 }
 
 .milky-way-menu-toggle span:nth-child(1):hover {
-    transform: scale(1.3) !important;
-    box-shadow: 0 0 20px var(--accent-cyan), 
-                0 0 35px var(--glow-cyan), 
-                0 0 50px rgba(0, 255, 255, 0.6) !important;
+  transform: scale(1.3) !important;
+  box-shadow:
+    0 0 20px var(--accent-cyan),
+    0 0 35px var(--glow-cyan),
+    0 0 50px rgba(0, 255, 255, 0.6) !important;
 }
 
 /* Second dot - Magenta */
 .milky-way-menu-toggle span:nth-child(2) {
-    background: var(--accent-magenta) !important;
-    box-shadow: 0 0 15px var(--accent-magenta), 
-                0 0 25px var(--glow-magenta), 
-                0 0 35px rgba(255, 0, 255, 0.4) !important;
+  background: var(--accent-magenta) !important;
+  box-shadow:
+    0 0 15px var(--accent-magenta),
+    0 0 25px var(--glow-magenta),
+    0 0 35px rgba(255, 0, 255, 0.4) !important;
 }
 
 .milky-way-menu-toggle span:nth-child(2):hover {
-    transform: scale(1.3) !important;
-    box-shadow: 0 0 20px var(--accent-magenta), 
-                0 0 35px var(--glow-magenta), 
-                0 0 50px rgba(255, 0, 255, 0.6) !important;
+  transform: scale(1.3) !important;
+  box-shadow:
+    0 0 20px var(--accent-magenta),
+    0 0 35px var(--glow-magenta),
+    0 0 50px rgba(255, 0, 255, 0.6) !important;
 }
 
 /* Third dot - Green */
 .milky-way-menu-toggle span:nth-child(3) {
-    background: var(--accent-green) !important;
-    box-shadow: 0 0 15px var(--accent-green), 
-                0 0 25px var(--glow-green), 
-                0 0 35px rgba(0, 255, 0, 0.4) !important;
+  background: var(--accent-green) !important;
+  box-shadow:
+    0 0 15px var(--accent-green),
+    0 0 25px var(--glow-green),
+    0 0 35px rgba(0, 255, 0, 0.4) !important;
 }
 
 .milky-way-menu-toggle span:nth-child(3):hover {
-    transform: scale(1.3) !important;
-    box-shadow: 0 0 20px var(--accent-green), 
-                0 0 35px var(--glow-green), 
-                0 0 50px rgba(0, 255, 0, 0.6) !important;
+  transform: scale(1.3) !important;
+  box-shadow:
+    0 0 20px var(--accent-green),
+    0 0 35px var(--glow-green),
+    0 0 50px rgba(0, 255, 0, 0.6) !important;
 }
-
 
 /* Footer Easter Egg Trigger */
 .footer-easter-egg-trigger {
-    display: inline;
-    cursor: pointer;
-    color: var(--text-muted);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    text-decoration: none;
-    border-bottom: 1px dotted transparent;
+  display: inline;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
 }
 
 .footer-easter-egg-trigger:hover {
-    color: var(--accent-cyan);
-    text-shadow: 0 0 8px var(--glow-cyan);
-    border-bottom-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px var(--glow-cyan);
+  border-bottom-color: var(--accent-cyan);
 }
 
 /* Alternative: Make logo clickable after 3 clicks */
 .logo.easter-egg-ready {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .logo.easter-egg-ready:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    .milky-way-exit {
-        top: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
+  .milky-way-exit {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
 }
-

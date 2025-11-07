@@ -18,139 +18,139 @@
    ============================================ */
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .nav-container {
-        padding: 0 1.5rem;
-    }
+  .nav-container {
+    padding: 0 1.5rem;
+  }
 
-    .logo-text {
-        font-size: 1.3rem;
-    }
+  .logo-text {
+    font-size: 1.3rem;
+  }
 
-    .nav-menu {
-        gap: 1.5rem;
-    }
+  .nav-menu {
+    gap: 1.5rem;
+  }
 
-    .nav-link {
-        font-size: 0.9rem;
-    }
+  .nav-link {
+    font-size: 0.9rem;
+  }
 
-    .container {
-        padding: 0 1.5rem;
-    }
+  .container {
+    padding: 0 1.5rem;
+  }
 
-    section {
-        padding: 4rem 0;
-    }
+  section {
+    padding: 4rem 0;
+  }
 
-    .section-header {
-        margin-bottom: 3rem;
-    }
+  .section-header {
+    margin-bottom: 3rem;
+  }
 
-    .section-title {
-        font-size: clamp(1.8rem, 4vw, 3rem);
-    }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
 
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 
-    .service-card {
-        padding: 2rem;
-    }
+  .service-card {
+    padding: 2rem;
+  }
 
-    .hero-content {
-        padding: 0 1.5rem;
-    }
+  .hero-content {
+    padding: 0 1.5rem;
+  }
 
-    .hero-title {
-        font-size: clamp(2.2rem, 5.5vw, 4.5rem);
-    }
+  .hero-title {
+    font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  }
 
-    .hero-subtitle {
-        font-size: clamp(0.95rem, 1.8vw, 1.2rem);
-        padding: 0 1rem;
-    }
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+    padding: 0 1rem;
+  }
 
-    .hero-buttons {
-        gap: 1rem;
-    }
+  .hero-buttons {
+    gap: 1rem;
+  }
 
-    .btn {
-        padding: 0.9rem 2rem;
-        font-size: 0.95rem;
-    }
+  .btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
 
-    .project-image {
-        height: 300px;
-    }
+  .project-image {
+    height: 300px;
+  }
 
-    .project-content {
-        padding: 2rem;
-    }
+  .project-content {
+    padding: 2rem;
+  }
 
-    .project-content h3 {
-        font-size: 1.5rem;
-    }
+  .project-content h3 {
+    font-size: 1.5rem;
+  }
 
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 
-    .cta-content h2 {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-    }
+  .cta-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
 
-    .cta-content p {
-        font-size: 1.1rem;
-    }
+  .cta-content p {
+    font-size: 1.1rem;
+  }
 
-    /* Contact Page - Tablet */
-    .contact-section {
-        padding: 4rem 0;
-    }
+  /* Contact Page - Tablet */
+  .contact-section {
+    padding: 4rem 0;
+  }
 
-    .contact-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        padding: 0 1.5rem;
-    }
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
 
-    .contact-item {
-        padding: 1.5rem;
-    }
+  .contact-item {
+    padding: 1.5rem;
+  }
 
-    .contact-item h3 {
-        font-size: 1.1rem;
-    }
+  .contact-item h3 {
+    font-size: 1.1rem;
+  }
 
-    .contact-form {
-        padding: 2rem;
-    }
+  .contact-form {
+    padding: 2rem;
+  }
 
-    .form-group {
-        margin-bottom: 1.25rem;
-    }
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
 
-    .form-group label {
-        font-size: 0.85rem;
-    }
+  .form-group label {
+    font-size: 0.85rem;
+  }
 
-    .form-group input,
-    .form-group textarea {
-        padding: 0.9rem;
-        font-size: 0.95rem;
-    }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
 
-    .form-group textarea {
-        min-height: 130px;
-    }
+  .form-group textarea {
+    min-height: 130px;
+  }
 
-    .form-submit {
-        padding: 0.9rem 2rem;
-        font-size: 0.95rem;
-    }
+  .form-submit {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
 }
 
 /* ============================================
@@ -158,485 +158,484 @@
    ============================================ */
 
 @media (max-width: 768px) {
-
-    /* Navigation */
-    .nav-container {
-        padding: 0 1rem;
-    }
-
-    .logo-text {
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: rgba(10, 10, 10, 0.98);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-        border-top: 1px solid rgba(0, 255, 255, 0.1);
-        gap: 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        padding: 0.75rem 0;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 0.75rem 0;
-        font-size: 1rem;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* Container and Spacing */
-    .container {
-        padding: 0 1rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
-    .section-header {
-        margin-bottom: 2rem;
-    }
-
-    .section-title {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-        margin-bottom: 0.75rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-        min-height: 100vh;
-        height: 100vh;
-        padding-top: 60px;
-        padding-bottom: 60px;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .hero-content {
-        padding: 0 1rem;
-    }
-
-    .hero-title {
-        font-size: clamp(1.8rem, 7vw, 3rem);
-        margin-bottom: 1rem;
-        letter-spacing: 2px;
-    }
-
-    .hero-subtitle {
-        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-        margin-bottom: 1.5rem;
-        padding: 0 0.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 300px;
-        padding: 0.9rem 2rem;
-        font-size: 0.95rem;
-    }
-
-    .btn-large {
-        padding: 1rem 2.5rem;
-    }
-
-    .scroll-indicator {
-        bottom: 20px;
-    }
-
-    .mouse {
-        width: 25px;
-        height: 40px;
-    }
-
-    /* Services Grid */
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .service-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1rem;
-    }
-
-    .service-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .service-card p {
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
-    }
-
-    /* Project Cards */
-    .project-image {
-        height: 200px;
-    }
-
-    .project-content {
-        padding: 1.5rem;
-    }
-
-    .project-content h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .project-content p {
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
-    }
-
-    .project-category {
-        font-size: 0.8rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .project-tag {
-        font-size: 0.75rem;
-        padding: 0.4rem 1rem;
-        top: 15px;
-        right: 15px;
-    }
-
-    /* Projects Grid (from projects.html) */
-    .projects-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    /* CTA Section */
-    .cta-content {
-        padding: 0 1rem;
-    }
-
-    .cta-content h2 {
-        font-size: clamp(1.5rem, 6vw, 2.2rem);
-        margin-bottom: 0.75rem;
-    }
-
-    .cta-content p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    /* CTA Section - Mobile Background Fix */
-    .cta-section {
-        background-attachment: scroll;
-        /* Change from fixed to scroll on mobile */
-    }
-
-    /* Parallax Sections - Mobile Background Fix */
-    .parallax-background {
-        background-attachment: scroll;
-        /* Change from fixed to scroll on mobile */
-    }
-
-    /* Footer */
-    .footer {
-        padding: 3rem 0 1.5rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-
-    .footer-section {
-        margin-bottom: 1.5rem;
-    }
-
-    .footer-section h3 {
-        font-size: 1.3rem;
-    }
-
-    .footer-section h4 {
-        font-size: 1.1rem;
-    }
-
-    .footer-section ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Forms */
-    .contact-form,
-    form {
-        width: 100%;
-        padding: 0;
-    }
-
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="password"],
-    textarea,
-    select {
-        width: 100%;
-        padding: 0.9rem;
-        font-size: 0.95rem;
-    }
-
-    textarea {
-        min-height: 120px;
-    }
-
-    .form-submit {
-        width: 100%;
-        padding: 1rem;
-        font-size: 1rem;
-    }
-
-    /* Contact Page - Mobile */
-    .contact-section {
-        padding: 3rem 0;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .contact-info {
-        margin-bottom: 2rem;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .contact-item {
-        padding: 1.5rem;
-        margin-bottom: 0;
-    }
-
-    .contact-item h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .contact-item p,
-    .contact-item a {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    .contact-form {
-        padding: 2rem 1.5rem;
-        width: 100%;
-    }
-
-    .form-group {
-        margin-bottom: 1.25rem;
-    }
-
-    .form-group label {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 0.85rem;
-        font-size: 0.95rem;
-    }
-
-    .form-group textarea {
-        min-height: 120px;
-    }
-
-    .form-submit {
-        padding: 0.95rem 1.5rem;
-        font-size: 0.95rem;
-    }
-
-    /* Tables */
-    table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 1.5rem 0;
-    }
-
-    th,
-    td {
-        padding: 0.75rem 0.5rem;
-        font-size: 0.9rem;
-    }
-
-    /* Modals */
-    .modal-content {
-        width: 95%;
-        max-width: 95%;
-        padding: 1.5rem;
-        margin: 1rem;
-    }
-
-    .modal-close {
-        top: 0.75rem;
-        right: 0.75rem;
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-    }
-
-    /* Tabs */
-    .tab-list {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .tab-button {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    /* Accordions */
-    summary {
-        padding: 1rem;
-        font-size: 0.95rem;
-    }
-
-    details>*:not(summary) {
-        padding: 0 1rem 1rem;
-    }
-
-    /* Breadcrumbs */
-    .breadcrumbs {
-        flex-wrap: wrap;
-        gap: 0.25rem;
-        margin: 1rem 0;
-    }
-
-    /* Toast */
-    .toast {
-        min-width: calc(100% - 2rem);
-        max-width: calc(100% - 2rem);
-        bottom: 1rem;
-        right: 1rem;
-        left: 1rem;
-        padding: 1rem 1.5rem;
-    }
-
-    /* Back to Top */
-    .back-to-top {
-        width: 45px;
-        height: 45px;
-        bottom: 1.5rem;
-        right: 1.5rem;
-    }
-
-    /* Code Blocks */
-    pre {
-        padding: 1rem;
-        font-size: 0.85rem;
-        overflow-x: auto;
-    }
-
-    code {
-        font-size: 0.85rem;
-        padding: 0.15rem 0.3rem;
-    }
-
-    /* Blockquotes */
-    blockquote {
-        padding: 1rem 1.5rem;
-        margin: 1.5rem 0;
-        font-size: 0.95rem;
-    }
-
-    blockquote::before {
-        font-size: 3rem;
-    }
-
-    /* Empty State */
-    .empty-state {
-        padding: 2rem 1rem;
-    }
-
-    .empty-state-icon {
-        font-size: 3rem;
-    }
-
-    /* Skeleton */
-    .skeleton-title {
-        height: 1.5rem;
-    }
-
-    .skeleton-text {
-        height: 0.875rem;
-    }
-
-    .skeleton-image {
-        height: 150px;
-    }
-
-    /* Loading Overlay */
-    .loading-overlay .spinner {
-        width: 60px;
-        height: 60px;
-        border-width: 4px;
-    }
+  /* Navigation */
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 0.98);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Container and Spacing */
+  .container {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-large {
+    padding: 1rem 2.5rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+  .mouse {
+    width: 25px;
+    height: 40px;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Project Cards */
+  .project-image {
+    height: 200px;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-category {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Projects Grid (from projects.html) */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* CTA Section */
+  .cta-content {
+    padding: 0 1rem;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* CTA Section - Mobile Background Fix */
+  .cta-section {
+    background-attachment: scroll;
+    /* Change from fixed to scroll on mobile */
+  }
+
+  /* Parallax Sections - Mobile Background Fix */
+  .parallax-background {
+    background-attachment: scroll;
+    /* Change from fixed to scroll on mobile */
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Forms */
+  .contact-form,
+  form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  /* Contact Page - Mobile */
+  .contact-section {
+    padding: 3rem 0;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .contact-info {
+    margin-bottom: 2rem;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    padding: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .contact-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    padding: 2rem 1.5rem;
+    width: 100%;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+  }
+
+  .form-submit {
+    padding: 0.95rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Tables */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0;
+  }
+
+  th,
+  td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Modals */
+  .modal-content {
+    width: 95%;
+    max-width: 95%;
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  /* Tabs */
+  .tab-list {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Accordions */
+  summary {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  details > *:not(summary) {
+    padding: 0 1rem 1rem;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 1rem 0;
+  }
+
+  /* Toast */
+  .toast {
+    min-width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  /* Code Blocks */
+  pre {
+    padding: 1rem;
+    font-size: 0.85rem;
+    overflow-x: auto;
+  }
+
+  code {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.3rem;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  blockquote::before {
+    font-size: 3rem;
+  }
+
+  /* Empty State */
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+
+  .empty-state-icon {
+    font-size: 3rem;
+  }
+
+  /* Skeleton */
+  .skeleton-title {
+    height: 1.5rem;
+  }
+
+  .skeleton-text {
+    height: 0.875rem;
+  }
+
+  .skeleton-image {
+    height: 150px;
+  }
+
+  /* Loading Overlay */
+  .loading-overlay .spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+  }
 }
 
 /* ============================================
@@ -644,93 +643,93 @@
    ============================================ */
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 0.75rem;
-    }
+  .container {
+    padding: 0 0.75rem;
+  }
 
-    .logo-text {
-        font-size: 1rem;
-    }
+  .logo-text {
+    font-size: 1rem;
+  }
 
-    .hero-title {
-        font-size: clamp(1.4rem, 9vw, 2.2rem);
-        letter-spacing: 1px;
-    }
+  .hero-title {
+    font-size: clamp(1.4rem, 9vw, 2.2rem);
+    letter-spacing: 1px;
+  }
 
-    .section-title {
-        font-size: clamp(1.3rem, 8vw, 2rem);
-    }
+  .section-title {
+    font-size: clamp(1.3rem, 8vw, 2rem);
+  }
 
-    .service-card,
-    .project-content {
-        padding: 1.5rem 1rem;
-    }
+  .service-card,
+  .project-content {
+    padding: 1.5rem 1rem;
+  }
 
-    .btn {
-        padding: 0.85rem 1.5rem;
-        font-size: 0.9rem;
-    }
+  .btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
 
-    .footer-section h3 {
-        font-size: 1.2rem;
-    }
+  .footer-section h3 {
+    font-size: 1.2rem;
+  }
 
-    .cta-content h2 {
-        font-size: clamp(1.3rem, 8vw, 1.8rem);
-    }
+  .cta-content h2 {
+    font-size: clamp(1.3rem, 8vw, 1.8rem);
+  }
 
-    /* CTA Section - Small Mobile Background Fix */
-    .cta-section {
-        background-attachment: scroll;
-        /* Ensure scroll on small mobile */
-    }
+  /* CTA Section - Small Mobile Background Fix */
+  .cta-section {
+    background-attachment: scroll;
+    /* Ensure scroll on small mobile */
+  }
 
-    /* Parallax Sections - Small Mobile Background Fix */
-    .parallax-background {
-        background-attachment: scroll;
-        /* Ensure scroll on small mobile */
-    }
+  /* Parallax Sections - Small Mobile Background Fix */
+  .parallax-background {
+    background-attachment: scroll;
+    /* Ensure scroll on small mobile */
+  }
 
-    /* Contact Page - Small Mobile */
-    .contact-container {
-        padding: 0 0.75rem;
-    }
+  /* Contact Page - Small Mobile */
+  .contact-container {
+    padding: 0 0.75rem;
+  }
 
-    .contact-item {
-        padding: 1.25rem;
-    }
+  .contact-item {
+    padding: 1.25rem;
+  }
 
-    .contact-item h3 {
-        font-size: 1rem;
-    }
+  .contact-item h3 {
+    font-size: 1rem;
+  }
 
-    .contact-item p,
-    .contact-item a {
-        font-size: 0.9rem;
-    }
+  .contact-item p,
+  .contact-item a {
+    font-size: 0.9rem;
+  }
 
-    .contact-form {
-        padding: 1.5rem 1rem;
-    }
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
 
-    .form-group label {
-        font-size: 0.85rem;
-    }
+  .form-group label {
+    font-size: 0.85rem;
+  }
 
-    .form-group input,
-    .form-group textarea {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
 
-    .form-group textarea {
-        min-height: 100px;
-    }
+  .form-group textarea {
+    min-height: 100px;
+  }
 
-    .form-submit {
-        padding: 0.85rem 1.25rem;
-        font-size: 0.9rem;
-    }
+  .form-submit {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* ============================================
@@ -738,22 +737,20 @@
    ============================================ */
 
 @media print {
+  .navbar,
+  .footer,
+  .back-to-top,
+  .hamburger {
+    display: none;
+  }
 
-    .navbar,
-    .footer,
-    .back-to-top,
-    .hamburger {
-        display: none;
-    }
+  body {
+    background: white;
+    color: black;
+  }
 
-    body {
-        background: white;
-        color: black;
-    }
-
-    a {
-        color: black;
-        text-decoration: underline;
-    }
+  a {
+    color: black;
+    text-decoration: underline;
+  }
 }
-

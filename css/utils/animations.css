@@ -12,9 +12,9 @@
 
 /* Enable angle animation for conic-gradient rotation */
 @property --angle {
-    syntax: "<angle>";
-    inherits: false;
-    initial-value: 0deg;
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
 }
 
 /* ============================================
@@ -23,324 +23,329 @@
 
 /* Grid Movement Animation (for hero grid overlay) */
 @keyframes gridMove {
-    0% {
-        transform: translate(0, 0);
-    }
+  0% {
+    transform: translate(0, 0);
+  }
 
-    100% {
-        transform: translate(50px, 50px);
-    }
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
 /* Float Animation (for particles) */
 @keyframes float {
-    0%,
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 
-    33% {
-        transform: translate(100px, -100px) rotate(120deg);
-    }
+  33% {
+    transform: translate(100px, -100px) rotate(120deg);
+  }
 
-    66% {
-        transform: translate(-100px, 100px) rotate(240deg);
-    }
+  66% {
+    transform: translate(-100px, 100px) rotate(240deg);
+  }
 }
 
 /* Star Fade In/Out Animation (for values section stars) */
 @keyframes starFade {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Text Reveal Animation */
 @keyframes textReveal {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Fade In Animation */
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Gradient Move Animation (for buttons) */
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Testimonial Gradient Move Animation (for testimonial cards) */
 @keyframes testimonialGradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Rotate Gradient Animation (for expertise section cards) */
 @keyframes rotateGradient {
-    to {
-        --angle: 360deg;
-    }
+  to {
+    --angle: 360deg;
+  }
 }
 
 /* Bounce Animation (for scroll indicator) */
 @keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
 
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
 }
 
 /* Scroll Animation (for mouse wheel) */
 @keyframes scroll {
-    0% {
-        top: 10px;
-        opacity: 1;
-    }
+  0% {
+    top: 10px;
+    opacity: 1;
+  }
 
-    100% {
-        top: 30px;
-        opacity: 0;
-    }
+  100% {
+    top: 30px;
+    opacity: 0;
+  }
 }
 
 /* Pulse Animation (for icons) */
 @keyframes pulse {
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
 
-    50% {
-        transform: scale(1.2);
-        opacity: 0.5;
-    }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
 }
 
 /* Portal Glow Animation */
 @keyframes portalGlow {
-    0%,
-    100% {
-        background-position: 0% 50%, 50% 0%;
-    }
+  0%,
+  100% {
+    background-position:
+      0% 50%,
+      50% 0%;
+  }
 
-    50% {
-        background-position: 100% 50%, 50% 100%;
-    }
+  50% {
+    background-position:
+      100% 50%,
+      50% 100%;
+  }
 }
 
 /* Spin Animation */
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Slide In Animation */
 @keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Skeleton Loading Animation */
 @keyframes skeleton-loading {
-    0% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: 200% 0;
+  }
 
-    100% {
-        background-position: -200% 0;
-    }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* Fluid Wave Animation */
 @keyframes fluidWave {
-    0%,
-    100% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        transform: rotate(0deg);
-    }
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg);
+  }
 
-    25% {
-        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-        transform: rotate(90deg);
-    }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: rotate(90deg);
+  }
 
-    50% {
-        border-radius: 50% 50% 30% 70% / 40% 60% 50% 60%;
-        transform: rotate(180deg);
-    }
+  50% {
+    border-radius: 50% 50% 30% 70% / 40% 60% 50% 60%;
+    transform: rotate(180deg);
+  }
 
-    75% {
-        border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
-        transform: rotate(270deg);
-    }
+  75% {
+    border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+    transform: rotate(270deg);
+  }
 }
 
 /* Fluid Morph Animation */
 @keyframes fluidMorph {
-    0%,
-    100% {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
+  0%,
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 
-    25% {
-        clip-path: polygon(25% 0%, 100% 25%, 75% 100%, 0% 75%);
-    }
+  25% {
+    clip-path: polygon(25% 0%, 100% 25%, 75% 100%, 0% 75%);
+  }
 
-    50% {
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
+  50% {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
 
-    75% {
-        clip-path: polygon(75% 0%, 100% 75%, 25% 100%, 0% 25%);
-    }
+  75% {
+    clip-path: polygon(75% 0%, 100% 75%, 25% 100%, 0% 25%);
+  }
 }
 
 /* Fluid Gradient Animation */
 @keyframes fluidGradient {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Rotate 3D Animation */
 @keyframes rotate3D {
-    0% {
-        transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-    }
+  0% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  }
 
-    25% {
-        transform: perspective(1000px) rotateY(90deg) rotateX(10deg);
-    }
+  25% {
+    transform: perspective(1000px) rotateY(90deg) rotateX(10deg);
+  }
 
-    50% {
-        transform: perspective(1000px) rotateY(180deg) rotateX(0deg);
-    }
+  50% {
+    transform: perspective(1000px) rotateY(180deg) rotateX(0deg);
+  }
 
-    75% {
-        transform: perspective(1000px) rotateY(270deg) rotateX(-10deg);
-    }
+  75% {
+    transform: perspective(1000px) rotateY(270deg) rotateX(-10deg);
+  }
 
-    100% {
-        transform: perspective(1000px) rotateY(360deg) rotateX(0deg);
-    }
+  100% {
+    transform: perspective(1000px) rotateY(360deg) rotateX(0deg);
+  }
 }
 
 /* Float 3D Animation */
 @keyframes float3D {
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0) rotateY(0deg);
-    }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+  }
 
-    33% {
-        transform: translate3d(10px, -10px, 20px) rotateY(120deg);
-    }
+  33% {
+    transform: translate3d(10px, -10px, 20px) rotateY(120deg);
+  }
 
-    66% {
-        transform: translate3d(-10px, 10px, -20px) rotateY(240deg);
-    }
+  66% {
+    transform: translate3d(-10px, 10px, -20px) rotateY(240deg);
+  }
 }
 
 /* Tilt 3D Animation */
 @keyframes tilt3D {
-    0%,
-    100% {
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-    }
+  0%,
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
 
-    25% {
-        transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
-    }
+  25% {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  }
 
-    50% {
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-    }
+  50% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
 
-    75% {
-        transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
-    }
+  75% {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
+  }
 }
 
 /* Ripple Animation */
 @keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 
 /* Ripple Wave Animation */
 @keyframes ripple-wave {
-    0%,
-    100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.3;
-    }
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
 
-    50% {
-        transform: scale(1.2) rotate(180deg);
-        opacity: 0.1;
-    }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.1;
+  }
 }
 
 /* ============================================
@@ -349,104 +354,108 @@
 
 /* Text Reveal Utility */
 .text-reveal {
-    display: block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: textReveal 1s ease forwards;
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textReveal 1s ease forwards;
 }
 
 .text-reveal.delay-1 {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .text-reveal.delay-2 {
-    animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .text-reveal.delay-3 {
-    animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 /* Fade In Utility */
 .fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 
 .fade-in.delay-4 {
-    animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 .fade-in.delay-5 {
-    animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 /* Fade In Up Utility (Scroll-triggered) */
 .fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in-up.visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Support for transition delay via inline styles */
-.fade-in-up[style*="transition-delay"],
-.fade-in-up[style*="animation-delay"] {
-    transition-property: opacity, transform;
+.fade-in-up[style*='transition-delay'],
+.fade-in-up[style*='animation-delay'] {
+  transition-property: opacity, transform;
 }
 
 /* Scroll Reveal 3D Utility */
 .scroll-reveal-3d {
-    opacity: 0;
-    transform: perspective(1000px) rotateX(90deg) translateZ(100px);
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+  transform: perspective(1000px) rotateX(90deg) translateZ(100px);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .scroll-reveal-3d.visible {
-    opacity: 1;
-    transform: perspective(1000px) rotateX(0deg) translateZ(0px);
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translateZ(0px);
 }
 
 /* Float 3D Utility */
 .float-3d {
-    animation: float3D 6s ease-in-out infinite;
-    transform-style: preserve-3d;
+  animation: float3D 6s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
 
 /* Fluid Morph Utility */
 .fluid-morph {
-    animation: fluidMorph 15s ease-in-out infinite;
+  animation: fluidMorph 15s ease-in-out infinite;
 }
 
 /* Skeleton Loading Utility */
 .skeleton {
-    background: linear-gradient(90deg,
-            var(--bg-secondary) 0%,
-            rgba(0, 255, 255, 0.1) 50%,
-            var(--bg-secondary) 100%);
-    background-size: 200% 100%;
-    animation: skeleton-loading 1.5s ease-in-out infinite;
-    border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    rgba(0, 255, 255, 0.1) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 5px;
 }
 
 .skeleton-text {
-    height: 1rem;
-    margin: 0.5rem 0;
+  height: 1rem;
+  margin: 0.5rem 0;
 }
 
 .skeleton-title {
-    height: 2rem;
-    width: 60%;
-    margin: 1rem 0;
+  height: 2rem;
+  width: 60%;
+  margin: 1rem 0;
 }
 
 .skeleton-image {
-    height: 200px;
-    width: 100%;
+  height: 200px;
+  width: 100%;
 }
 
 /* ============================================
@@ -455,35 +464,34 @@
 
 /* Ripple Container - Required for elements with ripple effect */
 .ripple-container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Ripple Element - Created dynamically by JavaScript */
 .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(0, 255, 255, 0.3);
-    transform: scale(0);
-    animation: ripple-animation 0.6s ease-out;
-    pointer-events: none;
-    z-index: 999;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+  z-index: 999;
 }
 
 /* Ripple Color Variants */
 .ripple-magenta {
-    background: rgba(255, 0, 255, 0.3);
+  background: rgba(255, 0, 255, 0.3);
 }
 
 .ripple-green {
-    background: rgba(0, 255, 0, 0.3);
+  background: rgba(0, 255, 0, 0.3);
 }
 
 .ripple-blue {
-    background: rgba(0, 102, 255, 0.3);
+  background: rgba(0, 102, 255, 0.3);
 }
 
 .ripple-pink {
-    background: rgba(255, 0, 128, 0.3);
+  background: rgba(255, 0, 128, 0.3);
 }
-

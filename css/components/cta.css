@@ -7,144 +7,169 @@
  * Note: @keyframes portalGlow and fluidGradient are defined in animations.css
  */
 
-/* CTA Section - Responsive Background Images */
+/* CTA Section - Responsive Background Images (AVIF + WebP) */
 .cta-section {
-    position: relative;
-    background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1280w.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    text-align: center;
-    overflow: hidden;
-    padding: 8rem 0;
+  position: relative;
+  background-image: image-set(
+    url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1280w.avif') type('image/avif'),
+    url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1280w.webp') type('image/webp')
+  );
+  background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1280w.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  overflow: hidden;
+  padding: 8rem 0;
 }
 
 @media (max-width: 1024px) {
-    .cta-section {
-        background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1024w.webp');
-    }
+  .cta-section {
+    background-image: image-set(
+      url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1024w.avif')
+        type('image/avif'),
+      url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1024w.webp')
+        type('image/webp')
+    );
+    background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-1024w.webp');
+  }
 }
 
 @media (max-width: 768px) {
-    .cta-section {
-        background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-768w.webp');
-    }
+  .cta-section {
+    background-image: image-set(
+      url('../../assets/images/responsive/backgrounds/cta-get-in-touch-768w.avif')
+        type('image/avif'),
+      url('../../assets/images/responsive/backgrounds/cta-get-in-touch-768w.webp')
+        type('image/webp')
+    );
+    background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-768w.webp');
+  }
 }
 
 @media (max-width: 480px) {
-    .cta-section {
-        background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-480w.webp');
-    }
+  .cta-section {
+    background-image: image-set(
+      url('../../assets/images/responsive/backgrounds/cta-get-in-touch-480w.avif')
+        type('image/avif'),
+      url('../../assets/images/responsive/backgrounds/cta-get-in-touch-480w.webp')
+        type('image/webp')
+    );
+    background-image: url('../../assets/images/responsive/backgrounds/cta-get-in-touch-480w.webp');
+  }
 }
 
 /* Portal Dividers - Curved Edges */
 .portal-divider {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    z-index: 3;
-    pointer-events: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .portal-divider-top {
-    top: 0;
+  top: 0;
 }
 
 .portal-divider-bottom {
-    bottom: 0;
+  bottom: 0;
 }
 
 .portal-divider svg {
-    width: 100%;
-    height: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .portal-divider svg path {
-    filter: drop-shadow(0 -10px 30px rgba(0, 255, 255, 0.3));
+  filter: drop-shadow(0 -10px 30px rgba(0, 255, 255, 0.3));
 }
 
 .portal-divider-bottom svg path {
-    filter: drop-shadow(0 10px 30px rgba(255, 0, 255, 0.3));
+  filter: drop-shadow(0 10px 30px rgba(255, 0, 255, 0.3));
 }
 
 /* Portal Glow Effect - Animated Border */
 .portal-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-        linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent),
-        linear-gradient(180deg, transparent, rgba(255, 0, 255, 0.1), transparent);
-    background-size: 200% 200%;
-    animation: portalGlow 8s ease infinite;
-    z-index: 1;
-    pointer-events: none;
-    border-top: 2px solid rgba(0, 255, 255, 0.3);
-    border-bottom: 2px solid rgba(255, 0, 255, 0.3);
-    box-shadow:
-        inset 0 0 60px rgba(0, 255, 255, 0.15),
-        inset 0 0 120px rgba(255, 0, 255, 0.1),
-        0 0 100px rgba(0, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent),
+    linear-gradient(180deg, transparent, rgba(255, 0, 255, 0.1), transparent);
+  background-size: 200% 200%;
+  animation: portalGlow 8s ease infinite;
+  z-index: 1;
+  pointer-events: none;
+  border-top: 2px solid rgba(0, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 0, 255, 0.3);
+  box-shadow:
+    inset 0 0 60px rgba(0, 255, 255, 0.15),
+    inset 0 0 120px rgba(255, 0, 255, 0.1),
+    0 0 100px rgba(0, 255, 255, 0.2);
 }
 
 /* Dark Overlay for Text Readability */
 .cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg,
-            rgba(10, 10, 10, 0.85) 0%,
-            rgba(26, 26, 46, 0.8) 50%,
-            rgba(22, 33, 62, 0.85) 100%);
-    z-index: 0;
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.85) 0%,
+    rgba(26, 26, 46, 0.8) 50%,
+    rgba(22, 33, 62, 0.85) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Subtle Animated Gradient Overlay on Top */
 .cta-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg,
-            rgba(0, 255, 255, 0.05) 0%,
-            rgba(255, 0, 255, 0.05) 50%,
-            rgba(0, 255, 255, 0.05) 100%);
-    background-size: 400% 400%;
-    animation: fluidGradient 15s ease infinite;
-    z-index: 1;
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.05) 0%,
+    rgba(255, 0, 255, 0.05) 50%,
+    rgba(0, 255, 255, 0.05) 100%
+  );
+  background-size: 400% 400%;
+  animation: fluidGradient 15s ease infinite;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Ensure Content is Above Overlays */
 .cta-content {
-    position: relative;
-    z-index: 4;
+  position: relative;
+  z-index: 4;
 }
 
 .cta-content h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cta-content p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
 }
-

@@ -7,121 +7,122 @@
 
 /* Base Button Styles */
 .btn {
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    border: 2px solid;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    font-family: 'Rajdhani', sans-serif;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border: 2px solid;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 /* Primary Button */
 .btn-primary {
-    background: transparent;
-    color: var(--accent-cyan);
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  background: transparent;
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            var(--accent-cyan),
-            var(--accent-blue),
-            var(--accent-magenta),
-            var(--accent-cyan));
-    background-size: 300% 100%;
-    background-position: 0% 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--accent-cyan),
+    var(--accent-blue),
+    var(--accent-magenta),
+    var(--accent-cyan)
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .btn-primary:hover {
-    color: var(--bg-primary);
-    box-shadow: 0 0 30px var(--glow-cyan);
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px var(--glow-cyan);
 }
 
 .btn-primary:hover::before {
-    opacity: 1;
-    animation: gradientMove 3s ease infinite;
+  opacity: 1;
+  animation: gradientMove 3s ease infinite;
 }
 
 /* Secondary Button */
 .btn-secondary {
-    background: transparent;
-    color: var(--accent-magenta);
-    border-color: var(--accent-magenta);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  background: transparent;
+  color: var(--accent-magenta);
+  border-color: var(--accent-magenta);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
 }
 
 .btn-secondary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--accent-magenta);
-    transition: left 0.3s ease;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-magenta);
+  transition: left 0.3s ease;
+  z-index: -1;
 }
 
 .btn-secondary:hover {
-    color: var(--bg-primary);
-    box-shadow: 0 0 30px var(--glow-magenta);
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px var(--glow-magenta);
 }
 
 .btn-secondary:hover::before {
-    left: 0;
+  left: 0;
 }
 
 .btn-secondary:not(:hover)::before {
-    left: -100%;
+  left: -100%;
 }
 
 /* Button Size Modifier */
 .btn-large {
-    padding: 1.25rem 3rem;
-    font-size: 1.1rem;
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
 }
 
 /* Outline Button Variant */
 .btn-outline {
-    background: transparent;
-    color: var(--accent-cyan);
-    border-color: var(--accent-cyan);
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+  background: transparent;
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
 }
 
 .btn-outline:hover {
-    background: var(--accent-cyan);
-    color: var(--bg-primary);
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
 }
 
 /* Button Animation Keyframes */
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-

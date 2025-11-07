@@ -5,395 +5,399 @@
 
 /* Approach Section - Timeline Style */
 .approach-section {
-    position: relative;
-    padding: 6rem 0;
-    overflow: hidden;
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
 }
 
 .approach-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(
-        180deg,
-        transparent 0%,
-        var(--accent-cyan) 10%,
-        var(--accent-magenta) 30%,
-        var(--accent-green) 50%,
-        var(--accent-blue) 70%,
-        var(--accent-pink) 90%,
-        var(--accent-cyan) 100%
-    );
-    opacity: 0.3;
-    z-index: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--accent-cyan) 10%,
+    var(--accent-magenta) 30%,
+    var(--accent-green) 50%,
+    var(--accent-blue) 70%,
+    var(--accent-pink) 90%,
+    var(--accent-cyan) 100%
+  );
+  opacity: 0.3;
+  z-index: 0;
 }
 
 /* Approach Timeline Container */
 .approach-timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Approach Step */
 .approach-step {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
 }
 
 /* Alternate layout - even steps on right side */
 .approach-step:nth-child(even) {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 /* Animation handled by fade-in-up class - override for horizontal slide */
 .approach-step.fade-in-up {
-    opacity: 0;
-    transform: translateX(-50px) !important;
-    transition: opacity 0.6s ease, transform 0.6s ease !important;
+  opacity: 0;
+  transform: translateX(-50px) !important;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease !important;
 }
 
 .approach-step:nth-child(even).fade-in-up {
-    transform: translateX(50px) !important;
+  transform: translateX(50px) !important;
 }
 
 .approach-step.fade-in-up.visible {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* Step Content */
 .approach-step-content {
-    flex: 1;
-    max-width: 500px;
-    background: rgba(22, 33, 62, 0.6);
-    border: 1px solid rgba(0, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 2.5rem;
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+  flex: 1;
+  max-width: 500px;
+  background: rgba(22, 33, 62, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 /* Odd steps (left side) - push content away from center */
 .approach-step:nth-child(odd) .approach-step-content {
-    margin-right: 3rem;
-    margin-left: 0;
+  margin-right: 3rem;
+  margin-left: 0;
 }
 
 /* Even steps (right side) - push content away from center */
 .approach-step:nth-child(even) .approach-step-content {
-    margin-left: 3rem;
-    margin-right: 0;
+  margin-left: 3rem;
+  margin-right: 0;
 }
 
 /* Step 1 - Cyan */
 .approach-step:nth-child(1) .approach-step-content:hover {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 10px 40px var(--glow-cyan);
-    transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 10px 40px var(--glow-cyan);
+  transform: translateY(-5px);
 }
 
 /* Step 2 - Magenta */
 .approach-step:nth-child(2) .approach-step-content:hover {
-    border-color: var(--accent-magenta);
-    box-shadow: 0 10px 40px var(--glow-magenta);
-    transform: translateY(-5px);
+  border-color: var(--accent-magenta);
+  box-shadow: 0 10px 40px var(--glow-magenta);
+  transform: translateY(-5px);
 }
 
 /* Step 3 - Green */
 .approach-step:nth-child(3) .approach-step-content:hover {
-    border-color: var(--accent-green);
-    box-shadow: 0 10px 40px var(--glow-green);
-    transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: 0 10px 40px var(--glow-green);
+  transform: translateY(-5px);
 }
 
 /* Step 4 - Blue */
 .approach-step:nth-child(4) .approach-step-content:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 10px 40px var(--glow-blue);
-    transform: translateY(-5px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 40px var(--glow-blue);
+  transform: translateY(-5px);
 }
 
 /* Step 5 - Pink */
 .approach-step:nth-child(5) .approach-step-content:hover {
-    border-color: var(--accent-pink);
-    box-shadow: 0 10px 40px var(--glow-pink);
-    transform: translateY(-5px);
+  border-color: var(--accent-pink);
+  box-shadow: 0 10px 40px var(--glow-pink);
+  transform: translateY(-5px);
 }
 
 /* Step 6 - Cyan */
 .approach-step:nth-child(6) .approach-step-content:hover {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 10px 40px var(--glow-cyan);
-    transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 10px 40px var(--glow-cyan);
+  transform: translateY(-5px);
 }
 
 /* Step Number Badge */
 .approach-step-number {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    font-weight: 900;
-    z-index: 10;
-    border: 3px solid var(--bg-secondary);
-    background: var(--bg-secondary);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    transition: all 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  z-index: 10;
+  border: 3px solid var(--bg-secondary);
+  background: var(--bg-secondary);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
 .approach-step:nth-child(1) .approach-step-number {
-    color: var(--accent-cyan);
-    box-shadow: 0 0 20px var(--glow-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .approach-step:nth-child(2) .approach-step-number {
-    color: var(--accent-magenta);
-    box-shadow: 0 0 20px var(--glow-magenta);
+  color: var(--accent-magenta);
+  box-shadow: 0 0 20px var(--glow-magenta);
 }
 
 .approach-step:nth-child(3) .approach-step-number {
-    color: var(--accent-green);
-    box-shadow: 0 0 20px var(--glow-green);
+  color: var(--accent-green);
+  box-shadow: 0 0 20px var(--glow-green);
 }
 
 .approach-step:nth-child(4) .approach-step-number {
-    color: var(--accent-blue);
-    box-shadow: 0 0 20px var(--glow-blue);
+  color: var(--accent-blue);
+  box-shadow: 0 0 20px var(--glow-blue);
 }
 
 .approach-step:nth-child(5) .approach-step-number {
-    color: var(--accent-pink);
-    box-shadow: 0 0 20px var(--glow-pink);
+  color: var(--accent-pink);
+  box-shadow: 0 0 20px var(--glow-pink);
 }
 
 .approach-step:nth-child(6) .approach-step-number {
-    color: var(--accent-cyan);
-    box-shadow: 0 0 20px var(--glow-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .approach-step:hover .approach-step-number {
-    transform: translateX(-50%) scale(1.1);
-    animation: pulseGlow 2s ease-in-out infinite;
+  transform: translateX(-50%) scale(1.1);
+  animation: pulseGlow 2s ease-in-out infinite;
 }
 
 /* Step Icon */
 .approach-step-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1.5rem;
-    position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .approach-step-icon svg {
-    width: 100%;
-    height: 100%;
-    stroke-width: 2;
-    transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  stroke-width: 2;
+  transition: all 0.3s ease;
 }
 
 .approach-step:nth-child(1) .approach-step-icon svg {
-    stroke: var(--accent-cyan);
-    filter: drop-shadow(0 0 10px var(--glow-cyan));
+  stroke: var(--accent-cyan);
+  filter: drop-shadow(0 0 10px var(--glow-cyan));
 }
 
 .approach-step:nth-child(2) .approach-step-icon svg {
-    stroke: var(--accent-magenta);
-    filter: drop-shadow(0 0 10px var(--glow-magenta));
+  stroke: var(--accent-magenta);
+  filter: drop-shadow(0 0 10px var(--glow-magenta));
 }
 
 .approach-step:nth-child(3) .approach-step-icon svg {
-    stroke: var(--accent-green);
-    filter: drop-shadow(0 0 10px var(--glow-green));
+  stroke: var(--accent-green);
+  filter: drop-shadow(0 0 10px var(--glow-green));
 }
 
 .approach-step:nth-child(4) .approach-step-icon svg {
-    stroke: var(--accent-blue);
-    filter: drop-shadow(0 0 10px var(--glow-blue));
+  stroke: var(--accent-blue);
+  filter: drop-shadow(0 0 10px var(--glow-blue));
 }
 
 .approach-step:nth-child(5) .approach-step-icon svg {
-    stroke: var(--accent-pink);
-    filter: drop-shadow(0 0 10px var(--glow-pink));
+  stroke: var(--accent-pink);
+  filter: drop-shadow(0 0 10px var(--glow-pink));
 }
 
 .approach-step:nth-child(6) .approach-step-icon svg {
-    stroke: var(--accent-cyan);
-    filter: drop-shadow(0 0 10px var(--glow-cyan));
+  stroke: var(--accent-cyan);
+  filter: drop-shadow(0 0 10px var(--glow-cyan));
 }
 
 .approach-step-content:hover .approach-step-icon svg {
-    transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* Step Title */
 .approach-step-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 .approach-step:nth-child(1) .approach-step-title {
-    color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 .approach-step:nth-child(2) .approach-step-title {
-    color: var(--accent-magenta);
+  color: var(--accent-magenta);
 }
 
 .approach-step:nth-child(3) .approach-step-title {
-    color: var(--accent-green);
+  color: var(--accent-green);
 }
 
 .approach-step:nth-child(4) .approach-step-title {
-    color: var(--accent-blue);
+  color: var(--accent-blue);
 }
 
 .approach-step:nth-child(5) .approach-step-title {
-    color: var(--accent-pink);
+  color: var(--accent-pink);
 }
 
 .approach-step:nth-child(6) .approach-step-title {
-    color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 /* Step Description */
 .approach-step-description {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 /* Pulse Glow Animation */
 @keyframes pulseGlow {
-    0%, 100% {
-        box-shadow: 0 0 20px currentColor;
-    }
-    50% {
-        box-shadow: 0 0 40px currentColor, 0 0 60px currentColor;
-    }
+  0%,
+  100% {
+    box-shadow: 0 0 20px currentColor;
+  }
+  50% {
+    box-shadow:
+      0 0 40px currentColor,
+      0 0 60px currentColor;
+  }
 }
 
 /* Connecting Arrow (for desktop) */
 .approach-step::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    z-index: 5;
-    opacity: 0.5;
-    transition: all 0.3s ease;
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  z-index: 5;
+  opacity: 0.5;
+  transition: all 0.3s ease;
 }
 
 .approach-step:nth-child(1)::after {
-    bottom: -2rem;
-    border-top: 20px solid var(--accent-cyan);
+  bottom: -2rem;
+  border-top: 20px solid var(--accent-cyan);
 }
 
 .approach-step:nth-child(2)::after {
-    bottom: -2rem;
-    border-top: 20px solid var(--accent-magenta);
+  bottom: -2rem;
+  border-top: 20px solid var(--accent-magenta);
 }
 
 .approach-step:nth-child(3)::after {
-    bottom: -2rem;
-    border-top: 20px solid var(--accent-green);
+  bottom: -2rem;
+  border-top: 20px solid var(--accent-green);
 }
 
 .approach-step:nth-child(4)::after {
-    bottom: -2rem;
-    border-top: 20px solid var(--accent-blue);
+  bottom: -2rem;
+  border-top: 20px solid var(--accent-blue);
 }
 
 .approach-step:nth-child(5)::after {
-    bottom: -2rem;
-    border-top: 20px solid var(--accent-pink);
+  bottom: -2rem;
+  border-top: 20px solid var(--accent-pink);
 }
 
 .approach-step:last-child::after {
-    display: none;
+  display: none;
 }
 
 .approach-step:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.2);
+  opacity: 1;
+  transform: translateX(-50%) scale(1.2);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .approach-section::before {
-        left: 2rem;
-    }
+  .approach-section::before {
+    left: 2rem;
+  }
 
-    .approach-step {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding-left: 4rem;
-        margin-bottom: 3rem;
-    }
+  .approach-step {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 4rem;
+    margin-bottom: 3rem;
+  }
 
-    .approach-step-content {
-        max-width: 100%;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-        width: 100%;
-    }
+  .approach-step-content {
+    max-width: 100%;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 100%;
+  }
 
-    .approach-step-number {
-        left: 2rem;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
+  .approach-step-number {
+    left: 2rem;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
 
-    .approach-step::after {
-        left: 2rem;
-        transform: translateX(-50%);
-    }
+  .approach-step::after {
+    left: 2rem;
+    transform: translateX(-50%);
+  }
 
-    .approach-step-title {
-        font-size: 1.5rem;
-    }
+  .approach-step-title {
+    font-size: 1.5rem;
+  }
 
-    .approach-step-description {
-        font-size: 1rem;
-    }
+  .approach-step-description {
+    font-size: 1rem;
+  }
 }
 
 /* Tablet Responsive */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .approach-step-content {
-        max-width: 400px;
-    }
+  .approach-step-content {
+    max-width: 400px;
+  }
 
-    .approach-step:nth-child(odd) .approach-step-content {
-        margin-right: 2rem;
-    }
+  .approach-step:nth-child(odd) .approach-step-content {
+    margin-right: 2rem;
+  }
 
-    .approach-step:nth-child(even) .approach-step-content {
-        margin-left: 2rem;
-    }
+  .approach-step:nth-child(even) .approach-step-content {
+    margin-left: 2rem;
+  }
 }
-

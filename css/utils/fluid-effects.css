@@ -14,61 +14,61 @@
 
 /* Fluid Wave Animation */
 @keyframes fluidWave {
-    0%,
-    100% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        transform: rotate(0deg);
-    }
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg);
+  }
 
-    25% {
-        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-        transform: rotate(90deg);
-    }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: rotate(90deg);
+  }
 
-    50% {
-        border-radius: 50% 50% 30% 70% / 40% 60% 50% 60%;
-        transform: rotate(180deg);
-    }
+  50% {
+    border-radius: 50% 50% 30% 70% / 40% 60% 50% 60%;
+    transform: rotate(180deg);
+  }
 
-    75% {
-        border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
-        transform: rotate(270deg);
-    }
+  75% {
+    border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+    transform: rotate(270deg);
+  }
 }
 
 /* Fluid Morph Animation */
 @keyframes fluidMorph {
-    0%,
-    100% {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
+  0%,
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 
-    25% {
-        clip-path: polygon(25% 0%, 100% 25%, 75% 100%, 0% 75%);
-    }
+  25% {
+    clip-path: polygon(25% 0%, 100% 25%, 75% 100%, 0% 75%);
+  }
 
-    50% {
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
+  50% {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
 
-    75% {
-        clip-path: polygon(75% 0%, 100% 75%, 25% 100%, 0% 25%);
-    }
+  75% {
+    clip-path: polygon(75% 0%, 100% 75%, 25% 100%, 0% 25%);
+  }
 }
 
 /* Fluid Gradient Animation */
 @keyframes fluidGradient {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ============================================
@@ -77,41 +77,41 @@
 
 /* Base Fluid Shape */
 .fluid-shape {
-    position: absolute;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    background: linear-gradient(135deg, var(--glow-cyan), var(--glow-magenta));
-    opacity: 0.1;
-    animation: fluidWave 20s ease-in-out infinite;
-    filter: blur(40px);
-    pointer-events: none;
+  position: absolute;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  background: linear-gradient(135deg, var(--glow-cyan), var(--glow-magenta));
+  opacity: 0.1;
+  animation: fluidWave 20s ease-in-out infinite;
+  filter: blur(40px);
+  pointer-events: none;
 }
 
 /* Fluid Shape Variants */
 .fluid-shape-1 {
-    width: 400px;
-    height: 400px;
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
 }
 
 .fluid-shape-2 {
-    width: 300px;
-    height: 300px;
-    bottom: 20%;
-    right: 15%;
-    animation-delay: -7s;
-    background: linear-gradient(135deg, var(--glow-magenta), var(--glow-pink));
+  width: 300px;
+  height: 300px;
+  bottom: 20%;
+  right: 15%;
+  animation-delay: -7s;
+  background: linear-gradient(135deg, var(--glow-magenta), var(--glow-pink));
 }
 
 .fluid-shape-3 {
-    width: 350px;
-    height: 350px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation-delay: -14s;
-    background: linear-gradient(135deg, var(--glow-green), var(--glow-cyan));
+  width: 350px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -14s;
+  background: linear-gradient(135deg, var(--glow-green), var(--glow-cyan));
 }
 
 /* ============================================
@@ -120,7 +120,7 @@
 
 /* Fluid Morph Utility */
 .fluid-morph {
-    animation: fluidMorph 15s ease-in-out infinite;
+  animation: fluidMorph 15s ease-in-out infinite;
 }
 
 /* ============================================
@@ -129,8 +129,13 @@
 
 /* Fluid Gradient Background */
 .fluid-gradient-bg {
-    background: linear-gradient(-45deg, var(--bg-secondary), var(--bg-tertiary), var(--bg-secondary), var(--bg-tertiary));
-    background-size: 400% 400%;
-    animation: fluidGradient 15s ease infinite;
+  background: linear-gradient(
+    -45deg,
+    var(--bg-secondary),
+    var(--bg-tertiary),
+    var(--bg-secondary),
+    var(--bg-tertiary)
+  );
+  background-size: 400% 400%;
+  animation: fluidGradient 15s ease infinite;
 }
-

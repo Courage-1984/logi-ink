@@ -1,39 +1,43 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { visualizer } from 'rollup-plugin-visualizer';
+import viteImagemin from 'vite-plugin-imagemin';
+import viteCompression from 'vite-plugin-compression';
+import { copyFileSync, existsSync } from 'fs';
 
 export default defineConfig({
-  // Base path for GitHub Pages (repository name)
-  base: '/logia-ink/',
-  
+  // Base path for deployment
+  // Can be overridden with VITE_BASE_PATH environment variable
+  // For root deployment, set VITE_BASE_PATH=/ in .env
+  base: process.env.VITE_BASE_PATH || '/',
+
   // Root directory (where index.html is located)
   root: '.',
-  
+
   // Build configuration
   build: {
     // Output directory
     outDir: 'dist',
-    
+
     // Empty output directory before build
     emptyOutDir: true,
-    
+
     // Source maps for debugging (set to false for production)
     sourcemap: false,
-    
-    // Minification (using esbuild - faster and built into Vite)
-    minify: 'esbuild',
-    
-    // Note: To use terser with more options, install terser: npm install -D terser
-    // Then change minify to 'terser' and uncomment terserOptions below
-    // terserOptions: {
-    //   compress: {
-    //     drop_console: true, // Remove console.log in production
-    //     drop_debugger: true,
-    //   },
-    // },
-    
-    // CSS minification
+
+    // Minification (using terser for console removal)
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.log in production
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.warn'],
+      },
+    },
+
+    // CSS minification - temporarily disabled to debug styling issues
     cssMinify: true,
-    
+
     // Rollup options
     rollupOptions: {
       input: {
@@ -42,10 +46,12 @@ export default defineConfig({
         services: resolve(__dirname, 'services.html'),
         projects: resolve(__dirname, 'projects.html'),
         contact: resolve(__dirname, 'contact.html'),
+        sw: resolve(__dirname, 'sw.js'), // Include service worker in build
+        // Note: robots.txt and sitemap.xml are copied as static assets
       },
       output: {
         // Manual chunking for better caching
-        manualChunks: (id) => {
+        manualChunks: id => {
           // Split vendor chunks (only if modules exist in node_modules)
           if (id.includes('node_modules')) {
             // Check for Three.js only if it's actually installed
@@ -57,10 +63,26 @@ export default defineConfig({
           // No manual chunking for application code
         },
         // Asset file naming
-        assetFileNames: (assetInfo) => {
+        assetFileNames: assetInfo => {
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
+          const name = info[0];
+
+          // Root favicon files should be copied to root without hashing
+          const rootFavicons = [
+            'apple-touch-icon',
+            'favicon-16x16',
+            'favicon-32x32',
+            'favicon',
+            'android-chrome-192x192',
+            'android-chrome-512x512',
+          ];
+
+          if (rootFavicons.includes(name)) {
+            return `[name][extname]`;
+          }
+
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp|avif/i.test(ext)) {
             return `assets/images/[name]-[hash][extname]`;
           }
           if (/woff2?|eot|ttf|otf/i.test(ext)) {
@@ -69,37 +91,137 @@ export default defineConfig({
           return `assets/[name]-[hash][extname]`;
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: assetInfo => {
+          // Service worker must be in root, not in assets/js
+          if (assetInfo.name === 'sw') {
+            return '[name].js';
+          }
+          return 'assets/js/[name]-[hash].js';
+        },
       },
     },
-    
-    // Chunk size warning limit (in kbs)
-    chunkSizeWarningLimit: 1000,
+
+    // Chunk size warning limit (in kbs) - reduced for better optimization
+    chunkSizeWarningLimit: 500,
+
+    // CSS code splitting per page - disabled to ensure all styles are available
+    cssCodeSplit: true,
   },
-  
+
   // Server configuration for development
   server: {
     port: 3000,
     open: true, // Open browser automatically
   },
-  
+
   // Preview server configuration
+  // Note: Base path is inherited from the main config above
   preview: {
     port: 4173,
     open: true,
   },
-  
+
   // CSS configuration
   css: {
     devSourcemap: true, // Source maps in development
+    postcss: './postcss.config.cjs', // Explicitly specify PostCSS config
   },
-  
+
   // Optimize dependencies
   optimizeDeps: {
     include: [], // Add any dependencies you want to pre-bundle
   },
-  
-  // Public directory (files copied as-is to dist)
-  publicDir: 'public',
-});
 
+  // Public directory (files copied as-is to dist)
+  // Note: sw.js is in root and will be copied automatically
+  publicDir: false, // Disable publicDir since we don't have a public folder
+
+  // Ensure fonts are copied during build
+  assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf', '**/*.otf'],
+
+  // Plugins
+  plugins: [
+    // Custom plugin to copy root favicon files to dist root
+    {
+      name: 'copy-favicons',
+      writeBundle() {
+        const faviconFiles = [
+          'apple-touch-icon.png',
+          'favicon-16x16.png',
+          'favicon-32x32.png',
+          'favicon.ico',
+          'android-chrome-192x192.png',
+          'android-chrome-512x512.png',
+          'site.webmanifest',
+        ];
+
+        faviconFiles.forEach(file => {
+          const src = resolve(__dirname, file);
+          const dest = resolve(__dirname, 'dist', file);
+          if (existsSync(src)) {
+            copyFileSync(src, dest);
+            console.log(`✅ Copied ${file} to dist/`);
+          }
+        });
+      },
+    },
+    // Image optimization plugin
+    viteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 80,
+      },
+      pngquant: {
+        quality: [0.8, 0.9],
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: false,
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false,
+          },
+        ],
+      },
+      // Only optimize images during production build
+      disable: process.env.NODE_ENV !== 'production',
+    }),
+
+    // Compression plugin (Gzip)
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+      threshold: 1024, // Only compress files larger than 1KB
+      deleteOriginFile: false, // Keep original files
+      verbose: true, // Show compression info
+    }),
+
+    // Compression plugin (Brotli)
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+      threshold: 1024, // Only compress files larger than 1KB
+      deleteOriginFile: false, // Keep original files
+      verbose: true, // Show compression info
+    }),
+
+    // Bundle analyzer plugin (generates stats.html)
+    visualizer({
+      filename: resolve(__dirname, 'dist/stats.html'),
+      open: false, // Don't open automatically
+      gzipSize: true,
+      brotliSize: true,
+      template: 'treemap', // treemap, sunburst, network
+    }),
+  ],
+});

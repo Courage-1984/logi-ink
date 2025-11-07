@@ -1,0 +1,67 @@
+<!-- Accessibility Improvements -->
+<!-- Skip to Content Link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ARIA Live Region for announcements -->
+<div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+<!-- Focus Management Script -->
+<script>
+  // Focus management for accessibility
+  (function() {
+    // Store last focused element before modal/overlay opens
+    let lastFocusedElement = null;
+
+    // Trap focus within modal/overlay
+    function trapFocus(element) {
+      const focusableElements = element.querySelectorAll(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      element.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
+        }
+      });
+    }
+
+    // Announce to screen readers
+    function announceToScreenReader(message) {
+      const liveRegion = document.getElementById('aria-live-region');
+      if (liveRegion) {
+        liveRegion.textContent = message;
+        // Clear after announcement
+        setTimeout(() => {
+          liveRegion.textContent = '';
+        }, 1000);
+      }
+    }
+
+    // Make functions available globally
+    window.accessibilityUtils = {
+      trapFocus,
+      announceToScreenReader,
+      setLastFocusedElement: (element) => { lastFocusedElement = element; },
+      getLastFocusedElement: () => lastFocusedElement,
+      restoreFocus: () => {
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+          lastFocusedElement = null;
+        }
+      }
+    };
+  })();
+</script>
+

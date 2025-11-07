@@ -1,0 +1,22 @@
+# robots.txt for Logi-Ink
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Disallow build and test files
+Disallow: /dist/
+Disallow: /tests/
+Disallow: /node_modules/
+Disallow: /.old/
+Disallow: /.vscode/
+Disallow: /.cursor/
+
+# Allow important assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Sitemap location
+Sitemap: https://logi-ink.com/sitemap.xml
+

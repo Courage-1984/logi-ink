@@ -7,21 +7,14 @@
 
 /* Divider/Separator */
 .divider {
-    height: 1px;
-    background: linear-gradient(90deg,
-            transparent,
-            var(--accent-cyan),
-            transparent);
-    margin: 3rem 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  margin: 3rem 0;
 }
 
 .divider-vertical {
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(180deg,
-            transparent,
-            var(--accent-cyan),
-            transparent);
-    margin: 0 2rem;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--accent-cyan), transparent);
+  margin: 0 2rem;
 }
-

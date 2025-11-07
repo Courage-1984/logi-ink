@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Worker Test - Logi-Ink</title>
+    <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .test-section {
+            background: #1a1a2e;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+        }
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+        .success {
+            background: #00ff00;
+            color: #000;
+        }
+        .error {
+            background: #ff0080;
+            color: #fff;
+        }
+        .info {
+            background: #0066ff;
+            color: #fff;
+        }
+        .warning {
+            background: #ffaa00;
+            color: #000;
+        }
+        button {
+            background: #00ffff;
+            color: #0a0a0a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        button:hover {
+            background: #00cccc;
+        }
+        pre {
+            background: #0a0a0a;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border: 1px solid #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Service Worker Test</h1>
+    
+    <div class="test-section">
+        <h2>1. Service Worker Support</h2>
+        <div id="sw-support"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Service Worker Registration</h2>
+        <div id="sw-registration"></div>
+        <button onclick="registerSW()">Register Service Worker</button>
+        <button onclick="unregisterSW()">Unregister Service Worker</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Service Worker Status</h2>
+        <div id="sw-status"></div>
+        <button onclick="checkStatus()">Check Status</button>
+        <button onclick="updateSW()">Check for Updates</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Cache Status</h2>
+        <div id="cache-status"></div>
+        <button onclick="checkCache()">Check Cache</button>
+        <button onclick="clearCache()">Clear Cache</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>5. Offline Test</h2>
+        <div id="offline-status"></div>
+        <button onclick="testOffline()">Test Offline Mode</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>6. Console Logs</h2>
+        <pre id="console-logs"></pre>
+    </div>
+
+    <script type="module">
+        // Capture console logs
+        const logs = [];
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = (...args) => {
+            logs.push({ type: 'log', message: args.join(' ') });
+            originalLog.apply(console, args);
+            updateLogs();
+        };
+        
+        console.error = (...args) => {
+            logs.push({ type: 'error', message: args.join(' ') });
+            originalError.apply(console, args);
+            updateLogs();
+        };
+        
+        function updateLogs() {
+            const logsEl = document.getElementById('console-logs');
+            logsEl.textContent = logs.slice(-20).map(log => 
+                `[${log.type.toUpperCase()}] ${log.message}`
+            ).join('\n');
+        }
+        
+        // Test 1: Service Worker Support
+        function checkSupport() {
+            const supportEl = document.getElementById('sw-support');
+            if ('serviceWorker' in navigator) {
+                supportEl.innerHTML = '<div class="status success">✅ Service Worker API is supported</div>';
+            } else {
+                supportEl.innerHTML = '<div class="status error">❌ Service Worker API is NOT supported</div>';
+            }
+        }
+        
+        // Test 2: Service Worker Registration
+        window.registerSW = async function() {
+            const regEl = document.getElementById('sw-registration');
+            try {
+                const basePath = window.location.pathname.replace(/\/[^/]*\.html?$/, '').replace(/\/$/, '') || '';
+                const swPath = `${basePath}/sw.js`;
+                
+                regEl.innerHTML = `<div class="status info">Attempting to register: ${swPath}</div>`;
+                
+                const registration = await navigator.serviceWorker.register(swPath);
+                regEl.innerHTML = `
+                    <div class="status success">✅ Service Worker registered successfully!</div>
+                    <div class="status info">Scope: ${registration.scope}</div>
+                    <div class="status info">Update via: ${registration.update}</div>
+                `;
+                
+                // Check status
+                checkStatus();
+            } catch (error) {
+                regEl.innerHTML = `<div class="status error">❌ Registration failed: ${error.message}</div>`;
+            }
+        };
+        
+        window.unregisterSW = async function() {
+            const regEl = document.getElementById('sw-registration');
+            try {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                for (const registration of registrations) {
+                    await registration.unregister();
+                }
+                regEl.innerHTML = '<div class="status success">✅ Service Worker unregistered</div>';
+                checkStatus();
+            } catch (error) {
+                regEl.innerHTML = `<div class="status error">❌ Unregister failed: ${error.message}</div>`;
+            }
+        };
+        
+        // Test 3: Service Worker Status
+        window.checkStatus = async function() {
+            const statusEl = document.getElementById('sw-status');
+            try {
+                if (navigator.serviceWorker.controller) {
+                    statusEl.innerHTML = `
+                        <div class="status success">✅ Service Worker is active and controlling the page</div>
+                        <div class="status info">Controller: ${navigator.serviceWorker.controller.scriptURL}</div>
+                    `;
+                } else {
+                    statusEl.innerHTML = '<div class="status warning">⚠️ No active service worker controller</div>';
+                }
+                
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                if (registrations.length > 0) {
+                    statusEl.innerHTML += `<div class="status info">Registered workers: ${registrations.length}</div>`;
+                    registrations.forEach((reg, index) => {
+                        statusEl.innerHTML += `
+                            <div class="status info">
+                                Worker ${index + 1}: ${reg.active ? 'Active' : 'Inactive'} | 
+                                Installing: ${reg.installing ? 'Yes' : 'No'} | 
+                                Waiting: ${reg.waiting ? 'Yes' : 'No'}
+                            </div>
+                        `;
+                    });
+                } else {
+                    statusEl.innerHTML += '<div class="status warning">⚠️ No registered service workers</div>';
+                }
+            } catch (error) {
+                statusEl.innerHTML = `<div class="status error">❌ Status check failed: ${error.message}</div>`;
+            }
+        };
+        
+        window.updateSW = async function() {
+            const statusEl = document.getElementById('sw-status');
+            try {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                if (registrations.length > 0) {
+                    await registrations[0].update();
+                    statusEl.innerHTML = '<div class="status success">✅ Update check completed</div>';
+                    setTimeout(checkStatus, 1000);
+                } else {
+                    statusEl.innerHTML = '<div class="status warning">⚠️ No service worker to update</div>';
+                }
+            } catch (error) {
+                statusEl.innerHTML = `<div class="status error">❌ Update check failed: ${error.message}</div>`;
+            }
+        };
+        
+        // Test 4: Cache Status
+        window.checkCache = async function() {
+            const cacheEl = document.getElementById('cache-status');
+            try {
+                const cacheNames = await caches.keys();
+                if (cacheNames.length > 0) {
+                    cacheEl.innerHTML = `<div class="status success">✅ Found ${cacheNames.length} cache(s)</div>`;
+                    for (const cacheName of cacheNames) {
+                        const cache = await caches.open(cacheName);
+                        const keys = await cache.keys();
+                        cacheEl.innerHTML += `
+                            <div class="status info">
+                                <strong>${cacheName}</strong>: ${keys.length} items
+                            </div>
+                        `;
+                    }
+                } else {
+                    cacheEl.innerHTML = '<div class="status warning">⚠️ No caches found</div>';
+                }
+            } catch (error) {
+                cacheEl.innerHTML = `<div class="status error">❌ Cache check failed: ${error.message}</div>`;
+            }
+        };
+        
+        window.clearCache = async function() {
+            const cacheEl = document.getElementById('cache-status');
+            try {
+                const cacheNames = await caches.keys();
+                for (const cacheName of cacheNames) {
+                    await caches.delete(cacheName);
+                }
+                cacheEl.innerHTML = '<div class="status success">✅ All caches cleared</div>';
+            } catch (error) {
+                cacheEl.innerHTML = `<div class="status error">❌ Clear cache failed: ${error.message}</div>`;
+            }
+        };
+        
+        // Test 5: Offline Test
+        window.testOffline = function() {
+            const offlineEl = document.getElementById('offline-status');
+            if (navigator.onLine) {
+                offlineEl.innerHTML = `
+                    <div class="status info">🌐 Currently online</div>
+                    <div class="status info">To test offline mode:</div>
+                    <div class="status info">1. Open DevTools → Network tab</div>
+                    <div class="status info">2. Check "Offline" checkbox</div>
+                    <div class="status info">3. Refresh the page</div>
+                    <div class="status info">4. The page should load from cache</div>
+                `;
+            } else {
+                offlineEl.innerHTML = `
+                    <div class="status warning">📴 Currently offline</div>
+                    <div class="status success">✅ If you can see this page, service worker is working!</div>
+                `;
+            }
+        };
+        
+        // Initialize tests
+        checkSupport();
+        checkStatus();
+        checkCache();
+        testOffline();
+        
+        // Auto-register on load
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                setTimeout(registerSW, 1000);
+            });
+        }
+        
+        // Listen for service worker messages
+        navigator.serviceWorker.addEventListener('message', (event) => {
+            console.log('Service Worker message:', event.data);
+        });
+    </script>
+</body>
+</html>
+

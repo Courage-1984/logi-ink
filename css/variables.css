@@ -1,19 +1,19 @@
 /* Cyberpunk Color Palette - CSS Variables */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a2e;
-    --bg-tertiary: #16213e;
-    --accent-cyan: #00ffff;
-    --accent-magenta: #ff00ff;
-    --accent-green: #00ff00;
-    --accent-blue: #0066ff;
-    --accent-pink: #ff0080;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-muted: #666666;
-    --glow-cyan: rgba(0, 255, 255, 0.5);
-    --glow-magenta: rgba(255, 0, 255, 0.5);
-    --glow-green: rgba(0, 255, 0, 0.5);
-    --glow-blue: rgba(0, 102, 255, 0.5);
-    --glow-pink: rgba(255, 0, 128, 0.5);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --accent-cyan: #00ffff;
+  --accent-magenta: #ff00ff;
+  --accent-green: #00ff00;
+  --accent-blue: #0066ff;
+  --accent-pink: #ff0080;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666666;
+  --glow-cyan: rgba(0, 255, 255, 0.5);
+  --glow-magenta: rgba(255, 0, 255, 0.5);
+  --glow-green: rgba(0, 255, 0, 0.5);
+  --glow-blue: rgba(0, 102, 255, 0.5);
+  --glow-pink: rgba(255, 0, 128, 0.5);
 }

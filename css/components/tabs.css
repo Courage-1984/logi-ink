@@ -9,52 +9,51 @@
 
 /* Tabs Container */
 .tabs {
-    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
-    margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+  margin-bottom: 2rem;
 }
 
 /* Tab List */
 .tab-list {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
 }
 
 /* Tab Button */
 .tab-button {
-    padding: 1rem 2rem;
-    background: transparent;
-    border: none;
-    border-bottom: 3px solid transparent;
-    color: var(--text-secondary);
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .tab-button:hover {
-    color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
 .tab-button.active {
-    color: var(--accent-cyan);
-    border-bottom-color: var(--accent-cyan);
-    box-shadow: 0 0 10px var(--glow-cyan);
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--glow-cyan);
 }
 
 /* Tab Content */
 .tab-content {
-    display: none;
-    padding: 2rem 0;
+  display: none;
+  padding: 2rem 0;
 }
 
 .tab-content.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
+  display: block;
+  animation: fadeIn 0.3s ease;
 }
-

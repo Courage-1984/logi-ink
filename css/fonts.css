@@ -1,0 +1,69 @@
+/**
+ * Self-Hosted Fonts
+ * @font-face declarations for Orbitron and Rajdhani fonts
+ * 
+ * Fonts are self-hosted for better performance and privacy.
+ * Using WOFF2 format for optimal compression (30-50% smaller than TTF).
+ * 
+ * Font files located in:
+ * - assets/fonts/Orbitron/woff2/
+ * - assets/fonts/Rajdhani/woff2/
+ */
+
+/* Orbitron Font - Headings (Subsetted) */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Rajdhani Font - Body Text (Subsetted) */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

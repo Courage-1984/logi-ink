@@ -1,20 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Logi-Ink</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-  <script type="module" crossorigin src="/logia-ink/assets/js/main-hX8F74Zr.js"></script>
-  <link rel="stylesheet" crossorigin href="/logia-ink/assets/main-BrERpJZ_.css">
-</head>
 
-<body>
+    <!-- Security Headers -->
+    <!-- Note: X-Frame-Options only works via HTTP headers, not meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Get in touch with Logi-Ink to discuss your digital project. We are here to help bring your vision to life with innovative solutions."
+    />
+    <meta
+      name="keywords"
+      content="contact logi-ink, get in touch, digital agency contact, project inquiry"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://logi-ink.com/contact.html" />
+    <meta property="og:title" content="Contact Us - Logi-Ink" />
+    <meta
+      property="og:description"
+      content="Get in touch with Logi-Ink to discuss your digital project. We are here to help bring your vision to life."
+    />
+    <meta
+      property="og:image"
+      content="https://logi-ink.com/assets/images/banners/banner_home.webp"
+    />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://logi-ink.com/contact.html" />
+    <meta name="twitter:title" content="Contact Us - Logi-Ink" />
+    <meta
+      name="twitter:description"
+      content="Get in touch with Logi-Ink to discuss your digital project. We are here to help bring your vision to life."
+    />
+    <meta
+      name="twitter:image"
+      content="https://logi-ink.com/assets/images/banners/banner_home.webp"
+    />
+    <meta name="twitter:site" content="@logiink" />
+    <meta name="twitter:creator" content="@logiink" />
+
+    <!-- Preload critical resources -->
+
+    <!-- Preload critical fonts (self-hosted WOFF2 - Subsetted) -->
+    <link
+      rel="preload"
+      href="data:font/woff2;base64,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"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Rajdhani-Regular-subset-eAD4TeI1.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
+
+    <!-- Prefetch likely next pages -->
+    <link rel="prefetch" href="/assets/index-CZ8p8LOo.html" />
+    <link rel="prefetch" href="/assets/about-C44ZCgaJ.html" />
+    <link rel="prefetch" href="/assets/services-BNHoZSW9.html" />
+    <link rel="prefetch" href="/assets/projects-CHQ-wero.html" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site-B0V2IM4o.webmanifest" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Contact Us - Logi-Ink",
+      "url": "https://logi-ink.com/contact.html",
+      "description": "Get in touch with Logi-Ink to discuss your digital project. We are here to help bring your vision to life.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Logi-Ink"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://logi-ink.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://logi-ink.com/contact.html"
+          }
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Us - Logi-Ink",
+      "url": "https://logi-ink.com/contact.html",
+      "description": "Get in touch with Logi-Ink to discuss your digital project.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Logi-Ink",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "contact@logi-ink.com"
+        }
+      }
+    }
+    </script>
+
+    <!-- Main CSS -->
+    <script type="module" crossorigin src="/assets/js/main-DAqLee6q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-ge28Vawv.css">
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ARIA Live Region for announcements -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress"></div>
 
@@ -24,454 +159,603 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
-                </a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
+          </a>
         </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Contact Hero -->
-    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
-        <div class="hero-background">
-            <div class="grid-overlay"></div>
-            <div class="particles"></div>
-            <!-- Fluid Shapes -->
-            <div class="fluid-shape fluid-shape-2"></div>
-            <div class="fluid-shape fluid-shape-3"></div>
+    <main id="main-content">
+    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px">
+      <div class="hero-background">
+        <div class="grid-overlay"></div>
+        <div class="particles"></div>
+        <!-- Fluid Shapes -->
+        <div class="fluid-shape fluid-shape-2"></div>
+        <div class="fluid-shape fluid-shape-3"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem)">
+          <span class="text-reveal" style="color: var(--accent-cyan)">GET IN</span>
+          <span class="text-reveal delay-1" style="color: var(--accent-magenta)">TOUCH</span>
+        </h1>
+        <p class="hero-subtitle fade-in delay-2">Let's discuss your next project</p>
+        <div class="hero-buttons fade-in delay-3">
+          <a
+            href="#contactSection"
+            class="btn btn-primary scroll-to-form"
+            aria-label="Scroll to contact form"
+          >
+            Contact Us
+          </a>
         </div>
-        <div class="hero-content">
-            <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
-                <span class="text-reveal" style="color: var(--accent-cyan);">GET IN</span>
-                <span class="text-reveal delay-1" style="color: var(--accent-magenta);">TOUCH</span>
-            </h1>
-            <p class="hero-subtitle fade-in delay-2">
-                Let's discuss your next project
-            </p>
-            <div class="hero-buttons fade-in delay-3">
-                <a href="#contactSection" class="btn btn-primary scroll-to-form" aria-label="Scroll to contact form">
-                    Contact Us
-                </a>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section" id="contactSection">
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item mouse-tilt-container">
-                    <div class="contact-item-header">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                        </div>
-                        <h3>Email</h3>
-                    </div>
-                    <p><a href="mailto:hello@logi-ink.co.za"
-                            aria-label="Send email to hello@logi-ink.co.za">hello@logi-ink.co.za</a></p>
-                    <a href="mailto:hello@logi-ink.co.za" class="contact-quick-action" aria-label="Send email">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                        Send Email
-                    </a>
-                </div>
-                <div class="contact-item mouse-tilt-container">
-                    <div class="contact-item-header">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                        </div>
-                        <h3>Phone</h3>
-                    </div>
-                    <p><a href="tel:+27123456789" aria-label="Call +27 12 345 6789">+27 12 345 6789</a></p>
-                    <a href="tel:+27123456789" class="contact-quick-action" aria-label="Call us">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                        Call Now
-                    </a>
-                </div>
-                <div class="contact-item mouse-tilt-container">
-                    <div class="contact-item-header">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                        </div>
-                        <h3>Address</h3>
-                    </div>
-                    <p>Johannesburg, South Africa<br>Office Hours: Mon-Fri 9AM-5PM</p>
-                </div>
-                <div class="contact-item mouse-tilt-container">
-                    <div class="contact-item-header">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </div>
-                        <h3>Social Media</h3>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn"
-                            class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter"
-                            class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                            </svg>
-                            <span>Twitter</span>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram"
-                            class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                            <span>Instagram</span>
-                        </a>
-                    </div>
-                </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item mouse-tilt-container">
+            <div class="contact-item-header">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <h3>Email</h3>
             </div>
-            <div class="contact-form mouse-tilt-container">
-                <h2 class="form-title">Send us a Message</h2>
-                <div class="form-progress">
-                    <div class="form-progress-bar" id="formProgressBar" role="progressbar" aria-valuenow="0"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <form id="contactForm" novalidate>
-                    <!-- Honeypot field for spam protection -->
-                    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"
-                        style="position: absolute; left: -9999px;" aria-hidden="true">
-
-                    <div class="form-group floating-label">
-                        <input type="text" id="name" name="name" placeholder=" " required aria-required="true"
-                            aria-describedby="name-error">
-                        <label for="name">Name <span class="required">*</span></label>
-                        <span class="form-error-message" id="name-error" role="alert" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group floating-label">
-                        <input type="email" id="email" name="email" placeholder=" " required aria-required="true"
-                            aria-describedby="email-error">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <span class="form-error-message" id="email-error" role="alert" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group floating-label">
-                        <input type="tel" id="phone" name="phone" placeholder=" " aria-describedby="phone-error">
-                        <label for="phone">Phone</label>
-                        <span class="form-error-message" id="phone-error" role="alert" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group floating-label">
-                        <input type="text" id="subject" name="subject" placeholder=" " required aria-required="true"
-                            aria-describedby="subject-error">
-                        <label for="subject">Subject <span class="required">*</span></label>
-                        <span class="form-error-message" id="subject-error" role="alert" aria-live="polite"></span>
-                    </div>
-
-                    <div class="form-group floating-label">
-                        <textarea id="message" name="message" placeholder=" " required aria-required="true"
-                            aria-describedby="message-error message-counter" rows="5"></textarea>
-                        <label for="message">Message <span class="required">*</span></label>
-                        <div class="textarea-footer">
-                            <span class="form-error-message" id="message-error" role="alert" aria-live="polite"></span>
-                            <span class="character-counter" id="message-counter" aria-live="polite">
-                                <span id="message-count">0</span> / 1000 characters
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- reCAPTCHA placeholder -->
-                    <div class="form-group" id="recaptcha-container">
-                        <!-- reCAPTCHA will be loaded here if needed -->
-                    </div>
-
-                    <button type="submit" class="form-submit" id="submitButton" aria-label="Submit contact form">
-                        <span class="submit-text">Send Message</span>
-                        <span class="submit-spinner" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <circle cx="12" cy="12" r="10" stroke-opacity="0.25" />
-                                <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round" />
-                            </svg>
-                        </span>
-                    </button>
-                </form>
+            <p>
+              <a href="mailto:hello@logi-ink.co.za" aria-label="Send email to hello@logi-ink.co.za"
+                >hello@logi-ink.co.za</a
+              >
+            </p>
+            <a
+              href="mailto:hello@logi-ink.co.za"
+              class="contact-quick-action"
+              aria-label="Send email"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              Send Email
+            </a>
+          </div>
+          <div class="contact-item mouse-tilt-container">
+            <div class="contact-item-header">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <h3>Phone</h3>
             </div>
+            <p><a href="tel:+27123456789" aria-label="Call +27 12 345 6789">+27 12 345 6789</a></p>
+            <a href="tel:+27123456789" class="contact-quick-action" aria-label="Call us">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              Call Now
+            </a>
+          </div>
+          <div class="contact-item mouse-tilt-container">
+            <div class="contact-item-header">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <h3>Address</h3>
+            </div>
+            <p>Johannesburg, South Africa<br />Office Hours: Mon-Fri 9AM-5PM</p>
+          </div>
+          <div class="contact-item mouse-tilt-container">
+            <div class="contact-item-header">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </div>
+              <h3>Social Media</h3>
+            </div>
+            <div class="social-links">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our LinkedIn"
+                class="social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                  />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Twitter"
+                class="social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  />
+                </svg>
+                <span>Twitter</span>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Instagram"
+                class="social-link"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
         </div>
+        <div class="contact-form mouse-tilt-container">
+          <h2 class="form-title">Send us a Message</h2>
+          <div class="form-progress">
+            <div
+              class="form-progress-bar"
+              id="formProgressBar"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <form id="contactForm" novalidate>
+            <!-- Honeypot field for spam protection -->
+            <input
+              type="text"
+              name="website"
+              id="website"
+              tabindex="-1"
+              autocomplete="off"
+              style="position: absolute; left: -9999px"
+              aria-hidden="true"
+            />
+
+            <div class="form-group floating-label">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder=" "
+                required
+                aria-required="true"
+                aria-describedby="name-error"
+              />
+              <label for="name">Name <span class="required">*</span></label>
+              <span
+                class="form-error-message"
+                id="name-error"
+                role="alert"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <div class="form-group floating-label">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                required
+                aria-required="true"
+                aria-describedby="email-error"
+              />
+              <label for="email">Email <span class="required">*</span></label>
+              <span
+                class="form-error-message"
+                id="email-error"
+                role="alert"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <div class="form-group floating-label">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder=" "
+                aria-describedby="phone-error"
+              />
+              <label for="phone">Phone</label>
+              <span
+                class="form-error-message"
+                id="phone-error"
+                role="alert"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <div class="form-group floating-label">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder=" "
+                required
+                aria-required="true"
+                aria-describedby="subject-error"
+              />
+              <label for="subject">Subject <span class="required">*</span></label>
+              <span
+                class="form-error-message"
+                id="subject-error"
+                role="alert"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <div class="form-group floating-label">
+              <textarea
+                id="message"
+                name="message"
+                placeholder=" "
+                required
+                aria-required="true"
+                aria-describedby="message-error message-counter"
+                rows="5"
+              ></textarea>
+              <label for="message">Message <span class="required">*</span></label>
+              <div class="textarea-footer">
+                <span
+                  class="form-error-message"
+                  id="message-error"
+                  role="alert"
+                  aria-live="polite"
+                ></span>
+                <span class="character-counter" id="message-counter" aria-live="polite">
+                  <span id="message-count">0</span> / 1000 characters
+                </span>
+              </div>
+            </div>
+
+            <!-- reCAPTCHA placeholder -->
+            <div class="form-group" id="recaptcha-container">
+              <!-- reCAPTCHA will be loaded here if needed -->
+            </div>
+
+            <button
+              type="submit"
+              class="form-submit"
+              id="submitButton"
+              aria-label="Submit contact form"
+            >
+              <span class="submit-text">Send Message</span>
+              <span class="submit-spinner" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" stroke-opacity="0.25" />
+                  <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="services-preview">
-        <div class="container">
-            <div class="section-divider"></div>
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about working with us</p>
-            </div>
-            <div class="faq-container">
-                <details class="faq-item">
-                    <summary>How quickly will you respond to my inquiry?</summary>
-                    <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters,
-                        please call us directly.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Do you offer free consultations?</summary>
-                    <p>Yes, we offer complimentary initial consultations to discuss your project needs and provide
-                        expert recommendations.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Can you work with our existing team?</summary>
-                    <p>Absolutely! We're experienced in collaborating with in-house teams and can seamlessly integrate
-                        with your workflow.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>What is your typical project timeline?</summary>
-                    <p>Timelines vary based on project scope. We provide detailed schedules during the planning phase
-                        and keep you updated throughout.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>What payment methods do you accept?</summary>
-                    <p>We accept various payment methods including bank transfers, credit cards, and payment plans for
-                        larger projects. We'll discuss payment terms during the consultation.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Do you provide ongoing support after project completion?</summary>
-                    <p>Yes, we offer maintenance and support packages to ensure your project continues to perform
-                        optimally. We can discuss support options that fit your needs.</p>
-                </details>
-            </div>
+      <div class="container">
+        <div class="section-divider"></div>
+        <div class="section-header scroll-reveal-3d">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about working with us</p>
         </div>
+        <div class="faq-container">
+          <details class="faq-item">
+            <summary>How quickly will you respond to my inquiry?</summary>
+            <p>
+              We typically respond to all inquiries within 24 hours during business days. For urgent
+              matters, please call us directly.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer free consultations?</summary>
+            <p>
+              Yes, we offer complimentary initial consultations to discuss your project needs and
+              provide expert recommendations.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you work with our existing team?</summary>
+            <p>
+              Absolutely! We're experienced in collaborating with in-house teams and can seamlessly
+              integrate with your workflow.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What is your typical project timeline?</summary>
+            <p>
+              Timelines vary based on project scope. We provide detailed schedules during the
+              planning phase and keep you updated throughout.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>What payment methods do you accept?</summary>
+            <p>
+              We accept various payment methods including bank transfers, credit cards, and payment
+              plans for larger projects. We'll discuss payment terms during the consultation.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you provide ongoing support after project completion?</summary>
+            <p>
+              Yes, we offer maintenance and support packages to ensure your project continues to
+              perform optimally. We can discuss support options that fit your needs.
+            </p>
+          </details>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">Don't just take our word for it</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card mouse-tilt-container card-3d">
-                    <div class="testimonial-quote">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
-                            <path
-                                d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
-                        </svg>
-                    </div>
-                    <p class="testimonial-text"
-                        data-text='"Logi-Ink transformed our digital presence completely. Their team was professional, responsive, and delivered beyond our expectations. Highly recommended!"'>
-                        "Logi-Ink transformed our digital presence completely. Their team was
-                        professional, responsive, and delivered beyond our expectations. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, TechStart Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card mouse-tilt-container card-3d">
-                    <div class="testimonial-quote">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
-                            <path
-                                d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
-                        </svg>
-                    </div>
-                    <p class="testimonial-text"
-                        data-text='"Working with Logi-Ink was a game-changer. They understood our vision and brought it to life with innovative solutions. The project was completed on time and within budget."'>
-                        "Working with Logi-Ink was a game-changer. They understood our vision
-                        and brought it to life with innovative solutions. The project was completed on time and within
-                        budget."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Michael Chen</h4>
-                            <p>Founder, Digital Solutions</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card mouse-tilt-container card-3d">
-                    <div class="testimonial-quote">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
-                            <path
-                                d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
-                        </svg>
-                    </div>
-                    <p class="testimonial-text"
-                        data-text="Exceptional service and attention to detail. Logi-Ink helped us streamline our operations and improve our customer experience significantly. They'
-                        re true professionals.">Exceptional service and attention to detail. Logi-Ink helped us
-                        streamline our operations and improve our customer experience significantly. They're true
-                        professionals.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Emily Rodriguez</h4>
-                            <p>Director, Creative Agency</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header scroll-reveal-3d">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <p class="section-subtitle">Don't just take our word for it</p>
         </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card mouse-tilt-container card-3d">
+            <div class="testimonial-quote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                />
+                <path
+                  d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                />
+              </svg>
+            </div>
+            <p
+              class="testimonial-text"
+              data-text='"Logi-Ink transformed our digital presence completely. Their team was professional, responsive, and delivered beyond our expectations. Highly recommended!"'
+            >
+              "Logi-Ink transformed our digital presence completely. Their team was professional,
+              responsive, and delivered beyond our expectations. Highly recommended!"
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div class="testimonial-info">
+                <h4>Sarah Johnson</h4>
+                <p>CEO, TechStart Inc.</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card mouse-tilt-container card-3d">
+            <div class="testimonial-quote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                />
+                <path
+                  d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                />
+              </svg>
+            </div>
+            <p
+              class="testimonial-text"
+              data-text='"Working with Logi-Ink was a game-changer. They understood our vision and brought it to life with innovative solutions. The project was completed on time and within budget."'
+            >
+              "Working with Logi-Ink was a game-changer. They understood our vision and brought it
+              to life with innovative solutions. The project was completed on time and within
+              budget."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div class="testimonial-info">
+                <h4>Michael Chen</h4>
+                <p>Founder, Digital Solutions</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card mouse-tilt-container card-3d">
+            <div class="testimonial-quote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                />
+                <path
+                  d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                />
+              </svg>
+            </div>
+            <p
+              class="testimonial-text"
+              data-text="Exceptional service and attention to detail. Logi-Ink helped us streamline our operations and improve our customer experience significantly. They'
+                        re true professionals."
+            >
+              Exceptional service and attention to detail. Logi-Ink helped us streamline our
+              operations and improve our customer experience significantly. They're true
+              professionals.
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div class="testimonial-info">
+                <h4>Emily Rodriguez</h4>
+                <p>Director, Creative Agency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Office Hours Section -->
     <section class="services-preview">
-        <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">Office Information</h2>
-                <p class="section-subtitle">We're here when you need us</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon" style="margin: 0 auto 1.5rem auto;">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                    </div>
-                    <h3>Office Hours</h3>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">
-                        <strong style="color: var(--accent-cyan);">Monday - Friday:</strong><br>
-                        9:00 AM - 5:00 PM<br><br>
-                        <strong style="color: var(--accent-magenta);">Saturday - Sunday:</strong><br>
-                        By appointment only
-                    </p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon" style="margin: 0 auto 1.5rem auto;">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                    </div>
-                    <h3>Location</h3>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">
-                        <strong style="color: var(--accent-cyan);">Johannesburg, South Africa</strong><br><br>
-                        Available for in-person meetings<br>
-                        by appointment
-                    </p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon" style="margin: 0 auto 1.5rem auto;">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                    </div>
-                    <h3>Response Time</h3>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">
-                        <strong style="color: var(--accent-green);">Email:</strong> Within 24 hours<br><br>
-                        <strong style="color: var(--accent-blue);">Phone:</strong> During business hours<br><br>
-                        <strong style="color: var(--accent-magenta);">Emergency:</strong> Contact via phone
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header scroll-reveal-3d">
+          <h2 class="section-title">Office Information</h2>
+          <p class="section-subtitle">We're here when you need us</p>
         </div>
+        <div class="services-grid">
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3>Office Hours</h3>
+            <p style="color: var(--text-secondary); margin-top: 1rem">
+              <strong style="color: var(--accent-cyan)">Monday - Friday:</strong><br />
+              9:00 AM - 5:00 PM<br /><br />
+              <strong style="color: var(--accent-magenta)">Saturday - Sunday:</strong><br />
+              By appointment only
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3>Location</h3>
+            <p style="color: var(--text-secondary); margin-top: 1rem">
+              <strong style="color: var(--accent-cyan)">Johannesburg, South Africa</strong
+              ><br /><br />
+              Available for in-person meetings<br />
+              by appointment
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </div>
+            <h3>Response Time</h3>
+            <p style="color: var(--text-secondary); margin-top: 1rem">
+              <strong style="color: var(--accent-green)">Email:</strong> Within 24 hours<br /><br />
+              <strong style="color: var(--accent-blue)">Phone:</strong> During business hours<br /><br />
+              <strong style="color: var(--accent-magenta)">Emergency:</strong> Contact via phone
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Map Section -->
     <section class="map-section">
-        <div class="container">
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.1234567890123!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzE0LjgiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza"
-                    width="100%" height="450"
-                    style="border:0; border-radius: 10px; filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    title="Our location in Johannesburg, South Africa"
-                    aria-label="Map showing our location in Johannesburg, South Africa">
-                </iframe>
-            </div>
+      <div class="container">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.1234567890123!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzE0LjgiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza"
+            width="100%"
+            height="450"
+            style="
+              border: 0;
+              border-radius: 10px;
+              filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+            "
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Our location in Johannesburg, South Africa"
+            aria-label="Map showing our location in Johannesburg, South Africa"
+          >
+          </iframe>
         </div>
+      </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>LOG<span class="logo-accent">I</span>-INK</h3>
-                    <p>Digital innovation and creative solutions for the future.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#" target="_blank">LinkedIn</a></li>
-                        <li><a href="#" target="_blank">Twitter</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Logi-Ink. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>LOG<span class="logo-accent">I</span>-INK</h3>
+            <p>Digital innovation and creative solutions for the future.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+              <li><a href="#" target="_blank">Twitter</a></li>
+              <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Logi-Ink. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
@@ -479,6 +763,5 @@
 
     <!-- Three.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</body>
-
+  </body>
 </html>

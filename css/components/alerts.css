@@ -9,36 +9,35 @@
 
 /* Alert Base */
 .alert {
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    border-left: 4px solid;
-    position: relative;
-    animation: slideIn 0.3s ease;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+  position: relative;
+  animation: slideIn 0.3s ease;
 }
 
 /* Alert Variants */
 .alert-success {
-    background: rgba(0, 255, 0, 0.1);
-    border-color: var(--accent-green);
-    color: var(--accent-green);
+  background: rgba(0, 255, 0, 0.1);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
 }
 
 .alert-error {
-    background: rgba(255, 0, 128, 0.1);
-    border-color: var(--accent-pink);
-    color: var(--accent-pink);
+  background: rgba(255, 0, 128, 0.1);
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
 }
 
 .alert-warning {
-    background: rgba(255, 255, 0, 0.1);
-    border-color: #ffff00;
-    color: #ffff00;
+  background: rgba(255, 255, 0, 0.1);
+  border-color: #ffff00;
+  color: #ffff00;
 }
 
 .alert-info {
-    background: rgba(0, 255, 255, 0.1);
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
+  background: rgba(0, 255, 255, 0.1);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
-

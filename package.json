@@ -7,13 +7,30 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "format": "prettier --write \"**/*.{js,html,css,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,html,css,json,md}\"",
+    "lint": "eslint js/**/*.js",
+    "lint:fix": "eslint js/**/*.js --fix",
+    "validate": "npm run format:check && npm run lint",
+    "clean": "rm -rf dist node_modules/.vite",
     "optimize-images": "node scripts/optimize-images.js",
-    "responsive-images": "node scripts/generate-responsive-images.js"
+    "responsive-images": "node scripts/generate-responsive-images.js",
+    "subset-fonts": "node scripts/subset-fonts.js",
+    "inline-critical-css": "node scripts/inline-critical-css.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "eslint": "^9.39.1",
+    "glob": "^11.0.3",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "rollup-plugin-visualizer": "^6.0.5",
+    "sharp": "^0.32.6",
+    "terser": "^5.44.1",
     "vite": "^5.0.0",
-    "sharp": "^0.32.6"
-  },
-  "dependencies": {}
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-imagemin": "^0.6.1"
+  }
 }
-

@@ -1,20 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Logi-Ink</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-  <script type="module" crossorigin src="/logia-ink/assets/js/main-hX8F74Zr.js"></script>
-  <link rel="stylesheet" crossorigin href="/logia-ink/assets/main-BrERpJZ_.css">
-</head>
 
-<body>
+    <!-- Security Headers -->
+    <!-- Note: X-Frame-Options only works via HTTP headers, not meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=()"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Learn about Logi-Ink, our mission, values, and approach to digital innovation. We are passionate about creating exceptional digital experiences that drive business growth."
+    />
+    <meta
+      name="keywords"
+      content="about logi-ink, digital agency team, company mission, digital innovation team"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://logi-ink.com/about.html" />
+    <meta property="og:title" content="About Us - Logi-Ink" />
+    <meta
+      property="og:description"
+      content="Learn about Logi-Ink, our mission, values, and approach to digital innovation."
+    />
+    <meta
+      property="og:image"
+      content="https://logi-ink.com/assets/images/banners/banner_home.webp"
+    />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://logi-ink.com/about.html" />
+    <meta name="twitter:title" content="About Us - Logi-Ink" />
+    <meta
+      name="twitter:description"
+      content="Learn about Logi-Ink, our mission, values, and approach to digital innovation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://logi-ink.com/assets/images/banners/banner_home.webp"
+    />
+    <meta name="twitter:site" content="@logiink" />
+    <meta name="twitter:creator" content="@logiink" />
+
+    <!-- Preload critical resources -->
+
+    <!-- Preload critical fonts (self-hosted WOFF2 - Subsetted) -->
+    <link
+      rel="preload"
+      href="data:font/woff2;base64,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"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Rajdhani-Regular-subset-eAD4TeI1.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
+
+    <!-- Prefetch likely next pages -->
+    <link rel="prefetch" href="/assets/index-CZ8p8LOo.html" />
+    <link rel="prefetch" href="/assets/services-BNHoZSW9.html" />
+    <link rel="prefetch" href="/assets/projects-CHQ-wero.html" />
+    <link rel="prefetch" href="/assets/contact-CK6q5stb.html" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site-B0V2IM4o.webmanifest" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "About Us - Logi-Ink",
+      "url": "https://logi-ink.com/about.html",
+      "description": "Learn about Logi-Ink, our mission, values, and approach to digital innovation.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Logi-Ink"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://logi-ink.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://logi-ink.com/about.html"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Main CSS -->
+    <script type="module" crossorigin src="/assets/js/main-DAqLee6q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-ge28Vawv.css">
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ARIA Live Region for announcements -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress"></div>
 
@@ -24,504 +141,679 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
-                </a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
+          </a>
         </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- About Hero -->
-    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px;">
-        <div class="hero-background">
-            <div class="grid-overlay"></div>
-            <div class="particles"></div>
-            <!-- Fluid Shapes -->
-            <div class="fluid-shape fluid-shape-1"></div>
-            <div class="fluid-shape fluid-shape-3"></div>
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
-                <span class="text-reveal" style="color: var(--accent-cyan);">ABOUT</span>
-                <span class="text-reveal delay-1" style="color: var(--accent-magenta);">LOG<span
-                        class="logo-accent">I</span>-INK</span>
-            </h1>
-            <p class="hero-subtitle fade-in delay-2">
-                Pioneering the future of digital experiences
-            </p>
-        </div>
+    <main id="main-content">
+    <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px">
+      <div class="hero-background">
+        <div class="grid-overlay"></div>
+        <div class="particles"></div>
+        <!-- Fluid Shapes -->
+        <div class="fluid-shape fluid-shape-1"></div>
+        <div class="fluid-shape fluid-shape-3"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem)">
+          <span class="text-reveal" style="color: var(--accent-cyan)">ABOUT</span>
+          <span class="text-reveal delay-1" style="color: var(--accent-magenta)"
+            >LOG<span class="logo-accent">I</span>-INK</span
+          >
+        </h1>
+        <p class="hero-subtitle fade-in delay-2">Pioneering the future of digital experiences</p>
+      </div>
     </section>
 
     <!-- Mission Section -->
     <section class="services-preview parallax-section mission-parallax">
-        <div class="parallax-background"></div>
-        <div class="parallax-overlay"></div>
-        <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title fade-in-up">Our Mission</h2>
-            </div>
-            <div style="max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-                <p class="fade-in-up"
-                    style="font-size: 1.2rem; color: var(--text-secondary); line-height: 2; margin-bottom: 2rem; animation-delay: 0.2s;">
-                    At Logi-Ink, we believe in pushing the boundaries of digital innovation. We craft immersive
-                    experiences
-                    that not only engage but transform businesses, driving stronger connections and measurable results.
-                </p>
-                <p class="fade-in-up"
-                    style="font-size: 1.1rem; color: var(--text-secondary); line-height: 2; animation-delay: 0.4s;">
-                    Our team combines cutting-edge technology with creative excellence, delivering solutions that stand
-                    out
-                    in an ever-evolving digital landscape. We're not just developers and designers—we're digital
-                    architects
-                    building the future.
-                </p>
-            </div>
+      <div class="parallax-background"></div>
+      <div class="parallax-overlay"></div>
+      <div class="container">
+        <div class="section-header scroll-reveal-3d" style="position: relative; z-index: 2">
+          <h2 class="section-title fade-in-up">Our Mission</h2>
+          <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">
+            Pushing the boundaries of digital innovation
+          </p>
         </div>
+        <div
+          style="
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+          "
+        >
+          <p
+            class="fade-in-up"
+            style="
+              font-size: 1.2rem;
+              color: var(--text-secondary);
+              line-height: 2;
+              margin-bottom: 2rem;
+              animation-delay: 0.2s;
+            "
+          >
+            At Logi-Ink, we believe in pushing the boundaries of digital innovation. We craft
+            immersive experiences that not only engage but transform businesses, driving stronger
+            connections and measurable results.
+          </p>
+          <p
+            class="fade-in-up"
+            style="
+              font-size: 1.1rem;
+              color: var(--text-secondary);
+              line-height: 2;
+              animation-delay: 0.4s;
+            "
+          >
+            Our team combines cutting-edge technology with creative excellence, delivering solutions
+            that stand out in an ever-evolving digital landscape. We're not just developers and
+            designers—we're digital architects building the future.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Values Section -->
     <section class="featured-projects values-section">
-        <!-- Star Particles Background -->
-        <div class="values-stars"></div>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Values</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <h3>Innovation</h3>
-                    <p>We stay ahead of the curve, embracing new technologies and creative approaches to solve complex
-                        challenges.</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                    </div>
-                    <h3>Excellence</h3>
-                    <p>Every project is delivered with meticulous attention to detail and a commitment to exceeding
-                        expectations.</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                    </div>
-                    <h3>Partnership</h3>
-                    <p>We build lasting relationships with our clients, working collaboratively to achieve shared
-                        success.</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                    </div>
-                    <h3>Impact</h3>
-                    <p>We measure success by the positive impact we create for businesses and their customers.</p>
-                </div>
-            </div>
+      <!-- Star Particles Background -->
+      <div class="values-stars"></div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Values</h2>
         </div>
+        <div class="services-grid">
+          <div class="service-card mouse-tilt-container card-3d">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3>Innovation</h3>
+            <p>
+              We stay ahead of the curve, embracing new technologies and creative approaches to
+              solve complex challenges.
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <h3>Excellence</h3>
+            <p>
+              Every project is delivered with meticulous attention to detail and a commitment to
+              exceeding expectations.
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>Partnership</h3>
+            <p>
+              We build lasting relationships with our clients, working collaboratively to achieve
+              shared success.
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <h3>Impact</h3>
+            <p>
+              We measure success by the positive impact we create for businesses and their
+              customers.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Our Approach Section -->
     <section class="services-preview approach-section">
-        <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title fade-in-up">Our Approach</h2>
-                <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s;">A proven process that delivers exceptional results</p>
-            </div>
-            <div class="approach-timeline">
-                <!-- Step 1: Discovery -->
-                <div class="approach-step fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="approach-step-number">01</div>
-                    <div class="approach-step-content">
-                        <div class="approach-step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.35-4.35"></path>
-                            </svg>
-                        </div>
-                        <h3 class="approach-step-title">Discovery</h3>
-                        <p class="approach-step-description">We dive deep into understanding your business, goals, and audience to create a strategic foundation for success.</p>
-                    </div>
-                </div>
-
-                <!-- Step 2: Strategy -->
-                <div class="approach-step fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="approach-step-number">02</div>
-                    <div class="approach-step-content">
-                        <div class="approach-step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <h3 class="approach-step-title">Strategy</h3>
-                        <p class="approach-step-description">We develop comprehensive strategies and roadmaps that align with your objectives and market opportunities.</p>
-                    </div>
-                </div>
-
-                <!-- Step 3: Design -->
-                <div class="approach-step fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="approach-step-number">03</div>
-                    <div class="approach-step-content">
-                        <div class="approach-step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="approach-step-title">Design</h3>
-                        <p class="approach-step-description">Creative concepts are brought to life through innovative design that balances aesthetics with functionality.</p>
-                    </div>
-                </div>
-
-                <!-- Step 4: Development -->
-                <div class="approach-step fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="approach-step-number">04</div>
-                    <div class="approach-step-content">
-                        <div class="approach-step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="approach-step-title">Development</h3>
-                        <p class="approach-step-description">Cutting-edge technology is implemented with precision, ensuring robust and scalable solutions.</p>
-                    </div>
-                </div>
-
-                <!-- Step 5: Launch -->
-                <div class="approach-step fade-in-up" style="animation-delay: 0.5s;">
-                    <div class="approach-step-number">05</div>
-                    <div class="approach-step-content">
-                        <div class="approach-step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                            </svg>
-                        </div>
-                        <h3 class="approach-step-title">Launch</h3>
-                        <p class="approach-step-description">Seamless deployment and go-live processes ensure your solution launches smoothly and successfully.</p>
-                    </div>
-                </div>
-
-                <!-- Step 6: Optimization -->
-                <div class="approach-step fade-in-up" style="animation-delay: 0.6s;">
-                    <div class="approach-step-number">06</div>
-                    <div class="approach-step-content">
-                        <div class="approach-step-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="approach-step-title">Optimization</h3>
-                        <p class="approach-step-description">Continuous refinement and enhancement based on data and performance metrics to maximize results.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header scroll-reveal-3d">
+          <h2 class="section-title fade-in-up">Our Approach</h2>
+          <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">
+            A proven process that delivers exceptional results
+          </p>
         </div>
+        <div class="approach-timeline">
+          <!-- Step 1: Discovery -->
+          <div class="approach-step fade-in-up" style="animation-delay: 0.1s">
+            <div class="approach-step-number">01</div>
+            <div class="approach-step-content">
+              <div class="approach-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </div>
+              <h3 class="approach-step-title">Discovery</h3>
+              <p class="approach-step-description">
+                We dive deep into understanding your business, goals, and audience to create a
+                strategic foundation for success.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2: Strategy -->
+          <div class="approach-step fade-in-up" style="animation-delay: 0.2s">
+            <div class="approach-step-number">02</div>
+            <div class="approach-step-content">
+              <div class="approach-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3 class="approach-step-title">Strategy</h3>
+              <p class="approach-step-description">
+                We develop comprehensive strategies and roadmaps that align with your objectives and
+                market opportunities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3: Design -->
+          <div class="approach-step fade-in-up" style="animation-delay: 0.3s">
+            <div class="approach-step-number">03</div>
+            <div class="approach-step-content">
+              <div class="approach-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <h3 class="approach-step-title">Design</h3>
+              <p class="approach-step-description">
+                Creative concepts are brought to life through innovative design that balances
+                aesthetics with functionality.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4: Development -->
+          <div class="approach-step fade-in-up" style="animation-delay: 0.4s">
+            <div class="approach-step-number">04</div>
+            <div class="approach-step-content">
+              <div class="approach-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="approach-step-title">Development</h3>
+              <p class="approach-step-description">
+                Cutting-edge technology is implemented with precision, ensuring robust and scalable
+                solutions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5: Launch -->
+          <div class="approach-step fade-in-up" style="animation-delay: 0.5s">
+            <div class="approach-step-number">05</div>
+            <div class="approach-step-content">
+              <div class="approach-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+              <h3 class="approach-step-title">Launch</h3>
+              <p class="approach-step-description">
+                Seamless deployment and go-live processes ensure your solution launches smoothly and
+                successfully.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 6: Optimization -->
+          <div class="approach-step fade-in-up" style="animation-delay: 0.6s">
+            <div class="approach-step-number">06</div>
+            <div class="approach-step-content">
+              <div class="approach-step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="approach-step-title">Optimization</h3>
+              <p class="approach-step-description">
+                Continuous refinement and enhancement based on data and performance metrics to
+                maximize results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Team Members Section -->
     <section class="featured-projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Meet Our Team</h2>
-                <p class="section-subtitle">The creative minds behind Logi-Ink</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div
-                        style="width: 120px; height: 120px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        JD
-                    </div>
-                    <h3>John Doe</h3>
-                    <p style="color: var(--accent-cyan); margin-bottom: 1rem;">Lead Developer</p>
-                    <p style="color: var(--text-secondary);">10+ years of experience in full-stack development and
-                        architecture design.</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div
-                        style="width: 120px; height: 120px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(135deg, var(--accent-magenta), var(--accent-pink)); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        JS
-                    </div>
-                    <h3>Jane Smith</h3>
-                    <p style="color: var(--accent-magenta); margin-bottom: 1rem;">Creative Director</p>
-                    <p style="color: var(--text-secondary);">Expert in UX/UI design with a passion for creating
-                        intuitive digital experiences.</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div
-                        style="width: 120px; height: 120px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        MW
-                    </div>
-                    <h3>Mike Wilson</h3>
-                    <p style="color: var(--accent-green); margin-bottom: 1rem;">Project Manager</p>
-                    <p style="color: var(--text-secondary);">Ensures smooth project execution with excellent
-                        communication and organization skills.</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div
-                        style="width: 120px; height: 120px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        SD
-                    </div>
-                    <h3>Sarah Davis</h3>
-                    <p style="color: var(--accent-blue); margin-bottom: 1rem;">Marketing Specialist</p>
-                    <p style="color: var(--text-secondary);">Drives growth through data-driven strategies and creative
-                        marketing campaigns.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Meet Our Team</h2>
+          <p class="section-subtitle">The creative minds behind Logi-Ink</p>
         </div>
+        <div class="services-grid">
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div
+              style="
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 1.5rem;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              JD
+            </div>
+            <h3>John Doe</h3>
+            <p style="color: var(--accent-cyan); margin-bottom: 1rem">Lead Developer</p>
+            <p style="color: var(--text-secondary)">
+              10+ years of experience in full-stack development and architecture design.
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div
+              style="
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 1.5rem;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--accent-magenta), var(--accent-pink));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              JS
+            </div>
+            <h3>Jane Smith</h3>
+            <p style="color: var(--accent-magenta); margin-bottom: 1rem">Creative Director</p>
+            <p style="color: var(--text-secondary)">
+              Expert in UX/UI design with a passion for creating intuitive digital experiences.
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div
+              style="
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 1.5rem;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              MW
+            </div>
+            <h3>Mike Wilson</h3>
+            <p style="color: var(--accent-green); margin-bottom: 1rem">Project Manager</p>
+            <p style="color: var(--text-secondary)">
+              Ensures smooth project execution with excellent communication and organization skills.
+            </p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div
+              style="
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 1.5rem;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              SD
+            </div>
+            <h3>Sarah Davis</h3>
+            <p style="color: var(--accent-blue); margin-bottom: 1rem">Marketing Specialist</p>
+            <p style="color: var(--text-secondary)">
+              Drives growth through data-driven strategies and creative marketing campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Stats/Achievements Section -->
     <section class="services-preview">
-        <div class="container">
-            <div class="section-header scroll-reveal-3d">
-                <h2 class="section-title">Our Achievements</h2>
-                <p class="section-subtitle">Milestones that define our journey</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d achievement-card-cyan" style="text-align: center;">
-                    <div class="count-number" data-target="5" data-suffix="+"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-cyan); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        0+
-                    </div>
-                    <h3>Years in Business</h3>
-                    <p style="color: var(--text-secondary);">Dedicated to delivering excellence since our founding</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d achievement-card-magenta" style="text-align: center;">
-                    <div class="count-number" data-target="150" data-suffix="+"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-magenta); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        0+
-                    </div>
-                    <h3>Projects Completed</h3>
-                    <p style="color: var(--text-secondary);">Successfully delivered projects across multiple industries
-                    </p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d achievement-card-green" style="text-align: center;">
-                    <div class="count-number" data-target="98" data-suffix="%"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-green); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        0%
-                    </div>
-                    <h3>Client Satisfaction</h3>
-                    <p style="color: var(--text-secondary);">Clients who would recommend our services</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d achievement-card-blue" style="text-align: center;">
-                    <div class="count-number" data-target="50" data-suffix="+"
-                        style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--accent-blue); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; font-weight: 900;">
-                        0+
-                    </div>
-                    <h3>Happy Clients</h3>
-                    <p style="color: var(--text-secondary);">Long-term partnerships built on trust and results</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header scroll-reveal-3d">
+          <h2 class="section-title">Our Achievements</h2>
+          <p class="section-subtitle">Milestones that define our journey</p>
         </div>
+        <div class="services-grid">
+          <div
+            class="service-card mouse-tilt-container card-3d achievement-card-cyan"
+            style="text-align: center"
+          >
+            <div
+              class="count-number"
+              data-target="5"
+              data-suffix="+"
+              style="
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                color: var(--accent-cyan);
+                margin-bottom: 1rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              0+
+            </div>
+            <h3>Years in Business</h3>
+            <p style="color: var(--text-secondary)">
+              Dedicated to delivering excellence since our founding
+            </p>
+          </div>
+          <div
+            class="service-card mouse-tilt-container card-3d achievement-card-magenta"
+            style="text-align: center"
+          >
+            <div
+              class="count-number"
+              data-target="150"
+              data-suffix="+"
+              style="
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                color: var(--accent-magenta);
+                margin-bottom: 1rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              0+
+            </div>
+            <h3>Projects Completed</h3>
+            <p style="color: var(--text-secondary)">
+              Successfully delivered projects across multiple industries
+            </p>
+          </div>
+          <div
+            class="service-card mouse-tilt-container card-3d achievement-card-green"
+            style="text-align: center"
+          >
+            <div
+              class="count-number"
+              data-target="98"
+              data-suffix="%"
+              style="
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                color: var(--accent-green);
+                margin-bottom: 1rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              0%
+            </div>
+            <h3>Client Satisfaction</h3>
+            <p style="color: var(--text-secondary)">Clients who would recommend our services</p>
+          </div>
+          <div
+            class="service-card mouse-tilt-container card-3d achievement-card-blue"
+            style="text-align: center"
+          >
+            <div
+              class="count-number"
+              data-target="50"
+              data-suffix="+"
+              style="
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                color: var(--accent-blue);
+                margin-bottom: 1rem;
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+              "
+            >
+              0+
+            </div>
+            <h3>Happy Clients</h3>
+            <p style="color: var(--text-secondary)">
+              Long-term partnerships built on trust and results
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Technologies/Expertise Section -->
     <section class="featured-projects expertise-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Expertise</h2>
-                <p class="section-subtitle">Technologies and skills we master</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <h3>Frontend Development</h3>
-                    <p>React, Vue.js, Angular, Next.js, TypeScript, HTML5, CSS3, JavaScript</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                            <path d="M9 9h6v6H9z" />
-                        </svg>
-                    </div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL, Microservices</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                            <path d="M9 9h6v6H9z" />
-                        </svg>
-                    </div>
-                    <h3>Design & Prototyping</h3>
-                    <p>Figma, Adobe XD, Sketch, InVision, User Research, Design Systems</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Flutter, Swift, Kotlin, iOS, Android, Cross-platform</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                            <line x1="12" y1="22.08" x2="12" y2="12" />
-                        </svg>
-                    </div>
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS, Azure, Docker, Kubernetes, CI/CD, Terraform, Infrastructure</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>SEO, SEM, Social Media, Content Strategy, Analytics, Growth Hacking</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <ellipse cx="12" cy="5" rx="9" ry="3" />
-                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-                        </svg>
-                    </div>
-                    <h3>Database & Data</h3>
-                    <p>MongoDB, PostgreSQL, MySQL, Redis, Elasticsearch, Data Analytics, ETL</p>
-                </div>
-                <div class="service-card mouse-tilt-container card-3d" style="text-align: center;">
-                    <div class="service-icon">
-                        <div class="icon-glow"></div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg>
-                    </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Python, TensorFlow, PyTorch, NLP, Computer Vision, Predictive Analytics, Automation</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Expertise</h2>
+          <p class="section-subtitle">Technologies and skills we master</p>
         </div>
+        <div class="services-grid">
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3>Frontend Development</h3>
+            <p>React, Vue.js, Angular, Next.js, TypeScript, HTML5, CSS3, JavaScript</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <path d="M9 9h6v6H9z" />
+              </svg>
+            </div>
+            <h3>Backend Development</h3>
+            <p>Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL, Microservices</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <path d="M9 9h6v6H9z" />
+              </svg>
+            </div>
+            <h3>Design & Prototyping</h3>
+            <p>Figma, Adobe XD, Sketch, InVision, User Research, Design Systems</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <h3>Mobile Development</h3>
+            <p>React Native, Flutter, Swift, Kotlin, iOS, Android, Cross-platform</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+            </div>
+            <h3>Cloud & DevOps</h3>
+            <p>AWS, Azure, Docker, Kubernetes, CI/CD, Terraform, Infrastructure</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>SEO, SEM, Social Media, Content Strategy, Analytics, Growth Hacking</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <h3>Database & Data</h3>
+            <p>MongoDB, PostgreSQL, MySQL, Redis, Elasticsearch, Data Analytics, ETL</p>
+          </div>
+          <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+            <div class="service-icon">
+              <div class="icon-glow"></div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <h3>AI & Machine Learning</h3>
+            <p>
+              Python, TensorFlow, PyTorch, NLP, Computer Vision, Predictive Analytics, Automation
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <!-- Top Curved Divider -->
-        <div class="portal-divider portal-divider-top">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="topGradientAbout" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:var(--bg-secondary);stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:var(--bg-secondary);stop-opacity:0" />
-                    </linearGradient>
-                </defs>
-                <path d="M0,120 Q360,0 720,60 T1440,120 L1440,0 L0,0 Z" fill="url(#topGradientAbout)" />
-            </svg>
-        </div>
+      <!-- Top Curved Divider -->
+      <div class="portal-divider portal-divider-top">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="topGradientAbout" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+              <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+            </linearGradient>
+          </defs>
+          <path d="M0,120 Q360,0 720,60 T1440,120 L1440,0 L0,0 Z" fill="url(#topGradientAbout)" />
+        </svg>
+      </div>
 
-        <!-- Portal Glow Effect -->
-        <div class="portal-glow"></div>
+      <!-- Portal Glow Effect -->
+      <div class="portal-glow"></div>
 
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Work Together?</h2>
-                <p>Let's create something extraordinary</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Work Together?</h2>
+          <p>Let's create something extraordinary</p>
+          <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
         </div>
+      </div>
 
-        <!-- Bottom Curved Divider -->
-        <div class="portal-divider portal-divider-bottom">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="bottomGradientAbout" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:var(--bg-secondary);stop-opacity:0" />
-                        <stop offset="100%" style="stop-color:var(--bg-secondary);stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <path d="M0,0 Q360,120 720,60 T1440,0 L1440,120 L0,120 Z" fill="url(#bottomGradientAbout)" />
-            </svg>
-        </div>
+      <!-- Bottom Curved Divider -->
+      <div class="portal-divider portal-divider-bottom">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bottomGradientAbout" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+              <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,0 Q360,120 720,60 T1440,0 L1440,120 L0,120 Z"
+            fill="url(#bottomGradientAbout)"
+          />
+        </svg>
+      </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>LOG<span class="logo-accent">I</span>-INK</h3>
-                    <p>Digital innovation and creative solutions for the future.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#" target="_blank">LinkedIn</a></li>
-                        <li><a href="#" target="_blank">Twitter</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Logi-Ink. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>LOG<span class="logo-accent">I</span>-INK</h3>
+            <p>Digital innovation and creative solutions for the future.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+              <li><a href="#" target="_blank">Twitter</a></li>
+              <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Logi-Ink. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
@@ -529,6 +821,5 @@
 
     <!-- Three.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</body>
-
+  </body>
 </html>

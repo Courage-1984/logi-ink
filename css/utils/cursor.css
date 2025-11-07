@@ -1,55 +1,54 @@
 /**
  * Cursor Effects Utility
  * Custom cursor styles and scroll progress indicator
- * 
+ *
  * Extracted from styles.css (lines: 40-47, 3702-3730, 3765-3776)
  */
 
-/* Hide system cursor on hover-capable devices where custom cursor is shown */
-@media (hover: hover) and (pointer: fine) {
-    html,
-    body,
-    * {
-        cursor: none !important;
-    }
-}
-
 /* Cursor Follow Effect */
 .cursor-follow {
-    display: none;
+  display: none;
 }
 
-/* Cursor Dot */
+/* Cursor Dot - Base Styles */
 .cursor-dot {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: var(--accent-cyan);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.15s ease, opacity 0.3s ease;
-    box-shadow: 0 0 10px var(--glow-cyan);
-    opacity: 0;
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition:
+    transform 0.15s ease,
+    opacity 0.3s ease;
+  box-shadow: 0 0 10px var(--glow-cyan);
+  opacity: 0;
 }
 
-/* Show cursor dot on devices with hover capability */
+/* Hide system cursor on hover-capable devices where custom cursor is shown */
 @media (hover: hover) and (pointer: fine) {
-    .cursor-dot {
-        opacity: 1;
-    }
+  html,
+  body,
+  * {
+    cursor: none !important;
+  }
+
+  /* Show cursor dot on devices with hover capability */
+  .cursor-dot {
+    opacity: 1;
+  }
 }
 
 /* Scroll Progress Indicator */
 .scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
-    z-index: 10000;
-    transition: width 0.1s ease;
-    box-shadow: 0 0 10px var(--glow-cyan);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+  z-index: 10000;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px var(--glow-cyan);
 }
-

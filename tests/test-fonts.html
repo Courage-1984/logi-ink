@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Subset Test - Logi-Ink</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .test-section h2 {
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-cyan);
+            padding-bottom: 0.5rem;
+        }
+
+        .char-test {
+            font-size: 1.2rem;
+            line-height: 2;
+            padding: 1rem;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .weight-test {
+            margin: 1rem 0;
+            padding: 0.5rem;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-left: 1rem;
+        }
+
+        .status.success {
+            background: rgba(0, 255, 0, 0.2);
+            color: var(--accent-green);
+        }
+
+        .status.error {
+            background: rgba(255, 0, 0, 0.2);
+            color: var(--accent-pink);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-family: 'Orbitron', sans-serif; font-weight: 900; text-align: center; margin-bottom: 2rem;">
+        Font Subset Testing
+    </h1>
+
+    <!-- Test 1: Basic Characters -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 1: Basic Characters
+        </h2>
+        <div class="char-test" style="font-family: 'Rajdhani', sans-serif;">
+            <strong>All Basic ASCII Characters:</strong><br>
+            <span>
+                !"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^`abcdefghijklmnopqrstuvwxyz{|}~</span>
+        </div>
+    </div>
+
+    <!-- Test 2: Special Characters -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 2: Special Characters
+        </h2>
+        <div class="char-test" style="font-family: 'Rajdhani', sans-serif;">
+            <strong>Special Characters Used on Site:</strong><br>
+            –—•…→
+        </div>
+    </div>
+
+    <!-- Test 3: Common Words -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 3: Common Words & Phrases
+        </h2>
+        <div class="char-test" style="font-family: 'Rajdhani', sans-serif;">
+            <strong>Common Text from Site:</strong><br>
+            Digital Innovation &amp; Creative Solutions<br>
+            We craft immersive digital experiences that engage, inspire, and transform your business<br>
+            View Our Work | Get Started | Contact Us<br>
+            Home | About | Services | Projects | Contact
+        </div>
+    </div>
+
+    <!-- Test 4: Numbers and Symbols -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 4: Numbers and Symbols
+        </h2>
+        <div class="char-test" style="font-family: 'Rajdhani', sans-serif;">
+            <strong>Numbers and Symbols:</strong><br>
+            2024, 2025, 100%, $99.99, #FF00FF, @username<br>
+            <span>0123456789:;&lt;=&gt;?@#$%^&amp;*()_+-=[]{}|;:'",.&lt;&gt;/?</span>
+        </div>
+    </div>
+
+    <!-- Test 5: Orbitron Font Weights -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 5: Orbitron Font Weights
+        </h2>
+        <div class="weight-test" style="font-family: 'Orbitron', sans-serif; font-weight: 400;">
+            Regular (400) - Digital Innovation &amp; Creative Solutions
+        </div>
+        <div class="weight-test" style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Bold (700) - Digital Innovation &amp; Creative Solutions
+        </div>
+        <div class="weight-test" style="font-family: 'Orbitron', sans-serif; font-weight: 900;">
+            Black (900) - Digital Innovation &amp; Creative Solutions
+        </div>
+    </div>
+
+    <!-- Test 6: Rajdhani Font Weights -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 6: Rajdhani Font Weights
+        </h2>
+        <div class="weight-test" style="font-family: 'Rajdhani', sans-serif; font-weight: 300;">
+            Light (300) - We craft immersive digital experiences that engage, inspire, and transform your business
+        </div>
+        <div class="weight-test" style="font-family: 'Rajdhani', sans-serif; font-weight: 400;">
+            Regular (400) - We craft immersive digital experiences that engage, inspire, and transform your business
+        </div>
+        <div class="weight-test" style="font-family: 'Rajdhani', sans-serif; font-weight: 600;">
+            SemiBold (600) - We craft immersive digital experiences that engage, inspire, and transform your business
+        </div>
+        <div class="weight-test" style="font-family: 'Rajdhani', sans-serif; font-weight: 700;">
+            Bold (700) - We craft immersive digital experiences that engage, inspire, and transform your business
+        </div>
+    </div>
+
+    <!-- Test 7: Real Content -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Test 7: Real Content from Site
+        </h2>
+        <h3 style="font-family: 'Orbitron', sans-serif; font-weight: 900; color: var(--accent-cyan);">
+            LOGI-INK
+        </h3>
+        <p style="font-family: 'Rajdhani', sans-serif; font-size: 1.2rem;">
+            Digital Innovation &amp; Creative Solutions
+        </p>
+        <p style="font-family: 'Rajdhani', sans-serif;">
+            We craft immersive digital experiences that engage, inspire, and transform your business. Our team of
+            experts combines cutting-edge technology with creative design to deliver solutions that stand out.
+        </p>
+        <div style="margin-top: 1.5rem;">
+            <a href="projects.html" class="btn btn-primary">View Our Work</a>
+            <a href="contact.html" class="btn btn-secondary">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Font Loading Status -->
+    <div class="test-section">
+        <h2 style="font-family: 'Orbitron', sans-serif; font-weight: 700;">
+            Font Loading Status
+        </h2>
+        <div id="font-status" style="font-family: 'Rajdhani', sans-serif;">
+            <p>Checking font loading status...</p>
+        </div>
+    </div>
+
+    <script>
+        // Check if fonts are loaded
+        document.fonts.ready.then(() => {
+            const statusDiv = document.getElementById('font-status');
+            const fonts = [
+                { name: 'Orbitron', weights: [400, 700, 900] },
+                { name: 'Rajdhani', weights: [300, 400, 600, 700] }
+            ];
+
+            let statusHTML = '<p><strong>Font Loading Status:</strong></p><ul>';
+
+            fonts.forEach(font => {
+                font.weights.forEach(weight => {
+                    const fontSpec = `${weight} 16px "${font.name}"`;
+                    const isLoaded = document.fonts.check(fontSpec);
+                    const status = isLoaded ? '✅ Loaded' : '❌ Not Loaded';
+                    const statusClass = isLoaded ? 'success' : 'error';
+                    statusHTML += `<li>${font.name} ${weight}: <span class="status ${statusClass}">${status}</span></li>`;
+                });
+            });
+
+            statusHTML += '</ul>';
+            statusDiv.innerHTML = statusHTML;
+        });
+
+        // Check for missing characters (basic check)
+        const testText = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^`abcdefghijklmnopqrstuvwxyz{|}~–—•…→';
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function checkCharacter(char, fontFamily) {
+            ctx.font = `16px "${fontFamily}"`;
+            const width1 = ctx.measureText(char).width;
+            ctx.font = '16px monospace';
+            const width2 = ctx.measureText(char).width;
+            return width1 !== width2;
+        }
+
+        document.fonts.ready.then(() => {
+            const missingChars = [];
+            testText.split('').forEach(char => {
+                if (!checkCharacter(char, 'Rajdhani')) {
+                    missingChars.push(char);
+                }
+            });
+
+            if (missingChars.length > 0) {
+                const statusDiv = document.getElementById('font-status');
+                statusDiv.innerHTML += `<p style="color: var(--accent-pink);"><strong>⚠️ Missing Characters:</strong> ${missingChars.join(', ')}</p>`;
+            } else {
+                const statusDiv = document.getElementById('font-status');
+                statusDiv.innerHTML += `<p style="color: var(--accent-green);"><strong>✅ All Characters Available</strong></p>`;
+            }
+        });
+    </script>
+</body>
+
+</html>

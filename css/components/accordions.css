@@ -7,57 +7,56 @@
 
 /* Accordion Base (using details/summary) */
 details {
-    background: var(--bg-secondary);
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 10px;
-    margin: 1rem 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  margin: 1rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 details:hover {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
 }
 
 details[open] {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 /* Accordion Summary (Header) */
 summary {
-    padding: 1.5rem;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    color: var(--accent-cyan);
-    list-style: none;
-    position: relative;
-    user-select: none;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  list-style: none;
+  position: relative;
+  user-select: none;
 }
 
 summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 summary::after {
-    content: '+';
-    position: absolute;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
 details[open] summary::after {
-    content: '−';
-    transform: rotate(180deg);
+  content: '−';
+  transform: rotate(180deg);
 }
 
 /* Accordion Content */
-details>*:not(summary) {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
+details > *:not(summary) {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
-
