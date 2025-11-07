@@ -388,15 +388,27 @@ function activateEasterEgg() {
 /**
  * Initialize the 3D Milky Way animation using Three.js
  */
-function initMilkyWay() {
+async function initMilkyWay() {
   const container = document.querySelector('.milky-way-scene');
   if (!container) {
     return;
   }
 
-  // Check if Three.js is available
-  if (typeof THREE === 'undefined') {
-    // Three.js not loaded - silently fail
+  // Load Three.js dynamically
+  try {
+    const { loadThreeJS } = await import('../utils/three-loader.js');
+    const THREE = await loadThreeJS();
+    if (!THREE) {
+      // Three.js failed to load - gracefully degrade
+      return;
+    }
+    // Make THREE available globally for the rest of the function
+    window.THREE = THREE;
+  } catch (error) {
+    // Three.js loading failed - gracefully degrade
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('[Easter Egg] Three.js loading failed:', error);
+    }
     return;
   }
 

@@ -11,6 +11,11 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <!-- Content Security Policy (basic - enhance via server headers) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-src https://www.google.com;"
+    />
 
     <!-- SEO Meta Tags -->
     <meta
@@ -82,16 +87,17 @@
     <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
 
     <!-- Prefetch likely next pages -->
-    <link rel="prefetch" href="/assets/about-C44ZCgaJ.html" />
-    <link rel="prefetch" href="/assets/services-BNHoZSW9.html" />
-    <link rel="prefetch" href="/assets/projects-CHQ-wero.html" />
-    <link rel="prefetch" href="/assets/contact-CK6q5stb.html" />
+    <link rel="prefetch" href="/assets/about-BzWWsMGW.html" />
+    <link rel="prefetch" href="/assets/services-d78BdYCZ.html" />
+    <link rel="prefetch" href="/assets/projects-DXmuwt8l.html" />
+    <link rel="prefetch" href="/assets/contact-Dn2mqT_Z.html" />
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48-6L8_jSri.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/site-B0V2IM4o.webmanifest" />
+    <link rel="manifest" href="/assets/site-ConAKRG_.webmanifest" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -110,8 +116,15 @@
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "Customer Service",
-          "email": "contact@logi-ink.com"
-        }
+          "email": "contact@logi-ink.com",
+          "availableLanguage": ["English"],
+          "areaServed": "Worldwide"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/logi-ink",
+          "https://twitter.com/logiink",
+          "https://www.instagram.com/logiink"
+        ]
       }
     </script>
     <script type="application/ld+json">
@@ -135,10 +148,27 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://logi-ink.com/"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://logi-ink.com/" />
 
     <!-- Main CSS -->
-    <script type="module" crossorigin src="/assets/js/main-DAqLee6q.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-ge28Vawv.css">
+    <script type="module" crossorigin src="/assets/js/main-B6zENsjg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Of4YLBb6.css">
   </head>
 
   <body>
@@ -162,18 +192,24 @@
             <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
           </a>
         </div>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Main navigation">
+          <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Home</a></li>
+          <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+          <li role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+          <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+          <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact Us</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </nav>
 
@@ -302,7 +338,10 @@
                     src="/assets/images/banner_home-Cph91jo0.webp"
                     fetchpriority="high"
                     loading="eager"
+                    decoding="async"
                     alt="Web Development Transforming Digital Experiences"
+                    width="1280"
+                    height="720"
                   />
                 </picture>
                 <div class="project-overlay project-card-large-overlay"></div>
@@ -662,7 +701,6 @@
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to top"></a>
 
-    <!-- Three.js CDN (async loading) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" async></script>
+    <!-- Three.js will be loaded dynamically when needed via js/utils/three-loader.js -->
   </body>
 </html>

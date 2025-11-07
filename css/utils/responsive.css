@@ -1,11 +1,11 @@
 /**
  * Responsive Styles Utility
  * All responsive breakpoints and media queries
- * 
+ *
  * Extracted from styles.css (lines: 1182-end)
- * 
+ *
  * ⚠️ IMPORTANT: This file MUST be imported last in main.css
- * 
+ *
  * Breakpoints:
  * - Tablet: 769px - 1024px
  * - Mobile: max-width 768px
@@ -729,6 +729,38 @@
   .form-submit {
     padding: 0.85rem 1.25rem;
     font-size: 0.9rem;
+  }
+
+  /* Mobile Performance Optimizations */
+  /* Reduce animation complexity on mobile */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Disable 3D transforms on mobile for better performance */
+  .card-3d,
+  .mouse-tilt-container {
+    transform: none !important;
+  }
+
+  /* Optimize scroll performance */
+  .scroll-reveal-3d {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+
+  /* Reduce particle effects on mobile */
+  .particles {
+    display: none;
+  }
+
+  /* Simplify cursor effects on mobile */
+  .cursor-follow,
+  .cursor-dot {
+    display: none;
   }
 }
 

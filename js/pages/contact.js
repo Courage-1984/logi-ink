@@ -295,13 +295,21 @@ async function handleSubmit(e) {
     document.body.appendChild(announcement);
     setTimeout(() => announcement.remove(), 1000);
   } catch (error) {
-    // Error
-    showToast(
-      'There was an error submitting your message. Please try again or contact us directly.',
-      'error',
-      7000
-    );
-    // Error logged silently for production
+    // Error handling with better user feedback
+    const errorMessage =
+      error?.message || 'There was an error submitting your message. Please try again or contact us directly.';
+
+    showToast(errorMessage, 'error', 7000);
+
+    // Log error for debugging (only in development)
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Contact Form] Submission error:', error);
+    }
+
+    // Focus first field to help user retry
+    setTimeout(() => {
+      nameInput?.focus();
+    }, 100);
   } finally {
     // Reset loading state
     submitButton.disabled = false;

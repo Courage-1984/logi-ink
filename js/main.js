@@ -14,12 +14,20 @@ import { initInteractions } from './utils/interactions.js';
 import { initPageTransitions } from './core/page-transitions.js';
 import { registerServiceWorker } from './core/service-worker.js';
 import { initAccessibility } from './utils/accessibility.js';
+import { initErrorHandler } from './utils/error-handler.js';
 
 // Lazy load easter egg module (lightweight initialization - heavy 3D loads on activation)
 let easterEggModule = null;
 
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
+  // Initialize error handling first (catches errors from other modules)
+  initErrorHandler();
+
+  // Initialize performance tracking (non-blocking)
+  const { initPerformanceTracking } = await import('./utils/performance.js');
+  initPerformanceTracking();
+
   // Register service worker (for offline support and caching)
   registerServiceWorker();
 

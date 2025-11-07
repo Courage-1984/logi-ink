@@ -9,7 +9,7 @@
  */
 
 const CACHE_NAME = 'logia-ink-v1';
-const STATIC_CACHE_NAME = 'logia-ink-static-v2'; // Increment version to force cache update
+const STATIC_CACHE_NAME = 'logia-ink-static-v3'; // Increment version to force cache update (updated logo path and added 48x48 favicon)
 const RUNTIME_CACHE_NAME = 'logia-ink-runtime-v2';
 
 // Get base path from self.location (handles /logia-ink/ base path)
@@ -49,7 +49,7 @@ const STATIC_ASSETS = [
   `${BASE_PATH}/assets/images/backgrounds/mission-parallax-bg.webp`,
   `${BASE_PATH}/assets/images/backgrounds/process-parallax-bg.webp`,
   `${BASE_PATH}/assets/images/backgrounds/testimonials-parallax-bg.webp`,
-  `${BASE_PATH}/assets/images/logos/logo.png`,
+  `${BASE_PATH}/logo.png`,
 
   // Manifest
   `${BASE_PATH}/site.webmanifest`,
@@ -57,6 +57,7 @@ const STATIC_ASSETS = [
   // Icons
   `${BASE_PATH}/apple-touch-icon.png`,
   `${BASE_PATH}/favicon-32x32.png`,
+  `${BASE_PATH}/favicon-48x48.png`,
   `${BASE_PATH}/favicon-16x16.png`,
 ];
 

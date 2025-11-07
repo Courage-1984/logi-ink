@@ -74,3 +74,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code splitting for better caching
 - CSS code splitting per page
 - Minified and compressed assets
+- Web Vitals tracking (LCP, FID, CLS)
+- Dynamic Three.js loading (loads only when needed)
+- Centralized error handling with graceful degradation
+- Mobile performance optimizations
+
+## [1.1.0] - 2024-12-19
+
+### Added
+
+- **Error Handling:** Centralized error handling utility (`js/utils/error-handler.js`)
+- **Performance Tracking:** Web Vitals tracking utility (`js/utils/performance.js`)
+- **Three.js Loader:** Dynamic Three.js loader with SRI support (`js/utils/three-loader.js`)
+- **Content Security Policy:** CSP meta tags on all pages
+- **Subresource Integrity:** SRI infrastructure for CDN resources
+- **Enhanced Accessibility:** Improved ARIA labels, keyboard navigation, and focus management
+- **Mobile Performance:** Optimized animations and effects for mobile devices
+- **SEO Enhancements:** FAQ schema, enhanced structured data, canonical URLs
+
+### Changed
+
+- **Image Loading:** Added `decoding="async"` and dimensions to hero images
+- **Service Worker:** Enhanced error handling with graceful degradation
+- **Navigation:** Improved keyboard navigation and ARIA attributes
+- **Form Accessibility:** Enhanced required field indicators and error handling
+- **Three.js:** Now loads dynamically only when needed (easter egg)
+
+### Security
+
+- **CSP:** Added Content Security Policy meta tags to all pages
+- **SRI:** Infrastructure ready for Subresource Integrity on CDN resources
+
+### Accessibility
+
+- **ARIA:** Enhanced ARIA labels and roles throughout
+- **Keyboard Navigation:** Full keyboard support with focus management
+- **Reduced Motion:** Respects `prefers-reduced-motion` media query
+
+### Performance
+
+- **Mobile:** Reduced animation complexity and disabled 3D effects on mobile
+- **Three.js:** Dynamic loading reduces initial bundle size by ~500KB
+- **Error Handling:** Graceful degradation ensures site works even if features fail

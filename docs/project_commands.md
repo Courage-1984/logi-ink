@@ -100,10 +100,11 @@ npm run validate
 
 ## 📚 Documentation
 
-- **Project Rules:** `.cursor/rules/cursorrules.mdc`
+- **Project Rules:** `.cursor/rules/cursorrules.mdc` (MUST READ FIRST)
 - **Style Guide:** `docs/STYLE_GUIDE.md`
 - **Build Guide:** `docs/BUILD_AND_DEPLOY.md`
-- **Performance:** `docs/PERFORMANCE_OPTIMIZATION.md`
+- **Quick Start:** `docs/QUICK_START.md`
+- **Codebase Improvements:** `docs/CODEBASE_IMPROVEMENTS.md`
 - **SEO & Security:** `docs/SEO_AND_SECURITY_IMPLEMENTATION.md`
 - **Server Headers:** `docs/SERVER_SECURITY_HEADERS.md`
 

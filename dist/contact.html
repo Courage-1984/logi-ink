@@ -14,6 +14,11 @@
       http-equiv="Permissions-Policy"
       content="geolocation=(), microphone=(), camera=()"
     />
+    <!-- Content Security Policy (basic - enhance via server headers) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-src https://www.google.com;"
+    />
 
     <!-- SEO Meta Tags -->
     <meta
@@ -77,17 +82,21 @@
 
     <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://logi-ink.com/contact.html" />
+
     <!-- Prefetch likely next pages -->
-    <link rel="prefetch" href="/assets/index-CZ8p8LOo.html" />
-    <link rel="prefetch" href="/assets/about-C44ZCgaJ.html" />
-    <link rel="prefetch" href="/assets/services-BNHoZSW9.html" />
-    <link rel="prefetch" href="/assets/projects-CHQ-wero.html" />
+    <link rel="prefetch" href="/assets/index-XKVmHnvv.html" />
+    <link rel="prefetch" href="/assets/about-BzWWsMGW.html" />
+    <link rel="prefetch" href="/assets/services-d78BdYCZ.html" />
+    <link rel="prefetch" href="/assets/projects-DXmuwt8l.html" />
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48-6L8_jSri.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/site-B0V2IM4o.webmanifest" />
+    <link rel="manifest" href="/assets/site-ConAKRG_.webmanifest" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -133,15 +142,73 @@
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "Customer Service",
-          "email": "contact@logi-ink.com"
+          "email": "contact@logi-ink.com",
+          "availableLanguage": ["English"],
+          "areaServed": "Worldwide"
         }
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly will you respond to my inquiry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer free consultations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer complimentary initial consultations to discuss your project needs and provide expert recommendations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with our existing team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! We're experienced in collaborating with in-house teams and can seamlessly integrate with your workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your typical project timeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines vary based on project scope. We provide detailed schedules during the planning phase and keep you updated throughout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept various payment methods including bank transfers, credit cards, and payment plans for larger projects. We'll discuss payment terms during the consultation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide ongoing support after project completion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer maintenance and support packages to ensure your project continues to perform optimally. We can discuss support options that fit your needs."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Main CSS -->
-    <script type="module" crossorigin src="/assets/js/main-DAqLee6q.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-ge28Vawv.css">
+    <script type="module" crossorigin src="/assets/js/main-B6zENsjg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Of4YLBb6.css">
   </head>
 
   <body>
@@ -366,7 +433,7 @@
                 aria-required="true"
                 aria-describedby="name-error"
               />
-              <label for="name">Name <span class="required">*</span></label>
+              <label for="name">Name <span class="required" aria-label="required">*</span></label>
               <span
                 class="form-error-message"
                 id="name-error"
@@ -385,7 +452,7 @@
                 aria-required="true"
                 aria-describedby="email-error"
               />
-              <label for="email">Email <span class="required">*</span></label>
+              <label for="email">Email <span class="required" aria-label="required">*</span></label>
               <span
                 class="form-error-message"
                 id="email-error"
@@ -421,7 +488,7 @@
                 aria-required="true"
                 aria-describedby="subject-error"
               />
-              <label for="subject">Subject <span class="required">*</span></label>
+              <label for="subject">Subject <span class="required" aria-label="required">*</span></label>
               <span
                 class="form-error-message"
                 id="subject-error"
@@ -440,7 +507,7 @@
                 aria-describedby="message-error message-counter"
                 rows="5"
               ></textarea>
-              <label for="message">Message <span class="required">*</span></label>
+              <label for="message">Message <span class="required" aria-label="required">*</span></label>
               <div class="textarea-footer">
                 <span
                   class="form-error-message"

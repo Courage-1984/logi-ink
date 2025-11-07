@@ -9,7 +9,12 @@ let registration = null;
  * Register service worker
  */
 export function registerServiceWorker() {
-  if ('serviceWorker' in navigator) {
+  if (!('serviceWorker' in navigator)) {
+    // Service Worker not supported - gracefully degrade
+    return;
+  }
+
+  try {
     window.addEventListener('load', () => {
       // Get base path from current location (handles /logia-ink/ base path)
       const basePath =
@@ -20,7 +25,9 @@ export function registerServiceWorker() {
         .register(swPath)
         .then(reg => {
           registration = reg;
-          console.log('[Service Worker] Registered:', reg.scope);
+          if (process.env.NODE_ENV === 'development') {
+            console.log('[Service Worker] Registered:', reg.scope);
+          }
 
           // Check for updates
           reg.addEventListener('updatefound', () => {
@@ -36,11 +43,22 @@ export function registerServiceWorker() {
           });
         })
         .catch(error => {
-          console.error('[Service Worker] Registration failed:', error);
+          // Service worker registration failed - site still works without it
+          if (process.env.NODE_ENV === 'development') {
+            console.error('[Service Worker] Registration failed:', error);
+          }
+          // In production, fail silently - site works without service worker
         });
     });
+  } catch (error) {
+    // Service worker initialization failed - gracefully degrade
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Service Worker] Initialization failed:', error);
+    }
+  }
 
-    // Listen for service worker updates
+  // Listen for service worker updates
+  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       // Service worker updated, reload page
       window.location.reload();

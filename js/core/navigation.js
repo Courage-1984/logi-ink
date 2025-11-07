@@ -24,14 +24,33 @@ export function initNavigation() {
 
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
+      const isActive = hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
+
+      // Update ARIA attributes for accessibility
+      hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      navMenu.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+
+      // Trap focus when menu is open
+      if (isActive) {
+        navMenu.setAttribute('tabindex', '-1');
+        const firstLink = navMenu.querySelector('.nav-link');
+        if (firstLink) {
+          firstLink.focus();
+        }
+      } else {
+        navMenu.removeAttribute('tabindex');
+      }
     });
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        // Update ARIA attributes
+        hamburger.setAttribute('aria-expanded', 'false');
+        navMenu.setAttribute('aria-hidden', 'true');
+        navMenu.removeAttribute('tabindex');
       });
     });
   }
