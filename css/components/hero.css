@@ -132,6 +132,120 @@
   }
 }
 
+/* Liquid Motion Background */
+.liquid-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.liquid-background__blob {
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  opacity: 0.45;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 26s;
+}
+
+.liquid-background__blob--one {
+  top: -15%;
+  left: -10%;
+  background:
+    radial-gradient(circle at 30% 30%, var(--accent-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 80% 70%, var(--glow-magenta) 0%, transparent 70%);
+  animation-name: liquidDriftOne;
+}
+
+.liquid-background__blob--two {
+  bottom: -20%;
+  right: -5%;
+  background:
+    radial-gradient(circle at 20% 50%, var(--accent-magenta) 0%, transparent 60%),
+    radial-gradient(circle at 70% 30%, var(--glow-blue) 0%, transparent 70%);
+  animation-name: liquidDriftTwo;
+  animation-duration: 32s;
+}
+
+.liquid-background__blob--three {
+  top: 20%;
+  right: 35%;
+  width: 55%;
+  height: 55%;
+  background:
+    radial-gradient(circle at 40% 40%, var(--accent-green) 0%, transparent 60%),
+    radial-gradient(circle at 70% 70%, var(--glow-cyan) 0%, transparent 70%);
+  animation-name: liquidDriftThree;
+  animation-duration: 30s;
+}
+
+@keyframes liquidDriftOne {
+  0%,
+  100% {
+    transform: translate3d(-10%, -5%, 0) scale(1);
+    opacity: 0.38;
+  }
+
+  40% {
+    transform: translate3d(12%, 8%, 0) scale(1.1);
+    opacity: 0.5;
+  }
+
+  70% {
+    transform: translate3d(-4%, -12%, 0) scale(0.95);
+    opacity: 0.42;
+  }
+}
+
+@keyframes liquidDriftTwo {
+  0%,
+  100% {
+    transform: translate3d(5%, 10%, 0) scale(1);
+    opacity: 0.4;
+  }
+
+  45% {
+    transform: translate3d(-8%, -6%, 0) scale(1.15);
+    opacity: 0.52;
+  }
+
+  80% {
+    transform: translate3d(12%, -15%, 0) scale(0.9);
+    opacity: 0.35;
+  }
+}
+
+@keyframes liquidDriftThree {
+  0%,
+  100% {
+    transform: translate3d(-12%, 0, 0) scale(1.05);
+    opacity: 0.42;
+  }
+
+  35% {
+    transform: translate3d(10%, -6%, 0) scale(0.95);
+    opacity: 0.36;
+  }
+
+  65% {
+    transform: translate3d(-6%, 12%, 0) scale(1.12);
+    opacity: 0.48;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-background__blob {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Particles */
 .particles {
   position: absolute;
