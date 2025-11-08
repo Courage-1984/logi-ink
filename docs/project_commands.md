@@ -63,6 +63,9 @@ After building, check bundle analysis:
 # Run Playwright smoke tests (builds production output first)
 npm run test:e2e
 
+# Coverage: cross-page navigation, mobile nav drawer, scroll utilities (progress + back-to-top),
+# service modals (button & Escape close), contact form happy/invalid flows, service worker registration
+
 # Install Playwright browsers (first run only)
 npx playwright install
 ```

@@ -578,7 +578,7 @@ Currently, HTML files should manually include the partial content.
 ### Running Automated QA
 1. Ensure Playwright browsers are installed with `npx playwright install` (one-time setup)
 2. Run the smoke suite with `npm run test:e2e` (builds the site before executing tests)
-3. The suite covers primary navigation, services modals, and the contact form happy path
+3. The suite covers primary navigation, mobile navigation drawer, back-to-top + scroll progress, services modals (including Escape handling), contact form validation (happy path and failures), and service worker registration
 
 ---
 

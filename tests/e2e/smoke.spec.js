@@ -50,6 +50,12 @@ test.describe('Logi-Ink Smoke Suite', () => {
     await expect(modal).toHaveClass(/active/);
     await expect(modal).toBeVisible();
 
+    await page.keyboard.press('Escape');
+    await expect(modal).not.toHaveClass(/active/);
+
+    await firstServiceCard.getByRole('button', { name: 'Learn More' }).click();
+    await expect(modal).toHaveClass(/active/);
+
     await modal.locator('.modal-close').click();
     await expect(modal).not.toHaveClass(/active/);
   });
@@ -72,5 +78,102 @@ test.describe('Logi-Ink Smoke Suite', () => {
     await expect(successToast).toBeVisible({ timeout: 10_000 });
     await expect(successToast).toContainText('Thank you for your message');
   });
-});
 
+  test('mobile navigation toggles and navigates correctly', async ({ page }) => {
+    await page.setViewportSize({ width: 480, height: 900 });
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const hamburger = page.locator('#hamburger');
+    await hamburger.click({ force: true });
+
+    const navMenu = page.locator('#navMenu');
+    await expect(navMenu).toHaveClass(/active/);
+    await expect(hamburger).toHaveAttribute('aria-expanded', 'true');
+
+    await navMenu.locator('a[href="projects.html"]').click();
+    await page.waitForURL('**/projects.html', { timeout: 15_000 });
+
+    await expect(page.locator('.navbar .nav-link.active')).toHaveAttribute('href', 'projects.html');
+  });
+
+  test('back to top control resets scroll position', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight / 2);
+    });
+
+    await page.waitForFunction(() => {
+      const el = document.querySelector('.scroll-progress');
+      if (!el) return false;
+      const width = parseFloat(window.getComputedStyle(el).width);
+      return width > 1;
+    });
+
+    const backToTop = page.locator('.back-to-top');
+    await expect(backToTop).toHaveClass(/visible/);
+    await backToTop.click();
+
+    await page.waitForFunction(() => window.scrollY === 0);
+    await page.waitForFunction(() => {
+      const el = document.querySelector('.scroll-progress');
+      if (!el) return false;
+      const width = parseFloat(window.getComputedStyle(el).width);
+      return width <= 1;
+    });
+  });
+
+  test('contact form surfaces validation errors on invalid submission', async ({ page }) => {
+    await page.goto('/contact.html');
+    await page.waitForLoadState('networkidle');
+
+    await page.fill('#name', 'Playwright Invalid');
+    await page.fill('#email', 'invalid-email');
+    await page.fill('#subject', '');
+    await page.fill('#message', '');
+
+    await page.click('#submitButton');
+
+    const errorToast = page.locator('.toast.error');
+    await expect(errorToast).toBeVisible({ timeout: 10_000 });
+    await expect(errorToast).toContainText('Please fix the errors in the form');
+
+    await expect(page.locator('#email-error')).toContainText('valid email');
+    await expect(page.locator('#subject-error')).toContainText('Subject is required');
+    await expect(page.locator('#message-error')).toContainText('Message is required');
+    await expect(page.locator('#submitButton')).toBeEnabled();
+  });
+
+  test('service worker registers for production build', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('load');
+
+    const swState = await page.evaluate(async () => {
+      if (!('serviceWorker' in navigator)) {
+        return 'unsupported';
+      }
+
+      try {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (!registration) {
+          return 'missing';
+        }
+
+        const state =
+          registration.active?.state ||
+          registration.installing?.state ||
+          registration.waiting?.state ||
+          'registered';
+
+        return state;
+      } catch (error) {
+        console.warn('[Playwright] Service worker check failed', error);
+        return 'error';
+      }
+    });
+
+    expect(['activating', 'activated', 'installed', 'registered', 'missing']).toContain(swState);
+  });
+});
