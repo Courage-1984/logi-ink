@@ -317,7 +317,7 @@ Run the smoke suite prior to shipping major content or interaction changes.
    npm run build:gh-pages
    ```
 
-   The script sets `VITE_BASE_PATH=./`, so every asset is referenced relatively (`./assets/...`). That keeps the build working on both `https://<user>.github.io/logia-ink/` and any custom domain you wire up later.
+   The script sets `VITE_BASE_PATH=./`, so every asset is referenced relatively (`./assets/...`). It also exports `VITE_DISABLE_SW=true`, which skips service-worker caching on GitHub Pages (preventing stale styles or assets). That keeps the build working on both `https://<user>.github.io/logia-ink/` and any custom domain you wire up later.
 
    > Need builds for both regular hosting and GitHub Pages? Use `npm run build:dual` to produce a standard `dist/` bundle and a GitHub Pages-ready `dist-gh-pages/` folder in one go.
 

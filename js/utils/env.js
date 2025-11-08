@@ -59,6 +59,29 @@ export function isProductionEnv() {
 }
 
 /**
+ * Determine if service workers should be disabled for the current build.
+ * Controlled via Vite's `VITE_DISABLE_SW` flag or an optional window hint.
+ * @returns {boolean}
+ */
+export function isServiceWorkerDisabled() {
+  if (typeof import.meta !== 'undefined' && typeof import.meta.env !== 'undefined') {
+    const flag = import.meta.env.VITE_DISABLE_SW;
+    if (typeof flag === 'string') {
+      return flag.toLowerCase() === 'true';
+    }
+    if (typeof flag === 'boolean') {
+      return flag;
+    }
+  }
+
+  if (typeof window !== 'undefined' && window.__DISABLE_SW__ === true) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
  * Expose the resolved mode for consumers that need the raw value.
  * @returns {string}
  */

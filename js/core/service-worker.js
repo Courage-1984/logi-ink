@@ -1,4 +1,4 @@
-import { isDevelopmentEnv } from '../utils/env.js';
+import { isDevelopmentEnv, isServiceWorkerDisabled } from '../utils/env.js';
 
 /**
  * Service Worker Registration
@@ -11,6 +11,25 @@ let registration = null;
  * Register service worker
  */
 export function registerServiceWorker() {
+  // Allow builds (like GitHub Pages) to opt out of service worker caching
+  if (isServiceWorkerDisabled()) {
+    if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .getRegistrations()
+        .then(registrations => {
+          registrations.forEach(reg => reg.unregister());
+        })
+        .catch(() => {
+          // Ignore cleanup errors; the site still works without unregistering
+        });
+    }
+
+    if (typeof window !== 'undefined') {
+      console.info('[Service Worker] Disabled for this build');
+    }
+    return;
+  }
+
   // Skip service worker registration during development to avoid caching issues
   if (isDevelopmentEnv()) {
     if (typeof window !== 'undefined') {
