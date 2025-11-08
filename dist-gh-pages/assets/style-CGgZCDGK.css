@@ -72,7 +72,7 @@
 
 @font-face {
   font-family: 'Rajdhani';
-  src: url('/logia-ink/assets/fonts/Rajdhani-Light-subset-BxudOig_.woff2') format('woff2');
+  src: url('./fonts/Rajdhani-Light-subset-BxudOig_.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -80,7 +80,7 @@
 
 @font-face {
   font-family: 'Rajdhani';
-  src: url('/logia-ink/assets/fonts/Rajdhani-Regular-subset-eAD4TeI1.woff2') format('woff2');
+  src: url('./fonts/Rajdhani-Regular-subset-eAD4TeI1.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -88,7 +88,7 @@
 
 @font-face {
   font-family: 'Rajdhani';
-  src: url('/logia-ink/assets/fonts/Rajdhani-SemiBold-subset-DS5toa3l.woff2') format('woff2');
+  src: url('./fonts/Rajdhani-SemiBold-subset-DS5toa3l.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -96,7 +96,7 @@
 
 @font-face {
   font-family: 'Rajdhani';
-  src: url('/logia-ink/assets/fonts/Rajdhani-Bold-subset-0uNLRUlG.woff2') format('woff2');
+  src: url('./fonts/Rajdhani-Bold-subset-0uNLRUlG.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -1278,7 +1278,7 @@ button:disabled {
   object-fit: cover;
   object-position: center;
   background: rgba(10, 10, 10, 0.8)
-    url('/logia-ink/assets/images/ripples-poster-BsXbJEPK.jpg') center/cover no-repeat;
+    url('./images/ripples-poster-BsXbJEPK.jpg') center/cover no-repeat;
 }
 
 .background-video-container {
@@ -3359,8 +3359,8 @@ textarea.variant-pink::placeholder {
 
 .cta-section {
   position: relative;
-  background-image: image-set(url('/logia-ink/assets/images/cta-get-in-touch-1280w-B-yVgxU3.avif') type('image/avif'), url('/logia-ink/assets/images/cta-get-in-touch-1280w-CD2hJaZo.webp') type('image/webp'));
-  background-image: url('/logia-ink/assets/images/cta-get-in-touch-1280w-CD2hJaZo.webp');
+  background-image: image-set(url('./images/cta-get-in-touch-1280w-B-yVgxU3.avif') type('image/avif'), url('./images/cta-get-in-touch-1280w-CD2hJaZo.webp') type('image/webp'));
+  background-image: url('./images/cta-get-in-touch-1280w-CD2hJaZo.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3372,22 +3372,22 @@ textarea.variant-pink::placeholder {
 
 @media (max-width: 1024px) {
   .cta-section {
-    background-image: image-set(url('/logia-ink/assets/images/cta-get-in-touch-1024w-XFo0heZ9.avif') type('image/avif'), url('/logia-ink/assets/images/cta-get-in-touch-1024w-Ugu85J8R.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/cta-get-in-touch-1024w-Ugu85J8R.webp');
+    background-image: image-set(url('./images/cta-get-in-touch-1024w-XFo0heZ9.avif') type('image/avif'), url('./images/cta-get-in-touch-1024w-Ugu85J8R.webp') type('image/webp'));
+    background-image: url('./images/cta-get-in-touch-1024w-Ugu85J8R.webp');
   }
 }
 
 @media (max-width: 768px) {
   .cta-section {
-    background-image: image-set(url('/logia-ink/assets/images/cta-get-in-touch-768w-BVmt13Gh.avif') type('image/avif'), url('/logia-ink/assets/images/cta-get-in-touch-768w-CRdMFuIF.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/cta-get-in-touch-768w-CRdMFuIF.webp');
+    background-image: image-set(url('./images/cta-get-in-touch-768w-BVmt13Gh.avif') type('image/avif'), url('./images/cta-get-in-touch-768w-CRdMFuIF.webp') type('image/webp'));
+    background-image: url('./images/cta-get-in-touch-768w-CRdMFuIF.webp');
   }
 }
 
 @media (max-width: 480px) {
   .cta-section {
-    background-image: image-set(url('/logia-ink/assets/images/cta-get-in-touch-480w-Bp7kTWpJ.avif') type('image/avif'), url('/logia-ink/assets/images/cta-get-in-touch-480w-B675Np58.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/cta-get-in-touch-480w-B675Np58.webp');
+    background-image: image-set(url('./images/cta-get-in-touch-480w-Bp7kTWpJ.avif') type('image/avif'), url('./images/cta-get-in-touch-480w-B675Np58.webp') type('image/webp'));
+    background-image: url('./images/cta-get-in-touch-480w-B675Np58.webp');
   }
 }
 
@@ -3548,85 +3548,85 @@ textarea.variant-pink::placeholder {
 /* Mission Parallax Section - Responsive Background Images (AVIF + WebP) */
 
 .mission-parallax .parallax-background {
-  background-image: image-set(url('/logia-ink/assets/images/mission-parallax-bg-1280w-DTn3wFbO.avif') type('image/avif'), url('/logia-ink/assets/images/mission-parallax-bg-1280w-CsORHgXl.webp') type('image/webp'));
+  background-image: image-set(url('./images/mission-parallax-bg-1280w-DTn3wFbO.avif') type('image/avif'), url('./images/mission-parallax-bg-1280w-CsORHgXl.webp') type('image/webp'));
   /* Fallback for browsers that don't support image-set */
-  background-image: url('/logia-ink/assets/images/mission-parallax-bg-1280w-CsORHgXl.webp');
+  background-image: url('./images/mission-parallax-bg-1280w-CsORHgXl.webp');
 }
 
 @media (max-width: 1024px) {
   .mission-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/mission-parallax-bg-1024w-BWM7kEx_.avif') type('image/avif'), url('/logia-ink/assets/images/mission-parallax-bg-1024w-b7uUGH44.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/mission-parallax-bg-1024w-b7uUGH44.webp');
+    background-image: image-set(url('./images/mission-parallax-bg-1024w-BWM7kEx_.avif') type('image/avif'), url('./images/mission-parallax-bg-1024w-b7uUGH44.webp') type('image/webp'));
+    background-image: url('./images/mission-parallax-bg-1024w-b7uUGH44.webp');
   }
 }
 
 @media (max-width: 768px) {
   .mission-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/mission-parallax-bg-768w-DF_-7tR9.avif') type('image/avif'), url('/logia-ink/assets/images/mission-parallax-bg-768w-Bp6J_A78.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/mission-parallax-bg-768w-Bp6J_A78.webp');
+    background-image: image-set(url('./images/mission-parallax-bg-768w-DF_-7tR9.avif') type('image/avif'), url('./images/mission-parallax-bg-768w-Bp6J_A78.webp') type('image/webp'));
+    background-image: url('./images/mission-parallax-bg-768w-Bp6J_A78.webp');
   }
 }
 
 @media (max-width: 480px) {
   .mission-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/mission-parallax-bg-480w-DyIYdYb3.avif') type('image/avif'), url('/logia-ink/assets/images/mission-parallax-bg-480w-Di1UH9rO.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/mission-parallax-bg-480w-Di1UH9rO.webp');
+    background-image: image-set(url('./images/mission-parallax-bg-480w-DyIYdYb3.avif') type('image/avif'), url('./images/mission-parallax-bg-480w-Di1UH9rO.webp') type('image/webp'));
+    background-image: url('./images/mission-parallax-bg-480w-Di1UH9rO.webp');
   }
 }
 
 /* Process Parallax Section - Responsive Background Images (AVIF + WebP) */
 
 .process-parallax .parallax-background {
-  background-image: image-set(url('/logia-ink/assets/images/process-parallax-bg-1280w-CzLl7w9e.avif') type('image/avif'), url('/logia-ink/assets/images/process-parallax-bg-1280w-BsnGdPW7.webp') type('image/webp'));
-  background-image: url('/logia-ink/assets/images/process-parallax-bg-1280w-BsnGdPW7.webp');
+  background-image: image-set(url('./images/process-parallax-bg-1280w-CzLl7w9e.avif') type('image/avif'), url('./images/process-parallax-bg-1280w-BsnGdPW7.webp') type('image/webp'));
+  background-image: url('./images/process-parallax-bg-1280w-BsnGdPW7.webp');
 }
 
 @media (max-width: 1024px) {
   .process-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/process-parallax-bg-1024w-FagZ-k89.avif') type('image/avif'), url('/logia-ink/assets/images/process-parallax-bg-1024w-bSFXg1hf.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/process-parallax-bg-1024w-bSFXg1hf.webp');
+    background-image: image-set(url('./images/process-parallax-bg-1024w-FagZ-k89.avif') type('image/avif'), url('./images/process-parallax-bg-1024w-bSFXg1hf.webp') type('image/webp'));
+    background-image: url('./images/process-parallax-bg-1024w-bSFXg1hf.webp');
   }
 }
 
 @media (max-width: 768px) {
   .process-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/process-parallax-bg-768w-BaMkVrLq.avif') type('image/avif'), url('/logia-ink/assets/images/process-parallax-bg-768w-0vmsY_Ih.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/process-parallax-bg-768w-0vmsY_Ih.webp');
+    background-image: image-set(url('./images/process-parallax-bg-768w-BaMkVrLq.avif') type('image/avif'), url('./images/process-parallax-bg-768w-0vmsY_Ih.webp') type('image/webp'));
+    background-image: url('./images/process-parallax-bg-768w-0vmsY_Ih.webp');
   }
 }
 
 @media (max-width: 480px) {
   .process-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/process-parallax-bg-480w-D9zZ4CTg.avif') type('image/avif'), url('/logia-ink/assets/images/process-parallax-bg-480w-d-rEnmYy.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/process-parallax-bg-480w-d-rEnmYy.webp');
+    background-image: image-set(url('./images/process-parallax-bg-480w-D9zZ4CTg.avif') type('image/avif'), url('./images/process-parallax-bg-480w-d-rEnmYy.webp') type('image/webp'));
+    background-image: url('./images/process-parallax-bg-480w-d-rEnmYy.webp');
   }
 }
 
 /* Testimonials Parallax Section - Responsive Background Images (AVIF + WebP) */
 
 .testimonials-parallax .parallax-background {
-  background-image: image-set(url('/logia-ink/assets/images/testimonials-parallax-bg-1280w-DUwY-TGN.avif') type('image/avif'), url('/logia-ink/assets/images/testimonials-parallax-bg-1280w-jbBvpvTi.webp') type('image/webp'));
-  background-image: url('/logia-ink/assets/images/testimonials-parallax-bg-1280w-jbBvpvTi.webp');
+  background-image: image-set(url('./images/testimonials-parallax-bg-1280w-DUwY-TGN.avif') type('image/avif'), url('./images/testimonials-parallax-bg-1280w-jbBvpvTi.webp') type('image/webp'));
+  background-image: url('./images/testimonials-parallax-bg-1280w-jbBvpvTi.webp');
 }
 
 @media (max-width: 1024px) {
   .testimonials-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/testimonials-parallax-bg-1024w-DF5Z_356.avif') type('image/avif'), url('/logia-ink/assets/images/testimonials-parallax-bg-1024w-DkWEE1xK.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/testimonials-parallax-bg-1024w-DkWEE1xK.webp');
+    background-image: image-set(url('./images/testimonials-parallax-bg-1024w-DF5Z_356.avif') type('image/avif'), url('./images/testimonials-parallax-bg-1024w-DkWEE1xK.webp') type('image/webp'));
+    background-image: url('./images/testimonials-parallax-bg-1024w-DkWEE1xK.webp');
   }
 }
 
 @media (max-width: 768px) {
   .testimonials-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/testimonials-parallax-bg-768w-B7ffMsll.avif') type('image/avif'), url('/logia-ink/assets/images/testimonials-parallax-bg-768w-cMGwUNey.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/testimonials-parallax-bg-768w-cMGwUNey.webp');
+    background-image: image-set(url('./images/testimonials-parallax-bg-768w-B7ffMsll.avif') type('image/avif'), url('./images/testimonials-parallax-bg-768w-cMGwUNey.webp') type('image/webp'));
+    background-image: url('./images/testimonials-parallax-bg-768w-cMGwUNey.webp');
   }
 }
 
 @media (max-width: 480px) {
   .testimonials-parallax .parallax-background {
-    background-image: image-set(url('/logia-ink/assets/images/testimonials-parallax-bg-480w-D5mQSugI.avif') type('image/avif'), url('/logia-ink/assets/images/testimonials-parallax-bg-480w-BCtp59Yr.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/testimonials-parallax-bg-480w-BCtp59Yr.webp');
+    background-image: image-set(url('./images/testimonials-parallax-bg-480w-D5mQSugI.avif') type('image/avif'), url('./images/testimonials-parallax-bg-480w-BCtp59Yr.webp') type('image/webp'));
+    background-image: url('./images/testimonials-parallax-bg-480w-BCtp59Yr.webp');
   }
 }
 
@@ -4918,9 +4918,9 @@ hr {
 }
 
 .testimonials-section::before {
-  background-image: image-set(url('/logia-ink/assets/images/tron-grid-1920w-D_lYzfZw.avif') type('image/avif'), url('/logia-ink/assets/images/tron-grid-1920w-CzKp3TAM.webp') type('image/webp'));
+  background-image: image-set(url('./images/tron-grid-1920w-D_lYzfZw.avif') type('image/avif'), url('./images/tron-grid-1920w-CzKp3TAM.webp') type('image/webp'));
   /* Fallback for browsers without image-set support */
-  background-image: url('/logia-ink/assets/images/tron-grid-1920w-CzKp3TAM.webp');
+  background-image: url('./images/tron-grid-1920w-CzKp3TAM.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4929,22 +4929,22 @@ hr {
 
 @media (max-width: 1024px) {
   .testimonials-section::before {
-    background-image: image-set(url('/logia-ink/assets/images/tron-grid-1024w-DCTupw1s.avif') type('image/avif'), url('/logia-ink/assets/images/tron-grid-1024w-BhFkcm-M.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/tron-grid-1024w-BhFkcm-M.webp');
+    background-image: image-set(url('./images/tron-grid-1024w-DCTupw1s.avif') type('image/avif'), url('./images/tron-grid-1024w-BhFkcm-M.webp') type('image/webp'));
+    background-image: url('./images/tron-grid-1024w-BhFkcm-M.webp');
   }
 }
 
 @media (max-width: 768px) {
   .testimonials-section::before {
-    background-image: image-set(url('/logia-ink/assets/images/tron-grid-768w-BPZa_rm5.avif') type('image/avif'), url('/logia-ink/assets/images/tron-grid-768w-CUXk9ojO.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/tron-grid-768w-CUXk9ojO.webp');
+    background-image: image-set(url('./images/tron-grid-768w-BPZa_rm5.avif') type('image/avif'), url('./images/tron-grid-768w-CUXk9ojO.webp') type('image/webp'));
+    background-image: url('./images/tron-grid-768w-CUXk9ojO.webp');
   }
 }
 
 @media (max-width: 480px) {
   .testimonials-section::before {
-    background-image: image-set(url('/logia-ink/assets/images/tron-grid-480w-BO73A8Z-.avif') type('image/avif'), url('/logia-ink/assets/images/tron-grid-480w-CggwDn0s.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/tron-grid-480w-CggwDn0s.webp');
+    background-image: image-set(url('./images/tron-grid-480w-BO73A8Z-.avif') type('image/avif'), url('./images/tron-grid-480w-CggwDn0s.webp') type('image/webp'));
+    background-image: url('./images/tron-grid-480w-CggwDn0s.webp');
   }
 }
 
@@ -5810,9 +5810,9 @@ hr {
 }
 
 .achievements-section::before {
-  background-image: image-set(url('/logia-ink/assets/images/green-hexagon-grid-1920w-BJtjQIOl.avif') type('image/avif'), url('/logia-ink/assets/images/green-hexagon-grid-1920w-BxFFpYiU.webp') type('image/webp'));
+  background-image: image-set(url('./images/green-hexagon-grid-1920w-BJtjQIOl.avif') type('image/avif'), url('./images/green-hexagon-grid-1920w-BxFFpYiU.webp') type('image/webp'));
   /* Fallback for browsers without image-set support */
-  background-image: url('/logia-ink/assets/images/green-hexagon-grid-1920w-BxFFpYiU.webp');
+  background-image: url('./images/green-hexagon-grid-1920w-BxFFpYiU.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -5822,22 +5822,22 @@ hr {
 
 @media (max-width: 1024px) {
   .achievements-section::before {
-    background-image: image-set(url('/logia-ink/assets/images/green-hexagon-grid-1024w-BWI0D6RS.avif') type('image/avif'), url('/logia-ink/assets/images/green-hexagon-grid-1024w-CJuHNVsl.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/green-hexagon-grid-1024w-CJuHNVsl.webp');
+    background-image: image-set(url('./images/green-hexagon-grid-1024w-BWI0D6RS.avif') type('image/avif'), url('./images/green-hexagon-grid-1024w-CJuHNVsl.webp') type('image/webp'));
+    background-image: url('./images/green-hexagon-grid-1024w-CJuHNVsl.webp');
   }
 }
 
 @media (max-width: 768px) {
   .achievements-section::before {
-    background-image: image-set(url('/logia-ink/assets/images/green-hexagon-grid-768w-BVNVxg39.avif') type('image/avif'), url('/logia-ink/assets/images/green-hexagon-grid-768w-CQUIF8Xr.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/green-hexagon-grid-768w-CQUIF8Xr.webp');
+    background-image: image-set(url('./images/green-hexagon-grid-768w-BVNVxg39.avif') type('image/avif'), url('./images/green-hexagon-grid-768w-CQUIF8Xr.webp') type('image/webp'));
+    background-image: url('./images/green-hexagon-grid-768w-CQUIF8Xr.webp');
   }
 }
 
 @media (max-width: 480px) {
   .achievements-section::before {
-    background-image: image-set(url('/logia-ink/assets/images/green-hexagon-grid-480w-WcSJSBBY.avif') type('image/avif'), url('/logia-ink/assets/images/green-hexagon-grid-480w-C_2o9HCE.webp') type('image/webp'));
-    background-image: url('/logia-ink/assets/images/green-hexagon-grid-480w-C_2o9HCE.webp');
+    background-image: image-set(url('./images/green-hexagon-grid-480w-WcSJSBBY.avif') type('image/avif'), url('./images/green-hexagon-grid-480w-C_2o9HCE.webp') type('image/webp'));
+    background-image: url('./images/green-hexagon-grid-480w-C_2o9HCE.webp');
   }
 }
 

@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:gh-pages": "cross-env VITE_BASE_PATH=/logia-ink/ vite build",
+    "build:gh-pages": "cross-env VITE_BASE_PATH=./ vite build",
     "build:dual": "npm run build && npm run build:gh-pages -- --outDir dist-gh-pages",
     "preview": "vite preview",
     "format": "prettier --write \"**/*.{js,html,css,json,md}\"",
