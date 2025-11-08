@@ -350,7 +350,7 @@ Run the smoke suite prior to shipping major content or interaction changes.
 Create a `Dockerfile`:
 
 ```dockerfile
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
@@ -430,7 +430,7 @@ Before deploying, verify:
 **Issue:** Build errors or warnings
 
 **Solution:**
-- Check Node.js version (requires 18+)
+- Check Node.js version (requires 20+)
 - Clear `node_modules` and reinstall: `rm -rf node_modules package-lock.json && npm install`
 - Check for syntax errors in source files
 - Review Vite build output for specific errors
@@ -465,5 +465,5 @@ Before deploying, verify:
 
 ---
 
-**Last Updated:** 2025-11-08
+**Last Updated:** 2025-11-08 (sessionStorage-backed page transitions + documentation refresh)
 

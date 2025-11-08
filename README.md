@@ -130,6 +130,7 @@ Manual utilities in `scripts/` (run via `node scripts/<name>.js`) help with SEO 
 - **Static HTML pages:** `index`, `about`, `services`, `projects`, `pricing`, `seo-services`, `contact` (all include security headers, SEO meta, JSON-LD, accessibility scaffolding, and service worker hook).
 - **CSS:** Modular imports from `main.css` with strict ordering (variables → base → components → pages → utilities). Animations/utilities live under `css/utils/` with `responsive.css` last for overrides.
 - **JavaScript:** `js/main.js` wires 10 core modules (navigation, scroll manager, animations, cursor, mouse tilt, easter egg, page transitions, service worker, three.js hero, performance) and conditionally boots page modules (`contact`, `services`). Utilities include accessibility helpers, toast system, interaction effects, performance + web vitals tracking, and environment detection.
+- **Page transitions:** A sessionStorage-backed preload flow (`js/core/page-transitions.js`) coordinates the new blur/fade animation and relies on a small inline script in each HTML head to avoid flashes on navigation.
 - **Assets:** Self-hosted fonts (WOFF2 subsets), optimised images (WebP/AVIF) with responsive variants, and pre-optimised hero videos.
 - **PWA:** `sw.js` handles caching and update prompts; `site.webmanifest` defines install metadata; favicons and manifest icons copied directly in the Vite build via a custom plugin.
 
@@ -207,6 +208,7 @@ See `docs/BUILD_AND_DEPLOY.md` for deployment performance checklist (cache heade
 - Contact form currently surfaces a success toast; integrate with your preferred backend (e.g., Formspree, Netlify Forms, custom API) for production.
 - Animations prefer `transform`/`opacity` for GPU acceleration; test new effects against `prefers-reduced-motion`.
 - When adding or relocating files, update `.cursor/rules/cursorrules.mdc` and relevant docs to keep the architecture guide authoritative.
+- New pages must include the inline page-transition preload snippet in `<head>` (see `.cursor/rules/cursorrules.mdc`) so the blur/fade effect stays seamless.
 
 ---
 

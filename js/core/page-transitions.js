@@ -3,44 +3,102 @@
  * Handles smooth fade in/out transitions when navigating between pages
  */
 
-export function initPageTransitions() {
-  // Add fade-in class to body on page load
-  document.body.classList.add('page-transition-in');
+const TRANSITION_STORAGE_KEY = 'logiInk:pendingTransition';
+const TRANSITION_DURATION = 400;
+const TRANSITION_CLEANUP_DELAY = 600;
 
-  // Remove fade-in class after animation completes
-  setTimeout(() => {
-    document.body.classList.remove('page-transition-in');
-  }, 500);
+function setTransitionFlag() {
+  try {
+    sessionStorage.setItem(TRANSITION_STORAGE_KEY, '1');
+  } catch (error) {
+    // Ignore storage errors (e.g., Safari private mode)
+  }
+}
+
+function clearTransitionFlag() {
+  try {
+    sessionStorage.removeItem(TRANSITION_STORAGE_KEY);
+  } catch (error) {
+    // Ignore storage errors
+  }
+}
+
+function hasPendingTransition() {
+  try {
+    return sessionStorage.getItem(TRANSITION_STORAGE_KEY) === '1';
+  } catch (error) {
+    return false;
+  }
+}
+
+function handleIncomingTransition() {
+  const root = document.documentElement;
+  const shouldAnimate = root.classList.contains('page-transition-preload') || hasPendingTransition();
+
+  if (!shouldAnimate) {
+    return;
+  }
+
+  clearTransitionFlag();
+
+  requestAnimationFrame(() => {
+    document.body.classList.add('page-transition-in');
+    root.classList.remove('page-transition-preload');
+
+    setTimeout(() => {
+      document.body.classList.remove('page-transition-in');
+    }, TRANSITION_CLEANUP_DELAY);
+  });
+}
+
+export function initPageTransitions() {
+  handleIncomingTransition();
 
   // Handle navigation clicks
   document.querySelectorAll('a[href$=".html"]').forEach(link => {
-    // Skip external links and anchor links
+    const href = link.getAttribute('href') || '';
+
+    // Skip external links, anchors, downloads, or custom targets
     if (link.hostname && link.hostname !== window.location.hostname && link.hostname !== '') {
       return;
     }
-    if (link.getAttribute('href').startsWith('#')) {
+    if (href.startsWith('#') || link.hasAttribute('download')) {
+      return;
+    }
+    if (link.getAttribute('target') && link.getAttribute('target') !== '_self') {
       return;
     }
 
-    link.addEventListener('click', e => {
-      const href = link.getAttribute('href');
+    link.addEventListener('click', event => {
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-      // Skip if it's the same page
-      if (href === currentPath || (href === 'index.html' && currentPath === '')) {
+      // Skip modified clicks, middle clicks, or same-page navigation
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        href === currentPath ||
+        (href === 'index.html' && (currentPath === '' || currentPath === 'index.html'))
+      ) {
         return;
       }
 
-      // Prevent default navigation
-      e.preventDefault();
+      event.preventDefault();
 
-      // Add fade-out class
+      setTransitionFlag();
       document.body.classList.add('page-transition-out');
 
-      // After fade-out animation, allow navigation
       setTimeout(() => {
         window.location.href = href;
-      }, 400);
+      }, TRANSITION_DURATION);
     });
+  });
+
+  window.addEventListener('pageshow', () => {
+    document.body.classList.remove('page-transition-out');
+    handleIncomingTransition();
   });
 }

@@ -111,7 +111,19 @@ Outputs WebM/H.264 derivatives, generates poster frames, and prints before/after
 3. Vercel auto-detects Vite
 4. Deploy!
 
-### Option 3: Manual
+### Option 3: GitHub Pages
+
+```bash
+# Produce a GitHub Pages-ready bundle
+npm run build:gh-pages
+
+# Or build both standard and GH Pages output in one shot
+npm run build:dual
+```
+
+Publish `dist/` (or `dist-gh-pages/` if you used `build:dual`) to your GitHub Pages branch. The GitHub-specific build sets `VITE_BASE_PATH=./` and disables the service worker so relative assets and updates work reliably.
+
+### Option 4: Manual
 
 ```bash
 npm run build

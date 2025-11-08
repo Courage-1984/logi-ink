@@ -333,6 +333,7 @@ export function initModuleName() {
   - Cursor effects (scroll progress, custom cursor)
   - Footer (via partial or direct include)
   - Script tag pointing to `js/main.js` with `type="module"`
+  - **Inline page-transition preload script** – inserted near the top of `<head>` so blur/fade animations don't flash when navigating between pages. Use the snippet below on every entry point.
 
 ### HTML Partials (Reusable Components)
 ```
@@ -417,6 +418,21 @@ Currently, HTML files should manually include the partial content.
 </body>
 </html>
 ```
+
+### Page Transition Preload Snippet
+
+Paste this snippet immediately after the CSP meta tag (or before SEO meta) in each page's `<head>` block:
+
+```html
+<script>
+  if (sessionStorage.getItem('logiInk:pendingTransition')) {
+    document.documentElement.classList.add('page-transition-preload');
+    sessionStorage.removeItem('logiInk:pendingTransition');
+  }
+</script>
+```
+
+> ⚠️ Required for every entry page. Without it, the blur/fade transition will flash on load because the new sessionStorage-driven transition system depends on the preload class being applied before the body paints.
 
 ---
 
@@ -557,7 +573,8 @@ Currently, HTML files should manually include the partial content.
 3. Create page-specific JS in `js/pages/page-name.js` if needed
 4. Import CSS in `css/main.css`
 5. Conditionally initialize JS in `js/main.js`
-6. **Update this file** (`.cursor/rules/cursorrules.mdc`) with the new page
+6. Include the **page-transition preload script** in the `<head>` (see snippet above)
+7. **Update this file** (`.cursor/rules/cursorrules.mdc`) with the new page
 
 ### Modifying Existing Files
 - Keep changes focused and isolated
@@ -814,11 +831,11 @@ Currently, HTML files should manually include the partial content.
 
 ---
 
-**Last Updated:** 2024-12-19 (Updated with Three.js hero backgrounds - different animations per page)
+**Last Updated:** 2025-11-08 (Added sessionStorage-backed page transitions + preload snippet requirements)
 **Migration Status:** ✅ Complete - All CSS/JS migrated, build system configured
 **Component Count:** 19 CSS components, 10 core JS modules (including three-hero), 6 JS utils, 2 JS pages, 3 CSS pages, 10 utility CSS files
 **Performance:** ✅ Service Worker, Self-Hosted Fonts, Critical CSS, Image Optimization, Code Splitting, CSS Purging, Compression, Web Vitals Tracking (via `web-vitals` → Plausible), Dynamic Three.js Loading, Error Handling, Mobile Performance
 **Security & SEO:** ✅ Security Headers, CSP, SRI Infrastructure, SEO Meta Tags, Structured Data (FAQ, Contact), Canonical URLs, Accessibility Features, Sitemap, Robots.txt
 **Configuration Files:** ✅ ESLint v9 (flat config), Prettier, EditorConfig, Git Attributes, VS Code Settings
-**Recent Updates:** ✅ Error handling, performance tracking, Three.js optimization, CSP, SRI, accessibility enhancements, mobile performance
+**Recent Updates:** ✅ SessionStorage-backed page transitions with preload snippet, error handling, performance tracking, Three.js optimization, CSP, SRI, accessibility enhancements, mobile performance
 **Remember:** Always update this file when making structural changes to the project!

@@ -11,6 +11,12 @@ npm run dev
 # Build for production
 npm run build
 
+# Build for GitHub Pages (relative assets + SW disabled)
+npm run build:gh-pages
+
+# Produce both standard and GitHub Pages bundles
+npm run build:dual
+
 # Preview production build (http://localhost:4173/)
 npm run preview
 
@@ -69,7 +75,7 @@ npm update
 
 ## 🔍 Build Analysis
 
-After `npm run build`, open `dist/stats.html` to inspect bundle composition, gzip/brotli sizes, and manual chunking output.
+After `npm run build`, open `dist/stats.html` to inspect bundle composition, gzip/brotli sizes, and manual chunking output. When using `npm run build:dual`, open `dist-gh-pages/stats.html` to review the GitHub Pages bundle as well.
 
 ## 🧪 Testing
 

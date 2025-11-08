@@ -1,16 +1,16 @@
 /**
  * Critical CSS - Above-the-Fold Styles
- * 
+ *
  * This file contains only the CSS needed for initial render (above-the-fold content).
  * It should be inlined in the <head> of HTML files.
- * 
+ *
  * Includes:
  * - CSS Variables (colors, spacing)
  * - Base reset and typography
  * - Navigation styles
  * - Hero section styles (above-the-fold)
  * - Button base styles (if visible above fold)
- * 
+ *
  * Remaining CSS should be loaded asynchronously.
  */
 

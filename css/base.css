@@ -22,9 +22,16 @@ body {
   transition: opacity 0.3s ease;
 }
 
+html.page-transition-preload body {
+  opacity: 0;
+  filter: blur(14px);
+  transition: none;
+}
+
 /* Page Transitions - Enhanced with blur and scale effects */
 .page-transition-in {
   animation: pageFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: opacity, filter;
 }
 
 .page-transition-out {
@@ -57,46 +64,81 @@ h6 {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 12px;
-  transition: width 0.3s ease;
-}
+/* Scrollbar Styling (WebKit browsers only) */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    transition: width 0.3s ease;
+  }
 
-/* Expand scrollbar when mouse is near the right edge */
-.scrollbar-expanded::-webkit-scrollbar {
-  width: 24px;
-}
+  /* Expand scrollbar when mouse is near the right edge */
+  .scrollbar-expanded::-webkit-scrollbar {
+    width: 24px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-  transition: background 0.3s ease;
-}
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    transition: background 0.3s ease;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #00ffff;
-  border-radius: 6px;
-  transition:
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
+  ::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 6px;
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
 
-/* Enhanced thumb when hovering over it */
-::-webkit-scrollbar-thumb:hover {
-  background: #00cccc;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-}
+  /* Enhanced thumb when hovering over it */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00cccc;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  }
 
-/* Scrollbar Color Variants */
-.magenta-scrollbar::-webkit-scrollbar-thumb,
-.variant-magenta-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--accent-magenta);
-}
+  /* Scrollbar Color Variants */
+  .magenta-scrollbar::-webkit-scrollbar-thumb,
+  .variant-magenta-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent-magenta);
+  }
 
-.magenta-scrollbar::-webkit-scrollbar-thumb:hover,
-.variant-magenta-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #cc00cc;
-  box-shadow: 0 0 10px var(--glow-magenta);
+  .magenta-scrollbar::-webkit-scrollbar-thumb:hover,
+  .variant-magenta-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #cc00cc;
+    box-shadow: 0 0 10px var(--glow-magenta);
+  }
+
+  .green-scrollbar::-webkit-scrollbar-thumb,
+  .variant-green-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+  }
+
+  .green-scrollbar::-webkit-scrollbar-thumb:hover,
+  .variant-green-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
+    box-shadow: 0 0 10px var(--glow-green);
+  }
+
+  .blue-scrollbar::-webkit-scrollbar-thumb,
+  .variant-blue-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+  }
+
+  .blue-scrollbar::-webkit-scrollbar-thumb:hover,
+  .variant-blue-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0052cc;
+    box-shadow: 0 0 10px var(--glow-blue);
+  }
+
+  .pink-scrollbar::-webkit-scrollbar-thumb,
+  .variant-pink-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent-pink);
+  }
+
+  .pink-scrollbar::-webkit-scrollbar-thumb:hover,
+  .variant-pink-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #cc0066;
+    box-shadow: 0 0 10px var(--glow-pink);
+  }
 }
 
 .magenta-scrollbar,
@@ -104,47 +146,14 @@ h6 {
   scrollbar-color: var(--accent-magenta) var(--bg-primary);
 }
 
-.green-scrollbar::-webkit-scrollbar-thumb,
-.variant-green-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--accent-green);
-}
-
-.green-scrollbar::-webkit-scrollbar-thumb:hover,
-.variant-green-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #00cc00;
-  box-shadow: 0 0 10px var(--glow-green);
-}
-
 .green-scrollbar,
 .variant-green-scrollbar {
   scrollbar-color: var(--accent-green) var(--bg-primary);
 }
 
-.blue-scrollbar::-webkit-scrollbar-thumb,
-.variant-blue-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--accent-blue);
-}
-
-.blue-scrollbar::-webkit-scrollbar-thumb:hover,
-.variant-blue-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #0052cc;
-  box-shadow: 0 0 10px var(--glow-blue);
-}
-
 .blue-scrollbar,
 .variant-blue-scrollbar {
   scrollbar-color: var(--accent-blue) var(--bg-primary);
-}
-
-.pink-scrollbar::-webkit-scrollbar-thumb,
-.variant-pink-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--accent-pink);
-}
-
-.pink-scrollbar::-webkit-scrollbar-thumb:hover,
-.variant-pink-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #cc0066;
-  box-shadow: 0 0 10px var(--glow-pink);
 }
 
 .pink-scrollbar,

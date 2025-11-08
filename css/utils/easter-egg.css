@@ -348,17 +348,8 @@ body.easter-egg-active.milky-way-ready * {
 
 /* Ensure menu shows in fullscreen mode - target the document element */
 :fullscreen .milky-way-menu,
-:-webkit-full-screen .milky-way-menu,
-:-moz-full-screen .milky-way-menu,
-:-ms-fullscreen .milky-way-menu,
 html:fullscreen .milky-way-menu,
-html:-webkit-full-screen .milky-way-menu,
-html:-moz-full-screen .milky-way-menu,
-html:-ms-fullscreen .milky-way-menu,
-body:fullscreen .milky-way-menu,
-body:-webkit-full-screen .milky-way-menu,
-body:-moz-full-screen .milky-way-menu,
-body:-ms-fullscreen .milky-way-menu {
+body:fullscreen .milky-way-menu {
   z-index: 2147483647 !important;
   position: fixed !important;
   display: flex !important;
@@ -372,18 +363,45 @@ body:-ms-fullscreen .milky-way-menu {
   right: auto !important;
 }
 
+@supports selector(:-webkit-full-screen) {
+  :-webkit-full-screen .milky-way-menu,
+  html:-webkit-full-screen .milky-way-menu,
+  body:-webkit-full-screen .milky-way-menu {
+    z-index: 2147483647 !important;
+    position: fixed !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    bottom: 2rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    right: auto !important;
+  }
+}
+
+@supports selector(:-moz-full-screen) {
+  :-moz-full-screen .milky-way-menu,
+  html:-moz-full-screen .milky-way-menu,
+  body:-moz-full-screen .milky-way-menu {
+    z-index: 2147483647 !important;
+    position: fixed !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    bottom: 2rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    right: auto !important;
+  }
+}
+
 :fullscreen .milky-way-menu.active,
-:-webkit-full-screen .milky-way-menu.active,
-:-moz-full-screen .milky-way-menu.active,
-:-ms-fullscreen .milky-way-menu.active,
 html:fullscreen .milky-way-menu.active,
-html:-webkit-full-screen .milky-way-menu.active,
-html:-moz-full-screen .milky-way-menu.active,
-html:-ms-fullscreen .milky-way-menu.active,
-body:fullscreen .milky-way-menu.active,
-body:-webkit-full-screen .milky-way-menu.active,
-body:-moz-full-screen .milky-way-menu.active,
-body:-ms-fullscreen .milky-way-menu.active {
+body:fullscreen .milky-way-menu.active {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -398,6 +416,43 @@ body:-ms-fullscreen .milky-way-menu.active {
   right: auto !important;
 }
 
+@supports selector(:-webkit-full-screen) {
+  :-webkit-full-screen .milky-way-menu.active,
+  html:-webkit-full-screen .milky-way-menu.active,
+  body:-webkit-full-screen .milky-way-menu.active {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    bottom: 2rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    right: auto !important;
+  }
+}
+
+@supports selector(:-moz-full-screen) {
+  :-moz-full-screen .milky-way-menu.active,
+  html:-moz-full-screen .milky-way-menu.active,
+  body:-moz-full-screen .milky-way-menu.active {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    bottom: 2rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    right: auto !important;
+  }
+}
 /* Show menu when Milky Way is ready - highest specificity - MUST BE FLEX */
 body.easter-egg-active.milky-way-ready .milky-way-menu.active {
   display: flex !important;

@@ -1,7 +1,7 @@
 /**
  * Forms Component
  * Form styles including form groups, inputs, textareas, submit buttons, validation states, and input variants
- * 
+ *
  * Extracted from styles.css (lines: 1104-1181, 2016-2063, 2064-2727, 3107-3133)
  */
 
@@ -47,17 +47,21 @@
 }
 
 /* Input Placeholder Styling */
-::-webkit-input-placeholder {
+::placeholder {
   color: rgba(0, 255, 255, 0.4);
 }
 
-::-moz-placeholder {
-  color: rgba(0, 255, 255, 0.4);
-  opacity: 1;
+@supports selector(::-webkit-input-placeholder) {
+  ::-webkit-input-placeholder {
+    color: rgba(0, 255, 255, 0.4);
+  }
 }
 
-:-ms-input-placeholder {
-  color: rgba(0, 255, 255, 0.4);
+@supports selector(::-moz-placeholder) {
+  ::-moz-placeholder {
+    color: rgba(0, 255, 255, 0.4);
+    opacity: 1;
+  }
 }
 
 /* Textarea Resize Handle Styling */
