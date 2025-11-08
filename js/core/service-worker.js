@@ -14,10 +14,29 @@ export function registerServiceWorker() {
   // Allow builds (like GitHub Pages) to opt out of service worker caching
   if (isServiceWorkerDisabled()) {
     if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+      const sessionFlagKey = 'sw-disabled-reload';
       navigator.serviceWorker
         .getRegistrations()
         .then(registrations => {
-          registrations.forEach(reg => reg.unregister());
+          let hadActiveWorker = false;
+          const unregisterPromises = registrations.map(reg => {
+            if (reg.active) {
+              hadActiveWorker = true;
+            }
+            return reg.unregister();
+          });
+
+          return Promise.all(unregisterPromises).then(() => {
+            const shouldReload =
+              hadActiveWorker && typeof window !== 'undefined' && !sessionStorage.getItem(sessionFlagKey);
+
+            if (shouldReload) {
+              sessionStorage.setItem(sessionFlagKey, 'true');
+              window.location.reload();
+            } else if (typeof window !== 'undefined') {
+              sessionStorage.removeItem(sessionFlagKey);
+            }
+          });
         })
         .catch(() => {
           // Ignore cleanup errors; the site still works without unregistering
