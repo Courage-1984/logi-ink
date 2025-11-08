@@ -170,8 +170,8 @@
     <script defer data-domain="logi-ink.com" src="https://plausible.io/js/script.js"></script>
 
     <!-- Main CSS -->
-    <script type="module" crossorigin src="/assets/js/main-CWmZAhd9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-C8vIW2YB.css">
+    <script type="module" crossorigin src="/assets/js/main-L6TUnIc1.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DQKKZg-P.css">
   </head>
 
   <body>
@@ -372,42 +372,14 @@
       <!-- Technologies Section -->
       <section class="services-preview">
         <!-- Video Background Overlay -->
-        <div class="section-video-background">
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="/assets/images/ripples-poster-BXwdMqP3.jpg"
-            aria-label="Ripples background video"
-          >
-            <!-- WebM format (better compression, modern browsers) -->
-            <source
-              src="/assets/video/optimized/ripples-hq.webm"
-              type="video/webm"
-              media="(min-width: 1025px)"
-            />
-            <!-- High quality MP4 (desktop) -->
-            <source
-              src="/assets/video/optimized/ripples-hq.mp4"
-              type="video/mp4"
-              media="(min-width: 1025px)"
-            />
-            <!-- Medium quality MP4 (tablet) -->
-            <source
-              src="/assets/video/optimized/ripples-mq.mp4"
-              type="video/mp4"
-              media="(min-width: 769px)"
-            />
-            <!-- Low quality MP4 (mobile) -->
-            <source
-              src="/assets/video/optimized/ripples-lq.mp4"
-              type="video/mp4"
-            />
-            <!-- Fallback text -->
-            Your browser does not support the video tag.
-          </video>
+        <div class="section-video-background" role="presentation" aria-hidden="true">
+          <div
+            id="background-video-container"
+            class="background-video-container"
+            data-video="ripples"
+            data-poster="ripples-poster.jpg"
+            data-path="assets/video/optimized"
+          ></div>
         </div>
 
         <!-- Video Overlay (for text readability) -->

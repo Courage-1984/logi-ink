@@ -1,369 +1,215 @@
 # Logi-Ink Website
 
-A modern, cyberpunk-themed website for Logi-Ink digital agency, featuring stunning animations, motion effects, and a sleek design.
+A cyberpunk-inspired marketing site for the Logi-Ink digital agency. The site ships as static HTML, modular CSS, and ES6 modules bundled with Vite, featuring rich motion design, PWA support, and automated optimisation tooling.
 
-## 🏗️ Project Structure
+> **Must read first:** [.cursor/rules/cursorrules.mdc](.cursor/rules/cursorrules.mdc) is the canonical source for architecture, naming, and workflow rules. Keep it updated whenever structure changes.
 
-This project uses a **modular architecture** for better organization and maintainability:
-
-- **CSS:** Modular CSS files organized by component/feature (see `css/` directory)
-- **JavaScript:** ES6 modules organized by functionality (see `js/` directory)
-- **HTML:** Static HTML pages with reusable partials (see `partials/` directory)
-
-**For detailed structure and conventions, see [.cursor/rules/cursorrules.mdc](.cursor/rules/cursorrules.mdc)**
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+- **Node.js 20.x** (see `.nvmrc`; run `nvm use` if you have nvm installed)
+- **npm 10+** (bundled with Node 20)
+- Optional: `npx playwright install` (one-time) to run the smoke e2e tests
 
-- **Node.js:** Version 20 (see `.nvmrc` for exact version)
-  - If using `nvm`: `nvm use` (automatically uses version from `.nvmrc`)
-  - Download from [nodejs.org](https://nodejs.org/) if not using nvm
-- **npm:** Comes with Node.js
+### Setup
+```bash
+npm install             # install dependencies
+npm run dev             # dev server with HMR at http://localhost:3000
 
-### Option 1: Development (Recommended)
+# Optional environment override for subdirectory deploys
+echo "VITE_BASE_PATH=/your-path/" > .env
 
-1. **Install dependencies:**
+npm run build           # production build (outputs to dist/)
+npm run preview         # serve built files at http://localhost:4173
+```
 
-   ```bash
-   npm install
-   ```
+For a static preview without the toolchain you can open `index.html` directly in a browser, but service worker behaviour, module loading, and routing previews require the dev server.
 
-2. **Configure environment variables (optional):**
-   - Copy `.env.example` to `.env` (if it exists)
-   - Set `VITE_BASE_PATH` for your deployment (default: `/`)
-   - For subdirectory deployment, set `VITE_BASE_PATH=/your-path/`
+---
 
-3. **Start development server:**
-
-   ```bash
-   npm run dev
-   ```
-
-   Opens at `http://localhost:3000` with hot module replacement
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-   Creates optimized `dist/` folder
-
-5. **Preview production build:**
-   ```bash
-   npm run preview
-   ```
-   Opens at `http://localhost:4173/` (base path configured in vite.config.js)
-
-### Option 2: Simple Preview
-
-1. Open `index.html` in a web browser to view the site
-2. All pages are linked and functional
-3. Note: Some features may require a local server (use Option 1 for full functionality)
-
-## 📁 Directory Structure
-
+## 📁 Directory Overview
 ```
 logia-ink/
-├── .cursor/              # Cursor IDE configuration
-│   └── rules/
-│       └── cursorrules.mdc # Project rules and structure guide
-├── docs/                 # Documentation files
+├── .cursor/
+│   └── rules/cursorrules.mdc     # Project rules & architecture guide (authoritative)
+├── assets/
+│   ├── fonts/                    # Self-hosted Orbitron & Rajdhani subsets
+│   ├── images/                   # Backgrounds, banners, logos, responsive variants
+│   └── video/                    # Optimised hero/background videos + poster frames
+├── css/
+│   ├── main.css                  # Imports variables → base → components → pages → utils
+│   ├── variables.css             # Color tokens, spacing, shadows, breakpoints
+│   ├── components/               # 19 component styles (buttons, cards, toast, etc.)
+│   ├── pages/                    # Page-specific overrides (about, contact, projects)
+│   └── utils/                    # 10 utility/animation bundles (responsive last)
+├── docs/
 │   ├── BUILD_AND_DEPLOY.md
 │   ├── QUICK_START.md
-│   ├── project_commands.md # Quick command reference
-│   └── research/         # Research and analysis files (optional)
-├── tests/                # Test files
-│   ├── test-fonts.html
-│   └── test-service-worker.html
-├── scripts/              # Build and optimization scripts
+│   ├── STYLE_GUIDE.md
+│   ├── project_commands.md
+│   ├── documentation-audit-progress.md
+│   ├── IMAGE_GENERATION_PROMPTS.md
+│   └── VIDEO_BACKGROUND_GUIDE.md
+├── js/
+│   ├── main.js                   # Boots core modules and page-specific logic
+│   ├── core/                     # 10 core modules (navigation, scroll, three-hero, etc.)
+│   ├── utils/                    # 7 utilities (interactions, toast, performance, env, …)
+│   └── pages/                    # Page hooks (contact form, services modals)
+├── scripts/
 │   ├── optimize-images.js
+│   ├── optimize-video.js
 │   ├── generate-responsive-images.js
+│   ├── inline-critical-css.js
 │   ├── generate-sitemap.js
 │   ├── generate-seo-meta.js
 │   ├── generate-structured-data.js
 │   ├── subset-fonts.js
-│   └── inline-critical-css.js
-├── partials/             # Reusable HTML components
-│   ├── seo-meta.html
-│   ├── security-headers.html
-│   ├── structured-data.html
-│   └── accessibility.html
-├── robots.txt            # Search engine crawling rules
-├── sitemap.xml           # Sitemap for search engines
-├── .htaccess             # Apache security headers configuration
-├── _headers              # Netlify/Vercel security headers
-├── nginx.conf.example    # Nginx security headers example
-├── index.html            # Homepage (entry point)
-├── about.html            # About page (entry point)
-├── services.html         # Services page (entry point)
-├── projects.html         # Projects page (entry point)
-├── contact.html          # Contact page (entry point)
-├── sw.js                 # Service worker (PWA/offline support)
-├── README.md             # Project documentation
-├── package.json          # Node.js dependencies and scripts
-├── vite.config.js        # Vite build configuration
-├── postcss.config.cjs    # PostCSS configuration (PurgeCSS)
-├── site.webmanifest      # PWA manifest
-├── css/                  # Modular CSS files
-│   ├── main.css          # Main entry point (imports all modules)
-│   ├── variables.css     # CSS custom properties
-│   ├── base.css          # Base/reset styles
-│   ├── fonts.css         # Self-hosted font declarations
-│   ├── critical.css      # Critical CSS (above-the-fold)
-│   ├── components/       # 19 component CSS files
-│   ├── pages/            # Page-specific styles (3 files)
-│   └── utils/            # Utility styles (10 files)
-├── js/                   # Modular JavaScript (ES6 modules)
-│   ├── main.js           # Main entry point
-│   ├── core/             # Core functionality modules (10 modules)
-│   │   └── three-hero.js  # Three.js hero background animations (different per page)
-│   ├── utils/            # Utility modules (6 files)
-│   └── pages/            # Page-specific scripts (2 files)
-├── assets/               # Static assets
-│   ├── fonts/            # Self-hosted fonts (WOFF2, subsetted)
-│   │   ├── Orbitron/     # Orbitron font family
-│   │   └── Rajdhani/     # Rajdhani font family
-│   └── images/            # Images
-│       ├── backgrounds/  # Background images
-│       ├── banners/      # Banner images
-│       ├── logos/        # Logo images
-│       └── responsive/   # Responsive image variants (AVIF/WebP)
-├── dist/                 # Production build output (generated by Vite)
-└── *.html                # Page files (entry points)
+│   ├── test-fonts.ps1
+│   ├── subset-fonts-with-glyphhanger.{sh,ps1}
+│   └── update-html-seo.js
+├── tests/
+│   ├── e2e/smoke.spec.js         # Playwright smoke suite
+│   ├── test-fonts.html
+│   └── test-service-worker.html
+├── about.html
+├── contact.html
+├── index.html
+├── pricing.html
+├── projects.html
+├── seo-services.html
+├── services.html
+├── sw.js
+├── CHANGELOG.md
+├── README.md
+├── package.json
+├── package-lock.json
+├── postcss.config.cjs
+├── site.webmanifest
+├── vite.config.js
+├── eslint.config.js
+├── playwright.config.js
+├── robots.txt
+├── sitemap.xml
+├── _headers
+├── .htaccess
+├── nginx.conf.example
+└── dist/                         # Generated build output (kept for reference)
 ```
 
-## 🎨 Website Structure
+Additional tooling/config: `.editorconfig`, `.prettierrc`, `.npmrc`, `.gitattributes`, `.vscode/`.
 
-- **Home** (`index.html`) - Hero section, services preview, and featured projects
-- **About** (`about.html`) - Company mission, values, and approach
-- **Services** (`services.html`) - Detailed service offerings and process
-- **Projects** (`projects.html`) - Portfolio showcase
-- **Contact Us** (`contact.html`) - Contact form and information
+---
 
-## 🎨 Color Palette
+## 🧰 npm Scripts & Tooling
 
-The website uses a cyberpunk-inspired color scheme:
+| Category | Script | Description |
+| --- | --- | --- |
+| Development | `npm run dev` | Vite dev server with HMR |
+|  | `npm run build` | Production build (terser minification, hashed assets) |
+|  | `npm run preview` | Serve `dist/` locally |
+| Quality | `npm run format` / `format:check` | Prettier formatting |
+|  | `npm run lint` / `lint:fix` | ESLint (flat config) over `js/**/*.js` |
+|  | `npm run validate` | Combines `format:check` + `lint` |
+| Testing | `npm run test:e2e` | Build then run Playwright smoke suite |
+| Optimisation | `npm run optimize-images` | Lossy image optimisation with Sharp |
+|  | `npm run optimize-video` | Transcodes hero videos + poster frames |
+|  | `npm run responsive-images` | Generate AVIF/WebP responsive sets + snippets |
+|  | `npm run inline-critical-css` | Extract & inline critical CSS (post-build) |
+|  | `npm run subset-fonts` | Inspect usage and prep font subsetting |
+|  | `npm run generate-sitemap` | Regenerate `sitemap.xml` |
+| Maintenance | `npm run clean` | Remove `dist/` and Vite cache |
 
-- **Primary Background**: `#0a0a0a` (Deep Black)
-- **Secondary Background**: `#1a1a2e` (Dark Blue-Black)
-- **Tertiary Background**: `#16213e` (Navy Blue)
-- **Accent Colors**:
-  - Cyan: `#00ffff` (Electric Cyan)
-  - Magenta: `#ff00ff` (Hot Magenta)
-  - Green: `#00ff00` (Electric Green)
-  - Blue: `#0066ff` (Electric Blue)
-  - Pink: `#ff0080` (Hot Pink)
+Manual utilities in `scripts/` (run via `node scripts/<name>.js`) help with SEO metadata, structured data, and automated HTML updates.
 
-All colors are defined as CSS variables in `css/variables.css` - **modify colors there**, not throughout the codebase.
+---
 
-## 🛠️ Development
+## 🧱 Architecture Highlights
 
-### Development Setup
+- **Static HTML pages:** `index`, `about`, `services`, `projects`, `pricing`, `seo-services`, `contact` (all include security headers, SEO meta, JSON-LD, accessibility scaffolding, and service worker hook).
+- **CSS:** Modular imports from `main.css` with strict ordering (variables → base → components → pages → utilities). Animations/utilities live under `css/utils/` with `responsive.css` last for overrides.
+- **JavaScript:** `js/main.js` wires 10 core modules (navigation, scroll manager, animations, cursor, mouse tilt, easter egg, page transitions, service worker, three.js hero, performance) and conditionally boots page modules (`contact`, `services`). Utilities include accessibility helpers, toast system, interaction effects, performance + web vitals tracking, and environment detection.
+- **Assets:** Self-hosted fonts (WOFF2 subsets), optimised images (WebP/AVIF) with responsive variants, and pre-optimised hero videos.
+- **PWA:** `sw.js` handles caching and update prompts; `site.webmanifest` defines install metadata; favicons and manifest icons copied directly in the Vite build via a custom plugin.
 
-**VS Code (Recommended):**
+---
 
-- Install recommended extensions (VS Code will prompt you)
-- Settings are configured in `.vscode/settings.json`
-- Format on save is enabled with Prettier
+## 🔬 Testing & QA
 
-**Code Formatting:**
+- **Playwright smoke suite** (`tests/e2e/smoke.spec.js`) covers:
+  - Global navigation (desktop + mobile drawer)
+  - Back-to-top + scroll progress synchronisation
+  - Services modal open/close (button + keyboard/Escape)
+  - Contact form validation (happy path + error states)
+  - Service worker registration flow
+- **Manual utilities:** `tests/test-fonts.html` and `tests/test-service-worker.html` help verify font loading and service worker behaviour during development.
+- **Setup:** Run `npx playwright install` once before using `npm run test:e2e`.
 
-- **Prettier** is configured via `.prettierrc`
-- Format code: `npm run format`
-- Check formatting: `npm run format:check`
+---
 
-**Code Linting:**
+## ⚙️ Config Reference
 
-- **ESLint** is configured via `.eslintrc.js`
-- Lint code: `npm run lint`
-- Auto-fix issues: `npm run lint:fix`
+| File | Purpose |
+| --- | --- |
+| `vite.config.js` | Multi-page build, asset copy plugins, terser settings, gzip/brotli, bundle visualiser |
+| `postcss.config.cjs` | PurgeCSS scaffold (currently disabled; keep safelist updated before re-enabling) |
+| `eslint.config.js` | ESLint v9 flat config (extends `@eslint/js`) |
+| `.prettierrc` | Prettier formatting rules |
+| `.editorconfig` | Editor defaults (spacing, line endings) |
+| `.npmrc`, `.gitattributes` | Registry + line ending consistency |
+| `playwright.config.js` | Browser/device matrix for smoke suite |
+| `site.webmanifest` | PWA metadata and shortcuts |
 
-**Editor Configuration:**
+---
 
-- **EditorConfig** ensures consistent formatting across editors (`.editorconfig`)
-- **Git Attributes** ensures consistent line endings (`.gitattributes`)
+## 📊 Performance & Features Checklist
 
-### Build System
+- ✅ Critical CSS extraction script (`npm run inline-critical-css`)
+- ✅ Gzip + Brotli assets (via `vite-plugin-compression`)
+- ✅ Image optimisation & responsive sources (`vite-plugin-imagemin` + Sharp scripts)
+- ✅ Console stripping via terser in production
+- ✅ Manual chunking for vendor bundles (with special-case handling for Three.js)
+- ✅ Web Vitals + navigation timing sent to Plausible (see `js/utils/performance.js`)
+- ✅ Dynamic Three.js loader with SRI support (`js/utils/three-loader.js`)
+- ✅ Service worker update toast (`css/components/service-worker.css`)
 
-This project uses **Vite** for development and production builds:
+See `docs/BUILD_AND_DEPLOY.md` for deployment performance checklist (cache headers, Lighthouse targets, etc.).
 
-- **Development:** `npm run dev` - Fast dev server with HMR
-- **Production:** `npm run build` - Optimized, minified build to `dist/`
-- **Preview:** `npm run preview` - Preview production build locally
+---
 
-**Environment Variables:**
+## 📚 Documentation
 
-- Base path can be configured via `VITE_BASE_PATH` environment variable
-- Create `.env` file with `VITE_BASE_PATH=/your-path/` for subdirectory deployment
-- Default: `/` (for root domain deployment)
+- `docs/documentation-audit-progress.md` – live tracker for the ongoing documentation refresh
+- `docs/BUILD_AND_DEPLOY.md` – detailed build → deploy workflow (including Netlify, Vercel, Docker options)
+- `docs/QUICK_START.md` – fast onboarding cheatsheet
+- `docs/project_commands.md` – single-page command reference
+- `docs/STYLE_GUIDE.md` – design system, component markup, animation patterns
+- `docs/IMAGE_GENERATION_PROMPTS.md` – Midjourney/DALL·E prompts for art direction
+- `docs/VIDEO_BACKGROUND_GUIDE.md` – workflow for creating and optimising hero videos
 
-### Available Scripts
+`CHANGELOG.md` tracks release history; update alongside major feature or tooling shifts.
 
-**Development:**
+---
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
+## 🛡️ Security, SEO & Accessibility
 
-**Code Quality:**
+- Security headers mirrored in HTML plus server configs (`.htaccess`, `_headers`, `nginx.conf.example`)
+- CSP tuned for self-hosted assets; ready for SRI if external resources are introduced
+- SEO: canonical URLs, Open Graph/Twitter meta, JSON-LD (Organization, Service, FAQ, Breadcrumbs, Contact)
+- Accessibility: skip links, ARIA live region, focus management, reduced motion support, semantic markup
+- Analytics: Plausible script embedded; Web Vitals + navigation metrics auto-published as custom events
 
-- `npm run format` - Format all code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run lint` - Lint JavaScript files
-- `npm run lint:fix` - Fix linting issues automatically
-- `npm run validate` - Run format check and linting
+---
 
-**Optimization:**
+## 📌 Additional Notes
 
-- `npm run optimize-images` - Optimize images
-- `npm run responsive-images` - Generate responsive images
-- `npm run subset-fonts` - Analyze fonts for subsetting
-- `npm run inline-critical-css` - Inline critical CSS
+- Contact form currently surfaces a success toast; integrate with your preferred backend (e.g., Formspree, Netlify Forms, custom API) for production.
+- Animations prefer `transform`/`opacity` for GPU acceleration; test new effects against `prefers-reduced-motion`.
+- When adding or relocating files, update `.cursor/rules/cursorrules.mdc` and relevant docs to keep the architecture guide authoritative.
 
-**Utilities:**
-
-- `npm run clean` - Clean build artifacts and cache
-
-### CSS Architecture
-
-- All CSS is modular - edit component files in `css/components/`
-- Colors are in `css/variables.css` - change them there
-- Import order matters in `css/main.css` - don't change unless you know what you're doing
-- CSS is automatically minified and purged during production build
-- Critical CSS is extracted and inlined in HTML
-
-### JavaScript Architecture
-
-- All JS is modular ES6 - edit modules in `js/core/` or `js/utils/`
-- Main entry point is `js/main.js`
-- Use `export function initModuleName()` pattern for new modules
-- JavaScript is automatically bundled and minified during production build
-- Page-specific modules are lazy-loaded
-
-### Performance Optimizations
-
-- ✅ **Service Worker / PWA** - Offline support and faster repeat visits
-- ✅ **Self-Hosted Fonts** - Subsetted WOFF2 fonts for faster loading
-- ✅ **Critical CSS** - Inlined above-the-fold styles
-- ✅ **Image Optimization** - Automated optimization in build (WebP/AVIF)
-- ✅ **Code Splitting** - Manual chunks for better caching
-- ✅ **CSS Purging** - Removes unused CSS in production (currently disabled, can be re-enabled)
-- ✅ **Compression** - Gzip and Brotli compression
-- ✅ **Bundle Analysis** - Visual bundle analysis (`dist/stats.html`)
-- ✅ **Web Vitals Tracking** - Performance monitoring (LCP, FID, CLS)
-- ✅ **Dynamic Three.js Loading** - Loads only when needed (easter egg)
-- ✅ **Error Handling** - Centralized error handling with graceful degradation
-- ✅ **Mobile Performance** - Optimized animations and effects for mobile devices
-
-### Current Module Counts
-
-- **CSS Components:** 19 files in `css/components/`
-- **CSS Utils:** 10 files in `css/utils/`
-- **CSS Pages:** 3 files in `css/pages/`
-- **JS Core Modules:** 10 files in `js/core/` (navigation, scroll, animations, cursor, mouse-tilt, easter-egg, page-transitions, scroll-manager, service-worker, three-hero)
-- **JS Utils:** 6 files in `js/utils/` (interactions, toast, accessibility, error-handler, performance, three-loader)
-- **JS Pages:** 2 files in `js/pages/` (contact, services)
-
-### Adding New Components
-
-1. Create CSS file in `css/components/component-name.css`
-2. Import it in `css/main.css`
-3. If it needs JS, create module in `js/core/` or `js/utils/`
-4. Export init function and import in `js/main.js`
-5. **Update `.cursor/rules/cursorrules.mdc`** file with the new component
-
-## 📖 Documentation
-
-**Project Structure:**
-
-- **[.cursor/rules/cursorrules.mdc](.cursor/rules/cursorrules.mdc)** - Complete project structure and conventions guide (MUST READ FIRST)
-
-**Guides:**
-
-- **[docs/BUILD_AND_DEPLOY.md](docs/BUILD_AND_DEPLOY.md)** - Build and deployment guide
-- **[docs/QUICK_START.md](docs/QUICK_START.md)** - Quick reference guide
-- **[docs/project_commands.md](docs/project_commands.md)** - Quick command reference
-
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 🔒 Security & SEO
-
-### Security Headers
-- ✅ **Meta Tags** - Security headers in HTML (X-Frame-Options, CSP, etc.)
-- ✅ **Content Security Policy** - CSP meta tags on all pages
-- ✅ **Server Configuration** - `.htaccess` (Apache), `_headers` (Netlify/Vercel), `nginx.conf.example` (Nginx)
-- ✅ **Subresource Integrity** - SRI infrastructure ready for CDN resources
-
-### SEO Optimization
-- ✅ **Meta Tags** - Open Graph, Twitter Cards, descriptions on all pages
-- ✅ **Structured Data** - JSON-LD schemas (Organization, WebSite, Service, BreadcrumbList, FAQPage, ContactPage)
-- ✅ **Canonical URLs** - Added to all pages for SEO
-- ✅ **Sitemap** - Auto-generated `sitemap.xml` (run `npm run generate-sitemap`)
-- ✅ **Robots.txt** - Search engine crawling rules
-
-### Accessibility
-- ✅ **Skip Links** - Keyboard navigation skip to content
-- ✅ **ARIA Live Regions** - Screen reader announcements
-- ✅ **Focus Management** - Keyboard navigation and focus trapping
-- ✅ **ARIA Labels** - Enhanced ARIA labels and roles throughout
-- ✅ **Keyboard Navigation** - Full keyboard support with focus management
-- ✅ **Reduced Motion** - Respects `prefers-reduced-motion` media query
-- ✅ **Accessibility Utilities** - `js/utils/accessibility.js` for enhanced accessibility
-
-## 📝 Notes
-
-- The contact form currently shows an alert on submission. You'll need to integrate it with a backend service (e.g., Formspree, Netlify Forms, or custom API)
-- All animations are CSS-based for optimal performance
-- The site is fully responsive and mobile-friendly
-- Uses ES6 modules with Vite bundler for optimal performance
-- Service worker provides offline support and faster repeat visits
-- Fonts are self-hosted and subsetted for optimal performance
-- All HTML pages include security headers, SEO meta tags, structured data, and accessibility features
-
-## 🔧 Configuration Files
-
-The project includes several configuration files for code quality and consistency:
-
-**Code Quality:**
-- **`.editorconfig`** - Editor configuration for consistent formatting
-- **`.prettierrc`** - Prettier code formatting configuration
-- **`eslint.config.js`** - ESLint JavaScript linting configuration (ESLint v9 flat config)
-- **`.nvmrc`** - Node.js version specification
-- **`.gitattributes`** - Git line ending normalization
-- **`.npmrc`** - npm configuration
-- **`.vscode/`** - VS Code workspace settings and recommended extensions
-
-**Build & Deployment:**
-- **`vite.config.js`** - Vite build configuration (supports environment variables)
-- **`postcss.config.cjs`** - PostCSS configuration (PurgeCSS)
-- **`package.json`** - Node.js dependencies and scripts
-
-**Security & SEO:**
-- **`.htaccess`** - Apache security headers configuration
-- **`_headers`** - Netlify/Vercel security headers
-- **`nginx.conf.example`** - Nginx security headers example
-- **`robots.txt`** - Search engine crawling rules
-- **`sitemap.xml`** - Sitemap for search engines (generated)
-
-**Documentation:**
-- **`CHANGELOG.md`** - Version history and changes
-- **`README.md`** - This file
-
-## 🚀 Deployment
-
-See **[docs/BUILD_AND_DEPLOY.md](docs/BUILD_AND_DEPLOY.md)** for detailed deployment instructions.
-
-**Quick deploy:**
-
-1. Build: `npm run build`
-2. Upload `dist/` folder to your web server
-3. Or use Netlify/Vercel with auto-deploy from Git
+---
 
 ## 📄 License
 
-This project is proprietary and confidential.
+This project is proprietary and confidential. Redistribution or reuse requires written permission from Logi-Ink.

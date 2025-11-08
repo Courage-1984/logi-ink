@@ -11,28 +11,50 @@ npm run dev
 # Build for production
 npm run build
 
-# Preview production build
+# Preview production build (http://localhost:4173/)
 npm run preview
-# Note: Access at http://localhost:4173/ (base path configured in vite.config.js)
+
+# Clean dist/ and Vite cache
+npm run clean
 ```
 
-## 🛠️ Optimization Scripts
+## 🛠️ Optimisation & Utilities
 
 ```bash
-# Optimize images
+# Compress and optimise existing images
 npm run optimize-images
 
-# Generate responsive images (AVIF/WebP)
+# Generate responsive AVIF/WebP sets + HTML snippets
 npm run responsive-images
 
-# Analyze fonts for subsetting
+# Optimise hero/background videos + poster frames
+npm run optimize-video
+
+# Analyse font usage prior to subsetting
 npm run subset-fonts
 
-# Inline critical CSS
+# Inline critical CSS (run after build)
 npm run inline-critical-css
 
-# Generate sitemap.xml
+# Rebuild sitemap.xml from current routes
 npm run generate-sitemap
+```
+
+## 🧹 Quality Gates
+
+```bash
+# Format with Prettier
+npm run format
+
+# Check formatting only
+npm run format:check
+
+# Lint ES modules (js/**/*.js)
+npm run lint
+npm run lint:fix
+
+# Run format check + lint sequentially
+npm run validate
 ```
 
 ## 📦 Dependencies
@@ -41,75 +63,61 @@ npm run generate-sitemap
 # Install dependencies
 npm install
 
-# Update dependencies
+# Update dependencies (use with caution)
 npm update
 ```
 
 ## 🔍 Build Analysis
 
-After building, check bundle analysis:
-- Open `dist/stats.html` in browser
-- View bundle composition, sizes, and compression ratios
+After `npm run build`, open `dist/stats.html` to inspect bundle composition, gzip/brotli sizes, and manual chunking output.
 
 ## 🧪 Testing
 
 ```bash
-# Test service worker
-# Open http://localhost:3000/tests/test-service-worker.html
-
-# Test fonts
-# Open http://localhost:3000/tests/test-fonts.html
-
 # Run Playwright smoke tests (builds production output first)
 npm run test:e2e
-
-# Coverage: cross-page navigation, mobile nav drawer, scroll utilities (progress + back-to-top),
-# service modals (button & Escape close), contact form happy/invalid flows, service worker registration
 
 # Install Playwright browsers (first run only)
 npx playwright install
 ```
 
-## 🔒 Security & SEO
+Manual QA helpers:
+- `http://localhost:3000/tests/test-service-worker.html`
+- `http://localhost:3000/tests/test-fonts.html`
 
-```bash
-# Generate sitemap.xml
-npm run generate-sitemap
-
-# Validate code quality
-npm run validate
-```
+Coverage: multi-page navigation (desktop + mobile drawer), scroll progress/back-to-top, services modal lifecycle, contact form validation (happy + invalid), service worker registration toast.
 
 ## 📝 Common Tasks
 
 ### Adding a New Component
 1. Create CSS in `css/components/component-name.css`
-2. Import in `css/main.css`
-3. If JS needed, create module in `js/core/` or `js/utils/`
-4. Export init function and import in `js/main.js`
-5. Update `.cursor/rules/cursorrules.mdc`
+2. Import it in `css/main.css`
+3. If JS is required, add a module in `js/core/` or `js/utils/`
+4. Export an `init...` function and wire it up in `js/main.js`
+5. Update `.cursor/rules/cursorrules.mdc` with the new structure
 
 ### Modifying Colors
-- Edit `css/variables.css` only
-- All components use CSS variables
+- Edit `css/variables.css` only (all components reference tokens)
 
 ### Adding a New Page
-1. Create HTML file in root
-2. Create page-specific CSS in `css/pages/page-name.css` if needed
-3. Create page-specific JS in `js/pages/page-name.js` if needed
-4. Import CSS in `css/main.css`
-5. Conditionally initialize JS in `js/main.js`
+1. Create the HTML file at the repository root
+2. Add page-specific CSS in `css/pages/` if needed
+3. Add page-specific JS in `js/pages/` if required
+4. Import the CSS in `css/main.css`
+5. Conditionally initialise the JS in `js/main.js`
 
 ## 🔧 Build Configuration
 
-- **Vite Config:** `vite.config.js`
-- **PostCSS Config:** `postcss.config.cjs`
-- **Package Config:** `package.json`
-- **ESLint Config:** `eslint.config.js` (ESLint v9 flat config)
+- `vite.config.js` – build pipeline, plugins, compression, manual chunks
+- `postcss.config.cjs` – PurgeCSS scaffold (disabled by default; review safelist first)
+- `package.json` – scripts and dependency manifest
+- `eslint.config.js` – ESLint v9 flat config
 
 ## 📚 Documentation
 
-- **Project Rules:** `.cursor/rules/cursorrules.mdc` (MUST READ FIRST)
-- **Build Guide:** `docs/BUILD_AND_DEPLOY.md`
-- **Quick Start:** `docs/QUICK_START.md`
+- `.cursor/rules/cursorrules.mdc` – MUST READ FIRST (authoritative rules)
+- `docs/BUILD_AND_DEPLOY.md` – detailed build/deploy workflows
+- `docs/QUICK_START.md` – three-step onboarding checklist
+- `docs/STYLE_GUIDE.md` – design system and interaction patterns
+- `docs/documentation-audit-progress.md` – current status of documentation maintenance
 

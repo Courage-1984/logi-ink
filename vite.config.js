@@ -35,7 +35,7 @@ export default defineConfig({
       },
     },
 
-    // CSS minification - temporarily disabled to debug styling issues
+    // CSS minification (kept enabled for production builds)
     cssMinify: true,
 
     // Rollup options
@@ -108,7 +108,7 @@ export default defineConfig({
     // Chunk size warning limit (in kbs) - reduced for better optimization
     chunkSizeWarningLimit: 500,
 
-    // CSS code splitting per page - disabled to ensure all styles are available
+    // CSS code splitting per page (kept enabled; components are modularised)
     cssCodeSplit: true,
   },
 

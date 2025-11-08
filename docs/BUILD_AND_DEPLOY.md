@@ -6,9 +6,10 @@ This guide covers how to build and deploy the Logi-Ink website.
 
 ## 📋 Prerequisites
 
-- Node.js 18+ installed
-- npm or yarn package manager
+- Node.js 20.x (see `.nvmrc`; run `nvm use` if available)
+- npm (bundled with Node 20)
 - Git (for version control)
+- Optional: `npx playwright install` (one-time) to run the smoke e2e suite
 
 ---
 
@@ -21,8 +22,10 @@ npm install
 ```
 
 This will install:
-- Vite (build tool)
-- Sharp (image optimization)
+- **Vite** (multi-page build tool)
+- **Sharp** (image and video optimisation helpers)
+- **Playwright** (dev dependency for the smoke test suite)
+- Build-time plugins (`vite-plugin-imagemin`, `vite-plugin-compression`, `rollup-plugin-visualizer`)
 
 ### 2. Development Server
 
@@ -87,7 +90,7 @@ This will:
 Generate multiple sizes for responsive `srcset`:
 
 ```bash
-node scripts/generate-responsive-images.js
+npm run responsive-images
 ```
 
 This will:
@@ -100,6 +103,25 @@ This will:
 **After generation:**
 1. Review generated sizes
 2. Update HTML to use responsive images (see examples below)
+3. Commit generated AVIF/WebP sets stored under `assets/images/responsive/`
+
+### Option 3: Optimise Video Backgrounds
+
+Optimise hero or background video loops and generate poster frames:
+
+```bash
+npm run optimize-video
+```
+
+This will:
+- Transcode source files to WebM (VP9) and MP4 (H.264) variants
+- Generate high-quality poster images for lazy loading
+- Report before/after sizes
+- Copy optimised assets into `assets/video/optimized/`
+
+**After optimisation:**
+1. Replace video references in HTML/CSS with optimised outputs
+2. Keep poster frames in sync with the selected hero loop
 
 ---
 
@@ -220,9 +242,24 @@ dist/
 ├── about.html
 ├── services.html
 ├── projects.html
+├── pricing.html
+├── seo-services.html
 ├── contact.html
 └── [other static files]
 ```
+
+---
+
+## 🧪 Testing & QA
+
+- **Playwright smoke suite:** `npm run test:e2e` (builds production output first, then runs `tests/e2e/smoke.spec.js`)
+  - First run only: `npx playwright install`
+  - Coverage: navigation (desktop + mobile), scroll progress/back-to-top, services modals, contact form happy/error paths, service worker registration
+- **Manual helpers:**
+  - `http://localhost:3000/tests/test-service-worker.html`
+  - `http://localhost:3000/tests/test-fonts.html`
+
+Run the smoke suite prior to shipping major content or interaction changes.
 
 ---
 
@@ -424,5 +461,5 @@ Before deploying, verify:
 
 ---
 
-**Last Updated:** 2024-12-19
+**Last Updated:** 2025-11-08
 

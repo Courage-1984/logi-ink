@@ -11,6 +11,7 @@ import { initAnimations } from './core/animations.js';
 import { initCursor } from './core/cursor.js';
 import { initMouseTilt } from './core/mouse-tilt.js';
 import { initInteractions } from './utils/interactions.js';
+import { initBackgroundVideoLazyLoad } from './utils/ripples-lazyload.js';
 import { initPageTransitions } from './core/page-transitions.js';
 import { registerServiceWorker } from './core/service-worker.js';
 import { initAccessibility } from './utils/accessibility.js';
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initCursor();
   initMouseTilt();
   initInteractions();
+  initBackgroundVideoLazyLoad();
 
   // Lazy load page-specific modules
   if (window.location.pathname.includes('contact.html')) {
