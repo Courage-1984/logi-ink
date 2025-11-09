@@ -286,9 +286,10 @@ js/
 │   ├── performance.js    # ✅ EXISTS - Web Vitals tracking and performance monitoring
 │   ├── three-loader.js   # ✅ EXISTS - Dynamic Three.js loader with SRI support
 │   └── env.js            # ✅ EXISTS - Environment detection helpers (browser-safe)
-└── pages/                # ✅ EXISTS - Page-specific modules (2 files)
+└── pages/                # ✅ EXISTS - Page-specific modules (3 files)
     ├── contact.js        # ✅ EXISTS - Contact form handling
-    └── services.js        # ✅ EXISTS - Service modals handling
+    ├── services.js        # ✅ EXISTS - Service modals handling
+    └── projects.js        # ✅ EXISTS - Project details modal handling
 ```
 
 **Note:** All JavaScript modules are fully implemented and functional. The modular ES6 architecture is complete. Three.js hero backgrounds are initialized automatically based on page (particles for index, geometric shapes for services, torus grid for projects).
@@ -833,7 +834,7 @@ Paste this snippet immediately after the CSP meta tag (or before SEO meta) in ea
 
 **Last Updated:** 2025-11-08 (Added sessionStorage-backed page transitions + preload snippet requirements)
 **Migration Status:** ✅ Complete - All CSS/JS migrated, build system configured
-**Component Count:** 19 CSS components, 10 core JS modules (including three-hero), 6 JS utils, 2 JS pages, 3 CSS pages, 10 utility CSS files
+**Component Count:** 19 CSS components, 10 core JS modules (including three-hero), 6 JS utils, 3 JS pages, 3 CSS pages, 10 utility CSS files
 **Performance:** ✅ Service Worker, Self-Hosted Fonts, Critical CSS, Image Optimization, Code Splitting, CSS Purging, Compression, Web Vitals Tracking (via `web-vitals` → Plausible), Dynamic Three.js Loading, Error Handling, Mobile Performance
 **Security & SEO:** ✅ Security Headers, CSP, SRI Infrastructure, SEO Meta Tags, Structured Data (FAQ, Contact), Canonical URLs, Accessibility Features, Sitemap, Robots.txt
 **Configuration Files:** ✅ ESLint v9 (flat config), Prettier, EditorConfig, Git Attributes, VS Code Settings

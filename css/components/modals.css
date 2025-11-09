@@ -1,7 +1,7 @@
 /**
  * Modals Component
  * Modal/dialog overlay styles and interactions
- * 
+ *
  * Extracted from styles.css (lines: 2776-2841)
  */
 
@@ -71,4 +71,10 @@
   color: var(--bg-primary);
   box-shadow: 0 0 15px var(--glow-cyan);
   transform: rotate(90deg);
+}
+
+.modal-close--left {
+  right: auto;
+  left: 1rem;
+  transform-origin: center;
 }

@@ -22,7 +22,7 @@ const SIZES = [
 ];
 
 // Directories to process
-const IMAGE_DIRS = ['assets/images/backgrounds', 'assets/images/banners'];
+const IMAGE_DIRS = ['assets/images/backgrounds', 'assets/images/banners', 'assets/images/portfolio'];
 
 // Output directory
 const OUTPUT_DIR = 'assets/images/responsive';
@@ -100,21 +100,21 @@ async function generateResponsiveImages(inputPath, outputDir) {
 <!-- Responsive image example for ${basename(inputPath)} -->
 <picture>
   <!-- AVIF format (best compression, modern browsers) -->
-  <source 
-    type="image/avif" 
+  <source
+    type="image/avif"
     srcset="${avifSrcset.join(',\n    ')}"
     sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- WebP format (fallback for older browsers) -->
-  <source 
-    type="image/webp" 
+  <source
+    type="image/webp"
     srcset="${webpSrcset.join(',\n    ')}"
     sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- Original format (final fallback) -->
-  <img 
-    src="${basename(inputPath)}" 
-    alt="Description" 
+  <img
+    src="${basename(inputPath)}"
+    alt="Description"
     loading="lazy"
   >
 </picture>

@@ -20,7 +20,12 @@ const MAX_WIDTH = 1920; // Max width for responsive images
 const MAX_HEIGHT = 1080; // Max height for responsive images
 
 // Directories to optimize
-const IMAGE_DIRS = ['assets/images/backgrounds', 'assets/images/banners', 'assets/images/logos'];
+const IMAGE_DIRS = [
+  'assets/images/backgrounds',
+  'assets/images/banners',
+  'assets/images/logos',
+  'assets/images/portfolio',
+];
 
 // Output directory for optimized images (optional)
 const OPTIMIZED_DIR = 'assets/images/optimized';

@@ -1,0 +1,29 @@
+<!-- Responsive image example for example_placeholder_004.png -->
+<picture>
+  <!-- AVIF format (best compression, modern browsers) -->
+  <source
+    type="image/avif"
+    srcset="example_placeholder_004-480w.avif 480w,
+    example_placeholder_004-768w.avif 768w,
+    example_placeholder_004-1024w.avif 1024w,
+    example_placeholder_004-1280w.avif 1280w,
+    example_placeholder_004-1920w.avif 1920w"
+    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+  >
+  <!-- WebP format (fallback for older browsers) -->
+  <source
+    type="image/webp"
+    srcset="example_placeholder_004-480w.webp 480w,
+    example_placeholder_004-768w.webp 768w,
+    example_placeholder_004-1024w.webp 1024w,
+    example_placeholder_004-1280w.webp 1280w,
+    example_placeholder_004-1920w.webp 1920w"
+    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+  >
+  <!-- Original format (final fallback) -->
+  <img
+    src="example_placeholder_004.png"
+    alt="Description"
+    loading="lazy"
+  >
+</picture>
