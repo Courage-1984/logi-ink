@@ -8,7 +8,7 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/sw.js",
-            "uid": "924ae972-1"
+            "uid": "7166f8bd-1"
           }
         ]
       },
@@ -17,94 +17,94 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/node_modules/web-vitals/dist/web-vitals.js",
-            "uid": "924ae972-3"
+            "uid": "7166f8bd-3"
           }
         ]
       },
       {
-        "name": "assets/js/main-BHiGBFYu.js",
+        "name": "assets/js/main-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/index.html",
-            "uid": "924ae972-5"
+            "uid": "7166f8bd-5"
           }
         ]
       },
       {
-        "name": "assets/js/about-BHiGBFYu.js",
+        "name": "assets/js/about-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/about.html",
-            "uid": "924ae972-7"
+            "uid": "7166f8bd-7"
           }
         ]
       },
       {
-        "name": "assets/js/services-BHiGBFYu.js",
+        "name": "assets/js/services-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/services.html",
-            "uid": "924ae972-9"
+            "uid": "7166f8bd-9"
           }
         ]
       },
       {
-        "name": "assets/js/projects-BHiGBFYu.js",
+        "name": "assets/js/projects-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/projects.html",
-            "uid": "924ae972-11"
+            "uid": "7166f8bd-11"
           }
         ]
       },
       {
-        "name": "assets/js/contact-BHiGBFYu.js",
+        "name": "assets/js/contact-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/contact.html",
-            "uid": "924ae972-13"
+            "uid": "7166f8bd-13"
           }
         ]
       },
       {
-        "name": "assets/js/pricing-BHiGBFYu.js",
+        "name": "assets/js/pricing-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/pricing.html",
-            "uid": "924ae972-15"
+            "uid": "7166f8bd-15"
           }
         ]
       },
       {
-        "name": "assets/js/seoServices-BHiGBFYu.js",
+        "name": "assets/js/seoServices-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/seo-services.html",
-            "uid": "924ae972-17"
+            "uid": "7166f8bd-17"
           }
         ]
       },
       {
-        "name": "assets/js/reports-BHiGBFYu.js",
+        "name": "assets/js/reports-nGh9B27Z.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/reports.html",
-            "uid": "924ae972-19"
+            "uid": "7166f8bd-19"
           }
         ]
       },
       {
-        "name": "assets/js/main-CiKVU2gr.js",
+        "name": "assets/js/main-Czd3XSUP.js",
         "children": [
           {
             "name": "\u0000vite",
             "children": [
               {
-                "uid": "924ae972-21",
+                "uid": "7166f8bd-21",
                 "name": "modulepreload-polyfill.js"
               },
               {
-                "uid": "924ae972-25",
+                "uid": "7166f8bd-25",
                 "name": "preload-helper.js"
               }
             ]
@@ -114,7 +114,7 @@
             "children": [
               {
                 "name": "css/main.css",
-                "uid": "924ae972-23"
+                "uid": "7166f8bd-23"
               },
               {
                 "name": "js",
@@ -123,35 +123,35 @@
                     "name": "core",
                     "children": [
                       {
-                        "uid": "924ae972-27",
+                        "uid": "7166f8bd-27",
                         "name": "scroll-manager.js"
                       },
                       {
-                        "uid": "924ae972-29",
+                        "uid": "7166f8bd-29",
                         "name": "navigation.js"
                       },
                       {
-                        "uid": "924ae972-31",
+                        "uid": "7166f8bd-31",
                         "name": "scroll.js"
                       },
                       {
-                        "uid": "924ae972-33",
+                        "uid": "7166f8bd-33",
                         "name": "animations.js"
                       },
                       {
-                        "uid": "924ae972-35",
+                        "uid": "7166f8bd-35",
                         "name": "cursor.js"
                       },
                       {
-                        "uid": "924ae972-37",
+                        "uid": "7166f8bd-37",
                         "name": "mouse-tilt.js"
                       },
                       {
-                        "uid": "924ae972-43",
+                        "uid": "7166f8bd-43",
                         "name": "page-transitions.js"
                       },
                       {
-                        "uid": "924ae972-47",
+                        "uid": "7166f8bd-47",
                         "name": "service-worker.js"
                       }
                     ]
@@ -160,29 +160,29 @@
                     "name": "utils",
                     "children": [
                       {
-                        "uid": "924ae972-39",
+                        "uid": "7166f8bd-39",
                         "name": "interactions.js"
                       },
                       {
-                        "uid": "924ae972-41",
+                        "uid": "7166f8bd-41",
                         "name": "ripples-lazyload.js"
                       },
                       {
-                        "uid": "924ae972-45",
+                        "uid": "7166f8bd-45",
                         "name": "env.js"
                       },
                       {
-                        "uid": "924ae972-49",
+                        "uid": "7166f8bd-49",
                         "name": "accessibility.js"
                       },
                       {
-                        "uid": "924ae972-51",
+                        "uid": "7166f8bd-51",
                         "name": "error-handler.js"
                       }
                     ]
                   },
                   {
-                    "uid": "924ae972-53",
+                    "uid": "7166f8bd-53",
                     "name": "main.js"
                   }
                 ]
@@ -192,27 +192,27 @@
         ]
       },
       {
-        "name": "assets/js/performance-d6wElc5L.js",
+        "name": "assets/js/performance-CNQxux5s.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/utils/performance.js",
-            "uid": "924ae972-55"
+            "uid": "7166f8bd-55"
           }
         ]
       },
       {
-        "name": "assets/js/contact-B_dKJOtM.js",
+        "name": "assets/js/contact-Du7J-WPP.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js",
             "children": [
               {
                 "name": "utils/toast.js",
-                "uid": "924ae972-57"
+                "uid": "7166f8bd-57"
               },
               {
                 "name": "pages/contact.js",
-                "uid": "924ae972-59"
+                "uid": "7166f8bd-59"
               }
             ]
           }
@@ -223,7 +223,7 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/pages/services.js",
-            "uid": "924ae972-61"
+            "uid": "7166f8bd-61"
           }
         ]
       },
@@ -240,243 +240,243 @@
                     "name": "responsive/portfolio",
                     "children": [
                       {
-                        "uid": "924ae972-63",
+                        "uid": "7166f8bd-63",
                         "name": "example_placeholder_001-1024w.avif"
                       },
                       {
-                        "uid": "924ae972-65",
+                        "uid": "7166f8bd-65",
                         "name": "example_placeholder_001-1280w.avif"
                       },
                       {
-                        "uid": "924ae972-67",
+                        "uid": "7166f8bd-67",
                         "name": "example_placeholder_001-1920w.avif"
                       },
                       {
-                        "uid": "924ae972-69",
+                        "uid": "7166f8bd-69",
                         "name": "example_placeholder_001-480w.avif"
                       },
                       {
-                        "uid": "924ae972-71",
+                        "uid": "7166f8bd-71",
                         "name": "example_placeholder_001-768w.avif"
                       },
                       {
-                        "uid": "924ae972-73",
+                        "uid": "7166f8bd-73",
                         "name": "example_placeholder_002-1024w.avif"
                       },
                       {
-                        "uid": "924ae972-75",
+                        "uid": "7166f8bd-75",
                         "name": "example_placeholder_002-1280w.avif"
                       },
                       {
-                        "uid": "924ae972-77",
+                        "uid": "7166f8bd-77",
                         "name": "example_placeholder_002-1920w.avif"
                       },
                       {
-                        "uid": "924ae972-79",
+                        "uid": "7166f8bd-79",
                         "name": "example_placeholder_002-480w.avif"
                       },
                       {
-                        "uid": "924ae972-81",
+                        "uid": "7166f8bd-81",
                         "name": "example_placeholder_002-768w.avif"
                       },
                       {
-                        "uid": "924ae972-83",
+                        "uid": "7166f8bd-83",
                         "name": "example_placeholder_003-1024w.avif"
                       },
                       {
-                        "uid": "924ae972-85",
+                        "uid": "7166f8bd-85",
                         "name": "example_placeholder_003-1280w.avif"
                       },
                       {
-                        "uid": "924ae972-87",
+                        "uid": "7166f8bd-87",
                         "name": "example_placeholder_003-1920w.avif"
                       },
                       {
-                        "uid": "924ae972-89",
+                        "uid": "7166f8bd-89",
                         "name": "example_placeholder_003-480w.avif"
                       },
                       {
-                        "uid": "924ae972-91",
+                        "uid": "7166f8bd-91",
                         "name": "example_placeholder_003-768w.avif"
                       },
                       {
-                        "uid": "924ae972-93",
+                        "uid": "7166f8bd-93",
                         "name": "example_placeholder_004-1024w.avif"
                       },
                       {
-                        "uid": "924ae972-95",
+                        "uid": "7166f8bd-95",
                         "name": "example_placeholder_004-1280w.avif"
                       },
                       {
-                        "uid": "924ae972-97",
+                        "uid": "7166f8bd-97",
                         "name": "example_placeholder_004-1920w.avif"
                       },
                       {
-                        "uid": "924ae972-99",
+                        "uid": "7166f8bd-99",
                         "name": "example_placeholder_004-480w.avif"
                       },
                       {
-                        "uid": "924ae972-101",
+                        "uid": "7166f8bd-101",
                         "name": "example_placeholder_004-768w.avif"
                       },
                       {
-                        "uid": "924ae972-103",
+                        "uid": "7166f8bd-103",
                         "name": "example_placeholder_005-1024w.avif"
                       },
                       {
-                        "uid": "924ae972-105",
+                        "uid": "7166f8bd-105",
                         "name": "example_placeholder_005-1280w.avif"
                       },
                       {
-                        "uid": "924ae972-107",
+                        "uid": "7166f8bd-107",
                         "name": "example_placeholder_005-1920w.avif"
                       },
                       {
-                        "uid": "924ae972-109",
+                        "uid": "7166f8bd-109",
                         "name": "example_placeholder_005-480w.avif"
                       },
                       {
-                        "uid": "924ae972-111",
+                        "uid": "7166f8bd-111",
                         "name": "example_placeholder_005-768w.avif"
                       },
                       {
-                        "uid": "924ae972-113",
+                        "uid": "7166f8bd-113",
                         "name": "example_placeholder_006-1024w.avif"
                       },
                       {
-                        "uid": "924ae972-115",
+                        "uid": "7166f8bd-115",
                         "name": "example_placeholder_006-1280w.avif"
                       },
                       {
-                        "uid": "924ae972-117",
+                        "uid": "7166f8bd-117",
                         "name": "example_placeholder_006-1920w.avif"
                       },
                       {
-                        "uid": "924ae972-119",
+                        "uid": "7166f8bd-119",
                         "name": "example_placeholder_006-480w.avif"
                       },
                       {
-                        "uid": "924ae972-121",
+                        "uid": "7166f8bd-121",
                         "name": "example_placeholder_006-768w.avif"
                       },
                       {
-                        "uid": "924ae972-123",
+                        "uid": "7166f8bd-123",
                         "name": "example_placeholder_001-1024w.webp"
                       },
                       {
-                        "uid": "924ae972-125",
+                        "uid": "7166f8bd-125",
                         "name": "example_placeholder_001-1280w.webp"
                       },
                       {
-                        "uid": "924ae972-127",
+                        "uid": "7166f8bd-127",
                         "name": "example_placeholder_001-1920w.webp"
                       },
                       {
-                        "uid": "924ae972-129",
+                        "uid": "7166f8bd-129",
                         "name": "example_placeholder_001-480w.webp"
                       },
                       {
-                        "uid": "924ae972-131",
+                        "uid": "7166f8bd-131",
                         "name": "example_placeholder_001-768w.webp"
                       },
                       {
-                        "uid": "924ae972-133",
+                        "uid": "7166f8bd-133",
                         "name": "example_placeholder_002-1024w.webp"
                       },
                       {
-                        "uid": "924ae972-135",
+                        "uid": "7166f8bd-135",
                         "name": "example_placeholder_002-1280w.webp"
                       },
                       {
-                        "uid": "924ae972-137",
+                        "uid": "7166f8bd-137",
                         "name": "example_placeholder_002-1920w.webp"
                       },
                       {
-                        "uid": "924ae972-139",
+                        "uid": "7166f8bd-139",
                         "name": "example_placeholder_002-480w.webp"
                       },
                       {
-                        "uid": "924ae972-141",
+                        "uid": "7166f8bd-141",
                         "name": "example_placeholder_002-768w.webp"
                       },
                       {
-                        "uid": "924ae972-143",
+                        "uid": "7166f8bd-143",
                         "name": "example_placeholder_003-1024w.webp"
                       },
                       {
-                        "uid": "924ae972-145",
+                        "uid": "7166f8bd-145",
                         "name": "example_placeholder_003-1280w.webp"
                       },
                       {
-                        "uid": "924ae972-147",
+                        "uid": "7166f8bd-147",
                         "name": "example_placeholder_003-1920w.webp"
                       },
                       {
-                        "uid": "924ae972-149",
+                        "uid": "7166f8bd-149",
                         "name": "example_placeholder_003-480w.webp"
                       },
                       {
-                        "uid": "924ae972-151",
+                        "uid": "7166f8bd-151",
                         "name": "example_placeholder_003-768w.webp"
                       },
                       {
-                        "uid": "924ae972-153",
+                        "uid": "7166f8bd-153",
                         "name": "example_placeholder_004-1024w.webp"
                       },
                       {
-                        "uid": "924ae972-155",
+                        "uid": "7166f8bd-155",
                         "name": "example_placeholder_004-1280w.webp"
                       },
                       {
-                        "uid": "924ae972-157",
+                        "uid": "7166f8bd-157",
                         "name": "example_placeholder_004-1920w.webp"
                       },
                       {
-                        "uid": "924ae972-159",
+                        "uid": "7166f8bd-159",
                         "name": "example_placeholder_004-480w.webp"
                       },
                       {
-                        "uid": "924ae972-161",
+                        "uid": "7166f8bd-161",
                         "name": "example_placeholder_004-768w.webp"
                       },
                       {
-                        "uid": "924ae972-163",
+                        "uid": "7166f8bd-163",
                         "name": "example_placeholder_005-1024w.webp"
                       },
                       {
-                        "uid": "924ae972-165",
+                        "uid": "7166f8bd-165",
                         "name": "example_placeholder_005-1280w.webp"
                       },
                       {
-                        "uid": "924ae972-167",
+                        "uid": "7166f8bd-167",
                         "name": "example_placeholder_005-1920w.webp"
                       },
                       {
-                        "uid": "924ae972-169",
+                        "uid": "7166f8bd-169",
                         "name": "example_placeholder_005-480w.webp"
                       },
                       {
-                        "uid": "924ae972-171",
+                        "uid": "7166f8bd-171",
                         "name": "example_placeholder_005-768w.webp"
                       },
                       {
-                        "uid": "924ae972-173",
+                        "uid": "7166f8bd-173",
                         "name": "example_placeholder_006-1024w.webp"
                       },
                       {
-                        "uid": "924ae972-175",
+                        "uid": "7166f8bd-175",
                         "name": "example_placeholder_006-1280w.webp"
                       },
                       {
-                        "uid": "924ae972-177",
+                        "uid": "7166f8bd-177",
                         "name": "example_placeholder_006-1920w.webp"
                       },
                       {
-                        "uid": "924ae972-179",
+                        "uid": "7166f8bd-179",
                         "name": "example_placeholder_006-480w.webp"
                       },
                       {
-                        "uid": "924ae972-181",
+                        "uid": "7166f8bd-181",
                         "name": "example_placeholder_006-768w.webp"
                       }
                     ]
@@ -485,27 +485,27 @@
                     "name": "portfolio",
                     "children": [
                       {
-                        "uid": "924ae972-183",
+                        "uid": "7166f8bd-183",
                         "name": "example_placeholder_001.png"
                       },
                       {
-                        "uid": "924ae972-185",
+                        "uid": "7166f8bd-185",
                         "name": "example_placeholder_002.png"
                       },
                       {
-                        "uid": "924ae972-187",
+                        "uid": "7166f8bd-187",
                         "name": "example_placeholder_003.png"
                       },
                       {
-                        "uid": "924ae972-189",
+                        "uid": "7166f8bd-189",
                         "name": "example_placeholder_004.png"
                       },
                       {
-                        "uid": "924ae972-191",
+                        "uid": "7166f8bd-191",
                         "name": "example_placeholder_005.png"
                       },
                       {
-                        "uid": "924ae972-193",
+                        "uid": "7166f8bd-193",
                         "name": "example_placeholder_006.png"
                       }
                     ]
@@ -514,7 +514,7 @@
               },
               {
                 "name": "js/pages/projects.js",
-                "uid": "924ae972-195"
+                "uid": "7166f8bd-195"
               }
             ]
           }
@@ -525,16 +525,16 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/pages/reports.js",
-            "uid": "924ae972-197"
+            "uid": "7166f8bd-197"
           }
         ]
       },
       {
-        "name": "assets/js/easter-egg-CdR3z1qL.js",
+        "name": "assets/js/easter-egg-BawjG3XG.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/core/easter-egg.js",
-            "uid": "924ae972-199"
+            "uid": "7166f8bd-199"
           }
         ]
       },
@@ -543,16 +543,25 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/core/three-hero.js",
-            "uid": "924ae972-201"
+            "uid": "7166f8bd-201"
           }
         ]
       },
       {
-        "name": "assets/js/runtime-CXkaV3eM.js",
+        "name": "assets/js/runtime-BDvt9cC5.js",
         "children": [
           {
-            "name": "C:/Users/anon/github/logia-ink/js/modules/easter-egg/runtime.js",
-            "uid": "924ae972-203"
+            "name": "C:/Users/anon/github/logia-ink/js",
+            "children": [
+              {
+                "name": "utils/celestial-textures.js",
+                "uid": "7166f8bd-203"
+              },
+              {
+                "name": "modules/easter-egg/runtime.js",
+                "uid": "7166f8bd-205"
+              }
+            ]
           }
         ]
       },
@@ -561,7 +570,7 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
-            "uid": "924ae972-205"
+            "uid": "7166f8bd-207"
           }
         ]
       }
@@ -569,2328 +578,2349 @@
     "isRoot": true
   },
   "nodeParts": {
-    "924ae972-1": {
+    "7166f8bd-1": {
       "renderedLength": 9304,
       "gzipLength": 2761,
       "brotliLength": 2313,
-      "metaUid": "924ae972-0"
+      "metaUid": "7166f8bd-0"
     },
-    "924ae972-3": {
+    "7166f8bd-3": {
       "renderedLength": 5445,
       "gzipLength": 2222,
       "brotliLength": 2028,
-      "metaUid": "924ae972-2"
+      "metaUid": "7166f8bd-2"
     },
-    "924ae972-5": {
+    "7166f8bd-5": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-4"
+      "metaUid": "7166f8bd-4"
     },
-    "924ae972-7": {
+    "7166f8bd-7": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-6"
+      "metaUid": "7166f8bd-6"
     },
-    "924ae972-9": {
+    "7166f8bd-9": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-8"
+      "metaUid": "7166f8bd-8"
     },
-    "924ae972-11": {
+    "7166f8bd-11": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-10"
+      "metaUid": "7166f8bd-10"
     },
-    "924ae972-13": {
+    "7166f8bd-13": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-12"
+      "metaUid": "7166f8bd-12"
     },
-    "924ae972-15": {
+    "7166f8bd-15": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-14"
+      "metaUid": "7166f8bd-14"
     },
-    "924ae972-17": {
+    "7166f8bd-17": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-16"
+      "metaUid": "7166f8bd-16"
     },
-    "924ae972-19": {
+    "7166f8bd-19": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-18"
+      "metaUid": "7166f8bd-18"
     },
-    "924ae972-21": {
+    "7166f8bd-21": {
       "renderedLength": 1168,
       "gzipLength": 525,
       "brotliLength": 446,
-      "metaUid": "924ae972-20"
+      "metaUid": "7166f8bd-20"
     },
-    "924ae972-23": {
+    "7166f8bd-23": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "924ae972-22"
+      "metaUid": "7166f8bd-22"
     },
-    "924ae972-25": {
+    "7166f8bd-25": {
       "renderedLength": 2135,
       "gzipLength": 980,
       "brotliLength": 822,
-      "metaUid": "924ae972-24"
+      "metaUid": "7166f8bd-24"
     },
-    "924ae972-27": {
+    "7166f8bd-27": {
       "renderedLength": 1045,
       "gzipLength": 465,
       "brotliLength": 367,
-      "metaUid": "924ae972-26"
+      "metaUid": "7166f8bd-26"
     },
-    "924ae972-29": {
+    "7166f8bd-29": {
       "renderedLength": 6600,
       "gzipLength": 1932,
       "brotliLength": 1606,
-      "metaUid": "924ae972-28"
+      "metaUid": "7166f8bd-28"
     },
-    "924ae972-31": {
+    "7166f8bd-31": {
       "renderedLength": 3118,
       "gzipLength": 1136,
       "brotliLength": 918,
-      "metaUid": "924ae972-30"
+      "metaUid": "7166f8bd-30"
     },
-    "924ae972-33": {
+    "7166f8bd-33": {
       "renderedLength": 4900,
       "gzipLength": 1536,
       "brotliLength": 1302,
-      "metaUid": "924ae972-32"
+      "metaUid": "7166f8bd-32"
     },
-    "924ae972-35": {
+    "7166f8bd-35": {
       "renderedLength": 720,
       "gzipLength": 342,
       "brotliLength": 281,
-      "metaUid": "924ae972-34"
+      "metaUid": "7166f8bd-34"
     },
-    "924ae972-37": {
+    "7166f8bd-37": {
       "renderedLength": 2438,
       "gzipLength": 879,
       "brotliLength": 706,
-      "metaUid": "924ae972-36"
+      "metaUid": "7166f8bd-36"
     },
-    "924ae972-39": {
+    "7166f8bd-39": {
       "renderedLength": 3350,
       "gzipLength": 981,
       "brotliLength": 810,
-      "metaUid": "924ae972-38"
+      "metaUid": "7166f8bd-38"
     },
-    "924ae972-41": {
+    "7166f8bd-41": {
       "renderedLength": 2610,
       "gzipLength": 957,
       "brotliLength": 789,
-      "metaUid": "924ae972-40"
+      "metaUid": "7166f8bd-40"
     },
-    "924ae972-43": {
+    "7166f8bd-43": {
       "renderedLength": 2724,
       "gzipLength": 981,
       "brotliLength": 774,
-      "metaUid": "924ae972-42"
+      "metaUid": "7166f8bd-42"
     },
-    "924ae972-45": {
+    "7166f8bd-45": {
       "renderedLength": 980,
       "gzipLength": 371,
       "brotliLength": 310,
-      "metaUid": "924ae972-44"
+      "metaUid": "7166f8bd-44"
     },
-    "924ae972-47": {
+    "7166f8bd-47": {
       "renderedLength": 4652,
       "gzipLength": 1450,
       "brotliLength": 1165,
-      "metaUid": "924ae972-46"
+      "metaUid": "7166f8bd-46"
     },
-    "924ae972-49": {
+    "7166f8bd-49": {
       "renderedLength": 2469,
       "gzipLength": 958,
       "brotliLength": 747,
-      "metaUid": "924ae972-48"
+      "metaUid": "7166f8bd-48"
     },
-    "924ae972-51": {
+    "7166f8bd-51": {
       "renderedLength": 1435,
       "gzipLength": 572,
       "brotliLength": 445,
-      "metaUid": "924ae972-50"
+      "metaUid": "7166f8bd-50"
     },
-    "924ae972-53": {
+    "7166f8bd-53": {
       "renderedLength": 3104,
       "gzipLength": 919,
       "brotliLength": 738,
-      "metaUid": "924ae972-52"
+      "metaUid": "7166f8bd-52"
     },
-    "924ae972-55": {
+    "7166f8bd-55": {
       "renderedLength": 3186,
       "gzipLength": 1138,
       "brotliLength": 966,
-      "metaUid": "924ae972-54"
+      "metaUid": "7166f8bd-54"
     },
-    "924ae972-57": {
+    "7166f8bd-57": {
       "renderedLength": 2454,
       "gzipLength": 1066,
       "brotliLength": 841,
-      "metaUid": "924ae972-56"
+      "metaUid": "7166f8bd-56"
     },
-    "924ae972-59": {
+    "7166f8bd-59": {
       "renderedLength": 17313,
       "gzipLength": 4500,
       "brotliLength": 3776,
-      "metaUid": "924ae972-58"
+      "metaUid": "7166f8bd-58"
     },
-    "924ae972-61": {
+    "7166f8bd-61": {
       "renderedLength": 2250,
       "gzipLength": 740,
       "brotliLength": 605,
-      "metaUid": "924ae972-60"
+      "metaUid": "7166f8bd-60"
     },
-    "924ae972-63": {
+    "7166f8bd-63": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-62"
+      "metaUid": "7166f8bd-62"
     },
-    "924ae972-65": {
+    "7166f8bd-65": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-64"
+      "metaUid": "7166f8bd-64"
     },
-    "924ae972-67": {
+    "7166f8bd-67": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-66"
+      "metaUid": "7166f8bd-66"
     },
-    "924ae972-69": {
+    "7166f8bd-69": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-68"
+      "metaUid": "7166f8bd-68"
     },
-    "924ae972-71": {
+    "7166f8bd-71": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-70"
+      "metaUid": "7166f8bd-70"
     },
-    "924ae972-73": {
+    "7166f8bd-73": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-72"
+      "metaUid": "7166f8bd-72"
     },
-    "924ae972-75": {
+    "7166f8bd-75": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-74"
+      "metaUid": "7166f8bd-74"
     },
-    "924ae972-77": {
+    "7166f8bd-77": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-76"
+      "metaUid": "7166f8bd-76"
     },
-    "924ae972-79": {
+    "7166f8bd-79": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-78"
+      "metaUid": "7166f8bd-78"
     },
-    "924ae972-81": {
+    "7166f8bd-81": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-80"
+      "metaUid": "7166f8bd-80"
     },
-    "924ae972-83": {
+    "7166f8bd-83": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-82"
+      "metaUid": "7166f8bd-82"
     },
-    "924ae972-85": {
+    "7166f8bd-85": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-84"
+      "metaUid": "7166f8bd-84"
     },
-    "924ae972-87": {
+    "7166f8bd-87": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-86"
+      "metaUid": "7166f8bd-86"
     },
-    "924ae972-89": {
+    "7166f8bd-89": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-88"
+      "metaUid": "7166f8bd-88"
     },
-    "924ae972-91": {
+    "7166f8bd-91": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-90"
+      "metaUid": "7166f8bd-90"
     },
-    "924ae972-93": {
+    "7166f8bd-93": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-92"
+      "metaUid": "7166f8bd-92"
     },
-    "924ae972-95": {
+    "7166f8bd-95": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-94"
+      "metaUid": "7166f8bd-94"
     },
-    "924ae972-97": {
+    "7166f8bd-97": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-96"
+      "metaUid": "7166f8bd-96"
     },
-    "924ae972-99": {
+    "7166f8bd-99": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-98"
+      "metaUid": "7166f8bd-98"
     },
-    "924ae972-101": {
+    "7166f8bd-101": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-100"
+      "metaUid": "7166f8bd-100"
     },
-    "924ae972-103": {
+    "7166f8bd-103": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-102"
+      "metaUid": "7166f8bd-102"
     },
-    "924ae972-105": {
+    "7166f8bd-105": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-104"
+      "metaUid": "7166f8bd-104"
     },
-    "924ae972-107": {
+    "7166f8bd-107": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-106"
+      "metaUid": "7166f8bd-106"
     },
-    "924ae972-109": {
+    "7166f8bd-109": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-108"
+      "metaUid": "7166f8bd-108"
     },
-    "924ae972-111": {
+    "7166f8bd-111": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-110"
+      "metaUid": "7166f8bd-110"
     },
-    "924ae972-113": {
+    "7166f8bd-113": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-112"
+      "metaUid": "7166f8bd-112"
     },
-    "924ae972-115": {
+    "7166f8bd-115": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-114"
+      "metaUid": "7166f8bd-114"
     },
-    "924ae972-117": {
+    "7166f8bd-117": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-116"
+      "metaUid": "7166f8bd-116"
     },
-    "924ae972-119": {
+    "7166f8bd-119": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-118"
+      "metaUid": "7166f8bd-118"
     },
-    "924ae972-121": {
+    "7166f8bd-121": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-120"
+      "metaUid": "7166f8bd-120"
     },
-    "924ae972-123": {
+    "7166f8bd-123": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-122"
+      "metaUid": "7166f8bd-122"
     },
-    "924ae972-125": {
+    "7166f8bd-125": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-124"
+      "metaUid": "7166f8bd-124"
     },
-    "924ae972-127": {
+    "7166f8bd-127": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-126"
+      "metaUid": "7166f8bd-126"
     },
-    "924ae972-129": {
+    "7166f8bd-129": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-128"
+      "metaUid": "7166f8bd-128"
     },
-    "924ae972-131": {
+    "7166f8bd-131": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-130"
+      "metaUid": "7166f8bd-130"
     },
-    "924ae972-133": {
+    "7166f8bd-133": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-132"
+      "metaUid": "7166f8bd-132"
     },
-    "924ae972-135": {
+    "7166f8bd-135": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-134"
+      "metaUid": "7166f8bd-134"
     },
-    "924ae972-137": {
+    "7166f8bd-137": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-136"
+      "metaUid": "7166f8bd-136"
     },
-    "924ae972-139": {
+    "7166f8bd-139": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-138"
+      "metaUid": "7166f8bd-138"
     },
-    "924ae972-141": {
+    "7166f8bd-141": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-140"
+      "metaUid": "7166f8bd-140"
     },
-    "924ae972-143": {
+    "7166f8bd-143": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-142"
+      "metaUid": "7166f8bd-142"
     },
-    "924ae972-145": {
+    "7166f8bd-145": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-144"
+      "metaUid": "7166f8bd-144"
     },
-    "924ae972-147": {
+    "7166f8bd-147": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-146"
+      "metaUid": "7166f8bd-146"
     },
-    "924ae972-149": {
+    "7166f8bd-149": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-148"
+      "metaUid": "7166f8bd-148"
     },
-    "924ae972-151": {
+    "7166f8bd-151": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-150"
+      "metaUid": "7166f8bd-150"
     },
-    "924ae972-153": {
+    "7166f8bd-153": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-152"
+      "metaUid": "7166f8bd-152"
     },
-    "924ae972-155": {
+    "7166f8bd-155": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-154"
+      "metaUid": "7166f8bd-154"
     },
-    "924ae972-157": {
+    "7166f8bd-157": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-156"
+      "metaUid": "7166f8bd-156"
     },
-    "924ae972-159": {
+    "7166f8bd-159": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-158"
+      "metaUid": "7166f8bd-158"
     },
-    "924ae972-161": {
+    "7166f8bd-161": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-160"
+      "metaUid": "7166f8bd-160"
     },
-    "924ae972-163": {
+    "7166f8bd-163": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-162"
+      "metaUid": "7166f8bd-162"
     },
-    "924ae972-165": {
+    "7166f8bd-165": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-164"
+      "metaUid": "7166f8bd-164"
     },
-    "924ae972-167": {
+    "7166f8bd-167": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-166"
+      "metaUid": "7166f8bd-166"
     },
-    "924ae972-169": {
+    "7166f8bd-169": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-168"
+      "metaUid": "7166f8bd-168"
     },
-    "924ae972-171": {
+    "7166f8bd-171": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-170"
+      "metaUid": "7166f8bd-170"
     },
-    "924ae972-173": {
+    "7166f8bd-173": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-172"
+      "metaUid": "7166f8bd-172"
     },
-    "924ae972-175": {
+    "7166f8bd-175": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-174"
+      "metaUid": "7166f8bd-174"
     },
-    "924ae972-177": {
+    "7166f8bd-177": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-176"
+      "metaUid": "7166f8bd-176"
     },
-    "924ae972-179": {
+    "7166f8bd-179": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-178"
+      "metaUid": "7166f8bd-178"
     },
-    "924ae972-181": {
+    "7166f8bd-181": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "924ae972-180"
+      "metaUid": "7166f8bd-180"
     },
-    "924ae972-183": {
+    "7166f8bd-183": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-182"
+      "metaUid": "7166f8bd-182"
     },
-    "924ae972-185": {
+    "7166f8bd-185": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-184"
+      "metaUid": "7166f8bd-184"
     },
-    "924ae972-187": {
+    "7166f8bd-187": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-186"
+      "metaUid": "7166f8bd-186"
     },
-    "924ae972-189": {
+    "7166f8bd-189": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-188"
+      "metaUid": "7166f8bd-188"
     },
-    "924ae972-191": {
+    "7166f8bd-191": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-190"
+      "metaUid": "7166f8bd-190"
     },
-    "924ae972-193": {
+    "7166f8bd-193": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "924ae972-192"
+      "metaUid": "7166f8bd-192"
     },
-    "924ae972-195": {
+    "7166f8bd-195": {
       "renderedLength": 22708,
       "gzipLength": 5598,
       "brotliLength": 4553,
-      "metaUid": "924ae972-194"
+      "metaUid": "7166f8bd-194"
     },
-    "924ae972-197": {
+    "7166f8bd-197": {
       "renderedLength": 6467,
       "gzipLength": 1901,
       "brotliLength": 1612,
-      "metaUid": "924ae972-196"
+      "metaUid": "7166f8bd-196"
     },
-    "924ae972-199": {
+    "7166f8bd-199": {
       "renderedLength": 3078,
       "gzipLength": 1029,
       "brotliLength": 811,
-      "metaUid": "924ae972-198"
+      "metaUid": "7166f8bd-198"
     },
-    "924ae972-201": {
+    "7166f8bd-201": {
       "renderedLength": 9078,
       "gzipLength": 2185,
       "brotliLength": 1847,
-      "metaUid": "924ae972-200"
+      "metaUid": "7166f8bd-200"
     },
-    "924ae972-203": {
-      "renderedLength": 78631,
-      "gzipLength": 14894,
-      "brotliLength": 12341,
-      "metaUid": "924ae972-202"
+    "7166f8bd-203": {
+      "renderedLength": 34052,
+      "gzipLength": 4606,
+      "brotliLength": 3960,
+      "metaUid": "7166f8bd-202"
     },
-    "924ae972-205": {
+    "7166f8bd-205": {
+      "renderedLength": 42305,
+      "gzipLength": 9314,
+      "brotliLength": 7790,
+      "metaUid": "7166f8bd-204"
+    },
+    "7166f8bd-207": {
       "renderedLength": 2117,
       "gzipLength": 873,
       "brotliLength": 703,
-      "metaUid": "924ae972-204"
+      "metaUid": "7166f8bd-206"
     }
   },
   "nodeMetas": {
-    "924ae972-0": {
+    "7166f8bd-0": {
       "id": "C:/Users/anon/github/logia-ink/sw.js",
       "moduleParts": {
-        "sw.js": "924ae972-1"
+        "sw.js": "7166f8bd-1"
       },
       "imported": [],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-2": {
+    "7166f8bd-2": {
       "id": "C:/Users/anon/github/logia-ink/node_modules/web-vitals/dist/web-vitals.js",
       "moduleParts": {
-        "assets/js/vendor-DHmOgmHF.js": "924ae972-3"
+        "assets/js/vendor-DHmOgmHF.js": "7166f8bd-3"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-54"
+          "uid": "7166f8bd-54"
         }
       ]
     },
-    "924ae972-4": {
+    "7166f8bd-4": {
       "id": "C:/Users/anon/github/logia-ink/index.html",
       "moduleParts": {
-        "assets/js/main-BHiGBFYu.js": "924ae972-5"
+        "assets/js/main-nGh9B27Z.js": "7166f8bd-5"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-6": {
+    "7166f8bd-6": {
       "id": "C:/Users/anon/github/logia-ink/about.html",
       "moduleParts": {
-        "assets/js/about-BHiGBFYu.js": "924ae972-7"
+        "assets/js/about-nGh9B27Z.js": "7166f8bd-7"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-8": {
+    "7166f8bd-8": {
       "id": "C:/Users/anon/github/logia-ink/services.html",
       "moduleParts": {
-        "assets/js/services-BHiGBFYu.js": "924ae972-9"
+        "assets/js/services-nGh9B27Z.js": "7166f8bd-9"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-10": {
+    "7166f8bd-10": {
       "id": "C:/Users/anon/github/logia-ink/projects.html",
       "moduleParts": {
-        "assets/js/projects-BHiGBFYu.js": "924ae972-11"
+        "assets/js/projects-nGh9B27Z.js": "7166f8bd-11"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-12": {
+    "7166f8bd-12": {
       "id": "C:/Users/anon/github/logia-ink/contact.html",
       "moduleParts": {
-        "assets/js/contact-BHiGBFYu.js": "924ae972-13"
+        "assets/js/contact-nGh9B27Z.js": "7166f8bd-13"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-14": {
+    "7166f8bd-14": {
       "id": "C:/Users/anon/github/logia-ink/pricing.html",
       "moduleParts": {
-        "assets/js/pricing-BHiGBFYu.js": "924ae972-15"
+        "assets/js/pricing-nGh9B27Z.js": "7166f8bd-15"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-16": {
+    "7166f8bd-16": {
       "id": "C:/Users/anon/github/logia-ink/seo-services.html",
       "moduleParts": {
-        "assets/js/seoServices-BHiGBFYu.js": "924ae972-17"
+        "assets/js/seoServices-nGh9B27Z.js": "7166f8bd-17"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-18": {
+    "7166f8bd-18": {
       "id": "C:/Users/anon/github/logia-ink/reports.html",
       "moduleParts": {
-        "assets/js/reports-BHiGBFYu.js": "924ae972-19"
+        "assets/js/reports-nGh9B27Z.js": "7166f8bd-19"
       },
       "imported": [
         {
-          "uid": "924ae972-20"
+          "uid": "7166f8bd-20"
         },
         {
-          "uid": "924ae972-22"
+          "uid": "7166f8bd-22"
         },
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "924ae972-20": {
+    "7166f8bd-20": {
       "id": "\u0000vite/modulepreload-polyfill.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-21"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-21"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-4"
+          "uid": "7166f8bd-4"
         },
         {
-          "uid": "924ae972-6"
+          "uid": "7166f8bd-6"
         },
         {
-          "uid": "924ae972-8"
+          "uid": "7166f8bd-8"
         },
         {
-          "uid": "924ae972-10"
+          "uid": "7166f8bd-10"
         },
         {
-          "uid": "924ae972-12"
+          "uid": "7166f8bd-12"
         },
         {
-          "uid": "924ae972-14"
+          "uid": "7166f8bd-14"
         },
         {
-          "uid": "924ae972-16"
+          "uid": "7166f8bd-16"
         },
         {
-          "uid": "924ae972-18"
+          "uid": "7166f8bd-18"
         }
       ]
     },
-    "924ae972-22": {
+    "7166f8bd-22": {
       "id": "C:/Users/anon/github/logia-ink/css/main.css",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-23"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-23"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-4"
+          "uid": "7166f8bd-4"
         },
         {
-          "uid": "924ae972-6"
+          "uid": "7166f8bd-6"
         },
         {
-          "uid": "924ae972-8"
+          "uid": "7166f8bd-8"
         },
         {
-          "uid": "924ae972-10"
+          "uid": "7166f8bd-10"
         },
         {
-          "uid": "924ae972-12"
+          "uid": "7166f8bd-12"
         },
         {
-          "uid": "924ae972-14"
+          "uid": "7166f8bd-14"
         },
         {
-          "uid": "924ae972-16"
+          "uid": "7166f8bd-16"
         },
         {
-          "uid": "924ae972-18"
+          "uid": "7166f8bd-18"
         }
       ]
     },
-    "924ae972-24": {
+    "7166f8bd-24": {
       "id": "\u0000vite/preload-helper.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-25"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-25"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         },
         {
-          "uid": "924ae972-198"
+          "uid": "7166f8bd-198"
         },
         {
-          "uid": "924ae972-202"
+          "uid": "7166f8bd-204"
         }
       ]
     },
-    "924ae972-26": {
+    "7166f8bd-26": {
       "id": "C:/Users/anon/github/logia-ink/js/core/scroll-manager.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-27"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-27"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         },
         {
-          "uid": "924ae972-28"
+          "uid": "7166f8bd-28"
         },
         {
-          "uid": "924ae972-30"
+          "uid": "7166f8bd-30"
         }
       ]
     },
-    "924ae972-28": {
+    "7166f8bd-28": {
       "id": "C:/Users/anon/github/logia-ink/js/core/navigation.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-29"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-29"
       },
       "imported": [
         {
-          "uid": "924ae972-26"
+          "uid": "7166f8bd-26"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-30": {
+    "7166f8bd-30": {
       "id": "C:/Users/anon/github/logia-ink/js/core/scroll.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-31"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-31"
       },
       "imported": [
         {
-          "uid": "924ae972-26"
+          "uid": "7166f8bd-26"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-32": {
+    "7166f8bd-32": {
       "id": "C:/Users/anon/github/logia-ink/js/core/animations.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-33"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-33"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-34": {
+    "7166f8bd-34": {
       "id": "C:/Users/anon/github/logia-ink/js/core/cursor.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-35"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-35"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-36": {
+    "7166f8bd-36": {
       "id": "C:/Users/anon/github/logia-ink/js/core/mouse-tilt.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-37"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-37"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-38": {
+    "7166f8bd-38": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/interactions.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-39"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-39"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-40": {
+    "7166f8bd-40": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/ripples-lazyload.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-41"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-41"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-42": {
+    "7166f8bd-42": {
       "id": "C:/Users/anon/github/logia-ink/js/core/page-transitions.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-43"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-43"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-44": {
+    "7166f8bd-44": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/env.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-45"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-45"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-46"
+          "uid": "7166f8bd-46"
         },
         {
-          "uid": "924ae972-50"
+          "uid": "7166f8bd-50"
         },
         {
-          "uid": "924ae972-54"
+          "uid": "7166f8bd-54"
         },
         {
-          "uid": "924ae972-58"
+          "uid": "7166f8bd-58"
         },
         {
-          "uid": "924ae972-198"
+          "uid": "7166f8bd-198"
         },
         {
-          "uid": "924ae972-202"
+          "uid": "7166f8bd-204"
         }
       ]
     },
-    "924ae972-46": {
+    "7166f8bd-46": {
       "id": "C:/Users/anon/github/logia-ink/js/core/service-worker.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-47"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-47"
       },
       "imported": [
         {
-          "uid": "924ae972-44"
+          "uid": "7166f8bd-44"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-48": {
+    "7166f8bd-48": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/accessibility.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-49"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-49"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-50": {
+    "7166f8bd-50": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/error-handler.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-51"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-51"
       },
       "imported": [
         {
-          "uid": "924ae972-44"
+          "uid": "7166f8bd-44"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-52": {
+    "7166f8bd-52": {
       "id": "C:/Users/anon/github/logia-ink/js/main.js",
       "moduleParts": {
-        "assets/js/main-CiKVU2gr.js": "924ae972-53"
+        "assets/js/main-Czd3XSUP.js": "7166f8bd-53"
       },
       "imported": [
         {
-          "uid": "924ae972-24"
+          "uid": "7166f8bd-24"
         },
         {
-          "uid": "924ae972-26"
+          "uid": "7166f8bd-26"
         },
         {
-          "uid": "924ae972-28"
+          "uid": "7166f8bd-28"
         },
         {
-          "uid": "924ae972-30"
+          "uid": "7166f8bd-30"
         },
         {
-          "uid": "924ae972-32"
+          "uid": "7166f8bd-32"
         },
         {
-          "uid": "924ae972-34"
+          "uid": "7166f8bd-34"
         },
         {
-          "uid": "924ae972-36"
+          "uid": "7166f8bd-36"
         },
         {
-          "uid": "924ae972-38"
+          "uid": "7166f8bd-38"
         },
         {
-          "uid": "924ae972-40"
+          "uid": "7166f8bd-40"
         },
         {
-          "uid": "924ae972-42"
+          "uid": "7166f8bd-42"
         },
         {
-          "uid": "924ae972-46"
+          "uid": "7166f8bd-46"
         },
         {
-          "uid": "924ae972-48"
+          "uid": "7166f8bd-48"
         },
         {
-          "uid": "924ae972-50"
+          "uid": "7166f8bd-50"
         },
         {
-          "uid": "924ae972-54",
+          "uid": "7166f8bd-54",
           "dynamic": true
         },
         {
-          "uid": "924ae972-58",
+          "uid": "7166f8bd-58",
           "dynamic": true
         },
         {
-          "uid": "924ae972-60",
+          "uid": "7166f8bd-60",
           "dynamic": true
         },
         {
-          "uid": "924ae972-194",
+          "uid": "7166f8bd-194",
           "dynamic": true
         },
         {
-          "uid": "924ae972-196",
+          "uid": "7166f8bd-196",
           "dynamic": true
         },
         {
-          "uid": "924ae972-198",
+          "uid": "7166f8bd-198",
           "dynamic": true
         },
         {
-          "uid": "924ae972-200",
+          "uid": "7166f8bd-200",
           "dynamic": true
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-4"
+          "uid": "7166f8bd-4"
         },
         {
-          "uid": "924ae972-6"
+          "uid": "7166f8bd-6"
         },
         {
-          "uid": "924ae972-8"
+          "uid": "7166f8bd-8"
         },
         {
-          "uid": "924ae972-10"
+          "uid": "7166f8bd-10"
         },
         {
-          "uid": "924ae972-12"
+          "uid": "7166f8bd-12"
         },
         {
-          "uid": "924ae972-14"
+          "uid": "7166f8bd-14"
         },
         {
-          "uid": "924ae972-16"
+          "uid": "7166f8bd-16"
         },
         {
-          "uid": "924ae972-18"
+          "uid": "7166f8bd-18"
         }
       ]
     },
-    "924ae972-54": {
+    "7166f8bd-54": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/performance.js",
       "moduleParts": {
-        "assets/js/performance-d6wElc5L.js": "924ae972-55"
+        "assets/js/performance-CNQxux5s.js": "7166f8bd-55"
       },
       "imported": [
         {
-          "uid": "924ae972-2"
+          "uid": "7166f8bd-2"
         },
         {
-          "uid": "924ae972-44"
+          "uid": "7166f8bd-44"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-56": {
+    "7166f8bd-56": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/toast.js",
       "moduleParts": {
-        "assets/js/contact-B_dKJOtM.js": "924ae972-57"
+        "assets/js/contact-Du7J-WPP.js": "7166f8bd-57"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-58"
+          "uid": "7166f8bd-58"
         }
       ]
     },
-    "924ae972-58": {
+    "7166f8bd-58": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/contact.js",
       "moduleParts": {
-        "assets/js/contact-B_dKJOtM.js": "924ae972-59"
+        "assets/js/contact-Du7J-WPP.js": "7166f8bd-59"
       },
       "imported": [
         {
-          "uid": "924ae972-56"
+          "uid": "7166f8bd-56"
         },
         {
-          "uid": "924ae972-44"
+          "uid": "7166f8bd-44"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-60": {
+    "7166f8bd-60": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/services.js",
       "moduleParts": {
-        "assets/js/services-C9I0FTKa.js": "924ae972-61"
+        "assets/js/services-C9I0FTKa.js": "7166f8bd-61"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-62": {
+    "7166f8bd-62": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-63"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-63"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-64": {
+    "7166f8bd-64": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1280w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-65"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-65"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-66": {
+    "7166f8bd-66": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1920w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-67"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-67"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-68": {
+    "7166f8bd-68": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-480w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-69"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-69"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-70": {
+    "7166f8bd-70": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-768w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-71"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-71"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-72": {
+    "7166f8bd-72": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-73"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-73"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-74": {
+    "7166f8bd-74": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1280w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-75"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-75"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-76": {
+    "7166f8bd-76": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1920w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-77"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-77"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-78": {
+    "7166f8bd-78": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-480w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-79"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-79"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-80": {
+    "7166f8bd-80": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-768w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-81"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-81"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-82": {
+    "7166f8bd-82": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-83"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-83"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-84": {
+    "7166f8bd-84": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1280w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-85"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-85"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-86": {
+    "7166f8bd-86": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1920w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-87"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-87"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-88": {
+    "7166f8bd-88": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-480w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-89"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-89"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-90": {
+    "7166f8bd-90": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-768w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-91"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-91"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-92": {
+    "7166f8bd-92": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-93"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-93"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-94": {
+    "7166f8bd-94": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1280w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-95"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-95"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-96": {
+    "7166f8bd-96": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1920w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-97"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-97"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-98": {
+    "7166f8bd-98": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-480w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-99"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-99"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-100": {
+    "7166f8bd-100": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-768w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-101"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-101"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-102": {
+    "7166f8bd-102": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-103"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-103"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-104": {
+    "7166f8bd-104": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1280w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-105"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-105"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-106": {
+    "7166f8bd-106": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1920w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-107"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-107"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-108": {
+    "7166f8bd-108": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-480w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-109"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-109"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-110": {
+    "7166f8bd-110": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-768w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-111"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-111"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-112": {
+    "7166f8bd-112": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-113"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-113"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-114": {
+    "7166f8bd-114": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1280w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-115"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-115"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-116": {
+    "7166f8bd-116": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1920w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-117"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-117"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-118": {
+    "7166f8bd-118": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-480w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-119"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-119"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-120": {
+    "7166f8bd-120": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-768w.avif",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-121"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-121"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-122": {
+    "7166f8bd-122": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-123"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-123"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-124": {
+    "7166f8bd-124": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1280w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-125"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-125"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-126": {
+    "7166f8bd-126": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1920w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-127"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-127"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-128": {
+    "7166f8bd-128": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-480w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-129"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-129"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-130": {
+    "7166f8bd-130": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-768w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-131"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-131"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-132": {
+    "7166f8bd-132": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-133"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-133"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-134": {
+    "7166f8bd-134": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1280w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-135"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-135"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-136": {
+    "7166f8bd-136": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1920w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-137"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-137"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-138": {
+    "7166f8bd-138": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-480w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-139"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-139"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-140": {
+    "7166f8bd-140": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-768w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-141"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-141"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-142": {
+    "7166f8bd-142": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-143"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-143"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-144": {
+    "7166f8bd-144": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1280w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-145"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-145"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-146": {
+    "7166f8bd-146": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1920w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-147"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-147"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-148": {
+    "7166f8bd-148": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-480w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-149"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-149"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-150": {
+    "7166f8bd-150": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-768w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-151"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-151"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-152": {
+    "7166f8bd-152": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-153"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-153"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-154": {
+    "7166f8bd-154": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1280w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-155"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-155"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-156": {
+    "7166f8bd-156": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1920w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-157"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-157"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-158": {
+    "7166f8bd-158": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-480w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-159"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-159"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-160": {
+    "7166f8bd-160": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-768w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-161"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-161"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-162": {
+    "7166f8bd-162": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-163"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-163"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-164": {
+    "7166f8bd-164": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1280w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-165"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-165"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-166": {
+    "7166f8bd-166": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1920w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-167"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-167"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-168": {
+    "7166f8bd-168": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-480w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-169"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-169"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-170": {
+    "7166f8bd-170": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-768w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-171"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-171"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-172": {
+    "7166f8bd-172": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-173"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-173"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-174": {
+    "7166f8bd-174": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1280w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-175"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-175"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-176": {
+    "7166f8bd-176": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1920w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-177"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-177"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-178": {
+    "7166f8bd-178": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-480w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-179"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-179"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-180": {
+    "7166f8bd-180": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-768w.webp",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-181"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-181"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-182": {
+    "7166f8bd-182": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_001.png",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-183"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-183"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-184": {
+    "7166f8bd-184": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_002.png",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-185"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-185"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-186": {
+    "7166f8bd-186": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_003.png",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-187"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-187"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-188": {
+    "7166f8bd-188": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_004.png",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-189"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-189"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-190": {
+    "7166f8bd-190": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_005.png",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-191"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-191"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-192": {
+    "7166f8bd-192": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_006.png",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-193"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-193"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-194"
+          "uid": "7166f8bd-194"
         }
       ]
     },
-    "924ae972-194": {
+    "7166f8bd-194": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/projects.js",
       "moduleParts": {
-        "assets/js/projects-C2abOY9a.js": "924ae972-195"
+        "assets/js/projects-C2abOY9a.js": "7166f8bd-195"
       },
       "imported": [
         {
-          "uid": "924ae972-62"
+          "uid": "7166f8bd-62"
         },
         {
-          "uid": "924ae972-64"
+          "uid": "7166f8bd-64"
         },
         {
-          "uid": "924ae972-66"
+          "uid": "7166f8bd-66"
         },
         {
-          "uid": "924ae972-68"
+          "uid": "7166f8bd-68"
         },
         {
-          "uid": "924ae972-70"
+          "uid": "7166f8bd-70"
         },
         {
-          "uid": "924ae972-72"
+          "uid": "7166f8bd-72"
         },
         {
-          "uid": "924ae972-74"
+          "uid": "7166f8bd-74"
         },
         {
-          "uid": "924ae972-76"
+          "uid": "7166f8bd-76"
         },
         {
-          "uid": "924ae972-78"
+          "uid": "7166f8bd-78"
         },
         {
-          "uid": "924ae972-80"
+          "uid": "7166f8bd-80"
         },
         {
-          "uid": "924ae972-82"
+          "uid": "7166f8bd-82"
         },
         {
-          "uid": "924ae972-84"
+          "uid": "7166f8bd-84"
         },
         {
-          "uid": "924ae972-86"
+          "uid": "7166f8bd-86"
         },
         {
-          "uid": "924ae972-88"
+          "uid": "7166f8bd-88"
         },
         {
-          "uid": "924ae972-90"
+          "uid": "7166f8bd-90"
         },
         {
-          "uid": "924ae972-92"
+          "uid": "7166f8bd-92"
         },
         {
-          "uid": "924ae972-94"
+          "uid": "7166f8bd-94"
         },
         {
-          "uid": "924ae972-96"
+          "uid": "7166f8bd-96"
         },
         {
-          "uid": "924ae972-98"
+          "uid": "7166f8bd-98"
         },
         {
-          "uid": "924ae972-100"
+          "uid": "7166f8bd-100"
         },
         {
-          "uid": "924ae972-102"
+          "uid": "7166f8bd-102"
         },
         {
-          "uid": "924ae972-104"
+          "uid": "7166f8bd-104"
         },
         {
-          "uid": "924ae972-106"
+          "uid": "7166f8bd-106"
         },
         {
-          "uid": "924ae972-108"
+          "uid": "7166f8bd-108"
         },
         {
-          "uid": "924ae972-110"
+          "uid": "7166f8bd-110"
         },
         {
-          "uid": "924ae972-112"
+          "uid": "7166f8bd-112"
         },
         {
-          "uid": "924ae972-114"
+          "uid": "7166f8bd-114"
         },
         {
-          "uid": "924ae972-116"
+          "uid": "7166f8bd-116"
         },
         {
-          "uid": "924ae972-118"
+          "uid": "7166f8bd-118"
         },
         {
-          "uid": "924ae972-120"
+          "uid": "7166f8bd-120"
         },
         {
-          "uid": "924ae972-122"
+          "uid": "7166f8bd-122"
         },
         {
-          "uid": "924ae972-124"
+          "uid": "7166f8bd-124"
         },
         {
-          "uid": "924ae972-126"
+          "uid": "7166f8bd-126"
         },
         {
-          "uid": "924ae972-128"
+          "uid": "7166f8bd-128"
         },
         {
-          "uid": "924ae972-130"
+          "uid": "7166f8bd-130"
         },
         {
-          "uid": "924ae972-132"
+          "uid": "7166f8bd-132"
         },
         {
-          "uid": "924ae972-134"
+          "uid": "7166f8bd-134"
         },
         {
-          "uid": "924ae972-136"
+          "uid": "7166f8bd-136"
         },
         {
-          "uid": "924ae972-138"
+          "uid": "7166f8bd-138"
         },
         {
-          "uid": "924ae972-140"
+          "uid": "7166f8bd-140"
         },
         {
-          "uid": "924ae972-142"
+          "uid": "7166f8bd-142"
         },
         {
-          "uid": "924ae972-144"
+          "uid": "7166f8bd-144"
         },
         {
-          "uid": "924ae972-146"
+          "uid": "7166f8bd-146"
         },
         {
-          "uid": "924ae972-148"
+          "uid": "7166f8bd-148"
         },
         {
-          "uid": "924ae972-150"
+          "uid": "7166f8bd-150"
         },
         {
-          "uid": "924ae972-152"
+          "uid": "7166f8bd-152"
         },
         {
-          "uid": "924ae972-154"
+          "uid": "7166f8bd-154"
         },
         {
-          "uid": "924ae972-156"
+          "uid": "7166f8bd-156"
         },
         {
-          "uid": "924ae972-158"
+          "uid": "7166f8bd-158"
         },
         {
-          "uid": "924ae972-160"
+          "uid": "7166f8bd-160"
         },
         {
-          "uid": "924ae972-162"
+          "uid": "7166f8bd-162"
         },
         {
-          "uid": "924ae972-164"
+          "uid": "7166f8bd-164"
         },
         {
-          "uid": "924ae972-166"
+          "uid": "7166f8bd-166"
         },
         {
-          "uid": "924ae972-168"
+          "uid": "7166f8bd-168"
         },
         {
-          "uid": "924ae972-170"
+          "uid": "7166f8bd-170"
         },
         {
-          "uid": "924ae972-172"
+          "uid": "7166f8bd-172"
         },
         {
-          "uid": "924ae972-174"
+          "uid": "7166f8bd-174"
         },
         {
-          "uid": "924ae972-176"
+          "uid": "7166f8bd-176"
         },
         {
-          "uid": "924ae972-178"
+          "uid": "7166f8bd-178"
         },
         {
-          "uid": "924ae972-180"
+          "uid": "7166f8bd-180"
         },
         {
-          "uid": "924ae972-182"
+          "uid": "7166f8bd-182"
         },
         {
-          "uid": "924ae972-184"
+          "uid": "7166f8bd-184"
         },
         {
-          "uid": "924ae972-186"
+          "uid": "7166f8bd-186"
         },
         {
-          "uid": "924ae972-188"
+          "uid": "7166f8bd-188"
         },
         {
-          "uid": "924ae972-190"
+          "uid": "7166f8bd-190"
         },
         {
-          "uid": "924ae972-192"
+          "uid": "7166f8bd-192"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-196": {
+    "7166f8bd-196": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/reports.js",
       "moduleParts": {
-        "assets/js/reports-CB25kox-.js": "924ae972-197"
+        "assets/js/reports-CB25kox-.js": "7166f8bd-197"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-198": {
+    "7166f8bd-198": {
       "id": "C:/Users/anon/github/logia-ink/js/core/easter-egg.js",
       "moduleParts": {
-        "assets/js/easter-egg-CdR3z1qL.js": "924ae972-199"
+        "assets/js/easter-egg-BawjG3XG.js": "7166f8bd-199"
       },
       "imported": [
         {
-          "uid": "924ae972-24"
+          "uid": "7166f8bd-24"
         },
         {
-          "uid": "924ae972-44"
+          "uid": "7166f8bd-44"
         },
         {
-          "uid": "924ae972-202",
+          "uid": "7166f8bd-204",
           "dynamic": true
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-200": {
+    "7166f8bd-200": {
       "id": "C:/Users/anon/github/logia-ink/js/core/three-hero.js",
       "moduleParts": {
-        "assets/js/three-hero-D5MAOqd8.js": "924ae972-201"
+        "assets/js/three-hero-D5MAOqd8.js": "7166f8bd-201"
       },
       "imported": [
         {
-          "uid": "924ae972-204"
+          "uid": "7166f8bd-206"
         }
       ],
       "importedBy": [
         {
-          "uid": "924ae972-52"
+          "uid": "7166f8bd-52"
         }
       ]
     },
-    "924ae972-202": {
-      "id": "C:/Users/anon/github/logia-ink/js/modules/easter-egg/runtime.js",
+    "7166f8bd-202": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/celestial-textures.js",
       "moduleParts": {
-        "assets/js/runtime-CXkaV3eM.js": "924ae972-203"
-      },
-      "imported": [
-        {
-          "uid": "924ae972-24"
-        },
-        {
-          "uid": "924ae972-44"
-        },
-        {
-          "uid": "924ae972-204",
-          "dynamic": true
-        }
-      ],
-      "importedBy": [
-        {
-          "uid": "924ae972-198"
-        }
-      ]
-    },
-    "924ae972-204": {
-      "id": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
-      "moduleParts": {
-        "assets/js/three-loader-DssTuxOG.js": "924ae972-205"
+        "assets/js/runtime-BDvt9cC5.js": "7166f8bd-203"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "924ae972-200"
+          "uid": "7166f8bd-204"
+        }
+      ]
+    },
+    "7166f8bd-204": {
+      "id": "C:/Users/anon/github/logia-ink/js/modules/easter-egg/runtime.js",
+      "moduleParts": {
+        "assets/js/runtime-BDvt9cC5.js": "7166f8bd-205"
+      },
+      "imported": [
+        {
+          "uid": "7166f8bd-24"
         },
         {
-          "uid": "924ae972-202"
+          "uid": "7166f8bd-44"
+        },
+        {
+          "uid": "7166f8bd-202"
+        },
+        {
+          "uid": "7166f8bd-206",
+          "dynamic": true
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "7166f8bd-198"
+        }
+      ]
+    },
+    "7166f8bd-206": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
+      "moduleParts": {
+        "assets/js/three-loader-DssTuxOG.js": "7166f8bd-207"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "7166f8bd-200"
+        },
+        {
+          "uid": "7166f8bd-204"
         }
       ]
     }
