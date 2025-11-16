@@ -184,8 +184,11 @@ The galaxy easter egg is organized in a dedicated folder for better maintainabil
 Textures use equirectangular projection (2:1 aspect ratio) for optimal sphere mapping. The system supports:
 - Lower initial resolution for faster loading (0.5x default, upgradeable)
 - Seamless horizontal wrapping with multi-pixel blending
-- Pole-aware feature placement to minimize distortion
+- Pole-aware feature placement and radius scaling to minimize distortion
+- Seamless noise functions for path generation (cracks, mountains) to prevent visible seams
+- Quadratic feature count scaling for consistent visual density across resolution levels
 - Texture caching to avoid regeneration
+- Advanced blending modes (e.g., `lighter` for atmospheric clouds)
 
 ### Modifying Colors
 

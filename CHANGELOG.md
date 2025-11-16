@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Moved `css/utils/easter-egg.css` → `css/easter-egg/easter-egg.css`
   - Updated all import paths accordingly
   - Updated documentation to reflect new structure
+- **Celestial Texture Improvements**: Enhanced procedural texture generation with better equirectangular projection handling
+  - **Pole-Aware Radius Scaling**: Features (sunspots, craters, lava blobs, etc.) now scale their radius based on pole proximity to correct for equirectangular distortion
+  - **Seamless Noise for Paths**: Replaced `fractalNoise` with `seamlessFractalNoise` in path generation (volcanic cracks, mountain ranges) to prevent visible horizontal seams
+  - **Quadratic Feature Scaling**: Small, numerous features (sunspots, small craters, impact pits, lava, hot spots, clouds) now scale quadratically (`* resolution * resolution`) for consistent visual density across resolution levels
+  - **Advanced Blending**: Added `globalCompositeOperation = 'lighter'` for Terra planet clouds to achieve more luminous, integrated atmospheric effects
+  - **Function Cleanup**: Removed unused `size` parameter from `createPlanetTexture()` function signature and simplified cache key
 
 ### Added
 - **Texture Modularization**: Separated texture generation into modular system (now in `js/easter-egg/`)

@@ -40,6 +40,7 @@ logi-ink/
 ├── assets/
 │   ├── fonts/                    # Self-hosted Orbitron & Rajdhani subsets
 │   ├── images/                   # Backgrounds, banners, logos, responsive variants
+│   ├── audio/                    # Audio assets (space ambience for easter egg)
 │   └── video/                    # Optimised hero/background videos + poster frames
 ├── css/
 │   ├── main.css                  # Imports variables → base → components → pages → utils
@@ -67,7 +68,15 @@ logi-ink/
 │   │   ├── runtime.js            # Milky Way 3D scene runtime
 │   │   ├── celestial-textures.js # Procedural texture generation
 │   │   ├── texture-wrapping.js   # Seamless texture wrapping utilities
-│   │   └── procedural-noise.js   # Procedural noise generation
+│   │   ├── procedural-noise.js   # Procedural noise generation
+│   │   ├── celestial-mechanics.js # Orbital mechanics and planet configuration
+│   │   ├── camera-controls.js    # Camera animation and orbital controls
+│   │   ├── galaxy-generator.js   # Multi-layer galaxy generation
+│   │   ├── star-field.js         # Background star field generation
+│   │   ├── lighting-atmosphere.js # Dynamic lighting and atmospheric effects
+│   │   ├── nebula-clouds.js      # Nebula and interstellar medium effects
+│   │   ├── particle-effects.js   # Asteroid belts, comets, solar wind, space dust
+│   │   └── post-processing.js   # Post-processing effects (bloom, depth of field)
 │   ├── utils/                    # 8 utilities (accessibility, interactions, toast, performance, env, error handler, three-loader, ripples lazy-load)
 │   └── pages/                    # Page hooks (contact form, services modals, projects, reports dashboard)
 ├── partials/                     # HTML partials (included at build time via Vite plugin)
@@ -179,10 +188,10 @@ Additional tooling/config: `.editorconfig`, `.prettierrc`, `.npmrc`, `.gitattrib
 - **HTML Includes:** Navigation and footer are modularized via `partials/navbar.html` and `partials/footer.html`, included at build time using a custom Vite plugin (`vite-plugin-html-include.js`). Pages use `<!-- include partials/navbar.html -->` comments which are processed during the build.
 - **CSS:** Modular imports from `main.css` with strict ordering (variables → base → components → pages → utilities). Animations/utilities live under `css/utils/` with `responsive.css` last for overrides.
 - **JavaScript:** `js/main.js` wires 9 core modules (navigation, scroll manager, animations, cursor, mouse tilt, page transitions, service worker, three.js hero, performance) and conditionally boots page modules (`contact`, `services`, `projects`, `reports`). Navigation active states are handled dynamically by `js/core/navigation.js`.
-- **Galaxy easter egg:** Interactive 3D galaxy feature organized in dedicated `js/easter-egg/` folder. Includes trigger/initialization (`easter-egg.js`), runtime (`runtime.js`), and modular texture system (`celestial-textures.js`, `texture-wrapping.js`, `procedural-noise.js`). Features realistic orbital mechanics (inclined orbits), optimized loading (reduced texture resolution, pre-loading Three.js, optimized particle generation), and improved seamless texture wrapping for sphere mapping.
+- **Galaxy easter egg:** Interactive 3D galaxy feature organized in dedicated `js/easter-egg/` folder. Includes trigger/initialization (`easter-egg.js`), runtime (`runtime.js`), and modular texture system (`celestial-textures.js`, `texture-wrapping.js`, `procedural-noise.js`). Features realistic orbital mechanics (inclined orbits), optimized loading (reduced texture resolution, pre-loading Three.js, optimized particle generation), improved seamless texture wrapping for sphere mapping, and pole-aware feature scaling to correct equirectangular projection distortion.
 - **Background video lazy-load:** `js/utils/ripples-lazyload.js` swaps hero/background video sources based on connection speed, viewport width, and codec support, only loading media once the container enters the viewport.
 - **Page transitions:** A sessionStorage-backed preload flow (`js/core/page-transitions.js`) coordinates the blur/fade animation and relies on a small inline script in each HTML head to avoid flashes on navigation.
-- **Assets:** Self-hosted fonts (WOFF2 subsets), optimised images (WebP/AVIF) with responsive variants, and pre-optimised hero videos.
+- **Assets:** Self-hosted fonts (WOFF2 subsets), optimised images (WebP/AVIF) with responsive variants, pre-optimised hero videos, and audio assets for the easter egg feature.
 - **PWA:** `sw.js` handles caching and update prompts; `site.webmanifest` defines install metadata; comprehensive favicon implementation (SVG, multiple PNG sizes, ICO fallback, Apple Touch Icon, Windows Tiles, Safari Pinned Tab) ensures proper branding across all platforms and devices.
 - **Reports dashboard:** `reports.html` surfaces bundle treemap/raw stats, synthetic coverage, Lighthouse, PWA audit, accessibility audit, media inventory, and legacy `stats.html` in a tabbed iframe interface.
 
