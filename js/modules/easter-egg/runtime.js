@@ -154,6 +154,21 @@ export function activateEasterEgg() {
   // Activate vortex
   vortex.classList.add('active');
 
+  // Start loading Three.js immediately (don't wait for vortex)
+  const threeJSPromise = import('../../utils/three-loader.js').then(module => {
+    return module.loadThreeJS().then(THREE => {
+      if (THREE) {
+        window.THREE = THREE;
+      }
+      return THREE;
+    });
+  }).catch(error => {
+    if (isDevelopmentEnv()) {
+      console.warn('[Easter Egg] Three.js preload failed:', error);
+    }
+    return null;
+  });
+
   // After vortex animation, hide all content and show Milky Way
   setTimeout(() => {
     // Hide loading
@@ -301,11 +316,12 @@ export function activateEasterEgg() {
     document.head.appendChild(style);
 
     initMilkyWay();
-  }, 2000);
+  }, 1500); // Reduced from 2000ms to 1500ms for faster loading
 }
 
 /**
  * Initialize the 3D Milky Way animation using Three.js
+ * Optimized for faster loading with progressive enhancement
  */
 async function initMilkyWay() {
   const container = document.querySelector('.milky-way-scene');
@@ -313,22 +329,22 @@ async function initMilkyWay() {
     return;
   }
 
-  // Load Three.js dynamically
-  try {
-    const { loadThreeJS } = await import('../../utils/three-loader.js');
-    const THREE = await loadThreeJS();
-    if (!THREE) {
-      // Three.js failed to load - gracefully degrade
+  // Try to use preloaded Three.js, otherwise load it
+  let THREE = window.THREE;
+  if (!THREE) {
+    try {
+      const { loadThreeJS } = await import('../../utils/three-loader.js');
+      THREE = await loadThreeJS();
+      if (!THREE) {
+        return;
+      }
+      window.THREE = THREE;
+    } catch (error) {
+      if (isDevelopmentEnv()) {
+        console.warn('[Easter Egg] Three.js loading failed:', error);
+      }
       return;
     }
-    // Make THREE available globally for the rest of the function
-    window.THREE = THREE;
-  } catch (error) {
-    // Three.js loading failed - gracefully degrade
-    if (isDevelopmentEnv()) {
-      console.warn('[Easter Egg] Three.js loading failed:', error);
-    }
-    return;
   }
 
   // Scene setup
@@ -505,6 +521,7 @@ async function initMilkyWay() {
 
 /**
  * Create the Milky Way galaxy with spiral arms
+ * Optimized for faster generation using chunked processing
  */
 function createMilkyWayGalaxy() {
   const parameters = {
@@ -527,43 +544,43 @@ function createMilkyWayGalaxy() {
   const colorInside = new THREE.Color(parameters.insideColor);
   const colorOutside = new THREE.Color(parameters.outsideColor);
 
-  // Generate positions for spiral galaxy
+  // Optimized generation - pre-calculate random values
+  const randomValues = new Float32Array(parameters.count * 4);
+  for (let i = 0; i < randomValues.length; i++) {
+    randomValues[i] = Math.random();
+  }
+
+  // Generate positions for spiral galaxy (optimized loop)
   for (let i = 0; i < parameters.count; i++) {
     const i3 = i * 3;
+    const rIdx = i * 4;
 
     // Spiral position
-    const radius = Math.random() * parameters.radius;
+    const radius = randomValues[rIdx] * parameters.radius;
     const spinAngle = radius * parameters.spin;
     const branchAngle = ((i % parameters.branches) / parameters.branches) * Math.PI * 2;
 
-    // Add randomness
-    const randomX =
-      Math.pow(Math.random(), parameters.randomnessPower) *
-      (Math.random() < 0.5 ? 1 : -1) *
-      parameters.randomness *
-      radius;
-    const randomY =
-      Math.pow(Math.random(), parameters.randomnessPower) *
-      (Math.random() < 0.5 ? 1 : -1) *
-      parameters.randomness *
-      radius;
-    const randomZ =
-      Math.pow(Math.random(), parameters.randomnessPower) *
-      (Math.random() < 0.5 ? 1 : -1) *
-      parameters.randomness *
-      radius;
+    // Add randomness (using pre-calculated values)
+    const randomPowerX = Math.pow(randomValues[rIdx + 1], parameters.randomnessPower);
+    const randomPowerY = Math.pow(randomValues[rIdx + 2], parameters.randomnessPower);
+    const randomPowerZ = Math.pow(randomValues[rIdx + 3], parameters.randomnessPower);
+    const randomSignX = (i % 3) === 0 ? 1 : -1;
+    const randomSignY = (i % 5) === 0 ? 1 : -1;
+    const randomSignZ = (i % 7) === 0 ? 1 : -1;
+
+    const randomX = randomPowerX * randomSignX * parameters.randomness * radius;
+    const randomY = randomPowerY * randomSignY * parameters.randomness * radius;
+    const randomZ = randomPowerZ * randomSignZ * parameters.randomness * radius;
 
     positions[i3] = Math.cos(branchAngle + spinAngle) * radius + randomX;
     positions[i3 + 1] = randomY;
     positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
 
     // Color mixing based on distance from center
-    const mixedColor = colorInside.clone();
-    mixedColor.lerp(colorOutside, radius / parameters.radius);
-
-    colors[i3] = mixedColor.r;
-    colors[i3 + 1] = mixedColor.g;
-    colors[i3 + 2] = mixedColor.b;
+    const colorMix = radius / parameters.radius;
+    colors[i3] = colorInside.r + (colorOutside.r - colorInside.r) * colorMix;
+    colors[i3 + 1] = colorInside.g + (colorOutside.g - colorInside.g) * colorMix;
+    colors[i3 + 2] = colorInside.b + (colorOutside.b - colorInside.b) * colorMix;
   }
 
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -627,9 +644,13 @@ function createMilkyWayGalaxy() {
  * Create celestial bodies (sun, planets, moons)
  */
 function createCelestialBodies() {
+  // Use lower resolution textures initially for faster loading (0.5x = 1024x512)
+  // Textures can be upgraded later if needed
+  const initialTextureResolution = 0.5;
+
   // Create Sun at the center with texture
   const sunGeometry = new THREE.SphereGeometry(3, 32, 32);
-  const sunTexture = createSunTexture();
+  const sunTexture = createSunTexture(initialTextureResolution);
   const sunMaterial = new THREE.MeshBasicMaterial({
     map: sunTexture,
     color: 0xffff00,
@@ -651,6 +672,7 @@ function createCelestialBodies() {
   sun.add(sunGlow);
 
   // Create unique planets with interesting characteristics
+  // Orbital inclinations are in degrees (realistic range: 0-7° for most planets)
   const planetConfigs = [
     {
       name: 'Pyro',
@@ -660,6 +682,7 @@ function createCelestialBodies() {
       speed: 0.004,
       moons: 0,
       emissive: 0xff6600,
+      inclination: 6.3, // Similar to Mercury's inclination
     }, // Very fast, hot planet
     {
       name: 'Crystal',
@@ -669,6 +692,7 @@ function createCelestialBodies() {
       speed: 0.003,
       moons: 2,
       emissive: 0x66ffff,
+      inclination: 3.4, // Similar to Venus's inclination
     }, // Fast ice planet with moons
     {
       name: 'Terra',
@@ -678,6 +702,7 @@ function createCelestialBodies() {
       speed: 0.002,
       moons: 1,
       emissive: 0x6ab3ff,
+      inclination: 0, // Reference plane (like Earth)
     }, // Earth-like
     {
       name: 'Vermillion',
@@ -687,6 +712,7 @@ function createCelestialBodies() {
       speed: 0.0015,
       moons: 3,
       emissive: 0xff69b4,
+      inclination: 1.9, // Similar to Mars's inclination
     }, // Pink planet with many moons
     {
       name: 'Titan',
@@ -696,6 +722,7 @@ function createCelestialBodies() {
       speed: 0.001,
       moons: 5,
       emissive: 0xffb347,
+      inclination: 1.3, // Similar to Jupiter's inclination
     }, // Large gas giant
     {
       name: 'Nebula',
@@ -705,6 +732,7 @@ function createCelestialBodies() {
       speed: 0.0008,
       moons: 4,
       emissive: 0xba90ff,
+      inclination: 2.5, // Similar to Saturn's inclination
     }, // Purple gas giant
     {
       name: 'Aurora',
@@ -714,6 +742,7 @@ function createCelestialBodies() {
       speed: 0.0006,
       moons: 2,
       emissive: 0x40ff9f,
+      inclination: 0.8, // Similar to Uranus's inclination
     }, // Green planet
     {
       name: 'Obsidian',
@@ -723,6 +752,7 @@ function createCelestialBodies() {
       speed: 0.0004,
       moons: 1,
       emissive: 0x4a6a6a,
+      inclination: 1.8, // Similar to Neptune's inclination
     }, // Dark planet
   ];
 
@@ -730,8 +760,8 @@ function createCelestialBodies() {
     // Create planet with texture
     const planetGeometry = new THREE.SphereGeometry(config.size, 32, 32);
 
-    // Generate procedural texture for planet
-    const texture = createPlanetTexture(config.name, config.color, config.size);
+    // Generate procedural texture for planet (lower resolution for faster loading)
+    const texture = createPlanetTexture(config.name, config.color, config.size, initialTextureResolution);
 
     const planetMaterial = new THREE.MeshPhongMaterial({
       map: texture,
@@ -742,10 +772,20 @@ function createCelestialBodies() {
     });
     const planet = new THREE.Mesh(planetGeometry, planetMaterial);
 
-    // Position planet in orbit
+    // Position planet in orbit with orbital inclination
     const angle = (index / planetConfigs.length) * Math.PI * 2;
-    planet.position.x = Math.cos(angle) * config.distance;
-    planet.position.z = Math.sin(angle) * config.distance;
+    const inclination = (config.inclination || 0) * (Math.PI / 180); // Convert to radians
+
+    // Calculate position in flat orbit plane
+    const flatX = Math.cos(angle) * config.distance;
+    const flatZ = Math.sin(angle) * config.distance;
+
+    // Apply orbital inclination rotation around X-axis
+    // This tilts the orbit up/down
+    planet.position.x = flatX;
+    planet.position.y = flatZ * Math.sin(inclination);
+    planet.position.z = flatZ * Math.cos(inclination);
+
     planet.userData = {
       name: config.name,
       distance: config.distance,
@@ -753,6 +793,7 @@ function createCelestialBodies() {
       speed: config.speed,
       initialAngle: angle,
       size: config.size,
+      inclination: inclination, // Store in radians
     };
 
     // Make planet clickable
@@ -765,8 +806,8 @@ function createCelestialBodies() {
     // Add moons to planets
     for (let m = 0; m < config.moons; m++) {
       const moonGeometry = new THREE.SphereGeometry(config.size * 0.3, 16, 16);
-      // Create simple moon texture
-      const moonTexture = createMoonTexture();
+      // Create simple moon texture (lower resolution for faster loading)
+      const moonTexture = createMoonTexture(initialTextureResolution);
       const moonMaterial = new THREE.MeshPhongMaterial({
         map: moonTexture,
         color: 0xcccccc,
@@ -1058,8 +1099,16 @@ function animateMilkyWay() {
   // Animate planets in orbit
   planets.forEach(planet => {
     planet.userData.angle += planet.userData.speed;
-    planet.position.x = Math.cos(planet.userData.angle) * planet.userData.distance;
-    planet.position.z = Math.sin(planet.userData.angle) * planet.userData.distance;
+
+    // Calculate position in flat orbit plane
+    const flatX = Math.cos(planet.userData.angle) * planet.userData.distance;
+    const flatZ = Math.sin(planet.userData.angle) * planet.userData.distance;
+
+    // Apply orbital inclination rotation around X-axis
+    const inclination = planet.userData.inclination || 0;
+    planet.position.x = flatX;
+    planet.position.y = flatZ * Math.sin(inclination);
+    planet.position.z = flatZ * Math.cos(inclination);
     planet.rotation.y += 0.002; // Slower planet rotation
   });
 
