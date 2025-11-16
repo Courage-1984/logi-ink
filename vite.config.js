@@ -6,6 +6,31 @@ import viteCompression from 'vite-plugin-compression';
 import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'fs';
 
 let resolvedOutDir = resolve(process.cwd(), 'dist');
+let reportsSourceDir = null;
+let statsSourceFile = null;
+
+const copyDirectoryIfMissing = (sourceDir, destinationDir) => {
+  if (!existsSync(sourceDir)) {
+    return;
+  }
+
+  if (!existsSync(destinationDir)) {
+    mkdirSync(destinationDir, { recursive: true });
+  }
+
+  const entries = readdirSync(sourceDir, { withFileTypes: true });
+
+  entries.forEach(entry => {
+    const sourcePath = resolve(sourceDir, entry.name);
+    const destinationPath = resolve(destinationDir, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirectoryIfMissing(sourcePath, destinationPath);
+    } else if (!existsSync(destinationPath)) {
+      copyFileSync(sourcePath, destinationPath);
+    }
+  });
+};
 
 export default defineConfig({
   // Base path for deployment
@@ -50,6 +75,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         pricing: resolve(__dirname, 'pricing.html'),
         seoServices: resolve(__dirname, 'seo-services.html'),
+        reports: resolve(__dirname, 'reports.html'),
         sw: resolve(__dirname, 'sw.js'), // Include service worker in build
         // Note: robots.txt and sitemap.xml are copied as static assets
       },
@@ -213,6 +239,22 @@ export default defineConfig({
         }
       },
     },
+    {
+      name: 'copy-static-reports',
+      apply: 'build',
+      configResolved(config) {
+        resolvedOutDir = resolve(config.root, config.build.outDir);
+        reportsSourceDir = resolve(config.root, 'reports');
+      },
+      writeBundle() {
+        if (!reportsSourceDir) {
+          return;
+        }
+
+        const destinationDir = resolve(resolvedOutDir, 'reports');
+        copyDirectoryIfMissing(reportsSourceDir, destinationDir);
+      },
+    },
     // Image optimization plugin
     viteImagemin({
       gifsicle: {
@@ -271,5 +313,41 @@ export default defineConfig({
       brotliSize: true,
       template: 'treemap', // treemap, sunburst, network
     }),
+    visualizer({
+      filename: resolve(__dirname, 'dist/reports/bundle-report.html'),
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+      template: 'treemap',
+    }),
+    visualizer({
+      filename: resolve(__dirname, 'dist/reports/bundle-stats.json'),
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+      template: 'raw-data',
+    }),
+    {
+      name: 'mirror-stats-report',
+      apply: 'build',
+      configResolved(config) {
+        resolvedOutDir = resolve(config.root, config.build.outDir);
+        statsSourceFile = resolve(resolvedOutDir, 'stats.html');
+      },
+      writeBundle() {
+        if (!statsSourceFile || !existsSync(statsSourceFile)) {
+          return;
+        }
+
+        const destinationDir = resolve(resolvedOutDir, 'reports');
+        const destination = resolve(destinationDir, 'stats.html');
+
+        if (!existsSync(destinationDir)) {
+          mkdirSync(destinationDir, { recursive: true });
+        }
+
+        copyFileSync(statsSourceFile, destination);
+      },
+    },
   ],
 });

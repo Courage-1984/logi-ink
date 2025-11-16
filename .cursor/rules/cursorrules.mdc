@@ -12,6 +12,7 @@ alwaysApply: true
 2. **DO NOT make any changes, edits, or execute any commands until you have fully read and understood this file**
 3. **This file contains the complete project structure, conventions, and rules that MUST be followed**
 4. **Ignoring this file will result in incorrect implementations that don't match the project's architecture**
+5. **NEVER DELETE ./.old/**
 
 **This file is the SOURCE OF TRUTH for:**
 
@@ -27,6 +28,14 @@ alwaysApply: true
 - Performance considerations
 
 **If you haven't read this file yet, STOP and read it NOW before continuing.**
+
+**Always choose the correct MCP tool based on the task:**
+
+- If the task involves web research, scraping, competitor analysis → use firecrawl-mcp.
+- If the task involves debugging or inspecting a live webpage → use chrome-devtools.
+- If the task involves library usage, dependencies, setup, or coding examples → use context7.
+
+The agent should not hallucinate or invent information when a corresponding MCP tool can provide real data.
 
 ---
 
@@ -80,6 +89,17 @@ logi-ink/
 │   ├── security-headers.html
 │   ├── structured-data.html
 │   └── accessibility.html
+├── reports/              # CI artefact placeholders (copied into dist/reports)
+│   ├── bundle-report.html
+│   ├── bundle-stats.json
+│   ├── coverage/
+│   │   └── index.html
+│   ├── lighthouse-report.html
+│   ├── media-inventory.html
+│   ├── performance-timeline.html
+│   ├── pwa-audit.html
+│   ├── seo-audit.html
+│   └── stats.html
 ├── robots.txt            # Search engine crawling rules
 ├── sitemap.xml           # Sitemap for search engines (generated)
 ├── .htaccess             # Apache security headers configuration
@@ -91,6 +111,7 @@ logi-ink/
 ├── projects.html         # Projects page (entry point)
 ├── pricing.html          # Pricing landing page (entry point)
 ├── seo-services.html     # SEO services landing page (entry point)
+├── reports.html          # Operational reports dashboard (entry point)
 ├── contact.html          # Contact page (entry point)
 ├── README.md             # Project documentation
 ├── package.json          # Node.js dependencies and scripts
@@ -103,6 +124,10 @@ logi-ink/
 ├── apple-touch-icon.png  # Apple touch icon
 ├── android-chrome-192x192.png # Android Chrome icon (192x192)
 ├── android-chrome-512x512.png # Android Chrome icon (512x512)
+├── lighthouserc.json     # Lighthouse CI configuration
+├── pwmetrics.config.cjs  # PWMetrics configuration
+├── .hintrc               # Webhint configuration
+├── pa11y.config.json     # Pa11y configuration
 ├── css/                  # Modular CSS files
 │   ├── main.css          # Main entry point
 │   ├── variables.css     # CSS custom properties
@@ -223,10 +248,11 @@ css/
 │   ├── breadcrumbs.css   # ✅ Breadcrumb navigation styles
 │   ├── toast.css         # ✅ Toast notification styles
 │   └── service-worker.css # ✅ Service worker update notification styles
-├── pages/                # ✅ Page-specific styles (3 files)
+├── pages/                # ✅ Page-specific styles (4 files)
 │   ├── contact.css       # ✅ Contact page styles
 │   ├── projects.css       # ✅ Projects page styles
-│   └── about.css          # ✅ About page styles
+│   ├── about.css          # ✅ About page styles
+│   └── reports.css        # ✅ Reports dashboard styles
 └── utils/                # ✅ 10 Utility styles and effects
     ├── animations.css    # ✅ All @keyframes and animation utilities
     ├── cursor.css        # ✅ Custom cursor and scroll progress
@@ -301,10 +327,13 @@ js/
 │   ├── ripples-lazyload.js # ✅ EXISTS - Background video lazy loader
 │   ├── three-loader.js   # ✅ EXISTS - Dynamic Three.js loader with SRI support
 │   └── toast.js          # ✅ EXISTS - Toast notification system
-└── pages/                # ✅ EXISTS - Page-specific modules (3 files)
+├── modules/              # ✅ EXISTS - Lazily loaded feature bundles
+│   └── easter-egg/       # ✅ EXISTS - Deferred Milky Way runtime (`runtime.js`)
+└── pages/                # ✅ EXISTS - Page-specific modules (4 files)
     ├── contact.js        # ✅ EXISTS - Contact form handling
     ├── services.js        # ✅ EXISTS - Service modals handling
-    └── projects.js        # ✅ EXISTS - Project details modal handling
+    ├── projects.js        # ✅ EXISTS - Project details modal handling
+    └── reports.js        # ✅ EXISTS - Reports dashboard tabs & lazy loading
 ```
 
 **Note:** All JavaScript modules are fully implemented and functional. The modular ES6 architecture is complete. Three.js hero backgrounds are initialized automatically based on page (particles for index, geometric shapes for services, torus grid for projects).
@@ -596,6 +625,64 @@ Paste this snippet immediately after the CSP meta tag (or before SEO meta) in ea
 - Keep functions small and focused (single responsibility)
 - Add JSDoc comments for exported functions
 
+### Code Commenting:
+
+# Commenting and Code Style Standards
+
+When writing or modifying code:
+
+1. **Comment with purpose, not redundancy**
+   - Only comment *why* something is done if it is not obvious from the code.
+   - Do not comment what the code does if it is already clear from the code itself.
+   - Comments should clarify intent, rationale, edge cases, assumptions, and decisions.
+
+2. **Function, Class, and Module Headers**
+   Every function, class, or module must include a short header comment describing:
+   - What it is responsible for
+   - Its inputs and outputs
+   - Any side effects or external dependencies
+
+   Example:
+   // Fetches user details from the DB and caches the result for 5 minutes.
+   // Returns null if no user is found.
+3. **Document Non-Obvious Logic**
+When code includes:
+- Complex logic
+- Performance optimizations
+- Workarounds for library quirks
+- Assumptions that must remain true
+Always include a short explanatory comment.
+
+4. **Consistent Style and Naming**
+- Use descriptive, intention-revealing variable and function names.
+- Avoid abbreviations unless widely recognized (e.g., `id`, `url`, `env`).
+- Functions should do one thing, and their name should reflect it.
+
+5. **Use TODO / NOTE / FIXME Standard Tags**
+/ TODO: Implement pagination.
+// NOTE: This function assumes dates are UTC.
+// FIXME: Rewrite for performance; currently O(n^2).
+
+6. **No Dead or Commented-Out Code**
+If code is removed, remove it fully. Do not leave commented-out blocks.
+If code must be kept for reference, explain why and for how long.
+
+7. **Style Consistency**
+Match the project's existing:
+- Formatting
+- Indentation
+- Naming conventions
+- Folder organization
+
+If new code introduces a new pattern, update the documentation and architecture notes accordingly.
+
+8. **Always Re-Check `./.cursor/rules/cursorrules.mdc`**
+Before committing or submitting code:
+- Confirm code comments, naming, and structure align with these standards.
+- Update this rules file if the standards evolve.
+
+
+
 ---
 
 ## File Organization Rules
@@ -836,8 +923,15 @@ Paste this snippet immediately after the CSP meta tag (or before SEO meta) in ea
 - ✅ **generate-sitemap.js** - Regenerate sitemap.xml
 - ✅ **generate-seo-meta.js** - SEO meta tags helper
 - ✅ **generate-structured-data.js** - Structured data helper
+- ✅ **generate-media-inventory.js** - Produces reports/media-inventory.{html,json}
 - ✅ **update-html-seo.js** - Batch-update SEO metadata in HTML files
 - ✅ **accessibility.js** - Accessibility utilities module
+
+### NPM Scripts (reporting helpers)
+
+- `npm run reports:media` – rebuilds media inventory HTML/JSON.
+- `npm run test:e2e:only` – Playwright smoke suite without triggering a new build (requires existing bundle).
+- `npm run reports:all` – sequentially runs `build`, `reports:media`, and `test:e2e:only` to refresh dashboard artefacts.
 
 ---
 

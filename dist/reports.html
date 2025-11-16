@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operational Reports Dashboard - Logi-Ink</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-src 'self' https://www.youtube.com https://www.google.com;"
+    />
+
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Centralized dashboard for Logi-Ink bundle analysis, quality audits, Lighthouse results, and media inventories."
+    />
+    <meta
+      name="keywords"
+      content="logi-ink reports, lighthouse report, coverage report, bundle analysis, web vitals"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://logi-ink.com/reports.html" />
+    <meta property="og:title" content="Operational Reports Dashboard - Logi-Ink" />
+    <meta
+      property="og:description"
+      content="Monitor bundle size, coverage, Lighthouse, PWA, SEO, and media inventory from a single dashboard."
+    />
+    <meta property="og:image" content="https://logi-ink.com/assets/images/banners/banner_home.webp" />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://logi-ink.com/reports.html" />
+    <meta name="twitter:title" content="Operational Reports Dashboard - Logi-Ink" />
+    <meta
+      name="twitter:description"
+      content="Keep an eye on bundle, performance, and SEO regressions with the Logi-Ink reports hub."
+    />
+    <meta name="twitter:image" content="https://logi-ink.com/assets/images/banners/banner_home.webp" />
+    <meta name="twitter:site" content="@logiink" />
+    <meta name="twitter:creator" content="@logiink" />
+
+    <!-- Preload Fonts -->
+    <link
+      rel="preload"
+      href="data:font/woff2;base64,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"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Rajdhani-Regular-subset-eAD4TeI1.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link rel="canonical" href="https://logi-ink.com/reports.html" />
+
+    <!-- Analytics -->
+    <script defer data-domain="logi-ink.com" src="https://plausible.io/js/script.js"></script>
+
+    <!-- Prefetch Likely Next Pages -->
+    <link rel="prefetch" href="/assets/index-Nt4iTlZY.html" />
+    <link rel="prefetch" href="/assets/services-CvOwcTHU.html" />
+    <link rel="prefetch" href="/assets/projects-DcHsKkP5.html" />
+    <link rel="prefetch" href="/assets/contact-B5eNKxkJ.html" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48-D-NHXH9l.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/video/optimized/site.webmanifest" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Operational Reports Dashboard - Logi-Ink",
+        "url": "https://logi-ink.com/reports.html",
+        "description": "Central hub collecting bundle analysis, coverage, Lighthouse, PWA, SEO, and media audit reports for Logi-Ink.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://logi-ink.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Reports",
+              "item": "https://logi-ink.com/reports.html"
+            }
+          ]
+        }
+      }
+    </script>
+
+    <script type="module" crossorigin src="/assets/js/main-D-vGKXfI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/style-Bn1HEnIr.css">
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <div class="scroll-progress"></div>
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
+          </a>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item-dropdown">
+            <a href="services.html" class="nav-link" aria-haspopup="true" aria-expanded="false"
+              >Services</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="services.html" class="dropdown-link">All Services</a></li>
+              <li><a href="pricing.html" class="dropdown-link">Pricing</a></li>
+              <li><a href="seo-services.html" class="dropdown-link">SEO Services</a></li>
+            </ul>
+          </li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+          <li><a href="reports.html" class="nav-link active">Reports</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero reports-hero">
+        <div class="reports-hero__background"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Operational Reports Hub</h1>
+          <p class="hero-subtitle">
+            Inspect bundle composition, coverage health, and performance audits without leaving the
+            repo.
+          </p>
+          <div class="reports-hero__meta">
+            <div class="reports-hero__meta-item">
+              <span class="reports-hero__meta-label">Source</span>
+              <span class="reports-hero__meta-value">CI Artifacts · Local Scripts</span>
+            </div>
+            <div class="reports-hero__meta-item">
+              <span class="reports-hero__meta-label">Refresh cadence</span>
+              <span class="reports-hero__meta-value">Per build &amp; nightly automation</span>
+            </div>
+            <div class="reports-hero__meta-item">
+              <span class="reports-hero__meta-label">Health gates</span>
+              <span class="reports-hero__meta-value">Bundle · Lighthouse · PWA · SEO</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reports-dashboard">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Choose a Report</h2>
+            <p class="section-subtitle">
+              Tabs load lazily. Generate the corresponding artifact and refresh to surface updated
+              results.
+            </p>
+          </div>
+
+          <div class="reports-actions">
+            <div class="reports-actions__note">
+              <strong>Tip:</strong> Wire these commands into CI to keep reports fresh.
+            </div>
+            <div class="reports-actions__chips">
+              <code>npm run build</code>
+              <code>npm run test:e2e</code>
+              <code>npm run reports:media</code>
+              <code>npx lhci collect</code>
+              <code>npx pwmetrics</code>
+            </div>
+          </div>
+
+          <div class="tabs" data-report-tabs>
+            <ul class="tab-list" role="tablist">
+              <li>
+                <button
+                  class="tab-button active"
+                  id="tab-bundle-treemap"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="panel-bundle-treemap"
+                  data-tab-target="panel-bundle-treemap"
+                >
+                  Bundle Treemap
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-bundle-stats"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-bundle-stats"
+                  data-tab-target="panel-bundle-stats"
+                >
+                  Bundle Raw Stats
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-coverage"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-coverage"
+                  data-tab-target="panel-coverage"
+                >
+                  Coverage
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-lighthouse"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-lighthouse"
+                  data-tab-target="panel-lighthouse"
+                >
+                  Lighthouse
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-performance"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-performance"
+                  data-tab-target="panel-performance"
+                >
+                  Performance Timeline
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-pwa"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-pwa"
+                  data-tab-target="panel-pwa"
+                >
+                  PWA Audit
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-seo"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-seo"
+                  data-tab-target="panel-seo"
+                >
+                  Accessibility Audit
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-media"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-media"
+                  data-tab-target="panel-media"
+                >
+                  Media Inventory
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tab-button"
+                  id="tab-stats"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-stats"
+                  data-tab-target="panel-stats"
+                >
+                  /stats.html
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="report-panels">
+            <article
+              class="tab-content active"
+              id="panel-bundle-treemap"
+              role="tabpanel"
+              aria-labelledby="tab-bundle-treemap"
+              data-report-type="iframe"
+              data-report-src="reports/bundle-report.html"
+              data-report-title="Bundle Treemap"
+              data-report-hint="Run npm run build to regenerate the Rollup visualizer treemap."
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">Treemap not loaded yet</p>
+                <p class="report-placeholder__hint">
+                  Run <code>npm run build</code> and refresh to view the latest bundle visualisation.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe
+                class="report-frame"
+                title="Bundle Treemap"
+                loading="lazy"
+                hidden
+              ></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-bundle-stats"
+              role="tabpanel"
+              aria-labelledby="tab-bundle-stats"
+              data-report-type="json"
+              data-report-src="reports/bundle-stats.json"
+              data-report-title="Bundle Raw Stats"
+              data-report-hint="Run npm run build to refresh the raw Rollup bundle metrics JSON."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">JSON not loaded yet</p>
+                <p class="report-placeholder__hint">
+                  Build the project to produce <code>reports/bundle-stats.json</code> and reload this tab.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <button type="button" class="btn btn-outline report-json__copy" data-report-copy hidden>
+                Copy JSON
+              </button>
+              <pre class="report-json" hidden aria-live="polite"></pre>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-coverage"
+              role="tabpanel"
+              aria-labelledby="tab-coverage"
+              data-report-type="iframe"
+              data-report-src="reports/coverage/index.html"
+              data-report-title="Coverage Report"
+              data-report-hint="Run npm run test:e2e or your coverage suite, then copy coverage/index.html to reports/coverage/."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">Coverage report unavailable</p>
+                <p class="report-placeholder__hint">
+                  Execute <code>npm run test:e2e</code> to regenerate the Playwright coverage dashboard.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe class="report-frame" title="Coverage Report" loading="lazy" hidden></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-lighthouse"
+              role="tabpanel"
+              aria-labelledby="tab-lighthouse"
+              data-report-type="iframe"
+              data-report-src="reports/lighthouse-report.html"
+              data-report-title="Lighthouse Report"
+              data-report-hint="Run npx lhci collect --config=./lighthouserc.json to refresh the Lighthouse audit."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">Lighthouse report unavailable</p>
+                <p class="report-placeholder__hint">
+                  Run <code>npx lhci collect</code> (or your Lighthouse CI job) to update the report snapshot.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe class="report-frame" title="Lighthouse Report" loading="lazy" hidden></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-performance"
+              role="tabpanel"
+              aria-labelledby="tab-performance"
+              data-report-type="iframe"
+              data-report-src="reports/lighthouse-report.html"
+              data-report-title="Performance Timeline (Lighthouse)"
+              data-report-hint="Run npm run reports:dashboard to refresh the main Lighthouse report backing this timeline."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">Performance timeline unavailable</p>
+                <p class="report-placeholder__hint">
+                  Run <code>npm run reports:dashboard</code> so Lighthouse can regenerate the main HTML performance report.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe class="report-frame" title="Performance Timeline" loading="lazy" hidden></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-pwa"
+              role="tabpanel"
+              aria-labelledby="tab-pwa"
+              data-report-type="iframe"
+              data-report-src="reports/pwa-audit.html"
+              data-report-title="PWA Audit"
+              data-report-hint="Export pwmetrics or Lighthouse PWA results into reports/pwa-audit.html."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">PWA audit unavailable</p>
+                <p class="report-placeholder__hint">
+                  Use <code>npx pwmetrics</code> or Lighthouse CI to generate the offline audit HTML.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe class="report-frame" title="PWA Audit" loading="lazy" hidden></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-seo"
+              role="tabpanel"
+              aria-labelledby="tab-seo"
+              data-report-type="iframe"
+              data-report-src="reports/seo-audit.html"
+              data-report-title="Accessibility Audit"
+              data-report-hint="Export Pa11y results to reports/seo-audit.html to view detailed issues."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">Accessibility audit unavailable</p>
+                <p class="report-placeholder__hint">
+                  Run <code>npx pa11y http://127.0.0.1:4173/</code> and copy the HTML summary here.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe
+                class="report-frame"
+                title="Accessibility Audit"
+                loading="lazy"
+                hidden
+              ></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-media"
+              role="tabpanel"
+              aria-labelledby="tab-media"
+              data-report-type="iframe"
+              data-report-src="reports/media-inventory.html"
+              data-report-title="Media Inventory"
+              data-report-hint="Run npm run reports:media to regenerate the asset inventory."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">Media inventory unavailable</p>
+                <p class="report-placeholder__hint">
+                  Execute <code>npm run reports:media</code> to rebuild the media inventory dashboard.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe class="report-frame" title="Media Inventory" loading="lazy" hidden></iframe>
+            </article>
+
+            <article
+              class="tab-content"
+              id="panel-stats"
+              role="tabpanel"
+              aria-labelledby="tab-stats"
+              data-report-type="iframe"
+              data-report-src="reports/stats.html"
+              data-report-title="stats.html"
+              data-report-hint="Run npm run build to regenerate the Rollup visualizer treemap at reports/stats.html."
+              hidden
+            >
+              <div class="report-placeholder" role="status">
+                <p class="report-placeholder__title">stats.html unavailable</p>
+                <p class="report-placeholder__hint">
+                  Run <code>npm run build</code> to regenerate <code>reports/stats.html</code> and refresh.
+                </p>
+                <button type="button" class="btn btn-outline report-placeholder__action" data-report-retry hidden>
+                  Retry loading
+                </button>
+              </div>
+              <iframe class="report-frame" title="Legacy stats.html" loading="lazy" hidden></iframe>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>LOG<span class="logo-accent">I</span>-INK</h3>
+            <p>Digital innovation and creative solutions for the future.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#" target="_blank">LinkedIn</a></li>
+              <li><a href="#" target="_blank">Twitter</a></li>
+              <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Logi-Ink. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
+  </body>
+</html>

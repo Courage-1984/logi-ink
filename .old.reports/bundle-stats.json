@@ -1,0 +1,5 @@
+{
+  "placeholder": true,
+  "message": "Run npm run build to regenerate bundle-stats.json with current Rollup bundle metrics.",
+  "generatedAt": null
+}

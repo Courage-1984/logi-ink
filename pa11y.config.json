@@ -1,0 +1,7 @@
+{
+  "standard": "WCAG2AA",
+  "timeout": 60000,
+  "ignore": ["notice"],
+  "hideElements": [".skip-link", "#aria-live-region"],
+  "screenCapture": "reports/pa11y-screenshot.png"
+}

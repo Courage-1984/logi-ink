@@ -1,0 +1,1647 @@
+{
+  "generatedAt": "2025-11-16T15:55:05.832Z",
+  "summary": {
+    "images": {
+      "count": 145,
+      "bytes": 25923390
+    },
+    "videos": {
+      "count": 5,
+      "bytes": 26993790
+    },
+    "fonts": {
+      "count": 36,
+      "bytes": 2622532
+    },
+    "other": {
+      "count": 17,
+      "bytes": 25924
+    }
+  },
+  "assets": [
+    {
+      "path": "assets/video/ripples.mp4",
+      "bytes": 9607120,
+      "category": "video",
+      "width": null,
+      "height": null,
+      "format": "mp4"
+    },
+    {
+      "path": "assets/video/optimized/ripples-webm.webm",
+      "bytes": 6273765,
+      "category": "video",
+      "width": null,
+      "height": null,
+      "format": "webm"
+    },
+    {
+      "path": "assets/video/optimized/ripples-hq.mp4",
+      "bytes": 5197263,
+      "category": "video",
+      "width": null,
+      "height": null,
+      "format": "mp4"
+    },
+    {
+      "path": "assets/video/optimized/ripples-mq.mp4",
+      "bytes": 3837365,
+      "category": "video",
+      "width": null,
+      "height": null,
+      "format": "mp4"
+    },
+    {
+      "path": "assets/images/portfolio/example_placeholder_003.png",
+      "bytes": 2961552,
+      "category": "image",
+      "width": 2048,
+      "height": 2048,
+      "format": "png"
+    },
+    {
+      "path": "assets/images/portfolio/example_placeholder_006.png",
+      "bytes": 2938591,
+      "category": "image",
+      "width": 2048,
+      "height": 2048,
+      "format": "png"
+    },
+    {
+      "path": "assets/images/portfolio/example_placeholder_001.png",
+      "bytes": 2824506,
+      "category": "image",
+      "width": 2048,
+      "height": 2048,
+      "format": "png"
+    },
+    {
+      "path": "assets/images/portfolio/example_placeholder_004.png",
+      "bytes": 2804008,
+      "category": "image",
+      "width": 2048,
+      "height": 2048,
+      "format": "png"
+    },
+    {
+      "path": "assets/images/portfolio/example_placeholder_002.png",
+      "bytes": 2704708,
+      "category": "image",
+      "width": 2048,
+      "height": 2048,
+      "format": "png"
+    },
+    {
+      "path": "assets/images/portfolio/example_placeholder_005.png",
+      "bytes": 2546124,
+      "category": "image",
+      "width": 2048,
+      "height": 2048,
+      "format": "png"
+    },
+    {
+      "path": "assets/video/optimized/ripples-lq.mp4",
+      "bytes": 2078277,
+      "category": "video",
+      "width": null,
+      "height": null,
+      "format": "mp4"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/Rajdhani-Bold.ttf",
+      "bytes": 373192,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/images/backgrounds/green-hexagon-grid.webp",
+      "bytes": 365148,
+      "category": "image",
+      "width": 2560,
+      "height": 1536,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf",
+      "bytes": 363500,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/Rajdhani-Medium.ttf",
+      "bytes": 357884,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/Rajdhani-Light.ttf",
+      "bytes": 357516,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/Rajdhani-Regular.ttf",
+      "bytes": 352088,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-1920w.avif",
+      "bytes": 267646,
+      "category": "image",
+      "width": 1920,
+      "height": 1152,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-1920w.webp",
+      "bytes": 233722,
+      "category": "image",
+      "width": 1920,
+      "height": 1152,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/banners/banner_home.webp",
+      "bytes": 225070,
+      "category": "image",
+      "width": 1620,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-1280w.avif",
+      "bytes": 210685,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-1280w.avif",
+      "bytes": 190463,
+      "category": "image",
+      "width": 1280,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-1280w.avif",
+      "bytes": 174291,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/backgrounds/cta-get-in-touch.webp",
+      "bytes": 172070,
+      "category": "image",
+      "width": 1620,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/backgrounds/tron-grid.webp",
+      "bytes": 169446,
+      "category": "image",
+      "width": 2560,
+      "height": 1440,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-1024w.avif",
+      "bytes": 168456,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-1280w.webp",
+      "bytes": 167348,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-1280w.webp",
+      "bytes": 152788,
+      "category": "image",
+      "width": 1280,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/backgrounds/mission-parallax-bg.webp",
+      "bytes": 143458,
+      "category": "image",
+      "width": 1620,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-1024w.avif",
+      "bytes": 142953,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-1280w.avif",
+      "bytes": 141924,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/backgrounds/enhance-bg.webp",
+      "bytes": 134762,
+      "category": "image",
+      "width": 1920,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-1920w.avif",
+      "bytes": 125610,
+      "category": "image",
+      "width": 1920,
+      "height": 1080,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-1920w.webp",
+      "bytes": 125484,
+      "category": "image",
+      "width": 1920,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-1024w.webp",
+      "bytes": 125028,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-1280w.webp",
+      "bytes": 124796,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-1920w.avif",
+      "bytes": 119807,
+      "category": "image",
+      "width": 1920,
+      "height": 1080,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-1024w.avif",
+      "bytes": 118097,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-1280w.webp",
+      "bytes": 114640,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-1024w.avif",
+      "bytes": 112795,
+      "category": "image",
+      "width": 1024,
+      "height": 614,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-1024w.webp",
+      "bytes": 112788,
+      "category": "image",
+      "width": 1024,
+      "height": 614,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-768w.avif",
+      "bytes": 111724,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-1920w.webp",
+      "bytes": 107050,
+      "category": "image",
+      "width": 1920,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-1280w.avif",
+      "bytes": 103451,
+      "category": "image",
+      "width": 1280,
+      "height": 720,
+      "format": "heif"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold.woff2",
+      "bytes": 101452,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Bold.woff2",
+      "bytes": 99164,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Medium.woff2",
+      "bytes": 98304,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Regular.woff2",
+      "bytes": 96500,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-768w.avif",
+      "bytes": 94171,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "heif"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Light.woff2",
+      "bytes": 94112,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-1280w.avif",
+      "bytes": 93800,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-1024w.webp",
+      "bytes": 93568,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-1280w.avif",
+      "bytes": 91078,
+      "category": "image",
+      "width": 1280,
+      "height": 720,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/backgrounds/process-parallax-bg.webp",
+      "bytes": 89872,
+      "category": "image",
+      "width": 1620,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-1024w.webp",
+      "bytes": 88016,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-1920w.webp",
+      "bytes": 87920,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-1920w.avif",
+      "bytes": 84168,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-1024w.avif",
+      "bytes": 83541,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "heif"
+    },
+    {
+      "path": "assets/video/optimized/ripples-poster.jpg",
+      "bytes": 81669,
+      "category": "image",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-1920w.webp",
+      "bytes": 81410,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-768w.webp",
+      "bytes": 81044,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-768w.avif",
+      "bytes": 79768,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-1280w.webp",
+      "bytes": 76826,
+      "category": "image",
+      "width": 1280,
+      "height": 720,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-768w.webp",
+      "bytes": 76758,
+      "category": "image",
+      "width": 768,
+      "height": 461,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-768w.avif",
+      "bytes": 75306,
+      "category": "image",
+      "width": 768,
+      "height": 461,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-1280w.webp",
+      "bytes": 74166,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-1920w.avif",
+      "bytes": 72821,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-1280w.webp",
+      "bytes": 68984,
+      "category": "image",
+      "width": 1280,
+      "height": 720,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-1920w.avif",
+      "bytes": 67043,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-1024w.avif",
+      "bytes": 66771,
+      "category": "image",
+      "width": 1024,
+      "height": 576,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-1920w.webp",
+      "bytes": 64100,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-1920w.webp",
+      "bytes": 63040,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/backgrounds/testimonials-parallax-bg.webp",
+      "bytes": 60816,
+      "category": "image",
+      "width": 1620,
+      "height": 1080,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-768w.avif",
+      "bytes": 60682,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-1280w.avif",
+      "bytes": 60380,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-1024w.webp",
+      "bytes": 60376,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-1024w.avif",
+      "bytes": 60017,
+      "category": "image",
+      "width": 1024,
+      "height": 576,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-768w.webp",
+      "bytes": 59956,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-1920w.avif",
+      "bytes": 58961,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-768w.webp",
+      "bytes": 58486,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-1024w.webp",
+      "bytes": 57746,
+      "category": "image",
+      "width": 1024,
+      "height": 576,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-1920w.avif",
+      "bytes": 55535,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-1920w.webp",
+      "bytes": 54200,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-1920w.webp",
+      "bytes": 53820,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-1280w.avif",
+      "bytes": 53296,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-480w.avif",
+      "bytes": 51794,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-1280w.webp",
+      "bytes": 51662,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-1024w.avif",
+      "bytes": 50965,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-1280w.webp",
+      "bytes": 49960,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-1024w.webp",
+      "bytes": 48744,
+      "category": "image",
+      "width": 1024,
+      "height": 576,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-1280w.webp",
+      "bytes": 48570,
+      "category": "image",
+      "width": 1280,
+      "height": 853,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-1280w.avif",
+      "bytes": 48321,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-768w.avif",
+      "bytes": 47529,
+      "category": "image",
+      "width": 768,
+      "height": 432,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-1920w.avif",
+      "bytes": 44023,
+      "category": "image",
+      "width": 1920,
+      "height": 1920,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-768w.webp",
+      "bytes": 43078,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-480w.avif",
+      "bytes": 40625,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-1024w.avif",
+      "bytes": 40525,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-768w.webp",
+      "bytes": 40216,
+      "category": "image",
+      "width": 768,
+      "height": 432,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-768w.avif",
+      "bytes": 39267,
+      "category": "image",
+      "width": 768,
+      "height": 432,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-480w.webp",
+      "bytes": 39158,
+      "category": "image",
+      "width": 480,
+      "height": 288,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-480w.avif",
+      "bytes": 38674,
+      "category": "image",
+      "width": 480,
+      "height": 288,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-1024w.webp",
+      "bytes": 38674,
+      "category": "image",
+      "width": 1024,
+      "height": 683,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-480w.webp",
+      "bytes": 38656,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf",
+      "bytes": 38548,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-1024w.webp",
+      "bytes": 38514,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-1280w.webp",
+      "bytes": 37858,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-1024w.webp",
+      "bytes": 37746,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-1024w.avif",
+      "bytes": 37163,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-480w.avif",
+      "bytes": 36561,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-1280w.avif",
+      "bytes": 36087,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-1280w.webp",
+      "bytes": 34654,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-1280w.avif",
+      "bytes": 34457,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-768w.avif",
+      "bytes": 33654,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-1280w.webp",
+      "bytes": 32572,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-480w.avif",
+      "bytes": 32244,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-768w.webp",
+      "bytes": 32130,
+      "category": "image",
+      "width": 768,
+      "height": 432,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-1280w.avif",
+      "bytes": 30220,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-1280w.webp",
+      "bytes": 29828,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-768w.avif",
+      "bytes": 28920,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-480w.avif",
+      "bytes": 28625,
+      "category": "image",
+      "width": 480,
+      "height": 270,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-1280w.avif",
+      "bytes": 27894,
+      "category": "image",
+      "width": 1280,
+      "height": 1280,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-1024w.webp",
+      "bytes": 27496,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-480w.webp",
+      "bytes": 27440,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-768w.webp",
+      "bytes": 27388,
+      "category": "image",
+      "width": 768,
+      "height": 512,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-768w.webp",
+      "bytes": 26630,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-768w.avif",
+      "bytes": 25942,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-768w.webp",
+      "bytes": 25862,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-480w.webp",
+      "bytes": 25816,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-1024w.avif",
+      "bytes": 25758,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-1024w.avif",
+      "bytes": 25629,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-1024w.webp",
+      "bytes": 25606,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Orbitron/static/Orbitron-Medium.ttf",
+      "bytes": 24752,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf",
+      "bytes": 24732,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Orbitron/static/Orbitron-Regular.ttf",
+      "bytes": 24716,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf",
+      "bytes": 24696,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/fonts/Orbitron/static/Orbitron-Bold.ttf",
+      "bytes": 24668,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-1024w.webp",
+      "bytes": 23780,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-480w.webp",
+      "bytes": 23708,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Orbitron/static/Orbitron-Black.ttf",
+      "bytes": 23392,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "ttf"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-480w.webp",
+      "bytes": 23112,
+      "category": "image",
+      "width": 480,
+      "height": 270,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-1024w.avif",
+      "bytes": 21795,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-1024w.webp",
+      "bytes": 21468,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-480w.avif",
+      "bytes": 21376,
+      "category": "image",
+      "width": 480,
+      "height": 270,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-1024w.avif",
+      "bytes": 21113,
+      "category": "image",
+      "width": 1024,
+      "height": 1024,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-768w.webp",
+      "bytes": 18562,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-768w.avif",
+      "bytes": 18166,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-768w.avif",
+      "bytes": 17168,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-768w.webp",
+      "bytes": 16776,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-480w.webp",
+      "bytes": 16590,
+      "category": "image",
+      "width": 480,
+      "height": 270,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-480w.avif",
+      "bytes": 16529,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-768w.webp",
+      "bytes": 16144,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-VariableFont_wght.woff2",
+      "bytes": 15980,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-480w.avif",
+      "bytes": 15714,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-768w.avif",
+      "bytes": 14896,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-480w.webp",
+      "bytes": 14522,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-768w.avif",
+      "bytes": 14510,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-480w.avif",
+      "bytes": 14206,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-768w.webp",
+      "bytes": 14124,
+      "category": "image",
+      "width": 768,
+      "height": 768,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-480w.webp",
+      "bytes": 13534,
+      "category": "image",
+      "width": 480,
+      "height": 320,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-480w.webp",
+      "bytes": 13466,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "webp"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-480w.avif",
+      "bytes": 9918,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "heif"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-ExtraBold.woff2",
+      "bytes": 9452,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-480w.avif",
+      "bytes": 9362,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "heif"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Medium.woff2",
+      "bytes": 9288,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-SemiBold.woff2",
+      "bytes": 9236,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Bold.woff2",
+      "bytes": 9208,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-480w.webp",
+      "bytes": 9152,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Regular.woff2",
+      "bytes": 9036,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Black.woff2",
+      "bytes": 8968,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2",
+      "bytes": 8884,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2",
+      "bytes": 8772,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-480w.webp",
+      "bytes": 8730,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Medium-subset.woff2",
+      "bytes": 8496,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2",
+      "bytes": 8432,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-480w.webp",
+      "bytes": 8260,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2",
+      "bytes": 8224,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-480w.avif",
+      "bytes": 7836,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "heif"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-480w.avif",
+      "bytes": 7604,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "heif"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-VariableFont_wght-subset.woff2",
+      "bytes": 7064,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-480w.webp",
+      "bytes": 7034,
+      "category": "image",
+      "width": 480,
+      "height": 480,
+      "format": "webp"
+    },
+    {
+      "path": "assets/fonts/Orbitron/OFL.txt",
+      "bytes": 4520,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "txt"
+    },
+    {
+      "path": "assets/fonts/Rajdhani/OFL.txt",
+      "bytes": 4467,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "txt"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-ExtraBold-subset.woff2",
+      "bytes": 3852,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Medium-subset.woff2",
+      "bytes": 3748,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-SemiBold-subset.woff2",
+      "bytes": 3736,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2",
+      "bytes": 3692,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2",
+      "bytes": 3636,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2",
+      "bytes": 3612,
+      "category": "font",
+      "width": null,
+      "height": null,
+      "format": "woff2"
+    },
+    {
+      "path": "assets/fonts/Orbitron/README.txt",
+      "bytes": 2261,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "txt"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_001-example.html",
+      "bytes": 1126,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_002-example.html",
+      "bytes": 1126,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_003-example.html",
+      "bytes": 1126,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_004-example.html",
+      "bytes": 1126,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_005-example.html",
+      "bytes": 1126,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/portfolio/example_placeholder_006-example.html",
+      "bytes": 1126,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/green-hexagon-grid-example.html",
+      "bytes": 1068,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/testimonials-parallax-bg-example.html",
+      "bytes": 1046,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/mission-parallax-bg-example.html",
+      "bytes": 996,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/process-parallax-bg-example.html",
+      "bytes": 996,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/enhance-bg-example.html",
+      "bytes": 972,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/cta-get-in-touch-example.html",
+      "bytes": 966,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/backgrounds/tron-grid-example.html",
+      "bytes": 960,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    },
+    {
+      "path": "assets/images/responsive/banners/banner_home-example.html",
+      "bytes": 916,
+      "category": "other",
+      "width": null,
+      "height": null,
+      "format": "html"
+    }
+  ]
+}

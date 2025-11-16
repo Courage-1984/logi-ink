@@ -48,6 +48,30 @@ npm run inline-critical-css
 
 # Rebuild sitemap.xml from current routes
 npm run generate-sitemap
+
+# Generate media inventory HTML + JSON under reports/
+npm run reports:media
+```
+
+### Reports Aggregation
+
+```bash
+# Build, refresh media inventory, regenerate HTML reports, and rerun Playwright suite
+npm run reports:all
+```
+
+```bash
+# Only rebuild Lighthouse report (requires preview server on :4173 if not using reports:dashboard)
+npm run reports:lighthouse
+
+# Regenerate PWMetrics HTML summary
+npm run reports:pwmetrics
+
+# Run Pa11y accessibility audit
+npm run reports:pa11y
+
+# Orchestrate Lighthouse, PWMetrics, and Pa11y (starts/stops preview automatically)
+npm run reports:dashboard
 ```
 
 ## 🧹 Quality Gates
@@ -79,13 +103,16 @@ npm update
 
 ## 🔍 Build Analysis
 
-After `npm run build`, open `dist/stats.html` to inspect bundle composition, gzip/brotli sizes, and manual chunking output. When using `npm run build:dual`, open `dist-gh-pages/stats.html` to review the GitHub Pages bundle as well.
+After `npm run build`, open `dist/stats.html` to inspect bundle composition, gzip/brotli sizes, and manual chunking output. The aggregated dashboard lives at `reports.html` (built to `dist/reports.html`) and surfaces bundle, Lighthouse, coverage, and media inventory tabs. When using `npm run build:dual`, open `dist-gh-pages/stats.html` to review the GitHub Pages bundle as well.
 
 ## 🧪 Testing
 
 ```bash
 # Run Playwright smoke tests (builds production output first)
 npm run test:e2e
+
+# Run Playwright suite without rebuilding (assumes a fresh build already exists)
+npm run test:e2e:only
 
 # Install Playwright browsers (first run only)
 npx playwright install
@@ -130,4 +157,29 @@ Coverage: multi-page navigation (desktop + mobile drawer), scroll progress/back-
 - `docs/QUICK_START.md` – three-step onboarding checklist
 - `docs/STYLE_GUIDE.md` – design system and interaction patterns
 - `docs/TODO.MD` – outstanding documentation and analytics follow-ups
+
+
+
+[13 tools called]
+
+Those “pending” messages mean the placeholder HTML is still in place—the generators never wrote the real reports. `npm run reports:all` should replace them, but if any of the bundled tools (Lighthouse CI, PWMetrics, Pa11y) fail you’ll still see the placeholders. Run the steps below and watch for errors:
+
+```
+npm install
+npm run build
+npm run reports:dashboard
+npm run reports:media
+npm run test:e2e:only
+```
+
+`reports:dashboard` is the critical piece—it starts a temporary `vite preview`, hits `http://127.0.0.1:4173/`, runs Lighthouse, PWMetrics, and Pa11y, then writes:
+
+- `reports/lighthouse-report.html`
+- `reports/pwa-audit.html`
+- `reports/seo-audit.html`
+- `reports/seo-pa11y.html` (embedded into `seo-audit.html`)
+- `reports/pwmetrics.json`
+
+If any of those commands log an error (common causes: Chrome not found for LHCI/PWMetrics or Pa11y), fix it and re-run that specific script (`npm run reports:lighthouse`, `npm run reports:pwmetrics`, etc.). When the HTML files in `reports/` contain real data, the dashboard tabs will load the results instead of the placeholder text.
+
 

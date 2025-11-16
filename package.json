@@ -26,23 +26,36 @@
     "subset-fonts": "node scripts/subset-fonts.js",
     "inline-critical-css": "node scripts/inline-critical-css.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "test:e2e": "npm run build && playwright test"
+    "reports:lighthouse": "lhci collect --config=./lighthouserc.json",
+    "reports:pwmetrics": "node scripts/generate-pwmetrics-report.js",
+    "reports:pa11y": "node scripts/run-pa11y-report.js",
+    "reports:dashboard": "node scripts/generate-dashboard-reports.js",
+    "reports:coverage": "node scripts/generate-coverage-report.js",
+    "reports:performance": "node scripts/generate-performance-timeline.js",
+    "reports:media": "node scripts/generate-media-inventory.js",
+    "test:e2e": "npm run build && playwright test",
+    "test:e2e:only": "playwright test",
+    "reports:all": "npm run build && npm run reports:dashboard && npm run reports:media && npm run test:e2e:only && npm run reports:coverage && npm run reports:performance && npm run build"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
     "@eslint/js": "^9.39.1",
     "@fullhuman/postcss-purgecss": "^7.0.2",
+    "@lhci/cli": "^0.13.0",
+    "@playwright/test": "^1.49.0",
+    "cross-env": "^7.0.3",
     "eslint": "^9.39.1",
     "glob": "^11.0.3",
+    "pa11y": "^6.2.3",
+    "pa11y-reporter-html": "^2.0.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
+    "pwmetrics": "^4.1.5",
     "rollup-plugin-visualizer": "^6.0.5",
     "sharp": "^0.32.6",
     "terser": "^5.44.1",
     "vite": "^5.0.0",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-imagemin": "^0.6.1",
-    "cross-env": "^7.0.3"
+    "vite-plugin-imagemin": "^0.6.1"
   },
   "dependencies": {
     "web-vitals": "^5.1.0"

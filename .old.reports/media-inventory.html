@@ -1,0 +1,1889 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Media Inventory · Logi-Ink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #0a0a0a;
+        color: #ffffff;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
+      h1 {
+        font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+      }
+      .subtitle {
+        color: #b0b0b0;
+        margin-bottom: 2.5rem;
+        font-size: 1.05rem;
+      }
+      .generated-at {
+        font-size: 0.85rem;
+        color: #888888;
+        margin-bottom: 2rem;
+      }
+      .inventory-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .summary-card {
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 1.5rem;
+        background: rgba(10, 10, 10, 0.65);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+      }
+      .summary-card h2 {
+        margin: 0;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #b0b0b0;
+      }
+      .summary-card .metric {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #00ffff;
+        margin: 0.5rem 0 0;
+      }
+      .summary-card .bytes {
+        color: #ff00ff;
+        font-size: 0.95rem;
+        margin-top: 0.6rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      thead {
+        background: rgba(0, 255, 255, 0.12);
+      }
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: left;
+      }
+      tbody tr[data-oversized="true"] {
+        background: rgba(255, 0, 128, 0.08);
+      }
+      tbody tr:hover {
+        background: rgba(0, 255, 255, 0.08);
+      }
+      td.path {
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      section + section {
+        margin-top: 3rem;
+      }
+      .note {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #999;
+      }
+      @media (max-width: 720px) {
+        td,
+        th {
+          padding: 0.6rem;
+        }
+        td.path {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Media Inventory</h1>
+      <p class="subtitle">Overview of images, video, fonts, and other media bundled with the site.</p>
+      <div class="generated-at">Generated at 2025-11-16T15:55:05.829Z</div>
+      
+    <div class="inventory-summary">
+      
+    <div class="summary-card">
+      <h2>Images</h2>
+      <div class="metric">145</div>
+      <div class="bytes">24.72 MB</div>
+    </div>
+  
+      
+    <div class="summary-card">
+      <h2>Videos</h2>
+      <div class="metric">5</div>
+      <div class="bytes">25.74 MB</div>
+    </div>
+  
+      
+    <div class="summary-card">
+      <h2>Fonts</h2>
+      <div class="metric">36</div>
+      <div class="bytes">2.50 MB</div>
+    </div>
+  
+      
+    <div class="summary-card">
+      <h2>Other</h2>
+      <div class="metric">17</div>
+      <div class="bytes">25.32 KB</div>
+    </div>
+  
+    </div>
+  
+      <section>
+        <h2>Top Heavy Assets (by size)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Format</th>
+              <th>Path</th>
+              <th>Dimensions</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/ripples.mp4</td>
+          <td>—</td>
+          <td>9.16 MB</td>
+        </tr>
+      
+        <tr>
+          <td>video</td>
+          <td>webm</td>
+          <td class="path">assets/video/optimized/ripples-webm.webm</td>
+          <td>—</td>
+          <td>5.98 MB</td>
+        </tr>
+      
+        <tr>
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/optimized/ripples-hq.mp4</td>
+          <td>—</td>
+          <td>4.96 MB</td>
+        </tr>
+      
+        <tr>
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/optimized/ripples-mq.mp4</td>
+          <td>—</td>
+          <td>3.66 MB</td>
+        </tr>
+      
+        <tr>
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_003.png</td>
+          <td>2048×2048</td>
+          <td>2.82 MB</td>
+        </tr>
+      
+        <tr>
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_006.png</td>
+          <td>2048×2048</td>
+          <td>2.80 MB</td>
+        </tr>
+      
+        <tr>
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_001.png</td>
+          <td>2048×2048</td>
+          <td>2.69 MB</td>
+        </tr>
+      
+        <tr>
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_004.png</td>
+          <td>2048×2048</td>
+          <td>2.67 MB</td>
+        </tr>
+      
+        <tr>
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_002.png</td>
+          <td>2048×2048</td>
+          <td>2.58 MB</td>
+        </tr>
+      
+        <tr>
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_005.png</td>
+          <td>2048×2048</td>
+          <td>2.43 MB</td>
+        </tr>
+      
+          </tbody>
+        </table>
+        <p class="note">Assets larger than ~0.8 MB are flagged in the complete inventory below.</p>
+      </section>
+      <section>
+        <h2>Complete Inventory</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Format</th>
+              <th>Path</th>
+              <th>Dimensions</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr data-oversized="true">
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/ripples.mp4</td>
+          <td>—</td>
+          <td>9.16 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>video</td>
+          <td>webm</td>
+          <td class="path">assets/video/optimized/ripples-webm.webm</td>
+          <td>—</td>
+          <td>5.98 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/optimized/ripples-hq.mp4</td>
+          <td>—</td>
+          <td>4.96 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/optimized/ripples-mq.mp4</td>
+          <td>—</td>
+          <td>3.66 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_003.png</td>
+          <td>2048×2048</td>
+          <td>2.82 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_006.png</td>
+          <td>2048×2048</td>
+          <td>2.80 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_001.png</td>
+          <td>2048×2048</td>
+          <td>2.69 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_004.png</td>
+          <td>2048×2048</td>
+          <td>2.67 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_002.png</td>
+          <td>2048×2048</td>
+          <td>2.58 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>image</td>
+          <td>png</td>
+          <td class="path">assets/images/portfolio/example_placeholder_005.png</td>
+          <td>2048×2048</td>
+          <td>2.43 MB</td>
+        </tr>
+      
+        <tr data-oversized="true">
+          <td>video</td>
+          <td>mp4</td>
+          <td class="path">assets/video/optimized/ripples-lq.mp4</td>
+          <td>—</td>
+          <td>1.98 MB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Rajdhani/Rajdhani-Bold.ttf</td>
+          <td>—</td>
+          <td>364.45 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/green-hexagon-grid.webp</td>
+          <td>2560×1536</td>
+          <td>356.59 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf</td>
+          <td>—</td>
+          <td>354.98 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Rajdhani/Rajdhani-Medium.ttf</td>
+          <td>—</td>
+          <td>349.50 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Rajdhani/Rajdhani-Light.ttf</td>
+          <td>—</td>
+          <td>349.14 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Rajdhani/Rajdhani-Regular.ttf</td>
+          <td>—</td>
+          <td>343.84 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-1920w.avif</td>
+          <td>1920×1152</td>
+          <td>261.37 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-1920w.webp</td>
+          <td>1920×1152</td>
+          <td>228.24 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/banners/banner_home.webp</td>
+          <td>1620×1080</td>
+          <td>219.79 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/banners/banner_home-1280w.avif</td>
+          <td>1280×853</td>
+          <td>205.75 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-1280w.avif</td>
+          <td>1280×768</td>
+          <td>186.00 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-1280w.avif</td>
+          <td>1280×853</td>
+          <td>170.21 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/cta-get-in-touch.webp</td>
+          <td>1620×1080</td>
+          <td>168.04 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/tron-grid.webp</td>
+          <td>2560×1440</td>
+          <td>165.47 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/banners/banner_home-1024w.avif</td>
+          <td>1024×683</td>
+          <td>164.51 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/banners/banner_home-1280w.webp</td>
+          <td>1280×853</td>
+          <td>163.43 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-1280w.webp</td>
+          <td>1280×768</td>
+          <td>149.21 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/mission-parallax-bg.webp</td>
+          <td>1620×1080</td>
+          <td>140.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-1024w.avif</td>
+          <td>1024×683</td>
+          <td>139.60 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-1280w.avif</td>
+          <td>1280×853</td>
+          <td>138.60 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/enhance-bg.webp</td>
+          <td>1920×1080</td>
+          <td>131.60 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-1920w.avif</td>
+          <td>1920×1080</td>
+          <td>122.67 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-1920w.webp</td>
+          <td>1920×1080</td>
+          <td>122.54 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/banners/banner_home-1024w.webp</td>
+          <td>1024×683</td>
+          <td>122.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-1280w.webp</td>
+          <td>1280×853</td>
+          <td>121.87 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-1920w.avif</td>
+          <td>1920×1080</td>
+          <td>117.00 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-1024w.avif</td>
+          <td>1024×683</td>
+          <td>115.33 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-1280w.webp</td>
+          <td>1280×853</td>
+          <td>111.95 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-1024w.avif</td>
+          <td>1024×614</td>
+          <td>110.15 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-1024w.webp</td>
+          <td>1024×614</td>
+          <td>110.14 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/banners/banner_home-768w.avif</td>
+          <td>768×512</td>
+          <td>109.11 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-1920w.webp</td>
+          <td>1920×1080</td>
+          <td>104.54 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-1280w.avif</td>
+          <td>1280×720</td>
+          <td>101.03 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold.woff2</td>
+          <td>—</td>
+          <td>99.07 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Bold.woff2</td>
+          <td>—</td>
+          <td>96.84 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Medium.woff2</td>
+          <td>—</td>
+          <td>96.00 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Regular.woff2</td>
+          <td>—</td>
+          <td>94.24 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-768w.avif</td>
+          <td>768×512</td>
+          <td>91.96 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Light.woff2</td>
+          <td>—</td>
+          <td>91.91 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-1280w.avif</td>
+          <td>1280×853</td>
+          <td>91.60 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-1024w.webp</td>
+          <td>1024×683</td>
+          <td>91.38 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-1280w.avif</td>
+          <td>1280×720</td>
+          <td>88.94 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/process-parallax-bg.webp</td>
+          <td>1620×1080</td>
+          <td>87.77 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-1024w.webp</td>
+          <td>1024×683</td>
+          <td>85.95 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-1920w.webp</td>
+          <td>1920×1920</td>
+          <td>85.86 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-1920w.avif</td>
+          <td>1920×1920</td>
+          <td>82.20 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-1024w.avif</td>
+          <td>1024×683</td>
+          <td>81.58 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>jpeg</td>
+          <td class="path">assets/video/optimized/ripples-poster.jpg</td>
+          <td>1920×1080</td>
+          <td>79.75 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-1920w.webp</td>
+          <td>1920×1920</td>
+          <td>79.50 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/banners/banner_home-768w.webp</td>
+          <td>768×512</td>
+          <td>79.14 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-768w.avif</td>
+          <td>768×512</td>
+          <td>77.90 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-1280w.webp</td>
+          <td>1280×720</td>
+          <td>75.03 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-768w.webp</td>
+          <td>768×461</td>
+          <td>74.96 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-768w.avif</td>
+          <td>768×461</td>
+          <td>73.54 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-1280w.webp</td>
+          <td>1280×853</td>
+          <td>72.43 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-1920w.avif</td>
+          <td>1920×1920</td>
+          <td>71.11 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-1280w.webp</td>
+          <td>1280×720</td>
+          <td>67.37 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-1920w.avif</td>
+          <td>1920×1920</td>
+          <td>65.47 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-1024w.avif</td>
+          <td>1024×576</td>
+          <td>65.21 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-1920w.webp</td>
+          <td>1920×1920</td>
+          <td>62.60 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-1920w.webp</td>
+          <td>1920×1920</td>
+          <td>61.56 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/backgrounds/testimonials-parallax-bg.webp</td>
+          <td>1620×1080</td>
+          <td>59.39 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-768w.avif</td>
+          <td>768×512</td>
+          <td>59.26 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-1280w.avif</td>
+          <td>1280×853</td>
+          <td>58.96 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-1024w.webp</td>
+          <td>1024×683</td>
+          <td>58.96 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-1024w.avif</td>
+          <td>1024×576</td>
+          <td>58.61 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-768w.webp</td>
+          <td>768×512</td>
+          <td>58.55 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-1920w.avif</td>
+          <td>1920×1920</td>
+          <td>57.58 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-768w.webp</td>
+          <td>768×512</td>
+          <td>57.12 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-1024w.webp</td>
+          <td>1024×576</td>
+          <td>56.39 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-1920w.avif</td>
+          <td>1920×1920</td>
+          <td>54.23 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-1920w.webp</td>
+          <td>1920×1920</td>
+          <td>52.93 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-1920w.webp</td>
+          <td>1920×1920</td>
+          <td>52.56 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-1280w.avif</td>
+          <td>1280×1280</td>
+          <td>52.05 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/banners/banner_home-480w.avif</td>
+          <td>480×320</td>
+          <td>50.58 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-1280w.webp</td>
+          <td>1280×1280</td>
+          <td>50.45 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-1024w.avif</td>
+          <td>1024×683</td>
+          <td>49.77 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-1280w.webp</td>
+          <td>1280×1280</td>
+          <td>48.79 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-1024w.webp</td>
+          <td>1024×576</td>
+          <td>47.60 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-1280w.webp</td>
+          <td>1280×853</td>
+          <td>47.43 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-1280w.avif</td>
+          <td>1280×1280</td>
+          <td>47.19 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-768w.avif</td>
+          <td>768×432</td>
+          <td>46.42 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-1920w.avif</td>
+          <td>1920×1920</td>
+          <td>42.99 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-768w.webp</td>
+          <td>768×512</td>
+          <td>42.07 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-480w.avif</td>
+          <td>480×320</td>
+          <td>39.67 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-1024w.avif</td>
+          <td>1024×1024</td>
+          <td>39.58 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-768w.webp</td>
+          <td>768×432</td>
+          <td>39.27 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-768w.avif</td>
+          <td>768×432</td>
+          <td>38.35 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-480w.webp</td>
+          <td>480×288</td>
+          <td>38.24 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-480w.avif</td>
+          <td>480×288</td>
+          <td>37.77 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-1024w.webp</td>
+          <td>1024×683</td>
+          <td>37.77 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/banners/banner_home-480w.webp</td>
+          <td>480×320</td>
+          <td>37.75 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf</td>
+          <td>—</td>
+          <td>37.64 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-1024w.webp</td>
+          <td>1024×1024</td>
+          <td>37.61 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-1280w.webp</td>
+          <td>1280×1280</td>
+          <td>36.97 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-1024w.webp</td>
+          <td>1024×1024</td>
+          <td>36.86 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-1024w.avif</td>
+          <td>1024×1024</td>
+          <td>36.29 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-480w.avif</td>
+          <td>480×320</td>
+          <td>35.70 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-1280w.avif</td>
+          <td>1280×1280</td>
+          <td>35.24 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-1280w.webp</td>
+          <td>1280×1280</td>
+          <td>33.84 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-1280w.avif</td>
+          <td>1280×1280</td>
+          <td>33.65 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-768w.avif</td>
+          <td>768×512</td>
+          <td>32.87 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-1280w.webp</td>
+          <td>1280×1280</td>
+          <td>31.81 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-480w.avif</td>
+          <td>480×320</td>
+          <td>31.49 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-768w.webp</td>
+          <td>768×432</td>
+          <td>31.38 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-1280w.avif</td>
+          <td>1280×1280</td>
+          <td>29.51 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-1280w.webp</td>
+          <td>1280×1280</td>
+          <td>29.13 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-768w.avif</td>
+          <td>768×768</td>
+          <td>28.24 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-480w.avif</td>
+          <td>480×270</td>
+          <td>27.95 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-1280w.avif</td>
+          <td>1280×1280</td>
+          <td>27.24 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-1024w.webp</td>
+          <td>1024×1024</td>
+          <td>26.85 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-480w.webp</td>
+          <td>480×320</td>
+          <td>26.80 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-768w.webp</td>
+          <td>768×512</td>
+          <td>26.75 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-768w.webp</td>
+          <td>768×768</td>
+          <td>26.01 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-768w.avif</td>
+          <td>768×768</td>
+          <td>25.33 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-768w.webp</td>
+          <td>768×768</td>
+          <td>25.26 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-480w.webp</td>
+          <td>480×320</td>
+          <td>25.21 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-1024w.avif</td>
+          <td>1024×1024</td>
+          <td>25.15 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-1024w.avif</td>
+          <td>1024×1024</td>
+          <td>25.03 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-1024w.webp</td>
+          <td>1024×1024</td>
+          <td>25.01 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/static/Orbitron-Medium.ttf</td>
+          <td>—</td>
+          <td>24.17 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf</td>
+          <td>—</td>
+          <td>24.15 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/static/Orbitron-Regular.ttf</td>
+          <td>—</td>
+          <td>24.14 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf</td>
+          <td>—</td>
+          <td>24.12 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/static/Orbitron-Bold.ttf</td>
+          <td>—</td>
+          <td>24.09 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-1024w.webp</td>
+          <td>1024×1024</td>
+          <td>23.22 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-480w.webp</td>
+          <td>480×320</td>
+          <td>23.15 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>ttf</td>
+          <td class="path">assets/fonts/Orbitron/static/Orbitron-Black.ttf</td>
+          <td>—</td>
+          <td>22.84 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-480w.webp</td>
+          <td>480×270</td>
+          <td>22.57 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-1024w.avif</td>
+          <td>1024×1024</td>
+          <td>21.28 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-1024w.webp</td>
+          <td>1024×1024</td>
+          <td>20.96 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-480w.avif</td>
+          <td>480×270</td>
+          <td>20.88 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-1024w.avif</td>
+          <td>1024×1024</td>
+          <td>20.62 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-768w.webp</td>
+          <td>768×768</td>
+          <td>18.13 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-768w.avif</td>
+          <td>768×768</td>
+          <td>17.74 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-768w.avif</td>
+          <td>768×768</td>
+          <td>16.77 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-768w.webp</td>
+          <td>768×768</td>
+          <td>16.38 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-480w.webp</td>
+          <td>480×270</td>
+          <td>16.20 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-480w.avif</td>
+          <td>480×320</td>
+          <td>16.14 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-768w.webp</td>
+          <td>768×768</td>
+          <td>15.77 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-VariableFont_wght.woff2</td>
+          <td>—</td>
+          <td>15.61 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-480w.avif</td>
+          <td>480×480</td>
+          <td>15.35 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-768w.avif</td>
+          <td>768×768</td>
+          <td>14.55 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-480w.webp</td>
+          <td>480×480</td>
+          <td>14.18 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-768w.avif</td>
+          <td>768×768</td>
+          <td>14.17 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-480w.avif</td>
+          <td>480×480</td>
+          <td>13.87 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-768w.webp</td>
+          <td>768×768</td>
+          <td>13.79 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-480w.webp</td>
+          <td>480×320</td>
+          <td>13.22 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-480w.webp</td>
+          <td>480×480</td>
+          <td>13.15 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-480w.avif</td>
+          <td>480×480</td>
+          <td>9.69 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-ExtraBold.woff2</td>
+          <td>—</td>
+          <td>9.23 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-480w.avif</td>
+          <td>480×480</td>
+          <td>9.14 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Medium.woff2</td>
+          <td>—</td>
+          <td>9.07 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-SemiBold.woff2</td>
+          <td>—</td>
+          <td>9.02 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Bold.woff2</td>
+          <td>—</td>
+          <td>8.99 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-480w.webp</td>
+          <td>480×480</td>
+          <td>8.94 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Regular.woff2</td>
+          <td>—</td>
+          <td>8.82 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Black.woff2</td>
+          <td>—</td>
+          <td>8.76 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2</td>
+          <td>—</td>
+          <td>8.68 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2</td>
+          <td>—</td>
+          <td>8.57 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-480w.webp</td>
+          <td>480×480</td>
+          <td>8.53 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Medium-subset.woff2</td>
+          <td>—</td>
+          <td>8.30 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2</td>
+          <td>—</td>
+          <td>8.23 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-480w.webp</td>
+          <td>480×480</td>
+          <td>8.07 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2</td>
+          <td>—</td>
+          <td>8.03 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-480w.avif</td>
+          <td>480×480</td>
+          <td>7.65 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>heif</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-480w.avif</td>
+          <td>480×480</td>
+          <td>7.43 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-VariableFont_wght-subset.woff2</td>
+          <td>—</td>
+          <td>6.90 KB</td>
+        </tr>
+      
+        <tr >
+          <td>image</td>
+          <td>webp</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-480w.webp</td>
+          <td>480×480</td>
+          <td>6.87 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>txt</td>
+          <td class="path">assets/fonts/Orbitron/OFL.txt</td>
+          <td>—</td>
+          <td>4.41 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>txt</td>
+          <td class="path">assets/fonts/Rajdhani/OFL.txt</td>
+          <td>—</td>
+          <td>4.36 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-ExtraBold-subset.woff2</td>
+          <td>—</td>
+          <td>3.76 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Medium-subset.woff2</td>
+          <td>—</td>
+          <td>3.66 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-SemiBold-subset.woff2</td>
+          <td>—</td>
+          <td>3.65 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2</td>
+          <td>—</td>
+          <td>3.61 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2</td>
+          <td>—</td>
+          <td>3.55 KB</td>
+        </tr>
+      
+        <tr >
+          <td>font</td>
+          <td>woff2</td>
+          <td class="path">assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2</td>
+          <td>—</td>
+          <td>3.53 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>txt</td>
+          <td class="path">assets/fonts/Orbitron/README.txt</td>
+          <td>—</td>
+          <td>2.21 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_001-example.html</td>
+          <td>—</td>
+          <td>1.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_002-example.html</td>
+          <td>—</td>
+          <td>1.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_003-example.html</td>
+          <td>—</td>
+          <td>1.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_004-example.html</td>
+          <td>—</td>
+          <td>1.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_005-example.html</td>
+          <td>—</td>
+          <td>1.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/portfolio/example_placeholder_006-example.html</td>
+          <td>—</td>
+          <td>1.10 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/green-hexagon-grid-example.html</td>
+          <td>—</td>
+          <td>1.04 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/testimonials-parallax-bg-example.html</td>
+          <td>—</td>
+          <td>1.02 KB</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/mission-parallax-bg-example.html</td>
+          <td>—</td>
+          <td>996 B</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/process-parallax-bg-example.html</td>
+          <td>—</td>
+          <td>996 B</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/enhance-bg-example.html</td>
+          <td>—</td>
+          <td>972 B</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/cta-get-in-touch-example.html</td>
+          <td>—</td>
+          <td>966 B</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/backgrounds/tron-grid-example.html</td>
+          <td>—</td>
+          <td>960 B</td>
+        </tr>
+      
+        <tr >
+          <td>other</td>
+          <td>html</td>
+          <td class="path">assets/images/responsive/banners/banner_home-example.html</td>
+          <td>—</td>
+          <td>916 B</td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
+  

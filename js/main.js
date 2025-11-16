@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     initProjectsPage();
   }
 
+  if (window.location.pathname.includes('reports.html')) {
+    const { initReportsPage } = await import('./pages/reports.js');
+    initReportsPage();
+  }
+
   // Initialize easter egg module (sets up triggers - heavy 3D loads on activation)
   // This needs to run early so it can add the footer trigger text
   if (!easterEggModule) {

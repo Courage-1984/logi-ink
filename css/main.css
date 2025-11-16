@@ -40,6 +40,7 @@
 @import url('./pages/contact.css');
 @import url('./pages/projects.css');
 @import url('./pages/about.css');
+@import url('./pages/reports.css');
 
 /* 5. Animations & Effects */
 @import url('./utils/animations.css');

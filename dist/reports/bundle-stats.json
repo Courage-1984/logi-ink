@@ -1,0 +1,2906 @@
+{
+  "version": 2,
+  "tree": {
+    "name": "root",
+    "children": [
+      {
+        "name": "sw.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/sw.js",
+            "uid": "4d92fb75-1"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/vendor-Bo3C5GNx.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/node_modules/web-vitals/dist/web-vitals.js",
+            "uid": "4d92fb75-3"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/main-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/index.html",
+            "uid": "4d92fb75-5"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/about-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/about.html",
+            "uid": "4d92fb75-7"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/services-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/services.html",
+            "uid": "4d92fb75-9"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/projects-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/projects.html",
+            "uid": "4d92fb75-11"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/contact-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/contact.html",
+            "uid": "4d92fb75-13"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/pricing-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/pricing.html",
+            "uid": "4d92fb75-15"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/seoServices-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/seo-services.html",
+            "uid": "4d92fb75-17"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/reports-Crxtx5ZR.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/reports.html",
+            "uid": "4d92fb75-19"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/main-CUnpAIob.js",
+        "children": [
+          {
+            "name": "\u0000vite",
+            "children": [
+              {
+                "uid": "4d92fb75-21",
+                "name": "modulepreload-polyfill.js"
+              },
+              {
+                "uid": "4d92fb75-25",
+                "name": "preload-helper.js"
+              }
+            ]
+          },
+          {
+            "name": "C:/Users/anon/github/logia-ink",
+            "children": [
+              {
+                "name": "css/main.css",
+                "uid": "4d92fb75-23"
+              },
+              {
+                "name": "js",
+                "children": [
+                  {
+                    "name": "core",
+                    "children": [
+                      {
+                        "uid": "4d92fb75-27",
+                        "name": "scroll-manager.js"
+                      },
+                      {
+                        "uid": "4d92fb75-29",
+                        "name": "navigation.js"
+                      },
+                      {
+                        "uid": "4d92fb75-31",
+                        "name": "scroll.js"
+                      },
+                      {
+                        "uid": "4d92fb75-33",
+                        "name": "animations.js"
+                      },
+                      {
+                        "uid": "4d92fb75-35",
+                        "name": "cursor.js"
+                      },
+                      {
+                        "uid": "4d92fb75-37",
+                        "name": "mouse-tilt.js"
+                      },
+                      {
+                        "uid": "4d92fb75-43",
+                        "name": "page-transitions.js"
+                      },
+                      {
+                        "uid": "4d92fb75-47",
+                        "name": "service-worker.js"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "utils",
+                    "children": [
+                      {
+                        "uid": "4d92fb75-39",
+                        "name": "interactions.js"
+                      },
+                      {
+                        "uid": "4d92fb75-41",
+                        "name": "ripples-lazyload.js"
+                      },
+                      {
+                        "uid": "4d92fb75-45",
+                        "name": "env.js"
+                      },
+                      {
+                        "uid": "4d92fb75-49",
+                        "name": "accessibility.js"
+                      },
+                      {
+                        "uid": "4d92fb75-51",
+                        "name": "error-handler.js"
+                      }
+                    ]
+                  },
+                  {
+                    "uid": "4d92fb75-53",
+                    "name": "main.js"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assets/js/performance-Bku8osXr.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/utils/performance.js",
+            "uid": "4d92fb75-55"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/contact-DjcXZ0wr.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js",
+            "children": [
+              {
+                "name": "utils/toast.js",
+                "uid": "4d92fb75-57"
+              },
+              {
+                "name": "pages/contact.js",
+                "uid": "4d92fb75-59"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assets/js/services-C9I0FTKa.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/pages/services.js",
+            "uid": "4d92fb75-61"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/projects-DlcKo7Kr.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink",
+            "children": [
+              {
+                "name": "assets/images",
+                "children": [
+                  {
+                    "name": "responsive/portfolio",
+                    "children": [
+                      {
+                        "uid": "4d92fb75-63",
+                        "name": "example_placeholder_001-1024w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-65",
+                        "name": "example_placeholder_001-1280w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-67",
+                        "name": "example_placeholder_001-1920w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-69",
+                        "name": "example_placeholder_001-480w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-71",
+                        "name": "example_placeholder_001-768w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-73",
+                        "name": "example_placeholder_002-1024w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-75",
+                        "name": "example_placeholder_002-1280w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-77",
+                        "name": "example_placeholder_002-1920w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-79",
+                        "name": "example_placeholder_002-480w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-81",
+                        "name": "example_placeholder_002-768w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-83",
+                        "name": "example_placeholder_003-1024w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-85",
+                        "name": "example_placeholder_003-1280w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-87",
+                        "name": "example_placeholder_003-1920w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-89",
+                        "name": "example_placeholder_003-480w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-91",
+                        "name": "example_placeholder_003-768w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-93",
+                        "name": "example_placeholder_004-1024w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-95",
+                        "name": "example_placeholder_004-1280w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-97",
+                        "name": "example_placeholder_004-1920w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-99",
+                        "name": "example_placeholder_004-480w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-101",
+                        "name": "example_placeholder_004-768w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-103",
+                        "name": "example_placeholder_005-1024w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-105",
+                        "name": "example_placeholder_005-1280w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-107",
+                        "name": "example_placeholder_005-1920w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-109",
+                        "name": "example_placeholder_005-480w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-111",
+                        "name": "example_placeholder_005-768w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-113",
+                        "name": "example_placeholder_006-1024w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-115",
+                        "name": "example_placeholder_006-1280w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-117",
+                        "name": "example_placeholder_006-1920w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-119",
+                        "name": "example_placeholder_006-480w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-121",
+                        "name": "example_placeholder_006-768w.avif"
+                      },
+                      {
+                        "uid": "4d92fb75-123",
+                        "name": "example_placeholder_001-1024w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-125",
+                        "name": "example_placeholder_001-1280w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-127",
+                        "name": "example_placeholder_001-1920w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-129",
+                        "name": "example_placeholder_001-480w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-131",
+                        "name": "example_placeholder_001-768w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-133",
+                        "name": "example_placeholder_002-1024w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-135",
+                        "name": "example_placeholder_002-1280w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-137",
+                        "name": "example_placeholder_002-1920w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-139",
+                        "name": "example_placeholder_002-480w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-141",
+                        "name": "example_placeholder_002-768w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-143",
+                        "name": "example_placeholder_003-1024w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-145",
+                        "name": "example_placeholder_003-1280w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-147",
+                        "name": "example_placeholder_003-1920w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-149",
+                        "name": "example_placeholder_003-480w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-151",
+                        "name": "example_placeholder_003-768w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-153",
+                        "name": "example_placeholder_004-1024w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-155",
+                        "name": "example_placeholder_004-1280w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-157",
+                        "name": "example_placeholder_004-1920w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-159",
+                        "name": "example_placeholder_004-480w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-161",
+                        "name": "example_placeholder_004-768w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-163",
+                        "name": "example_placeholder_005-1024w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-165",
+                        "name": "example_placeholder_005-1280w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-167",
+                        "name": "example_placeholder_005-1920w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-169",
+                        "name": "example_placeholder_005-480w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-171",
+                        "name": "example_placeholder_005-768w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-173",
+                        "name": "example_placeholder_006-1024w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-175",
+                        "name": "example_placeholder_006-1280w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-177",
+                        "name": "example_placeholder_006-1920w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-179",
+                        "name": "example_placeholder_006-480w.webp"
+                      },
+                      {
+                        "uid": "4d92fb75-181",
+                        "name": "example_placeholder_006-768w.webp"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "portfolio",
+                    "children": [
+                      {
+                        "uid": "4d92fb75-183",
+                        "name": "example_placeholder_001.png"
+                      },
+                      {
+                        "uid": "4d92fb75-185",
+                        "name": "example_placeholder_002.png"
+                      },
+                      {
+                        "uid": "4d92fb75-187",
+                        "name": "example_placeholder_003.png"
+                      },
+                      {
+                        "uid": "4d92fb75-189",
+                        "name": "example_placeholder_004.png"
+                      },
+                      {
+                        "uid": "4d92fb75-191",
+                        "name": "example_placeholder_005.png"
+                      },
+                      {
+                        "uid": "4d92fb75-193",
+                        "name": "example_placeholder_006.png"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "js/pages/projects.js",
+                "uid": "4d92fb75-195"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assets/js/reports-BxUPvQnu.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/pages/reports.js",
+            "uid": "4d92fb75-197"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/easter-egg-sLwxSKiw.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/core/easter-egg.js",
+            "uid": "4d92fb75-199"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/three-hero-D5MAOqd8.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/core/three-hero.js",
+            "uid": "4d92fb75-201"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/runtime-Cl0zwBmi.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/modules/easter-egg/runtime.js",
+            "uid": "4d92fb75-203"
+          }
+        ]
+      },
+      {
+        "name": "assets/js/three-loader-DssTuxOG.js",
+        "children": [
+          {
+            "name": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
+            "uid": "4d92fb75-205"
+          }
+        ]
+      }
+    ],
+    "isRoot": true
+  },
+  "nodeParts": {
+    "4d92fb75-1": {
+      "renderedLength": 9304,
+      "gzipLength": 2761,
+      "brotliLength": 2313,
+      "metaUid": "4d92fb75-0"
+    },
+    "4d92fb75-3": {
+      "renderedLength": 5445,
+      "gzipLength": 2222,
+      "brotliLength": 2028,
+      "metaUid": "4d92fb75-2"
+    },
+    "4d92fb75-5": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-4"
+    },
+    "4d92fb75-7": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-6"
+    },
+    "4d92fb75-9": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-8"
+    },
+    "4d92fb75-11": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-10"
+    },
+    "4d92fb75-13": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-12"
+    },
+    "4d92fb75-15": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-14"
+    },
+    "4d92fb75-17": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-16"
+    },
+    "4d92fb75-19": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-18"
+    },
+    "4d92fb75-21": {
+      "renderedLength": 1280,
+      "gzipLength": 537,
+      "brotliLength": 454,
+      "metaUid": "4d92fb75-20"
+    },
+    "4d92fb75-23": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "metaUid": "4d92fb75-22"
+    },
+    "4d92fb75-25": {
+      "renderedLength": 2294,
+      "gzipLength": 935,
+      "brotliLength": 785,
+      "metaUid": "4d92fb75-24"
+    },
+    "4d92fb75-27": {
+      "renderedLength": 1045,
+      "gzipLength": 465,
+      "brotliLength": 367,
+      "metaUid": "4d92fb75-26"
+    },
+    "4d92fb75-29": {
+      "renderedLength": 6600,
+      "gzipLength": 1932,
+      "brotliLength": 1606,
+      "metaUid": "4d92fb75-28"
+    },
+    "4d92fb75-31": {
+      "renderedLength": 3118,
+      "gzipLength": 1136,
+      "brotliLength": 918,
+      "metaUid": "4d92fb75-30"
+    },
+    "4d92fb75-33": {
+      "renderedLength": 4900,
+      "gzipLength": 1536,
+      "brotliLength": 1302,
+      "metaUid": "4d92fb75-32"
+    },
+    "4d92fb75-35": {
+      "renderedLength": 720,
+      "gzipLength": 342,
+      "brotliLength": 281,
+      "metaUid": "4d92fb75-34"
+    },
+    "4d92fb75-37": {
+      "renderedLength": 2438,
+      "gzipLength": 879,
+      "brotliLength": 706,
+      "metaUid": "4d92fb75-36"
+    },
+    "4d92fb75-39": {
+      "renderedLength": 3350,
+      "gzipLength": 981,
+      "brotliLength": 810,
+      "metaUid": "4d92fb75-38"
+    },
+    "4d92fb75-41": {
+      "renderedLength": 2610,
+      "gzipLength": 957,
+      "brotliLength": 789,
+      "metaUid": "4d92fb75-40"
+    },
+    "4d92fb75-43": {
+      "renderedLength": 2724,
+      "gzipLength": 981,
+      "brotliLength": 774,
+      "metaUid": "4d92fb75-42"
+    },
+    "4d92fb75-45": {
+      "renderedLength": 980,
+      "gzipLength": 371,
+      "brotliLength": 310,
+      "metaUid": "4d92fb75-44"
+    },
+    "4d92fb75-47": {
+      "renderedLength": 4652,
+      "gzipLength": 1450,
+      "brotliLength": 1165,
+      "metaUid": "4d92fb75-46"
+    },
+    "4d92fb75-49": {
+      "renderedLength": 2469,
+      "gzipLength": 958,
+      "brotliLength": 747,
+      "metaUid": "4d92fb75-48"
+    },
+    "4d92fb75-51": {
+      "renderedLength": 1435,
+      "gzipLength": 572,
+      "brotliLength": 445,
+      "metaUid": "4d92fb75-50"
+    },
+    "4d92fb75-53": {
+      "renderedLength": 3104,
+      "gzipLength": 919,
+      "brotliLength": 738,
+      "metaUid": "4d92fb75-52"
+    },
+    "4d92fb75-55": {
+      "renderedLength": 3186,
+      "gzipLength": 1138,
+      "brotliLength": 966,
+      "metaUid": "4d92fb75-54"
+    },
+    "4d92fb75-57": {
+      "renderedLength": 2454,
+      "gzipLength": 1066,
+      "brotliLength": 841,
+      "metaUid": "4d92fb75-56"
+    },
+    "4d92fb75-59": {
+      "renderedLength": 17313,
+      "gzipLength": 4500,
+      "brotliLength": 3776,
+      "metaUid": "4d92fb75-58"
+    },
+    "4d92fb75-61": {
+      "renderedLength": 2250,
+      "gzipLength": 740,
+      "brotliLength": 605,
+      "metaUid": "4d92fb75-60"
+    },
+    "4d92fb75-63": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-62"
+    },
+    "4d92fb75-65": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-64"
+    },
+    "4d92fb75-67": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-66"
+    },
+    "4d92fb75-69": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-68"
+    },
+    "4d92fb75-71": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-70"
+    },
+    "4d92fb75-73": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-72"
+    },
+    "4d92fb75-75": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-74"
+    },
+    "4d92fb75-77": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-76"
+    },
+    "4d92fb75-79": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-78"
+    },
+    "4d92fb75-81": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-80"
+    },
+    "4d92fb75-83": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-82"
+    },
+    "4d92fb75-85": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-84"
+    },
+    "4d92fb75-87": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-86"
+    },
+    "4d92fb75-89": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-88"
+    },
+    "4d92fb75-91": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-90"
+    },
+    "4d92fb75-93": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-92"
+    },
+    "4d92fb75-95": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-94"
+    },
+    "4d92fb75-97": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-96"
+    },
+    "4d92fb75-99": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-98"
+    },
+    "4d92fb75-101": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-100"
+    },
+    "4d92fb75-103": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-102"
+    },
+    "4d92fb75-105": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-104"
+    },
+    "4d92fb75-107": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-106"
+    },
+    "4d92fb75-109": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-108"
+    },
+    "4d92fb75-111": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-110"
+    },
+    "4d92fb75-113": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-112"
+    },
+    "4d92fb75-115": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-114"
+    },
+    "4d92fb75-117": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-116"
+    },
+    "4d92fb75-119": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-118"
+    },
+    "4d92fb75-121": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-120"
+    },
+    "4d92fb75-123": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-122"
+    },
+    "4d92fb75-125": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-124"
+    },
+    "4d92fb75-127": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-126"
+    },
+    "4d92fb75-129": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-128"
+    },
+    "4d92fb75-131": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-130"
+    },
+    "4d92fb75-133": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-132"
+    },
+    "4d92fb75-135": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-134"
+    },
+    "4d92fb75-137": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-136"
+    },
+    "4d92fb75-139": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-138"
+    },
+    "4d92fb75-141": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-140"
+    },
+    "4d92fb75-143": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-142"
+    },
+    "4d92fb75-145": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-144"
+    },
+    "4d92fb75-147": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-146"
+    },
+    "4d92fb75-149": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-148"
+    },
+    "4d92fb75-151": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-150"
+    },
+    "4d92fb75-153": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-152"
+    },
+    "4d92fb75-155": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-154"
+    },
+    "4d92fb75-157": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-156"
+    },
+    "4d92fb75-159": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-158"
+    },
+    "4d92fb75-161": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-160"
+    },
+    "4d92fb75-163": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-162"
+    },
+    "4d92fb75-165": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-164"
+    },
+    "4d92fb75-167": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-166"
+    },
+    "4d92fb75-169": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-168"
+    },
+    "4d92fb75-171": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-170"
+    },
+    "4d92fb75-173": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-172"
+    },
+    "4d92fb75-175": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-174"
+    },
+    "4d92fb75-177": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-176"
+    },
+    "4d92fb75-179": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-178"
+    },
+    "4d92fb75-181": {
+      "renderedLength": 52,
+      "gzipLength": 72,
+      "brotliLength": 56,
+      "metaUid": "4d92fb75-180"
+    },
+    "4d92fb75-183": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-182"
+    },
+    "4d92fb75-185": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-184"
+    },
+    "4d92fb75-187": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-186"
+    },
+    "4d92fb75-189": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-188"
+    },
+    "4d92fb75-191": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-190"
+    },
+    "4d92fb75-193": {
+      "renderedLength": 51,
+      "gzipLength": 71,
+      "brotliLength": 55,
+      "metaUid": "4d92fb75-192"
+    },
+    "4d92fb75-195": {
+      "renderedLength": 22708,
+      "gzipLength": 5598,
+      "brotliLength": 4553,
+      "metaUid": "4d92fb75-194"
+    },
+    "4d92fb75-197": {
+      "renderedLength": 6467,
+      "gzipLength": 1901,
+      "brotliLength": 1612,
+      "metaUid": "4d92fb75-196"
+    },
+    "4d92fb75-199": {
+      "renderedLength": 3078,
+      "gzipLength": 1029,
+      "brotliLength": 811,
+      "metaUid": "4d92fb75-198"
+    },
+    "4d92fb75-201": {
+      "renderedLength": 9078,
+      "gzipLength": 2185,
+      "brotliLength": 1847,
+      "metaUid": "4d92fb75-200"
+    },
+    "4d92fb75-203": {
+      "renderedLength": 78631,
+      "gzipLength": 14894,
+      "brotliLength": 12341,
+      "metaUid": "4d92fb75-202"
+    },
+    "4d92fb75-205": {
+      "renderedLength": 2117,
+      "gzipLength": 873,
+      "brotliLength": 703,
+      "metaUid": "4d92fb75-204"
+    }
+  },
+  "nodeMetas": {
+    "4d92fb75-0": {
+      "id": "C:/Users/anon/github/logia-ink/sw.js",
+      "moduleParts": {
+        "sw.js": "4d92fb75-1"
+      },
+      "imported": [],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-2": {
+      "id": "C:/Users/anon/github/logia-ink/node_modules/web-vitals/dist/web-vitals.js",
+      "moduleParts": {
+        "assets/js/vendor-Bo3C5GNx.js": "4d92fb75-3"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-54"
+        }
+      ]
+    },
+    "4d92fb75-4": {
+      "id": "C:/Users/anon/github/logia-ink/index.html",
+      "moduleParts": {
+        "assets/js/main-Crxtx5ZR.js": "4d92fb75-5"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-6": {
+      "id": "C:/Users/anon/github/logia-ink/about.html",
+      "moduleParts": {
+        "assets/js/about-Crxtx5ZR.js": "4d92fb75-7"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-8": {
+      "id": "C:/Users/anon/github/logia-ink/services.html",
+      "moduleParts": {
+        "assets/js/services-Crxtx5ZR.js": "4d92fb75-9"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-10": {
+      "id": "C:/Users/anon/github/logia-ink/projects.html",
+      "moduleParts": {
+        "assets/js/projects-Crxtx5ZR.js": "4d92fb75-11"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-12": {
+      "id": "C:/Users/anon/github/logia-ink/contact.html",
+      "moduleParts": {
+        "assets/js/contact-Crxtx5ZR.js": "4d92fb75-13"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-14": {
+      "id": "C:/Users/anon/github/logia-ink/pricing.html",
+      "moduleParts": {
+        "assets/js/pricing-Crxtx5ZR.js": "4d92fb75-15"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-16": {
+      "id": "C:/Users/anon/github/logia-ink/seo-services.html",
+      "moduleParts": {
+        "assets/js/seoServices-Crxtx5ZR.js": "4d92fb75-17"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-18": {
+      "id": "C:/Users/anon/github/logia-ink/reports.html",
+      "moduleParts": {
+        "assets/js/reports-Crxtx5ZR.js": "4d92fb75-19"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-20"
+        },
+        {
+          "uid": "4d92fb75-22"
+        },
+        {
+          "uid": "4d92fb75-52"
+        }
+      ],
+      "importedBy": [],
+      "isEntry": true
+    },
+    "4d92fb75-20": {
+      "id": "\u0000vite/modulepreload-polyfill.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-21"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-4"
+        },
+        {
+          "uid": "4d92fb75-6"
+        },
+        {
+          "uid": "4d92fb75-8"
+        },
+        {
+          "uid": "4d92fb75-10"
+        },
+        {
+          "uid": "4d92fb75-12"
+        },
+        {
+          "uid": "4d92fb75-14"
+        },
+        {
+          "uid": "4d92fb75-16"
+        },
+        {
+          "uid": "4d92fb75-18"
+        }
+      ]
+    },
+    "4d92fb75-22": {
+      "id": "C:/Users/anon/github/logia-ink/css/main.css",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-23"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-4"
+        },
+        {
+          "uid": "4d92fb75-6"
+        },
+        {
+          "uid": "4d92fb75-8"
+        },
+        {
+          "uid": "4d92fb75-10"
+        },
+        {
+          "uid": "4d92fb75-12"
+        },
+        {
+          "uid": "4d92fb75-14"
+        },
+        {
+          "uid": "4d92fb75-16"
+        },
+        {
+          "uid": "4d92fb75-18"
+        }
+      ]
+    },
+    "4d92fb75-24": {
+      "id": "\u0000vite/preload-helper.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-25"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        },
+        {
+          "uid": "4d92fb75-198"
+        },
+        {
+          "uid": "4d92fb75-202"
+        }
+      ]
+    },
+    "4d92fb75-26": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/scroll-manager.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-27"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        },
+        {
+          "uid": "4d92fb75-28"
+        },
+        {
+          "uid": "4d92fb75-30"
+        }
+      ]
+    },
+    "4d92fb75-28": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/navigation.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-29"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-26"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-30": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/scroll.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-31"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-26"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-32": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/animations.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-33"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-34": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/cursor.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-35"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-36": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/mouse-tilt.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-37"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-38": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/interactions.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-39"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-40": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/ripples-lazyload.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-41"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-42": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/page-transitions.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-43"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-44": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/env.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-45"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-46"
+        },
+        {
+          "uid": "4d92fb75-50"
+        },
+        {
+          "uid": "4d92fb75-54"
+        },
+        {
+          "uid": "4d92fb75-58"
+        },
+        {
+          "uid": "4d92fb75-198"
+        },
+        {
+          "uid": "4d92fb75-202"
+        }
+      ]
+    },
+    "4d92fb75-46": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/service-worker.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-47"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-44"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-48": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/accessibility.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-49"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-50": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/error-handler.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-51"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-44"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-52": {
+      "id": "C:/Users/anon/github/logia-ink/js/main.js",
+      "moduleParts": {
+        "assets/js/main-CUnpAIob.js": "4d92fb75-53"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-24"
+        },
+        {
+          "uid": "4d92fb75-26"
+        },
+        {
+          "uid": "4d92fb75-28"
+        },
+        {
+          "uid": "4d92fb75-30"
+        },
+        {
+          "uid": "4d92fb75-32"
+        },
+        {
+          "uid": "4d92fb75-34"
+        },
+        {
+          "uid": "4d92fb75-36"
+        },
+        {
+          "uid": "4d92fb75-38"
+        },
+        {
+          "uid": "4d92fb75-40"
+        },
+        {
+          "uid": "4d92fb75-42"
+        },
+        {
+          "uid": "4d92fb75-46"
+        },
+        {
+          "uid": "4d92fb75-48"
+        },
+        {
+          "uid": "4d92fb75-50"
+        },
+        {
+          "uid": "4d92fb75-54",
+          "dynamic": true
+        },
+        {
+          "uid": "4d92fb75-58",
+          "dynamic": true
+        },
+        {
+          "uid": "4d92fb75-60",
+          "dynamic": true
+        },
+        {
+          "uid": "4d92fb75-194",
+          "dynamic": true
+        },
+        {
+          "uid": "4d92fb75-196",
+          "dynamic": true
+        },
+        {
+          "uid": "4d92fb75-198",
+          "dynamic": true
+        },
+        {
+          "uid": "4d92fb75-200",
+          "dynamic": true
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-4"
+        },
+        {
+          "uid": "4d92fb75-6"
+        },
+        {
+          "uid": "4d92fb75-8"
+        },
+        {
+          "uid": "4d92fb75-10"
+        },
+        {
+          "uid": "4d92fb75-12"
+        },
+        {
+          "uid": "4d92fb75-14"
+        },
+        {
+          "uid": "4d92fb75-16"
+        },
+        {
+          "uid": "4d92fb75-18"
+        }
+      ]
+    },
+    "4d92fb75-54": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/performance.js",
+      "moduleParts": {
+        "assets/js/performance-Bku8osXr.js": "4d92fb75-55"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-2"
+        },
+        {
+          "uid": "4d92fb75-44"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-56": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/toast.js",
+      "moduleParts": {
+        "assets/js/contact-DjcXZ0wr.js": "4d92fb75-57"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-58"
+        }
+      ]
+    },
+    "4d92fb75-58": {
+      "id": "C:/Users/anon/github/logia-ink/js/pages/contact.js",
+      "moduleParts": {
+        "assets/js/contact-DjcXZ0wr.js": "4d92fb75-59"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-56"
+        },
+        {
+          "uid": "4d92fb75-44"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-60": {
+      "id": "C:/Users/anon/github/logia-ink/js/pages/services.js",
+      "moduleParts": {
+        "assets/js/services-C9I0FTKa.js": "4d92fb75-61"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-62": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1024w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-63"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-64": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1280w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-65"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-66": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1920w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-67"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-68": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-480w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-69"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-70": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-768w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-71"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-72": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1024w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-73"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-74": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1280w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-75"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-76": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1920w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-77"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-78": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-480w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-79"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-80": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-768w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-81"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-82": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1024w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-83"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-84": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1280w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-85"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-86": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1920w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-87"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-88": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-480w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-89"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-90": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-768w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-91"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-92": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1024w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-93"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-94": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1280w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-95"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-96": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1920w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-97"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-98": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-480w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-99"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-100": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-768w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-101"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-102": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1024w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-103"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-104": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1280w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-105"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-106": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1920w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-107"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-108": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-480w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-109"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-110": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-768w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-111"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-112": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1024w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-113"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-114": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1280w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-115"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-116": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1920w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-117"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-118": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-480w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-119"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-120": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-768w.avif",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-121"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-122": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1024w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-123"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-124": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1280w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-125"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-126": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-1920w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-127"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-128": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-480w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-129"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-130": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_001-768w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-131"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-132": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1024w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-133"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-134": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1280w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-135"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-136": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-1920w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-137"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-138": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-480w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-139"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-140": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_002-768w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-141"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-142": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1024w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-143"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-144": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1280w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-145"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-146": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-1920w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-147"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-148": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-480w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-149"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-150": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_003-768w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-151"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-152": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1024w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-153"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-154": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1280w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-155"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-156": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-1920w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-157"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-158": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-480w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-159"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-160": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_004-768w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-161"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-162": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1024w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-163"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-164": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1280w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-165"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-166": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-1920w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-167"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-168": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-480w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-169"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-170": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_005-768w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-171"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-172": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1024w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-173"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-174": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1280w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-175"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-176": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-1920w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-177"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-178": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-480w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-179"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-180": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/example_placeholder_006-768w.webp",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-181"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-182": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_001.png",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-183"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-184": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_002.png",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-185"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-186": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_003.png",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-187"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-188": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_004.png",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-189"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-190": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_005.png",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-191"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-192": {
+      "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/example_placeholder_006.png",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-193"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-194"
+        }
+      ]
+    },
+    "4d92fb75-194": {
+      "id": "C:/Users/anon/github/logia-ink/js/pages/projects.js",
+      "moduleParts": {
+        "assets/js/projects-DlcKo7Kr.js": "4d92fb75-195"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-62"
+        },
+        {
+          "uid": "4d92fb75-64"
+        },
+        {
+          "uid": "4d92fb75-66"
+        },
+        {
+          "uid": "4d92fb75-68"
+        },
+        {
+          "uid": "4d92fb75-70"
+        },
+        {
+          "uid": "4d92fb75-72"
+        },
+        {
+          "uid": "4d92fb75-74"
+        },
+        {
+          "uid": "4d92fb75-76"
+        },
+        {
+          "uid": "4d92fb75-78"
+        },
+        {
+          "uid": "4d92fb75-80"
+        },
+        {
+          "uid": "4d92fb75-82"
+        },
+        {
+          "uid": "4d92fb75-84"
+        },
+        {
+          "uid": "4d92fb75-86"
+        },
+        {
+          "uid": "4d92fb75-88"
+        },
+        {
+          "uid": "4d92fb75-90"
+        },
+        {
+          "uid": "4d92fb75-92"
+        },
+        {
+          "uid": "4d92fb75-94"
+        },
+        {
+          "uid": "4d92fb75-96"
+        },
+        {
+          "uid": "4d92fb75-98"
+        },
+        {
+          "uid": "4d92fb75-100"
+        },
+        {
+          "uid": "4d92fb75-102"
+        },
+        {
+          "uid": "4d92fb75-104"
+        },
+        {
+          "uid": "4d92fb75-106"
+        },
+        {
+          "uid": "4d92fb75-108"
+        },
+        {
+          "uid": "4d92fb75-110"
+        },
+        {
+          "uid": "4d92fb75-112"
+        },
+        {
+          "uid": "4d92fb75-114"
+        },
+        {
+          "uid": "4d92fb75-116"
+        },
+        {
+          "uid": "4d92fb75-118"
+        },
+        {
+          "uid": "4d92fb75-120"
+        },
+        {
+          "uid": "4d92fb75-122"
+        },
+        {
+          "uid": "4d92fb75-124"
+        },
+        {
+          "uid": "4d92fb75-126"
+        },
+        {
+          "uid": "4d92fb75-128"
+        },
+        {
+          "uid": "4d92fb75-130"
+        },
+        {
+          "uid": "4d92fb75-132"
+        },
+        {
+          "uid": "4d92fb75-134"
+        },
+        {
+          "uid": "4d92fb75-136"
+        },
+        {
+          "uid": "4d92fb75-138"
+        },
+        {
+          "uid": "4d92fb75-140"
+        },
+        {
+          "uid": "4d92fb75-142"
+        },
+        {
+          "uid": "4d92fb75-144"
+        },
+        {
+          "uid": "4d92fb75-146"
+        },
+        {
+          "uid": "4d92fb75-148"
+        },
+        {
+          "uid": "4d92fb75-150"
+        },
+        {
+          "uid": "4d92fb75-152"
+        },
+        {
+          "uid": "4d92fb75-154"
+        },
+        {
+          "uid": "4d92fb75-156"
+        },
+        {
+          "uid": "4d92fb75-158"
+        },
+        {
+          "uid": "4d92fb75-160"
+        },
+        {
+          "uid": "4d92fb75-162"
+        },
+        {
+          "uid": "4d92fb75-164"
+        },
+        {
+          "uid": "4d92fb75-166"
+        },
+        {
+          "uid": "4d92fb75-168"
+        },
+        {
+          "uid": "4d92fb75-170"
+        },
+        {
+          "uid": "4d92fb75-172"
+        },
+        {
+          "uid": "4d92fb75-174"
+        },
+        {
+          "uid": "4d92fb75-176"
+        },
+        {
+          "uid": "4d92fb75-178"
+        },
+        {
+          "uid": "4d92fb75-180"
+        },
+        {
+          "uid": "4d92fb75-182"
+        },
+        {
+          "uid": "4d92fb75-184"
+        },
+        {
+          "uid": "4d92fb75-186"
+        },
+        {
+          "uid": "4d92fb75-188"
+        },
+        {
+          "uid": "4d92fb75-190"
+        },
+        {
+          "uid": "4d92fb75-192"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-196": {
+      "id": "C:/Users/anon/github/logia-ink/js/pages/reports.js",
+      "moduleParts": {
+        "assets/js/reports-BxUPvQnu.js": "4d92fb75-197"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-198": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/easter-egg.js",
+      "moduleParts": {
+        "assets/js/easter-egg-sLwxSKiw.js": "4d92fb75-199"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-24"
+        },
+        {
+          "uid": "4d92fb75-44"
+        },
+        {
+          "uid": "4d92fb75-202",
+          "dynamic": true
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-200": {
+      "id": "C:/Users/anon/github/logia-ink/js/core/three-hero.js",
+      "moduleParts": {
+        "assets/js/three-hero-D5MAOqd8.js": "4d92fb75-201"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-204"
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-52"
+        }
+      ]
+    },
+    "4d92fb75-202": {
+      "id": "C:/Users/anon/github/logia-ink/js/modules/easter-egg/runtime.js",
+      "moduleParts": {
+        "assets/js/runtime-Cl0zwBmi.js": "4d92fb75-203"
+      },
+      "imported": [
+        {
+          "uid": "4d92fb75-24"
+        },
+        {
+          "uid": "4d92fb75-44"
+        },
+        {
+          "uid": "4d92fb75-204",
+          "dynamic": true
+        }
+      ],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-198"
+        }
+      ]
+    },
+    "4d92fb75-204": {
+      "id": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
+      "moduleParts": {
+        "assets/js/three-loader-DssTuxOG.js": "4d92fb75-205"
+      },
+      "imported": [],
+      "importedBy": [
+        {
+          "uid": "4d92fb75-200"
+        },
+        {
+          "uid": "4d92fb75-202"
+        }
+      ]
+    }
+  },
+  "env": {
+    "rollup": "4.53.1"
+  },
+  "options": {
+    "gzip": true,
+    "brotli": true,
+    "sourcemap": false
+  }
+}
