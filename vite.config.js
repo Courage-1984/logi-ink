@@ -242,6 +242,42 @@ export default defineConfig({
         }
       },
     },
+    // Custom plugin to copy audio files
+    {
+      name: 'copy-audio',
+      apply: 'build',
+      configResolved(config) {
+        resolvedOutDir = resolve(config.root, config.build.outDir);
+      },
+      writeBundle() {
+        const audioDir = resolve(__dirname, 'assets/audio');
+        const distAudioDir = resolve(resolvedOutDir, 'assets/audio');
+
+        // Create dist audio directory if it doesn't exist
+        if (!existsSync(distAudioDir)) {
+          mkdirSync(distAudioDir, { recursive: true });
+        }
+
+        // Copy all files from audio directory
+        if (existsSync(audioDir)) {
+          const files = readdirSync(audioDir);
+          files.forEach(file => {
+            const src = resolve(audioDir, file);
+            const dest = resolve(distAudioDir, file);
+            const stats = statSync(src);
+
+            // Only copy files (not directories)
+            if (stats.isFile()) {
+              copyFileSync(src, dest);
+              const sizeMB = (stats.size / (1024 * 1024)).toFixed(2);
+              console.log(`✅ Copied ${file} to ${distAudioDir} (${sizeMB} MB)`);
+            }
+          });
+        } else {
+          console.warn('⚠️  Audio directory not found: assets/audio');
+        }
+      },
+    },
     {
       name: 'copy-static-reports',
       apply: 'build',

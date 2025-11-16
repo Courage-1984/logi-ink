@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2025-11-16T19:51:08.711Z",
+  "generatedAt": "2025-11-16T21:42:19.918Z",
   "summary": {
     "images": {
       "count": 145,
       "bytes": 25923390
     },
     "videos": {
-      "count": 5,
-      "bytes": 26993790
+      "count": 6,
+      "bytes": 28130190
     },
     "fonts": {
       "count": 36,
@@ -106,6 +106,14 @@
       "width": null,
       "height": null,
       "format": "mp4"
+    },
+    {
+      "path": "assets/audio/space-ambience-optimized.ogg",
+      "bytes": 1136400,
+      "category": "video",
+      "width": null,
+      "height": null,
+      "format": "ogg"
     },
     {
       "path": "assets/fonts/Rajdhani/Rajdhani-Bold.ttf",
