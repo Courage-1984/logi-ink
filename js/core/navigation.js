@@ -81,13 +81,9 @@ export function initNavigation() {
 
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        // Don't close menu if clicking on dropdown parent link
-        const parentDropdown = link.closest('.nav-item-dropdown');
-        if (parentDropdown && !link.classList.contains('dropdown-link')) {
-          e.preventDefault();
-          parentDropdown.classList.toggle('active');
-          return;
-        }
+        // Allow all nav links (including dropdown parents) to navigate
+        // Dropdown parent links now navigate to their href (e.g., services.html)
+        // Dropdown menu still works on hover (desktop) via CSS
 
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
@@ -100,30 +96,12 @@ export function initNavigation() {
   }
 
   // Dropdown Menu Toggle (Desktop & Mobile)
+  // Note: Dropdown parent links now navigate on click (e.g., Services -> services.html)
+  // Dropdown menu is shown on hover (desktop) via CSS
+  // On mobile, the dropdown can be accessed via the dropdown links themselves
   const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
-  dropdownItems.forEach(item => {
-    const dropdownLink = item.querySelector('.nav-link:not(.dropdown-link)');
-    const dropdownMenu = item.querySelector('.dropdown-menu');
-
-    if (dropdownLink && dropdownMenu) {
-      // Desktop: hover behavior is handled by CSS
-      // Mobile: click to toggle
-      dropdownLink.addEventListener('click', (e) => {
-        // Only handle click on mobile
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const isActive = item.classList.toggle('active');
-
-          // Close other dropdowns
-          dropdownItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
-          });
-        }
-      });
-    }
-  });
+  // Dropdown functionality is handled by CSS hover on desktop
+  // No additional JavaScript needed - parent link navigates, dropdown shows on hover
 
   // Set active nav link based on current page
   const setActiveNavLinkByPage = () => {

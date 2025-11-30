@@ -167,8 +167,8 @@ Coverage: multi-page navigation (desktop + mobile drawer), scroll progress/back-
 
 ### Adding a New Component
 
-1. Create CSS in `css/components/component-name.css`.
-2. Import it in `css/main.css`.
+1. Create CSS in `css/components/component-name.css` (or subdirectory with `index.css` for complex components).
+2. Import it in `css/main.css` using `@import './components/component-name.css'` syntax (without `url()`).
 3. If JS is required, add a module in `js/core/` or `js/utils/`.
 4. Export an `init...` function and wire it up in `js/main.js`.
 5. Update `.cursor/rules/cursorrules.mdc` with the new structure.
@@ -211,12 +211,13 @@ The galaxy easter egg is organized in a dedicated folder for better maintainabil
 ### Adding a New Page
 
 1. Create the HTML file at the repository root.
-2. Add page-specific CSS in `css/pages/` if needed.
+2. Add page-specific CSS in `css/pages/` if needed (use subdirectory with `index.css` for complex pages like contact/projects).
 3. Add page-specific JS in `js/pages/` if required.
-4. Import the CSS in `css/main.css`.
+4. Import the CSS in `css/main.css` using `@import './pages/page-name.css'` syntax.
 5. Conditionally initialise the JS in `js/main.js`.
 6. Include the page-transition preload snippet in `<head>` (see `.cursor/rules/cursorrules.mdc`).
-7. Use HTML includes for navigation and footer:
+7. Link CSS in HTML: `<link rel="stylesheet" href="css/main.css" />` (CSS is also imported in `js/main.js` for Vite compatibility).
+8. Use HTML includes for navigation and footer:
    - Add `<!-- include partials/navbar.html -->` where navigation should appear
    - Add `<!-- include partials/footer.html -->` where footer should appear
    - Active navigation states are handled automatically by `js/core/navigation.js`

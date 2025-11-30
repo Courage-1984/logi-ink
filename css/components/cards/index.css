@@ -4,20 +4,20 @@
  */
 
 /* Base styles and grids */
-@import url('./_card-base.css');
+@import './_card-base.css';
 
 /* Card components */
-@import url('./_service-card.css');
-@import url('./_pricing-card.css');
-@import url('./_offer-panel.css');
-@import url('./_project-card.css');
+@import './_service-card.css';
+@import './_pricing-card.css';
+@import './_offer-panel.css';
+@import './_project-card.css';
 
 /* Card variants */
-@import url('./_card-variants.css');
+@import './_card-variants.css';
 
 /* Section-specific card styles */
-@import url('./_card-sections.css');
+@import './_card-sections.css';
 
 /* Card animations */
-@import url('./_card-animations.css');
+@import './_card-animations.css';
 

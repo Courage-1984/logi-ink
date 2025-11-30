@@ -1,0 +1,311 @@
+{
+  "declarations": [
+    {
+      "file": "css\\fonts.css",
+      "family": "Orbitron",
+      "src": [
+        "../assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
+      ],
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "unicodeRange": null
+    },
+    {
+      "file": "css\\fonts.css",
+      "family": "Orbitron",
+      "src": [
+        "../assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2"
+      ],
+      "weight": "700",
+      "style": "normal",
+      "display": "optional",
+      "unicodeRange": null
+    },
+    {
+      "file": "css\\fonts.css",
+      "family": "Orbitron",
+      "src": [
+        "../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2"
+      ],
+      "weight": "900",
+      "style": "normal",
+      "display": "optional",
+      "unicodeRange": null
+    },
+    {
+      "file": "css\\fonts.css",
+      "family": "Rajdhani",
+      "src": [
+        "../assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2"
+      ],
+      "weight": "300",
+      "style": "normal",
+      "display": "optional",
+      "unicodeRange": null
+    },
+    {
+      "file": "css\\fonts.css",
+      "family": "Rajdhani",
+      "src": [
+        "../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
+      ],
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "unicodeRange": null
+    },
+    {
+      "file": "css\\fonts.css",
+      "family": "Rajdhani",
+      "src": [
+        "../assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2"
+      ],
+      "weight": "600",
+      "style": "normal",
+      "display": "optional",
+      "unicodeRange": null
+    },
+    {
+      "file": "css\\fonts.css",
+      "family": "Rajdhani",
+      "src": [
+        "../assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2"
+      ],
+      "weight": "700",
+      "style": "normal",
+      "display": "optional",
+      "unicodeRange": null
+    }
+  ],
+  "fontFiles": [
+    {
+      "path": "assets\\fonts\\Orbitron\\woff2\\Orbitron-Black-subset.woff2",
+      "name": "Orbitron\\woff2\\Orbitron-Black-subset.woff2",
+      "size": 3612,
+      "exists": true
+    },
+    {
+      "path": "assets\\fonts\\Orbitron\\woff2\\Orbitron-Bold-subset.woff2",
+      "name": "Orbitron\\woff2\\Orbitron-Bold-subset.woff2",
+      "size": 3692,
+      "exists": true
+    },
+    {
+      "path": "assets\\fonts\\Orbitron\\woff2\\Orbitron-Regular-subset.woff2",
+      "name": "Orbitron\\woff2\\Orbitron-Regular-subset.woff2",
+      "size": 3636,
+      "exists": true
+    },
+    {
+      "path": "assets\\fonts\\Rajdhani\\woff2\\Rajdhani-Bold-subset.woff2",
+      "name": "Rajdhani\\woff2\\Rajdhani-Bold-subset.woff2",
+      "size": 8884,
+      "exists": true
+    },
+    {
+      "path": "assets\\fonts\\Rajdhani\\woff2\\Rajdhani-Light-subset.woff2",
+      "name": "Rajdhani\\woff2\\Rajdhani-Light-subset.woff2",
+      "size": 8224,
+      "exists": true
+    },
+    {
+      "path": "assets\\fonts\\Rajdhani\\woff2\\Rajdhani-Regular-subset.woff2",
+      "name": "Rajdhani\\woff2\\Rajdhani-Regular-subset.woff2",
+      "size": 8432,
+      "exists": true
+    },
+    {
+      "path": "assets\\fonts\\Rajdhani\\woff2\\Rajdhani-SemiBold-subset.woff2",
+      "name": "Rajdhani\\woff2\\Rajdhani-SemiBold-subset.woff2",
+      "size": 8772,
+      "exists": true
+    }
+  ],
+  "families": {
+    "Orbitron": {
+      "family": "Orbitron",
+      "declarations": [
+        {
+          "file": "css\\fonts.css",
+          "family": "Orbitron",
+          "src": [
+            "../assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
+          ],
+          "weight": "400",
+          "style": "normal",
+          "display": "swap",
+          "unicodeRange": null
+        },
+        {
+          "file": "css\\fonts.css",
+          "family": "Orbitron",
+          "src": [
+            "../assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2"
+          ],
+          "weight": "700",
+          "style": "normal",
+          "display": "optional",
+          "unicodeRange": null
+        },
+        {
+          "file": "css\\fonts.css",
+          "family": "Orbitron",
+          "src": [
+            "../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2"
+          ],
+          "weight": "900",
+          "style": "normal",
+          "display": "optional",
+          "unicodeRange": null
+        }
+      ],
+      "weights": {},
+      "styles": {},
+      "displays": {},
+      "files": [
+        {
+          "path": "../assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2",
+          "exists": false,
+          "size": null
+        },
+        {
+          "path": "../assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2",
+          "exists": false,
+          "size": null
+        },
+        {
+          "path": "../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2",
+          "exists": false,
+          "size": null
+        }
+      ]
+    },
+    "Rajdhani": {
+      "family": "Rajdhani",
+      "declarations": [
+        {
+          "file": "css\\fonts.css",
+          "family": "Rajdhani",
+          "src": [
+            "../assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2"
+          ],
+          "weight": "300",
+          "style": "normal",
+          "display": "optional",
+          "unicodeRange": null
+        },
+        {
+          "file": "css\\fonts.css",
+          "family": "Rajdhani",
+          "src": [
+            "../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
+          ],
+          "weight": "400",
+          "style": "normal",
+          "display": "swap",
+          "unicodeRange": null
+        },
+        {
+          "file": "css\\fonts.css",
+          "family": "Rajdhani",
+          "src": [
+            "../assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2"
+          ],
+          "weight": "600",
+          "style": "normal",
+          "display": "optional",
+          "unicodeRange": null
+        },
+        {
+          "file": "css\\fonts.css",
+          "family": "Rajdhani",
+          "src": [
+            "../assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2"
+          ],
+          "weight": "700",
+          "style": "normal",
+          "display": "optional",
+          "unicodeRange": null
+        }
+      ],
+      "weights": {},
+      "styles": {},
+      "displays": {},
+      "files": [
+        {
+          "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2",
+          "exists": false,
+          "size": null
+        },
+        {
+          "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2",
+          "exists": false,
+          "size": null
+        },
+        {
+          "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2",
+          "exists": false,
+          "size": null
+        },
+        {
+          "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2",
+          "exists": false,
+          "size": null
+        }
+      ]
+    }
+  },
+  "issues": {
+    "missingFiles": [
+      {
+        "family": "Orbitron",
+        "path": "../assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2",
+        "file": "css\\fonts.css"
+      },
+      {
+        "family": "Orbitron",
+        "path": "../assets/fonts/Orbitron/woff2/Orbitron-Bold-subset.woff2",
+        "file": "css\\fonts.css"
+      },
+      {
+        "family": "Orbitron",
+        "path": "../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2",
+        "file": "css\\fonts.css"
+      },
+      {
+        "family": "Rajdhani",
+        "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-Light-subset.woff2",
+        "file": "css\\fonts.css"
+      },
+      {
+        "family": "Rajdhani",
+        "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2",
+        "file": "css\\fonts.css"
+      },
+      {
+        "family": "Rajdhani",
+        "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-SemiBold-subset.woff2",
+        "file": "css\\fonts.css"
+      },
+      {
+        "family": "Rajdhani",
+        "path": "../assets/fonts/Rajdhani/woff2/Rajdhani-Bold-subset.woff2",
+        "file": "css\\fonts.css"
+      }
+    ],
+    "unusedFiles": [],
+    "missingDisplay": [],
+    "inconsistentDisplay": {
+      "Orbitron": [
+        "swap",
+        "optional"
+      ],
+      "Rajdhani": [
+        "optional",
+        "swap"
+      ]
+    },
+    "duplicateDeclarations": []
+  }
+}

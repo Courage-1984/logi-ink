@@ -3,6 +3,9 @@
  * Imports and initializes all modules
  */
 
+// Import CSS (ensures Vite processes all nested @import statements correctly)
+import '../css/main.css';
+
 // Core modules (load immediately)
 import { initScrollManager } from './core/scroll-manager.js';
 import { initNavigation } from './core/navigation.js';

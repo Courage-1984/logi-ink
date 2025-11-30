@@ -4,8 +4,8 @@
  */
 
 /* Projects grid and card styles */
-@import url('./_projects-grid.css');
+@import './_projects-grid.css';
 
 /* Project modal styles */
-@import url('./_project-modal.css');
+@import './_project-modal.css';
 

@@ -6,52 +6,52 @@
  */
 
 /* 1. Variables - Must come first */
-@import url('./variables.css');
+@import './variables.css';
 
 /* 1.5. Fonts - Self-hosted fonts (@font-face declarations) */
-@import url('./fonts.css');
+@import './fonts.css';
 
 /* 2. Base Styles */
-@import url('./base.css');
+@import './base.css';
 
 /* 3. Component Styles */
-@import url('./components/navigation.css');
-@import url('./components/hero.css');
-@import url('./components/buttons.css');
-@import url('./components/cards/index.css');
-@import url('./components/footer.css');
-@import url('./components/forms/index.css');
-@import url('./components/cta.css');
-@import url('./components/parallax.css');
-@import url('./components/back-to-top.css');
-@import url('./components/modals.css');
-@import url('./components/alerts.css');
-@import url('./components/service-worker.css');
-@import url('./components/badges.css');
-@import url('./components/tables.css');
-@import url('./components/tabs.css');
-@import url('./components/accordions.css');
-@import url('./components/tooltips.css');
-@import url('./components/typography.css');
-@import url('./components/breadcrumbs.css');
-@import url('./components/toast.css');
+@import './components/navigation.css';
+@import './components/hero.css';
+@import './components/buttons.css';
+@import './components/cards/index.css';
+@import './components/footer.css';
+@import './components/forms/index.css';
+@import './components/cta.css';
+@import './components/parallax.css';
+@import './components/back-to-top.css';
+@import './components/modals.css';
+@import './components/alerts.css';
+@import './components/service-worker.css';
+@import './components/badges.css';
+@import './components/tables.css';
+@import './components/tabs.css';
+@import './components/accordions.css';
+@import './components/tooltips.css';
+@import './components/typography.css';
+@import './components/breadcrumbs.css';
+@import './components/toast.css';
 
 /* 4. Page-Specific Styles */
-@import url('./pages/contact/index.css');
-@import url('./pages/projects/index.css');
-@import url('./pages/about.css');
-@import url('./pages/reports.css');
+@import './pages/contact/index.css';
+@import './pages/projects/index.css';
+@import './pages/about.css';
+@import './pages/reports.css';
 
 /* 5. Animations & Effects */
-@import url('./utils/animations.css');
-@import url('./utils/cursor.css');
-@import url('./utils/3d-effects.css');
-@import url('./utils/fluid-effects.css');
-@import url('./easter-egg/easter-egg.css');
-@import url('./utils/loading.css');
-@import url('./utils/empty-state.css');
-@import url('./utils/dividers.css');
-@import url('./utils/skip-link.css');
+@import './utils/animations.css';
+@import './utils/cursor.css';
+@import './utils/3d-effects.css';
+@import './utils/fluid-effects.css';
+@import './easter-egg/easter-egg.css';
+@import './utils/loading.css';
+@import './utils/empty-state.css';
+@import './utils/dividers.css';
+@import './utils/skip-link.css';
 
 /* 6. Responsive Styles - Must come last */
-@import url('./utils/responsive.css');
+@import './utils/responsive.css';

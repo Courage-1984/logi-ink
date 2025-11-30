@@ -1,0 +1,1894 @@
+{
+  "summary": {
+    "totalSelectors": 1255,
+    "uniqueSelectors": 1159,
+    "duplicateSelectors": 95,
+    "highSpecificityCount": 50,
+    "importantCount": 0,
+    "specificityDistribution": {
+      "low": 484,
+      "medium": 609,
+      "high": 162
+    }
+  },
+  "highSpecificity": [
+    {
+      "selector": "body.easter-egg-active.milky-way-ready #main-content",
+      "specificity": "0,1,2,1",
+      "specificityScore": 121,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "body.easter-egg-active.milky-way-ready #navbar",
+      "specificity": "0,1,2,1",
+      "specificityScore": 121,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "body.easter-egg-active #main-content",
+      "specificity": "0,1,1,1",
+      "specificityScore": 111,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "body.easter-egg-active #navbar",
+      "specificity": "0,1,1,1",
+      "specificityScore": 111,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "body.easter-egg-active.milky-way-ready .milky-way-menu.active .milky-way-menu-toggle",
+      "specificity": "0,0,5,1",
+      "specificityScore": 51,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "body:not(.easter-egg-active):not(.milky-way-ready) .milky-way-menu",
+      "specificity": "0,0,5,1",
+      "specificityScore": 51,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card:not(.mouse-tilt-container):hover",
+      "specificity": "0,0,5,0",
+      "specificityScore": 50,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "ul:not(.nav-menu):not(.tab-list) li::marker",
+      "specificity": "0,0,4,3",
+      "specificityScore": 43,
+      "file": "css\\components\\typography.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .testimonials-section .service-card > div:last-child p",
+      "specificity": "0,0,4,2",
+      "specificityScore": 42,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".form-group.floating-label input:not(:placeholder-shown) + label",
+      "specificity": "0,0,4,2",
+      "specificityScore": 42,
+      "file": "css\\pages\\contact\\_contact-form.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".form-group.floating-label textarea:not(:placeholder-shown) + label",
+      "specificity": "0,0,4,2",
+      "specificityScore": 42,
+      "file": "css\\pages\\contact\\_contact-form.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".testimonials-section .service-card:hover > div:first-child::after",
+      "specificity": "0,0,4,2",
+      "specificityScore": 42,
+      "file": "css\\components\\cards\\_card-sections.css",
+      "hasImportant": false
+    },
+    {
+      "selector": "body.easter-egg-active.milky-way-ready .milky-way-menu.active",
+      "specificity": "0,0,4,1",
+      "specificityScore": 41,
+      "file": "css\\easter-egg\\easter-egg.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card:hover .project-image img",
+      "specificity": "0,0,4,1",
+      "specificityScore": 41,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card:hover .project-image::after",
+      "specificity": "0,0,4,1",
+      "specificityScore": 41,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .testimonials-section .service-card > div:last-child",
+      "specificity": "0,0,4,1",
+      "specificityScore": 41,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".testimonials-section .service-card:hover svg[viewBox='0 0 24 24']",
+      "specificity": "0,0,4,1",
+      "specificityScore": 41,
+      "file": "css\\components\\cards\\_card-sections.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".card-3d:not(.mouse-tilt-container):hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\utils\\3d-effects.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".approach-step:nth-child(1) .approach-step-content:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\about.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".approach-step:nth-child(2) .approach-step-content:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\about.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".approach-step:nth-child(3) .approach-step-content:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\about.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".approach-step:nth-child(4) .approach-step-content:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\about.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".approach-step:nth-child(5) .approach-step-content:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\about.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".approach-step:nth-child(6) .approach-step-content:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\about.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card.mouse-tilt-container:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card:hover .project-hover-video",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card:hover .project-image-poster",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".projects-page .project-card:hover .project-overlay",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\pages\\projects\\_projects-grid.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card:not(.mouse-tilt-container):hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_service-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card:not(.mouse-tilt-container):nth-child(2)",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_service-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card:not(.mouse-tilt-container):nth-child(4)",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_service-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".project-card-large:not(.mouse-tilt-container):hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_project-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".pricing-card.pricing-card--cyan.mouse-tilt-container:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_pricing-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".pricing-card.pricing-card--magenta.mouse-tilt-container:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_pricing-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".pricing-card.pricing-card--green.mouse-tilt-container:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_pricing-card.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.process-card-cyan:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.process-card-magenta:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.process-card-green:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.process-card-blue:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.process-card-pink:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.process-card-gold:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.impact-card-cyan:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.impact-card-magenta:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.impact-card-green:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.impact-card-blue:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.success-card-cyan:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.success-card-magenta:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.success-card-green:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.faq-card-cyan:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    },
+    {
+      "selector": ".service-card.mouse-tilt-container.faq-card-magenta:hover",
+      "specificity": "0,0,4,0",
+      "specificityScore": 40,
+      "file": "css\\components\\cards\\_card-variants.css",
+      "hasImportant": false
+    }
+  ],
+  "conflicts": [
+    {
+      "selector": ":root",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\variables.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "*",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "html",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "body",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "h1",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "h2",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "h3",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "h4",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "h5",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "h6",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".navbar",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".navbar.scrolled",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-container",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".logo-text",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".logo-accent",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".logo-text:hover",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-menu",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-link",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-link::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-link:hover",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-link:hover::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,2,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".nav-link.active",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hamburger",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hamburger span",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\navigation.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hero",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hero-background",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hero-content",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hero-title",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hero-subtitle",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".hero-buttons",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".btn",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\buttons.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".btn-primary",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\buttons.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".btn-primary:hover",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\buttons.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".btn-secondary",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\buttons.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".btn-secondary:hover",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\buttons.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".scroll-progress",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\cursor.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".cursor-follow",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\cursor.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".cursor-dot",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\cursor.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .nav-menu",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .nav-menu.active",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .hamburger",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .hamburger.active span:nth-child(1)",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,3,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,3,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .hamburger.active span:nth-child(2)",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,3,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,3,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .hamburger.active span:nth-child(3)",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,3,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,3,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .hero-title",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) .hero-buttons",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\critical.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "*:focus-visible",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "input:disabled",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "textarea:disabled",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "select:disabled",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "button:disabled",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media print .navbar",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media print .footer",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media print .back-to-top",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media print .hamburger",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media print body",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,2",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,0,2",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media print a",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\base.css",
+          "specificity": "0,0,0,2",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,0,2",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 768px) textarea",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,0,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 480px) .contact-container",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 480px) .contact-item",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 480px) .contact-item h3",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 480px) .contact-form",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-responsive.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "@media (max-width: 480px) .form-group textarea",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".fluid-morph",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\fluid-effects.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".text-reveal",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".text-reveal.delay-1",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".text-reveal.delay-2",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".text-reveal.delay-3",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".fade-in",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".fade-in.delay-4",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".fade-in.delay-5",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".scroll-reveal-3d",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\3d-effects.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".scroll-reveal-3d.visible",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\3d-effects.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".float-3d",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\animations.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\utils\\3d-effects.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".service-card",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\3d-effects.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\cards\\_service-card.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".project-card-large",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\utils\\3d-effects.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\cards\\_project-card.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".milky-way-scene.active",
+      "count": 3,
+      "locations": [
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": "body.easter-egg-active.milky-way-ready *",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".milky-way-scene.active canvas",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,2,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".milky-way-menu",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".milky-way-menu:not(.active)",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,3,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\easter-egg\\easter-egg.css",
+          "specificity": "0,0,3,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".achievements-section::before",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\about.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\about.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".achievements-section::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\about.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\about.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".sw-update-btn",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\service-worker.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\service-worker.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".sw-update-dismiss",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\service-worker.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\service-worker.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".particles::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\hero.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".testimonials-section::before",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\contact\\_contact-testimonials.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-testimonials.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".testimonials-section::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\contact\\_contact-testimonials.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-testimonials.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".testimonials-grid",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\contact\\_contact-testimonials.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-testimonials.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".map-toggle:focus-visible",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\contact\\_contact-map.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\pages\\contact\\_contact-map.css",
+          "specificity": "0,0,2,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".form-submit",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\pages\\contact\\_contact-form.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-validation.css",
+          "specificity": "0,0,1,0",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".form-group textarea",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\forms\\_form-base.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".offer-panel::before",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\cards\\_offer-panel.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\cards\\_offer-panel.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".offer-panel::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\cards\\_offer-panel.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\cards\\_offer-panel.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    },
+    {
+      "selector": ".values-stars::after",
+      "count": 2,
+      "locations": [
+        {
+          "file": "css\\components\\cards\\_card-sections.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        },
+        {
+          "file": "css\\components\\cards\\_card-sections.css",
+          "specificity": "0,0,1,1",
+          "hasImportant": false
+        }
+      ]
+    }
+  ],
+  "importantRules": []
+}

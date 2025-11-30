@@ -830,13 +830,13 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 193,
+          "line": 205,
           "declarations": 1,
           "cssText": ".hamburger {\n    display: flex;\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 705,
+          "line": 723,
           "declarations": 1,
           "cssText": ".navbar,\n  .footer,\n  .back-to-top,\n  .hamburger {\n    display: none;\n  }"
         },
@@ -865,19 +865,19 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 66,
+          "line": 76,
           "declarations": 1,
           "cssText": ".hero-title {\n    font-size: clamp(2.2rem, 5.5vw, 4.5rem);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 246,
+          "line": 258,
           "declarations": 3,
-          "cssText": ".hero-title {\n    font-size: clamp(1.8rem, 7vw, 3rem);\n    margin-bottom: 1rem;\n    letter-spacing: "
+          "cssText": ".hero-title {\n    font-size: clamp(1.8rem, 7vw, 3rem);\n    margin-bottom: var(--space-4);\n    letter"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 587,
+          "line": 602,
           "declarations": 2,
           "cssText": ".hero-title {\n    font-size: clamp(1.4rem, 9vw, 2.2rem);\n    letter-spacing: 1px;\n  }"
         },
@@ -994,7 +994,7 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 712,
+          "line": 730,
           "declarations": 2,
           "cssText": "body {\n    background: white;\n    color: black;\n  }"
         },
@@ -1017,21 +1017,21 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 25,
-          "declarations": 1,
-          "cssText": ".logo-text {\n    font-size: 1.3rem;\n  }"
-        },
-        {
-          "file": "css\\utils\\responsive.css",
-          "line": 123,
+          "line": 33,
           "declarations": 2,
-          "cssText": ".logo-text {\n    font-size: 1.2rem;\n    letter-spacing: 1px;\n  }"
+          "cssText": ".logo-text {\n    /* Intentionally hardcoded for tablet breakpoint fine-tuning */\n    font-size: 1.3r"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 583,
+          "line": 134,
+          "declarations": 3,
+          "cssText": ".logo-text {\n    /* Intentionally hardcoded for mobile breakpoint fine-tuning */\n    font-size: 1.2r"
+        },
+        {
+          "file": "css\\utils\\responsive.css",
+          "line": 598,
           "declarations": 1,
-          "cssText": ".logo-text {\n    font-size: 1rem;\n  }"
+          "cssText": ".logo-text {\n    font-size: var(--font-size-base);\n  }"
         },
         {
           "file": "css\\components\\navigation.css",
@@ -1048,7 +1048,7 @@
           "file": "css\\critical.css",
           "line": 128,
           "declarations": 3,
-          "cssText": ".nav-menu {\n  display: flex;\n  list-style: none;\n  gap: 2rem;\n}"
+          "cssText": ".nav-menu {\n  display: flex;\n  list-style: none;\n  gap: var(--space-8);\n}"
         },
         {
           "file": "css\\critical.css",
@@ -1058,13 +1058,13 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 29,
+          "line": 38,
           "declarations": 1,
-          "cssText": ".nav-menu {\n    gap: 1.5rem;\n  }"
+          "cssText": ".nav-menu {\n    gap: var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 128,
+          "line": 140,
           "declarations": 12,
           "cssText": ".nav-menu {\n    position: fixed;\n    left: -100%;\n    top: 70px;\n    flex-direction: column;\n    bac"
         },
@@ -1083,7 +1083,7 @@
           "file": "css\\critical.css",
           "line": 250,
           "declarations": 4,
-          "cssText": ".hero-buttons {\n  display: flex;\n  gap: 1.5rem;\n  justify-content: center;\n  flex-wrap: wrap;\n}"
+          "cssText": ".hero-buttons {\n  display: flex;\n  gap: var(--space-6);\n  justify-content: center;\n  flex-wrap: wrap"
         },
         {
           "file": "css\\critical.css",
@@ -1093,21 +1093,21 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 75,
+          "line": 85,
           "declarations": 1,
-          "cssText": ".hero-buttons {\n    gap: 1rem;\n  }"
+          "cssText": ".hero-buttons {\n    gap: var(--space-4);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 258,
+          "line": 270,
           "declarations": 4,
-          "cssText": ".hero-buttons {\n    flex-direction: column;\n    align-items: center;\n    gap: 1rem;\n    width: 100%;"
+          "cssText": ".hero-buttons {\n    flex-direction: column;\n    align-items: center;\n    gap: var(--space-4);\n    wi"
         },
         {
           "file": "css\\components\\hero.css",
           "line": 337,
           "declarations": 5,
-          "cssText": ".hero-buttons {\n  display: flex;\n  gap: 1.5rem;\n  justify-content: center;\n  flex-wrap: wrap;\n  marg"
+          "cssText": ".hero-buttons {\n  display: flex;\n  gap: var(--space-6);\n  justify-content: center;\n  flex-wrap: wrap"
         }
       ]
     },
@@ -1118,31 +1118,31 @@
           "file": "css\\critical.css",
           "line": 260,
           "declarations": 14,
-          "cssText": ".btn {\n  display: inline-block;\n  padding: 1rem 2rem;\n  font-family: var(--font-body);\n  font-size: "
+          "cssText": ".btn {\n  display: inline-block;\n  padding: var(--space-4) var(--space-8);\n  font-family: var(--font-"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 79,
+          "line": 89,
           "declarations": 2,
-          "cssText": ".btn {\n    padding: 0.9rem 2rem;\n    font-size: 0.95rem;\n  }"
+          "cssText": ".btn {\n    padding: 0.9rem var(--space-8);\n    font-size: 0.95rem;\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 265,
+          "line": 277,
           "declarations": 4,
-          "cssText": ".btn {\n    width: 100%;\n    max-width: 300px;\n    padding: 0.9rem 2rem;\n    font-size: 0.95rem;\n  }"
+          "cssText": ".btn {\n    width: 100%;\n    max-width: 300px;\n    padding: 0.9rem var(--space-8);\n    font-size: 0.9"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 601,
+          "line": 616,
           "declarations": 2,
-          "cssText": ".btn {\n    padding: 0.85rem 1.5rem;\n    font-size: 0.9rem;\n  }"
+          "cssText": ".btn {\n    padding: 0.85rem var(--space-6);\n    font-size: 0.9rem;\n  }"
         },
         {
           "file": "css\\components\\buttons.css",
           "line": 9,
           "declarations": 11,
-          "cssText": ".btn {\n  padding: 1rem 2.5rem;\n  font-size: 1rem;\n  font-weight: 700;\n  text-transform: uppercase;\n "
+          "cssText": ".btn {\n  padding: 1rem 2.5rem;\n  font-size: var(--font-size-base);\n  font-weight: var(--font-weight-"
         }
       ]
     },
@@ -1151,19 +1151,19 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 58,
+          "line": 68,
           "declarations": 1,
-          "cssText": ".service-card {\n    padding: 2rem;\n  }"
+          "cssText": ".service-card {\n    padding: var(--space-8);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 291,
+          "line": 303,
           "declarations": 1,
-          "cssText": ".service-card {\n    padding: 2rem 1.5rem;\n  }"
+          "cssText": ".service-card {\n    padding: var(--space-8) var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 596,
+          "line": 611,
           "declarations": 1,
           "cssText": ".service-card,\n  .project-content {\n    padding: var(--space-6) var(--space-4);\n  }"
         },
@@ -1373,7 +1373,7 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 669,
+          "line": 687,
           "declarations": 2,
           "cssText": "*,\n  *::before,\n  *::after {\n    animation-duration: 0.3s !important;\n    transition-duration: 0.2s "
         },
@@ -1402,7 +1402,7 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 705,
+          "line": 723,
           "declarations": 1,
           "cssText": ".navbar,\n  .footer,\n  .back-to-top,\n  .hamburger {\n    display: none;\n  }"
         },
@@ -1421,17 +1421,17 @@
           "file": "css\\critical.css",
           "line": 95,
           "declarations": 6,
-          "cssText": ".nav-container {\n  max-width: 1400px;\n  margin: 0 auto;\n  padding: 0 2rem;\n  display: flex;\n  justif"
+          "cssText": ".nav-container {\n  max-width: 1400px;\n  margin: 0 auto;\n  padding: 0 var(--space-8);\n  display: flex"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 21,
+          "line": 29,
           "declarations": 1,
           "cssText": ".nav-container {\n    padding: 0 1.5rem;\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 119,
+          "line": 130,
           "declarations": 1,
           "cssText": ".nav-container {\n    padding: 0 1rem;\n  }"
         },
@@ -1450,25 +1450,25 @@
           "file": "css\\critical.css",
           "line": 134,
           "declarations": 9,
-          "cssText": ".nav-link {\n  color: var(--text-secondary);\n  text-decoration: none;\n  font-size: 1rem;\n  font-weigh"
+          "cssText": ".nav-link {\n  color: var(--text-secondary);\n  text-decoration: none;\n  font-size: var(--font-size-ba"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 33,
-          "declarations": 1,
-          "cssText": ".nav-link {\n    font-size: 0.9rem;\n  }"
+          "line": 42,
+          "declarations": 2,
+          "cssText": ".nav-link {\n    /* Intentionally hardcoded for tablet breakpoint fine-tuning */\n    font-size: 0.9re"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 152,
+          "line": 164,
           "declarations": 3,
-          "cssText": ".nav-link {\n    display: block;\n    padding: 0.75rem 0;\n    font-size: 1rem;\n  }"
+          "cssText": ".nav-link {\n    display: block;\n    padding: var(--space-3) 0;\n    font-size: var(--font-size-base);"
         },
         {
           "file": "css\\components\\navigation.css",
           "line": 64,
           "declarations": 9,
-          "cssText": ".nav-link {\n  color: var(--text-secondary);\n  text-decoration: none;\n  font-size: 1rem;\n  font-weigh"
+          "cssText": ".nav-link {\n  color: var(--text-secondary);\n  text-decoration: none;\n  font-size: var(--font-size-ba"
         }
       ]
     },
@@ -1483,21 +1483,21 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 62,
+          "line": 72,
           "declarations": 1,
-          "cssText": ".hero-content {\n    padding: 0 1.5rem;\n  }"
+          "cssText": ".hero-content {\n    padding: 0 var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 242,
+          "line": 254,
           "declarations": 1,
-          "cssText": ".hero-content {\n    padding: 0 1rem;\n  }"
+          "cssText": ".hero-content {\n    padding: 0 var(--space-4);\n  }"
         },
         {
           "file": "css\\components\\hero.css",
           "line": 286,
           "declarations": 5,
-          "cssText": ".hero-content {\n  text-align: center;\n  z-index: 10;\n  max-width: 1200px;\n  padding: 0 2rem;\n  posit"
+          "cssText": ".hero-content {\n  text-align: center;\n  z-index: 10;\n  max-width: 1200px;\n  padding: 0 var(--space-8"
         }
       ]
     },
@@ -1512,13 +1512,13 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 70,
+          "line": 80,
           "declarations": 2,
-          "cssText": ".hero-subtitle {\n    font-size: clamp(0.95rem, 1.8vw, 1.2rem);\n    padding: 0 1rem;\n  }"
+          "cssText": ".hero-subtitle {\n    font-size: clamp(0.95rem, 1.8vw, 1.2rem);\n    padding: 0 var(--space-4);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 252,
+          "line": 264,
           "declarations": 3,
           "cssText": ".hero-subtitle {\n    font-size: clamp(0.9rem, 2.5vw, 1.1rem);\n    margin-bottom: var(--space-6);\n   "
         },
@@ -1541,7 +1541,7 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 694,
+          "line": 712,
           "declarations": 1,
           "cssText": ".cursor-follow,\n  .cursor-dot {\n    display: none;\n  }"
         },
@@ -1566,23 +1566,23 @@
           "file": "css\\base.css",
           "line": 178,
           "declarations": 3,
-          "cssText": ".container {\n  max-width: 1400px;\n  margin: 0 auto;\n  padding: 0 2rem;\n}"
+          "cssText": ".container {\n  max-width: 1400px;\n  margin: 0 auto;\n  padding: 0 var(--space-8);\n}"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 37,
+          "line": 47,
           "declarations": 1,
-          "cssText": ".container {\n    padding: 0 1.5rem;\n  }"
+          "cssText": ".container {\n    padding: 0 var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 210,
+          "line": 222,
           "declarations": 1,
-          "cssText": ".container {\n    padding: 0 1rem;\n  }"
+          "cssText": ".container {\n    padding: 0 var(--space-4);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 579,
+          "line": 594,
           "declarations": 1,
           "cssText": ".container {\n    padding: 0 0.75rem;\n  }"
         }
@@ -1599,19 +1599,19 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 49,
+          "line": 59,
           "declarations": 1,
           "cssText": ".section-title {\n    font-size: clamp(1.8rem, 4vw, 3rem);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 222,
+          "line": 234,
           "declarations": 2,
-          "cssText": ".section-title {\n    font-size: clamp(1.5rem, 6vw, 2.5rem);\n    margin-bottom: 0.75rem;\n  }"
+          "cssText": ".section-title {\n    font-size: clamp(1.5rem, 6vw, 2.5rem);\n    margin-bottom: var(--space-3);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 592,
+          "line": 607,
           "declarations": 1,
           "cssText": ".section-title {\n    font-size: clamp(1.3rem, 8vw, 2rem);\n  }"
         }
@@ -1628,13 +1628,13 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 376,
+          "line": 391,
           "declarations": 1,
-          "cssText": ".footer {\n    padding: 3rem 0 1.5rem;\n  }"
+          "cssText": ".footer {\n    padding: var(--space-12) 0 var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 705,
+          "line": 723,
           "declarations": 1,
           "cssText": ".navbar,\n  .footer,\n  .back-to-top,\n  .hamburger {\n    display: none;\n  }"
         },
@@ -1657,13 +1657,13 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 514,
+          "line": 529,
           "declarations": 4,
-          "cssText": ".back-to-top {\n    width: 45px;\n    height: 45px;\n    bottom: 1.5rem;\n    right: 1.5rem;\n  }"
+          "cssText": ".back-to-top {\n    width: 45px;\n    height: 45px;\n    bottom: var(--space-6);\n    right: var(--space"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 705,
+          "line": 723,
           "declarations": 1,
           "cssText": ".navbar,\n  .footer,\n  .back-to-top,\n  .hamburger {\n    display: none;\n  }"
         },
@@ -1671,7 +1671,7 @@
           "file": "css\\components\\back-to-top.css",
           "line": 9,
           "declarations": 19,
-          "cssText": ".back-to-top {\n  position: fixed;\n  bottom: 2rem;\n  right: 2rem;\n  width: 50px;\n  height: 50px;\n  ba"
+          "cssText": ".back-to-top {\n  position: fixed;\n  bottom: var(--space-8);\n  right: var(--space-8);\n  width: 50px;\n"
         }
       ]
     },
@@ -1680,19 +1680,19 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 101,
+          "line": 111,
           "declarations": 1,
           "cssText": ".cta-content h2 {\n    font-size: clamp(1.8rem, 4vw, 2.5rem);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 353,
+          "line": 368,
           "declarations": 2,
-          "cssText": ".cta-content h2 {\n    font-size: clamp(1.5rem, 6vw, 2.2rem);\n    margin-bottom: 0.75rem;\n  }"
+          "cssText": ".cta-content h2 {\n    font-size: clamp(1.5rem, 6vw, 2.2rem);\n    margin-bottom: var(--space-3);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 610,
+          "line": 625,
           "declarations": 1,
           "cssText": ".cta-content h2 {\n    font-size: clamp(1.3rem, 8vw, 1.8rem);\n  }"
         },
@@ -1709,15 +1709,15 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 436,
+          "line": 451,
           "declarations": 3,
-          "cssText": ".form-submit {\n    width: 100%;\n    padding: 1rem;\n    font-size: 1rem;\n  }"
+          "cssText": ".form-submit {\n    width: 100%;\n    padding: var(--space-4);\n    font-size: var(--font-size-base);\n "
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 662,
-          "declarations": 2,
-          "cssText": ".form-submit {\n    padding: 0.85rem 1.25rem;\n    font-size: 0.9rem;\n  }"
+          "line": 679,
+          "declarations": 3,
+          "cssText": ".form-submit {\n    padding: 0.85rem var(--space-5);\n    /* Intentionally hardcoded for mobile breakp"
         },
         {
           "file": "css\\pages\\contact\\_contact-form.css",
@@ -1729,7 +1729,7 @@
           "file": "css\\components\\forms\\_form-validation.css",
           "line": 36,
           "declarations": 14,
-          "cssText": ".form-submit {\n  width: 100%;\n  padding: 1rem 2rem;\n  background: transparent;\n  border: 2px solid v"
+          "cssText": ".form-submit {\n  width: 100%;\n  padding: var(--space-4) var(--space-8);\n  background: transparent;\n "
         }
       ]
     },
@@ -1738,7 +1738,7 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 627,
+          "line": 642,
           "declarations": 1,
           "cssText": ".contact-container {\n    padding: 0 0.75rem;\n  }"
         },
@@ -1752,7 +1752,7 @@
           "file": "css\\pages\\contact\\_contact-responsive.css",
           "line": 85,
           "declarations": 2,
-          "cssText": ".contact-container {\n    padding: 0 1rem;\n    gap: var(--space-8);\n  }"
+          "cssText": ".contact-container {\n    padding: 0 var(--space-4);\n    gap: var(--space-8);\n  }"
         },
         {
           "file": "css\\pages\\contact\\_contact-base.css",
@@ -1767,15 +1767,15 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 631,
+          "line": 646,
           "declarations": 1,
-          "cssText": ".contact-item {\n    padding: 1.25rem;\n  }"
+          "cssText": ".contact-item {\n    padding: var(--space-5);\n  }"
         },
         {
           "file": "css\\pages\\contact\\_contact-responsive.css",
           "line": 29,
           "declarations": 1,
-          "cssText": ".contact-item {\n    padding: 1.5rem;\n  }"
+          "cssText": ".contact-item {\n    padding: var(--space-6);\n  }"
         },
         {
           "file": "css\\pages\\contact\\_contact-responsive.css",
@@ -1796,7 +1796,7 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 644,
+          "line": 659,
           "declarations": 1,
           "cssText": ".contact-form {\n    padding: var(--space-6) var(--space-4);\n  }"
         },
@@ -1825,13 +1825,13 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 652,
-          "declarations": 2,
-          "cssText": ".form-group input,\n  .form-group textarea {\n    padding: 0.75rem;\n    font-size: 0.9rem;\n  }"
+          "line": 668,
+          "declarations": 3,
+          "cssText": ".form-group input,\n  .form-group textarea {\n    padding: var(--space-3);\n    /* Intentionally hardco"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 658,
+          "line": 675,
           "declarations": 1,
           "cssText": ".form-group textarea {\n    min-height: 100px;\n  }"
         },
@@ -2028,7 +2028,7 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 233,
+          "line": 245,
           "declarations": 6,
           "cssText": ".hero {\n    min-height: 100vh;\n    height: 100vh;\n    padding-top: 60px;\n    padding-bottom: 60px;\n "
         },
@@ -2051,7 +2051,7 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 694,
+          "line": 712,
           "declarations": 1,
           "cssText": ".cursor-follow,\n  .cursor-dot {\n    display: none;\n  }"
         },
@@ -2070,19 +2070,19 @@
           "file": "css\\base.css",
           "line": 185,
           "declarations": 2,
-          "cssText": "section {\n  padding: 6rem 0;\n  position: relative;\n}"
+          "cssText": "section {\n  padding: var(--space-20) 0;\n  position: relative;\n}"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 41,
+          "line": 51,
           "declarations": 1,
           "cssText": "section {\n    padding: 4rem 0;\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 214,
+          "line": 226,
           "declarations": 1,
-          "cssText": "section {\n    padding: 3rem 0;\n  }"
+          "cssText": "section {\n    padding: var(--space-12) 0;\n  }"
         }
       ]
     },
@@ -2097,15 +2097,15 @@
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 45,
+          "line": 55,
           "declarations": 1,
-          "cssText": ".section-header {\n    margin-bottom: 3rem;\n  }"
+          "cssText": ".section-header {\n    margin-bottom: var(--space-12);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 218,
+          "line": 230,
           "declarations": 1,
-          "cssText": ".section-header {\n    margin-bottom: 2rem;\n  }"
+          "cssText": ".section-header {\n    margin-bottom: var(--space-8);\n  }"
         }
       ]
     },
@@ -2114,15 +2114,15 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 53,
+          "line": 63,
           "declarations": 2,
-          "cssText": ".services-grid {\n    grid-template-columns: repeat(2, 1fr);\n    gap: 1.5rem;\n  }"
+          "cssText": ".services-grid {\n    grid-template-columns: repeat(2, 1fr);\n    gap: var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 286,
+          "line": 298,
           "declarations": 2,
-          "cssText": ".services-grid {\n    grid-template-columns: 1fr;\n    gap: 1.5rem;\n  }"
+          "cssText": ".services-grid {\n    grid-template-columns: 1fr;\n    gap: var(--space-6);\n  }"
         },
         {
           "file": "css\\components\\cards\\_card-base.css",
@@ -2137,13 +2137,13 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 84,
+          "line": 94,
           "declarations": 1,
           "cssText": ".project-image {\n    height: 300px;\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 311,
+          "line": 323,
           "declarations": 1,
           "cssText": ".project-image {\n    height: 200px;\n  }"
         },
@@ -2160,19 +2160,19 @@
       "locations": [
         {
           "file": "css\\utils\\responsive.css",
-          "line": 88,
+          "line": 98,
           "declarations": 1,
-          "cssText": ".project-content {\n    padding: 2rem;\n  }"
+          "cssText": ".project-content {\n    padding: var(--space-8);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 315,
+          "line": 327,
           "declarations": 1,
           "cssText": ".project-content {\n    padding: var(--space-6);\n  }"
         },
         {
           "file": "css\\utils\\responsive.css",
-          "line": 596,
+          "line": 611,
           "declarations": 1,
           "cssText": ".service-card,\n  .project-content {\n    padding: var(--space-6) var(--space-4);\n  }"
         }

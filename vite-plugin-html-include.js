@@ -37,7 +37,6 @@ function processIncludes(html, projectRoot, processedFiles = new Set()) {
       let includedContent = readFileSync(resolvedPath, 'utf-8');
       // Recursively process includes in the included file
       includedContent = processIncludes(includedContent, projectRoot, processedFiles);
-      console.log(`✅ Included: ${includePath}`);
       return includedContent;
     } catch (error) {
       console.error(`❌ Error reading include file ${includePath}:`, error.message);

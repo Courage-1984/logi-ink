@@ -4,14 +4,14 @@
  */
 
 /* Base styles */
-@import url('./_form-base.css');
+@import './_form-base.css';
 
 /* Input variants */
-@import url('./_form-inputs.css');
+@import './_form-inputs.css';
 
 /* Validation and submit button */
-@import url('./_form-validation.css');
+@import './_form-validation.css';
 
 /* Color variants */
-@import url('./_form-variants.css');
+@import './_form-variants.css';
 

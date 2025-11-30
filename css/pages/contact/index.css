@@ -4,20 +4,20 @@
  */
 
 /* Base styles */
-@import url('./_contact-base.css');
+@import './_contact-base.css';
 
 /* Form styles */
-@import url('./_contact-form.css');
+@import './_contact-form.css';
 
 /* Map section */
-@import url('./_contact-map.css');
+@import './_contact-map.css';
 
 /* Testimonials and FAQ */
-@import url('./_contact-testimonials.css');
+@import './_contact-testimonials.css';
 
 /* Particles effects */
-@import url('./_contact-particles.css');
+@import './_contact-particles.css';
 
 /* Responsive styles */
-@import url('./_contact-responsive.css');
+@import './_contact-responsive.css';
 

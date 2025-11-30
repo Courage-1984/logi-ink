@@ -29,18 +29,18 @@
   --bg-tertiary: #16213e;
 
   /* Accent Colors */
-  --accent-cyan: var(--accent-cyan);
-  --accent-cyan-dark: var(--accent-cyan-dark);
-  --accent-magenta: var(--accent-magenta);
+  --accent-cyan: #00ffff;
+  --accent-cyan-dark: #00cccc;
+  --accent-magenta: #ff00ff;
   --accent-magenta-light: #ed12ff;
-  --accent-magenta-dark: var(--accent-magenta-dark);
-  --accent-green: var(--accent-green);
-  --accent-green-dark: var(--accent-green-dark);
-  --accent-blue: var(--accent-blue);
-  --accent-blue-dark: var(--accent-blue-dark);
-  --accent-pink: var(--accent-pink);
+  --accent-magenta-dark: #cc00cc;
+  --accent-green: #00ff00;
+  --accent-green-dark: #00cc00;
+  --accent-blue: #0066ff;
+  --accent-blue-dark: #0052cc;
+  --accent-pink: #ff0080;
   --accent-pink-dark: #cc0066;
-  --accent-yellow: var(--accent-yellow);
+  --accent-yellow: #ffff00;
   --accent-gold: #ffb347;
 
   /* Text Colors */
