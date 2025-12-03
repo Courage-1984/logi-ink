@@ -69,7 +69,7 @@ After generating and saving your images, update the meta tags in your HTML files
 
 ```html
 <!-- Open Graph -->
-<meta property="og:image" content="https://logi-ink.com/assets/images/og-image.png" />
+<meta property="og:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content="image/png" />
@@ -80,7 +80,7 @@ After generating and saving your images, update the meta tags in your HTML files
 ```html
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://logi-ink.com/assets/images/twitter-card.png" />
+<meta name="twitter:image" content="https://logi-ink.co.za/assets/images/twitter-card.png" />
 ```
 
 ## Preset Styles

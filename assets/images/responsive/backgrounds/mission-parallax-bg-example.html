@@ -1,27 +1,36 @@
 <!-- Responsive image example for mission-parallax-bg.webp -->
+<!-- Above-the-fold (LCP) images: use loading="eager", fetchpriority="high", decoding="sync" -->
+<!-- Below-the-fold images: use loading="lazy", decoding="async" -->
 <picture>
   <!-- AVIF format (best compression, modern browsers) -->
   <source
     type="image/avif"
-    srcset="mission-parallax-bg-480w.avif 480w,
+    srcset="mission-parallax-bg-320w.avif 320w,
+    mission-parallax-bg-375w.avif 375w,
+    mission-parallax-bg-480w.avif 480w,
     mission-parallax-bg-768w.avif 768w,
     mission-parallax-bg-1024w.avif 1024w,
     mission-parallax-bg-1280w.avif 1280w"
-    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- WebP format (fallback for older browsers) -->
   <source
     type="image/webp"
-    srcset="mission-parallax-bg-480w.webp 480w,
+    srcset="mission-parallax-bg-320w.webp 320w,
+    mission-parallax-bg-375w.webp 375w,
+    mission-parallax-bg-480w.webp 480w,
     mission-parallax-bg-768w.webp 768w,
     mission-parallax-bg-1024w.webp 1024w,
     mission-parallax-bg-1280w.webp 1280w"
-    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- Original format (final fallback) -->
   <img
     src="mission-parallax-bg.webp"
     alt="Description"
     loading="lazy"
+    decoding="async"
+    width="1620"
+    height="1080"
   >
 </picture>

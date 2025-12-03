@@ -1,25 +1,34 @@
 <!-- Responsive image example for image-corporate-website.png -->
+<!-- Above-the-fold (LCP) images: use loading="eager", fetchpriority="high", decoding="sync" -->
+<!-- Below-the-fold images: use loading="lazy", decoding="async" -->
 <picture>
   <!-- AVIF format (best compression, modern browsers) -->
   <source
     type="image/avif"
-    srcset="image-corporate-website-480w.avif 480w,
+    srcset="image-corporate-website-320w.avif 320w,
+    image-corporate-website-375w.avif 375w,
+    image-corporate-website-480w.avif 480w,
     image-corporate-website-768w.avif 768w,
     image-corporate-website-1024w.avif 1024w"
-    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- WebP format (fallback for older browsers) -->
   <source
     type="image/webp"
-    srcset="image-corporate-website-480w.webp 480w,
+    srcset="image-corporate-website-320w.webp 320w,
+    image-corporate-website-375w.webp 375w,
+    image-corporate-website-480w.webp 480w,
     image-corporate-website-768w.webp 768w,
     image-corporate-website-1024w.webp 1024w"
-    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- Original format (final fallback) -->
   <img
     src="image-corporate-website.png"
     alt="Description"
     loading="lazy"
+    decoding="async"
+    width="1080"
+    height="1080"
   >
 </picture>

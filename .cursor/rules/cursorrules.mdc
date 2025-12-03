@@ -636,7 +636,7 @@ assets/
         const script = document.createElement('script');
         script.defer = true;
         script.src = 'https://plausible.io/js/script.js';
-        script.setAttribute('data-domain', 'logi-ink.com');
+        script.setAttribute('data-domain', 'logi-ink.co.za');
         document.head.appendChild(script);
       });
     </script>

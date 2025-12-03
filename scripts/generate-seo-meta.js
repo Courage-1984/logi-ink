@@ -51,7 +51,7 @@ export const seoConfig = {
 };
 
 // Base URL configuration
-export const baseUrl = process.env.VITE_BASE_URL || 'https://logi-ink.com';
+export const baseUrl = process.env.VITE_BASE_URL || 'https://logi-ink.co.za';
 export const basePath = process.env.VITE_BASE_PATH || '/logi-ink/';
 
 // Generate meta tags HTML

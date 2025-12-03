@@ -180,7 +180,7 @@
     "blankPage": "about:blank",
     "ignoreStatusCode": false,
     "budgets": null,
-    "locale": "en-US",
+    "locale": "en-ZA",
     "blockedUrlPatterns": null,
     "additionalTraceCategories": null,
     "extraHeaders": null,

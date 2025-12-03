@@ -316,10 +316,10 @@ export async function initThreeHero() {
 
   if (!heroCanvas && !servicesCanvas && !projectsCanvas) return;
 
-  // Double-check mobile before initializing (in case viewport changed)
-  if (isMobileDevice()) {
-    return;
-  }
+    // Double-check mobile before initializing (in case viewport changed)
+    if (isMobileDevice()) {
+      return;
+    }
 
   try {
     // Dynamically import loadThreeJS only when needed

@@ -40,7 +40,7 @@
 
 ### 3. Verify Production URLs
 
-- **Status:** ✅ **VERIFIED** (all URLs use `https://logi-ink.com`)
+- **Status:** ✅ **VERIFIED** (all URLs use `https://logi-ink.co.za`)
 - **Checked:**
   - ✅ All internal links use clean URLs (`/about`, `/services`, etc.)
   - ✅ SEO meta tags use production URLs
@@ -205,7 +205,7 @@
    - `sw.js`: `644`
 
 4. **Test After Upload**
-   - Visit `https://logi-ink.com`
+   - Visit `https://logi-ink.co.za`
    - Test all pages
    - Test clean URLs (`/about`, `/services`, etc.)
    - Test contact form
@@ -225,7 +225,7 @@
 ### Immediate Checks (First 24 Hours):
 
 1. **Google Search Console**
-   - Submit sitemap: `https://logi-ink.com/sitemap.xml`
+   - Submit sitemap: `https://logi-ink.co.za/sitemap.xml`
    - Request indexing for main pages
    - Monitor for crawl errors
 

@@ -4,7 +4,7 @@
  */
 
 // Base URL configuration
-const baseUrl = process.env.VITE_BASE_URL || 'https://logi-ink.com';
+const baseUrl = process.env.VITE_BASE_URL || 'https://logi-ink.co.za';
 const basePath = process.env.VITE_BASE_PATH || '/logi-ink/';
 
 const fullUrl = `${baseUrl}${basePath === '/' ? '' : basePath.replace(/\/$/, '')}`;
@@ -21,7 +21,7 @@ export const organizationSchema = {
     'Digital Innovation & Creative Solutions - A digital agency specializing in web development, design, and digital transformation.',
   address: {
     '@type': 'PostalAddress',
-    addressCountry: 'US',
+    addressCountry: 'ZA',
   },
   sameAs: [
     // Add social media links here
@@ -32,7 +32,7 @@ export const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Customer Service',
-    email: 'contact@logi-ink.com',
+    email: 'info@logi-ink.co.za',
   },
 };
 
@@ -69,7 +69,7 @@ export const serviceSchema = {
   },
   areaServed: {
     '@type': 'Country',
-    name: 'United States',
+    name: 'South Africa',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

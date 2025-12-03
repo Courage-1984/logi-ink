@@ -30,29 +30,44 @@ function minifyCSS(css) {
     .trim();
 }
 
-async function inlineCriticalCSS() {
+async function inlineCriticalCSS(targetDir = null) {
   try {
+    // Determine target directory (dist/ for build, root for manual runs)
+    const projectRoot = path.resolve(__dirname, '..');
+    const htmlDir = targetDir || projectRoot;
+    const isDistBuild = htmlDir.includes('dist');
+
     // Read critical CSS
-    const criticalCSSPath = path.join(__dirname, '../css/critical.css');
+    const criticalCSSPath = path.join(projectRoot, 'css/critical.css');
+    if (!fs.existsSync(criticalCSSPath)) {
+      throw new Error(`Critical CSS file not found: ${criticalCSSPath}`);
+    }
     let criticalCSS = fs.readFileSync(criticalCSSPath, 'utf-8');
 
     // Minify critical CSS for inlining
     let minifiedCSS = minifyCSS(criticalCSS);
 
-    // Fix font paths when inlining (change ../assets to ./assets for HTML at root)
-    minifiedCSS = minifiedCSS.replace(/url\(['"]?\.\.\/assets\//g, "url('./assets/");
+    // Fix font paths when inlining
+    // For dist/ builds, paths should be relative to dist root
+    if (isDistBuild) {
+      minifiedCSS = minifiedCSS.replace(/url\(['"]?\.\.\/assets\//g, "url('./assets/");
+    } else {
+      minifiedCSS = minifiedCSS.replace(/url\(['"]?\.\.\/assets\//g, "url('./assets/");
+    }
 
     const originalSize = (criticalCSS.length / 1024).toFixed(2);
     const minifiedSize = (minifiedCSS.length / 1024).toFixed(2);
 
     console.log('📄 Inlining Critical CSS...\n');
+    console.log(`   Target directory: ${htmlDir}`);
     console.log(`   Original size: ${originalSize} KB`);
     console.log(`   Minified size: ${minifiedSize} KB`);
     console.log(`   Reduction: ${((1 - minifiedCSS.length / criticalCSS.length) * 100).toFixed(1)}%\n`);
 
-    // Find all HTML files in root (excluding partials, tests, reports, docs)
-    const htmlFiles = await glob('./*.html', {
-      ignore: ['node_modules/**', 'dist/**', 'build/**', '.old/**'],
+    // Find all HTML files in target directory
+    const htmlPattern = path.join(htmlDir, '*.html').replace(/\\/g, '/');
+    const htmlFiles = await glob(htmlPattern, {
+      ignore: ['node_modules/**', 'build/**', '.old/**', 'backups/**'],
     });
 
     console.log(`Found ${htmlFiles.length} HTML files to process\n`);
@@ -99,17 +114,20 @@ async function inlineCriticalCSS() {
       }
 
       // Create critical CSS block
-      // In development, load CSS synchronously to avoid service worker issues
-      // In production, load asynchronously for better performance
-      const isDevelopment = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV;
+      // Always use async loading in production builds (dist/)
+      // For manual runs on source files, use sync loading to avoid issues
+      const useAsyncLoading = isDistBuild || process.env.NODE_ENV === 'production';
 
       const asyncCSSLoading = `
-    <!-- Load remaining CSS asynchronously (non-blocking) -->
+    <!-- Preload critical CSS for faster loading -->
     <link rel="preload" href="css/main.css" as="style" />
+
+    <!-- Load remaining CSS asynchronously (non-blocking) -->
     <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'; this.onload=null;" />
     <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+
+    <!-- Fallback for browsers that don't support onload on link elements -->
     <script>
-      // Fallback for browsers that don't support onload on link elements
       (function() {
         var link = document.querySelector('link[href="css/main.css"][media="print"]');
         if (link) {
@@ -134,7 +152,7 @@ async function inlineCriticalCSS() {
       const criticalCSSBlock = `
     <!-- Critical CSS - Above-the-fold styles (inlined for faster FCP) -->
     <style>${minifiedCSS}</style>
-${isDevelopment ? syncCSSLoading : asyncCSSLoading}
+${useAsyncLoading ? asyncCSSLoading : syncCSSLoading}
 `;
 
       // Remove old stylesheet link if it exists (we'll add it back with async loading)
@@ -178,7 +196,9 @@ if (
   import.meta.url === `file://${process.argv[1]}` ||
   import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/'))
 ) {
-  inlineCriticalCSS();
+  // Get target directory from command line argument (dist/ for build, null for root)
+  const targetDir = process.argv[2] ? path.resolve(process.argv[2]) : null;
+  inlineCriticalCSS(targetDir);
 }
 
 export { inlineCriticalCSS };

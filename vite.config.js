@@ -4,6 +4,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import viteCompression from 'vite-plugin-compression';
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'fs';
 import htmlInclude from './vite-plugin-html-include.js';
+import criticalCSS from './vite-plugin-critical-css.js';
 
 let resolvedOutDir = resolve(process.cwd(), 'dist');
 let reportsSourceDir = null;
@@ -252,6 +253,9 @@ export default defineConfig(({ command, mode }) => {
   plugins: [
     // HTML include plugin (processes <!-- include --> comments)
     htmlInclude(),
+
+    // Critical CSS inlining plugin (runs post-build)
+    criticalCSS(),
 
     // Clean URLs middleware for dev and preview servers
     {

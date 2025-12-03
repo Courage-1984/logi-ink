@@ -11,21 +11,21 @@ const seoConfig = {
       'Discover our comprehensive range of digital services including web development, design, branding, and digital strategy. We deliver solutions that exceed expectations.',
     keywords:
       'web development services, digital design, branding services, web design, digital strategy',
-    url: 'https://logi-ink.com/logi-ink/services.html',
+    url: 'https://logi-ink.co.za/logi-ink/services.html',
   },
   projects: {
     title: 'Our Projects - Logi-Ink Portfolio',
     description:
       'Explore our portfolio of successful digital projects. See how we transform ideas into exceptional digital experiences that drive results.',
     keywords: 'portfolio, web projects, digital projects, case studies, web design examples',
-    url: 'https://logi-ink.com/logi-ink/projects.html',
+    url: 'https://logi-ink.co.za/logi-ink/projects.html',
   },
   contact: {
     title: 'Contact Us - Logi-Ink',
     description:
       'Get in touch with Logi-Ink to discuss your digital project. We are here to help bring your vision to life with innovative solutions.',
     keywords: 'contact logi-ink, get in touch, digital agency contact, project inquiry',
-    url: 'https://logi-ink.com/logi-ink/contact.html',
+    url: 'https://logi-ink.co.za/logi-ink/contact.html',
   },
 };
 
@@ -66,7 +66,7 @@ function generateSEOTags(config) {
     />
     <meta
       property="og:image"
-      content="https://logi-ink.com/logi-ink/assets/images/banners/banner_home.webp"
+      content="https://logi-ink.co.za/logi-ink/assets/images/banners/banner_home.webp"
     />
     <meta property="og:site_name" content="Logi-Ink" />
     <meta property="og:locale" content="en_US" />
@@ -81,7 +81,7 @@ function generateSEOTags(config) {
     />
     <meta
       name="twitter:image"
-      content="https://logi-ink.com/logi-ink/assets/images/banners/banner_home.webp"
+      content="https://logi-ink.co.za/logi-ink/assets/images/banners/banner_home.webp"
     />
     <meta name="twitter:site" content="@logiink" />
     <meta name="twitter:creator" content="@logiink" />`;
@@ -91,15 +91,15 @@ function generateSEOTags(config) {
 function generateStructuredData(config, pageType) {
   const breadcrumb = {
     services: [
-      { name: 'Home', item: 'https://logi-ink.com/logi-ink/' },
+      { name: 'Home', item: 'https://logi-ink.co.za/logi-ink/' },
       { name: 'Services', item: config.url },
     ],
     projects: [
-      { name: 'Home', item: 'https://logi-ink.com/logi-ink/' },
+      { name: 'Home', item: 'https://logi-ink.co.za/logi-ink/' },
       { name: 'Projects', item: config.url },
     ],
     contact: [
-      { name: 'Home', item: 'https://logi-ink.com/logi-ink/' },
+      { name: 'Home', item: 'https://logi-ink.co.za/logi-ink/' },
       { name: 'Contact', item: config.url },
     ],
   };

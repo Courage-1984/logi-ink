@@ -18,5 +18,5 @@ Allow: /css/
 Allow: /js/
 
 # Sitemap location
-Sitemap: https://logi-ink.com/sitemap.xml
+Sitemap: https://logi-ink.co.za/sitemap.xml
 

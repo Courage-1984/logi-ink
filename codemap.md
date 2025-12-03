@@ -1,528 +1,543 @@
-# Logi-Ink Codebase Map
+# Codebase Map - Logi-Ink
 
 **Generated:** 2025-01-30  
 **Project:** logi-ink v2.1.0  
-**Description:** Complete structural and dependency map of the Logi-Ink codebase
+**Description:** Complete structural and dependency map of the codebase
 
 ---
 
-## 📊 Overview
+## 📊 Executive Summary
 
-This codebase is a modern, modular web application built with:
-- **Build System:** Vite 7.2.2
-- **Architecture:** Modular ES6 modules with CSS modules
-- **Entry Points:** `js/main.js` (JavaScript), `css/main.css` (CSS)
-- **Total Files:** 213+ (excluding node_modules, dist, test-results)
-
-### Quick Stats
-
-- **JavaScript Modules:** 45 files
-  - Core: 9 modules
-  - Utils: 18 modules
-  - Pages: 4 modules
-  - Easter Egg: 13 modules
-- **CSS Modules:** 64 files
-  - Components: 20 modules
-  - Pages: 4 modules
-  - Utils: 13 modules
-  - Easter Egg: 1 module
-- **HTML Pages:** 9 entry points
+### Project Overview
+Logi-Ink is a modern, performance-optimized static website built with:
+- **Build Tool:** Vite 7.2.2
+- **Architecture:** Modular ES6 JavaScript + Modular CSS
+- **Total Files:** ~170 source files
+- **Entry Points:** 9 HTML pages
+- **JavaScript Modules:** 50 files
+- **CSS Modules:** 60 files
 - **Build Scripts:** 39 utility scripts
-- **Configuration Files:** 14 files
+
+### Key Characteristics
+- ✅ **Modular Architecture:** Well-organized component-based structure
+- ✅ **Performance Optimized:** Code-splitting, lazy loading, critical CSS
+- ✅ **Modern Stack:** ES6 modules, CSS custom properties, Vite bundling
+- ✅ **Comprehensive Tooling:** Image optimization, font subsetting, performance analysis
 
 ---
 
 ## 📁 Directory Structure
 
+### Root Level Files
 ```
-logi-ink/
-├── js/                    # JavaScript modules (45 files)
-│   ├── main.js           # Main entry point
-│   ├── core/             # Core functionality (9 modules)
-│   ├── utils/            # Utility modules (18 modules)
-│   ├── pages/            # Page-specific modules (4 modules)
-│   └── easter-egg/       # Galaxy easter egg feature (13 modules)
-├── css/                   # CSS modules (64 files)
-│   ├── main.css          # Main entry point
-│   ├── variables.css     # CSS custom properties
-│   ├── base.css          # Base/reset styles
-│   ├── fonts.css         # Font declarations
-│   ├── components/       # Reusable components (20 modules)
-│   ├── pages/            # Page-specific styles (4 modules)
-│   ├── utils/            # Utility styles (13 modules)
-│   └── easter-egg/       # Easter egg styles (1 module)
-├── generate/             # Standalone image generator tool
-│   ├── generate.html     # Generator interface
-│   ├── css/              # Generator styles (8 files)
-│   └── js/               # Generator modules (31 files)
-├── scripts/              # Build and utility scripts (39 files)
-├── partials/              # HTML partials (2 files)
-├── tests/                # Test files (5 files)
-├── docs/                  # Documentation (27 files)
-├── assets/               # Static assets
-│   ├── fonts/            # Self-hosted fonts (WOFF2)
-│   ├── images/           # Images (AVIF/WebP/PNG)
-│   ├── video/            # Video assets
-│   └── audio/            # Audio assets
-└── [root HTML files]     # 9 entry point HTML files
+logia-ink/
+├── HTML Entry Points (9 files)
+│   ├── index.html
+│   ├── about.html
+│   ├── contact.html
+│   ├── services.html
+│   ├── projects.html
+│   ├── pricing.html
+│   ├── seo-services.html
+│   ├── reports.html
+│   └── 404.html
+│
+├── Configuration Files (12 files)
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── eslint.config.js
+│   ├── playwright.config.js
+│   ├── lighthouserc.json
+│   └── ... (security headers, SEO configs)
+│
+├── Assets
+│   ├── fonts/ (Orbitron, Rajdhani - subsetted WOFF2)
+│   ├── images/ (responsive AVIF/WebP sets)
+│   ├── video/ (optimized hero loops)
+│   └── audio/ (space ambience for easter egg)
+│
+└── Source Code
+    ├── css/ (modular stylesheets)
+    ├── js/ (ES6 modules)
+    ├── scripts/ (build & analysis tools)
+    ├── generate/ (social media image generator)
+    └── partials/ (HTML components)
 ```
 
 ---
 
-## 🔗 Dependency Graph
+## 🎨 CSS Architecture
 
-### JavaScript Module Dependencies
-
-```
-js/main.js (Entry Point)
-│
-├── CSS Import
-│   └── css/main.css
-│
-├── Core Modules (Immediate Load)
-│   ├── scroll-manager.js
-│   ├── navigation.js → scroll-manager.js
-│   ├── scroll.js → scroll-manager.js
-│   ├── animations.js
-│   ├── cursor.js
-│   ├── mouse-tilt.js
-│   ├── page-transitions.js
-│   └── service-worker.js → utils/env.js
-│
-├── Utils (Immediate Load)
-│   ├── interactions.js
-│   ├── ripples-lazyload.js
-│   ├── lazy-background-images.js
-│   ├── accessibility.js
-│   ├── error-handler.js → utils/env.js
-│   └── dynamic-prefetch.js
-│
-├── Lazy Loaded Modules
-│   ├── three-hero.js → utils/three-loader.js, utils/env.js
-│   ├── performance.js → web-vitals, utils/env.js
-│   ├── easter-egg.js → utils/env.js
-│   │   └── runtime.js → [10+ easter-egg modules]
-│   └── pages/*.js (conditionally loaded)
-│       ├── contact.js → utils/toast.js, utils/env.js
-│       ├── services.js
-│       ├── projects.js
-│       └── reports.js
-│
-└── Utils (Lazy Loaded)
-    └── env.js (Most Imported Module - 7+ imports)
-```
-
-### CSS Module Dependencies
+### Structure Overview
+The CSS follows a modular architecture with clear separation of concerns:
 
 ```
-css/main.css (Entry Point)
+css/
+├── Core Files
+│   ├── main.css (entry point)
+│   ├── variables.css (design tokens)
+│   ├── base.css (reset & typography)
+│   ├── fonts.css (@font-face declarations)
+│   └── critical.css (above-the-fold styles)
 │
-├── Foundation (Order Critical)
-│   ├── variables.css (1st - defines CSS custom properties)
-│   ├── fonts.css (2nd - font declarations)
-│   └── base.css (3rd - reset/typography)
+├── Components/ (20 component files)
+│   ├── Standalone components (18 files)
+│   │   ├── navigation.css
+│   │   ├── hero.css
+│   │   ├── buttons.css
+│   │   └── ...
+│   │
+│   └── Modular components (index.css imports)
+│       ├── cards/index.css → 9 sub-modules
+│       └── forms/index.css → 4 sub-modules
 │
-├── Components (20 modules)
-│   ├── navigation.css
-│   ├── hero.css
-│   ├── buttons.css
-│   ├── cards/index.css → [9 card submodules]
-│   ├── footer.css
-│   ├── forms/index.css → [4 form submodules]
-│   └── [14 more component modules]
+├── Pages/ (4 page-specific styles)
+│   ├── Standalone: about.css, reports.css
+│   └── Modular:
+│       ├── contact/index.css → 6 sub-modules
+│       └── projects/index.css → 2 sub-modules
 │
-├── Pages (4 modules)
-│   ├── contact/index.css → [6 contact submodules]
-│   ├── projects/index.css → [2 project submodules]
-│   ├── about.css
-│   └── reports.css
-│
-├── Effects & Animations
+├── Utils/ (13 utility files)
 │   ├── animations.css
 │   ├── cursor.css
 │   ├── 3d-effects.css
 │   ├── fluid-effects.css
-│   └── easter-egg/easter-egg.css
+│   └── responsive.css (must be last)
 │
-├── Utilities
-│   ├── loading.css
-│   ├── empty-state.css
-│   ├── dividers.css
-│   └── skip-link.css
-│
-└── Responsive (Must Be Last)
-    ├── _responsive-breakpoints.css
-    ├── _responsive-images.css
-    ├── _fluid-typography.css
-    ├── _performance-optimizations.css
-    └── responsive.css
+└── easter-egg/ (galaxy easter egg styles)
+    └── easter-egg.css
 ```
 
-### Easter Egg Module Dependencies
-
+### Import Chain
 ```
-easter-egg/runtime.js (Orchestrator)
+main.css
+├── variables.css (1st - design tokens)
+├── fonts.css (1.5 - font declarations)
+├── base.css (2nd - reset & typography)
+├── components/* (3rd - UI components)
+│   ├── cards/index.css
+│   │   └── _card-*.css (9 files)
+│   └── forms/index.css
+│       └── _form-*.css (4 files)
+├── pages/* (4th - page-specific)
+│   ├── contact/index.css
+│   │   └── _contact-*.css (6 files)
+│   └── projects/index.css
+│       └── _project-*.css (2 files)
+├── utils/* (5th - animations & effects)
+└── utils/responsive.css (last - media queries)
+```
+
+---
+
+## 💻 JavaScript Architecture
+
+### Module Structure
+```
+js/
+├── main.js (entry point)
 │
-├── Utils
-│   └── env.js (isDevelopmentEnv, isMobileDevice)
+├── core/ (9 core modules)
+│   ├── scroll-manager.js (centralized scroll handler)
+│   ├── navigation.js
+│   ├── scroll.js
+│   ├── animations.js
+│   ├── cursor.js
+│   ├── mouse-tilt.js
+│   ├── page-transitions.js
+│   ├── service-worker.js
+│   └── three-hero.js
 │
-├── Textures
-│   ├── celestial-textures.js
-│   │   ├── texture-wrapping.js
-│   │   └── procedural-noise.js
-│   └── [Sun, Moon, Planet texture generators]
+├── utils/ (18 utility modules)
+│   ├── env.js (environment detection)
+│   ├── error-handler.js
+│   ├── accessibility.js
+│   ├── performance.js
+│   ├── three-loader.js
+│   ├── toast.js
+│   └── ... (12 more utilities)
 │
-├── Galaxy & Stars
-│   ├── galaxy-generator.js (Multi-layer galaxy)
-│   └── star-field.js (Background stars with twinkling)
+├── pages/ (4 page-specific modules)
+│   ├── contact.js
+│   ├── services.js
+│   ├── projects.js
+│   └── reports.js
 │
-├── Lighting & Atmosphere
-│   └── lighting-atmosphere.js (Dynamic lighting, atmospheric glow)
+└── easter-egg/ (13 3D scene modules)
+    ├── easter-egg.js (initialization)
+    ├── runtime.js (scene orchestrator)
+    ├── celestial-textures.js
+    ├── texture-wrapping.js
+    ├── procedural-noise.js
+    ├── celestial-mechanics.js
+    ├── camera-controls.js
+    ├── galaxy-generator.js
+    ├── star-field.js
+    ├── lighting-atmosphere.js
+    ├── nebula-clouds.js
+    ├── particle-effects.js
+    └── post-processing.js
+```
+
+### Dependency Graph
+
+#### Main Entry Point (js/main.js)
+```
+main.js
+├── Immediate Imports (critical)
+│   ├── css/main.css
+│   ├── core/scroll-manager.js
+│   ├── core/navigation.js
+│   ├── core/scroll.js
+│   ├── core/page-transitions.js
+│   ├── utils/error-handler.js
+│   ├── utils/accessibility.js
+│   └── utils/interactions.js
 │
-├── Particle Effects
-│   └── particle-effects.js (Asteroids, comets, solar wind, space dust, stations)
+├── Deferred Imports (non-critical)
+│   ├── core/animations.js
+│   ├── core/cursor.js
+│   ├── core/mouse-tilt.js
+│   └── utils/dynamic-prefetch.js
 │
-├── Celestial Mechanics
-│   └── celestial-mechanics.js (Orbital mechanics, Lagrange points)
-│
-├── Camera
-│   └── camera-controls.js (Orbital controls, presets, animations)
-│
-├── Nebula
-│   └── nebula-clouds.js (Nebula, star-forming regions, interstellar medium)
-│
-└── Post-Processing
-    └── post-processing.js (Bloom, depth of field, motion blur)
+└── Lazy Imports (on-demand)
+    ├── utils/performance.js
+    ├── easter-egg/easter-egg.js
+    ├── core/three-hero.js
+    └── pages/*.js (route-based)
+```
+
+#### Core Module Dependencies
+```
+scroll-manager.js
+└── Used by: navigation.js, scroll.js
+
+env.js
+└── Used by: service-worker.js, three-hero.js, easter-egg/*, pages/contact.js
+
+three-loader.js
+└── Used by: core/three-hero.js
+```
+
+#### Easter Egg Module Dependencies
+```
+runtime.js (orchestrator)
+├── celestial-textures.js
+│   ├── texture-wrapping.js
+│   └── procedural-noise.js
+├── galaxy-generator.js
+├── star-field.js
+├── lighting-atmosphere.js
+├── nebula-clouds.js
+├── particle-effects.js
+├── camera-controls.js
+├── post-processing.js
+└── celestial-mechanics.js
 ```
 
 ---
 
 ## 📦 Dependencies
 
-### Runtime Dependencies
+### NPM Packages
 
-- `html-to-image` ^1.11.13 - Image export (generate tool)
+#### Production Dependencies (2)
+- `html-to-image` ^1.11.13 - Image export for social media generator
 - `web-vitals` ^5.1.0 - Performance metrics tracking
 
-### Development Dependencies
+#### Development Dependencies (20)
+**Build Tools:**
+- `vite` ^7.2.2 - Build tool and dev server
+- `terser` ^5.44.1 - JavaScript minification
+- `postcss` ^8.5.6 - CSS processing
+- `vite-plugin-compression` ^0.5.1 - Gzip/Brotli compression
 
-- **Build Tools:**
-  - `vite` ^7.2.2 - Build system
-  - `vite-plugin-compression` ^0.5.1 - Gzip/Brotli compression
-  - `rollup-plugin-visualizer` ^6.0.5 - Bundle analysis
-  - `terser` ^5.44.1 - JavaScript minification
-  - `sharp` ^0.32.6 - Image optimization
-  - `postcss` ^8.5.6 - CSS processing
-  - `@fullhuman/postcss-purgecss` ^7.0.2 - CSS purging (disabled)
+**Code Quality:**
+- `eslint` ^9.39.1 - JavaScript linting
+- `prettier` ^3.6.2 - Code formatting
+- `@eslint/js` ^9.39.1 - ESLint configuration
 
-- **Linting & Formatting:**
-  - `eslint` ^9.39.1 - JavaScript linting
-  - `@eslint/js` ^9.39.1 - ESLint config
-  - `prettier` ^3.6.2 - Code formatting
+**Testing & Analysis:**
+- `@playwright/test` ^1.49.0 - E2E testing
+- `@lhci/cli` ^0.13.0 - Lighthouse CI
+- `pa11y` ^9.0.1 - Accessibility auditing
+- `pwmetrics` ^4.1.5 - Performance metrics
 
-- **Testing:**
-  - `@playwright/test` ^1.49.0 - E2E testing
-  - `pa11y` ^9.0.1 - Accessibility testing
-  - `pwmetrics` ^4.1.5 - Performance metrics
+**Utilities:**
+- `glob` ^11.0.3 - File pattern matching
+- `sharp` ^0.32.6 - Image processing
+- `cross-env` ^7.0.3 - Cross-platform env vars
+- `rollup-plugin-visualizer` ^6.0.5 - Bundle analysis
 
-- **Reporting:**
-  - `@lhci/cli` ^0.13.0 - Lighthouse CI
-  - `pa11y-reporter-html` ^2.0.0 - Pa11y HTML reports
+### External Dependencies
 
-- **Utilities:**
-  - `cross-env` ^7.0.3 - Cross-platform env vars
-  - `glob` ^11.0.3 - File globbing
-  - `css` ^3.0.0 - CSS parsing
+#### CDN Resources
+- **Three.js r128** - Loaded from `cdnjs.cloudflare.com` (dynamic, only when needed)
+- **Plausible Analytics** - Privacy-first analytics from `plausible.io`
 
-### Engine Requirements
-
-- Node.js: >=20.0.0
-- npm: >=10.0.0
+#### Third-Party Services
+- **Google Tag Manager** - Analytics (deferred loading)
+- **Plausible Analytics** - Web analytics
 
 ---
 
-## 🏗️ Build System
+## 🔗 Component Relationships
 
-### Vite Configuration
+### Core Utilities (High Reusability)
+
+#### `js/utils/env.js`
+**Purpose:** Environment detection and configuration  
+**Used By:**
+- `core/service-worker.js`
+- `core/three-hero.js`
+- `easter-egg/runtime.js`
+- `pages/contact.js`
+- `utils/performance.js`
+
+**Coupling Level:** Medium (acceptable - core utility)
+
+#### `js/core/scroll-manager.js`
+**Purpose:** Centralized scroll event handler (performance optimization)  
+**Used By:**
+- `core/navigation.js`
+- `core/scroll.js`
+
+**Coupling Level:** Low (intentional centralization)
+
+### Easter Egg System (Complex Interdependencies)
+
+#### `js/easter-egg/runtime.js`
+**Purpose:** Main 3D scene orchestrator  
+**Orchestrates:**
+- Celestial textures (sun, planets, moons)
+- Galaxy generation (multi-layer)
+- Star field (background)
+- Lighting and atmosphere
+- Nebula clouds
+- Particle effects (asteroids, comets, solar wind)
+- Camera controls
+- Post-processing (bloom, DoF, motion blur)
+- Celestial mechanics (orbital physics)
+
+**Complexity:** High (13 interconnected modules)  
+**Modularity:** Excellent (each module has single responsibility)
+
+### Page-Specific Modules
+
+#### `js/pages/contact.js`
+**Dependencies:**
+- `utils/toast.js` - User feedback
+- `utils/env.js` - Environment detection
+
+**Coupling Level:** Low (isolated page logic)
+
+---
+
+## 🏗️ Build Configuration
+
+### Vite Configuration Highlights
+
+**Build Settings:**
+- Minification: Terser (with console removal)
+- CSS Minification: Enabled
+- CSS Code Splitting: Disabled (single bundle)
+- Source Maps: Disabled (production)
 
 **Entry Points:**
-- `index.html` (Homepage)
-- `about.html`
-- `services.html`
-- `projects.html`
-- `contact.html`
-- `pricing.html`
-- `seo-services.html`
-- `reports.html`
-- `sw.js` (Service Worker)
-
-**Build Output:**
-- Directory: `dist/`
-- CSS Code Splitting: Disabled (single bundle)
-- CSS Minification: Disabled
-- JS Minification: Terser (with console removal)
-- Source Maps: Disabled in production
-
-**Chunking Strategy:**
-- Manual chunking for vendor libraries
-- Three.js separated into `vendor-three` chunk
-- Application code: Single bundle
+- 9 HTML pages (index, about, services, projects, contact, pricing, seo-services, reports, 404)
+- Service worker (sw.js)
 
 **Custom Plugins:**
-1. **HTML Include Plugin** - Processes `<!-- include -->` comments
-2. **Clean URLs** - Dev/preview server middleware + build plugin
-3. **Asset Copy Plugins:**
-   - Favicons (root files)
-   - Videos (optimized + root)
-   - Audio files
-   - Images (entire directory structure)
-   - Fonts (entire directory structure)
-   - Logos (root files)
-   - SEO files (robots.txt, sitemap.xml, etc.)
-   - Reports directory
-4. **Compression:**
-   - Gzip (threshold: 1KB)
-   - Brotli (threshold: 1KB)
-5. **Bundle Analyzer:**
-   - `stats.html` (treemap)
-   - `reports/bundle-report.html` (treemap)
-   - `reports/bundle-stats.json` (raw data)
+1. **html-include** - Processes `<!-- include -->` comments
+2. **clean-urls** - Dev/preview server URL rewriting
+3. **copy-favicons** - Copies favicon files to dist root
+4. **copy-videos** - Copies optimized video files
+5. **copy-audio** - Copies audio assets
+6. **copy-images** - Copies entire images directory
+7. **copy-fonts** - Copies fonts directory structure
+8. **copy-logos** - Copies logo files
+9. **copy-seo-files** - Copies robots.txt, sitemap.xml, etc.
+10. **copy-static-reports** - Copies reports directory
+11. **vite-compression** - Gzip and Brotli compression
+12. **rollup-plugin-visualizer** - Bundle analysis
+
+**Chunking Strategy:**
+- Manual chunking for vendor code
+- Separate chunk for Three.js (if installed)
+- Application code not chunked (small enough)
 
 ---
 
-## 🔍 Module Analysis
+## 🔍 Potential Issues & Recommendations
 
-### Most Imported Modules
+### ✅ Strengths
 
-1. **`js/utils/env.js`** - 7+ imports
-   - Used by: service-worker, three-hero, contact, error-handler, performance, easter-egg modules
-   - Exports: `isDevelopmentEnv`, `isProductionEnv`, `isServiceWorkerDisabled`, `getEnvironmentMode`, `isMobileDevice`
-   - Risk: Medium (high coupling, but appropriate for utility)
+1. **Excellent Modularity**
+   - Clear separation of concerns
+   - Single responsibility principle followed
+   - Well-organized directory structure
 
-2. **`js/core/scroll-manager.js`** - 2 imports
-   - Used by: navigation, scroll
-   - Purpose: Centralized scroll event handler
-   - Risk: Low (appropriate architecture)
+2. **Performance Optimizations**
+   - Code-splitting with dynamic imports
+   - Lazy loading for non-critical modules
+   - Critical CSS separation
+   - Image optimization pipeline
 
-3. **`css/main.css`** - Single entry point
-   - Imports: 64 CSS files
-   - Risk: Low (well-organized modular structure)
+3. **Maintainability**
+   - Consistent naming conventions
+   - Modular CSS with index files
+   - Clear dependency chains
 
-### Large/Complex Modules
+### ⚠️ Areas for Consideration
 
-1. **`vite.config.js`** - 800+ lines
-   - Contains: Multiple plugin configurations, asset copying logic
-   - Recommendation: Consider extracting plugin configs to separate files
+#### 1. Video Lazy-Load Modules (Low Priority)
+**Issue:** 7 similar video lazy-load modules  
+**Files:**
+- `video-water-ripples-lazyload.js`
+- `video-corporate-website-lazyload.js`
+- `video-e-commerce-platform-lazyload.js`
+- `video-fintech-mobile-app-lazyload.js`
+- `video-fitness-tracking-app-lazyload.js`
+- `video-marketing-campaign-lazyload.js`
+- `video-tech-startup-rebrand-lazyload.js`
 
-2. **`js/easter-egg/runtime.js`** - Orchestrates 10+ modules
-   - Complexity: High (but well-separated concerns)
-   - Risk: Low (appropriate for feature scope)
+**Recommendation:** Consider consolidating into a single configurable module if patterns are similar. Current approach is acceptable for page-specific implementations.
 
-3. **`js/easter-egg/celestial-textures.js`** - Complex texture generation
-   - Dependencies: texture-wrapping, procedural-noise
-   - Risk: Low (well-modularized)
+#### 2. Vite Config Size (Low Priority)
+**Issue:** `vite.config.js` is 804 lines  
+**Recommendation:** Consider splitting into separate plugin files if it grows further. Current organization is clear and acceptable.
 
-### Circular Dependencies
+#### 3. Easter Egg Complexity (Medium Priority)
+**Issue:** 13 interconnected modules for 3D scene  
+**Status:** ✅ Well-modularized - each module has clear responsibility  
+**Recommendation:** Current structure is excellent. Consider adding JSDoc comments for complex functions if not already present.
 
-✅ **None Detected** - All import/export relationships are acyclic.
+#### 4. CSS Import Depth (Low Priority)
+**Issue:** Deep nesting (main.css → cards/index.css → _card-*.css)  
+**Status:** ✅ Well-organized, Vite handles bundling efficiently  
+**Recommendation:** Current structure is optimal for maintainability.
 
----
+### 🎯 Optimization Opportunities
 
-## 🎯 Architecture Patterns
+1. **Bundle Analysis**
+   - Use `npm run build` to generate `dist/stats.html`
+   - Review bundle sizes regularly
+   - Monitor chunk sizes
 
-### JavaScript
+2. **Code Splitting**
+   - Consider splitting easter-egg modules further if bundle size grows
+   - Monitor Three.js loading (currently dynamic)
 
-- **Pattern:** Modular ES6 with lazy loading
-- **Entry:** `js/main.js` imports and initializes all modules
-- **Initialization:** Uses `requestIdleCallback` for non-critical modules
-- **Lazy Loading:**
-  - Easter egg (heavy 3D)
-  - Three.js hero backgrounds
-  - Page-specific modules (conditional)
-  - Performance tracking
-
-### CSS
-
-- **Pattern:** Modular CSS with @import
-- **Entry:** `css/main.css` imports all modules
-- **Order:** Critical (variables → base → components → pages → utils → responsive)
-- **Organization:**
-  - Component indexes (cards, forms, contact, projects) aggregate submodules
-  - Utilities separated by concern
-  - Responsive styles must be last
-
-### HTML
-
-- **Pattern:** Static HTML with build-time includes
-- **Includes:** `<!-- include partials/navbar.html -->` (processed by Vite plugin)
-- **Clean URLs:** All internal links use clean URLs (no .html extension)
-- **SEO:** Comprehensive meta tags, structured data, favicons
+3. **CSS Optimization**
+   - Critical CSS inlining script available (`npm run inline-critical-css`)
+   - Consider running after major CSS changes
 
 ---
 
-## 📈 Potential Hotspots & Recommendations
+## 📈 Statistics
 
-### High Coupling Areas
+### File Counts
+- **HTML Files:** 9 entry points
+- **JavaScript Modules:** 50 files
+  - Core: 9 modules
+  - Utils: 18 modules
+  - Pages: 4 modules
+  - Easter Egg: 13 modules
+  - Generate Tool: 31 modules
+- **CSS Files:** 60 files
+  - Components: 20 files
+  - Pages: 4 files
+  - Utils: 13 files
+  - Core: 5 files
+- **Build Scripts:** 39 utility scripts
+- **Configuration Files:** 12 files
 
-1. **`js/utils/env.js`**
-   - **Current:** 7+ modules depend on it
-   - **Risk:** Medium
-   - **Recommendation:** Monitor growth; consider splitting if it exceeds 10-12 exports
-
-2. **`css/main.css`**
-   - **Current:** Single entry point for 64 files
-   - **Risk:** Low
-   - **Recommendation:** Current structure is appropriate; maintain import order
-
-### Large Files
-
-1. **`vite.config.js`** (800+ lines)
-   - **Recommendation:** Extract plugin configurations:
-     - `vite-plugins/favicons.js`
-     - `vite-plugins/assets.js`
-     - `vite-plugins/compression.js`
-
-2. **Easter Egg Runtime** (orchestrates 10+ modules)
-   - **Status:** ✅ Well-separated concerns
-   - **Recommendation:** No changes needed
-
-### Unused Files (Candidates)
-
-- `js/utils/video-*-lazyload.js` (7 similar files)
-  - **Note:** May be project-specific; requires runtime analysis to confirm
+### Dependency Counts
+- **NPM Dependencies:** 22 packages
+- **External CDN:** 2 resources (Three.js, Plausible)
+- **Third-Party Services:** 2 (GTM, Plausible)
 
 ---
 
-## 📝 File Classification
+## 🗺️ Module Dependency Map
 
-### JavaScript Files by Category
+### Critical Path (Initial Load)
+```
+index.html
+└── js/main.js
+    ├── css/main.css
+    │   └── (all CSS imports)
+    ├── core/scroll-manager.js
+    ├── core/navigation.js
+    ├── core/scroll.js
+    ├── core/page-transitions.js
+    ├── utils/error-handler.js
+    └── utils/accessibility.js
+```
 
-**Core (9):**
-- navigation.js, scroll.js, scroll-manager.js, animations.js, cursor.js, mouse-tilt.js, page-transitions.js, service-worker.js, three-hero.js
+### Deferred Path (After Initial Load)
+```
+main.js (deferred)
+├── core/animations.js
+├── core/cursor.js
+├── core/mouse-tilt.js
+└── utils/dynamic-prefetch.js
+```
 
-**Utils (18):**
-- accessibility.js, env.js, error-handler.js, interactions.js, performance.js, ripples-lazyload.js, three-loader.js, toast.js, dynamic-prefetch.js, web-worker-helper.js, lazy-background-images.js, [7 video-lazyload variants]
-
-**Pages (4):**
-- contact.js, services.js, projects.js, reports.js
-
-**Easter Egg (13):**
-- easter-egg.js, runtime.js, celestial-textures.js, texture-wrapping.js, procedural-noise.js, celestial-mechanics.js, camera-controls.js, galaxy-generator.js, star-field.js, lighting-atmosphere.js, nebula-clouds.js, particle-effects.js, post-processing.js
-
-### CSS Files by Category
-
-**Components (20):**
-- navigation, hero, buttons, cards (9 submodules), footer, forms (4 submodules), cta, parallax, back-to-top, modals, alerts, service-worker, badges, tables, tabs, accordions, tooltips, typography, breadcrumbs, toast
-
-**Pages (4):**
-- contact (6 submodules), projects (2 submodules), about, reports
-
-**Utils (13):**
-- animations, cursor, 3d-effects, fluid-effects, loading, empty-state, dividers, skip-link, _responsive-breakpoints, _responsive-images, _fluid-typography, _performance-optimizations, responsive
-
-**Easter Egg (1):**
-- easter-egg.css
-
-### Scripts by Category
-
-**Optimization (6):**
-- optimize-images.js, optimize-video.js, convert-poster-formats.js, generate-responsive-images.js, subset-fonts.js, inline-critical-css.js
-
-**Analysis (11):**
-- analyze-bundle-size.js, analyze-critical-css.js, analyze-font-loading.js, analyze-important.js, analyze-remaining-opportunities.js, analyze-specificity.js, audit-font-declarations.js, css-inventory.js, font-inventory.js, find-duplicate-selectors.js, find-hardcoded-values.js
-
-**Reporting (6):**
-- generate-coverage-report.js, generate-dashboard-reports.js, generate-media-inventory.js, generate-performance-timeline.js, generate-pwmetrics-report.js, run-pa11y-report.js
-
-**SEO (4):**
-- generate-sitemap.js, generate-seo-meta.js, generate-structured-data.js, update-html-seo.js
-
-**Migration (5):**
-- enhance-variables-and-replace.js, migrate-font-values.js, migrate-high-priority-spacing.js, replace-hardcoded-values.js, split-cards-css.js
-
-**Utilities (3):**
-- find-chrome-path.js, delete-unused-fonts.js, unregister-service-worker.js
-
-**Shell (3):**
-- subset-fonts-with-glyphhanger.sh, subset-fonts-with-glyphhanger.ps1, test-fonts.ps1
+### Lazy Path (On-Demand)
+```
+main.js (lazy)
+├── utils/performance.js (analytics)
+├── easter-egg/easter-egg.js (user interaction)
+├── core/three-hero.js (idle callback)
+└── pages/*.js (route-based)
+```
 
 ---
 
-## 🛠️ Generate Tool (Standalone)
+## 📝 Notes
 
-The `generate/` directory contains a standalone social media image generator tool:
+### Architecture Decisions
 
-- **HTML:** `generate.html` (main interface), `preview-popout-window.html`
-- **CSS:** 8 modules (base, layout, controls, color-picker, canvas, tabs, toast, skeleton)
-- **JavaScript:** 31 modules
-  - Main: `main.js` (orchestrator)
-  - Core: config, preview, export, background-patterns, color-picker, history, preset-storage, templates
-  - UI: grid-overlay, ruler-guides, preview-popout, tabs, various dropdowns and tooltips
-  - Utils: export-high-res, dither-worker, toast
+1. **Modular CSS with Index Files**
+   - Cards, forms, contact, and projects use index.css pattern
+   - Allows sub-modules while maintaining single import point
+   - Improves maintainability
 
-**Dependencies:**
-- `html-to-image` ^1.11.13 (runtime)
+2. **Dynamic Imports for Performance**
+   - Heavy modules (easter-egg, three-hero) loaded on-demand
+   - Page-specific modules loaded route-based
+   - Reduces initial bundle size
 
----
+3. **Centralized Scroll Management**
+   - `scroll-manager.js` prevents scroll event handler proliferation
+   - Performance optimization through event delegation
 
-## 🔐 Security & SEO
+4. **Environment Detection Utility**
+   - `env.js` provides consistent environment detection
+   - Used for mobile detection, service worker control, etc.
 
-### Security Headers
-- Meta tags in HTML (X-Content-Type-Options, CSP, etc.)
-- Server configs: `.htaccess` (Apache), `_headers` (Netlify/Vercel), `nginx.conf.example`
+### Build Process
 
-### SEO Features
-- Meta tags (Open Graph, Twitter Cards)
-- Structured data (JSON-LD)
-- Sitemap (`sitemap.xml`)
-- Robots.txt
-- Comprehensive favicon implementation
+1. **Development:** `npm run dev` - Vite dev server with HMR
+2. **Production:** `npm run build` - Optimized build with minification
+3. **Analysis:** `npm run reports:all` - Comprehensive performance analysis
 
----
+### Testing
 
-## 📊 Statistics Summary
-
-| Category | Count |
-|----------|-------|
-| JavaScript Modules | 45 |
-| CSS Modules | 64 |
-| HTML Pages | 9 |
-| Build Scripts | 39 |
-| Config Files | 14 |
-| Runtime Dependencies | 2 |
-| Dev Dependencies | 20 |
-| Core JS Modules | 9 |
-| Utils JS Modules | 18 |
-| Pages JS Modules | 4 |
-| Easter Egg JS Modules | 13 |
-| CSS Components | 20 |
-| CSS Pages | 4 |
-| CSS Utils | 13 |
+- **E2E Tests:** Playwright smoke tests (`npm run test:e2e`)
+- **Lighthouse:** CI integration (`npm run reports:lighthouse`)
+- **Accessibility:** Pa11y audits (`npm run reports:pa11y`)
 
 ---
 
-## 🎓 Key Takeaways
+## 🔄 Update History
 
-1. **Modular Architecture:** Well-organized ES6 modules and CSS modules
-2. **Lazy Loading:** Non-critical modules loaded on idle
-3. **Clean URLs:** All internal links use clean URLs (no .html extensions)
-4. **Build System:** Comprehensive Vite setup with custom plugins
-5. **Easter Egg:** Complex 3D galaxy feature with 13 well-separated modules
-6. **Generate Tool:** Standalone image generator with 31 modules
-7. **No Circular Dependencies:** All import/export relationships are acyclic
-8. **High Reusability:** Utils like `env.js` appropriately shared across modules
+- **2025-01-30:** Initial codebase map generation
+- Comprehensive analysis of structure, dependencies, and relationships
 
 ---
 
-## 📚 Related Documentation
-
-- `.cursor/rules/cursorrules.mdc` - Complete project rules and structure guide
-- `docs/README.md` - Documentation index
-- `docs/BUILD_AND_DEPLOY.md` - Build and deployment guide
-- `docs/STYLE_GUIDE.md` - Design system and component guidelines
-
----
-
-**Last Updated:** 2025-01-30  
-**Generated By:** Cursor AI Codebase Mapping Tool
-
+**Generated by:** Cursor AI Agent  
+**For:** logi-ink project  
+**Purpose:** Codebase documentation and dependency analysis

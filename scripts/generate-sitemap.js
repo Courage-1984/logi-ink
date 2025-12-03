@@ -6,7 +6,7 @@
 import { writeFileSync } from 'fs';
 import { resolve } from 'path';
 
-const baseUrl = process.env.VITE_BASE_URL || 'https://logi-ink.com';
+const baseUrl = process.env.VITE_BASE_URL || 'https://logi-ink.co.za';
 const basePath = process.env.VITE_BASE_PATH || '/';
 
 // Normalize basePath - remove trailing slash and ensure leading slash
@@ -71,25 +71,23 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${pages
-  .map(
-    page => {
-      // Build URL: baseUrl + normalizedBasePath + page.url
-      // If page.url is empty, it's the homepage - don't add trailing slash
-      let url = baseUrl + normalizedBasePath;
-      if (page.url) {
-        url += '/' + page.url;
-      } else if (normalizedBasePath) {
-        // If basePath exists and page.url is empty, add trailing slash for homepage
-        url += '/';
-      }
-      return `  <url>
+  .map(page => {
+    // Build URL: baseUrl + normalizedBasePath + page.url
+    // If page.url is empty, it's the homepage - don't add trailing slash
+    let url = baseUrl + normalizedBasePath;
+    if (page.url) {
+      url += '/' + page.url;
+    } else if (normalizedBasePath) {
+      // If basePath exists and page.url is empty, add trailing slash for homepage
+      url += '/';
+    }
+    return `  <url>
     <loc>${url}</loc>
     <lastmod>${page.lastmod}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`;
-    }
-  )
+  })
   .join('\n')}
 </urlset>`;
 
@@ -99,4 +97,3 @@ writeFileSync(outputPath, sitemap, 'utf8');
 
 console.log(`✅ Sitemap generated: ${outputPath}`);
 console.log(`   Base URL: ${baseUrl}${normalizedBasePath}`);
-

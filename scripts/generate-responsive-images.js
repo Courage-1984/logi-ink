@@ -12,17 +12,25 @@ import { readdir, stat, mkdir, writeFile } from 'fs/promises';
 import { join, dirname, extname, basename } from 'path';
 import { existsSync } from 'fs';
 
-// Image sizes for responsive srcset
+// Image sizes for responsive srcset (enhanced with mobile sizes)
 const SIZES = [
-  { width: 480, suffix: '480w' },
-  { width: 768, suffix: '768w' },
-  { width: 1024, suffix: '1024w' },
-  { width: 1280, suffix: '1280w' },
-  { width: 1920, suffix: '1920w' },
+  { width: 320, suffix: '320w' },   // Small mobile
+  { width: 375, suffix: '375w' },   // Standard mobile
+  { width: 480, suffix: '480w' },   // Large mobile
+  { width: 768, suffix: '768w' },   // Tablet
+  { width: 1024, suffix: '1024w' }, // Small desktop
+  { width: 1280, suffix: '1280w' }, // Desktop
+  { width: 1920, suffix: '1920w' }, // Large desktop
 ];
 
-// Directories to process
-const IMAGE_DIRS = ['assets/images/backgrounds', 'assets/images/banners', 'assets/images/portfolio'];
+// Directories to process (includes nested portfolio directories)
+const IMAGE_DIRS = [
+  'assets/images/backgrounds',
+  'assets/images/banners',
+  'assets/images/portfolio',
+  'assets/images/portfolio/backgrounds',
+  'assets/images/portfolio/subject',
+];
 
 // Output directory
 const OUTPUT_DIR = 'assets/images/responsive';
@@ -69,7 +77,7 @@ async function generateResponsiveImages(inputPath, outputDir) {
         const avifStats = await stat(avifPath);
         avifSrcset.push(`${basename(avifPath)} ${size.width}w`);
         console.log(
-          `   ✅ Generated AVIF: ${size.suffix} (${(avifStats.size / 1024).toFixed(2)} KB)`
+          `   ✅ AVIF ${size.suffix}: ${(avifStats.size / 1024).toFixed(2)} KB`
         );
 
         // Generate WebP (fallback)
@@ -87,35 +95,39 @@ async function generateResponsiveImages(inputPath, outputDir) {
 
         const webpStats = await stat(webpPath);
         webpSrcset.push(`${basename(webpPath)} ${size.width}w`);
-        sizes.push(`${size.width}px`);
 
         console.log(
-          `   ✅ Generated WebP: ${size.suffix} (${(webpStats.size / 1024).toFixed(2)} KB)`
+          `   ✅ WebP ${size.suffix}: ${(webpStats.size / 1024).toFixed(2)} KB`
         );
       }
     }
 
-    // Generate HTML srcset example with AVIF and WebP
+    // Generate HTML srcset example with AVIF and WebP (enhanced with better sizes)
     const htmlExample = `
 <!-- Responsive image example for ${basename(inputPath)} -->
+<!-- Above-the-fold (LCP) images: use loading="eager", fetchpriority="high", decoding="sync" -->
+<!-- Below-the-fold images: use loading="lazy", decoding="async" -->
 <picture>
   <!-- AVIF format (best compression, modern browsers) -->
   <source
     type="image/avif"
     srcset="${avifSrcset.join(',\n    ')}"
-    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- WebP format (fallback for older browsers) -->
   <source
     type="image/webp"
     srcset="${webpSrcset.join(',\n    ')}"
-    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
   >
   <!-- Original format (final fallback) -->
   <img
     src="${basename(inputPath)}"
     alt="Description"
     loading="lazy"
+    decoding="async"
+    width="${metadata.width}"
+    height="${metadata.height}"
   >
 </picture>
     `.trim();
@@ -173,7 +185,9 @@ async function main() {
       continue;
     }
 
-    const outputDir = join(OUTPUT_DIR, dir.replace('assets/images/', ''));
+    // Preserve nested directory structure in output
+    const relativePath = dir.replace('assets/images/', '');
+    const outputDir = join(OUTPUT_DIR, relativePath);
 
     for (const imagePath of images) {
       await generateResponsiveImages(imagePath, outputDir);
