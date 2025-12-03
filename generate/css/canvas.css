@@ -33,6 +33,9 @@
   box-sizing: border-box; /* Include padding in width calculation */
   z-index: 1; /* Ensure canvas container is above other elements within preview section */
   transition: background-image 0.3s ease;
+  /* CRITICAL: Prevent layout shifts during canvas updates */
+  contain: layout style paint; /* Isolate layout calculations */
+  will-change: contents; /* Optimize for content changes */
 }
 
 /* Transparency Checkerboard Pattern */
@@ -174,6 +177,10 @@
   flex-grow: 0 !important;
   box-sizing: content-box !important; /* Don't include padding/border in width */
   z-index: 2; /* Ensure canvas is above container background */
+  /* CRITICAL: Prevent layout shifts during content updates */
+  contain: layout style paint; /* Isolate layout calculations */
+  will-change: transform, contents; /* Optimize for transform and content changes */
+  backface-visibility: hidden; /* Force GPU acceleration */
 }
 
 .canvas-container .og-canvas {

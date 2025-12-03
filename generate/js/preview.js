@@ -390,12 +390,26 @@ export function updatePreview(state) {
   // Check if grid overlay is visible before clearing
   const gridWasVisible = isGridOverlayVisible();
 
-  // Clear and setup canvas
-  canvasWrapper.innerHTML = '';
+  // CRITICAL: Preserve container dimensions to prevent CLS during rebuild
+  const container = document.getElementById('canvasContainer');
+
+  // CRITICAL: Preserve container's current size by setting explicit min-height
+  // This prevents the container from collapsing when canvas content is cleared
+  if (container) {
+    const currentHeight = container.offsetHeight;
+    const currentWidth = container.offsetWidth;
+    // Temporarily set explicit dimensions to prevent collapse
+    container.style.setProperty('min-height', `${currentHeight}px`, 'important');
+    container.style.setProperty('min-width', `${currentWidth}px`, 'important');
+  }
+
+  // Set dimensions BEFORE clearing to prevent layout shift
   const canvasClass = currentImageType === IMAGE_TYPES.OG ? 'og-canvas' : 'twitter-canvas';
   canvasWrapper.className = `${canvasClass} preset-${currentPreset}`;
 
-  // CRITICAL: Set full dimensions with !important to ensure they're not overridden
+  // CRITICAL: Set full dimensions with !important BEFORE clearing innerHTML to prevent CLS
+  // Also preserve current transform to prevent visual jump
+  const currentTransform = canvasWrapper.style.transform || '';
   canvasWrapper.style.setProperty('width', `${currentImageType.width}px`, 'important');
   canvasWrapper.style.setProperty('height', `${currentImageType.height}px`, 'important');
   canvasWrapper.style.setProperty('max-width', 'none', 'important');
@@ -406,7 +420,24 @@ export function updatePreview(state) {
   canvasWrapper.style.setProperty('flex-shrink', '0', 'important');
   canvasWrapper.style.setProperty('flex-grow', '0', 'important');
   canvasWrapper.style.setProperty('overflow', 'visible', 'important');
-  canvasWrapper.style.setProperty('transform', '', 'important'); // Reset transform before scaling
+  // Keep current transform temporarily to prevent visual jump
+  if (currentTransform) {
+    canvasWrapper.style.setProperty('transform', currentTransform, 'important');
+  }
+
+  // Now clear and rebuild - dimensions are already set to prevent CLS
+  canvasWrapper.innerHTML = '';
+
+  // Restore container min dimensions after a brief delay (will be reset by scaleCanvasForPreview)
+  if (container) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // Reset min dimensions - aspect-ratio will handle sizing
+        container.style.removeProperty('min-height');
+        container.style.removeProperty('min-width');
+      });
+    });
+  }
 
   // Apply background pattern or preset background
   // Validate that backgroundPattern is a non-empty string
@@ -708,21 +739,28 @@ export function updatePreview(state) {
     }
   }
 
-  // Scale canvas to fit 16:9 preview container - use setTimeout to ensure DOM is updated
-  setTimeout(() => {
-    scaleCanvasForPreview(canvasWrapper);
+  // Scale canvas to fit 16:9 preview container - use requestAnimationFrame for better synchronization
+  // This prevents CLS by ensuring scaling happens in sync with the browser's paint cycle
+  // Use triple RAF to ensure all DOM updates and layout calculations are complete
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // Triple RAF ensures DOM is fully updated, painted, and layout is stable before scaling
+        scaleCanvasForPreview(canvasWrapper);
 
-    // Restore grid overlay if it was visible before the update
-    if (gridWasVisible) {
-      updateGridOverlayDimensions(currentImageType.width, currentImageType.height);
-    }
+        // Restore grid overlay if it was visible before the update
+        if (gridWasVisible) {
+          updateGridOverlayDimensions(currentImageType.width, currentImageType.height);
+        }
 
-    // Apply layer visibility after rendering
-    // Note: applyLayerVisibility is defined in main.js and will be called via global scope
-    if (window.applyLayerVisibility) {
-      window.applyLayerVisibility();
-    }
-  }, 0);
+        // Apply layer visibility after rendering
+        // Note: applyLayerVisibility is defined in main.js and will be called via global scope
+        if (window.applyLayerVisibility) {
+          window.applyLayerVisibility();
+        }
+      });
+    });
+  });
 }
 
 /**
@@ -761,17 +799,29 @@ export function scaleCanvasForPreview(canvasWrapper) {
   canvasWrapper.style.setProperty('flex-grow', '0', 'important');
   canvasWrapper.style.setProperty('overflow', 'visible', 'important');
 
-  // Force a layout calculation
+  // CRITICAL: Force layout calculation and ensure container maintains stable size
+  // This prevents CLS by ensuring container dimensions are stable before calculating scale
   void container.offsetHeight;
+  void container.offsetWidth;
 
   // Get container dimensions (accounting for padding: 0.75rem = 12px)
   const containerRect = container.getBoundingClientRect();
 
   // Ensure container has dimensions
   if (containerRect.width === 0 || containerRect.height === 0) {
-    // Container not ready, try again
-    setTimeout(() => scaleCanvasForPreview(canvasWrapper), 100);
+    // Container not ready, try again with requestAnimationFrame for better timing
+    requestAnimationFrame(() => {
+      scaleCanvasForPreview(canvasWrapper);
+    });
     return;
+  }
+
+  // CRITICAL: Ensure container maintains its aspect-ratio-based size during scaling
+  // This prevents the container from shifting when canvas content changes
+  const expectedHeight = containerRect.width / (16 / 9);
+  if (Math.abs(containerRect.height - expectedHeight) > 1) {
+    // Container height doesn't match aspect ratio - force recalculation
+    container.style.setProperty('height', `${expectedHeight}px`, 'important');
   }
 
   const padding = 24; // 12px * 2 (0.75rem padding on each side)

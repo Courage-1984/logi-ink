@@ -8,7 +8,7 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/sw.js",
-            "uid": "1ef798dd-1"
+            "uid": "51700648-1"
           }
         ]
       },
@@ -17,22 +17,22 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/node_modules/web-vitals/dist/web-vitals.js",
-            "uid": "1ef798dd-3"
+            "uid": "51700648-3"
           }
         ]
       },
       {
-        "name": "assets/js/main-D_sadAjb.js",
+        "name": "assets/js/main-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-5",
+                "uid": "51700648-5",
                 "name": "index.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-7",
+                "uid": "51700648-7",
                 "name": "index.html"
               }
             ]
@@ -40,17 +40,17 @@
         ]
       },
       {
-        "name": "assets/js/about-D_sadAjb.js",
+        "name": "assets/js/about-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-9",
+                "uid": "51700648-9",
                 "name": "about.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-11",
+                "uid": "51700648-11",
                 "name": "about.html"
               }
             ]
@@ -58,17 +58,17 @@
         ]
       },
       {
-        "name": "assets/js/services-D_sadAjb.js",
+        "name": "assets/js/services-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-13",
+                "uid": "51700648-13",
                 "name": "services.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-15",
+                "uid": "51700648-15",
                 "name": "services.html"
               }
             ]
@@ -76,17 +76,17 @@
         ]
       },
       {
-        "name": "assets/js/projects-D_sadAjb.js",
+        "name": "assets/js/projects-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-17",
+                "uid": "51700648-17",
                 "name": "projects.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-19",
+                "uid": "51700648-19",
                 "name": "projects.html"
               }
             ]
@@ -94,17 +94,17 @@
         ]
       },
       {
-        "name": "assets/js/contact-D_sadAjb.js",
+        "name": "assets/js/contact-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-21",
+                "uid": "51700648-21",
                 "name": "contact.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-23",
+                "uid": "51700648-23",
                 "name": "contact.html"
               }
             ]
@@ -112,17 +112,17 @@
         ]
       },
       {
-        "name": "assets/js/pricing-D_sadAjb.js",
+        "name": "assets/js/pricing-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-25",
+                "uid": "51700648-25",
                 "name": "pricing.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-27",
+                "uid": "51700648-27",
                 "name": "pricing.html"
               }
             ]
@@ -130,17 +130,17 @@
         ]
       },
       {
-        "name": "assets/js/seoServices-D_sadAjb.js",
+        "name": "assets/js/seoServices-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-29",
+                "uid": "51700648-29",
                 "name": "seo-services.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-31",
+                "uid": "51700648-31",
                 "name": "seo-services.html"
               }
             ]
@@ -148,17 +148,17 @@
         ]
       },
       {
-        "name": "assets/js/reports-D_sadAjb.js",
+        "name": "assets/js/reports-BfcSoaL4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink",
             "children": [
               {
-                "uid": "1ef798dd-33",
+                "uid": "51700648-33",
                 "name": "reports.html?html-proxy&inline-css&index=0.css"
               },
               {
-                "uid": "1ef798dd-35",
+                "uid": "51700648-35",
                 "name": "reports.html"
               }
             ]
@@ -166,17 +166,17 @@
         ]
       },
       {
-        "name": "assets/js/main-D0kPr_zv.js",
+        "name": "assets/js/main-CCTzNUpT.js",
         "children": [
           {
             "name": "\u0000vite",
             "children": [
               {
-                "uid": "1ef798dd-37",
+                "uid": "51700648-37",
                 "name": "modulepreload-polyfill.js"
               },
               {
-                "uid": "1ef798dd-41",
+                "uid": "51700648-41",
                 "name": "preload-helper.js"
               }
             ]
@@ -186,7 +186,7 @@
             "children": [
               {
                 "name": "css/main.css",
-                "uid": "1ef798dd-39"
+                "uid": "51700648-39"
               },
               {
                 "name": "js",
@@ -195,35 +195,35 @@
                     "name": "core",
                     "children": [
                       {
-                        "uid": "1ef798dd-43",
+                        "uid": "51700648-43",
                         "name": "scroll-manager.js"
                       },
                       {
-                        "uid": "1ef798dd-45",
+                        "uid": "51700648-45",
                         "name": "navigation.js"
                       },
                       {
-                        "uid": "1ef798dd-47",
+                        "uid": "51700648-47",
                         "name": "scroll.js"
                       },
                       {
-                        "uid": "1ef798dd-49",
+                        "uid": "51700648-49",
                         "name": "animations.js"
                       },
                       {
-                        "uid": "1ef798dd-51",
+                        "uid": "51700648-51",
                         "name": "cursor.js"
                       },
                       {
-                        "uid": "1ef798dd-53",
+                        "uid": "51700648-53",
                         "name": "mouse-tilt.js"
                       },
                       {
-                        "uid": "1ef798dd-61",
+                        "uid": "51700648-61",
                         "name": "page-transitions.js"
                       },
                       {
-                        "uid": "1ef798dd-65",
+                        "uid": "51700648-65",
                         "name": "service-worker.js"
                       }
                     ]
@@ -232,37 +232,37 @@
                     "name": "utils",
                     "children": [
                       {
-                        "uid": "1ef798dd-55",
+                        "uid": "51700648-55",
                         "name": "interactions.js"
                       },
                       {
-                        "uid": "1ef798dd-57",
+                        "uid": "51700648-57",
                         "name": "ripples-lazyload.js"
                       },
                       {
-                        "uid": "1ef798dd-59",
+                        "uid": "51700648-59",
                         "name": "lazy-background-images.js"
                       },
                       {
-                        "uid": "1ef798dd-63",
+                        "uid": "51700648-63",
                         "name": "env.js"
                       },
                       {
-                        "uid": "1ef798dd-67",
+                        "uid": "51700648-67",
                         "name": "accessibility.js"
                       },
                       {
-                        "uid": "1ef798dd-69",
+                        "uid": "51700648-69",
                         "name": "error-handler.js"
                       },
                       {
-                        "uid": "1ef798dd-71",
+                        "uid": "51700648-71",
                         "name": "dynamic-prefetch.js"
                       }
                     ]
                   },
                   {
-                    "uid": "1ef798dd-73",
+                    "uid": "51700648-73",
                     "name": "main.js"
                   }
                 ]
@@ -272,20 +272,20 @@
         ]
       },
       {
-        "name": "assets/js/performance-BEU_eQ5P.js",
+        "name": "assets/js/performance-DDMZWrVN.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/utils/performance.js",
-            "uid": "1ef798dd-75"
+            "uid": "51700648-75"
           }
         ]
       },
       {
-        "name": "assets/js/easter-egg-D29Y6JxE.js",
+        "name": "assets/js/easter-egg-CuoGRS35.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/easter-egg/easter-egg.js",
-            "uid": "1ef798dd-77"
+            "uid": "51700648-77"
           }
         ]
       },
@@ -294,23 +294,23 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/core/three-hero.js",
-            "uid": "1ef798dd-79"
+            "uid": "51700648-79"
           }
         ]
       },
       {
-        "name": "assets/js/contact-ByU2n3rc.js",
+        "name": "assets/js/contact-DDOTgdKw.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js",
             "children": [
               {
                 "name": "utils/toast.js",
-                "uid": "1ef798dd-81"
+                "uid": "51700648-81"
               },
               {
                 "name": "pages/contact.js",
-                "uid": "1ef798dd-83"
+                "uid": "51700648-83"
               }
             ]
           }
@@ -321,7 +321,7 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/pages/services.js",
-            "uid": "1ef798dd-85"
+            "uid": "51700648-85"
           }
         ]
       },
@@ -338,435 +338,435 @@
                     "name": "responsive/portfolio",
                     "children": [
                       {
-                        "uid": "1ef798dd-87",
+                        "uid": "51700648-87",
                         "name": "background-corporate-website-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-89",
+                        "uid": "51700648-89",
                         "name": "background-corporate-website-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-91",
+                        "uid": "51700648-91",
                         "name": "background-corporate-website-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-93",
+                        "uid": "51700648-93",
                         "name": "background-e-commerce-platform-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-95",
+                        "uid": "51700648-95",
                         "name": "background-e-commerce-platform-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-97",
+                        "uid": "51700648-97",
                         "name": "background-e-commerce-platform-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-99",
+                        "uid": "51700648-99",
                         "name": "background-fintech-mobile-app-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-101",
+                        "uid": "51700648-101",
                         "name": "background-fintech-mobile-app-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-103",
+                        "uid": "51700648-103",
                         "name": "background-fintech-mobile-app-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-105",
+                        "uid": "51700648-105",
                         "name": "background-fitness-tracking-app-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-107",
+                        "uid": "51700648-107",
                         "name": "background-fitness-tracking-app-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-109",
+                        "uid": "51700648-109",
                         "name": "background-fitness-tracking-app-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-111",
+                        "uid": "51700648-111",
                         "name": "background-marketing-campaign-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-113",
+                        "uid": "51700648-113",
                         "name": "background-marketing-campaign-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-115",
+                        "uid": "51700648-115",
                         "name": "background-marketing-campaign-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-117",
+                        "uid": "51700648-117",
                         "name": "background-tech-startup-rebrand-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-119",
+                        "uid": "51700648-119",
                         "name": "background-tech-startup-rebrand-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-121",
+                        "uid": "51700648-121",
                         "name": "background-tech-startup-rebrand-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-123",
+                        "uid": "51700648-123",
                         "name": "image-corporate-website-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-125",
+                        "uid": "51700648-125",
                         "name": "image-corporate-website-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-127",
+                        "uid": "51700648-127",
                         "name": "image-corporate-website-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-129",
+                        "uid": "51700648-129",
                         "name": "image-e-commerce-platform-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-131",
+                        "uid": "51700648-131",
                         "name": "image-e-commerce-platform-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-133",
+                        "uid": "51700648-133",
                         "name": "image-e-commerce-platform-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-135",
+                        "uid": "51700648-135",
                         "name": "image-fintech-mobile-app-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-137",
+                        "uid": "51700648-137",
                         "name": "image-fintech-mobile-app-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-139",
+                        "uid": "51700648-139",
                         "name": "image-fintech-mobile-app-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-141",
+                        "uid": "51700648-141",
                         "name": "image-fitness-tracking-app-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-143",
+                        "uid": "51700648-143",
                         "name": "image-fitness-tracking-app-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-145",
+                        "uid": "51700648-145",
                         "name": "image-fitness-tracking-app-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-147",
+                        "uid": "51700648-147",
                         "name": "image-marketing-campaign-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-149",
+                        "uid": "51700648-149",
                         "name": "image-marketing-campaign-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-151",
+                        "uid": "51700648-151",
                         "name": "image-marketing-campaign-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-153",
+                        "uid": "51700648-153",
                         "name": "image-tech-startup-rebrand-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-155",
+                        "uid": "51700648-155",
                         "name": "image-tech-startup-rebrand-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-157",
+                        "uid": "51700648-157",
                         "name": "image-tech-startup-rebrand-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-159",
+                        "uid": "51700648-159",
                         "name": "subject-corporate-website-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-161",
+                        "uid": "51700648-161",
                         "name": "subject-corporate-website-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-163",
+                        "uid": "51700648-163",
                         "name": "subject-corporate-website-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-165",
+                        "uid": "51700648-165",
                         "name": "subject-e-commerce-platform-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-167",
+                        "uid": "51700648-167",
                         "name": "subject-e-commerce-platform-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-169",
+                        "uid": "51700648-169",
                         "name": "subject-e-commerce-platform-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-171",
+                        "uid": "51700648-171",
                         "name": "subject-fintech-mobile-app-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-173",
+                        "uid": "51700648-173",
                         "name": "subject-fintech-mobile-app-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-175",
+                        "uid": "51700648-175",
                         "name": "subject-fintech-mobile-app-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-177",
+                        "uid": "51700648-177",
                         "name": "subject-fitness-tracking-app-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-179",
+                        "uid": "51700648-179",
                         "name": "subject-fitness-tracking-app-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-181",
+                        "uid": "51700648-181",
                         "name": "subject-fitness-tracking-app-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-183",
+                        "uid": "51700648-183",
                         "name": "subject-tech-startup-rebrand-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-185",
+                        "uid": "51700648-185",
                         "name": "subject-tech-startup-rebrand-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-187",
+                        "uid": "51700648-187",
                         "name": "subject-tech-startup-rebrand-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-189",
+                        "uid": "51700648-189",
                         "name": "subjet-marketing-campaign-1024w.avif"
                       },
                       {
-                        "uid": "1ef798dd-191",
+                        "uid": "51700648-191",
                         "name": "subjet-marketing-campaign-480w.avif"
                       },
                       {
-                        "uid": "1ef798dd-193",
+                        "uid": "51700648-193",
                         "name": "subjet-marketing-campaign-768w.avif"
                       },
                       {
-                        "uid": "1ef798dd-195",
+                        "uid": "51700648-195",
                         "name": "background-corporate-website-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-197",
+                        "uid": "51700648-197",
                         "name": "background-corporate-website-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-199",
+                        "uid": "51700648-199",
                         "name": "background-corporate-website-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-201",
+                        "uid": "51700648-201",
                         "name": "background-e-commerce-platform-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-203",
+                        "uid": "51700648-203",
                         "name": "background-e-commerce-platform-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-205",
+                        "uid": "51700648-205",
                         "name": "background-e-commerce-platform-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-207",
+                        "uid": "51700648-207",
                         "name": "background-fintech-mobile-app-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-209",
+                        "uid": "51700648-209",
                         "name": "background-fintech-mobile-app-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-211",
+                        "uid": "51700648-211",
                         "name": "background-fintech-mobile-app-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-213",
+                        "uid": "51700648-213",
                         "name": "background-fitness-tracking-app-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-215",
+                        "uid": "51700648-215",
                         "name": "background-fitness-tracking-app-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-217",
+                        "uid": "51700648-217",
                         "name": "background-fitness-tracking-app-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-219",
+                        "uid": "51700648-219",
                         "name": "background-marketing-campaign-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-221",
+                        "uid": "51700648-221",
                         "name": "background-marketing-campaign-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-223",
+                        "uid": "51700648-223",
                         "name": "background-marketing-campaign-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-225",
+                        "uid": "51700648-225",
                         "name": "background-tech-startup-rebrand-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-227",
+                        "uid": "51700648-227",
                         "name": "background-tech-startup-rebrand-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-229",
+                        "uid": "51700648-229",
                         "name": "background-tech-startup-rebrand-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-231",
+                        "uid": "51700648-231",
                         "name": "image-corporate-website-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-233",
+                        "uid": "51700648-233",
                         "name": "image-corporate-website-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-235",
+                        "uid": "51700648-235",
                         "name": "image-corporate-website-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-237",
+                        "uid": "51700648-237",
                         "name": "image-e-commerce-platform-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-239",
+                        "uid": "51700648-239",
                         "name": "image-e-commerce-platform-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-241",
+                        "uid": "51700648-241",
                         "name": "image-e-commerce-platform-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-243",
+                        "uid": "51700648-243",
                         "name": "image-fintech-mobile-app-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-245",
+                        "uid": "51700648-245",
                         "name": "image-fintech-mobile-app-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-247",
+                        "uid": "51700648-247",
                         "name": "image-fintech-mobile-app-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-249",
+                        "uid": "51700648-249",
                         "name": "image-fitness-tracking-app-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-251",
+                        "uid": "51700648-251",
                         "name": "image-fitness-tracking-app-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-253",
+                        "uid": "51700648-253",
                         "name": "image-fitness-tracking-app-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-255",
+                        "uid": "51700648-255",
                         "name": "image-marketing-campaign-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-257",
+                        "uid": "51700648-257",
                         "name": "image-marketing-campaign-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-259",
+                        "uid": "51700648-259",
                         "name": "image-marketing-campaign-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-261",
+                        "uid": "51700648-261",
                         "name": "image-tech-startup-rebrand-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-263",
+                        "uid": "51700648-263",
                         "name": "image-tech-startup-rebrand-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-265",
+                        "uid": "51700648-265",
                         "name": "image-tech-startup-rebrand-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-267",
+                        "uid": "51700648-267",
                         "name": "subject-corporate-website-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-269",
+                        "uid": "51700648-269",
                         "name": "subject-corporate-website-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-271",
+                        "uid": "51700648-271",
                         "name": "subject-corporate-website-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-273",
+                        "uid": "51700648-273",
                         "name": "subject-e-commerce-platform-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-275",
+                        "uid": "51700648-275",
                         "name": "subject-e-commerce-platform-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-277",
+                        "uid": "51700648-277",
                         "name": "subject-e-commerce-platform-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-279",
+                        "uid": "51700648-279",
                         "name": "subject-fintech-mobile-app-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-281",
+                        "uid": "51700648-281",
                         "name": "subject-fintech-mobile-app-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-283",
+                        "uid": "51700648-283",
                         "name": "subject-fintech-mobile-app-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-285",
+                        "uid": "51700648-285",
                         "name": "subject-fitness-tracking-app-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-287",
+                        "uid": "51700648-287",
                         "name": "subject-fitness-tracking-app-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-289",
+                        "uid": "51700648-289",
                         "name": "subject-fitness-tracking-app-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-291",
+                        "uid": "51700648-291",
                         "name": "subject-tech-startup-rebrand-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-293",
+                        "uid": "51700648-293",
                         "name": "subject-tech-startup-rebrand-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-295",
+                        "uid": "51700648-295",
                         "name": "subject-tech-startup-rebrand-768w.webp"
                       },
                       {
-                        "uid": "1ef798dd-297",
+                        "uid": "51700648-297",
                         "name": "subjet-marketing-campaign-1024w.webp"
                       },
                       {
-                        "uid": "1ef798dd-299",
+                        "uid": "51700648-299",
                         "name": "subjet-marketing-campaign-480w.webp"
                       },
                       {
-                        "uid": "1ef798dd-301",
+                        "uid": "51700648-301",
                         "name": "subjet-marketing-campaign-768w.webp"
                       }
                     ]
@@ -775,27 +775,27 @@
                     "name": "portfolio",
                     "children": [
                       {
-                        "uid": "1ef798dd-303",
+                        "uid": "51700648-303",
                         "name": "image-corporate-website.png"
                       },
                       {
-                        "uid": "1ef798dd-305",
+                        "uid": "51700648-305",
                         "name": "image-e-commerce-platform.png"
                       },
                       {
-                        "uid": "1ef798dd-307",
+                        "uid": "51700648-307",
                         "name": "image-fintech-mobile-app.png"
                       },
                       {
-                        "uid": "1ef798dd-309",
+                        "uid": "51700648-309",
                         "name": "image-fitness-tracking-app.png"
                       },
                       {
-                        "uid": "1ef798dd-311",
+                        "uid": "51700648-311",
                         "name": "image-marketing-campaign.png"
                       },
                       {
-                        "uid": "1ef798dd-313",
+                        "uid": "51700648-313",
                         "name": "image-tech-startup-rebrand.png"
                       }
                     ]
@@ -804,7 +804,7 @@
               },
               {
                 "name": "js/pages/projects.js",
-                "uid": "1ef798dd-315"
+                "uid": "51700648-315"
               }
             ]
           }
@@ -815,62 +815,62 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/pages/reports.js",
-            "uid": "1ef798dd-317"
+            "uid": "51700648-317"
           }
         ]
       },
       {
-        "name": "assets/js/runtime-DWGcHIP6.js",
+        "name": "assets/js/runtime-DTKQ_nn4.js",
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/easter-egg",
             "children": [
               {
-                "uid": "1ef798dd-319",
+                "uid": "51700648-319",
                 "name": "texture-wrapping.js"
               },
               {
-                "uid": "1ef798dd-321",
+                "uid": "51700648-321",
                 "name": "procedural-noise.js"
               },
               {
-                "uid": "1ef798dd-323",
+                "uid": "51700648-323",
                 "name": "celestial-textures.js"
               },
               {
-                "uid": "1ef798dd-325",
+                "uid": "51700648-325",
                 "name": "galaxy-generator.js"
               },
               {
-                "uid": "1ef798dd-327",
+                "uid": "51700648-327",
                 "name": "star-field.js"
               },
               {
-                "uid": "1ef798dd-329",
+                "uid": "51700648-329",
                 "name": "lighting-atmosphere.js"
               },
               {
-                "uid": "1ef798dd-331",
+                "uid": "51700648-331",
                 "name": "particle-effects.js"
               },
               {
-                "uid": "1ef798dd-333",
+                "uid": "51700648-333",
                 "name": "celestial-mechanics.js"
               },
               {
-                "uid": "1ef798dd-335",
+                "uid": "51700648-335",
                 "name": "post-processing.js"
               },
               {
-                "uid": "1ef798dd-337",
+                "uid": "51700648-337",
                 "name": "camera-controls.js"
               },
               {
-                "uid": "1ef798dd-339",
+                "uid": "51700648-339",
                 "name": "nebula-clouds.js"
               },
               {
-                "uid": "1ef798dd-341",
+                "uid": "51700648-341",
                 "name": "runtime.js"
               }
             ]
@@ -882,7 +882,7 @@
         "children": [
           {
             "name": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
-            "uid": "1ef798dd-343"
+            "uid": "51700648-343"
           }
         ]
       }
@@ -890,3784 +890,3784 @@
     "isRoot": true
   },
   "nodeParts": {
-    "1ef798dd-1": {
+    "51700648-1": {
       "renderedLength": 13995,
       "gzipLength": 3677,
       "brotliLength": 3124,
-      "metaUid": "1ef798dd-0"
+      "metaUid": "51700648-0"
     },
-    "1ef798dd-3": {
+    "51700648-3": {
       "renderedLength": 5445,
       "gzipLength": 2222,
       "brotliLength": 2028,
-      "metaUid": "1ef798dd-2"
+      "metaUid": "51700648-2"
     },
-    "1ef798dd-5": {
+    "51700648-5": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-4"
+      "metaUid": "51700648-4"
     },
-    "1ef798dd-7": {
+    "51700648-7": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-6"
+      "metaUid": "51700648-6"
     },
-    "1ef798dd-9": {
+    "51700648-9": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-8"
+      "metaUid": "51700648-8"
     },
-    "1ef798dd-11": {
+    "51700648-11": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-10"
+      "metaUid": "51700648-10"
     },
-    "1ef798dd-13": {
+    "51700648-13": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-12"
+      "metaUid": "51700648-12"
     },
-    "1ef798dd-15": {
+    "51700648-15": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-14"
+      "metaUid": "51700648-14"
     },
-    "1ef798dd-17": {
+    "51700648-17": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-16"
+      "metaUid": "51700648-16"
     },
-    "1ef798dd-19": {
+    "51700648-19": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-18"
+      "metaUid": "51700648-18"
     },
-    "1ef798dd-21": {
+    "51700648-21": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-20"
+      "metaUid": "51700648-20"
     },
-    "1ef798dd-23": {
+    "51700648-23": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-22"
+      "metaUid": "51700648-22"
     },
-    "1ef798dd-25": {
+    "51700648-25": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-24"
+      "metaUid": "51700648-24"
     },
-    "1ef798dd-27": {
+    "51700648-27": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-26"
+      "metaUid": "51700648-26"
     },
-    "1ef798dd-29": {
+    "51700648-29": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-28"
+      "metaUid": "51700648-28"
     },
-    "1ef798dd-31": {
+    "51700648-31": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-30"
+      "metaUid": "51700648-30"
     },
-    "1ef798dd-33": {
+    "51700648-33": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-32"
+      "metaUid": "51700648-32"
     },
-    "1ef798dd-35": {
+    "51700648-35": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-34"
+      "metaUid": "51700648-34"
     },
-    "1ef798dd-37": {
+    "51700648-37": {
       "renderedLength": 1168,
       "gzipLength": 525,
       "brotliLength": 446,
-      "metaUid": "1ef798dd-36"
+      "metaUid": "51700648-36"
     },
-    "1ef798dd-39": {
+    "51700648-39": {
       "renderedLength": 0,
       "gzipLength": 0,
       "brotliLength": 0,
-      "metaUid": "1ef798dd-38"
+      "metaUid": "51700648-38"
     },
-    "1ef798dd-41": {
+    "51700648-41": {
       "renderedLength": 1877,
       "gzipLength": 900,
       "brotliLength": 755,
-      "metaUid": "1ef798dd-40"
+      "metaUid": "51700648-40"
     },
-    "1ef798dd-43": {
+    "51700648-43": {
       "renderedLength": 1045,
       "gzipLength": 465,
       "brotliLength": 367,
-      "metaUid": "1ef798dd-42"
+      "metaUid": "51700648-42"
     },
-    "1ef798dd-45": {
+    "51700648-45": {
       "renderedLength": 8192,
       "gzipLength": 2443,
       "brotliLength": 2017,
-      "metaUid": "1ef798dd-44"
+      "metaUid": "51700648-44"
     },
-    "1ef798dd-47": {
+    "51700648-47": {
       "renderedLength": 3118,
       "gzipLength": 1136,
       "brotliLength": 918,
-      "metaUid": "1ef798dd-46"
+      "metaUid": "51700648-46"
     },
-    "1ef798dd-49": {
+    "51700648-49": {
       "renderedLength": 5144,
       "gzipLength": 1600,
       "brotliLength": 1366,
-      "metaUid": "1ef798dd-48"
+      "metaUid": "51700648-48"
     },
-    "1ef798dd-51": {
+    "51700648-51": {
       "renderedLength": 1597,
       "gzipLength": 572,
       "brotliLength": 461,
-      "metaUid": "1ef798dd-50"
+      "metaUid": "51700648-50"
     },
-    "1ef798dd-53": {
+    "51700648-53": {
       "renderedLength": 3123,
       "gzipLength": 1104,
       "brotliLength": 912,
-      "metaUid": "1ef798dd-52"
+      "metaUid": "51700648-52"
     },
-    "1ef798dd-55": {
+    "51700648-55": {
       "renderedLength": 3350,
       "gzipLength": 981,
       "brotliLength": 810,
-      "metaUid": "1ef798dd-54"
+      "metaUid": "51700648-54"
     },
-    "1ef798dd-57": {
+    "51700648-57": {
       "renderedLength": 4137,
       "gzipLength": 1423,
       "brotliLength": 1190,
-      "metaUid": "1ef798dd-56"
+      "metaUid": "51700648-56"
     },
-    "1ef798dd-59": {
+    "51700648-59": {
       "renderedLength": 5696,
       "gzipLength": 1578,
       "brotliLength": 1375,
-      "metaUid": "1ef798dd-58"
+      "metaUid": "51700648-58"
     },
-    "1ef798dd-61": {
+    "51700648-61": {
       "renderedLength": 3356,
       "gzipLength": 1139,
       "brotliLength": 911,
-      "metaUid": "1ef798dd-60"
+      "metaUid": "51700648-60"
     },
-    "1ef798dd-63": {
+    "51700648-63": {
       "renderedLength": 798,
       "gzipLength": 343,
       "brotliLength": 290,
-      "metaUid": "1ef798dd-62"
+      "metaUid": "51700648-62"
     },
-    "1ef798dd-65": {
+    "51700648-65": {
       "renderedLength": 8433,
       "gzipLength": 2380,
       "brotliLength": 1994,
-      "metaUid": "1ef798dd-64"
+      "metaUid": "51700648-64"
     },
-    "1ef798dd-67": {
+    "51700648-67": {
       "renderedLength": 2469,
       "gzipLength": 958,
       "brotliLength": 747,
-      "metaUid": "1ef798dd-66"
+      "metaUid": "51700648-66"
     },
-    "1ef798dd-69": {
+    "51700648-69": {
       "renderedLength": 1435,
       "gzipLength": 572,
       "brotliLength": 445,
-      "metaUid": "1ef798dd-68"
+      "metaUid": "51700648-68"
     },
-    "1ef798dd-71": {
+    "51700648-71": {
       "renderedLength": 1455,
       "gzipLength": 637,
       "brotliLength": 497,
-      "metaUid": "1ef798dd-70"
+      "metaUid": "51700648-70"
     },
-    "1ef798dd-73": {
+    "51700648-73": {
       "renderedLength": 5006,
       "gzipLength": 1478,
       "brotliLength": 1182,
-      "metaUid": "1ef798dd-72"
+      "metaUid": "51700648-72"
     },
-    "1ef798dd-75": {
+    "51700648-75": {
       "renderedLength": 3186,
       "gzipLength": 1138,
       "brotliLength": 966,
-      "metaUid": "1ef798dd-74"
+      "metaUid": "51700648-74"
     },
-    "1ef798dd-77": {
+    "51700648-77": {
       "renderedLength": 3151,
       "gzipLength": 1090,
       "brotliLength": 881,
-      "metaUid": "1ef798dd-76"
+      "metaUid": "51700648-76"
     },
-    "1ef798dd-79": {
+    "51700648-79": {
       "renderedLength": 10137,
       "gzipLength": 2467,
       "brotliLength": 2075,
-      "metaUid": "1ef798dd-78"
+      "metaUid": "51700648-78"
     },
-    "1ef798dd-81": {
+    "51700648-81": {
       "renderedLength": 2454,
       "gzipLength": 1066,
       "brotliLength": 841,
-      "metaUid": "1ef798dd-80"
+      "metaUid": "51700648-80"
     },
-    "1ef798dd-83": {
-      "renderedLength": 17313,
-      "gzipLength": 4500,
-      "brotliLength": 3776,
-      "metaUid": "1ef798dd-82"
+    "51700648-83": {
+      "renderedLength": 17028,
+      "gzipLength": 4393,
+      "brotliLength": 3693,
+      "metaUid": "51700648-82"
     },
-    "1ef798dd-85": {
+    "51700648-85": {
       "renderedLength": 2250,
       "gzipLength": 740,
       "brotliLength": 605,
-      "metaUid": "1ef798dd-84"
+      "metaUid": "51700648-84"
     },
-    "1ef798dd-87": {
+    "51700648-87": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-86"
+      "metaUid": "51700648-86"
     },
-    "1ef798dd-89": {
+    "51700648-89": {
       "renderedLength": 2858,
       "gzipLength": 2079,
       "brotliLength": 2062,
-      "metaUid": "1ef798dd-88"
+      "metaUid": "51700648-88"
     },
-    "1ef798dd-91": {
+    "51700648-91": {
       "renderedLength": 5334,
       "gzipLength": 3942,
       "brotliLength": 3916,
-      "metaUid": "1ef798dd-90"
+      "metaUid": "51700648-90"
     },
-    "1ef798dd-93": {
+    "51700648-93": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-92"
+      "metaUid": "51700648-92"
     },
-    "1ef798dd-95": {
+    "51700648-95": {
       "renderedLength": 4010,
       "gzipLength": 2945,
       "brotliLength": 2921,
-      "metaUid": "1ef798dd-94"
+      "metaUid": "51700648-94"
     },
-    "1ef798dd-97": {
+    "51700648-97": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-96"
+      "metaUid": "51700648-96"
     },
-    "1ef798dd-99": {
+    "51700648-99": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-98"
+      "metaUid": "51700648-98"
     },
-    "1ef798dd-101": {
+    "51700648-101": {
       "renderedLength": 3566,
       "gzipLength": 2610,
       "brotliLength": 2585,
-      "metaUid": "1ef798dd-100"
+      "metaUid": "51700648-100"
     },
-    "1ef798dd-103": {
+    "51700648-103": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-102"
+      "metaUid": "51700648-102"
     },
-    "1ef798dd-105": {
+    "51700648-105": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-104"
+      "metaUid": "51700648-104"
     },
-    "1ef798dd-107": {
+    "51700648-107": {
       "renderedLength": 3911,
       "gzipLength": 2869,
       "brotliLength": 2845,
-      "metaUid": "1ef798dd-106"
+      "metaUid": "51700648-106"
     },
-    "1ef798dd-109": {
+    "51700648-109": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-108"
+      "metaUid": "51700648-108"
     },
-    "1ef798dd-111": {
+    "51700648-111": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-110"
+      "metaUid": "51700648-110"
     },
-    "1ef798dd-113": {
+    "51700648-113": {
       "renderedLength": 3359,
       "gzipLength": 2455,
       "brotliLength": 2427,
-      "metaUid": "1ef798dd-112"
+      "metaUid": "51700648-112"
     },
-    "1ef798dd-115": {
+    "51700648-115": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-114"
+      "metaUid": "51700648-114"
     },
-    "1ef798dd-117": {
+    "51700648-117": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-116"
+      "metaUid": "51700648-116"
     },
-    "1ef798dd-119": {
+    "51700648-119": {
       "renderedLength": 3539,
       "gzipLength": 2589,
       "brotliLength": 2564,
-      "metaUid": "1ef798dd-118"
+      "metaUid": "51700648-118"
     },
-    "1ef798dd-121": {
+    "51700648-121": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-120"
+      "metaUid": "51700648-120"
     },
-    "1ef798dd-123": {
+    "51700648-123": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-122"
+      "metaUid": "51700648-122"
     },
-    "1ef798dd-125": {
+    "51700648-125": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-124"
+      "metaUid": "51700648-124"
     },
-    "1ef798dd-127": {
+    "51700648-127": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-126"
+      "metaUid": "51700648-126"
     },
-    "1ef798dd-129": {
+    "51700648-129": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-128"
+      "metaUid": "51700648-128"
     },
-    "1ef798dd-131": {
+    "51700648-131": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-130"
+      "metaUid": "51700648-130"
     },
-    "1ef798dd-133": {
+    "51700648-133": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-132"
+      "metaUid": "51700648-132"
     },
-    "1ef798dd-135": {
+    "51700648-135": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-134"
+      "metaUid": "51700648-134"
     },
-    "1ef798dd-137": {
+    "51700648-137": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-136"
+      "metaUid": "51700648-136"
     },
-    "1ef798dd-139": {
+    "51700648-139": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-138"
+      "metaUid": "51700648-138"
     },
-    "1ef798dd-141": {
+    "51700648-141": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-140"
+      "metaUid": "51700648-140"
     },
-    "1ef798dd-143": {
+    "51700648-143": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-142"
+      "metaUid": "51700648-142"
     },
-    "1ef798dd-145": {
+    "51700648-145": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-144"
+      "metaUid": "51700648-144"
     },
-    "1ef798dd-147": {
+    "51700648-147": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-146"
+      "metaUid": "51700648-146"
     },
-    "1ef798dd-149": {
+    "51700648-149": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-148"
+      "metaUid": "51700648-148"
     },
-    "1ef798dd-151": {
+    "51700648-151": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-150"
+      "metaUid": "51700648-150"
     },
-    "1ef798dd-153": {
+    "51700648-153": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-152"
+      "metaUid": "51700648-152"
     },
-    "1ef798dd-155": {
+    "51700648-155": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-154"
+      "metaUid": "51700648-154"
     },
-    "1ef798dd-157": {
+    "51700648-157": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-156"
+      "metaUid": "51700648-156"
     },
-    "1ef798dd-159": {
+    "51700648-159": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-158"
+      "metaUid": "51700648-158"
     },
-    "1ef798dd-161": {
+    "51700648-161": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-160"
+      "metaUid": "51700648-160"
     },
-    "1ef798dd-163": {
+    "51700648-163": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-162"
+      "metaUid": "51700648-162"
     },
-    "1ef798dd-165": {
+    "51700648-165": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-164"
+      "metaUid": "51700648-164"
     },
-    "1ef798dd-167": {
+    "51700648-167": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-166"
+      "metaUid": "51700648-166"
     },
-    "1ef798dd-169": {
+    "51700648-169": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-168"
+      "metaUid": "51700648-168"
     },
-    "1ef798dd-171": {
+    "51700648-171": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-170"
+      "metaUid": "51700648-170"
     },
-    "1ef798dd-173": {
+    "51700648-173": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-172"
+      "metaUid": "51700648-172"
     },
-    "1ef798dd-175": {
+    "51700648-175": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-174"
+      "metaUid": "51700648-174"
     },
-    "1ef798dd-177": {
+    "51700648-177": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-176"
+      "metaUid": "51700648-176"
     },
-    "1ef798dd-179": {
+    "51700648-179": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-178"
+      "metaUid": "51700648-178"
     },
-    "1ef798dd-181": {
+    "51700648-181": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-180"
+      "metaUid": "51700648-180"
     },
-    "1ef798dd-183": {
+    "51700648-183": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-182"
+      "metaUid": "51700648-182"
     },
-    "1ef798dd-185": {
+    "51700648-185": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-184"
+      "metaUid": "51700648-184"
     },
-    "1ef798dd-187": {
+    "51700648-187": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-186"
+      "metaUid": "51700648-186"
     },
-    "1ef798dd-189": {
+    "51700648-189": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-188"
+      "metaUid": "51700648-188"
     },
-    "1ef798dd-191": {
+    "51700648-191": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-190"
+      "metaUid": "51700648-190"
     },
-    "1ef798dd-193": {
+    "51700648-193": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-192"
+      "metaUid": "51700648-192"
     },
-    "1ef798dd-195": {
+    "51700648-195": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-194"
+      "metaUid": "51700648-194"
     },
-    "1ef798dd-197": {
+    "51700648-197": {
       "renderedLength": 2930,
       "gzipLength": 2260,
       "brotliLength": 2253,
-      "metaUid": "1ef798dd-196"
+      "metaUid": "51700648-196"
     },
-    "1ef798dd-199": {
+    "51700648-199": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-198"
+      "metaUid": "51700648-198"
     },
-    "1ef798dd-201": {
+    "51700648-201": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-200"
+      "metaUid": "51700648-200"
     },
-    "1ef798dd-203": {
+    "51700648-203": {
       "renderedLength": 4450,
       "gzipLength": 3400,
       "brotliLength": 3391,
-      "metaUid": "1ef798dd-202"
+      "metaUid": "51700648-202"
     },
-    "1ef798dd-205": {
+    "51700648-205": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-204"
+      "metaUid": "51700648-204"
     },
-    "1ef798dd-207": {
+    "51700648-207": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-206"
+      "metaUid": "51700648-206"
     },
-    "1ef798dd-209": {
+    "51700648-209": {
       "renderedLength": 3630,
       "gzipLength": 2785,
       "brotliLength": 2777,
-      "metaUid": "1ef798dd-208"
+      "metaUid": "51700648-208"
     },
-    "1ef798dd-211": {
+    "51700648-211": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-210"
+      "metaUid": "51700648-210"
     },
-    "1ef798dd-213": {
+    "51700648-213": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-212"
+      "metaUid": "51700648-212"
     },
-    "1ef798dd-215": {
+    "51700648-215": {
       "renderedLength": 3911,
       "gzipLength": 2996,
       "brotliLength": 2989,
-      "metaUid": "1ef798dd-214"
+      "metaUid": "51700648-214"
     },
-    "1ef798dd-217": {
+    "51700648-217": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-216"
+      "metaUid": "51700648-216"
     },
-    "1ef798dd-219": {
+    "51700648-219": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-218"
+      "metaUid": "51700648-218"
     },
-    "1ef798dd-221": {
+    "51700648-221": {
       "renderedLength": 2947,
       "gzipLength": 2273,
       "brotliLength": 2261,
-      "metaUid": "1ef798dd-220"
+      "metaUid": "51700648-220"
     },
-    "1ef798dd-223": {
+    "51700648-223": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-222"
+      "metaUid": "51700648-222"
     },
-    "1ef798dd-225": {
+    "51700648-225": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-224"
+      "metaUid": "51700648-224"
     },
-    "1ef798dd-227": {
+    "51700648-227": {
       "renderedLength": 3747,
       "gzipLength": 2871,
       "brotliLength": 2864,
-      "metaUid": "1ef798dd-226"
+      "metaUid": "51700648-226"
     },
-    "1ef798dd-229": {
+    "51700648-229": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-228"
+      "metaUid": "51700648-228"
     },
-    "1ef798dd-231": {
+    "51700648-231": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-230"
+      "metaUid": "51700648-230"
     },
-    "1ef798dd-233": {
+    "51700648-233": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-232"
+      "metaUid": "51700648-232"
     },
-    "1ef798dd-235": {
+    "51700648-235": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-234"
+      "metaUid": "51700648-234"
     },
-    "1ef798dd-237": {
+    "51700648-237": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-236"
+      "metaUid": "51700648-236"
     },
-    "1ef798dd-239": {
+    "51700648-239": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-238"
+      "metaUid": "51700648-238"
     },
-    "1ef798dd-241": {
+    "51700648-241": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-240"
+      "metaUid": "51700648-240"
     },
-    "1ef798dd-243": {
+    "51700648-243": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-242"
+      "metaUid": "51700648-242"
     },
-    "1ef798dd-245": {
+    "51700648-245": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-244"
+      "metaUid": "51700648-244"
     },
-    "1ef798dd-247": {
+    "51700648-247": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-246"
+      "metaUid": "51700648-246"
     },
-    "1ef798dd-249": {
+    "51700648-249": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-248"
+      "metaUid": "51700648-248"
     },
-    "1ef798dd-251": {
+    "51700648-251": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-250"
+      "metaUid": "51700648-250"
     },
-    "1ef798dd-253": {
+    "51700648-253": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-252"
+      "metaUid": "51700648-252"
     },
-    "1ef798dd-255": {
+    "51700648-255": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-254"
+      "metaUid": "51700648-254"
     },
-    "1ef798dd-257": {
+    "51700648-257": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-256"
+      "metaUid": "51700648-256"
     },
-    "1ef798dd-259": {
+    "51700648-259": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-258"
+      "metaUid": "51700648-258"
     },
-    "1ef798dd-261": {
+    "51700648-261": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-260"
+      "metaUid": "51700648-260"
     },
-    "1ef798dd-263": {
+    "51700648-263": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-262"
+      "metaUid": "51700648-262"
     },
-    "1ef798dd-265": {
+    "51700648-265": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-264"
+      "metaUid": "51700648-264"
     },
-    "1ef798dd-267": {
+    "51700648-267": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-266"
+      "metaUid": "51700648-266"
     },
-    "1ef798dd-269": {
+    "51700648-269": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-268"
+      "metaUid": "51700648-268"
     },
-    "1ef798dd-271": {
+    "51700648-271": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-270"
+      "metaUid": "51700648-270"
     },
-    "1ef798dd-273": {
+    "51700648-273": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-272"
+      "metaUid": "51700648-272"
     },
-    "1ef798dd-275": {
+    "51700648-275": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-274"
+      "metaUid": "51700648-274"
     },
-    "1ef798dd-277": {
+    "51700648-277": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-276"
+      "metaUid": "51700648-276"
     },
-    "1ef798dd-279": {
+    "51700648-279": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-278"
+      "metaUid": "51700648-278"
     },
-    "1ef798dd-281": {
+    "51700648-281": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-280"
+      "metaUid": "51700648-280"
     },
-    "1ef798dd-283": {
+    "51700648-283": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-282"
+      "metaUid": "51700648-282"
     },
-    "1ef798dd-285": {
+    "51700648-285": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-284"
+      "metaUid": "51700648-284"
     },
-    "1ef798dd-287": {
+    "51700648-287": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-286"
+      "metaUid": "51700648-286"
     },
-    "1ef798dd-289": {
+    "51700648-289": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-288"
+      "metaUid": "51700648-288"
     },
-    "1ef798dd-291": {
+    "51700648-291": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-290"
+      "metaUid": "51700648-290"
     },
-    "1ef798dd-293": {
+    "51700648-293": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-292"
+      "metaUid": "51700648-292"
     },
-    "1ef798dd-295": {
+    "51700648-295": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-294"
+      "metaUid": "51700648-294"
     },
-    "1ef798dd-297": {
+    "51700648-297": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-296"
+      "metaUid": "51700648-296"
     },
-    "1ef798dd-299": {
+    "51700648-299": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-298"
+      "metaUid": "51700648-298"
     },
-    "1ef798dd-301": {
+    "51700648-301": {
       "renderedLength": 52,
       "gzipLength": 72,
       "brotliLength": 56,
-      "metaUid": "1ef798dd-300"
+      "metaUid": "51700648-300"
     },
-    "1ef798dd-303": {
+    "51700648-303": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-302"
+      "metaUid": "51700648-302"
     },
-    "1ef798dd-305": {
+    "51700648-305": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-304"
+      "metaUid": "51700648-304"
     },
-    "1ef798dd-307": {
+    "51700648-307": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-306"
+      "metaUid": "51700648-306"
     },
-    "1ef798dd-309": {
+    "51700648-309": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-308"
+      "metaUid": "51700648-308"
     },
-    "1ef798dd-311": {
+    "51700648-311": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-310"
+      "metaUid": "51700648-310"
     },
-    "1ef798dd-313": {
+    "51700648-313": {
       "renderedLength": 51,
       "gzipLength": 71,
       "brotliLength": 55,
-      "metaUid": "1ef798dd-312"
+      "metaUid": "51700648-312"
     },
-    "1ef798dd-315": {
+    "51700648-315": {
       "renderedLength": 36629,
       "gzipLength": 8052,
       "brotliLength": 6586,
-      "metaUid": "1ef798dd-314"
+      "metaUid": "51700648-314"
     },
-    "1ef798dd-317": {
+    "51700648-317": {
       "renderedLength": 7941,
       "gzipLength": 2107,
       "brotliLength": 1781,
-      "metaUid": "1ef798dd-316"
+      "metaUid": "51700648-316"
     },
-    "1ef798dd-319": {
+    "51700648-319": {
       "renderedLength": 8210,
       "gzipLength": 2637,
       "brotliLength": 2272,
-      "metaUid": "1ef798dd-318"
+      "metaUid": "51700648-318"
     },
-    "1ef798dd-321": {
+    "51700648-321": {
       "renderedLength": 4518,
       "gzipLength": 1805,
       "brotliLength": 1489,
-      "metaUid": "1ef798dd-320"
+      "metaUid": "51700648-320"
     },
-    "1ef798dd-323": {
+    "51700648-323": {
       "renderedLength": 46882,
       "gzipLength": 7643,
       "brotliLength": 6516,
-      "metaUid": "1ef798dd-322"
+      "metaUid": "51700648-322"
     },
-    "1ef798dd-325": {
+    "51700648-325": {
       "renderedLength": 6392,
       "gzipLength": 2023,
       "brotliLength": 1725,
-      "metaUid": "1ef798dd-324"
+      "metaUid": "51700648-324"
     },
-    "1ef798dd-327": {
+    "51700648-327": {
       "renderedLength": 5147,
       "gzipLength": 1497,
       "brotliLength": 1281,
-      "metaUid": "1ef798dd-326"
+      "metaUid": "51700648-326"
     },
-    "1ef798dd-329": {
+    "51700648-329": {
       "renderedLength": 7532,
       "gzipLength": 2265,
       "brotliLength": 1945,
-      "metaUid": "1ef798dd-328"
+      "metaUid": "51700648-328"
     },
-    "1ef798dd-331": {
+    "51700648-331": {
       "renderedLength": 5527,
       "gzipLength": 1482,
       "brotliLength": 1312,
-      "metaUid": "1ef798dd-330"
+      "metaUid": "51700648-330"
     },
-    "1ef798dd-333": {
+    "51700648-333": {
       "renderedLength": 6071,
       "gzipLength": 1813,
       "brotliLength": 1574,
-      "metaUid": "1ef798dd-332"
+      "metaUid": "51700648-332"
     },
-    "1ef798dd-335": {
+    "51700648-335": {
       "renderedLength": 8734,
       "gzipLength": 2462,
       "brotliLength": 2138,
-      "metaUid": "1ef798dd-334"
+      "metaUid": "51700648-334"
     },
-    "1ef798dd-337": {
+    "51700648-337": {
       "renderedLength": 1117,
       "gzipLength": 487,
       "brotliLength": 404,
-      "metaUid": "1ef798dd-336"
+      "metaUid": "51700648-336"
     },
-    "1ef798dd-339": {
+    "51700648-339": {
       "renderedLength": 11408,
       "gzipLength": 2919,
       "brotliLength": 2569,
-      "metaUid": "1ef798dd-338"
+      "metaUid": "51700648-338"
     },
-    "1ef798dd-341": {
+    "51700648-341": {
       "renderedLength": 57551,
       "gzipLength": 12846,
       "brotliLength": 10737,
-      "metaUid": "1ef798dd-340"
+      "metaUid": "51700648-340"
     },
-    "1ef798dd-343": {
+    "51700648-343": {
       "renderedLength": 2295,
       "gzipLength": 920,
       "brotliLength": 721,
-      "metaUid": "1ef798dd-342"
+      "metaUid": "51700648-342"
     }
   },
   "nodeMetas": {
-    "1ef798dd-0": {
+    "51700648-0": {
       "id": "C:/Users/anon/github/logia-ink/sw.js",
       "moduleParts": {
-        "sw.js": "1ef798dd-1"
+        "sw.js": "51700648-1"
       },
       "imported": [],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-2": {
+    "51700648-2": {
       "id": "C:/Users/anon/github/logia-ink/node_modules/web-vitals/dist/web-vitals.js",
       "moduleParts": {
-        "assets/js/vendor-DHmOgmHF.js": "1ef798dd-3"
+        "assets/js/vendor-DHmOgmHF.js": "51700648-3"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-74"
+          "uid": "51700648-74"
         }
       ]
     },
-    "1ef798dd-4": {
+    "51700648-4": {
       "id": "C:/Users/anon/github/logia-ink/index.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/main-D_sadAjb.js": "1ef798dd-5"
+        "assets/js/main-BfcSoaL4.js": "51700648-5"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-6"
+          "uid": "51700648-6"
         }
       ]
     },
-    "1ef798dd-6": {
+    "51700648-6": {
       "id": "C:/Users/anon/github/logia-ink/index.html",
       "moduleParts": {
-        "assets/js/main-D_sadAjb.js": "1ef798dd-7"
+        "assets/js/main-BfcSoaL4.js": "51700648-7"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-4"
+          "uid": "51700648-4"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-8": {
+    "51700648-8": {
       "id": "C:/Users/anon/github/logia-ink/about.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/about-D_sadAjb.js": "1ef798dd-9"
+        "assets/js/about-BfcSoaL4.js": "51700648-9"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-10"
+          "uid": "51700648-10"
         }
       ]
     },
-    "1ef798dd-10": {
+    "51700648-10": {
       "id": "C:/Users/anon/github/logia-ink/about.html",
       "moduleParts": {
-        "assets/js/about-D_sadAjb.js": "1ef798dd-11"
+        "assets/js/about-BfcSoaL4.js": "51700648-11"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-8"
+          "uid": "51700648-8"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-12": {
+    "51700648-12": {
       "id": "C:/Users/anon/github/logia-ink/services.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/services-D_sadAjb.js": "1ef798dd-13"
+        "assets/js/services-BfcSoaL4.js": "51700648-13"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-14"
+          "uid": "51700648-14"
         }
       ]
     },
-    "1ef798dd-14": {
+    "51700648-14": {
       "id": "C:/Users/anon/github/logia-ink/services.html",
       "moduleParts": {
-        "assets/js/services-D_sadAjb.js": "1ef798dd-15"
+        "assets/js/services-BfcSoaL4.js": "51700648-15"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-12"
+          "uid": "51700648-12"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-16": {
+    "51700648-16": {
       "id": "C:/Users/anon/github/logia-ink/projects.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/projects-D_sadAjb.js": "1ef798dd-17"
+        "assets/js/projects-BfcSoaL4.js": "51700648-17"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-18"
+          "uid": "51700648-18"
         }
       ]
     },
-    "1ef798dd-18": {
+    "51700648-18": {
       "id": "C:/Users/anon/github/logia-ink/projects.html",
       "moduleParts": {
-        "assets/js/projects-D_sadAjb.js": "1ef798dd-19"
+        "assets/js/projects-BfcSoaL4.js": "51700648-19"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-16"
+          "uid": "51700648-16"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-20": {
+    "51700648-20": {
       "id": "C:/Users/anon/github/logia-ink/contact.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/contact-D_sadAjb.js": "1ef798dd-21"
+        "assets/js/contact-BfcSoaL4.js": "51700648-21"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-22"
+          "uid": "51700648-22"
         }
       ]
     },
-    "1ef798dd-22": {
+    "51700648-22": {
       "id": "C:/Users/anon/github/logia-ink/contact.html",
       "moduleParts": {
-        "assets/js/contact-D_sadAjb.js": "1ef798dd-23"
+        "assets/js/contact-BfcSoaL4.js": "51700648-23"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-20"
+          "uid": "51700648-20"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-24": {
+    "51700648-24": {
       "id": "C:/Users/anon/github/logia-ink/pricing.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/pricing-D_sadAjb.js": "1ef798dd-25"
+        "assets/js/pricing-BfcSoaL4.js": "51700648-25"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-26"
+          "uid": "51700648-26"
         }
       ]
     },
-    "1ef798dd-26": {
+    "51700648-26": {
       "id": "C:/Users/anon/github/logia-ink/pricing.html",
       "moduleParts": {
-        "assets/js/pricing-D_sadAjb.js": "1ef798dd-27"
+        "assets/js/pricing-BfcSoaL4.js": "51700648-27"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-24"
+          "uid": "51700648-24"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-28": {
+    "51700648-28": {
       "id": "C:/Users/anon/github/logia-ink/seo-services.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/seoServices-D_sadAjb.js": "1ef798dd-29"
+        "assets/js/seoServices-BfcSoaL4.js": "51700648-29"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-30"
+          "uid": "51700648-30"
         }
       ]
     },
-    "1ef798dd-30": {
+    "51700648-30": {
       "id": "C:/Users/anon/github/logia-ink/seo-services.html",
       "moduleParts": {
-        "assets/js/seoServices-D_sadAjb.js": "1ef798dd-31"
+        "assets/js/seoServices-BfcSoaL4.js": "51700648-31"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-28"
+          "uid": "51700648-28"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-32": {
+    "51700648-32": {
       "id": "C:/Users/anon/github/logia-ink/reports.html?html-proxy&inline-css&index=0.css",
       "moduleParts": {
-        "assets/js/reports-D_sadAjb.js": "1ef798dd-33"
+        "assets/js/reports-BfcSoaL4.js": "51700648-33"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-34"
+          "uid": "51700648-34"
         }
       ]
     },
-    "1ef798dd-34": {
+    "51700648-34": {
       "id": "C:/Users/anon/github/logia-ink/reports.html",
       "moduleParts": {
-        "assets/js/reports-D_sadAjb.js": "1ef798dd-35"
+        "assets/js/reports-BfcSoaL4.js": "51700648-35"
       },
       "imported": [
         {
-          "uid": "1ef798dd-36"
+          "uid": "51700648-36"
         },
         {
-          "uid": "1ef798dd-32"
+          "uid": "51700648-32"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ],
       "importedBy": [],
       "isEntry": true
     },
-    "1ef798dd-36": {
+    "51700648-36": {
       "id": "\u0000vite/modulepreload-polyfill.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-37"
+        "assets/js/main-CCTzNUpT.js": "51700648-37"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-6"
+          "uid": "51700648-6"
         },
         {
-          "uid": "1ef798dd-10"
+          "uid": "51700648-10"
         },
         {
-          "uid": "1ef798dd-14"
+          "uid": "51700648-14"
         },
         {
-          "uid": "1ef798dd-18"
+          "uid": "51700648-18"
         },
         {
-          "uid": "1ef798dd-22"
+          "uid": "51700648-22"
         },
         {
-          "uid": "1ef798dd-26"
+          "uid": "51700648-26"
         },
         {
-          "uid": "1ef798dd-30"
+          "uid": "51700648-30"
         },
         {
-          "uid": "1ef798dd-34"
+          "uid": "51700648-34"
         }
       ]
     },
-    "1ef798dd-38": {
+    "51700648-38": {
       "id": "C:/Users/anon/github/logia-ink/css/main.css",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-39"
+        "assets/js/main-CCTzNUpT.js": "51700648-39"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-6"
+          "uid": "51700648-6"
         },
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         },
         {
-          "uid": "1ef798dd-10"
+          "uid": "51700648-10"
         },
         {
-          "uid": "1ef798dd-14"
+          "uid": "51700648-14"
         },
         {
-          "uid": "1ef798dd-18"
+          "uid": "51700648-18"
         },
         {
-          "uid": "1ef798dd-22"
+          "uid": "51700648-22"
         },
         {
-          "uid": "1ef798dd-26"
+          "uid": "51700648-26"
         },
         {
-          "uid": "1ef798dd-30"
+          "uid": "51700648-30"
         },
         {
-          "uid": "1ef798dd-34"
+          "uid": "51700648-34"
         }
       ]
     },
-    "1ef798dd-40": {
+    "51700648-40": {
       "id": "\u0000vite/preload-helper.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-41"
+        "assets/js/main-CCTzNUpT.js": "51700648-41"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         },
         {
-          "uid": "1ef798dd-76"
+          "uid": "51700648-76"
         },
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-42": {
+    "51700648-42": {
       "id": "C:/Users/anon/github/logia-ink/js/core/scroll-manager.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-43"
+        "assets/js/main-CCTzNUpT.js": "51700648-43"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         },
         {
-          "uid": "1ef798dd-44"
+          "uid": "51700648-44"
         },
         {
-          "uid": "1ef798dd-46"
+          "uid": "51700648-46"
         }
       ]
     },
-    "1ef798dd-44": {
+    "51700648-44": {
       "id": "C:/Users/anon/github/logia-ink/js/core/navigation.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-45"
+        "assets/js/main-CCTzNUpT.js": "51700648-45"
       },
       "imported": [
         {
-          "uid": "1ef798dd-42"
+          "uid": "51700648-42"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-46": {
+    "51700648-46": {
       "id": "C:/Users/anon/github/logia-ink/js/core/scroll.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-47"
+        "assets/js/main-CCTzNUpT.js": "51700648-47"
       },
       "imported": [
         {
-          "uid": "1ef798dd-42"
+          "uid": "51700648-42"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-48": {
+    "51700648-48": {
       "id": "C:/Users/anon/github/logia-ink/js/core/animations.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-49"
+        "assets/js/main-CCTzNUpT.js": "51700648-49"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-50": {
+    "51700648-50": {
       "id": "C:/Users/anon/github/logia-ink/js/core/cursor.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-51"
+        "assets/js/main-CCTzNUpT.js": "51700648-51"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-52": {
+    "51700648-52": {
       "id": "C:/Users/anon/github/logia-ink/js/core/mouse-tilt.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-53"
+        "assets/js/main-CCTzNUpT.js": "51700648-53"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-54": {
+    "51700648-54": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/interactions.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-55"
+        "assets/js/main-CCTzNUpT.js": "51700648-55"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-56": {
+    "51700648-56": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/ripples-lazyload.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-57"
+        "assets/js/main-CCTzNUpT.js": "51700648-57"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-58": {
+    "51700648-58": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/lazy-background-images.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-59"
+        "assets/js/main-CCTzNUpT.js": "51700648-59"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-60": {
+    "51700648-60": {
       "id": "C:/Users/anon/github/logia-ink/js/core/page-transitions.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-61"
+        "assets/js/main-CCTzNUpT.js": "51700648-61"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-62": {
+    "51700648-62": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/env.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-63"
+        "assets/js/main-CCTzNUpT.js": "51700648-63"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-64"
+          "uid": "51700648-64"
         },
         {
-          "uid": "1ef798dd-68"
+          "uid": "51700648-68"
         },
         {
-          "uid": "1ef798dd-74"
+          "uid": "51700648-74"
         },
         {
-          "uid": "1ef798dd-76"
+          "uid": "51700648-76"
         },
         {
-          "uid": "1ef798dd-82"
+          "uid": "51700648-82"
         },
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-64": {
+    "51700648-64": {
       "id": "C:/Users/anon/github/logia-ink/js/core/service-worker.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-65"
+        "assets/js/main-CCTzNUpT.js": "51700648-65"
       },
       "imported": [
         {
-          "uid": "1ef798dd-62"
+          "uid": "51700648-62"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-66": {
+    "51700648-66": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/accessibility.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-67"
+        "assets/js/main-CCTzNUpT.js": "51700648-67"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-68": {
+    "51700648-68": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/error-handler.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-69"
+        "assets/js/main-CCTzNUpT.js": "51700648-69"
       },
       "imported": [
         {
-          "uid": "1ef798dd-62"
+          "uid": "51700648-62"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-70": {
+    "51700648-70": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/dynamic-prefetch.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-71"
+        "assets/js/main-CCTzNUpT.js": "51700648-71"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-72": {
+    "51700648-72": {
       "id": "C:/Users/anon/github/logia-ink/js/main.js",
       "moduleParts": {
-        "assets/js/main-D0kPr_zv.js": "1ef798dd-73"
+        "assets/js/main-CCTzNUpT.js": "51700648-73"
       },
       "imported": [
         {
-          "uid": "1ef798dd-40"
+          "uid": "51700648-40"
         },
         {
-          "uid": "1ef798dd-38"
+          "uid": "51700648-38"
         },
         {
-          "uid": "1ef798dd-42"
+          "uid": "51700648-42"
         },
         {
-          "uid": "1ef798dd-44"
+          "uid": "51700648-44"
         },
         {
-          "uid": "1ef798dd-46"
+          "uid": "51700648-46"
         },
         {
-          "uid": "1ef798dd-48"
+          "uid": "51700648-48"
         },
         {
-          "uid": "1ef798dd-50"
+          "uid": "51700648-50"
         },
         {
-          "uid": "1ef798dd-52"
+          "uid": "51700648-52"
         },
         {
-          "uid": "1ef798dd-54"
+          "uid": "51700648-54"
         },
         {
-          "uid": "1ef798dd-56"
+          "uid": "51700648-56"
         },
         {
-          "uid": "1ef798dd-58"
+          "uid": "51700648-58"
         },
         {
-          "uid": "1ef798dd-60"
+          "uid": "51700648-60"
         },
         {
-          "uid": "1ef798dd-64"
+          "uid": "51700648-64"
         },
         {
-          "uid": "1ef798dd-66"
+          "uid": "51700648-66"
         },
         {
-          "uid": "1ef798dd-68"
+          "uid": "51700648-68"
         },
         {
-          "uid": "1ef798dd-70"
+          "uid": "51700648-70"
         },
         {
-          "uid": "1ef798dd-74",
+          "uid": "51700648-74",
           "dynamic": true
         },
         {
-          "uid": "1ef798dd-76",
+          "uid": "51700648-76",
           "dynamic": true
         },
         {
-          "uid": "1ef798dd-78",
+          "uid": "51700648-78",
           "dynamic": true
         },
         {
-          "uid": "1ef798dd-82",
+          "uid": "51700648-82",
           "dynamic": true
         },
         {
-          "uid": "1ef798dd-84",
+          "uid": "51700648-84",
           "dynamic": true
         },
         {
-          "uid": "1ef798dd-314",
+          "uid": "51700648-314",
           "dynamic": true
         },
         {
-          "uid": "1ef798dd-316",
+          "uid": "51700648-316",
           "dynamic": true
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-6"
+          "uid": "51700648-6"
         },
         {
-          "uid": "1ef798dd-10"
+          "uid": "51700648-10"
         },
         {
-          "uid": "1ef798dd-14"
+          "uid": "51700648-14"
         },
         {
-          "uid": "1ef798dd-18"
+          "uid": "51700648-18"
         },
         {
-          "uid": "1ef798dd-22"
+          "uid": "51700648-22"
         },
         {
-          "uid": "1ef798dd-26"
+          "uid": "51700648-26"
         },
         {
-          "uid": "1ef798dd-30"
+          "uid": "51700648-30"
         },
         {
-          "uid": "1ef798dd-34"
+          "uid": "51700648-34"
         }
       ]
     },
-    "1ef798dd-74": {
+    "51700648-74": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/performance.js",
       "moduleParts": {
-        "assets/js/performance-BEU_eQ5P.js": "1ef798dd-75"
+        "assets/js/performance-DDMZWrVN.js": "51700648-75"
       },
       "imported": [
         {
-          "uid": "1ef798dd-2"
+          "uid": "51700648-2"
         },
         {
-          "uid": "1ef798dd-62"
+          "uid": "51700648-62"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-76": {
+    "51700648-76": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/easter-egg.js",
       "moduleParts": {
-        "assets/js/easter-egg-D29Y6JxE.js": "1ef798dd-77"
+        "assets/js/easter-egg-CuoGRS35.js": "51700648-77"
       },
       "imported": [
         {
-          "uid": "1ef798dd-40"
+          "uid": "51700648-40"
         },
         {
-          "uid": "1ef798dd-62"
+          "uid": "51700648-62"
         },
         {
-          "uid": "1ef798dd-340",
+          "uid": "51700648-340",
           "dynamic": true
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-78": {
+    "51700648-78": {
       "id": "C:/Users/anon/github/logia-ink/js/core/three-hero.js",
       "moduleParts": {
-        "assets/js/three-hero-CKdlCHko.js": "1ef798dd-79"
+        "assets/js/three-hero-CKdlCHko.js": "51700648-79"
       },
       "imported": [
         {
-          "uid": "1ef798dd-342"
+          "uid": "51700648-342"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-80": {
+    "51700648-80": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/toast.js",
       "moduleParts": {
-        "assets/js/contact-ByU2n3rc.js": "1ef798dd-81"
+        "assets/js/contact-DDOTgdKw.js": "51700648-81"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-82"
+          "uid": "51700648-82"
         }
       ]
     },
-    "1ef798dd-82": {
+    "51700648-82": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/contact.js",
       "moduleParts": {
-        "assets/js/contact-ByU2n3rc.js": "1ef798dd-83"
+        "assets/js/contact-DDOTgdKw.js": "51700648-83"
       },
       "imported": [
         {
-          "uid": "1ef798dd-80"
+          "uid": "51700648-80"
         },
         {
-          "uid": "1ef798dd-62"
+          "uid": "51700648-62"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-84": {
+    "51700648-84": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/services.js",
       "moduleParts": {
-        "assets/js/services-C9I0FTKa.js": "1ef798dd-85"
+        "assets/js/services-C9I0FTKa.js": "51700648-85"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-86": {
+    "51700648-86": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-corporate-website-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-87"
+        "assets/js/projects-opqrbKc9.js": "51700648-87"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-88": {
+    "51700648-88": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-corporate-website-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-89"
+        "assets/js/projects-opqrbKc9.js": "51700648-89"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-90": {
+    "51700648-90": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-corporate-website-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-91"
+        "assets/js/projects-opqrbKc9.js": "51700648-91"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-92": {
+    "51700648-92": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-e-commerce-platform-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-93"
+        "assets/js/projects-opqrbKc9.js": "51700648-93"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-94": {
+    "51700648-94": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-e-commerce-platform-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-95"
+        "assets/js/projects-opqrbKc9.js": "51700648-95"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-96": {
+    "51700648-96": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-e-commerce-platform-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-97"
+        "assets/js/projects-opqrbKc9.js": "51700648-97"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-98": {
+    "51700648-98": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fintech-mobile-app-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-99"
+        "assets/js/projects-opqrbKc9.js": "51700648-99"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-100": {
+    "51700648-100": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fintech-mobile-app-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-101"
+        "assets/js/projects-opqrbKc9.js": "51700648-101"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-102": {
+    "51700648-102": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fintech-mobile-app-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-103"
+        "assets/js/projects-opqrbKc9.js": "51700648-103"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-104": {
+    "51700648-104": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fitness-tracking-app-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-105"
+        "assets/js/projects-opqrbKc9.js": "51700648-105"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-106": {
+    "51700648-106": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fitness-tracking-app-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-107"
+        "assets/js/projects-opqrbKc9.js": "51700648-107"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-108": {
+    "51700648-108": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fitness-tracking-app-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-109"
+        "assets/js/projects-opqrbKc9.js": "51700648-109"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-110": {
+    "51700648-110": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-marketing-campaign-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-111"
+        "assets/js/projects-opqrbKc9.js": "51700648-111"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-112": {
+    "51700648-112": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-marketing-campaign-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-113"
+        "assets/js/projects-opqrbKc9.js": "51700648-113"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-114": {
+    "51700648-114": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-marketing-campaign-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-115"
+        "assets/js/projects-opqrbKc9.js": "51700648-115"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-116": {
+    "51700648-116": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-tech-startup-rebrand-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-117"
+        "assets/js/projects-opqrbKc9.js": "51700648-117"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-118": {
+    "51700648-118": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-tech-startup-rebrand-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-119"
+        "assets/js/projects-opqrbKc9.js": "51700648-119"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-120": {
+    "51700648-120": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-tech-startup-rebrand-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-121"
+        "assets/js/projects-opqrbKc9.js": "51700648-121"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-122": {
+    "51700648-122": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-corporate-website-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-123"
+        "assets/js/projects-opqrbKc9.js": "51700648-123"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-124": {
+    "51700648-124": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-corporate-website-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-125"
+        "assets/js/projects-opqrbKc9.js": "51700648-125"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-126": {
+    "51700648-126": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-corporate-website-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-127"
+        "assets/js/projects-opqrbKc9.js": "51700648-127"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-128": {
+    "51700648-128": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-e-commerce-platform-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-129"
+        "assets/js/projects-opqrbKc9.js": "51700648-129"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-130": {
+    "51700648-130": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-e-commerce-platform-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-131"
+        "assets/js/projects-opqrbKc9.js": "51700648-131"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-132": {
+    "51700648-132": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-e-commerce-platform-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-133"
+        "assets/js/projects-opqrbKc9.js": "51700648-133"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-134": {
+    "51700648-134": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fintech-mobile-app-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-135"
+        "assets/js/projects-opqrbKc9.js": "51700648-135"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-136": {
+    "51700648-136": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fintech-mobile-app-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-137"
+        "assets/js/projects-opqrbKc9.js": "51700648-137"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-138": {
+    "51700648-138": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fintech-mobile-app-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-139"
+        "assets/js/projects-opqrbKc9.js": "51700648-139"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-140": {
+    "51700648-140": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fitness-tracking-app-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-141"
+        "assets/js/projects-opqrbKc9.js": "51700648-141"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-142": {
+    "51700648-142": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fitness-tracking-app-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-143"
+        "assets/js/projects-opqrbKc9.js": "51700648-143"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-144": {
+    "51700648-144": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fitness-tracking-app-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-145"
+        "assets/js/projects-opqrbKc9.js": "51700648-145"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-146": {
+    "51700648-146": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-marketing-campaign-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-147"
+        "assets/js/projects-opqrbKc9.js": "51700648-147"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-148": {
+    "51700648-148": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-marketing-campaign-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-149"
+        "assets/js/projects-opqrbKc9.js": "51700648-149"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-150": {
+    "51700648-150": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-marketing-campaign-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-151"
+        "assets/js/projects-opqrbKc9.js": "51700648-151"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-152": {
+    "51700648-152": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-tech-startup-rebrand-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-153"
+        "assets/js/projects-opqrbKc9.js": "51700648-153"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-154": {
+    "51700648-154": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-tech-startup-rebrand-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-155"
+        "assets/js/projects-opqrbKc9.js": "51700648-155"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-156": {
+    "51700648-156": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-tech-startup-rebrand-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-157"
+        "assets/js/projects-opqrbKc9.js": "51700648-157"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-158": {
+    "51700648-158": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-corporate-website-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-159"
+        "assets/js/projects-opqrbKc9.js": "51700648-159"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-160": {
+    "51700648-160": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-corporate-website-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-161"
+        "assets/js/projects-opqrbKc9.js": "51700648-161"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-162": {
+    "51700648-162": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-corporate-website-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-163"
+        "assets/js/projects-opqrbKc9.js": "51700648-163"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-164": {
+    "51700648-164": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-e-commerce-platform-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-165"
+        "assets/js/projects-opqrbKc9.js": "51700648-165"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-166": {
+    "51700648-166": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-e-commerce-platform-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-167"
+        "assets/js/projects-opqrbKc9.js": "51700648-167"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-168": {
+    "51700648-168": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-e-commerce-platform-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-169"
+        "assets/js/projects-opqrbKc9.js": "51700648-169"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-170": {
+    "51700648-170": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fintech-mobile-app-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-171"
+        "assets/js/projects-opqrbKc9.js": "51700648-171"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-172": {
+    "51700648-172": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fintech-mobile-app-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-173"
+        "assets/js/projects-opqrbKc9.js": "51700648-173"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-174": {
+    "51700648-174": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fintech-mobile-app-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-175"
+        "assets/js/projects-opqrbKc9.js": "51700648-175"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-176": {
+    "51700648-176": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fitness-tracking-app-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-177"
+        "assets/js/projects-opqrbKc9.js": "51700648-177"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-178": {
+    "51700648-178": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fitness-tracking-app-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-179"
+        "assets/js/projects-opqrbKc9.js": "51700648-179"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-180": {
+    "51700648-180": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fitness-tracking-app-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-181"
+        "assets/js/projects-opqrbKc9.js": "51700648-181"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-182": {
+    "51700648-182": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-tech-startup-rebrand-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-183"
+        "assets/js/projects-opqrbKc9.js": "51700648-183"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-184": {
+    "51700648-184": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-tech-startup-rebrand-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-185"
+        "assets/js/projects-opqrbKc9.js": "51700648-185"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-186": {
+    "51700648-186": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-tech-startup-rebrand-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-187"
+        "assets/js/projects-opqrbKc9.js": "51700648-187"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-188": {
+    "51700648-188": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subjet-marketing-campaign-1024w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-189"
+        "assets/js/projects-opqrbKc9.js": "51700648-189"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-190": {
+    "51700648-190": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subjet-marketing-campaign-480w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-191"
+        "assets/js/projects-opqrbKc9.js": "51700648-191"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-192": {
+    "51700648-192": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subjet-marketing-campaign-768w.avif",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-193"
+        "assets/js/projects-opqrbKc9.js": "51700648-193"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-194": {
+    "51700648-194": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-corporate-website-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-195"
+        "assets/js/projects-opqrbKc9.js": "51700648-195"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-196": {
+    "51700648-196": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-corporate-website-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-197"
+        "assets/js/projects-opqrbKc9.js": "51700648-197"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-198": {
+    "51700648-198": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-corporate-website-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-199"
+        "assets/js/projects-opqrbKc9.js": "51700648-199"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-200": {
+    "51700648-200": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-e-commerce-platform-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-201"
+        "assets/js/projects-opqrbKc9.js": "51700648-201"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-202": {
+    "51700648-202": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-e-commerce-platform-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-203"
+        "assets/js/projects-opqrbKc9.js": "51700648-203"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-204": {
+    "51700648-204": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-e-commerce-platform-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-205"
+        "assets/js/projects-opqrbKc9.js": "51700648-205"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-206": {
+    "51700648-206": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fintech-mobile-app-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-207"
+        "assets/js/projects-opqrbKc9.js": "51700648-207"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-208": {
+    "51700648-208": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fintech-mobile-app-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-209"
+        "assets/js/projects-opqrbKc9.js": "51700648-209"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-210": {
+    "51700648-210": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fintech-mobile-app-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-211"
+        "assets/js/projects-opqrbKc9.js": "51700648-211"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-212": {
+    "51700648-212": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fitness-tracking-app-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-213"
+        "assets/js/projects-opqrbKc9.js": "51700648-213"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-214": {
+    "51700648-214": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fitness-tracking-app-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-215"
+        "assets/js/projects-opqrbKc9.js": "51700648-215"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-216": {
+    "51700648-216": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-fitness-tracking-app-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-217"
+        "assets/js/projects-opqrbKc9.js": "51700648-217"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-218": {
+    "51700648-218": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-marketing-campaign-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-219"
+        "assets/js/projects-opqrbKc9.js": "51700648-219"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-220": {
+    "51700648-220": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-marketing-campaign-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-221"
+        "assets/js/projects-opqrbKc9.js": "51700648-221"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-222": {
+    "51700648-222": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-marketing-campaign-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-223"
+        "assets/js/projects-opqrbKc9.js": "51700648-223"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-224": {
+    "51700648-224": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-tech-startup-rebrand-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-225"
+        "assets/js/projects-opqrbKc9.js": "51700648-225"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-226": {
+    "51700648-226": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-tech-startup-rebrand-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-227"
+        "assets/js/projects-opqrbKc9.js": "51700648-227"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-228": {
+    "51700648-228": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/background-tech-startup-rebrand-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-229"
+        "assets/js/projects-opqrbKc9.js": "51700648-229"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-230": {
+    "51700648-230": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-corporate-website-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-231"
+        "assets/js/projects-opqrbKc9.js": "51700648-231"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-232": {
+    "51700648-232": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-corporate-website-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-233"
+        "assets/js/projects-opqrbKc9.js": "51700648-233"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-234": {
+    "51700648-234": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-corporate-website-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-235"
+        "assets/js/projects-opqrbKc9.js": "51700648-235"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-236": {
+    "51700648-236": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-e-commerce-platform-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-237"
+        "assets/js/projects-opqrbKc9.js": "51700648-237"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-238": {
+    "51700648-238": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-e-commerce-platform-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-239"
+        "assets/js/projects-opqrbKc9.js": "51700648-239"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-240": {
+    "51700648-240": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-e-commerce-platform-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-241"
+        "assets/js/projects-opqrbKc9.js": "51700648-241"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-242": {
+    "51700648-242": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fintech-mobile-app-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-243"
+        "assets/js/projects-opqrbKc9.js": "51700648-243"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-244": {
+    "51700648-244": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fintech-mobile-app-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-245"
+        "assets/js/projects-opqrbKc9.js": "51700648-245"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-246": {
+    "51700648-246": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fintech-mobile-app-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-247"
+        "assets/js/projects-opqrbKc9.js": "51700648-247"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-248": {
+    "51700648-248": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fitness-tracking-app-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-249"
+        "assets/js/projects-opqrbKc9.js": "51700648-249"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-250": {
+    "51700648-250": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fitness-tracking-app-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-251"
+        "assets/js/projects-opqrbKc9.js": "51700648-251"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-252": {
+    "51700648-252": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-fitness-tracking-app-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-253"
+        "assets/js/projects-opqrbKc9.js": "51700648-253"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-254": {
+    "51700648-254": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-marketing-campaign-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-255"
+        "assets/js/projects-opqrbKc9.js": "51700648-255"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-256": {
+    "51700648-256": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-marketing-campaign-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-257"
+        "assets/js/projects-opqrbKc9.js": "51700648-257"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-258": {
+    "51700648-258": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-marketing-campaign-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-259"
+        "assets/js/projects-opqrbKc9.js": "51700648-259"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-260": {
+    "51700648-260": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-tech-startup-rebrand-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-261"
+        "assets/js/projects-opqrbKc9.js": "51700648-261"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-262": {
+    "51700648-262": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-tech-startup-rebrand-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-263"
+        "assets/js/projects-opqrbKc9.js": "51700648-263"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-264": {
+    "51700648-264": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/image-tech-startup-rebrand-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-265"
+        "assets/js/projects-opqrbKc9.js": "51700648-265"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-266": {
+    "51700648-266": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-corporate-website-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-267"
+        "assets/js/projects-opqrbKc9.js": "51700648-267"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-268": {
+    "51700648-268": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-corporate-website-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-269"
+        "assets/js/projects-opqrbKc9.js": "51700648-269"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-270": {
+    "51700648-270": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-corporate-website-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-271"
+        "assets/js/projects-opqrbKc9.js": "51700648-271"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-272": {
+    "51700648-272": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-e-commerce-platform-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-273"
+        "assets/js/projects-opqrbKc9.js": "51700648-273"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-274": {
+    "51700648-274": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-e-commerce-platform-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-275"
+        "assets/js/projects-opqrbKc9.js": "51700648-275"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-276": {
+    "51700648-276": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-e-commerce-platform-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-277"
+        "assets/js/projects-opqrbKc9.js": "51700648-277"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-278": {
+    "51700648-278": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fintech-mobile-app-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-279"
+        "assets/js/projects-opqrbKc9.js": "51700648-279"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-280": {
+    "51700648-280": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fintech-mobile-app-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-281"
+        "assets/js/projects-opqrbKc9.js": "51700648-281"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-282": {
+    "51700648-282": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fintech-mobile-app-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-283"
+        "assets/js/projects-opqrbKc9.js": "51700648-283"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-284": {
+    "51700648-284": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fitness-tracking-app-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-285"
+        "assets/js/projects-opqrbKc9.js": "51700648-285"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-286": {
+    "51700648-286": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fitness-tracking-app-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-287"
+        "assets/js/projects-opqrbKc9.js": "51700648-287"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-288": {
+    "51700648-288": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-fitness-tracking-app-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-289"
+        "assets/js/projects-opqrbKc9.js": "51700648-289"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-290": {
+    "51700648-290": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-tech-startup-rebrand-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-291"
+        "assets/js/projects-opqrbKc9.js": "51700648-291"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-292": {
+    "51700648-292": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-tech-startup-rebrand-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-293"
+        "assets/js/projects-opqrbKc9.js": "51700648-293"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-294": {
+    "51700648-294": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subject-tech-startup-rebrand-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-295"
+        "assets/js/projects-opqrbKc9.js": "51700648-295"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-296": {
+    "51700648-296": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subjet-marketing-campaign-1024w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-297"
+        "assets/js/projects-opqrbKc9.js": "51700648-297"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-298": {
+    "51700648-298": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subjet-marketing-campaign-480w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-299"
+        "assets/js/projects-opqrbKc9.js": "51700648-299"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-300": {
+    "51700648-300": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/responsive/portfolio/subjet-marketing-campaign-768w.webp",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-301"
+        "assets/js/projects-opqrbKc9.js": "51700648-301"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-302": {
+    "51700648-302": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/image-corporate-website.png",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-303"
+        "assets/js/projects-opqrbKc9.js": "51700648-303"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-304": {
+    "51700648-304": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/image-e-commerce-platform.png",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-305"
+        "assets/js/projects-opqrbKc9.js": "51700648-305"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-306": {
+    "51700648-306": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/image-fintech-mobile-app.png",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-307"
+        "assets/js/projects-opqrbKc9.js": "51700648-307"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-308": {
+    "51700648-308": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/image-fitness-tracking-app.png",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-309"
+        "assets/js/projects-opqrbKc9.js": "51700648-309"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-310": {
+    "51700648-310": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/image-marketing-campaign.png",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-311"
+        "assets/js/projects-opqrbKc9.js": "51700648-311"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-312": {
+    "51700648-312": {
       "id": "C:/Users/anon/github/logia-ink/assets/images/portfolio/image-tech-startup-rebrand.png",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-313"
+        "assets/js/projects-opqrbKc9.js": "51700648-313"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-314"
+          "uid": "51700648-314"
         }
       ]
     },
-    "1ef798dd-314": {
+    "51700648-314": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/projects.js",
       "moduleParts": {
-        "assets/js/projects-opqrbKc9.js": "1ef798dd-315"
+        "assets/js/projects-opqrbKc9.js": "51700648-315"
       },
       "imported": [
         {
-          "uid": "1ef798dd-86"
+          "uid": "51700648-86"
         },
         {
-          "uid": "1ef798dd-88"
+          "uid": "51700648-88"
         },
         {
-          "uid": "1ef798dd-90"
+          "uid": "51700648-90"
         },
         {
-          "uid": "1ef798dd-92"
+          "uid": "51700648-92"
         },
         {
-          "uid": "1ef798dd-94"
+          "uid": "51700648-94"
         },
         {
-          "uid": "1ef798dd-96"
+          "uid": "51700648-96"
         },
         {
-          "uid": "1ef798dd-98"
+          "uid": "51700648-98"
         },
         {
-          "uid": "1ef798dd-100"
+          "uid": "51700648-100"
         },
         {
-          "uid": "1ef798dd-102"
+          "uid": "51700648-102"
         },
         {
-          "uid": "1ef798dd-104"
+          "uid": "51700648-104"
         },
         {
-          "uid": "1ef798dd-106"
+          "uid": "51700648-106"
         },
         {
-          "uid": "1ef798dd-108"
+          "uid": "51700648-108"
         },
         {
-          "uid": "1ef798dd-110"
+          "uid": "51700648-110"
         },
         {
-          "uid": "1ef798dd-112"
+          "uid": "51700648-112"
         },
         {
-          "uid": "1ef798dd-114"
+          "uid": "51700648-114"
         },
         {
-          "uid": "1ef798dd-116"
+          "uid": "51700648-116"
         },
         {
-          "uid": "1ef798dd-118"
+          "uid": "51700648-118"
         },
         {
-          "uid": "1ef798dd-120"
+          "uid": "51700648-120"
         },
         {
-          "uid": "1ef798dd-122"
+          "uid": "51700648-122"
         },
         {
-          "uid": "1ef798dd-124"
+          "uid": "51700648-124"
         },
         {
-          "uid": "1ef798dd-126"
+          "uid": "51700648-126"
         },
         {
-          "uid": "1ef798dd-128"
+          "uid": "51700648-128"
         },
         {
-          "uid": "1ef798dd-130"
+          "uid": "51700648-130"
         },
         {
-          "uid": "1ef798dd-132"
+          "uid": "51700648-132"
         },
         {
-          "uid": "1ef798dd-134"
+          "uid": "51700648-134"
         },
         {
-          "uid": "1ef798dd-136"
+          "uid": "51700648-136"
         },
         {
-          "uid": "1ef798dd-138"
+          "uid": "51700648-138"
         },
         {
-          "uid": "1ef798dd-140"
+          "uid": "51700648-140"
         },
         {
-          "uid": "1ef798dd-142"
+          "uid": "51700648-142"
         },
         {
-          "uid": "1ef798dd-144"
+          "uid": "51700648-144"
         },
         {
-          "uid": "1ef798dd-146"
+          "uid": "51700648-146"
         },
         {
-          "uid": "1ef798dd-148"
+          "uid": "51700648-148"
         },
         {
-          "uid": "1ef798dd-150"
+          "uid": "51700648-150"
         },
         {
-          "uid": "1ef798dd-152"
+          "uid": "51700648-152"
         },
         {
-          "uid": "1ef798dd-154"
+          "uid": "51700648-154"
         },
         {
-          "uid": "1ef798dd-156"
+          "uid": "51700648-156"
         },
         {
-          "uid": "1ef798dd-158"
+          "uid": "51700648-158"
         },
         {
-          "uid": "1ef798dd-160"
+          "uid": "51700648-160"
         },
         {
-          "uid": "1ef798dd-162"
+          "uid": "51700648-162"
         },
         {
-          "uid": "1ef798dd-164"
+          "uid": "51700648-164"
         },
         {
-          "uid": "1ef798dd-166"
+          "uid": "51700648-166"
         },
         {
-          "uid": "1ef798dd-168"
+          "uid": "51700648-168"
         },
         {
-          "uid": "1ef798dd-170"
+          "uid": "51700648-170"
         },
         {
-          "uid": "1ef798dd-172"
+          "uid": "51700648-172"
         },
         {
-          "uid": "1ef798dd-174"
+          "uid": "51700648-174"
         },
         {
-          "uid": "1ef798dd-176"
+          "uid": "51700648-176"
         },
         {
-          "uid": "1ef798dd-178"
+          "uid": "51700648-178"
         },
         {
-          "uid": "1ef798dd-180"
+          "uid": "51700648-180"
         },
         {
-          "uid": "1ef798dd-182"
+          "uid": "51700648-182"
         },
         {
-          "uid": "1ef798dd-184"
+          "uid": "51700648-184"
         },
         {
-          "uid": "1ef798dd-186"
+          "uid": "51700648-186"
         },
         {
-          "uid": "1ef798dd-188"
+          "uid": "51700648-188"
         },
         {
-          "uid": "1ef798dd-190"
+          "uid": "51700648-190"
         },
         {
-          "uid": "1ef798dd-192"
+          "uid": "51700648-192"
         },
         {
-          "uid": "1ef798dd-194"
+          "uid": "51700648-194"
         },
         {
-          "uid": "1ef798dd-196"
+          "uid": "51700648-196"
         },
         {
-          "uid": "1ef798dd-198"
+          "uid": "51700648-198"
         },
         {
-          "uid": "1ef798dd-200"
+          "uid": "51700648-200"
         },
         {
-          "uid": "1ef798dd-202"
+          "uid": "51700648-202"
         },
         {
-          "uid": "1ef798dd-204"
+          "uid": "51700648-204"
         },
         {
-          "uid": "1ef798dd-206"
+          "uid": "51700648-206"
         },
         {
-          "uid": "1ef798dd-208"
+          "uid": "51700648-208"
         },
         {
-          "uid": "1ef798dd-210"
+          "uid": "51700648-210"
         },
         {
-          "uid": "1ef798dd-212"
+          "uid": "51700648-212"
         },
         {
-          "uid": "1ef798dd-214"
+          "uid": "51700648-214"
         },
         {
-          "uid": "1ef798dd-216"
+          "uid": "51700648-216"
         },
         {
-          "uid": "1ef798dd-218"
+          "uid": "51700648-218"
         },
         {
-          "uid": "1ef798dd-220"
+          "uid": "51700648-220"
         },
         {
-          "uid": "1ef798dd-222"
+          "uid": "51700648-222"
         },
         {
-          "uid": "1ef798dd-224"
+          "uid": "51700648-224"
         },
         {
-          "uid": "1ef798dd-226"
+          "uid": "51700648-226"
         },
         {
-          "uid": "1ef798dd-228"
+          "uid": "51700648-228"
         },
         {
-          "uid": "1ef798dd-230"
+          "uid": "51700648-230"
         },
         {
-          "uid": "1ef798dd-232"
+          "uid": "51700648-232"
         },
         {
-          "uid": "1ef798dd-234"
+          "uid": "51700648-234"
         },
         {
-          "uid": "1ef798dd-236"
+          "uid": "51700648-236"
         },
         {
-          "uid": "1ef798dd-238"
+          "uid": "51700648-238"
         },
         {
-          "uid": "1ef798dd-240"
+          "uid": "51700648-240"
         },
         {
-          "uid": "1ef798dd-242"
+          "uid": "51700648-242"
         },
         {
-          "uid": "1ef798dd-244"
+          "uid": "51700648-244"
         },
         {
-          "uid": "1ef798dd-246"
+          "uid": "51700648-246"
         },
         {
-          "uid": "1ef798dd-248"
+          "uid": "51700648-248"
         },
         {
-          "uid": "1ef798dd-250"
+          "uid": "51700648-250"
         },
         {
-          "uid": "1ef798dd-252"
+          "uid": "51700648-252"
         },
         {
-          "uid": "1ef798dd-254"
+          "uid": "51700648-254"
         },
         {
-          "uid": "1ef798dd-256"
+          "uid": "51700648-256"
         },
         {
-          "uid": "1ef798dd-258"
+          "uid": "51700648-258"
         },
         {
-          "uid": "1ef798dd-260"
+          "uid": "51700648-260"
         },
         {
-          "uid": "1ef798dd-262"
+          "uid": "51700648-262"
         },
         {
-          "uid": "1ef798dd-264"
+          "uid": "51700648-264"
         },
         {
-          "uid": "1ef798dd-266"
+          "uid": "51700648-266"
         },
         {
-          "uid": "1ef798dd-268"
+          "uid": "51700648-268"
         },
         {
-          "uid": "1ef798dd-270"
+          "uid": "51700648-270"
         },
         {
-          "uid": "1ef798dd-272"
+          "uid": "51700648-272"
         },
         {
-          "uid": "1ef798dd-274"
+          "uid": "51700648-274"
         },
         {
-          "uid": "1ef798dd-276"
+          "uid": "51700648-276"
         },
         {
-          "uid": "1ef798dd-278"
+          "uid": "51700648-278"
         },
         {
-          "uid": "1ef798dd-280"
+          "uid": "51700648-280"
         },
         {
-          "uid": "1ef798dd-282"
+          "uid": "51700648-282"
         },
         {
-          "uid": "1ef798dd-284"
+          "uid": "51700648-284"
         },
         {
-          "uid": "1ef798dd-286"
+          "uid": "51700648-286"
         },
         {
-          "uid": "1ef798dd-288"
+          "uid": "51700648-288"
         },
         {
-          "uid": "1ef798dd-290"
+          "uid": "51700648-290"
         },
         {
-          "uid": "1ef798dd-292"
+          "uid": "51700648-292"
         },
         {
-          "uid": "1ef798dd-294"
+          "uid": "51700648-294"
         },
         {
-          "uid": "1ef798dd-296"
+          "uid": "51700648-296"
         },
         {
-          "uid": "1ef798dd-298"
+          "uid": "51700648-298"
         },
         {
-          "uid": "1ef798dd-300"
+          "uid": "51700648-300"
         },
         {
-          "uid": "1ef798dd-302"
+          "uid": "51700648-302"
         },
         {
-          "uid": "1ef798dd-304"
+          "uid": "51700648-304"
         },
         {
-          "uid": "1ef798dd-306"
+          "uid": "51700648-306"
         },
         {
-          "uid": "1ef798dd-308"
+          "uid": "51700648-308"
         },
         {
-          "uid": "1ef798dd-310"
+          "uid": "51700648-310"
         },
         {
-          "uid": "1ef798dd-312"
+          "uid": "51700648-312"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-316": {
+    "51700648-316": {
       "id": "C:/Users/anon/github/logia-ink/js/pages/reports.js",
       "moduleParts": {
-        "assets/js/reports-oEG2iGGt.js": "1ef798dd-317"
+        "assets/js/reports-oEG2iGGt.js": "51700648-317"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-72"
+          "uid": "51700648-72"
         }
       ]
     },
-    "1ef798dd-318": {
+    "51700648-318": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/texture-wrapping.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-319"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-319"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-322"
+          "uid": "51700648-322"
         }
       ]
     },
-    "1ef798dd-320": {
+    "51700648-320": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/procedural-noise.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-321"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-321"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-322"
+          "uid": "51700648-322"
         }
       ]
     },
-    "1ef798dd-322": {
+    "51700648-322": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/celestial-textures.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-323"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-323"
       },
       "imported": [
         {
-          "uid": "1ef798dd-318"
+          "uid": "51700648-318"
         },
         {
-          "uid": "1ef798dd-320"
+          "uid": "51700648-320"
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-324": {
+    "51700648-324": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/galaxy-generator.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-325"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-325"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-326": {
+    "51700648-326": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/star-field.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-327"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-327"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-328": {
+    "51700648-328": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/lighting-atmosphere.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-329"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-329"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-330": {
+    "51700648-330": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/particle-effects.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-331"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-331"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-332": {
+    "51700648-332": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/celestial-mechanics.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-333"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-333"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-334": {
+    "51700648-334": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/post-processing.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-335"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-335"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-336": {
+    "51700648-336": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/camera-controls.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-337"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-337"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-338": {
+    "51700648-338": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/nebula-clouds.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-339"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-339"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     },
-    "1ef798dd-340": {
+    "51700648-340": {
       "id": "C:/Users/anon/github/logia-ink/js/easter-egg/runtime.js",
       "moduleParts": {
-        "assets/js/runtime-DWGcHIP6.js": "1ef798dd-341"
+        "assets/js/runtime-DTKQ_nn4.js": "51700648-341"
       },
       "imported": [
         {
-          "uid": "1ef798dd-40"
+          "uid": "51700648-40"
         },
         {
-          "uid": "1ef798dd-62"
+          "uid": "51700648-62"
         },
         {
-          "uid": "1ef798dd-322"
+          "uid": "51700648-322"
         },
         {
-          "uid": "1ef798dd-324"
+          "uid": "51700648-324"
         },
         {
-          "uid": "1ef798dd-326"
+          "uid": "51700648-326"
         },
         {
-          "uid": "1ef798dd-328"
+          "uid": "51700648-328"
         },
         {
-          "uid": "1ef798dd-330"
+          "uid": "51700648-330"
         },
         {
-          "uid": "1ef798dd-332"
+          "uid": "51700648-332"
         },
         {
-          "uid": "1ef798dd-334"
+          "uid": "51700648-334"
         },
         {
-          "uid": "1ef798dd-336"
+          "uid": "51700648-336"
         },
         {
-          "uid": "1ef798dd-338"
+          "uid": "51700648-338"
         },
         {
-          "uid": "1ef798dd-342",
+          "uid": "51700648-342",
           "dynamic": true
         }
       ],
       "importedBy": [
         {
-          "uid": "1ef798dd-76"
+          "uid": "51700648-76"
         }
       ]
     },
-    "1ef798dd-342": {
+    "51700648-342": {
       "id": "C:/Users/anon/github/logia-ink/js/utils/three-loader.js",
       "moduleParts": {
-        "assets/js/three-loader-C4FuEsMl.js": "1ef798dd-343"
+        "assets/js/three-loader-C4FuEsMl.js": "51700648-343"
       },
       "imported": [],
       "importedBy": [
         {
-          "uid": "1ef798dd-78"
+          "uid": "51700648-78"
         },
         {
-          "uid": "1ef798dd-340"
+          "uid": "51700648-340"
         }
       ]
     }

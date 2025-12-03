@@ -97,7 +97,7 @@
 
 ## Key Competitor Insights
 
-**Pricing Ranges:** Competitors show packages from R1,500 - R18,000 (most common: R1,500-R9,000)  
+**Pricing Ranges:** Competitors show packages from R7,500 - R18,000 (most common: R7,500-R19,500)  
 **Location Targeting:** 12/15 competitors target "website design [city]" keywords with dedicated pages  
 **Service Depth:** Competitors average 8-12 service pages vs. your current fewer pages  
 **Content Gap:** 67% of competitors have blogs/content sections (you don't)

@@ -293,6 +293,22 @@ function syncSliderInput(slider, input, updateFn) {
 }
 
 /**
+ * Sync slider with number input (debounced version for position/size sliders)
+ * Uses debounced update to prevent CLS during rapid slider changes
+ * Note: The debouncing is handled by the updateFn callback, not here
+ */
+function syncSliderInputDebounced(slider, input, updateFn) {
+  slider.addEventListener('input', e => {
+    input.value = e.target.value;
+    if (updateFn) updateFn();
+  });
+  input.addEventListener('input', e => {
+    slider.value = e.target.value;
+    if (updateFn) updateFn();
+  });
+}
+
+/**
  * Update slider and input value synchronously
  * This ensures both the slider position and input display value are updated
  * Does NOT trigger events to avoid multiple updateState() calls
@@ -304,6 +320,39 @@ function setSliderValue(slider, input, value) {
   if (input) {
     input.value = value;
   }
+}
+
+// Debounce timer for slider updates to prevent excessive CLS
+let updateStateDebounceTimer = null;
+let pendingUpdateState = false;
+let lastUpdateTime = 0;
+const MIN_UPDATE_INTERVAL = 50; // Minimum 50ms between updates (~20fps max)
+
+/**
+ * Debounced update state for slider inputs (prevents CLS during rapid changes)
+ * Uses both debouncing and throttling to ensure smooth updates without excessive CLS
+ */
+function debouncedUpdateState(skipHistory = false) {
+  // Clear existing timer
+  if (updateStateDebounceTimer) {
+    clearTimeout(updateStateDebounceTimer);
+  }
+
+  // Mark that we have a pending update
+  pendingUpdateState = true;
+
+  // Throttle: Ensure minimum time between updates
+  const now = performance.now();
+  const timeSinceLastUpdate = now - lastUpdateTime;
+  const delay = Math.max(0, MIN_UPDATE_INTERVAL - timeSinceLastUpdate);
+
+  // Debounce slider updates to reduce CLS
+  updateStateDebounceTimer = setTimeout(() => {
+    lastUpdateTime = performance.now();
+    updateState(skipHistory);
+    pendingUpdateState = false;
+    updateStateDebounceTimer = null;
+  }, delay);
 }
 
 /**
@@ -575,88 +624,88 @@ function populateSavedPresets() {
  * Setup event listeners
  */
 function setupEventListeners() {
-  // Size controls
+  // Size controls - use debounced updates to prevent CLS during rapid slider changes
   if (titleSizeSlider && titleSizeValue) {
-    syncSliderInput(titleSizeSlider, titleSizeValue, () => updateState());
+    syncSliderInputDebounced(titleSizeSlider, titleSizeValue, () => debouncedUpdateState());
   }
   if (subtitleSizeSlider && subtitleSizeValue) {
-    syncSliderInput(subtitleSizeSlider, subtitleSizeValue, () => updateState());
+    syncSliderInputDebounced(subtitleSizeSlider, subtitleSizeValue, () => debouncedUpdateState());
   }
   if (sloganSizeSlider && sloganSizeValue) {
-    syncSliderInput(sloganSizeSlider, sloganSizeValue, () => updateState());
+    syncSliderInputDebounced(sloganSizeSlider, sloganSizeValue, () => debouncedUpdateState());
   }
   if (logoSizeSlider && logoSizeValue) {
-    syncSliderInput(logoSizeSlider, logoSizeValue, () => updateState());
+    syncSliderInputDebounced(logoSizeSlider, logoSizeValue, () => debouncedUpdateState());
   }
   if (dividerWidthSlider && dividerWidthValue) {
-    syncSliderInput(dividerWidthSlider, dividerWidthValue, () => updateState());
+    syncSliderInputDebounced(dividerWidthSlider, dividerWidthValue, () => debouncedUpdateState());
   }
   if (titleDividerWidthSlider && titleDividerWidthValue) {
-    syncSliderInput(titleDividerWidthSlider, titleDividerWidthValue, () => updateState());
+    syncSliderInputDebounced(titleDividerWidthSlider, titleDividerWidthValue, () => debouncedUpdateState());
   }
   if (subtitleDividerWidthSlider && subtitleDividerWidthValue) {
-    syncSliderInput(subtitleDividerWidthSlider, subtitleDividerWidthValue, () => updateState());
+    syncSliderInputDebounced(subtitleDividerWidthSlider, subtitleDividerWidthValue, () => debouncedUpdateState());
   }
   if (sloganDividerWidthSlider && sloganDividerWidthValue) {
-    syncSliderInput(sloganDividerWidthSlider, sloganDividerWidthValue, () => updateState());
+    syncSliderInputDebounced(sloganDividerWidthSlider, sloganDividerWidthValue, () => debouncedUpdateState());
   }
 
-  // Text alignment controls
+  // Text alignment controls - use debounced updates to prevent CLS during rapid slider changes
   if (titleXSlider && titleXValue) {
-    syncSliderInput(titleXSlider, titleXValue, () => updateState());
+    syncSliderInputDebounced(titleXSlider, titleXValue, () => debouncedUpdateState());
   }
   if (titleYSlider && titleYValue) {
-    syncSliderInput(titleYSlider, titleYValue, () => updateState());
+    syncSliderInputDebounced(titleYSlider, titleYValue, () => debouncedUpdateState());
   }
   if (subtitleXSlider && subtitleXValue) {
-    syncSliderInput(subtitleXSlider, subtitleXValue, () => updateState());
+    syncSliderInputDebounced(subtitleXSlider, subtitleXValue, () => debouncedUpdateState());
   }
   if (subtitleYSlider && subtitleYValue) {
-    syncSliderInput(subtitleYSlider, subtitleYValue, () => updateState());
+    syncSliderInputDebounced(subtitleYSlider, subtitleYValue, () => debouncedUpdateState());
   }
   if (sloganXSlider && sloganXValue) {
-    syncSliderInput(sloganXSlider, sloganXValue, () => updateState());
+    syncSliderInputDebounced(sloganXSlider, sloganXValue, () => debouncedUpdateState());
   }
   if (sloganYSlider && sloganYValue) {
-    syncSliderInput(sloganYSlider, sloganYValue, () => updateState());
+    syncSliderInputDebounced(sloganYSlider, sloganYValue, () => debouncedUpdateState());
   }
 
-  // Pattern customization controls
+  // Pattern customization controls - use debounced updates to prevent CLS during rapid slider changes
   if (patternOpacitySlider && patternOpacityValue) {
-    syncSliderInput(patternOpacitySlider, patternOpacityValue, () => updateState());
+    syncSliderInputDebounced(patternOpacitySlider, patternOpacityValue, () => debouncedUpdateState());
   }
   if (patternSizeSlider && patternSizeValue) {
-    syncSliderInput(patternSizeSlider, patternSizeValue, () => updateState());
+    syncSliderInputDebounced(patternSizeSlider, patternSizeValue, () => debouncedUpdateState());
   }
   if (patternRotationSlider && patternRotationValue) {
-    syncSliderInput(patternRotationSlider, patternRotationValue, () => updateState());
+    syncSliderInputDebounced(patternRotationSlider, patternRotationValue, () => debouncedUpdateState());
   }
   if (patternBlendModeSelect) {
     patternBlendModeSelect.addEventListener('change', () => updateState());
   }
   if (patternOffsetXSlider && patternOffsetXValue) {
-    syncSliderInput(patternOffsetXSlider, patternOffsetXValue, () => updateState());
+    syncSliderInputDebounced(patternOffsetXSlider, patternOffsetXValue, () => debouncedUpdateState());
   }
   if (patternOffsetYSlider && patternOffsetYValue) {
-    syncSliderInput(patternOffsetYSlider, patternOffsetYValue, () => updateState());
+    syncSliderInputDebounced(patternOffsetYSlider, patternOffsetYValue, () => debouncedUpdateState());
   }
   if (patternSpacingSlider && patternSpacingValue) {
-    syncSliderInput(patternSpacingSlider, patternSpacingValue, () => updateState());
+    syncSliderInputDebounced(patternSpacingSlider, patternSpacingValue, () => debouncedUpdateState());
   }
   if (patternDensitySlider && patternDensityValue) {
-    syncSliderInput(patternDensitySlider, patternDensityValue, () => updateState());
+    syncSliderInputDebounced(patternDensitySlider, patternDensityValue, () => debouncedUpdateState());
   }
   if (patternBlurSlider && patternBlurValue) {
-    syncSliderInput(patternBlurSlider, patternBlurValue, () => updateState());
+    syncSliderInputDebounced(patternBlurSlider, patternBlurValue, () => debouncedUpdateState());
   }
   if (patternScaleSlider && patternScaleValue) {
-    syncSliderInput(patternScaleSlider, patternScaleValue, () => updateState());
+    syncSliderInputDebounced(patternScaleSlider, patternScaleValue, () => debouncedUpdateState());
   }
   if (patternRepeatSelect) {
     patternRepeatSelect.addEventListener('change', () => updateState());
   }
   if (patternIntensitySlider && patternIntensityValue) {
-    syncSliderInput(patternIntensitySlider, patternIntensityValue, () => updateState());
+    syncSliderInputDebounced(patternIntensitySlider, patternIntensityValue, () => debouncedUpdateState());
   }
 
   // Pattern settings toggle

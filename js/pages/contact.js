@@ -271,17 +271,10 @@ async function handleSubmit(e) {
 
   // Collect form data
   const formData = new FormData(form);
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    phone: formData.get('phone') || '',
-    subject: formData.get('subject'),
-    message: formData.get('message'),
-  };
 
   try {
-    // Submit form (placeholder - replace with actual API endpoint)
-    await submitForm(data);
+    // Submit form to Formspree
+    await submitForm(formData);
 
     // Success
     showToast('Thank you for your message! We will get back to you soon.', 'success', 5000);
@@ -326,26 +319,33 @@ async function handleSubmit(e) {
 }
 
 /**
- * Submit form data (placeholder - replace with actual API)
+ * Submit form data to Formspree
  */
-async function submitForm(data) {
-  // TODO: Replace with actual form submission endpoint
-  // Examples:
-  // - Formspree: await fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(data) })
-  // - Netlify Forms: Use form with netlify attribute
-  // - Custom API: await fetch('YOUR_API_ENDPOINT', { method: 'POST', body: JSON.stringify(data) })
-
-  // Simulate API call
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Simulate success (90% success rate for demo)
-      if (Math.random() > 0.1) {
-        resolve({ success: true });
-      } else {
-        reject(new Error('Submission failed'));
-      }
-    }, 1500);
+async function submitForm(formData) {
+  const response = await fetch('https://formspree.io/f/mkgdbljg', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      Accept: 'application/json',
+    },
   });
+
+  if (!response.ok) {
+    // Try to get error message from Formspree response
+    let errorMessage = 'Form submission failed. Please try again.';
+    try {
+      const errorData = await response.json();
+      if (errorData.error) {
+        errorMessage = errorData.error;
+      }
+    } catch {
+      // If response isn't JSON, use default message
+    }
+    throw new Error(errorMessage);
+  }
+
+  const result = await response.json();
+  return result;
 }
 
 /**

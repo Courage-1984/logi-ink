@@ -15,7 +15,7 @@
     <!-- Content Security Policy (basic - enhance via server headers) -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-src https://www.google.com;"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com; frame-src https://www.google.com;"
     />
 
     <script>
@@ -97,6 +97,23 @@
 
     <!-- Preconnect for third-party resources -->
     <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9PFB2D8G1B');
+    </script>
 
     <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
 
@@ -868,15 +885,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script type="module" src="js/main.js"></script>
 
-    <!-- Load analytics after page load to reduce impact on Core Web Vitals -->
-    <script>
-      window.addEventListener('load', () => {
-        const script = document.createElement('script');
-        script.defer = true;
-        script.src = 'https://plausible.io/js/script.js';
-        script.setAttribute('data-domain', 'logi-ink.com');
-        document.head.appendChild(script);
-      });
-    </script>
   </body>
 </html>

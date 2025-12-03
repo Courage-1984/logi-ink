@@ -28,7 +28,9 @@ test.describe('Logi-Ink Smoke Suite', () => {
 
     // For Services, we need to open the dropdown first, then click "All Services"
     // Hover over Services link to open dropdown (desktop) or click to toggle (mobile)
-    const servicesParentLink = page.locator('nav.navbar .nav-item-dropdown > a.nav-link[href="/services"]').first();
+    const servicesParentLink = page
+      .locator('nav.navbar .nav-item-dropdown > a.nav-link[href="/services"]')
+      .first();
     await servicesParentLink.waitFor({ state: 'visible' });
 
     // Hover to open dropdown (works on desktop)
@@ -231,7 +233,7 @@ test.describe('Logi-Ink Smoke Suite', () => {
     await expect(page.locator('main')).toBeVisible();
     await expect(page).toHaveTitle(/Pricing.*Logi-Ink/);
     await expect(page.locator('.pricing-card')).toHaveCount(3, { timeout: 10_000 });
-    await expect(page.locator('main')).toContainText(/R1,500|pricing|package/i);
+    await expect(page.locator('main')).toContainText(/R7,500|pricing|package/i);
   });
 
   test('seo-services page loads and displays content', async ({ page }) => {
