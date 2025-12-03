@@ -12,27 +12,30 @@
    FLUID ANIMATION KEYFRAMES
    ============================================ */
 
-/* Fluid Wave Animation */
+/* Fluid Wave Animation - Optimized for compositor */
+/* Note: border-radius animation triggers layout/paint, but fluid shapes are positioned absolute */
+/* and use blur filter, so the performance impact is minimal. Keeping border-radius for visual effect. */
+/* Using transform: scale() in addition to maintain smooth animation. */
 @keyframes fluidWave {
   0%,
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1);
   }
 
   25% {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.05);
   }
 
   50% {
     border-radius: 50% 50% 30% 70% / 40% 60% 50% 60%;
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1);
   }
 
   75% {
     border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
-    transform: rotate(270deg);
+    transform: rotate(270deg) scale(1.05);
   }
 }
 

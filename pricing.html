@@ -111,15 +111,22 @@
       plausible.init();
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B"></script>
+    <!-- Google tag (gtag.js) - Deferred to load after page is interactive -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-9PFB2D8G1B');
+      // Defer Google Tag Manager to reduce initial JavaScript load
+      window.addEventListener('load', () => {
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9PFB2D8G1B');
+
+        // Load gtag.js script asynchronously
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
+        document.head.appendChild(script);
+      });
     </script>
 
     <!-- Canonical URL -->

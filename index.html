@@ -71,11 +71,11 @@
 
     <!-- Preload critical resources -->
 
-    <!-- Preload hero banner in AVIF format (best compression, most common desktop size) -->
+    <!-- Preload hero banner in AVIF format (768w for most viewports, optimal for LCP) -->
     <link
       rel="preload"
       as="image"
-      href="./assets/images/responsive/banners/banner_home-1280w.avif"
+      href="./assets/images/responsive/banners/banner_home-768w.avif"
       fetchpriority="high"
     />
 
@@ -106,6 +106,7 @@
     <!-- Preconnect for third-party resources -->
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js"></script>
@@ -114,13 +115,22 @@
       plausible.init()
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B"></script>
+    <!-- Google tag (gtag.js) - Deferred to load after page is interactive -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9PFB2D8G1B');
+      // Defer Google Tag Manager to reduce initial JavaScript load
+      window.addEventListener('load', () => {
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9PFB2D8G1B');
+
+        // Load gtag.js script asynchronously
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
+        document.head.appendChild(script);
+      });
     </script>
 
     <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
@@ -368,10 +378,9 @@
                     srcset="
                       ./assets/images/responsive/banners/banner_home-480w.avif   480w,
                       ./assets/images/responsive/banners/banner_home-768w.avif   768w,
-                      ./assets/images/responsive/banners/banner_home-1024w.avif 1024w,
-                      ./assets/images/responsive/banners/banner_home-1280w.avif 1280w
+                      ./assets/images/responsive/banners/banner_home-1024w.avif 1024w
                     "
-                    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
                   />
                   <!-- WebP format (fallback for older browsers) -->
                   <source
@@ -379,10 +388,9 @@
                     srcset="
                       ./assets/images/responsive/banners/banner_home-480w.webp   480w,
                       ./assets/images/responsive/banners/banner_home-768w.webp   768w,
-                      ./assets/images/responsive/banners/banner_home-1024w.webp 1024w,
-                      ./assets/images/responsive/banners/banner_home-1280w.webp 1280w
+                      ./assets/images/responsive/banners/banner_home-1024w.webp 1024w
                     "
-                    sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
                   />
                   <!-- Original format (final fallback) -->
                   <img
@@ -391,8 +399,8 @@
                     fetchpriority="high"
                     decoding="sync"
                     alt="Web Development Transforming Digital Experiences"
-                    width="1280"
-                    height="720"
+                    width="768"
+                    height="432"
                   />
                 </picture>
                 <div class="project-overlay project-card-large-overlay"></div>

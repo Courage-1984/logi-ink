@@ -71,7 +71,7 @@ const initOnReady = () => {
 };
 
 // Defer non-critical work using requestIdleCallback
-const deferNonCritical = (callback) => {
+const deferNonCritical = callback => {
   if ('requestIdleCallback' in window) {
     requestIdleCallback(callback, { timeout: 2000 });
   } else {
@@ -136,11 +136,32 @@ deferNonCritical(async () => {
   }
 });
 
-// Defer Three.js hero backgrounds (already has internal deferral, but ensure it's not blocking)
-deferNonCritical(async () => {
-  const { initThreeHero } = await import('./core/three-hero.js');
-  initThreeHero();
-});
+// Defer Three.js hero backgrounds - load when idle (canvas is hidden until ready)
+// Use requestIdleCallback for faster loading without blocking critical rendering
+const initThreeHeroWhenIdle = async () => {
+  // Only load if page is loaded and visible
+  if (document.readyState === 'complete' && document.visibilityState === 'visible') {
+    const { initThreeHero } = await import('./core/three-hero.js');
+    initThreeHero();
+  }
+};
+
+// Wait for page to be interactive, then use idle callback for faster loading
+if (document.readyState === 'complete') {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initThreeHeroWhenIdle, { timeout: 500 }); // Faster: 500ms max wait
+  } else {
+    setTimeout(initThreeHeroWhenIdle, 500); // Fallback: 500ms delay
+  }
+} else {
+  window.addEventListener('load', () => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initThreeHeroWhenIdle, { timeout: 500 });
+    } else {
+      setTimeout(initThreeHeroWhenIdle, 500);
+    }
+  });
+}
 
 // Lazy load page-specific modules (defer until needed)
 deferNonCritical(async () => {

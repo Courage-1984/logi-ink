@@ -16,8 +16,9 @@ let heroAnimationId = null;
 
 /**
  * Initialize Three.js Hero Background for index.html (particles)
+ * @param {Object} THREE - Three.js library object
  */
-async function initThreeJSHero() {
+async function initThreeJSHero(THREE) {
   const canvas = document.getElementById('threejs-hero-canvas');
   if (!canvas) return;
 
@@ -27,9 +28,6 @@ async function initThreeJSHero() {
   }
 
   try {
-    const THREE = await loadThreeJS();
-    if (!THREE) return;
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
@@ -65,6 +63,10 @@ async function initThreeJSHero() {
       particlesMesh.rotation.x += 0.001;
       particlesMesh.rotation.y += 0.001;
       renderer.render(scene, camera);
+      // Mark canvas as loaded after first render
+      if (!canvas.classList.contains('is-loaded')) {
+        canvas.classList.add('is-loaded');
+      }
     }
 
     function handleResize() {
@@ -85,8 +87,9 @@ async function initThreeJSHero() {
 
 /**
  * Initialize Three.js Services Background (floating geometric shapes)
+ * @param {Object} THREE - Three.js library object
  */
-async function initThreeJSServices() {
+async function initThreeJSServices(THREE) {
   const canvas = document.getElementById('threejs-services-canvas');
   if (!canvas) return;
 
@@ -96,9 +99,6 @@ async function initThreeJSServices() {
   }
 
   try {
-    const THREE = await loadThreeJS();
-    if (!THREE) return;
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
@@ -139,6 +139,10 @@ async function initThreeJSServices() {
         shape.position.y += Math.sin(Date.now() * 0.001 + i) * 0.001;
       });
       renderer.render(scene, camera);
+      // Mark canvas as loaded after first render
+      if (!canvas.classList.contains('is-loaded')) {
+        canvas.classList.add('is-loaded');
+      }
     }
 
     function handleResize() {
@@ -159,8 +163,9 @@ async function initThreeJSServices() {
 
 /**
  * Initialize Three.js Projects Background (torus grid with scroll parallax)
+ * @param {Object} THREE - Three.js library object
  */
-async function initThreeJSProjects() {
+async function initThreeJSProjects(THREE) {
   const canvas = document.getElementById('threejs-projects-canvas');
   if (!canvas) return;
 
@@ -170,9 +175,6 @@ async function initThreeJSProjects() {
   }
 
   try {
-    const THREE = await loadThreeJS();
-    if (!THREE) return;
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
@@ -262,6 +264,10 @@ async function initThreeJSProjects() {
       });
 
       renderer.render(scene, camera);
+      // Mark canvas as loaded after first render
+      if (!canvas.classList.contains('is-loaded')) {
+        canvas.classList.add('is-loaded');
+      }
     }
 
     function handleResize() {
@@ -282,7 +288,7 @@ async function initThreeJSProjects() {
 
 /**
  * Initialize appropriate Three.js hero background based on page
- * Defers Three.js loading until after page is interactive to reduce initial load
+ * Three.js loading is deferred by main.js, this function just initializes the animation
  */
 export async function initThreeHero() {
   // Check mobile FIRST before doing anything else
@@ -310,51 +316,26 @@ export async function initThreeHero() {
 
   if (!heroCanvas && !servicesCanvas && !projectsCanvas) return;
 
-  // Defer loading until page is interactive to reduce initial JavaScript load
-  // This allows critical resources to load first
-  const initAnimation = async () => {
-    // Double-check mobile before initializing (in case viewport changed)
-    if (isMobileDevice()) {
-      return;
-    }
+  // Double-check mobile before initializing (in case viewport changed)
+  if (isMobileDevice()) {
+    return;
+  }
 
-    // Wait for Three.js to be available
-    if (typeof window === 'undefined' || !window.THREE) {
-      try {
-        await loadThreeJS();
-      } catch (error) {
-        console.warn('Three.js not available for hero backgrounds:', error);
-        return;
-      }
-    }
+  try {
+    // Dynamically import loadThreeJS only when needed
+    const THREE = await loadThreeJS();
+    if (!THREE) return;
 
-    // Initialize appropriate animation
+    // Initialize appropriate animation and pass THREE object
     if (heroCanvas) {
-      await initThreeJSHero();
+      await initThreeJSHero(THREE);
     } else if (servicesCanvas) {
-      await initThreeJSServices();
+      await initThreeJSServices(THREE);
     } else if (projectsCanvas) {
-      await initThreeJSProjects();
+      await initThreeJSProjects(THREE);
     }
-  };
-
-  // Wait for page to be interactive before loading Three.js
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    // Use requestIdleCallback if available, otherwise setTimeout
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(initAnimation, { timeout: 2000 });
-    } else {
-      setTimeout(initAnimation, 100);
-    }
-  } else {
-    // Wait for DOMContentLoaded, then defer
-    document.addEventListener('DOMContentLoaded', () => {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(initAnimation, { timeout: 2000 });
-      } else {
-        setTimeout(initAnimation, 100);
-      }
-    });
+  } catch (error) {
+    console.warn('Three.js hero background failed to initialize:', error);
   }
 }
 

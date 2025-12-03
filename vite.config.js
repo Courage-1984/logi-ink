@@ -127,8 +127,8 @@ export default defineConfig(({ command, mode }) => {
       },
     },
 
-    // CSS minification (kept enabled for production builds)
-    cssMinify: false,
+    // CSS minification (enabled for production builds)
+    cssMinify: true,
 
     // Rollup options
     rollupOptions: {
