@@ -82,6 +82,7 @@ import { initPatternSettingsTooltips } from './pattern-settings-tooltip.js';
 import { createCustomPresetDropdown } from './custom-preset-dropdown.js';
 import { showToast } from './utils/toast.js';
 import { initButtonTooltips } from './button-tooltips.js';
+import { initRulerGuides } from './ruler-guides.js';
 
 // State
 let currentImageType = IMAGE_TYPES.OG;
@@ -1231,95 +1232,11 @@ function setupEventListeners() {
     });
   }
 
-  // Enhanced Ruler/Guides toggle
-  if (rulerToggleBtn) {
-    let isRulerActive = false;
-    let guideHorizontalPos = 50; // Percentage
-    let guideVerticalPos = 50; // Percentage
-    let isDragging = false;
-    let dragType = null; // 'horizontal' or 'vertical'
+  // Ruler/Guides system - now handled by ruler-guides.js module
 
-    function updateRulerMarks() {
-      const canvasWrapper = document.getElementById('canvasWrapper');
-      const rulerHorizontal = document.getElementById('rulerHorizontal');
-      const rulerVertical = document.getElementById('rulerVertical');
-      if (!canvasWrapper || !rulerHorizontal || !rulerVertical) return;
-
-      const rect = canvasWrapper.getBoundingClientRect();
-      const containerRect = canvasWrapper.closest('.canvas-container')?.getBoundingClientRect();
-      if (!containerRect) return;
-
-      // Update horizontal ruler marks
-      const horizontalMarks = rulerHorizontal.querySelector('.ruler-marks');
-      if (horizontalMarks) {
-        horizontalMarks.innerHTML = '';
-        const width = rect.width;
-        const step = width > 600 ? 50 : width > 300 ? 25 : 10;
-        for (let i = 0; i <= width; i += step) {
-          const mark = document.createElement('div');
-          mark.className = 'ruler-mark';
-          mark.style.left = `${i}px`;
-          mark.textContent = i;
-          horizontalMarks.appendChild(mark);
-        }
-      }
-
-      // Update vertical ruler marks
-      const verticalMarks = rulerVertical.querySelector('.ruler-marks');
-      if (verticalMarks) {
-        verticalMarks.innerHTML = '';
-        const height = rect.height;
-        const step = height > 400 ? 50 : height > 200 ? 25 : 10;
-        for (let i = 0; i <= height; i += step) {
-          const mark = document.createElement('div');
-          mark.className = 'ruler-mark';
-          mark.style.top = `${i}px`;
-          mark.textContent = i;
-          verticalMarks.appendChild(mark);
-        }
-      }
-    }
-
-    function updateGuides() {
-      const guideHorizontal = document.getElementById('guideHorizontal');
-      const guideVertical = document.getElementById('guideVertical');
-      if (guideHorizontal) {
-        guideHorizontal.style.top = `${guideHorizontalPos}%`;
-      }
-      if (guideVertical) {
-        guideVertical.style.left = `${guideVerticalPos}%`;
-      }
-    }
-
-    function updateRulerInfo(x, y) {
-      const rulerInfo = document.getElementById('rulerInfo');
-      if (!rulerInfo) return;
-      const canvasWrapper = document.getElementById('canvasWrapper');
-      if (!canvasWrapper) return;
-
-      const rect = canvasWrapper.getBoundingClientRect();
-      const containerRect = canvasWrapper.closest('.canvas-container')?.getBoundingClientRect();
-      if (!containerRect) return;
-
-      const relativeX = x - rect.left;
-      const relativeY = y - rect.top;
-      const percentX = ((relativeX / rect.width) * 100).toFixed(1);
-      const percentY = ((relativeY / rect.height) * 100).toFixed(1);
-
-      rulerInfo.innerHTML = `
-        <div>X: ${Math.round(relativeX)}px (${percentX}%)</div>
-        <div>Y: ${Math.round(relativeY)}px (${percentY}%)</div>
-        <div>W: ${Math.round(rect.width)}px</div>
-        <div>H: ${Math.round(rect.height)}px</div>
-      `;
-      rulerInfo.style.display = 'block';
-      rulerInfo.style.left = `${x + 10}px`;
-      rulerInfo.style.top = `${y + 10}px`;
-    }
-
-    // Zoom Toggle Button
-    const fullscreenZoomBtn = document.getElementById('fullscreenZoomBtn');
-    if (fullscreenZoomBtn) {
+  // Zoom Toggle Button
+  const fullscreenZoomBtn = document.getElementById('fullscreenZoomBtn');
+  if (fullscreenZoomBtn) {
       const zoomIndicator = document.getElementById('zoomIndicator');
       const canvasWrapper = document.getElementById('canvasWrapper');
       const canvasContainer = document.getElementById('canvasContainer');
@@ -1504,8 +1421,8 @@ function setupEventListeners() {
       updateZoomUI();
     }
 
-    // Contrast / Invert Colors Toggle
-    if (contrastToggleBtn) {
+  // Contrast / Invert Colors Toggle
+  if (contrastToggleBtn) {
       let isContrastInverted = false;
       const canvasContainer = document.getElementById('canvasContainer');
 
@@ -1527,7 +1444,7 @@ function setupEventListeners() {
       });
     }
 
-    if (transparencyCheckerBtn) {
+  if (transparencyCheckerBtn) {
       let isTransparencyCheckerActive = false;
       const canvasContainer = document.querySelector('.canvas-container');
 
@@ -1548,8 +1465,8 @@ function setupEventListeners() {
       });
     }
 
-    // Layer Visibility Toggle
-    if (layerVisibilityBtn) {
+  // Layer Visibility Toggle
+  if (layerVisibilityBtn) {
       const layerVisibilityPanel = document.getElementById('layerVisibilityPanel');
       const layerVisibilityHeader = layerVisibilityPanel?.querySelector('.layer-visibility-header');
       let isLayerVisibilityPanelOpen = false;
@@ -1671,99 +1588,6 @@ function setupEventListeners() {
         }
       });
     }
-
-    rulerToggleBtn.addEventListener('click', () => {
-      const rulerOverlay = document.getElementById('rulerOverlay');
-      const canvasWrapper = document.getElementById('canvasWrapper');
-      if (rulerOverlay && canvasWrapper) {
-        isRulerActive = rulerOverlay.style.display !== 'none';
-        isRulerActive = !isRulerActive;
-        rulerOverlay.style.display = isRulerActive ? 'block' : 'none';
-        rulerToggleBtn.classList.toggle('active', isRulerActive);
-
-        if (isRulerActive) {
-          const canvasWrapper = document.getElementById('canvasWrapper');
-          if (canvasWrapper) {
-            updateRulerMarks();
-            updateGuides();
-            // Update on resize
-            const resizeObserver = new ResizeObserver(() => {
-              if (isRulerActive) {
-                updateRulerMarks();
-              }
-            });
-            resizeObserver.observe(canvasWrapper);
-          }
-        }
-      }
-    });
-
-    // Make guides draggable
-    const canvasContainer = document.getElementById('canvasContainer');
-    if (canvasContainer) {
-      canvasContainer.addEventListener('mousemove', e => {
-        if (!isRulerActive) return;
-
-        const canvasWrapper = document.getElementById('canvasWrapper');
-        if (!canvasWrapper) return;
-
-        const rect = canvasWrapper.getBoundingClientRect();
-        const x = e.clientX;
-        const y = e.clientY;
-
-        // Update info display
-        updateRulerInfo(x, y);
-
-        // Handle dragging
-        if (isDragging) {
-          if (dragType === 'horizontal') {
-            guideHorizontalPos = ((y - rect.top) / rect.height) * 100;
-            guideHorizontalPos = Math.max(0, Math.min(100, guideHorizontalPos));
-            updateGuides();
-          } else if (dragType === 'vertical') {
-            guideVerticalPos = ((x - rect.left) / rect.width) * 100;
-            guideVerticalPos = Math.max(0, Math.min(100, guideVerticalPos));
-            updateGuides();
-          }
-        }
-      });
-
-      const guideHorizontal = document.getElementById('guideHorizontal');
-      const guideVertical = document.getElementById('guideVertical');
-
-      if (guideHorizontal) {
-        guideHorizontal.addEventListener('mousedown', e => {
-          e.preventDefault();
-          isDragging = true;
-          dragType = 'horizontal';
-          guideHorizontal.style.cursor = 'ns-resize';
-        });
-      }
-
-      if (guideVertical) {
-        guideVertical.addEventListener('mousedown', e => {
-          e.preventDefault();
-          isDragging = true;
-          dragType = 'vertical';
-          guideVertical.style.cursor = 'ew-resize';
-        });
-      }
-
-      document.addEventListener('mouseup', () => {
-        isDragging = false;
-        dragType = null;
-        if (guideHorizontal) guideHorizontal.style.cursor = 'default';
-        if (guideVertical) guideVertical.style.cursor = 'default';
-      });
-
-      canvasContainer.addEventListener('mouseleave', () => {
-        const rulerInfo = document.getElementById('rulerInfo');
-        if (rulerInfo) {
-          rulerInfo.style.display = 'none';
-        }
-      });
-    }
-  }
 
   // History Timeline
   if (historyTimelineBtn) {
@@ -3096,6 +2920,9 @@ function init() {
 
   // Initialize button tooltips for preview buttons
   initButtonTooltips();
+
+  // Initialize ruler/guides system
+  initRulerGuides();
 
   // Initialize custom preset dropdown
   if (savedPresetsSelect) {

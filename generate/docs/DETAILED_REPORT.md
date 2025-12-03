@@ -127,7 +127,7 @@ main.js
 ### Technology Stack
 
 - **Language:** JavaScript (ES6+ modules)
-- **Export Library:** html2canvas v1.4.1
+- **Export Library:** html-to-image v1.11.11 (uses SVG foreignObject for native browser rendering)
 - **Storage:** localStorage API
 - **Styling:** CSS3 with custom properties
 - **Build:** None (vanilla JS, no bundler required)
@@ -327,16 +327,15 @@ main.js
 
 **Zoom Levels:**
 - Fit (auto-scale to container)
-- 0.5x (50% zoom)
-- 0.75x (75% zoom)
-- 1x (100% zoom)
-- 1.5x (150% zoom)
-- 2x (200% zoom)
+- Granular zoom: 0.5x to 3.0x in 0.1 increments (0.5, 0.6, 0.7, ..., 2.9, 3.0)
+- Cycle through zoom levels with zoom button
+- Zoom indicator shows current level
 
 **Pan Controls:**
-- Mouse drag to pan
+- Mouse drag to pan when zoomed in
 - Works at all zoom levels
 - Smooth panning with bounds checking
+- Pan resets when returning to "fit" mode
 
 ### 12. Popout Preview
 
@@ -672,7 +671,7 @@ main.js
 
 ### Lazy Loading
 
-**html2canvas:**
+**html-to-image:**
 - Loaded only when export is triggered
 - Cached after first load
 - Prevents initial page load delay
@@ -703,10 +702,12 @@ main.js
 ### Rendering Optimization
 
 **Preview Updates:**
-- Debounced updates (where applicable)
+- Throttled slider updates (50ms minimum interval)
+- Debounced state updates for rapid changes
 - Efficient style calculations
 - Minimal DOM queries
 - Cached element references
+- Triple requestAnimationFrame for stable rendering
 
 ---
 

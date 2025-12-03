@@ -34,9 +34,12 @@ The Social Media Image Generator is a comprehensive web-based tool for creating 
 ### Advanced Features
 - **History System:** Full undo/redo with history timeline visualization
 - **Grid Overlay:** Design alignment tools with toggleable grid
-- **Ruler/Guides:** Precision measurement tools for layout
+- **Ruler/Guides:** Precision measurement tools with Canvas-based MVC architecture (properly hooked up via `ruler-guides.js` module)
 - **Popout Preview:** Detached preview window for multi-monitor workflows
-- **Zoom & Pan:** Canvas navigation with multiple zoom levels (fit, 0.5x, 0.75x, 1x, 1.5x, 2x)
+- **Zoom & Pan:** Canvas navigation with granular zoom levels (fit, 0.5x-3.0x in 0.1 increments)
+- **Layer Visibility:** Toggle visibility of individual layers (logo, title, subtitle, slogan, pattern)
+- **Transparency Checkerboard:** Visual aid for transparent backgrounds
+- **Contrast Toggle:** Invert colors for accessibility testing
 - **Batch Export:** Export multiple image types simultaneously
 - **Preset Storage:** Save and load custom presets via localStorage
 
@@ -46,7 +49,7 @@ The Social Media Image Generator is a comprehensive web-based tool for creating 
 
 ### Technology Stack
 - **Frontend:** Vanilla JavaScript (ES6 modules)
-- **Export Engine:** html2canvas (v1.4.1) with custom high-resolution utilities
+- **Export Engine:** html-to-image (v1.11.11) with custom high-resolution utilities and dithering
 - **Storage:** localStorage for preset persistence
 - **Styling:** Modular CSS architecture (8 stylesheets)
 
@@ -57,11 +60,12 @@ The Social Media Image Generator is a comprehensive web-based tool for creating 
 - **5 documentation files** covering technical details
 
 ### Key Technical Achievements
-- **CLS Prevention:** Zero layout shift during export operations
+- **CLS Prevention:** Zero layout shift during export and preview updates (debounced updates, container dimension preservation, CSS containment)
 - **Gradient Banding Elimination:** Random noise dithering for smooth gradients
 - **CSS Mask Support:** Proper handling of masked logos for export
 - **Multi-Layer Backgrounds:** Support for complex comma-separated background patterns
-- **Performance Optimization:** Lazy loading, image pre-loading, efficient DOM manipulation
+- **Performance Optimization:** Lazy loading, image pre-loading, efficient DOM manipulation, throttled slider updates
+- **Native Browser Rendering:** html-to-image provides superior CSS fidelity via SVG foreignObject
 
 ---
 

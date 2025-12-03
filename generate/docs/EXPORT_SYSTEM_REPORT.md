@@ -52,7 +52,7 @@ generate/js/
 
 ### Dependencies
 
-- **html2canvas** (v1.4.1) - DOM to canvas conversion
+- **html-to-image** (v1.11.11) - DOM to canvas conversion via SVG foreignObject (native browser rendering)
 - **exportHighResCanvas** - Custom utility for dithering and high-res export
 
 ### Entry Points
@@ -131,46 +131,33 @@ exportBtn.addEventListener('click', () => {
 - Pre-load external background images with CORS support
 - Wait for DOM to settle (150ms) before capture
 
-### 5. html2canvas Capture
+### 5. html-to-image Capture
 
 #### 5.1 Configuration
 ```javascript
 {
   width: imageType.width,        // 1200 (OG) or 1200 (Twitter)
   height: imageType.height,       // 630 (OG) or 675 (Twitter)
-  scale: scale,                   // 1-4x from quality selector
+  pixelRatio: scale,              // 1-4x from quality selector (html-to-image uses pixelRatio)
   useCORS: true,
   backgroundColor: null,
-  allowTaint: true,
-  windowWidth: imageType.width,
-  windowHeight: imageType.height,
-  x: 0,
-  y: 0,
-  onclone: (clonedDoc, clonedWindow) => {
-    // Critical: Set dimensions FIRST
-    // Then apply background properties
-  }
+  // html-to-image uses native browser rendering via SVG foreignObject
+  // Provides better CSS fidelity than html2canvas
 }
 ```
 
-#### 5.2 onclone Callback (Critical for Background Patterns)
+#### 5.2 Background Pattern Handling
 
-**Order of operations is critical:**
+**html-to-image Advantages:**
+- Native browser rendering handles CSS properties more accurately
+- Better support for complex backgrounds and gradients
+- Mix-blend-mode now fully supported (was ignored by html2canvas)
+- Percentage-based background-size handled correctly by browser engine
 
-1. **Set dimensions FIRST** (before any background properties)
-   - html2canvas calculates percentage-based `background-size` relative to element dimensions
-   - Setting dimensions first ensures percentages calculate correctly
-
-2. **Set positioning and layout properties**
-   - `position: relative`
-   - `transform: none`
-   - `box-sizing: content-box`
-   - `margin: 0, padding: 0`
-
-3. **Apply background properties**
-   - Convert percentage `background-size` to pixels (handles comma-separated)
-   - Set `background-image`, `background-size`, `background-position`, `background-repeat`
-   - Format data URLs with proper quoting
+**Pre-processing still required:**
+- Logo mask-image conversion (for maximum compatibility)
+- Background image pre-loading
+- Container dimension locking for CLS prevention
 
 ### 6. Post-Processing
 
@@ -435,25 +422,17 @@ const canvas = await html2canvas(canvasWrapper, {
 
 ## Technical Implementation Details
 
-### html2canvas Configuration
+### html-to-image Configuration
 
 ```javascript
 {
   width: imageType.width,           // Exact target width
   height: imageType.height,          // Exact target height
-  scale: scale,                      // Quality multiplier (1-4)
+  pixelRatio: scale,                 // Quality multiplier (1-4) - html-to-image uses pixelRatio
   useCORS: true,                    // Allow cross-origin images
   backgroundColor: null,             // Transparent background
-  logging: false,                    // Disable console logging
-  allowTaint: true,                  // Allow tainted canvases
-  removeContainer: false,            // Keep container in DOM
-  windowWidth: imageType.width,      // Window width for calculation
-  windowHeight: imageType.height,    // Window height for calculation
-  x: 0,                              // Capture offset X
-  y: 0,                              // Capture offset Y
-  onclone: (clonedDoc, clonedWindow) => {
-    // Critical callback for fixing cloned element styles
-  }
+  // html-to-image uses native browser rendering via SVG foreignObject
+  // Provides superior CSS fidelity and performance
 }
 ```
 
@@ -524,22 +503,19 @@ All export operations are wrapped in try-catch blocks with comprehensive error r
 
 ## Known Limitations & Workarounds
 
-### 1. html2canvas Limitations
+### 1. html-to-image Advantages
 
 #### Mix-Blend-Mode
-- **Issue:** html2canvas doesn't support CSS `mix-blend-mode`
-- **Workaround:** Blend modes are ignored during export (acceptable for most use cases)
-- **Status:** Documented, no fix available
+- **Status:** ✅ Fully supported via native browser rendering
+- **No workaround needed:** html-to-image uses SVG foreignObject which supports modern CSS
 
 #### CSS Mask-Image
-- **Issue:** html2canvas doesn't reliably capture CSS `mask-image`
-- **Workaround:** Convert masked logos to regular images before capture
-- **Status:** ✅ Resolved with `convertMaskedLogoToImage()`
+- **Status:** ✅ Better support than html2canvas
+- **Workaround:** Still converted for maximum compatibility, but may not be strictly necessary
 
 #### Percentage Background-Size
-- **Issue:** html2canvas calculates percentages relative to cloned element dimensions
-- **Workaround:** Set explicit dimensions FIRST in `onclone`, then convert percentages to pixels
-- **Status:** ✅ Resolved with dimension-first approach
+- **Status:** ✅ Handled correctly by native browser rendering
+- **No special workaround needed:** Browser engine calculates percentages accurately
 
 ### 2. Browser Limitations
 
