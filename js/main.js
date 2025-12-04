@@ -6,14 +6,15 @@
 // Import CSS (ensures Vite processes all nested @import statements correctly)
 import '../css/main.css';
 
-// Core modules (load immediately)
+// Core modules (load immediately - critical for initial render)
 import { initScrollManager } from './core/scroll-manager.js';
 import { initNavigation } from './core/navigation.js';
 import { initScroll } from './core/scroll.js';
-import { initAnimations } from './core/animations.js';
-import { initCursor } from './core/cursor.js';
-import { initMouseTilt } from './core/mouse-tilt.js';
 import { initInteractions } from './utils/interactions.js';
+
+// Non-critical modules (lazy loaded - see lazyLoadOnIdle calls below)
+// These are imported dynamically to reduce initial bundle size
+let initAnimations, initCursor, initMouseTilt;
 import { initBackgroundVideoLazyLoad } from './utils/ripples-lazyload.js';
 import { initLazyBackgroundImages } from './utils/lazy-background-images.js';
 import { initPageTransitions } from './core/page-transitions.js';
@@ -79,6 +80,31 @@ const deferNonCritical = callback => {
   }
 };
 
+// Lazy load modules only when needed (viewport-based or idle)
+const lazyLoadOnIdle = (callback, options = {}) => {
+  const { minDelay = 1000, useIntersection = false } = options;
+
+  if (useIntersection) {
+    // Load when page becomes interactive and idle
+    if (document.readyState === 'complete') {
+      deferNonCritical(() => {
+        setTimeout(callback, minDelay);
+      });
+    } else {
+      window.addEventListener('load', () => {
+        deferNonCritical(() => {
+          setTimeout(callback, minDelay);
+        });
+      });
+    }
+  } else {
+    // Standard idle callback with delay
+    deferNonCritical(() => {
+      setTimeout(callback, minDelay);
+    });
+  }
+};
+
 // Use requestIdleCallback to avoid blocking initial render
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -96,20 +122,64 @@ if (document.readyState === 'loading') {
   }
 }
 
-// Defer animations (below-fold elements can wait)
-deferNonCritical(() => {
-  initAnimations();
-});
+// Load animations immediately after critical modules (critical for perceived performance)
+// Use dynamic import for bundle splitting, but load immediately without delay
+(async () => {
+  // Wait for DOM to be ready, then load animations immediately
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', async () => {
+      if (document.querySelectorAll('.fade-in-up, .scroll-reveal-3d, .section-title, .service-card, .count-number').length > 0) {
+        if (!initAnimations) {
+          const animationsModule = await import('./core/animations.js');
+          initAnimations = animationsModule.initAnimations;
+        }
+        initAnimations();
+      }
+    });
+  } else {
+    // DOM already ready, load immediately
+    if (document.querySelectorAll('.fade-in-up, .scroll-reveal-3d, .section-title, .service-card, .count-number').length > 0) {
+      if (!initAnimations) {
+        const animationsModule = await import('./core/animations.js');
+        initAnimations = animationsModule.initAnimations;
+      }
+      initAnimations();
+    }
+  }
+})();
 
-// Defer cursor effects (non-essential visual enhancement)
-deferNonCritical(() => {
-  initCursor();
-});
+// Load cursor effects early for immediate visibility (on DOMContentLoaded, not idle)
+// This ensures cursor is visible immediately on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Only load if cursor dot element exists and device supports hover
+    if (document.querySelector('.cursor-dot') && window.matchMedia('(hover: hover)').matches) {
+      import('./core/cursor.js').then(({ initCursor }) => {
+        initCursor();
+      });
+    }
+  });
+} else {
+  // DOM already loaded, initialize immediately
+  if (document.querySelector('.cursor-dot') && window.matchMedia('(hover: hover)').matches) {
+    import('./core/cursor.js').then(({ initCursor }) => {
+      initCursor();
+    });
+  }
+}
 
-// Defer mouse tilt effects (non-essential 3D effects)
-deferNonCritical(() => {
-  initMouseTilt();
-});
+// Lazy load mouse tilt effects - only on desktop (non-critical visual enhancement)
+lazyLoadOnIdle(async () => {
+  // Only load if tilt containers exist and device supports hover
+  if (document.querySelectorAll('.mouse-tilt-container').length > 0 &&
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    if (!initMouseTilt) {
+      const mouseTiltModule = await import('./core/mouse-tilt.js');
+      initMouseTilt = mouseTiltModule.initMouseTilt;
+    }
+    initMouseTilt();
+  }
+}, { minDelay: 500, useIntersection: false });
 
 // Defer dynamic prefetch (nice-to-have optimization)
 deferNonCritical(() => {

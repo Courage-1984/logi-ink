@@ -107,34 +107,110 @@ export function initNavigation() {
   const setActiveNavLinkByPage = () => {
     const navLinks = document.querySelectorAll('.nav-link');
     // Get current page path (clean URL, no .html extension)
-    let currentPage = window.location.pathname.split('/').pop() || '';
+    const pathname = window.location.pathname;
+    let currentPage = pathname.split('/').pop() || '';
+
     // Normalize: remove .html if present, handle empty as home
     if (currentPage.endsWith('.html')) {
       currentPage = currentPage.replace('.html', '');
     }
-    if (currentPage === '') {
+    if (currentPage === '' || currentPage === 'index') {
       currentPage = '/';
     }
+
+    // Also check full pathname for exact matches
+    const normalizedPathname = pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
     navLinks.forEach(link => {
       const href = link.getAttribute('href') || '';
       // Remove active class first
       link.classList.remove('active');
 
-      // Normalize href for comparison (remove .html if present)
+      // Normalize href for comparison (remove .html if present, handle leading slash)
       let normalizedHref = href;
       if (normalizedHref.endsWith('.html')) {
         normalizedHref = normalizedHref.replace('.html', '');
       }
-      if (normalizedHref === '' || normalizedHref === 'index.html') {
+      if (normalizedHref === '' || normalizedHref === 'index' || normalizedHref === 'index.html') {
         normalizedHref = '/';
+      }
+      // Remove leading slash for comparison if not root
+      if (normalizedHref !== '/' && normalizedHref.startsWith('/')) {
+        normalizedHref = normalizedHref.substring(1);
+      }
+
+      // Normalize currentPage similarly
+      let normalizedCurrentPage = currentPage;
+      if (normalizedCurrentPage !== '/' && normalizedCurrentPage.startsWith('/')) {
+        normalizedCurrentPage = normalizedCurrentPage.substring(1);
       }
 
       // Check if this link matches the current page
-      if (normalizedHref === currentPage || (currentPage === '/' && (normalizedHref === '/' || normalizedHref === 'index.html'))) {
+      // Match exact path, or if both are root
+      const hrefMatches =
+        normalizedHref === normalizedCurrentPage ||
+        (normalizedHref === '/' && normalizedCurrentPage === '/') ||
+        (normalizedHref === '/' && currentPage === '/') ||
+        (normalizedHref === currentPage) ||
+        (normalizedPathname === href || normalizedPathname === normalizedHref) ||
+        (pathname === href);
+
+      if (hrefMatches) {
         link.classList.add('active');
+        // Also mark parent dropdown as active if this is a dropdown link
+        const dropdownItem = link.closest('.nav-item-dropdown');
+        if (dropdownItem) {
+          dropdownItem.classList.add('active');
+        }
       }
     });
+
+    // Special handling for Services dropdown: mark Services link as active if on services page or any child page
+    const servicesPages = ['services', 'pricing', 'seo-services'];
+    const isOnServicesPage = servicesPages.some(page => {
+      const normalized = normalizedPathname.replace(/^\//, '');
+      return normalized === page || currentPage === page || normalizedCurrentPage === page;
+    });
+
+    if (isOnServicesPage) {
+      const servicesLink = document.querySelector('.nav-item-dropdown > .nav-link[href="/services"]');
+      const servicesDropdown = document.querySelector('.nav-item-dropdown');
+      if (servicesLink) {
+        servicesLink.classList.add('active');
+      }
+      if (servicesDropdown) {
+        servicesDropdown.classList.add('active');
+      }
+
+      // Mark the specific dropdown link as active
+      const dropdownLinks = document.querySelectorAll('.dropdown-link');
+      dropdownLinks.forEach(dropdownLink => {
+        dropdownLink.classList.remove('active');
+        const href = dropdownLink.getAttribute('href') || '';
+
+        // Normalize href for comparison
+        let normalizedHref = href;
+        if (normalizedHref.endsWith('.html')) {
+          normalizedHref = normalizedHref.replace('.html', '');
+        }
+        if (normalizedHref.startsWith('/')) {
+          normalizedHref = normalizedHref.substring(1);
+        }
+
+        // Check if this dropdown link matches the current page
+        const matchesCurrentPage =
+          normalizedHref === currentPage ||
+          normalizedHref === normalizedCurrentPage ||
+          normalizedHref === normalizedPathname.replace(/^\//, '') ||
+          normalizedPathname === href ||
+          pathname === href ||
+          (normalizedHref === 'services' && (currentPage === 'services' || normalizedCurrentPage === 'services'));
+
+        if (matchesCurrentPage) {
+          dropdownLink.classList.add('active');
+        }
+      });
+    }
   };
 
   // Active nav link highlighting based on scroll position with scroll-based color change
@@ -142,27 +218,50 @@ export function initNavigation() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks2 = document.querySelectorAll('.nav-link');
 
+  // Cache section positions to avoid forced reflows
+  let sectionPositions = [];
+  let cachedWindowHeight = window.innerHeight;
+
+  const updateSectionPositions = () => {
+    sectionPositions = Array.from(sections).map(section => ({
+      id: section.getAttribute('id'),
+      top: section.offsetTop,
+      height: section.clientHeight,
+      bottom: section.offsetTop + section.clientHeight,
+      element: section,
+    }));
+    cachedWindowHeight = window.innerHeight;
+  };
+
+  // Initial cache
+  updateSectionPositions();
+
+  // Recalculate on resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateSectionPositions, 100);
+  });
+
   const updateActiveNavLink = () => {
     const scrollPosition = window.pageYOffset;
-    const windowHeight = window.innerHeight;
+    const windowHeight = cachedWindowHeight;
     let current = '';
     let activeSection = null;
     let sectionScrollProgress = 0;
 
-    // Find the current active section
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      const sectionBottom = sectionTop + sectionHeight;
+    // Find the current active section using cached positions
+    sectionPositions.forEach(({ id, top, height, bottom, element }) => {
+      const sectionBottom = bottom;
 
       // Check if section is in viewport
-      if (scrollPosition >= sectionTop - 200 && scrollPosition < sectionBottom) {
-        current = section.getAttribute('id');
-        activeSection = section;
+      if (scrollPosition >= top - 200 && scrollPosition < sectionBottom) {
+        current = id;
+        activeSection = element;
 
         // Calculate scroll progress within the active section
         // Progress goes from 0% when section enters viewport to 100% when fully scrolled
-        const sectionStart = Math.max(0, sectionTop - 200);
+        const sectionStart = Math.max(0, top - 200);
         const sectionEnd = sectionBottom;
         const sectionRange = sectionEnd - sectionStart;
 
@@ -218,6 +317,16 @@ export function initNavigation() {
 
   // Set active link based on current page on load
   setActiveNavLinkByPage();
+
+  // Re-check active states after navigation (for SPA-like behavior)
+  window.addEventListener('popstate', () => {
+    setActiveNavLinkByPage();
+  });
+
+  // Also check on hash change (for anchor links)
+  window.addEventListener('hashchange', () => {
+    setActiveNavLinkByPage();
+  });
 
   // Add to scroll manager (already uses requestAnimationFrame)
   addScrollHandler(updateActiveNavLink);

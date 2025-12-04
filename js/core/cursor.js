@@ -1,6 +1,7 @@
 /**
  * Cursor Effects Module
  * Handles custom cursor dot effects
+ * Optimized for immediate visibility and performance
  */
 
 export function initCursor() {
@@ -10,10 +11,21 @@ export function initCursor() {
     return;
   }
 
+  // Set initial position immediately to prevent invisible cursor on first load
+  // Use a default center position if mouse hasn't moved yet
+  let lastX = window.innerWidth / 2;
+  let lastY = window.innerHeight / 2;
+
+  // Set initial position immediately (before first mousemove)
+  cursorDot.style.left = lastX + 'px';
+  cursorDot.style.top = lastY + 'px';
+
+  // Force visibility immediately (in case CSS transition hasn't completed)
+  cursorDot.style.opacity = '1';
+  cursorDot.style.zIndex = '99999'; // Ensure maximum z-index
+
   // Use requestAnimationFrame to batch cursor updates
   let rafId = null;
-  let lastX = 0;
-  let lastY = 0;
 
   document.addEventListener(
     'mousemove',
@@ -26,7 +38,7 @@ export function initCursor() {
           cursorDot.style.left = lastX + 'px';
           cursorDot.style.top = lastY + 'px';
           rafId = null;
-  });
+        });
       }
     },
     { passive: true }

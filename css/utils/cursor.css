@@ -18,12 +18,17 @@
   background: var(--accent-cyan);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
   transition:
     transform 0.15s ease,
-    opacity 0.3s ease;
+    opacity 0.1s ease; /* Faster opacity transition for immediate visibility */
   box-shadow: 0 0 10px var(--glow-cyan);
   opacity: 0;
+  /* Performance optimizations */
+  will-change: transform, left, top;
+  transform: translateZ(0); /* Force GPU acceleration */
+  left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+  top: -9999px;
 }
 
 /* Hide system cursor on hover-capable devices where custom cursor is shown */
@@ -34,9 +39,11 @@
     cursor: none !important;
   }
 
-  /* Show cursor dot on devices with hover capability */
+  /* Show cursor dot immediately on devices with hover capability */
   .cursor-dot {
     opacity: 1;
+    /* Ensure cursor is visible immediately - no delay */
+    transition: opacity 0.05s ease, transform 0.15s ease;
   }
 }
 

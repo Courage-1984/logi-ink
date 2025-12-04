@@ -57,10 +57,7 @@ section,
     will-change: auto !important;
   }
 
-  /* Reduce particle effects on mobile */
-  .particles {
-    display: none;
-  }
+  /* Particles removed - no longer needed */
 
   /* Simplify cursor effects on mobile */
   .cursor-follow,

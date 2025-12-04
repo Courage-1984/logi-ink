@@ -25,16 +25,35 @@ export function showToast(message, type = 'success', duration = 5000) {
       ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 20px; height: 20px; margin-right: 0.5rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>'
       : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 20px; height: 20px; margin-right: 0.5rem;"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>';
 
-  toast.innerHTML = `
-        <div class="toast-header">
-            <div style="display: flex; align-items: center; color: ${type === 'success' ? 'var(--accent-green)' : 'var(--accent-pink)'};">
-                ${icon}
-                <strong>${type === 'success' ? 'Success' : 'Error'}</strong>
-            </div>
-            <button class="toast-close" aria-label="Close notification">&times;</button>
-        </div>
-        <div class="toast-body" style="color: var(--text-secondary);">${message}</div>
-    `;
+  // Create toast structure safely (avoid innerHTML for user message)
+  const toastHeader = document.createElement('div');
+  toastHeader.className = 'toast-header';
+
+  const headerContent = document.createElement('div');
+  headerContent.style.display = 'flex';
+  headerContent.style.alignItems = 'center';
+  headerContent.style.color = type === 'success' ? 'var(--accent-green)' : 'var(--accent-pink)';
+  headerContent.innerHTML = icon; // Icon is safe (static SVG)
+
+  const strong = document.createElement('strong');
+  strong.textContent = type === 'success' ? 'Success' : 'Error';
+  headerContent.appendChild(strong);
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'toast-close';
+  closeBtn.setAttribute('aria-label', 'Close notification');
+  closeBtn.textContent = '×';
+
+  toastHeader.appendChild(headerContent);
+  toastHeader.appendChild(closeBtn);
+
+  const toastBody = document.createElement('div');
+  toastBody.className = 'toast-body';
+  toastBody.style.color = 'var(--text-secondary)';
+  toastBody.textContent = message; // Use textContent to prevent XSS
+
+  toast.appendChild(toastHeader);
+  toast.appendChild(toastBody);
 
   // Add to body
   document.body.appendChild(toast);
@@ -44,8 +63,7 @@ export function showToast(message, type = 'success', duration = 5000) {
     toast.classList.add('show');
   }, 10);
 
-  // Close button handler
-  const closeBtn = toast.querySelector('.toast-close');
+  // Close button handler (already attached to closeBtn element)
   closeBtn.addEventListener('click', () => {
     hideToast(toast);
   });

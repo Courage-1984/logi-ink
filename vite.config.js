@@ -5,6 +5,7 @@ import viteCompression from 'vite-plugin-compression';
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'fs';
 import htmlInclude from './vite-plugin-html-include.js';
 import criticalCSS from './vite-plugin-critical-css.js';
+import cspNonces from './vite-plugin-csp-nonces.js';
 
 let resolvedOutDir = resolve(process.cwd(), 'dist');
 let reportsSourceDir = null;
@@ -256,6 +257,9 @@ export default defineConfig(({ command, mode }) => {
 
     // Critical CSS inlining plugin (runs post-build)
     criticalCSS(),
+
+    // CSP nonces plugin (runs post-build, after critical CSS)
+    cspNonces(),
 
     // Clean URLs middleware for dev and preview servers
     {

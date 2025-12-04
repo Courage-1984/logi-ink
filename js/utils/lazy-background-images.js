@@ -174,18 +174,57 @@ function loadBackgroundImage(element, sources) {
 }
 
 /**
+ * Cache viewport dimensions to avoid repeated layout reads
+ */
+let cachedViewportHeight = window.innerHeight || document.documentElement.clientHeight;
+let cachedViewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+// Update cache on resize
+let viewportResizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(viewportResizeTimeout);
+  viewportResizeTimeout = setTimeout(() => {
+    cachedViewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    cachedViewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  }, 100);
+});
+
+/**
+ * Batch getBoundingClientRect calls to avoid layout thrashing
+ */
+const pendingRectReads = new Map();
+let rectReadRafId = null;
+
+function batchGetBoundingClientRect(element) {
+  if (pendingRectReads.has(element)) {
+    return pendingRectReads.get(element);
+  }
+
+  const rect = element.getBoundingClientRect();
+  pendingRectReads.set(element, rect);
+
+  if (!rectReadRafId) {
+    rectReadRafId = requestAnimationFrame(() => {
+      pendingRectReads.clear();
+      rectReadRafId = null;
+    });
+  }
+
+  return rect;
+}
+
+/**
  * Check if element is already in viewport or near viewport
+ * Uses cached viewport dimensions and batched rect reads
  */
 function isElementInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-  const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  const rect = batchGetBoundingClientRect(element);
 
   // More lenient check: element is in viewport or within 500px of it
   return (
-    rect.top < viewportHeight + 500 && // Within 500px below viewport
+    rect.top < cachedViewportHeight + 500 && // Within 500px below viewport
     rect.bottom > -500 && // Within 500px above viewport
-    rect.left < viewportWidth &&
+    rect.left < cachedViewportWidth &&
     rect.right > 0
   );
 }

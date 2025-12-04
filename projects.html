@@ -120,12 +120,12 @@
       // Defer Google Tag Manager to reduce initial JavaScript load
       window.addEventListener('load', () => {
         // Initialize dataLayer
-      window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
         function gtag() {
           dataLayer.push(arguments);
         }
-      gtag('js', new Date());
-      gtag('config', 'G-9PFB2D8G1B');
+        gtag('js', new Date());
+        gtag('config', 'G-9PFB2D8G1B');
 
         // Load gtag.js script asynchronously
         const script = document.createElement('script');
@@ -280,9 +280,15 @@
       .cursor-dot {
         position: fixed;
         pointer-events: none;
-        z-index: 9999;
+        z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition:
+          opacity 0.05s ease,
+          transform 0.15s ease; /* Faster transition for immediate visibility */
+        will-change: transform, left, top; /* Performance optimization */
+        transform: translateZ(0); /* Force GPU acceleration */
+        left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+        top: -9999px;
       }
       .cursor-dot {
         width: 6px;
@@ -293,7 +299,7 @@
       }
       @media (hover: hover) and (pointer: fine) {
         .cursor-dot {
-          opacity: 1;
+          opacity: 1; /* Immediate visibility on hover-capable devices */
         }
       }
       .navbar {
@@ -778,7 +784,7 @@
           <!-- Three.js Canvas for Projects Background -->
           <canvas id="threejs-projects-canvas" class="threejs-canvas"></canvas>
           <div class="grid-overlay"></div>
-          <div class="particles"></div>
+
           <!-- Fluid Shapes -->
           <div class="fluid-shape fluid-shape-1"></div>
           <div class="fluid-shape fluid-shape-2"></div>

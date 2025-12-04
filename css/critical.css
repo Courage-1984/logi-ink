@@ -194,14 +194,17 @@ h6 {
   box-shadow: 0 0 10px var(--glow-cyan);
 }
 
-/* Cursor Effects (Base) */
+/* Cursor Effects (Base) - Critical CSS for immediate visibility */
 .cursor-follow,
 .cursor-dot {
   position: fixed;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.05s ease, transform 0.15s ease; /* Faster transition for immediate visibility */
+  /* Performance optimizations */
+  will-change: transform, left, top;
+  transform: translateZ(0); /* Force GPU acceleration */
 }
 
 .cursor-dot {
@@ -210,11 +213,13 @@ h6 {
   background: var(--accent-cyan);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--glow-cyan);
+  left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+  top: -9999px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .cursor-dot {
-    opacity: 1;
+    opacity: 1; /* Immediate visibility on hover-capable devices */
   }
 }
 
@@ -620,11 +625,11 @@ h6 {
 
 @keyframes scroll {
   0% {
-    top: 10px;
+    transform: translateY(10px);
     opacity: 1;
   }
   100% {
-    top: 30px;
+    transform: translateY(30px);
     opacity: 0;
   }
 }

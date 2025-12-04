@@ -1,0 +1,94 @@
+---
+description: Always prefer PowerShell for all command execution.
+globs: ['**/*']
+alwaysApply: true
+---
+
+## Shell Preference
+
+1. Use **PowerShell** for all commands by default.
+2. Only use CMD/Bash/WSL when the required tool cannot run in PowerShell.
+3. When switching shells, briefly state the reason and return to PowerShell afterward.
+
+---
+
+description: Enforce correct and safe PowerShell syntax.
+globs: ["**/*"]
+alwaysApply: true
+
+---
+
+## PowerShell Syntax Rules
+
+1. Use full cmdlet names (no aliases).
+2. Use `-ParameterName` style, not shorthand or slash syntax.
+3. Strings:
+   - `"double quotes"` for interpolation
+   - `'single quotes'` for literals
+4. Paths:
+   - Use `.` or `Join-Path` for relative paths
+   - Avoid `./` and manual `"path\file"` concatenation
+5. Use `-ErrorAction Stop` for state-changing commands.
+6. Validate paths with `Test-Path` before modifying files.
+
+---
+
+description: Prevent destructive or unsafe commands without explicit user confirmation.
+globs: ["**/*"]
+alwaysApply: true
+
+---
+
+## Safe Execution
+
+1. Require confirmation for:
+   - `Remove-Item -Recurse -Force`
+   - `rm -rf`
+   - `Format-*`, `diskpart`, `bcdedit`, `reg delete`
+   - `net user` modifications
+2. Explain impact before running privileged or system-altering commands.
+3. Warn when elevation is required.
+
+---
+
+description: Strict rules for when non-PowerShell shells may be used.
+globs: ["**/*"]
+alwaysApply: true
+
+---
+
+## Shell Switching
+
+1. Attempt a PowerShell version first.
+2. Switch shells only if no PowerShell alternative exists.
+3. State which shell is required and why.
+
+---
+
+description: Standards for generated PowerShell scripts.
+globs: ["**/*.ps1"]
+alwaysApply: true
+
+---
+
+## Script Standards
+
+1. Start scripts with `#Requires -Version 7.0`.
+2. Include a `param()` block for inputs.
+3. Add comment-based help where logical.
+4. Use `try/catch` for error handling.
+5. Use `Write-Verbose`/`Write-Host` for important output.
+
+---
+
+description: Keep PowerShell output clean and readable.
+globs: ["**/*"]
+alwaysApply: true
+
+---
+
+## Output Style
+
+1. Use `Format-Table` or `Format-List` for structured output.
+2. Use `Select-Object` to control fields.
+3. Keep verbosity minimal unless debugging.

@@ -4,6 +4,19 @@
  */
 
 export function initAnimations() {
+  // Cache DOM queries to avoid repeated lookups
+  let animatedElements = null;
+  let sectionTitles = null;
+  let scrollRevealElements = null;
+  let serviceCards = null;
+
+  const cacheSelectors = () => {
+    animatedElements = document.querySelectorAll('.fade-in-up');
+    sectionTitles = document.querySelectorAll('.section-title');
+    scrollRevealElements = document.querySelectorAll('.scroll-reveal-3d');
+    serviceCards = document.querySelectorAll('.service-card');
+  };
+
   // Scroll Animations Observer
   const observerOptions = {
     threshold: 0.1,
@@ -20,31 +33,27 @@ export function initAnimations() {
 
   // Observe all elements with fade-in-up class
   const observeFadeInElements = () => {
-    const animatedElements = document.querySelectorAll('.fade-in-up');
+    if (!animatedElements || animatedElements.length === 0) return;
 
     // Batch getBoundingClientRect calls using requestAnimationFrame
-    if (animatedElements.length > 0) {
-      requestAnimationFrame(() => {
-        const viewportHeight = window.innerHeight;
-        animatedElements.forEach(el => {
-          // Check if already visible (above viewport) and add visible class immediately
-          const rect = el.getBoundingClientRect();
-          const isVisible = rect.top < viewportHeight && rect.bottom > 0;
-          if (isVisible) {
-            el.classList.add('visible');
-          }
-          observer.observe(el);
-        });
-      });
-    }
-  };
+    requestAnimationFrame(() => {
+      const viewportHeight = window.innerHeight;
+      // Batch all layout reads first
+      const rects = Array.from(animatedElements).map(el => ({
+        el,
+        rect: el.getBoundingClientRect(),
+      }));
 
-  // Run immediately if DOM is ready, otherwise wait
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', observeFadeInElements);
-  } else {
-    observeFadeInElements();
-  }
+      // Then apply changes (write phase)
+      rects.forEach(({ el, rect }) => {
+        const isVisible = rect.top < viewportHeight && rect.bottom > 0;
+        if (isVisible) {
+          el.classList.add('visible');
+        }
+        observer.observe(el);
+      });
+    });
+  };
 
   // Text Reveal Animation on Scroll
   const textRevealObserver = new IntersectionObserver(
@@ -52,6 +61,8 @@ export function initAnimations() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const text = entry.target;
+          // Process text immediately for better perceived performance
+          // (text processing is fast, no need to defer)
           const words = text.textContent.split(' ');
           text.innerHTML = words
             .map((word, i) => `<span style="animation-delay: ${i * 0.1}s">${word}</span>`)
@@ -63,45 +74,55 @@ export function initAnimations() {
     { threshold: 0.5 }
   );
 
-  document.querySelectorAll('.section-title').forEach(title => {
-    textRevealObserver.observe(title);
-  });
+  const observeTextReveal = () => {
+    if (!sectionTitles || sectionTitles.length === 0) return;
+    sectionTitles.forEach(title => {
+      textRevealObserver.observe(title);
+    });
+  };
 
   // 3D Scroll Reveal
-  const observeScrollReveal = () => {
-    const scrollRevealElements = document.querySelectorAll('.scroll-reveal-3d');
-    const scrollRevealObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  const scrollRevealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
+  const observeScrollReveal = () => {
+    if (!scrollRevealElements || scrollRevealElements.length === 0) return;
     scrollRevealElements.forEach(el => {
       scrollRevealObserver.observe(el);
     });
   };
 
-  // Run immediately if DOM is ready, otherwise wait
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', observeScrollReveal);
-  } else {
-    observeScrollReveal();
-  }
-
   // Stagger animation for service cards
   const staggerCards = () => {
-    const cards = document.querySelectorAll('.service-card');
-    cards.forEach((card, index) => {
+    if (!serviceCards || serviceCards.length === 0) return;
+    serviceCards.forEach((card, index) => {
       card.style.animationDelay = `${index * 0.1}s`;
     });
   };
 
-  document.addEventListener('DOMContentLoaded', staggerCards);
+  // Initialize all animations
+  const initAll = () => {
+    cacheSelectors();
+    observeFadeInElements();
+    observeTextReveal();
+    observeScrollReveal();
+    staggerCards();
+  };
+
+  // Run immediately if DOM is ready, otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
 
   // Add loading animation
   window.addEventListener('load', () => {
@@ -166,13 +187,20 @@ function animateCount(element) {
     const easedProgress = easeOutQuart(progress);
     const currentValue = Math.floor(startValue + (target - startValue) * easedProgress);
 
-    element.textContent = currentValue + suffix;
+    // Use requestAnimationFrame to avoid blocking main thread
+    // Split work: only update text if value changed significantly (every 10ms)
+    const timeSinceLastUpdate = currentTime - (updateCount.lastUpdateTime || startTime);
+    if (timeSinceLastUpdate >= 10 || progress >= 1) {
+      element.textContent = currentValue + suffix;
+      updateCount.lastUpdateTime = currentTime;
+    }
 
     if (progress < 1) {
       requestAnimationFrame(updateCount);
     } else {
       // Ensure final value is exact
       element.textContent = target + suffix;
+      delete updateCount.lastUpdateTime;
     }
   }
 

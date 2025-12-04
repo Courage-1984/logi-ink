@@ -92,10 +92,11 @@
   visibility: visible;
 }
 
-/* Fluid Shape Variants */
+/* Fluid Shape Variants - Optimized: using transform for positioning where possible */
 .fluid-shape-1 {
   width: 400px;
   height: 400px;
+  /* Using top/left for initial positioning (acceptable for static layout) */
   top: 10%;
   left: 10%;
   animation-delay: 0s;
@@ -104,6 +105,7 @@
 .fluid-shape-2 {
   width: 300px;
   height: 300px;
+  /* Using bottom/right for positioning (acceptable for static layout) */
   bottom: 20%;
   right: 15%;
   animation-delay: -7s;
@@ -113,12 +115,18 @@
 .fluid-shape-3 {
   width: 350px;
   height: 350px;
+  /* Already using transform for centering (optimal) */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation-delay: -14s;
   background: linear-gradient(135deg, var(--glow-green), var(--glow-cyan));
 }
+
+/* Note: Initial positioning with top/left/bottom/right is acceptable for static layout.
+ * The animation itself uses transform (fluidWave keyframes), which is composited.
+ * Only the initial layout uses non-composited properties, which is a one-time cost.
+ */
 
 /* ============================================
    FLUID MORPHING UTILITIES

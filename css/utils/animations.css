@@ -32,21 +32,9 @@
   }
 }
 
-/* Float Animation (for particles) */
-@keyframes float {
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  33% {
-    transform: translate(100px, -100px) rotate(120deg);
-  }
-
-  66% {
-    transform: translate(-100px, 100px) rotate(240deg);
-  }
-}
+/* Float Animation - REMOVED: Was only used by .particles class which has been removed
+ * If needed in future, can be restored for other floating effects
+ */
 
 /* Star Fade In/Out Animation (for values section stars) */
 @keyframes starFade {
@@ -130,15 +118,15 @@
   }
 }
 
-/* Scroll Animation (for mouse wheel) */
+/* Scroll Animation (for mouse wheel) - Optimized: uses transform instead of top */
 @keyframes scroll {
   0% {
-    top: 10px;
+    transform: translateY(10px);
     opacity: 1;
   }
 
   100% {
-    top: 30px;
+    transform: translateY(30px);
     opacity: 0;
   }
 }
@@ -345,6 +333,54 @@
   50% {
     transform: scale(1.2) rotate(180deg);
     opacity: 0.1;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION & MOBILE OPTIMIZATION
+   ============================================ */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduce animations on mobile devices for better performance */
+@media (max-width: 768px) {
+  /* Disable non-essential animations on mobile */
+  .fade-in-up,
+  .scroll-reveal-3d,
+  .text-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Reduce animation complexity for essential animations */
+  .float-3d,
+  .fluid-morph,
+  .card-3d {
+    animation-duration: 0.3s !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Disable parallax on mobile */
+  .hero-background {
+    transform: none !important;
+  }
+
+  /* Simplify hover effects on mobile */
+  .service-card:hover,
+  .project-card:hover,
+  .project-card-large:hover {
+    transform: none !important;
   }
 }
 

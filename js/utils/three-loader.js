@@ -74,12 +74,10 @@ export async function loadThreeJS() {
     // Add loading attribute for better control
     script.setAttribute('loading', 'lazy');
 
-    // Add integrity check (Subresource Integrity)
-    // Note: To add SRI, get the hash from https://www.srihash.org/
-    // or generate it using: openssl dgst -sha384 -binary three.min.js | openssl base64 -A
-    // Then uncomment and update:
-    // script.integrity = 'sha384-<HASH_HERE>';
-    // script.setAttribute('crossorigin', 'anonymous');
+    // Add Subresource Integrity (SRI) for security
+    // Hash generated: openssl dgst -sha384 -binary three.min.js | openssl base64 -A
+    script.integrity = 'sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu';
+    script.setAttribute('crossorigin', 'anonymous');
 
     script.onload = () => {
       if (window.THREE) {

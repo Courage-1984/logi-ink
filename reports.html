@@ -273,9 +273,13 @@
       .cursor-dot {
         position: fixed;
         pointer-events: none;
-        z-index: 9999;
+        z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.05s ease, transform 0.15s ease; /* Faster transition for immediate visibility */
+        will-change: transform, left, top; /* Performance optimization */
+        transform: translateZ(0); /* Force GPU acceleration */
+        left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+        top: -9999px;
       }
       .cursor-dot {
         width: 6px;
@@ -286,7 +290,7 @@
       }
       @media (hover: hover) and (pointer: fine) {
         .cursor-dot {
-          opacity: 1;
+          opacity: 1; /* Immediate visibility on hover-capable devices */
         }
       }
       .navbar {

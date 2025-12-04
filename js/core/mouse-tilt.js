@@ -43,14 +43,17 @@ export function initMouseTilt() {
     tiltRafId = null;
   };
 
-  tiltElements.forEach(element => {
+  // Cache tilt elements array
+  const tiltElementsArray = Array.from(tiltElements);
+
+  tiltElementsArray.forEach(element => {
     // Skip if already has tilt handlers attached
     if (element.dataset.tiltInitialized) {
       return;
     }
     element.dataset.tiltInitialized = 'true';
 
-    // Determine card type once
+    // Determine card type once (cache)
     const cardType = element.classList.contains('service-card')
       ? 'service-card'
       : element.classList.contains('project-card-large')
@@ -59,10 +62,26 @@ export function initMouseTilt() {
           ? 'project-card'
           : 'default';
 
+    // Cache rect calculation to avoid repeated getBoundingClientRect calls
+    let cachedRect = null;
+    let rectCacheTimeout = null;
+
+    const getCachedRect = () => {
+      if (!cachedRect || !rectCacheTimeout) {
+        cachedRect = element.getBoundingClientRect();
+        // Invalidate cache after 100ms (element might have moved)
+        clearTimeout(rectCacheTimeout);
+        rectCacheTimeout = setTimeout(() => {
+          cachedRect = null;
+        }, 100);
+      }
+      return cachedRect;
+    };
+
     element.addEventListener(
       'mousemove',
       e => {
-      const rect = element.getBoundingClientRect();
+      const rect = getCachedRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 

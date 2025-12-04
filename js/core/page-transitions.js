@@ -54,8 +54,11 @@ function handleIncomingTransition() {
 export function initPageTransitions() {
   handleIncomingTransition();
 
+  // Cache selector to avoid repeated queries
+  const links = document.querySelectorAll('a[href]');
+
   // Handle navigation clicks (all internal links, not just .html)
-  document.querySelectorAll('a[href]').forEach(link => {
+  links.forEach(link => {
     const href = link.getAttribute('href') || '';
 
     // Skip external links, anchors, downloads, or custom targets

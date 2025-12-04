@@ -2,8 +2,9 @@
   "metadata": {
     "project": "logi-ink",
     "version": "2.1.0",
-    "generated": "2025-01-30",
-    "description": "Complete structural and dependency map of the codebase"
+    "generated": "2025-12-04",
+    "description": "Complete structural and dependency map of the codebase",
+    "generator": "Cursor AI Agent via /codemap command"
   },
   "directoryStructure": {
     "root": {
@@ -23,6 +24,7 @@
         "vite.config.js",
         "eslint.config.js",
         "playwright.config.js",
+        "vitest.config.js",
         "postcss.config.cjs",
         "lighthouserc.json",
         "lighthouserc.pwa.json",
@@ -36,304 +38,334 @@
         "site.webmanifest",
         "browserconfig.xml"
       ],
+      "plugins": [
+        "vite-plugin-html-include.js",
+        "vite-plugin-critical-css.js",
+        "vite-plugin-csp-nonces.js"
+      ],
       "assets": {
         "fonts": {
-          "Orbitron": ["woff2 files", "txt files"],
-          "Rajdhani": ["woff2 files", "txt files"]
+          "Orbitron": ["7 woff2 files", "3 txt files"],
+          "Rajdhani": ["7 woff2 files", "3 txt files"]
         },
         "images": {
-          "backgrounds": ["9 webp files"],
-          "banners": ["1 webp file"],
-          "portfolio": ["18 png files"],
-          "responsive": ["98 avif files", "98 webp files", "28 html files"]
+          "backgrounds": ["webp/avif files"],
+          "banners": ["webp/avif files"],
+          "portfolio": ["png files"],
+          "responsive": ["224 webp files", "214 avif files", "40 html examples"]
         },
-        "video": ["optimized directory"],
-        "audio": ["space-ambience-optimized.ogg"]
-      },
-      "css": {
-        "core": [
-          "main.css",
-          "variables.css",
-          "base.css",
-          "fonts.css",
-          "critical.css"
-        ],
-        "components": {
-          "standalone": [
-            "navigation.css",
-            "hero.css",
-            "buttons.css",
-            "footer.css",
-            "cta.css",
-            "parallax.css",
-            "back-to-top.css",
-            "modals.css",
-            "alerts.css",
-            "service-worker.css",
-            "badges.css",
-            "tables.css",
-            "tabs.css",
-            "accordions.css",
-            "tooltips.css",
-            "typography.css",
-            "breadcrumbs.css",
-            "toast.css"
-          ],
-          "modular": {
-            "cards": {
-              "index.css": [
-                "_card-base.css",
-                "_service-card.css",
-                "_pricing-card.css",
-                "_offer-panel.css",
-                "_project-card.css",
-                "_card-container-queries.css",
-                "_card-variants.css",
-                "_card-sections.css",
-                "_card-animations.css"
-              ]
-            },
-            "forms": {
-              "index.css": [
-                "_form-base.css",
-                "_form-inputs.css",
-                "_form-validation.css",
-                "_form-variants.css"
-              ]
-            }
-          }
+        "audio": {
+          "space-ambience-optimized.ogg": "Space ambience for easter egg"
         },
-        "pages": {
-          "standalone": ["about.css", "reports.css"],
-          "modular": {
-            "contact": {
-              "index.css": [
-                "_contact-base.css",
-                "_contact-form.css",
-                "_contact-map.css",
-                "_contact-testimonials.css",
-                "_contact-particles.css",
-                "_contact-responsive.css"
-              ]
-            },
-            "projects": {
-              "index.css": [
-                "_projects-grid.css",
-                "_project-modal.css"
-              ]
-            }
-          }
-        },
-        "utils": [
-          "animations.css",
-          "cursor.css",
-          "3d-effects.css",
-          "fluid-effects.css",
-          "loading.css",
-          "empty-state.css",
-          "dividers.css",
-          "skip-link.css",
-          "_responsive-breakpoints.css",
-          "_responsive-images.css",
-          "_fluid-typography.css",
-          "_performance-optimizations.css",
-          "responsive.css"
-        ],
-        "easter-egg": ["easter-egg.css"]
-      },
-      "js": {
-        "entry": ["main.js"],
-        "core": [
-          "scroll-manager.js",
-          "navigation.js",
-          "scroll.js",
-          "animations.js",
-          "cursor.js",
-          "mouse-tilt.js",
-          "page-transitions.js",
-          "service-worker.js",
-          "three-hero.js"
-        ],
-        "utils": [
-          "accessibility.js",
-          "env.js",
-          "error-handler.js",
-          "interactions.js",
-          "performance.js",
-          "ripples-lazyload.js",
-          "three-loader.js",
-          "toast.js",
-          "dynamic-prefetch.js",
-          "web-worker-helper.js",
-          "lazy-background-images.js",
-          "video-water-ripples-lazyload.js",
-          "video-corporate-website-lazyload.js",
-          "video-e-commerce-platform-lazyload.js",
-          "video-fintech-mobile-app-lazyload.js",
-          "video-fitness-tracking-app-lazyload.js",
-          "video-marketing-campaign-lazyload.js",
-          "video-tech-startup-rebrand-lazyload.js"
-        ],
-        "pages": [
-          "contact.js",
-          "services.js",
-          "projects.js",
-          "reports.js"
-        ],
-        "easter-egg": [
-          "easter-egg.js",
-          "runtime.js",
-          "celestial-textures.js",
-          "texture-wrapping.js",
-          "procedural-noise.js",
-          "celestial-mechanics.js",
-          "camera-controls.js",
-          "galaxy-generator.js",
-          "star-field.js",
-          "lighting-atmosphere.js",
-          "nebula-clouds.js",
-          "particle-effects.js",
-          "post-processing.js"
-        ]
-      },
-      "scripts": {
-        "build": [
-          "optimize-images.js",
-          "optimize-video.js",
-          "convert-poster-formats.js",
-          "generate-responsive-images.js",
-          "subset-fonts.js",
-          "inline-critical-css.js",
-          "generate-sitemap.js"
-        ],
-        "analysis": [
-          "analyze-bundle-size.js",
-          "analyze-critical-css.js",
-          "analyze-font-loading.js",
-          "analyze-important.js",
-          "analyze-remaining-opportunities.js",
-          "analyze-specificity.js",
-          "audit-font-declarations.js",
-          "css-inventory.js",
-          "find-duplicate-selectors.js",
-          "find-hardcoded-values.js",
-          "font-inventory.js"
-        ],
-        "reports": [
-          "generate-coverage-report.js",
-          "generate-dashboard-reports.js",
-          "generate-media-inventory.js",
-          "generate-performance-timeline.js",
-          "generate-pwmetrics-report.js",
-          "run-pa11y-report.js"
-        ],
-        "migration": [
-          "enhance-variables-and-replace.js",
-          "migrate-font-values.js",
-          "migrate-high-priority-spacing.js",
-          "replace-hardcoded-values.js",
-          "split-cards-css.js"
-        ],
-        "utilities": [
-          "find-chrome-path.js",
-          "test-fonts.ps1",
-          "subset-fonts-with-glyphhanger.ps1",
-          "subset-fonts-with-glyphhanger.sh",
-          "unregister-service-worker.js",
-          "update-html-seo.js",
-          "delete-unused-fonts.js"
-        ]
-      },
-      "generate": {
-        "html": ["generate.html", "preview-popout-window.html"],
-        "css": [
-          "base.css",
-          "layout.css",
-          "controls.css",
-          "color-picker.css",
-          "canvas.css",
+        "video": {
+          "optimized": "Pre-processed hero/background loops"
+        }
+      }
+    },
+    "js": {
+      "core": [
+        "animations.js",
+        "cursor.js",
+        "mouse-tilt.js",
+        "navigation.js",
+        "page-transitions.js",
+        "scroll-manager.js",
+        "scroll.js",
+        "service-worker.js",
+        "three-hero.js"
+      ],
+      "utils": [
+        "accessibility.js",
+        "dynamic-prefetch.js",
+        "env.js",
+        "error-handler.js",
+        "interactions.js",
+        "lazy-background-images.js",
+        "performance.js",
+        "ripples-lazyload.js",
+        "three-loader.js",
+        "toast.js",
+        "web-worker-helper.js",
+        "video-corporate-website-lazyload.js",
+        "video-e-commerce-platform-lazyload.js",
+        "video-fintech-mobile-app-lazyload.js",
+        "video-fitness-tracking-app-lazyload.js",
+        "video-marketing-campaign-lazyload.js",
+        "video-tech-startup-rebrand-lazyload.js",
+        "video-water-ripples-lazyload.js"
+      ],
+      "pages": [
+        "contact.js",
+        "projects.js",
+        "reports.js",
+        "services.js"
+      ],
+      "easter-egg": [
+        "camera-controls.js",
+        "celestial-mechanics.js",
+        "celestial-textures.js",
+        "easter-egg.js",
+        "galaxy-generator.js",
+        "lighting-atmosphere.js",
+        "nebula-clouds.js",
+        "particle-effects.js",
+        "post-processing.js",
+        "procedural-noise.js",
+        "runtime.js",
+        "star-field.js",
+        "texture-wrapping.js"
+      ],
+      "main": "main.js"
+    },
+    "css": {
+      "core": [
+        "main.css",
+        "variables.css",
+        "base.css",
+        "fonts.css",
+        "critical.css"
+      ],
+      "components": {
+        "standalone": [
+          "navigation.css",
+          "hero.css",
+          "buttons.css",
+          "footer.css",
+          "cta.css",
+          "parallax.css",
+          "back-to-top.css",
+          "modals.css",
+          "alerts.css",
+          "service-worker.css",
+          "badges.css",
+          "tables.css",
           "tabs.css",
-          "toast.css",
-          "skeleton.css"
+          "accordions.css",
+          "tooltips.css",
+          "typography.css",
+          "breadcrumbs.css",
+          "toast.css"
         ],
-        "js": [
-          "main.js",
-          "config.js",
-          "preview.js",
-          "export.js",
-          "background-patterns.js",
-          "color-picker.js",
-          "history.js",
-          "preset-storage.js",
-          "templates.js",
-          "grid-overlay.js",
-          "ruler-guides.js",
-          "preview-popout.js",
-          "batch-export.js",
-          "button-tooltips.js",
-          "css-filter-solver.js",
-          "custom-export-quality-dropdown.js",
-          "custom-logo-color-dropdown.js",
-          "custom-logo-position-dropdown.js",
-          "custom-pattern-dropdown.js",
-          "custom-preset-dropdown.js",
-          "custom-template-dropdown.js",
-          "pattern-preview-tooltip.js",
-          "pattern-settings-tooltip.js",
-          "skeleton-screen.js",
-          "tabs.js",
-          "text-alignment.js",
-          "test-cls-monitor.js",
-          "utils/export-high-res.js",
-          "utils/export-high-res-worker.js",
-          "utils/dither-worker.js",
-          "utils/toast.js"
-        ]
+        "cards": {
+          "index.css": "Main card component index",
+          "modules": [
+            "_card-base.css",
+            "_service-card.css",
+            "_pricing-card.css",
+            "_offer-panel.css",
+            "_project-card.css",
+            "_card-container-queries.css",
+            "_card-variants.css",
+            "_card-sections.css",
+            "_card-animations.css"
+          ]
+        },
+        "forms": {
+          "index.css": "Main form component index",
+          "modules": [
+            "_form-base.css",
+            "_form-inputs.css",
+            "_form-validation.css",
+            "_form-variants.css"
+          ]
+        }
       },
-      "partials": ["navbar.html", "footer.html"],
-      "tests": {
-        "e2e": ["smoke.spec.js"],
-        "html": ["test-fonts.html", "test-service-worker.html"]
+      "pages": {
+        "standalone": [
+          "about.css",
+          "reports.css"
+        ],
+        "contact": {
+          "index.css": "Main contact page index",
+          "modules": [
+            "_contact-base.css",
+            "_contact-form.css",
+            "_contact-map.css",
+            "_contact-testimonials.css",
+            "_contact-particles.css",
+            "_contact-responsive.css"
+          ]
+        },
+        "projects": {
+          "index.css": "Main projects page index",
+          "modules": [
+            "_projects-grid.css",
+            "_project-modal.css"
+          ]
+        }
       },
-      "docs": ["28 markdown files", "3 json files", "2 csv files"]
+      "utils": [
+        "animations.css",
+        "cursor.css",
+        "3d-effects.css",
+        "fluid-effects.css",
+        "loading.css",
+        "empty-state.css",
+        "dividers.css",
+        "skip-link.css",
+        "_responsive-breakpoints.css",
+        "_responsive-images.css",
+        "_fluid-typography.css",
+        "_performance-optimizations.css",
+        "responsive.css"
+      ],
+      "easter-egg": [
+        "easter-egg.css"
+      ]
+    },
+    "scripts": {
+      "optimization": [
+        "optimize-images.js",
+        "optimize-video.js",
+        "convert-poster-formats.js",
+        "generate-responsive-images.js",
+        "subset-fonts.js",
+        "inline-critical-css.js",
+        "inline-cursor.js"
+      ],
+      "analysis": [
+        "analyze-bundle-size.js",
+        "analyze-critical-css.js",
+        "analyze-font-loading.js",
+        "analyze-important.js",
+        "analyze-remaining-opportunities.js",
+        "analyze-specificity.js",
+        "audit-font-declarations.js",
+        "audit-images.js",
+        "css-inventory.js",
+        "font-inventory.js",
+        "find-duplicate-selectors.js",
+        "find-hardcoded-values.js"
+      ],
+      "generation": [
+        "generate-sitemap.js",
+        "generate-seo-meta.js",
+        "generate-structured-data.js",
+        "generate-responsive-images.js",
+        "generate-coverage-report.js",
+        "generate-dashboard-reports.js",
+        "generate-media-inventory.js",
+        "generate-performance-timeline.js",
+        "generate-pwmetrics-report.js",
+        "generate-csp-nonces.js"
+      ],
+      "migration": [
+        "migrate-font-values.js",
+        "migrate-high-priority-spacing.js",
+        "enhance-variables-and-replace.js",
+        "replace-hardcoded-values.js"
+      ],
+      "testing": [
+        "test-fonts.ps1",
+        "unregister-service-worker.js",
+        "find-chrome-path.js"
+      ],
+      "utilities": [
+        "run-pa11y-report.js",
+        "update-html-seo.js",
+        "delete-unused-fonts.js",
+        "split-cards-css.js",
+        "subset-fonts-with-glyphhanger.ps1",
+        "subset-fonts-with-glyphhanger.sh"
+      ]
+    },
+    "tests": {
+      "e2e": [
+        "smoke.spec.js",
+        "mobile-optimizations.spec.js",
+        "responsive.spec.js"
+      ],
+      "unit": [
+        "vite-plugin-critical-css.test.js",
+        "scripts/inline-critical-css.test.js",
+        "utils/accessibility.test.js",
+        "utils/toast.test.js",
+        "utils/error-handler.test.js",
+        "utils/env.test.js"
+      ],
+      "html": [
+        "test-fonts.html",
+        "test-service-worker.html"
+      ]
+    },
+    "partials": [
+      "navbar.html",
+      "footer.html"
+    ],
+    "generate": {
+      "html": [
+        "generate.html",
+        "preview-popout-window.html"
+      ],
+      "css": [
+        "base.css",
+        "layout.css",
+        "controls.css",
+        "color-picker.css",
+        "canvas.css",
+        "tabs.css",
+        "toast.css",
+        "skeleton.css"
+      ],
+      "js": [
+        "main.js",
+        "preview.js",
+        "export.js",
+        "config.js",
+        "templates.js",
+        "preset-storage.js",
+        "history.js",
+        "color-picker.js",
+        "background-patterns.js",
+        "grid-overlay.js",
+        "ruler-guides.js",
+        "preview-popout.js",
+        "tabs.js",
+        "text-alignment.js",
+        "custom-logo-color-dropdown.js",
+        "custom-preset-dropdown.js",
+        "custom-logo-position-dropdown.js",
+        "custom-template-dropdown.js",
+        "custom-pattern-dropdown.js",
+        "custom-export-quality-dropdown.js",
+        "button-tooltips.js",
+        "pattern-preview-tooltip.js",
+        "pattern-settings-tooltip.js",
+        "css-filter-solver.js",
+        "skeleton-screen.js",
+        "batch-export.js",
+        "test-cls-monitor.js",
+        "utils/export-high-res.js",
+        "utils/export-high-res-worker.js",
+        "utils/dither-worker.js",
+        "utils/toast.js"
+      ]
     }
   },
   "dependencies": {
-    "npm": {
-      "dependencies": {
-        "html-to-image": "^1.11.13",
-        "web-vitals": "^5.1.0"
-      },
-      "devDependencies": {
-        "@eslint/js": "^9.39.1",
-        "@fullhuman/postcss-purgecss": "^7.0.2",
-        "@lhci/cli": "^0.13.0",
-        "@playwright/test": "^1.49.0",
-        "cross-env": "^7.0.3",
-        "css": "^3.0.0",
-        "eslint": "^9.39.1",
-        "glob": "^11.0.3",
-        "pa11y": "^9.0.1",
-        "pa11y-reporter-html": "^2.0.0",
-        "postcss": "^8.5.6",
-        "prettier": "^3.6.2",
-        "pwmetrics": "^4.1.5",
-        "rollup-plugin-visualizer": "^6.0.5",
-        "sharp": "^0.32.6",
-        "terser": "^5.44.1",
-        "vite": "^7.2.2",
-        "vite-plugin-compression": "^0.5.1"
-      }
+    "runtime": {
+      "html-to-image": "^1.11.13",
+      "web-vitals": "^5.1.0"
     },
-    "external": {
-      "cdn": [
-        "Three.js (r128) from cdnjs.cloudflare.com",
-        "Plausible Analytics from plausible.io"
-      ],
-      "thirdParty": [
-        "Google Tag Manager (gtag.js)",
-        "Plausible Analytics"
-      ]
+    "devDependencies": {
+      "@eslint/js": "^9.39.1",
+      "@lhci/cli": "^0.15.1",
+      "@playwright/test": "^1.57.0",
+      "@vitest/coverage-v8": "^4.0.15",
+      "@vitest/ui": "^4.0.15",
+      "cross-env": "^10.1.0",
+      "eslint": "^9.39.1",
+      "glob": "^13.0.0",
+      "jsdom": "^27.2.0",
+      "pa11y": "^9.0.1",
+      "pa11y-reporter-html": "^2.0.0",
+      "prettier": "^3.7.4",
+      "rollup-plugin-visualizer": "^6.0.5",
+      "sharp": "^0.34.5",
+      "terser": "^5.44.1",
+      "vite": "^7.2.6",
+      "vite-plugin-compression": "^0.5.1",
+      "vitest": "^4.0.15"
     }
   },
   "moduleDependencies": {
@@ -343,9 +375,6 @@
         "./core/scroll-manager.js",
         "./core/navigation.js",
         "./core/scroll.js",
-        "./core/animations.js",
-        "./core/cursor.js",
-        "./core/mouse-tilt.js",
         "./utils/interactions.js",
         "./utils/ripples-lazyload.js",
         "./utils/lazy-background-images.js",
@@ -353,19 +382,193 @@
         "./core/service-worker.js",
         "./utils/accessibility.js",
         "./utils/error-handler.js",
-        "./utils/dynamic-prefetch.js",
-        "./utils/env.js (dynamic)",
-        "./utils/performance.js (dynamic)",
-        "./easter-egg/easter-egg.js (dynamic)",
-        "./core/three-hero.js (dynamic)",
-        "./pages/contact.js (dynamic)",
-        "./pages/services.js (dynamic)",
-        "./pages/projects.js (dynamic)",
-        "./pages/reports.js (dynamic)"
+        "./utils/dynamic-prefetch.js"
       ],
-      "exports": [],
-      "type": "entry"
+      "dynamicImports": [
+        "./core/animations.js",
+        "./core/cursor.js",
+        "./core/mouse-tilt.js",
+        "./core/three-hero.js",
+        "./utils/performance.js",
+        "./easter-egg/easter-egg.js",
+        "./pages/contact.js",
+        "./pages/services.js",
+        "./pages/projects.js",
+        "./pages/reports.js"
+      ],
+      "exports": []
     },
+    "js/core": {
+      "scroll-manager.js": {
+        "imports": [],
+        "exports": ["addScrollHandler"]
+      },
+      "navigation.js": {
+        "imports": ["./scroll-manager.js"],
+        "exports": ["initNavigation"]
+      },
+      "scroll.js": {
+        "imports": ["./scroll-manager.js"],
+        "exports": ["initScroll"]
+      },
+      "animations.js": {
+        "imports": [],
+        "exports": ["initAnimations"]
+      },
+      "cursor.js": {
+        "imports": [],
+        "exports": ["initCursor"]
+      },
+      "mouse-tilt.js": {
+        "imports": [],
+        "exports": ["initMouseTilt"]
+      },
+      "page-transitions.js": {
+        "imports": [],
+        "exports": ["initPageTransitions"]
+      },
+      "service-worker.js": {
+        "imports": ["../utils/env.js"],
+        "exports": ["registerServiceWorker", "autoUnregisterServiceWorkers", "checkForUpdates"]
+      },
+      "three-hero.js": {
+        "imports": ["../utils/three-loader.js", "../utils/env.js"],
+        "exports": ["initThreeHero", "cleanupThreeHero"]
+      }
+    },
+    "js/utils": {
+      "accessibility.js": {
+        "imports": [],
+        "exports": ["initAccessibility"]
+      },
+      "env.js": {
+        "imports": [],
+        "exports": ["isDevelopmentEnv", "isProductionEnv", "isServiceWorkerDisabled", "getEnvironmentMode", "isMobileDevice"]
+      },
+      "error-handler.js": {
+        "imports": [],
+        "exports": ["initErrorHandler"]
+      },
+      "interactions.js": {
+        "imports": [],
+        "exports": ["initInteractions"]
+      },
+      "performance.js": {
+        "imports": ["web-vitals", "./env.js"],
+        "exports": ["initPerformanceTracking", "trackWebVitals"]
+      },
+      "ripples-lazyload.js": {
+        "imports": [],
+        "exports": ["initBackgroundVideoLazyLoad"]
+      },
+      "lazy-background-images.js": {
+        "imports": [],
+        "exports": ["initLazyBackgroundImages"]
+      },
+      "three-loader.js": {
+        "imports": [],
+        "exports": ["loadThreeJS", "isThreeJSAvailable"]
+      },
+      "toast.js": {
+        "imports": [],
+        "exports": ["showToast"]
+      },
+      "dynamic-prefetch.js": {
+        "imports": [],
+        "exports": ["initDynamicPrefetch"]
+      },
+      "web-worker-helper.js": {
+        "imports": [],
+        "exports": ["isWebWorkerSupported", "createWorkerFromFunction", "createWorkerFromUrl", "executeInWorker"]
+      }
+    },
+    "js/pages": {
+      "contact.js": {
+        "imports": ["../utils/toast.js", "../utils/env.js"],
+        "exports": ["initContactForm"]
+      },
+      "services.js": {
+        "imports": [],
+        "exports": ["initServiceModals"]
+      },
+      "projects.js": {
+        "imports": [],
+        "exports": ["initProjectsPage"]
+      },
+      "reports.js": {
+        "imports": [],
+        "exports": ["initReportsPage"]
+      }
+    },
+    "js/easter-egg": {
+      "easter-egg.js": {
+        "imports": ["../utils/env.js"],
+        "exports": ["initEasterEgg"]
+      },
+      "runtime.js": {
+        "imports": [
+          "../utils/env.js",
+          "./celestial-textures.js",
+          "./galaxy-generator.js",
+          "./star-field.js",
+          "./procedural-noise.js",
+          "./texture-wrapping.js",
+          "./celestial-mechanics.js",
+          "./camera-controls.js",
+          "./lighting-atmosphere.js",
+          "./nebula-clouds.js",
+          "./particle-effects.js",
+          "./post-processing.js"
+        ],
+        "exports": ["activateEasterEgg"]
+      },
+      "celestial-textures.js": {
+        "imports": ["./procedural-noise.js", "./texture-wrapping.js"],
+        "exports": ["createSunTexture", "createMoonTexture", "createPlanetTexture"]
+      },
+      "procedural-noise.js": {
+        "imports": [],
+        "exports": ["noise", "noise3D", "smoothstep", "fractalNoise", "fractalNoise3D", "seamlessNoise", "seamlessFractalNoise"]
+      },
+      "texture-wrapping.js": {
+        "imports": [],
+        "exports": ["createEquirectangularCanvas", "uvToEquirectangular", "equirectangularToUV", "isNearPole", "makeSeamless", "featherPoles", "isSafeForPolePlacement", "shouldPlaceFeatureAtPole", "getPoleScaleFactor", "createSphereTexture"]
+      },
+      "galaxy-generator.js": {
+        "imports": [],
+        "exports": ["generateGalaxyWithDensityWave", "generateMultiLayerGalaxy", "generateGalaxyWithExponentialDisk", "generatePoissonLikeDistribution"]
+      },
+      "star-field.js": {
+        "imports": [],
+        "exports": ["generateStarField", "generateMultiLayerStarField", "updateStarTwinkling"]
+      },
+      "celestial-mechanics.js": {
+        "imports": [],
+        "exports": ["calculateLagrangePoints", "createLagrangePointMarkers", "updateLagrangePoints", "calculateRealisticRotationSpeed", "calculateKeplerianOrbitalSpeedApproximation", "calculateOrbitalSpeed", "updatePlanetRotation", "updateCelestialMechanics"]
+      },
+      "camera-controls.js": {
+        "imports": [],
+        "exports": ["initCameraControls", "CameraPresets", "setCameraSpeed", "getCameraSpeed", "transitionToPreset", "createOrbitalControls", "animateCameraPath", "updateCameraVelocity", "stopCameraAnimation"]
+      },
+      "lighting-atmosphere.js": {
+        "imports": [],
+        "exports": ["createAtmosphericGlow", "setupDynamicLighting", "updateLighting", "updateAtmospheres", "addAtmospheresToPlanets"]
+      },
+      "nebula-clouds.js": {
+        "imports": [],
+        "exports": ["createNebulaCloud", "createStarFormingRegion", "createDustCloud", "createInterstellarMedium", "updateNebula", "updateStarFormingRegion", "createNebulaField"]
+      },
+      "particle-effects.js": {
+        "imports": [],
+        "exports": ["createAsteroidBelt", "createComet", "createSolarWind", "createSpaceDust", "createSpaceStation", "updateAsteroidBelt", "updateComet", "updateSolarWind", "updateSpaceStation"]
+      },
+      "post-processing.js": {
+        "imports": [],
+        "exports": ["setupPostProcessing", "updatePostProcessing", "resizePostProcessing", "setBloomStrength", "setDepthOfFieldFocus", "getComposer"]
+      }
+    }
+  },
+  "cssDependencies": {
     "css/main.css": {
       "imports": [
         "./variables.css",
@@ -409,174 +612,48 @@
         "./utils/_fluid-typography.css",
         "./utils/_performance-optimizations.css",
         "./utils/responsive.css"
-      ],
-      "type": "entry"
-    },
-    "easterEggModules": {
-      "runtime.js": {
-        "imports": [
-          "../utils/env.js",
-          "./celestial-textures.js",
-          "./galaxy-generator.js",
-          "./star-field.js",
-          "./lighting-atmosphere.js",
-          "./nebula-clouds.js",
-          "./particle-effects.js",
-          "./camera-controls.js",
-          "./post-processing.js",
-          "./celestial-mechanics.js"
-        ]
-      },
-      "celestial-textures.js": {
-        "imports": [
-          "./texture-wrapping.js",
-          "./procedural-noise.js"
-        ]
-      }
-    },
-    "coreModules": {
-      "three-hero.js": {
-        "imports": [
-          "../utils/three-loader.js",
-          "../utils/env.js"
-        ]
-      },
-      "service-worker.js": {
-        "imports": [
-          "../utils/env.js"
-        ]
-      },
-      "navigation.js": {
-        "imports": [
-          "./scroll-manager.js"
-        ]
-      }
-    },
-    "pageModules": {
-      "contact.js": {
-        "imports": [
-          "../utils/toast.js",
-          "../utils/env.js"
-        ]
-      }
-    }
-  },
-  "cssImportChains": {
-    "main.css": {
-      "order": [
-        "variables.css",
-        "fonts.css",
-        "base.css",
-        "components/*",
-        "pages/*",
-        "utils/animations.css",
-        "utils/cursor.css",
-        "utils/3d-effects.css",
-        "utils/fluid-effects.css",
-        "easter-egg/easter-egg.css",
-        "utils/*",
-        "utils/responsive.css (last)"
       ]
     },
-    "components/cards/index.css": {
+    "css/components/cards/index.css": {
       "imports": [
-        "_card-base.css",
-        "_service-card.css",
-        "_pricing-card.css",
-        "_offer-panel.css",
-        "_project-card.css",
-        "_card-container-queries.css",
-        "_card-variants.css",
-        "_card-sections.css",
-        "_card-animations.css"
+        "./_card-base.css",
+        "./_service-card.css",
+        "./_pricing-card.css",
+        "./_offer-panel.css",
+        "./_project-card.css",
+        "./_card-container-queries.css",
+        "./_card-variants.css",
+        "./_card-sections.css",
+        "./_card-animations.css"
       ]
     },
-    "components/forms/index.css": {
+    "css/components/forms/index.css": {
       "imports": [
-        "_form-base.css",
-        "_form-inputs.css",
-        "_form-validation.css",
-        "_form-variants.css"
+        "./_form-base.css",
+        "./_form-inputs.css",
+        "./_form-validation.css",
+        "./_form-variants.css"
       ]
     },
-    "pages/contact/index.css": {
+    "css/pages/contact/index.css": {
       "imports": [
-        "_contact-base.css",
-        "_contact-form.css",
-        "_contact-map.css",
-        "_contact-testimonials.css",
-        "_contact-particles.css",
-        "_contact-responsive.css"
+        "./_contact-base.css",
+        "./_contact-form.css",
+        "./_contact-map.css",
+        "./_contact-testimonials.css",
+        "./_contact-particles.css",
+        "./_contact-responsive.css"
       ]
     },
-    "pages/projects/index.css": {
+    "css/pages/projects/index.css": {
       "imports": [
-        "_projects-grid.css",
-        "_project-modal.css"
+        "./_projects-grid.css",
+        "./_project-modal.css"
       ]
-    }
-  },
-  "componentRelationships": {
-    "core": {
-      "scroll-manager.js": {
-        "usedBy": ["navigation.js", "scroll.js"],
-        "purpose": "Centralized scroll event handler"
-      },
-      "env.js": {
-        "usedBy": [
-          "service-worker.js",
-          "three-hero.js",
-          "easter-egg/runtime.js",
-          "pages/contact.js",
-          "utils/performance.js"
-        ],
-        "purpose": "Environment detection utilities"
-      },
-      "error-handler.js": {
-        "usedBy": ["main.js"],
-        "purpose": "Centralized error handling"
-      }
-    },
-    "easterEgg": {
-      "runtime.js": {
-        "orchestrates": [
-          "celestial-textures.js",
-          "galaxy-generator.js",
-          "star-field.js",
-          "lighting-atmosphere.js",
-          "nebula-clouds.js",
-          "particle-effects.js",
-          "camera-controls.js",
-          "post-processing.js",
-          "celestial-mechanics.js"
-        ],
-        "purpose": "Main easter egg scene orchestrator"
-      },
-      "celestial-textures.js": {
-        "dependsOn": [
-          "texture-wrapping.js",
-          "procedural-noise.js"
-        ],
-        "purpose": "Procedural texture generation"
-      }
-    },
-    "utils": {
-      "three-loader.js": {
-        "usedBy": ["core/three-hero.js"],
-        "purpose": "Dynamic Three.js CDN loader"
-      },
-      "toast.js": {
-        "usedBy": ["pages/contact.js"],
-        "purpose": "Toast notification system"
-      }
     }
   },
   "buildConfiguration": {
-    "bundler": "Vite 7.2.2",
-    "minifier": "Terser",
-    "cssMinify": true,
-    "cssCodeSplit": false,
-    "sourceMaps": false,
+    "buildTool": "Vite 7.2.6",
     "entryPoints": [
       "index.html",
       "about.html",
@@ -589,102 +666,103 @@
       "sw.js"
     ],
     "plugins": [
-      "html-include (custom)",
-      "clean-urls",
-      "copy-favicons",
-      "copy-videos",
-      "copy-audio",
-      "copy-images",
-      "copy-fonts",
-      "copy-logos",
-      "copy-seo-files",
-      "copy-static-reports",
-      "vite-compression (gzip + brotli)",
+      "vite-plugin-html-include",
+      "vite-plugin-critical-css",
+      "vite-plugin-csp-nonces",
+      "vite-plugin-compression (gzip)",
+      "vite-plugin-compression (brotli)",
       "rollup-plugin-visualizer"
     ],
-    "chunking": {
-      "strategy": "manual",
-      "vendorChunks": ["vendor", "vendor-three (if three.js installed)"]
+    "outputStructure": {
+      "assets": "assets/[name]-[hash][extname]",
+      "images": "assets/images/[name]-[hash][extname]",
+      "fonts": "assets/fonts/[name]-[hash][extname]",
+      "videos": "assets/video/optimized/[name][extname]",
+      "js": "assets/js/[name]-[hash].js",
+      "sw": "[name].js"
     }
-  },
-  "potentialIssues": {
-    "coupling": [
-      {
-        "file": "js/core/scroll-manager.js",
-        "issue": "Central dependency - used by multiple modules",
-        "severity": "low",
-        "note": "Intentional centralization for scroll event optimization"
-      },
-      {
-        "file": "js/utils/env.js",
-        "issue": "Widely used utility - many dependencies",
-        "severity": "low",
-        "note": "Core utility, acceptable coupling"
-      }
-    ],
-    "complexity": [
-      {
-        "area": "easter-egg",
-        "issue": "13 interconnected modules for 3D scene",
-        "severity": "medium",
-        "note": "Complex but well-modularized, each module has single responsibility"
-      },
-      {
-        "area": "vite.config.js",
-        "issue": "Large configuration file (804 lines)",
-        "severity": "low",
-        "note": "Well-organized with clear plugin sections"
-      }
-    ],
-    "duplication": [
-      {
-        "area": "video-lazyload modules",
-        "issue": "7 similar video lazy-load modules",
-        "severity": "low",
-        "note": "Page-specific implementations, could be consolidated if needed"
-      }
-    ],
-    "optimization": [
-      {
-        "area": "CSS import chain",
-        "issue": "Deep import nesting (main.css -> cards/index.css -> _card-*.css)",
-        "severity": "low",
-        "note": "Well-organized modular structure, Vite handles bundling efficiently"
-      },
-      {
-        "area": "Dynamic imports",
-        "issue": "Many dynamic imports in main.js",
-        "severity": "low",
-        "note": "Intentional code-splitting for performance"
-      }
-    ]
   },
   "statistics": {
     "totalFiles": {
-      "html": 9,
-      "js": 50,
-      "css": 60,
-      "scripts": 39,
-      "config": 12
+      "javascript": 140,
+      "css": 74,
+      "html": 68,
+      "scripts": 44,
+      "tests": 15,
+      "config": 17
     },
     "moduleCount": {
       "core": 9,
       "utils": 18,
       "pages": 4,
-      "easterEgg": 13
-    },
-    "cssComponents": {
-      "standalone": 18,
-      "modular": {
-        "cards": 9,
-        "forms": 4,
-        "contact": 6,
-        "projects": 2
-      }
+      "easterEgg": 13,
+      "components": 20,
+      "pagesCSS": 4
     },
     "dependencies": {
-      "npm": 22,
-      "external": 4
+      "runtime": 2,
+      "devDependencies": 19
     }
+  },
+  "potentialIssues": {
+    "circularDependencies": [],
+    "highCoupling": [
+      {
+        "module": "js/easter-egg/runtime.js",
+        "reason": "Imports 11 other easter-egg modules - central hub for 3D scene",
+        "severity": "low",
+        "note": "Expected architecture for 3D scene orchestration"
+      },
+      {
+        "module": "js/main.js",
+        "reason": "Imports and initializes all core modules",
+        "severity": "low",
+        "note": "Expected for main entry point"
+      }
+    ],
+    "largeModules": [
+      {
+        "module": "vite.config.js",
+        "reason": "812 lines - complex build configuration",
+        "severity": "low",
+        "note": "Contains multiple plugin configurations"
+      },
+      {
+        "module": "js/easter-egg/runtime.js",
+        "reason": "Large 3D scene orchestration module",
+        "severity": "low",
+        "note": "Expected for complex 3D rendering"
+      }
+    ],
+    "unusedExports": [],
+    "missingDependencies": []
+  },
+  "architecture": {
+    "pattern": "Modular ES6 with lazy loading",
+    "cssArchitecture": "Modular CSS with @import hierarchy",
+    "entryPoint": "js/main.js",
+    "cssEntryPoint": "css/main.css",
+    "lazyLoading": {
+      "strategy": "requestIdleCallback with dynamic imports",
+      "modules": [
+        "animations.js",
+        "cursor.js",
+        "mouse-tilt.js",
+        "three-hero.js",
+        "performance.js",
+        "easter-egg.js",
+        "page-specific modules"
+      ]
+    },
+    "performanceOptimizations": [
+      "Code splitting via dynamic imports",
+      "Critical CSS inlining",
+      "Font subsetting",
+      "Image optimization (AVIF/WebP)",
+      "Video lazy loading",
+      "Service worker caching",
+      "Resource hints (prefetch, preload)",
+      "Modulepreload for critical ES modules"
+    ]
   }
 }

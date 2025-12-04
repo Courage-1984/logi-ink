@@ -140,6 +140,13 @@
   padding-right: 0;
 }
 
+/* Hide underline on dropdown parent link - only show arrow */
+.nav-item-dropdown > .nav-link::before {
+  display: none !important;
+}
+
+/* Ensure dropdown arrow is always visible, not just on hover */
+/* Arrow state: default (closed) - pointing down, cyan */
 .nav-item-dropdown > .nav-link::after {
   content: '';
   display: inline-block !important;
@@ -153,20 +160,27 @@
   background: none !important;
   bottom: auto !important;
   left: auto !important;
-  transition: transform 0.3s ease;
+  transform: rotate(0deg) !important;
+  transform-origin: center !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-top-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 8px var(--glow-cyan);
-  opacity: 0.9 !important;
+  opacity: 1 !important;
   margin-left: var(--space-2);
   flex-shrink: 0;
   vertical-align: middle;
 }
 
-.nav-item-dropdown:hover > .nav-link::after,
-.nav-item-dropdown.active > .nav-link::after {
-  transform: rotate(180deg);
-  opacity: 1;
-  box-shadow: 0 0 12px var(--glow-cyan);
+/* Arrow state: hover only (open) - pointing right (90deg), magenta */
+/* Note: Active state doesn't open the arrow - only hover does */
+.nav-item-dropdown:hover > .nav-link::after {
+  transform: rotate(90deg) !important;
+  opacity: 1 !important;
+  border-top-color: var(--accent-magenta) !important;
+  box-shadow: 0 0 12px var(--glow-magenta);
 }
+
+/* When active (on services page), arrow stays closed but can be cyan or a subtle indicator */
+/* The active state is handled by the link text gradient, not the arrow rotation */
 
 .dropdown-menu {
   position: absolute;
@@ -187,8 +201,8 @@
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
 }
 
-.nav-item-dropdown:hover .dropdown-menu,
-.nav-item-dropdown.active .dropdown-menu {
+/* Dropdown menu only opens on hover, not when active */
+.nav-item-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -231,6 +245,25 @@
 
 .dropdown-menu .dropdown-link:hover::before {
   transform: scaleY(1);
+}
+
+/* Active state for dropdown links */
+.dropdown-menu .dropdown-link.active {
+  color: var(--accent-cyan);
+  background: rgba(0, 255, 255, 0.1);
+  padding-left: var(--space-8);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dropdown-menu .dropdown-link.active::before {
+  transform: scaleY(1);
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--glow-cyan);
+}
+
+.dropdown-menu .dropdown-link.active:hover {
+  color: var(--accent-cyan);
+  background: rgba(0, 255, 255, 0.15);
 }
 
 .hamburger {

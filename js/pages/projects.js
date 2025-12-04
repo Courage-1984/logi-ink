@@ -130,67 +130,27 @@ const projectDetails = {
 
 const PROJECT_MODAL_SIZES = '(max-width: 768px) 90vw, (max-width: 1280px) 70vw, 960px';
 
-const responsiveAssets = {
-  avif: {},
-  webp: {},
-};
+// Available responsive image sizes
+const RESPONSIVE_SIZES = [320, 375, 480, 768, 1024];
 
-const fallbackImageAssets = {};
-
-const registerResponsiveAssets = (modules, format) => {
-  Object.entries(modules).forEach(([path, url]) => {
-    const match = path.match(/\/([^/]+)-([0-9]+w)\.(avif|webp)$/);
-    if (!match) return;
-    const [, base, size] = match;
-    if (!responsiveAssets[format][base]) {
-      responsiveAssets[format][base] = [];
-    }
-    responsiveAssets[format][base].push({
-      size,
-      numericSize: parseInt(size, 10),
-      url,
-    });
-  });
-};
-
-registerResponsiveAssets(
-  import.meta.glob('../../assets/images/responsive/portfolio/*-*.avif', {
-    eager: true,
-    import: 'default',
-  }),
-  'avif',
-);
-
-registerResponsiveAssets(
-  import.meta.glob('../../assets/images/responsive/portfolio/*-*.webp', {
-    eager: true,
-    import: 'default',
-  }),
-  'webp',
-);
-
-Object.entries(
-  import.meta.glob('../../assets/images/portfolio/*.png', {
-    eager: true,
-    import: 'default',
-  }),
-).forEach(([path, url]) => {
-  const match = path.match(/\/([^/]+)\.png$/);
-  if (!match) return;
-  const [, base] = match;
-  fallbackImageAssets[base] = url;
-});
-
+/**
+ * Build responsive srcset dynamically using static asset paths
+ * This avoids bundling images into JavaScript (saves ~140 KB)
+ */
 const buildResponsiveSrcset = (base, format) => {
-  const entries = responsiveAssets[format][base];
-  if (!entries || !entries.length) {
-    return '';
-  }
-  return entries
-    .slice()
-    .sort((a, b) => a.numericSize - b.numericSize)
-    .map(({ url, size }) => `${url} ${size}`)
-    .join(', ');
+  const basePath = './assets/images/responsive/portfolio';
+  const srcset = RESPONSIVE_SIZES.map(size => {
+    const filename = `${base}-${size}w.${format}`;
+    return `${basePath}/${filename} ${size}w`;
+  }).join(', ');
+  return srcset;
+};
+
+/**
+ * Get fallback image path (PNG from portfolio directory)
+ */
+const getFallbackImagePath = (base) => {
+  return `./assets/images/portfolio/${base}.png`;
 };
 
 const extractImageBase = imageEl => {
@@ -270,31 +230,19 @@ export function initProjectsPage() {
       if (responsiveBase) {
         const avifSrcset = buildResponsiveSrcset(responsiveBase, 'avif');
         const webpSrcset = buildResponsiveSrcset(responsiveBase, 'webp');
-        if (avifSrcset) {
-          modalSourceAvif.srcset = avifSrcset;
-          modalSourceAvif.setAttribute('sizes', PROJECT_MODAL_SIZES);
-        } else {
-          modalSourceAvif.removeAttribute('srcset');
-          modalSourceAvif.removeAttribute('sizes');
-        }
 
-        if (webpSrcset) {
-          modalSourceWebp.srcset = webpSrcset;
-          modalSourceWebp.setAttribute('sizes', PROJECT_MODAL_SIZES);
-        } else {
-          modalSourceWebp.removeAttribute('srcset');
-          modalSourceWebp.removeAttribute('sizes');
-        }
+        modalSourceAvif.srcset = avifSrcset;
+        modalSourceAvif.setAttribute('sizes', PROJECT_MODAL_SIZES);
 
-        if (avifSrcset || webpSrcset) {
-          modalImage.setAttribute('sizes', PROJECT_MODAL_SIZES);
-        } else {
-          modalImage.removeAttribute('sizes');
-        }
+        modalSourceWebp.srcset = webpSrcset;
+        modalSourceWebp.setAttribute('sizes', PROJECT_MODAL_SIZES);
 
+        modalImage.setAttribute('sizes', PROJECT_MODAL_SIZES);
         modalImage.dataset.base = responsiveBase;
-        const mappedFallback = fallbackImageAssets[responsiveBase];
-        modalImage.src = mappedFallback || currentSrc || fallbackSrc;
+
+        // Use fallback image path or current src
+        const fallbackPath = getFallbackImagePath(responsiveBase);
+        modalImage.src = fallbackPath || currentSrc || fallbackSrc;
       } else {
         modalSourceAvif.removeAttribute('srcset');
         modalSourceAvif.removeAttribute('sizes');
@@ -461,7 +409,9 @@ export function initProjectsPage() {
     }
   };
 
-  triggers.forEach(trigger => {
+  // Cache triggers to avoid repeated queries
+  const triggerArray = Array.from(triggers);
+  triggerArray.forEach(trigger => {
     trigger.addEventListener('click', event => {
       event.preventDefault();
       const projectId = trigger.dataset.projectId || trigger.closest('.project-card')?.dataset.projectId;
@@ -493,6 +443,7 @@ export function initProjectsPage() {
     if (event.key === 'Tab') {
       const focusableSelectors =
         'a[href], button:not([disabled]), textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, [tabindex]:not([tabindex="-1"])';
+      // Cache focusable elements query
       const focusable = Array.from(modal.querySelectorAll(focusableSelectors)).filter(
         element => element.offsetParent !== null
       );

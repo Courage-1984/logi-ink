@@ -71,11 +71,19 @@
 
     <!-- Preload critical resources -->
 
-    <!-- Preload hero banner in AVIF format (768w for most viewports, optimal for LCP) -->
+    <!-- Preload hero banner with responsive srcset (browser selects optimal size for viewport) -->
     <link
       rel="preload"
       as="image"
-      href="./assets/images/responsive/banners/banner_home-768w.avif"
+      imagesrcset="
+        ./assets/images/responsive/banners/banner_home-320w.avif   320w,
+        ./assets/images/responsive/banners/banner_home-375w.avif   375w,
+        ./assets/images/responsive/banners/banner_home-480w.avif   480w,
+        ./assets/images/responsive/banners/banner_home-768w.avif   768w,
+        ./assets/images/responsive/banners/banner_home-1024w.avif 1024w,
+        ./assets/images/responsive/banners/banner_home-1920w.avif 1920w
+      "
+      imagesizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
       fetchpriority="high"
     />
 
@@ -129,12 +137,12 @@
       // Defer Google Tag Manager to reduce initial JavaScript load
       window.addEventListener('load', () => {
         // Initialize dataLayer
-      window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
         function gtag() {
           dataLayer.push(arguments);
         }
-      gtag('js', new Date());
-      gtag('config', 'G-9PFB2D8G1B');
+        gtag('js', new Date());
+        gtag('config', 'G-9PFB2D8G1B');
 
         // Load gtag.js script asynchronously
         const script = document.createElement('script');
@@ -374,9 +382,15 @@
       .cursor-dot {
         position: fixed;
         pointer-events: none;
-        z-index: 9999;
+        z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition:
+          opacity 0.05s ease,
+          transform 0.15s ease; /* Faster transition for immediate visibility */
+        will-change: transform, left, top; /* Performance optimization */
+        transform: translateZ(0); /* Force GPU acceleration */
+        left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+        top: -9999px;
       }
       .cursor-dot {
         width: 6px;
@@ -387,7 +401,7 @@
       }
       @media (hover: hover) and (pointer: fine) {
         .cursor-dot {
-          opacity: 1;
+          opacity: 1; /* Immediate visibility on hover-capable devices */
         }
       }
       .navbar {
@@ -793,7 +807,7 @@
         }
       })();
     </script>
-    </head>
+  </head>
 
   <body>
     <!-- Accessibility: Skip to Content Link -->
@@ -816,7 +830,7 @@
         <div class="hero-background">
           <!-- Three.js Canvas for Hero Background -->
           <canvas id="threejs-hero-canvas" class="threejs-canvas"></canvas>
-          <div class="particles"></div>
+
           <!-- Fluid Shapes -->
           <div class="fluid-shape fluid-shape-1"></div>
           <div class="fluid-shape fluid-shape-2"></div>

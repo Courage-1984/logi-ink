@@ -475,7 +475,7 @@ function initTestimonialTyping() {
     });
   }, observerOptions);
 
-  // Observe all testimonial texts
+  // Observe all testimonial texts (process immediately for better UX)
   testimonialTexts.forEach(text => {
     // Clear text and prepare for typing animation
     const fullText = text.getAttribute('data-text');
