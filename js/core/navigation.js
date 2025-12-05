@@ -121,6 +121,12 @@ export function initNavigation() {
     // Also check full pathname for exact matches
     const normalizedPathname = pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
+    // Normalize currentPage for use throughout this function
+    let normalizedCurrentPage = currentPage;
+    if (normalizedCurrentPage !== '/' && normalizedCurrentPage.startsWith('/')) {
+      normalizedCurrentPage = normalizedCurrentPage.substring(1);
+    }
+
     navLinks.forEach(link => {
       const href = link.getAttribute('href') || '';
       // Remove active class first
@@ -137,12 +143,6 @@ export function initNavigation() {
       // Remove leading slash for comparison if not root
       if (normalizedHref !== '/' && normalizedHref.startsWith('/')) {
         normalizedHref = normalizedHref.substring(1);
-      }
-
-      // Normalize currentPage similarly
-      let normalizedCurrentPage = currentPage;
-      if (normalizedCurrentPage !== '/' && normalizedCurrentPage.startsWith('/')) {
-        normalizedCurrentPage = normalizedCurrentPage.substring(1);
       }
 
       // Check if this link matches the current page

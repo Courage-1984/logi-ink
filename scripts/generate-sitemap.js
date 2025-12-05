@@ -62,6 +62,18 @@ const pages = [
     priority: 0.5,
     lastmod: new Date().toISOString().split('T')[0],
   },
+  {
+    url: 'privacy-policy',
+    changefreq: 'yearly',
+    priority: 0.3,
+    lastmod: new Date().toISOString().split('T')[0],
+  },
+  {
+    url: 'terms-of-service',
+    changefreq: 'yearly',
+    priority: 0.3,
+    lastmod: new Date().toISOString().split('T')[0],
+  },
 ];
 
 // Generate sitemap XML

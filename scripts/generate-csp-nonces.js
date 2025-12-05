@@ -93,11 +93,21 @@ function updateHTMLWithNonces(filePath, scriptNonce, styleNonce) {
       );
     }
 
-    // Replace style-src to use nonce instead of unsafe-inline
+    // Replace style-src to keep unsafe-inline for inline style attributes
+    // Nonce allows <style> tags, unsafe-inline allows inline style="..." attributes
     if (cspContent.includes('style-src')) {
       cspContent = cspContent.replace(
         /style-src\s+[^;]*/gi,
-        `style-src 'self' 'nonce-${styleNonce}'`
+        `style-src 'self' 'unsafe-inline' 'nonce-${styleNonce}'`
+      );
+    }
+
+    // Add style-src-attr directive for inline style attributes (style="...")
+    // Modern CSP browsers require this separate directive for inline attributes
+    if (!cspContent.includes('style-src-attr')) {
+      cspContent = cspContent.replace(
+        /(style-src\s+[^;]*?)(\s*;|\s*$)/gi,
+        `$1; style-src-attr 'unsafe-inline'$2`
       );
     }
 
