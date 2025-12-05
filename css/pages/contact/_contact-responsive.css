@@ -38,11 +38,14 @@
   .social-links {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
   }
 
   .social-link {
-    flex: 1;
-    min-width: 120px;
+    flex: 0 0 auto;
+    min-width: 44px;
+    min-height: 44px;
     justify-content: center;
   }
 
