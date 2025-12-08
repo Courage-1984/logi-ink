@@ -257,7 +257,7 @@ export function initProjectsPage() {
         modalImage.src = fallbackSrc;
       }
 
-      modalImage.alt = imageEl.alt || `${details.title || 'Project'} preview`;
+      modalImage.alt = imageEl.alt || `${details.title || 'Project'} - ${details.category || 'Digital project'} by Logi-Ink in Pretoria, South Africa`;
     } else {
       modalSourceAvif.removeAttribute('srcset');
       modalSourceAvif.removeAttribute('sizes');
@@ -266,7 +266,7 @@ export function initProjectsPage() {
       modalImage.removeAttribute('sizes');
       modalImage.removeAttribute('data-base');
       modalImage.removeAttribute('src');
-      modalImage.alt = details.title || 'Project preview';
+      modalImage.alt = `${details.title || 'Project'} - ${details.category || 'Digital project'} by Logi-Ink in Pretoria, South Africa`;
     }
 
     // Initialize video if available for this project

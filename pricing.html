@@ -20,7 +20,7 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Transparent website design pricing packages. Choose from our affordable packages starting from R7,500. Includes hosting, domain, and support. Get a quote today."
+      content="Affordable website design packages in Pretoria, South Africa. Starting from R2,500. Includes hosting, SEO & support. Transparent pricing - get a free quote today!"
     />
     <meta
       name="keywords"
@@ -37,7 +37,7 @@
     <meta property="og:title" content="Website Design Packages & Pricing | Logi-Ink" />
     <meta
       property="og:description"
-      content="Transparent website design pricing packages. Choose from our affordable packages starting from R7,500. Includes hosting, domain, and support."
+      content="Affordable website design packages in Pretoria, South Africa. Starting from R2,500. Includes hosting, SEO & support. Transparent pricing - get a free quote today!"
     />
     <meta
       property="og:image"
@@ -52,7 +52,7 @@
     <meta name="twitter:title" content="Website Design Packages & Pricing | Logi-Ink" />
     <meta
       name="twitter:description"
-      content="Transparent website design pricing packages. Choose from our affordable packages starting from R7,500. Includes hosting, domain, and support."
+      content="Affordable website design packages in Pretoria, South Africa. Starting from R2,500. Includes hosting, SEO & support. Transparent pricing - get a free quote today!"
     />
     <meta
       name="twitter:image"
@@ -799,6 +799,46 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What's included in the pricing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All packages include responsive design, basic SEO setup, hosting setup assistance, and support. Higher tiers include additional features like advanced SEO, e-commerce capabilities, and extended support periods."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize a package?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We offer custom packages tailored to your specific needs. Contact us to discuss your requirements and we'll create a personalized quote."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What payment methods do you accept?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We accept various payment methods including bank transfers, credit cards, and digital payment platforms. Payment terms are flexible and can be discussed during consultation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to complete a project?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Project timelines vary by package: Starter (2-3 weeks), Business (4-6 weeks), Enterprise (6-8 weeks). Custom projects may have different timelines based on complexity."
+            }
+          }
+        ]
+      }
+    </script>
 
     <!-- Main CSS -->
   </head>
@@ -821,10 +861,8 @@
     <main id="main-content">
       <section class="hero" style="min-height: 60vh; padding-top: 100px">
         <div class="hero-background">
-          <div class="grid-overlay"></div>
-
-          <div class="fluid-shape fluid-shape-1"></div>
-          <div class="fluid-shape fluid-shape-2"></div>
+          <!-- Three.js Canvas for Pricing Background (Particle Rain) -->
+          <canvas id="threejs-pricing-canvas" class="threejs-canvas"></canvas>
         </div>
         <div class="hero-content">
           <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem)">
@@ -835,8 +873,13 @@
           </h1>
           <p class="hero-subtitle fade-in delay-2">
             Transparent pricing starting from R7,500. Choose the perfect package for your business
-            needs.
+            needs. Explore our full service offerings or contact us for custom quotes.
           </p>
+        </div>
+        <div class="scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
         </div>
       </section>
 
@@ -883,7 +926,7 @@
                   R7,500
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.9rem">
-                  Perfect for small businesses
+                  Perfect for small businesses. See our <a href="/services" style="color: var(--accent-cyan); text-decoration: underline;">full service list</a>.
                 </p>
               </div>
               <ul

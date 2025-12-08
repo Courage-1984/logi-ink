@@ -10,8 +10,6 @@
   padding: var(--space-4) var(--space-8);
   border-bottom: 1px solid rgba(0, 255, 255, 0.1);
   transition: all 0.3s ease;
-  /* Ensure dropdown menus can escape this stacking context */
-  overflow: visible;
 }
 
 .navbar.scrolled {
@@ -26,8 +24,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Ensure dropdown menus are not clipped */
-  overflow: visible;
 }
 
 .logo-link {
@@ -83,8 +79,6 @@
   display: flex;
   list-style: none;
   gap: var(--space-8);
-  /* Ensure dropdown menus are not clipped */
-  overflow: visible;
 }
 
 .nav-link {
@@ -157,7 +151,7 @@
 /* Dropdown Menu Styles */
 .nav-item-dropdown {
   position: relative;
-  z-index: 10020; /* Ensure dropdown parent is also above hero sections and view-transition container */
+  z-index: 10001; /* Ensure dropdown parent is also above hero sections */
 }
 
 .nav-item-dropdown > .nav-link {
@@ -210,8 +204,9 @@
 /* The active state is handled by the link text gradient, not the arrow rotation */
 
 .dropdown-menu {
-  position: fixed !important; /* Fixed positioning relative to viewport, not parent - !important to override any conflicting rules */
-  /* top and left will be calculated by JavaScript or set via CSS custom properties */
+  position: absolute;
+  top: 100%;
+  left: 0;
   margin-top: 0.25rem;
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
@@ -220,28 +215,20 @@
   min-width: 200px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px) translateZ(0); /* translateZ(0) forces GPU acceleration and new stacking context */
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
   list-style: none;
   padding: var(--space-2) 0;
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
-  z-index: 10020 !important; /* Higher than navbar (10000), view-transition (9999), and hero sections to ensure it appears above all content - !important to override any conflicting rules */
-  isolation: isolate; /* Create own stacking context to ensure dropdown appears above hero sections */
-  pointer-events: auto; /* Ensure dropdown is interactive */
-  /* Ensure dropdown is not clipped by parent elements */
-  overflow: visible;
-  /* Force new stacking context to escape parent stacking contexts */
-  will-change: transform;
+  z-index: 10001 !important; /* Higher than navbar z-index (10000) to ensure it appears above hero sections and all content - !important to override any conflicting rules */
+  isolation: isolate; /* Create own stacking context to isolate from hero section */
 }
 
 /* Dropdown menu only opens on hover, not when active */
-.nav-item-dropdown:hover .dropdown-menu,
-.nav-item-dropdown.dropdown-open .dropdown-menu,
-.dropdown-menu.dropdown-open {
+.nav-item-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) translateZ(0); /* Apply transform only when visible for slide-down animation - translateZ(0) ensures new stacking context */
-  z-index: 10020 !important; /* Ensure z-index is maintained on hover - higher than hero sections and view-transition */
+  transform: translateY(0);
 }
 
 .dropdown-menu li {

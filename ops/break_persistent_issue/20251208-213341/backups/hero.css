@@ -19,8 +19,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
   box-sizing: border-box;
-  z-index: 0; /* Lower than navbar (10000) and dropdown (10020) to ensure navbar dropdown appears above - set to 0 to minimize stacking context impact */
-  /* Note: This creates a stacking context, but dropdown uses position: fixed with translateZ(0) to escape it */
+  z-index: 1; /* Lower than navbar (10000) to ensure navbar dropdown appears above */
 }
 
 /* Hero Background */

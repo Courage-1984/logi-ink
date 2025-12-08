@@ -90,12 +90,12 @@ picture {
   /* Grid will reserve space automatically */
 }
 
-/* Project cards - reserve space */
+/* Project cards - reserve space (less aggressive containment to prevent overlap) */
 .project-card,
 .service-card {
-  contain: layout style paint;
-  min-height: 300px; /* Reserve minimum height */
-  aspect-ratio: 4 / 3; /* Default card aspect ratio */
+  contain: layout style; /* Removed 'paint' to allow proper rendering */
+  min-height: 200px; /* Reduced minimum height to prevent overlap */
+  /* Removed aspect-ratio - let content determine height naturally */
 }
 
 /* ============================================

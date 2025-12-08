@@ -49,7 +49,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 9999; /* Lower than navbar (10000) and dropdown (10020) to ensure navigation remains accessible */
 }
 
 /* Typography */

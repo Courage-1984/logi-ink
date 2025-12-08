@@ -118,6 +118,124 @@ export function initNavigation() {
   // Mobile: Dropdown toggles on click (handled above in navLinks click handler)
   const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
 
+  // Store original parent for each dropdown menu (to restore later)
+  const dropdownParents = new Map();
+
+  // Move dropdown to body to escape navbar stacking context
+  const moveDropdownToBody = (dropdownMenu, dropdownItem) => {
+    if (!dropdownMenu || !dropdownItem) return;
+
+    // Store original parent if not already stored
+    if (!dropdownParents.has(dropdownMenu)) {
+      dropdownParents.set(dropdownMenu, dropdownMenu.parentElement);
+    }
+
+    // Only move if not already in body
+    if (dropdownMenu.parentElement !== document.body) {
+      document.body.appendChild(dropdownMenu);
+    }
+  };
+
+  // Restore dropdown to original parent
+  const restoreDropdownToParent = (dropdownMenu) => {
+    if (!dropdownMenu) return;
+
+    const originalParent = dropdownParents.get(dropdownMenu);
+    if (originalParent && dropdownMenu.parentElement === document.body) {
+      originalParent.appendChild(dropdownMenu);
+    }
+  };
+
+  // Position dropdown menu dynamically (for fixed positioning)
+  const positionDropdown = (dropdownItem) => {
+    const dropdownMenu = dropdownItem.querySelector('.dropdown-menu');
+    if (!dropdownMenu) return;
+
+    const link = dropdownItem.querySelector('.nav-link');
+    if (!link) return;
+
+    // Move dropdown to body to escape navbar stacking context
+    moveDropdownToBody(dropdownMenu, dropdownItem);
+
+    const linkRect = link.getBoundingClientRect();
+    dropdownMenu.style.top = `${linkRect.bottom + 4}px`; // 4px = margin-top: 0.25rem
+    dropdownMenu.style.left = `${linkRect.left}px`;
+  };
+
+  // Update dropdown positions on hover (desktop) and when active (mobile)
+  dropdownItems.forEach(item => {
+    const dropdownMenu = item.querySelector('.dropdown-menu');
+    if (!dropdownMenu) return;
+
+    let hoverTimeout;
+
+    // Desktop: Show dropdown on hover and move to body
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 767) {
+        clearTimeout(hoverTimeout);
+        item.classList.add('dropdown-open');
+        dropdownMenu.classList.add('dropdown-open');
+        positionDropdown(item);
+      }
+    });
+
+    // Desktop: Hide dropdown on mouse leave
+    const hideDropdown = () => {
+      if (window.innerWidth > 767) {
+        item.classList.remove('dropdown-open');
+        dropdownMenu.classList.remove('dropdown-open');
+        hoverTimeout = setTimeout(() => {
+          restoreDropdownToParent(dropdownMenu);
+        }, 300); // Wait for CSS transition to complete
+      }
+    };
+
+    item.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 767) {
+        // Small delay to allow moving to dropdown itself
+        hoverTimeout = setTimeout(hideDropdown, 100);
+      }
+    });
+
+    // Also handle dropdown menu hover to keep it visible
+    dropdownMenu.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 767) {
+        clearTimeout(hoverTimeout);
+        item.classList.add('dropdown-open');
+        dropdownMenu.classList.add('dropdown-open');
+        moveDropdownToBody(dropdownMenu, item);
+        positionDropdown(item);
+      }
+    });
+
+    dropdownMenu.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 767) {
+        hideDropdown();
+      }
+    });
+
+    // Mobile: Position when active and move to body
+    const observer = new MutationObserver(() => {
+      if (window.innerWidth <= 767) {
+        if (item.classList.contains('active')) {
+          positionDropdown(item);
+        } else {
+          restoreDropdownToParent(dropdownMenu);
+        }
+      }
+    });
+    observer.observe(item, { attributes: true, attributeFilter: ['class'] });
+
+    // Also position on window resize
+    window.addEventListener('resize', () => {
+      if (item.classList.contains('active') || item.matches(':hover')) {
+        positionDropdown(item);
+      } else {
+        restoreDropdownToParent(dropdownMenu);
+      }
+    });
+  });
+
   // Close dropdowns when clicking outside on mobile
   document.addEventListener('click', (e) => {
     const isMobile = window.innerWidth <= 767;

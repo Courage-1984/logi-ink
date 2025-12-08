@@ -85,6 +85,43 @@
 
     <!-- Preconnect for third-party resources -->
     <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js"></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+
+    <!-- Google tag (gtag.js) - Deferred to load after page is interactive -->
+    <script>
+      // Defer Google Tag Manager to reduce initial JavaScript load
+      window.addEventListener('load', () => {
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-9PFB2D8G1B');
+
+        // Load gtag.js script asynchronously
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
+        document.head.appendChild(script);
+      });
+    </script>
 
     <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
     <link rel="stylesheet" href="css/main.css" />
