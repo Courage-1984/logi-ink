@@ -41,6 +41,7 @@
 @import './pages/projects/index.css';
 @import './pages/about.css';
 @import './pages/reports.css';
+@import './pages/showcase.css';
 
 /* 5. Animations & Effects */
 @import './utils/animations.css';

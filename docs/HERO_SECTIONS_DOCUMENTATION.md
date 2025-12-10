@@ -6,6 +6,34 @@ Complete documentation of animations and backgrounds for each hero section acros
 
 ---
 
+## Showcase Page (`showcase.html`)
+
+**Page Type:** Interactive showcase of 40 Three.js backgrounds
+
+### Backgrounds & Effects:
+1-40. **All 40 Three.js Backgrounds** - ✅ Fully implemented
+   - See `docs/TOP_20_THREEJS_BACKGROUNDS.md` (now includes all 40 backgrounds) for complete list
+   - Each background has unique animation logic and visual style
+   - All backgrounds support pause/resume via IntersectionObserver
+
+### Features:
+- **Viewport-sized sections:** Each section is 100vh (full viewport height)
+- **Hover tooltips:** Title and description appear on hover over background name
+- **Lazy initialization:** Only visible sections initialize Three.js (performance optimization)
+- **Intersection Observer:** Automatically pauses non-visible sections, resumes visible ones
+- **Mobile support:** Graceful degradation (Three.js disabled on mobile)
+- **Performance:** Only one section's animation runs at a time
+
+### Implementation:
+- **HTML:** `showcase.html` - 40 sections with canvas elements and overlay divs
+- **CSS:** `css/pages/showcase.css` - Viewport sections and hover tooltips
+- **JavaScript:** 
+  - `js/core/three-hero.js` - 40 showcase functions (all fully implemented)
+  - `js/pages/showcase.js` - Intersection Observer controller (handles 40 sections)
+- **Integration:** `js/main.js` - Lazy loads showcase.js on showcase page
+
+---
+
 ## Overview
 
 This document catalogs all visual effects, animations, and backgrounds used in hero sections across the site. Each hero section may include:
@@ -311,9 +339,10 @@ All Three.js animations:
 | **about.html** | ❌ | ✅ (3 blobs) | ❌ | ✅ |
 | **services.html** | ✅ Particle Swarm (Boids) | ❌ | ❌ | ✅ |
 | **projects.html** | ✅ Torus Grid | ❌ | ❌ | ✅ |
-| **pricing.html** | ❌ | ❌ | ❌ | ✅ |
+| **pricing.html** | ✅ Particle Rain | ❌ | ❌ | ✅ |
 | **seo-services.html** | ✅ Geometric | ❌ | ❌ | ✅ |
 | **contact.html** | ❌ | ❌ | ✅ (CSS) | ✅ |
+| **showcase.html** | ✅ 40 Backgrounds | ❌ | ❌ | ✅ |
 
 **Legend:**
 - ✅ = Present
@@ -326,8 +355,11 @@ All Three.js animations:
 
 1. **Three.js Canvas IDs:**
    - `threejs-hero-canvas` - Used on index.html
-   - `threejs-services-canvas` - Used on services.html and seo-services.html
+   - `threejs-services-canvas` - Used on services.html
+   - `threejs-seo-canvas` - Used on seo-services.html
    - `threejs-projects-canvas` - Used on projects.html
+   - `threejs-pricing-canvas` - Used on pricing.html
+   - `threejs-showcase-1` to `threejs-showcase-40` - Used on showcase.html (40 different backgrounds)
 
 3. **Mobile Optimization:** All Three.js animations are disabled on mobile devices. The canvas elements are hidden via CSS (`display: none`, `visibility: hidden`).
 

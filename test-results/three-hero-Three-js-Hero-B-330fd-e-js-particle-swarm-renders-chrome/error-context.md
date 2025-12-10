@@ -1,0 +1,316 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2]:
+    - /url: "#main-content"
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Logi-Ink Logo LOGI-INK" [ref=e7]:
+        - /url: /
+        - img "Logi-Ink Logo" [ref=e8]
+        - generic [ref=e9]: LOGI-INK
+      - menubar "Main navigation" [ref=e10]:
+        - menuitem "Home" [ref=e11]
+        - menuitem "About" [ref=e12]
+        - menuitem "Services" [ref=e13]
+        - menuitem "Projects" [ref=e14]
+        - menuitem "Contact Us" [ref=e15]
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - heading "OUR SERVICES" [level=1] [ref=e20]:
+        - generic [ref=e21]: OUR
+        - generic [ref=e22]: SERVICES
+      - paragraph [ref=e23]: Comprehensive digital solutions tailored to your needs. View our portfolio, check pricing packages, or contact us for a consultation.
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - heading "What We Offer" [level=2] [ref=e30]
+        - paragraph [ref=e31]: End-to-end digital solutions for modern businesses
+      - generic [ref=e32]:
+        - article [ref=e33]:
+          - generic [ref=e35]:
+            - generic [ref=e36]: Web Engineering
+            - heading "High-Impact Platforms" [level=3] [ref=e37]
+          - paragraph [ref=e38]: We build blazing-fast digital platforms that merge modular architectures with unforgettable brand moments.
+          - list [ref=e39]:
+            - listitem [ref=e40]: Jamstack, headless CMS, and composable commerce builds
+            - listitem [ref=e41]: Design systems and shared component libraries
+            - listitem [ref=e42]: Continuous performance, accessibility, and SEO tuning
+          - generic [ref=e43]:
+            - button "See Capabilities" [ref=e44]
+            - generic [ref=e45]: Opens detailed scope
+        - article [ref=e46]:
+          - generic [ref=e48]:
+            - generic [ref=e49]: Experience Design
+            - heading "Product-Led UX" [level=3] [ref=e50]
+          - paragraph [ref=e51]: Research-backed design sprints that align product teams, validate ideas quickly, and launch lovable experiences.
+          - list [ref=e52]:
+            - listitem [ref=e53]: User research, journey mapping, and prototype testing
+            - listitem [ref=e54]: Design systems with motion and micro-interaction guidelines
+            - listitem [ref=e55]: Accessibility reviews and inclusive experience audits
+          - generic [ref=e56]:
+            - button "See Capabilities" [ref=e57]
+            - generic [ref=e58]: Opens detailed scope
+        - article [ref=e59]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: Brand Systems
+            - heading "Magnetic Brands" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Clarify your voice, visuals, and positioning with identity systems that scale from pitch decks to product.
+          - list [ref=e65]:
+            - listitem [ref=e66]: Audience positioning, messaging frameworks, and tone
+            - listitem [ref=e67]: Logo suites, typography stacks, and visual language
+            - listitem [ref=e68]: Brand rollout kits for marketing and product teams
+          - generic [ref=e69]:
+            - button "See Capabilities" [ref=e70]
+            - generic [ref=e71]: Opens detailed scope
+        - article [ref=e72]:
+          - generic [ref=e74]:
+            - generic [ref=e75]: Growth Marketing
+            - heading "Demand Engines" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Full-funnel acquisition and retention programs tuned through experimentation, analytics, and creative iteration.
+          - list [ref=e78]:
+            - listitem [ref=e79]: SEO, content strategy, and conversion playbooks
+            - listitem [ref=e80]: Lifecycle campaigns with segmentation and automation
+            - listitem [ref=e81]: Attribution dashboards and growth experimentation labs
+          - generic [ref=e82]:
+            - button "See Capabilities" [ref=e83]
+            - generic [ref=e84]: Opens detailed scope
+        - article [ref=e85]:
+          - generic [ref=e87]:
+            - generic [ref=e88]: Product Engineering
+            - heading "Mobile Experiences" [level=3] [ref=e89]
+          - paragraph [ref=e90]: Native and cross-platform applications engineered for performance, reach, and a polished user journey.
+          - list [ref=e91]:
+            - listitem [ref=e92]: Swift, Kotlin, React Native, and Flutter delivery pods
+            - listitem [ref=e93]: Offline-first flows, analytics, and release automation
+            - listitem [ref=e94]: App Store Optimization and post-launch experimentation
+          - generic [ref=e95]:
+            - button "See Capabilities" [ref=e96]
+            - generic [ref=e97]: Opens detailed scope
+        - article [ref=e98]:
+          - generic [ref=e100]:
+            - generic [ref=e101]: Cloud & DevOps
+            - heading "Scalable Platforms" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Infrastructure modernisation that unlocks resilience, security, and velocity across your product ecosystem.
+          - list [ref=e104]:
+            - listitem [ref=e105]: Cloud migration roadmaps and cost optimisation
+            - listitem [ref=e106]: CI/CD, infrastructure as code, and observability
+            - listitem [ref=e107]: Security, compliance, and governance frameworks
+          - generic [ref=e108]:
+            - button "See Capabilities" [ref=e109]
+            - generic [ref=e110]: Opens detailed scope
+        - article [ref=e111]:
+          - generic [ref=e113]:
+            - generic [ref=e114]: Commerce
+            - heading "Revenue Platforms" [level=3] [ref=e115]
+          - paragraph [ref=e116]: Seamless shopping journeys with intelligent merchandising, data-driven automation, and loyalty-first experiences.
+          - list [ref=e117]:
+            - listitem [ref=e118]: Shopify Plus, WooCommerce, and headless storefronts
+            - listitem [ref=e119]: Personalisation engines and CRM integrations
+            - listitem [ref=e120]: Analytics-backed product, pricing, and promotion ops
+          - generic [ref=e121]:
+            - button "See Capabilities" [ref=e122]
+            - generic [ref=e123]: Opens detailed scope
+        - article [ref=e124]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: Advisory
+            - heading "Strategic Consulting" [level=3] [ref=e128]
+          - paragraph [ref=e129]: Cross-functional guidance that aligns leadership, product, and operations around measurable growth outcomes.
+          - list [ref=e130]:
+            - listitem [ref=e131]: Digital transformation roadmaps and OPEX planning
+            - listitem [ref=e132]: Discovery workshops and stakeholder alignment
+            - listitem [ref=e133]: Data, experimentation, and change management support
+          - generic [ref=e134]:
+            - button "See Capabilities" [ref=e135]
+            - generic [ref=e136]: Opens detailed scope
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - heading "Our Process" [level=2] [ref=e141]
+        - paragraph [ref=e142]: A streamlined approach to delivering exceptional results
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - generic [ref=e146]: "1"
+          - heading "Consultation" [level=3] [ref=e147]
+          - paragraph [ref=e148]: We start by understanding your vision, goals, and challenges through detailed consultation.
+        - generic [ref=e149]:
+          - generic [ref=e150]: "2"
+          - heading "Planning" [level=3] [ref=e151]
+          - paragraph [ref=e152]: Strategic planning and roadmap development to ensure project success.
+        - generic [ref=e153]:
+          - generic [ref=e154]: "3"
+          - heading "Execution" [level=3] [ref=e155]
+          - paragraph [ref=e156]: Agile development with regular updates and transparent communication.
+        - generic [ref=e157]:
+          - generic [ref=e158]: "4"
+          - heading "Launch & Support" [level=3] [ref=e159]
+          - paragraph [ref=e160]: Seamless deployment followed by ongoing support and optimization.
+        - generic [ref=e161]:
+          - generic [ref=e162]: "5"
+          - heading "Testing & QA" [level=3] [ref=e163]
+          - paragraph [ref=e164]: Comprehensive testing and quality assurance to ensure flawless performance and user experience.
+        - generic [ref=e165]:
+          - generic [ref=e166]: "6"
+          - heading "Iteration & Growth" [level=3] [ref=e167]
+          - paragraph [ref=e168]: Continuous improvement based on data insights and user feedback to drive ongoing growth and success.
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - heading "Tools & Technologies" [level=2] [ref=e172]
+        - paragraph [ref=e173]: Industry-leading tools we use to build exceptional solutions
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - img [ref=e178]
+          - heading "Design Tools" [level=3] [ref=e180]
+          - paragraph [ref=e181]: Figma, Adobe XD, Sketch, InVision, Principle, Framer
+        - generic [ref=e182]:
+          - img [ref=e185]
+          - heading "Development" [level=3] [ref=e188]
+          - paragraph [ref=e189]: VS Code, Git, GitHub, Docker, Webpack, Vite, npm
+        - generic [ref=e190]:
+          - img [ref=e193]
+          - heading "Analytics & SEO" [level=3] [ref=e195]
+          - paragraph [ref=e196]: Google Analytics, SEMrush, Ahrefs, Hotjar, Mixpanel
+        - generic [ref=e197]:
+          - img [ref=e200]
+          - heading "Project Management" [level=3] [ref=e203]
+          - paragraph [ref=e204]: Jira, Trello, Asana, Slack, Notion, Monday.com
+    - generic [ref=e206]:
+      - generic [ref=e207]:
+        - heading "Frequently Asked Questions" [level=2] [ref=e208]
+        - paragraph [ref=e209]: Everything you need to know about our services
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - heading "What industries do you serve?" [level=3] [ref=e213]
+          - paragraph [ref=e214]: We work with clients across various industries including technology, e-commerce, healthcare, finance, education, and more. Our solutions are tailored to meet industry-specific needs.
+        - generic [ref=e215]:
+          - heading "How long does a typical project take?" [level=3] [ref=e216]
+          - paragraph [ref=e217]: Project timelines vary based on scope and complexity. A simple website may take 4-6 weeks, while a comprehensive web application could take 3-6 months. We provide detailed timelines during the consultation phase.
+        - generic [ref=e218]:
+          - heading "Do you provide ongoing support?" [level=3] [ref=e219]
+          - paragraph [ref=e220]: Yes, we offer comprehensive maintenance and support packages to ensure your digital solution continues to perform optimally. This includes updates, security patches, and technical support.
+        - generic [ref=e221]:
+          - heading "What is your pricing model?" [level=3] [ref=e222]
+          - paragraph [ref=e223]: We offer flexible pricing based on project requirements. We provide detailed quotes after understanding your needs. Contact us for a customized estimate tailored to your project.
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - heading "Success Stories" [level=2] [ref=e227]
+        - paragraph [ref=e228]: Real results from real clients
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - generic [ref=e232]: 0%
+            - paragraph [ref=e233]: Increase in Online Sales
+          - heading "E-Commerce Transformation" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Complete redesign and optimization resulted in a 300% increase in online sales and improved user experience.
+        - generic [ref=e236]:
+          - generic [ref=e237]:
+            - generic [ref=e238]: 0%
+            - paragraph [ref=e239]: Reduction in Load Time
+          - heading "Performance Optimization" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Optimized a client's web platform, reducing load times by 50% and improving search engine rankings.
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - generic [ref=e244]: 0M+
+            - paragraph [ref=e245]: Monthly Active Users
+          - heading "Mobile App Launch" [level=3] [ref=e246]
+          - paragraph [ref=e247]: Launched a mobile application that now serves over 2 million active users with excellent ratings.
+    - generic [ref=e248]:
+      - generic:
+        - img
+      - generic [ref=e250]:
+        - heading "Ready to Transform Your Digital Presence?" [level=2] [ref=e251]
+        - paragraph [ref=e252]: Let's collaborate on your next big idea
+        - link "Get In Touch" [ref=e253]:
+          - /url: /contact
+      - generic:
+        - img
+  - contentinfo [ref=e254]:
+    - generic [ref=e255]:
+      - generic [ref=e256]:
+        - generic [ref=e257]:
+          - link "Logi-Ink Logo LOGI-INK" [ref=e258]:
+            - /url: /
+            - img "Logi-Ink Logo" [ref=e260]
+            - heading "LOGI-INK" [level=3] [ref=e261]
+          - paragraph [ref=e262]: Digital innovation and creative solutions for the future.
+        - generic [ref=e263]:
+          - heading "Quick Links" [level=4] [ref=e264]
+          - list [ref=e265]:
+            - listitem [ref=e266]:
+              - link "> About" [ref=e267]:
+                - /url: /about
+            - listitem [ref=e268]:
+              - link "> Services" [ref=e269]:
+                - /url: /services
+            - listitem [ref=e270]:
+              - link "> Projects" [ref=e271]:
+                - /url: /projects
+            - listitem [ref=e272]:
+              - link "> Contact" [ref=e273]:
+                - /url: /contact
+        - generic [ref=e274]:
+          - heading "Connect" [level=4] [ref=e275]
+          - list [ref=e276]:
+            - listitem [ref=e277]:
+              - link "Visit our Facebook" [ref=e278]:
+                - /url: https://www.facebook.com/profile.php?id=61584223810824
+                - img [ref=e279]
+            - listitem [ref=e281]:
+              - link "Visit our Twitter" [ref=e282]:
+                - /url: https://twitter.com/logiink
+                - img [ref=e283]
+            - listitem [ref=e285]:
+              - link "Visit our Instagram" [ref=e286]:
+                - /url: https://www.instagram.com/logi.ink/
+                - img [ref=e287]
+            - listitem [ref=e291]:
+              - link "Visit our LinkedIn" [ref=e292]:
+                - /url: https://www.linkedin.com/company/logi-ink
+                - img [ref=e293]
+        - generic [ref=e296]:
+          - heading "Services" [level=4] [ref=e297]
+          - list [ref=e298]:
+            - listitem [ref=e299]:
+              - link "> All Services" [ref=e300]:
+                - /url: /services
+            - listitem [ref=e301]:
+              - link "> SEO Services" [ref=e302]:
+                - /url: /seo-services
+            - listitem [ref=e303]:
+              - link "> Pricing" [ref=e304]:
+                - /url: /pricing
+            - listitem [ref=e305]:
+              - link "> Portfolio" [ref=e306]:
+                - /url: /projects
+        - generic [ref=e307]:
+          - heading "Contact Info" [level=4] [ref=e308]
+          - list [ref=e309]:
+            - listitem [ref=e310]:
+              - link "Our address" [ref=e311]:
+                - /url: https://maps.app.goo.gl/kCMd8eXtQ2mzvgB39
+                - img [ref=e312]
+                - generic [ref=e315]:
+                  - generic [ref=e316]: 533 Andries Strydom st
+                  - generic [ref=e317]: Constantia Park
+                  - generic [ref=e318]: Pretoria
+            - listitem [ref=e319]:
+              - link "Call us" [ref=e320]:
+                - /url: tel:+27795523726
+                - img [ref=e321]
+                - generic [ref=e323]: +27 79 552 3726
+            - listitem [ref=e324]:
+              - link "Email us" [ref=e325]:
+                - /url: mailto:info@logi-ink.co.za
+                - img [ref=e326]
+                - generic [ref=e329]: info@logi-ink.co.za
+      - generic [ref=e331]:
+        - generic "Easter Egg" [ref=e332]: Made among the stars
+        - generic [ref=e333]: •
+        - generic [ref=e334]: © 2024 Logi-Ink. All rights reserved.
+        - generic [ref=e335]: "|"
+        - link "Privacy Policy" [ref=e336]:
+          - /url: /privacy-policy
+        - generic [ref=e337]: "|"
+        - link "Terms of Service" [ref=e338]:
+          - /url: /terms-of-service
+  - text: ↑
+```

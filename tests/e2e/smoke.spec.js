@@ -103,11 +103,18 @@ test.describe('Logi-Ink Smoke Suite', () => {
     await page.waitForLoadState('networkidle');
 
     const hamburger = page.locator('#hamburger');
+    await expect(hamburger).toBeVisible();
     await hamburger.click({ force: true });
 
     const navMenu = page.locator('#navMenu');
     await expect(navMenu).toHaveClass(/active/);
     await expect(hamburger).toHaveAttribute('aria-expanded', 'true');
+
+    // Verify menu is actually visible (left: 0)
+    const menuLeft = await navMenu.evaluate((el) => {
+      return window.getComputedStyle(el).left;
+    });
+    expect(menuLeft).toBe('0px');
 
     await navMenu.locator('a[href="/projects"]').click();
     await page.waitForURL('**/projects', { timeout: 15_000 });
@@ -126,6 +133,51 @@ test.describe('Logi-Ink Smoke Suite', () => {
       // If no active link found, at least verify we're on the right page
       await expect(page).toHaveURL(/\/projects/);
     }
+  });
+
+  test('mobile menu services dropdown works correctly', async ({ page }) => {
+    await page.setViewportSize({ width: 480, height: 900 });
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    // Verify hamburger is visible
+    const hamburger = page.locator('#hamburger');
+    await expect(hamburger).toBeVisible();
+
+    // Open mobile menu
+    await hamburger.click({ force: true });
+
+    const navMenu = page.locator('#navMenu');
+    await expect(navMenu).toHaveClass(/active/);
+
+    // Verify menu is visible
+    const menuLeft = await navMenu.evaluate((el) => {
+      return window.getComputedStyle(el).left;
+    });
+    expect(menuLeft).toBe('0px');
+
+    // Find services dropdown link
+    const servicesLink = navMenu.locator('.nav-item-dropdown > .nav-link[href="/services"]');
+    await expect(servicesLink).toBeVisible();
+
+    // Click services link to toggle dropdown (mobile behavior)
+    await servicesLink.click();
+
+    // Wait for dropdown to be active
+    const dropdownItem = page.locator('.nav-item-dropdown.active');
+    await expect(dropdownItem).toBeVisible({ timeout: 2000 });
+
+    // Verify dropdown menu is visible
+    const dropdownMenu = dropdownItem.locator('.dropdown-menu');
+    await expect(dropdownMenu).toBeVisible();
+
+    // Verify dropdown links are visible
+    const seoServicesLink = dropdownMenu.locator('a[href="/seo-services"]');
+    await expect(seoServicesLink).toBeVisible();
+
+    // Click SEO Services link
+    await seoServicesLink.click();
+    await page.waitForURL('**/seo-services', { timeout: 15_000 });
   });
 
   test('back to top control resets scroll position', async ({ page }) => {
@@ -382,5 +434,62 @@ test.describe('Logi-Ink Smoke Suite', () => {
       };
     });
     expect(bodyStyles.fontFamily).toBeTruthy();
+  });
+
+  test('showcase page loads and displays all 40 background sections', async ({ page }) => {
+    await page.goto('/showcase');
+    await page.waitForLoadState('networkidle');
+
+    await expect(page.locator('main')).toBeVisible();
+    await expect(page).toHaveTitle(/Three.js Backgrounds Showcase/);
+
+    // Verify all 40 showcase sections exist
+    const showcaseSections = page.locator('.showcase-section');
+    await expect(showcaseSections).toHaveCount(40);
+
+    // Verify first section has title and description
+    const firstSection = showcaseSections.first();
+    await expect(firstSection.locator('.showcase-title')).toBeVisible();
+    await expect(firstSection.locator('.showcase-title')).toContainText('Rotating Particles');
+
+    // Verify navigation buttons exist
+    const navButtons = page.locator('.showcase-nav');
+    await expect(navButtons).toBeVisible();
+    await expect(navButtons.locator('.showcase-nav-up')).toBeVisible();
+    await expect(navButtons.locator('.showcase-nav-down')).toBeVisible();
+  });
+
+  test('showcase page navigation buttons scroll between sections', async ({ page }) => {
+    await page.goto('/showcase');
+    await page.waitForLoadState('networkidle');
+
+    const downButton = page.locator('.showcase-nav-down');
+    const upButton = page.locator('.showcase-nav-up');
+
+    // Wait for initial state to be set
+    await page.waitForTimeout(500);
+
+    // Initially, up button should be hidden or disabled (on first section)
+    const upButtonClasses = await upButton.getAttribute('class');
+    const isUpHidden = upButtonClasses?.includes('hidden') || (await upButton.getAttribute('disabled')) !== null;
+    expect(isUpHidden).toBeTruthy();
+
+    // Click down button to scroll to next section
+    await downButton.click({ force: true });
+    await page.waitForTimeout(1500); // Wait for smooth scroll
+
+    // After scrolling, up button should be visible and enabled
+    const upButtonClassesAfter = await upButton.getAttribute('class');
+    const isUpVisible = !upButtonClassesAfter?.includes('hidden') && (await upButton.getAttribute('disabled')) === null;
+    expect(isUpVisible).toBeTruthy();
+
+    // Click up button to scroll back
+    await upButton.click({ force: true });
+    await page.waitForTimeout(1500);
+
+    // Verify we're back at the top (up button hidden again)
+    const upButtonClassesFinal = await upButton.getAttribute('class');
+    const isUpHiddenAgain = upButtonClassesFinal?.includes('hidden') || (await upButton.getAttribute('disabled')) !== null;
+    expect(isUpHiddenAgain).toBeTruthy();
   });
 });

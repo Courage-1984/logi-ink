@@ -1,0 +1,57 @@
+--- a/css/components/navigation.css
++++ b/css/components/navigation.css
+@@ -81,25 +81,15 @@
+   text-shadow:
+     0 0 20px var(--glow-cyan),
+     0 0 30px var(--glow-cyan);
+ }
+
+-.nav-menu {
+-  display: flex;
+-  list-style: none;
+-  gap: var(--space-8);
+-  /* Ensure dropdown menus are not clipped */
+-  overflow: visible;
+-  /* Reset mobile positioning on desktop - only apply on desktop */
+-  position: relative;
+-  left: auto;
+-  top: auto;
+-  width: auto;
+-  height: auto;
+-  background: transparent;
+-  flex-direction: row;
+-  /* Ensure menu is visible by default */
+-  visibility: visible;
+-  opacity: 1;
+-}
+-
+-/* Ensure desktop styles don't interfere on mobile */
++/* Desktop nav-menu styles - only apply on desktop to avoid mobile conflicts */
+ @media (min-width: 768px) {
+   .nav-menu {
+-    position: relative !important;
+-    left: auto !important;
+-    top: auto !important;
+-    width: auto !important;
+-    height: auto !important;
+-    display: flex !important;
+-    flex-direction: row !important;
++    display: flex;
++    list-style: none;
++    gap: var(--space-8);
++    /* Ensure dropdown menus are not clipped */
++    overflow: visible;
++    /* Desktop positioning */
++    position: relative;
++    left: auto;
++    top: auto;
++    width: auto !important;
++    height: auto;
++    background: transparent;
++    flex-direction: row;
++    /* Ensure menu is visible by default */
++    visibility: visible;
++    opacity: 1;
+   }
+ }
+

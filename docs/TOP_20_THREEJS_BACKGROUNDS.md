@@ -1,4 +1,4 @@
-# Top 20 Three.js Hero Background Options
+# Top 40 Three.js Hero Background Options
 
 Short reference guide for Three.js backgrounds suitable for hero sections.
 
@@ -102,7 +102,107 @@ Short reference guide for Three.js backgrounds suitable for hero sections.
 ---
 
 ## 20. Particle Orbits
-**Description:** Particles orbiting around central points in elliptical paths. Can create solar system-like effects. Scientific or space themes.
+**Description:** Particles orbiting around central points in elliptical paths using proper orbital mechanics (Kepler's laws). Particles move faster when closer to center (periapsis) and slower when farther (apoapsis). Includes 3D inclination for visual depth. Creates realistic solar system-like effects. Scientific or space themes.
+
+---
+
+## 21. DNA Helix
+**Description:** Double helix structure with particles spiraling along two intertwined paths. Scientific and elegant. Perfect for biotech/medical themes.
+
+---
+
+## 22. Particle Chains
+**Description:** Particles connected in chains that flow and undulate. Creates organic, snake-like movement patterns. Dynamic and fluid.
+
+---
+
+## 23. Magnetic Field Lines
+**Description:** Curved field lines representing magnetic dipole fields. Uses Runge-Kutta numerical integration to trace field lines following proper magnetic field equations. Field lines form closed loops from north to south pole, creating elegant, scientifically accurate visualizations. Physics/tech themes.
+
+---
+
+## 24. Plasma Waves
+**Description:** Animated wave patterns with glowing particles. Creates plasma-like flowing effects. Energetic and dynamic. Great for tech/energy themes.
+
+---
+
+## 25. Fractal Trees
+**Description:** Recursive tree structures that branch and grow. Creates organic, natural patterns. Perfect for nature/growth themes.
+
+---
+
+## 26. Particle Clouds
+**Description:** Soft, billowing cloud formations made of particles. Atmospheric and dreamy. Creates gentle, flowing visual effects.
+
+---
+
+## 27. Animated Ribbons
+**Description:** Flowing ribbon shapes that twist and turn in 3D space. Elegant and smooth. Perfect for creative/artistic portfolios.
+
+---
+
+## 28. Crystal Formations
+**Description:** Geometric crystal structures that grow and morph. Creates sparkling, refractive effects. Premium and sophisticated.
+
+---
+
+## 29. Particle Streams
+**Description:** Flowing streams of particles that converge and diverge. Creates river-like or energy flow effects. Dynamic and mesmerizing.
+
+---
+
+## 30. Hexagonal Grid
+**Description:** Animated hexagonal grid pattern with particles at vertices. Modern, tech aesthetic. Great for gaming/tech themes.
+
+---
+
+## 31. Particle Waves
+**Description:** Wave-based particle motion creating ocean-like or sound wave effects. Smooth and rhythmic. Perfect for audio/water themes.
+
+---
+
+## 32. Spiral Galaxy
+**Description:** Galaxy spiral arms with particles following spiral paths. Creates cosmic, astronomical effects. Space/science themes.
+
+---
+
+## 33. Particle Mesh
+**Description:** Interconnected mesh of particles forming dynamic networks. Creates web-like or neural network visualizations. Tech/data themes.
+
+---
+
+## 34. Animated Tubes
+**Description:** Flowing tube structures that morph and connect. Creates tunnel or pipeline effects. Modern and futuristic.
+
+---
+
+## 35. Particle Fields
+**Description:** Field-based particle motion with forces affecting particle movement. Creates physics-based, scientific visualizations.
+
+---
+
+## 36. Geometric Mandala
+**Description:** Rotating mandala pattern with symmetrical geometric shapes. Creates meditative, artistic effects. Spiritual/artistic themes.
+
+---
+
+## 37. Particle Rings
+**Description:** Concentric particle rings that pulse and expand. Creates ripple or energy wave effects. Dynamic and hypnotic.
+
+---
+
+## 38. Animated Spheres
+**Description:** Morphing spheres that grow, shrink, and merge. Creates organic, bubble-like effects. Playful and modern.
+
+---
+
+## 39. Particle Swirls
+**Description:** Swirling particle patterns with multiple vortices. Creates abstract, artistic effects. Creative and mesmerizing.
+
+---
+
+## 40. Procedural Terrain
+**Description:** 3D terrain generation with height maps and procedural noise. Creates landscape or topographic effects. Nature/exploration themes.
 
 ---
 

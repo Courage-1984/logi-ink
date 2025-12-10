@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -805,35 +805,7 @@
         }
       }
       @media (max-width: 768px) {
-        .nav-menu {
-          position: fixed;
-          top: 60px;
-          left: -100%;
-          width: 100%;
-          height: calc(100vh - 60px);
-          background: rgba(10, 10, 10, 0.98);
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          padding-top: var(--space-8);
-          gap: var(--space-8);
-          transition: left 0.3s ease;
-        }
-        .nav-menu.active {
-          left: 0;
-        }
-        .hamburger {
-          display: flex;
-        }
-        .hamburger.active span:nth-child(1) {
-          transform: rotate(45deg) translate(8px, 8px);
-        }
-        .hamburger.active span:nth-child(2) {
-          opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -7px);
-        }
+        /* Mobile menu styles removed - handled by responsive.css */
         .hero-title {
           font-size: clamp(2rem, 6vw, 4rem);
         }
@@ -910,8 +882,8 @@
               business
             </p>
             <div class="hero-buttons fade-in delay-5">
-              <span class="btn btn-primary">View Our Work</span>
-              <span class="btn btn-secondary">Get Started</span>
+              <a href="/projects" class="btn btn-primary">View Our Work</a>
+              <a href="/contact" class="btn btn-secondary">Get Started</a>
             </div>
           </div>
         </div>

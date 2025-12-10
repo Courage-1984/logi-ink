@@ -369,12 +369,12 @@ export function activateEasterEgg() {
       }, 100);
     }
 
-    // Force cursor to be visible
-    document.body.style.cursor = 'default';
-    document.documentElement.style.cursor = 'default';
-    milkyWayContainer.style.cursor = 'crosshair';
+    // Hide system cursor and show only custom cursor dot
+    document.body.style.cursor = 'none';
+    document.documentElement.style.cursor = 'none';
+    milkyWayContainer.style.cursor = 'none';
 
-    // Override any cursor: none styles
+    // Override to hide system cursor and ensure custom cursor dot is visible
     const style = document.createElement('style');
     style.id = 'milky-way-cursor-override';
     style.textContent = `
@@ -384,10 +384,15 @@ export function activateEasterEgg() {
                 body.easter-egg-active.milky-way-ready html *,
                 body.easter-egg-active.milky-way-ready body *,
                 body.easter-egg-active.milky-way-ready * {
-                    cursor: default !important;
+                    cursor: none !important;
                 }
                 .milky-way-scene.active canvas {
-                    cursor: crosshair !important;
+                    cursor: none !important;
+                }
+                /* Ensure custom cursor dot is visible in galaxy mode */
+                body.easter-egg-active.milky-way-ready .cursor-dot {
+                    opacity: 1 !important;
+                    z-index: 999999 !important;
                 }
             }
         `;
@@ -399,6 +404,29 @@ export function activateEasterEgg() {
 }
 
 /**
+ * Get the base path for asset URLs
+ * Uses Vite's import.meta.env.BASE_URL when available, otherwise defaults to root
+ */
+function getBasePath() {
+  // Vite provides BASE_URL that respects the base config
+  // In production builds, this is replaced at build time
+  let baseUrl = '/';
+
+  if (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) {
+    baseUrl = import.meta.env.BASE_URL;
+  }
+
+  // Ensure it ends with / for proper path joining (unless it's empty)
+  if (baseUrl && !baseUrl.endsWith('/')) {
+    baseUrl = `${baseUrl}/`;
+  }
+
+  // If baseUrl is empty or just '/', return '/'
+  // This works for both dev (/) and preview (/)
+  return baseUrl || '/';
+}
+
+/**
  * Initialize ambient audio for the galaxy scene
  */
 function initAmbientAudio() {
@@ -407,9 +435,11 @@ function initAmbientAudio() {
     return;
   }
 
-  // Get base path from current location (handles /logi-ink/ base path)
-  const basePath = window.location.pathname.replace(/\/[^/]*\.html?$/, '').replace(/\/$/, '') || '';
-  const audioPath = `${basePath}/assets/audio/space-ambience-optimized.ogg`;
+  // Get base path to handle deployments with base paths (e.g., GitHub Pages)
+  const basePath = getBasePath();
+  // Use absolute path from base to ensure audio works from any page
+  // This handles clean URLs, subdirectories, different page locations, and base paths
+  const audioPath = `${basePath}assets/audio/space-ambience-optimized.ogg`;
 
   try {
     ambientAudio = new Audio(audioPath);
@@ -1158,14 +1188,14 @@ function createNebulaAndClouds() {
   const nebulas = createNebulaField(THREE, milkyWayScene, 3);
   milkyWayScene.userData.nebulas = nebulas;
 
-  // Create 1-2 star-forming regions
+  // Create 1-2 star-forming regions (moved far from central galaxy)
   milkyWayScene.userData.starFormingRegions = [];
   for (let i = 0; i < 2; i++) {
     const angle = (i / 2) * Math.PI * 2;
-    const distance = 50 + Math.random() * 30;
+    const distance = 200 + Math.random() * 100; // Moved from 50-80 to 200-300 units away
     const position = new THREE.Vector3(
       Math.cos(angle) * distance,
-      (Math.random() - 0.5) * 20,
+      (Math.random() - 0.5) * 40,
       Math.sin(angle) * distance
     );
 
@@ -1213,12 +1243,12 @@ function setupInteractiveControls() {
     return;
   }
 
-  // Mouse wheel for zoom (increased max zoom) - also exit planet focus when zooming out enough
+  // Mouse wheel for zoom (increased sensitivity and max zoom) - also exit planet focus when zooming out enough
   container.addEventListener(
     'wheel',
     e => {
       e.preventDefault();
-      const delta = e.deltaY * 0.01;
+      const delta = e.deltaY * 0.025; // Increased from 0.01 to 0.025 for 2.5x scroll sensitivity
       const oldDistance = cameraDistance;
       cameraDistance = Math.max(1, Math.min(1000, cameraDistance + delta));
 
@@ -1239,14 +1269,20 @@ function setupInteractiveControls() {
     isMouseDown = true;
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
-    container.style.cursor = 'grabbing';
+    // Visual feedback through custom cursor dot (system cursor is hidden)
+    const cursorDot = document.querySelector('.cursor-dot');
+    if (cursorDot) {
+      cursorDot.style.transform = 'scale(2)';
+    }
   });
 
   // Mouse up
   document.addEventListener('mouseup', () => {
     isMouseDown = false;
-    if (container) {
-      container.style.cursor = 'grab';
+    // Reset custom cursor dot scale
+    const cursorDot = document.querySelector('.cursor-dot');
+    if (cursorDot) {
+      cursorDot.style.transform = 'scale(1)';
     }
   });
 
@@ -1269,8 +1305,7 @@ function setupInteractiveControls() {
     lastMouseY = e.clientY;
   });
 
-  // Set initial cursor
-  container.style.cursor = 'grab';
+  // Custom cursor dot will provide visual feedback (system cursor is hidden)
 
   // Initialize raycaster for planet clicking
   raycaster = new THREE.Raycaster();

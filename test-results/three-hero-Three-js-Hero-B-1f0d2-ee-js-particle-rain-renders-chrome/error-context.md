@@ -1,0 +1,243 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2]:
+    - /url: "#main-content"
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Logi-Ink Logo LOGI-INK" [ref=e7]:
+        - /url: /
+        - img "Logi-Ink Logo" [ref=e8]
+        - generic [ref=e9]: LOGI-INK
+      - menubar "Main navigation" [ref=e10]:
+        - menuitem "Home" [ref=e11]
+        - menuitem "About" [ref=e12]
+        - menuitem "Services" [ref=e13]
+        - menuitem "Projects" [ref=e14]
+        - menuitem "Contact Us" [ref=e15]
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - heading "Affordable Website Design Packages" [level=1] [ref=e20]:
+        - generic [ref=e21]: Affordable Website
+        - generic [ref=e22]: Design Packages
+      - paragraph [ref=e23]: Transparent pricing starting from R7,500. Choose the perfect package for your business needs. Explore our full service offerings or contact us for custom quotes.
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - heading "Our Pricing Packages" [level=2] [ref=e30]
+        - paragraph [ref=e31]: Select the package that fits your business needs
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - heading "Starter" [level=3] [ref=e35]
+            - generic [ref=e36]: R7,500
+            - paragraph [ref=e37]:
+              - text: Perfect for small businesses. See our
+              - link "full service list" [ref=e38]:
+                - /url: /services
+              - text: .
+          - list [ref=e39]:
+            - listitem [ref=e40]: ✓ Up to 5 pages
+            - listitem [ref=e41]: ✓ Responsive design
+            - listitem [ref=e42]: ✓ Basic SEO setup
+            - listitem [ref=e43]: ✓ Contact form
+            - listitem [ref=e44]: ✓ 1 month free hosting
+            - listitem [ref=e45]: ✓ 30 days support
+          - link "Get Started" [ref=e47]:
+            - /url: /contact
+        - generic [ref=e48]:
+          - generic [ref=e49]: POPULAR
+          - generic [ref=e50]:
+            - heading "Business" [level=3] [ref=e51]
+            - generic [ref=e52]: R7,500
+            - paragraph [ref=e53]: Ideal for growing businesses
+          - list [ref=e54]:
+            - listitem [ref=e55]: ✓ Up to 10 pages
+            - listitem [ref=e56]: ✓ Responsive design
+            - listitem [ref=e57]: ✓ Advanced SEO
+            - listitem [ref=e58]: ✓ Contact & booking forms
+            - listitem [ref=e59]: ✓ Social media integration
+            - listitem [ref=e60]: ✓ 3 months free hosting
+            - listitem [ref=e61]: ✓ Google Analytics setup
+            - listitem [ref=e62]: ✓ 90 days support
+          - link "Get Started" [ref=e64]:
+            - /url: /contact
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - heading "Enterprise" [level=3] [ref=e67]
+            - generic [ref=e68]: R19,500
+            - paragraph [ref=e69]: Comprehensive solution
+          - list [ref=e70]:
+            - listitem [ref=e71]: ✓ Unlimited pages
+            - listitem [ref=e72]: ✓ Custom design
+            - listitem [ref=e73]: ✓ Full SEO optimization
+            - listitem [ref=e74]: ✓ E-commerce integration
+            - listitem [ref=e75]: ✓ Payment gateway setup
+            - listitem [ref=e76]: ✓ CMS integration
+            - listitem [ref=e77]: ✓ 6 months free hosting
+            - listitem [ref=e78]: ✓ Performance optimization
+            - listitem [ref=e79]: ✓ 6 months support
+          - link "Get Started" [ref=e81]:
+            - /url: /contact
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - heading "Enhance Your Package" [level=2] [ref=e85]
+        - paragraph [ref=e86]: Optional add-ons to tailor the perfect digital experience
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - text: Content & SEO
+            - heading "Conversion Copy & Strategy" [level=3] [ref=e90]
+            - paragraph [ref=e91]: Done-for-you messaging frameworks, keyword research, landing page copy, and on-page optimisation to drive qualified leads.
+          - list [ref=e92]:
+            - listitem [ref=e93]: • Persona-led messaging playbook
+            - listitem [ref=e94]: • Keyword research & content calendar
+            - listitem [ref=e95]: • 3 landing pages + 5 blog posts/month
+          - generic [ref=e96]:
+            - generic [ref=e97]: From R2,200
+            - link "Add to Package" [ref=e98]:
+              - /url: /contact
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - text: Support & Care
+            - heading "Growth Care Plan" [level=3] [ref=e101]
+            - paragraph [ref=e102]: Keep your site fast, secure, and evolving with proactive maintenance, analytics reviews, and conversion experiments every month.
+          - list [ref=e103]:
+            - listitem [ref=e104]: • Priority support & uptime monitoring
+            - listitem [ref=e105]: • Monthly analytics & CRO experiments
+            - listitem [ref=e106]: • Security patches & performance tuning
+          - generic [ref=e107]:
+            - generic [ref=e108]: From R1,800
+            - link "Add to Package" [ref=e109]:
+              - /url: /contact
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - text: Automation & Integrations
+            - heading "Workflow Automation Suite" [level=3] [ref=e112]
+            - paragraph [ref=e113]: Connect your CRM, email, analytics, and internal tools with custom automations that eliminate manual tasks.
+          - list [ref=e114]:
+            - listitem [ref=e115]: • CRM, ERP, and marketing integrations
+            - listitem [ref=e116]: • Automated lead routing & notifications
+            - listitem [ref=e117]: • Dashboard reporting & data syncing
+          - generic [ref=e118]:
+            - generic [ref=e119]: From R2,900
+            - link "Add to Package" [ref=e120]:
+              - /url: /contact
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - heading "Pricing FAQ" [level=2] [ref=e124]
+        - paragraph [ref=e125]: Common questions about our pricing
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - heading "What's included in the pricing?" [level=3] [ref=e129]
+          - paragraph [ref=e130]: All packages include responsive design, basic SEO setup, hosting setup assistance, and support. Higher tiers include additional features like advanced SEO, e-commerce capabilities, and extended support periods.
+        - generic [ref=e131]:
+          - heading "Can I customize a package?" [level=3] [ref=e132]
+          - paragraph [ref=e133]: Yes! We offer custom packages tailored to your specific needs. Contact us to discuss your requirements and we'll create a personalized quote.
+        - generic [ref=e134]:
+          - heading "What payment methods do you accept?" [level=3] [ref=e135]
+          - paragraph [ref=e136]: We accept various payment methods including bank transfers, credit cards, and digital payment platforms. Payment terms are flexible and can be discussed during consultation.
+        - generic [ref=e137]:
+          - heading "How long does it take to complete a project?" [level=3] [ref=e138]
+          - paragraph [ref=e139]: "Project timelines vary by package: Starter (2-3 weeks), Business (4-6 weeks), Enterprise (6-8 weeks). Custom projects may have different timelines based on complexity."
+    - generic [ref=e140]:
+      - generic:
+        - img
+      - generic [ref=e142]:
+        - heading "Ready to Transform Your Digital Presence?" [level=2] [ref=e143]
+        - paragraph [ref=e144]: Let's collaborate on your next big idea
+        - link "Get In Touch" [ref=e145]:
+          - /url: /contact
+      - generic:
+        - img
+  - contentinfo [ref=e146]:
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - link "Logi-Ink Logo LOGI-INK" [ref=e150]:
+            - /url: /
+            - img "Logi-Ink Logo" [ref=e152]
+            - heading "LOGI-INK" [level=3] [ref=e153]
+          - paragraph [ref=e154]: Digital innovation and creative solutions for the future.
+        - generic [ref=e155]:
+          - heading "Quick Links" [level=4] [ref=e156]
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - link "> About" [ref=e159]:
+                - /url: /about
+            - listitem [ref=e160]:
+              - link "> Services" [ref=e161]:
+                - /url: /services
+            - listitem [ref=e162]:
+              - link "> Projects" [ref=e163]:
+                - /url: /projects
+            - listitem [ref=e164]:
+              - link "> Contact" [ref=e165]:
+                - /url: /contact
+        - generic [ref=e166]:
+          - heading "Connect" [level=4] [ref=e167]
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "Visit our Facebook" [ref=e170]:
+                - /url: https://www.facebook.com/profile.php?id=61584223810824
+                - img [ref=e171]
+            - listitem [ref=e173]:
+              - link "Visit our Twitter" [ref=e174]:
+                - /url: https://twitter.com/logiink
+                - img [ref=e175]
+            - listitem [ref=e177]:
+              - link "Visit our Instagram" [ref=e178]:
+                - /url: https://www.instagram.com/logi.ink/
+                - img [ref=e179]
+            - listitem [ref=e183]:
+              - link "Visit our LinkedIn" [ref=e184]:
+                - /url: https://www.linkedin.com/company/logi-ink
+                - img [ref=e185]
+        - generic [ref=e188]:
+          - heading "Services" [level=4] [ref=e189]
+          - list [ref=e190]:
+            - listitem [ref=e191]:
+              - link "> All Services" [ref=e192]:
+                - /url: /services
+            - listitem [ref=e193]:
+              - link "> SEO Services" [ref=e194]:
+                - /url: /seo-services
+            - listitem [ref=e195]:
+              - link "> Pricing" [ref=e196]:
+                - /url: /pricing
+            - listitem [ref=e197]:
+              - link "> Portfolio" [ref=e198]:
+                - /url: /projects
+        - generic [ref=e199]:
+          - heading "Contact Info" [level=4] [ref=e200]
+          - list [ref=e201]:
+            - listitem [ref=e202]:
+              - link "Our address" [ref=e203]:
+                - /url: https://maps.app.goo.gl/kCMd8eXtQ2mzvgB39
+                - img [ref=e204]
+                - generic [ref=e207]:
+                  - generic [ref=e208]: 533 Andries Strydom st
+                  - generic [ref=e209]: Constantia Park
+                  - generic [ref=e210]: Pretoria
+            - listitem [ref=e211]:
+              - link "Call us" [ref=e212]:
+                - /url: tel:+27795523726
+                - img [ref=e213]
+                - generic [ref=e215]: +27 79 552 3726
+            - listitem [ref=e216]:
+              - link "Email us" [ref=e217]:
+                - /url: mailto:info@logi-ink.co.za
+                - img [ref=e218]
+                - generic [ref=e221]: info@logi-ink.co.za
+      - generic [ref=e223]:
+        - generic "Easter Egg" [ref=e224]: Made among the stars
+        - generic [ref=e225]: •
+        - generic [ref=e226]: © 2024 Logi-Ink. All rights reserved.
+        - generic [ref=e227]: "|"
+        - link "Privacy Policy" [ref=e228]:
+          - /url: /privacy-policy
+        - generic [ref=e229]: "|"
+        - link "Terms of Service" [ref=e230]:
+          - /url: /terms-of-service
+  - text: ↑
+```

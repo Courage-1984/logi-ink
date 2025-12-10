@@ -12,6 +12,11 @@ Disallow: /.old/
 Disallow: /.vscode/
 Disallow: /.cursor/
 
+# Disallow internal/secret pages
+Disallow: /reports
+Disallow: /stats.html
+Disallow: /showcase
+
 # Allow important assets
 Allow: /assets/
 Allow: /css/

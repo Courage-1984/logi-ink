@@ -1,0 +1,285 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2]:
+    - /url: "#main-content"
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Logi-Ink Logo LOGI-INK" [ref=e7]:
+        - /url: /
+        - img "Logi-Ink Logo" [ref=e8]
+        - generic [ref=e9]: LOGI-INK
+      - menubar "Main navigation" [ref=e10]:
+        - menuitem "Home" [ref=e11]
+        - menuitem "About" [ref=e12]
+        - menuitem "Services" [ref=e13]
+        - menuitem "Projects" [ref=e14]
+        - menuitem "Contact Us" [ref=e15]
+      - button "Toggle navigation menu" [ref=e16] [cursor=pointer]
+  - main [ref=e20]:
+    - generic [ref=e24]:
+      - heading "DIGITAL INNOVATION & CREATIVE SOLUTIONS" [level=1] [ref=e25]:
+        - generic [ref=e26]: DIGITAL
+        - generic [ref=e27]: INNOVATION
+        - generic [ref=e28]: "& CREATIVE"
+        - generic [ref=e29]: SOLUTIONS
+      - paragraph [ref=e30]: We craft immersive digital experiences that engage, inspire, and transform your business
+      - generic [ref=e31]:
+        - generic [ref=e32]: View Our Work
+        - generic [ref=e33]: Get Started
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - heading "Our Specialized Services" [level=2] [ref=e40]
+        - paragraph [ref=e41]: Cutting-edge solutions for the digital age
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - img [ref=e46]
+          - heading "Web Development" [level=3] [ref=e48]
+          - paragraph [ref=e49]:
+            - text: Custom websites and web applications built with modern technologies. Explore our
+            - link "portfolio" [ref=e50]:
+              - /url: /projects
+            - text: or view our
+            - link "pricing packages" [ref=e51]:
+              - /url: /pricing
+            - text: .
+          - link "Learn More →" [ref=e52]:
+            - /url: /services
+        - generic [ref=e53]:
+          - img [ref=e56]
+          - heading "UI/UX Design" [level=3] [ref=e59]
+          - paragraph [ref=e60]:
+            - text: Intuitive interfaces that delight users and drive engagement. See our
+            - link "design work" [ref=e61]:
+              - /url: /projects
+            - text: or
+            - link "contact us" [ref=e62]:
+              - /url: /contact
+            - text: for a consultation.
+          - link "Learn More →" [ref=e63]:
+            - /url: /services
+        - generic [ref=e64]:
+          - img [ref=e67]
+          - heading "Brand Strategy" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Strategic branding that positions you ahead of the competition
+          - link "Learn More →" [ref=e71]:
+            - /url: /services
+        - generic [ref=e72]:
+          - img [ref=e75]
+          - heading "Digital Marketing" [level=3] [ref=e77]
+          - paragraph [ref=e78]:
+            - text: Data-driven campaigns that maximize your online presence. Check out our
+            - link "SEO services" [ref=e79]:
+              - /url: /seo-services
+            - text: or view our
+            - link "marketing packages" [ref=e80]:
+              - /url: /pricing
+            - text: .
+          - link "Learn More →" [ref=e81]:
+            - /url: /services
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - heading "Featured Projects" [level=2] [ref=e85]
+        - paragraph [ref=e86]: Showcasing our latest innovations
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - img "Professional web design and development services in Pretoria, South Africa - Logi-Ink digital agency" [ref=e91]
+          - generic [ref=e92]: Latest
+        - generic [ref=e93]:
+          - generic [ref=e94]: Web Development
+          - heading "Transforming Digital Experiences" [level=3] [ref=e95]
+          - paragraph [ref=e96]: Revolutionary platform that merges cutting-edge technology with intuitive design
+          - link "View Case Study →" [ref=e97]:
+            - /url: /projects
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - heading "Technologies We Master" [level=2] [ref=e103]
+        - paragraph [ref=e104]: Cutting-edge tools and frameworks for modern development
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - img [ref=e109]
+          - heading "Frontend" [level=3] [ref=e111]
+          - paragraph [ref=e112]: React, Vue.js, Angular, Next.js, TypeScript, Tailwind CSS
+        - generic [ref=e113]:
+          - img [ref=e116]
+          - heading "Backend" [level=3] [ref=e119]
+          - paragraph [ref=e120]: Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL
+        - generic [ref=e121]:
+          - img [ref=e124]
+          - heading "Mobile" [level=3] [ref=e126]
+          - paragraph [ref=e127]: React Native, Flutter, Swift, Kotlin, iOS, Android
+        - generic [ref=e128]:
+          - img [ref=e131]
+          - heading "Cloud & DevOps" [level=3] [ref=e134]
+          - paragraph [ref=e135]: AWS, Azure, Docker, Kubernetes, CI/CD, Terraform
+    - generic [ref=e137]:
+      - generic [ref=e138]:
+        - heading "Why Teams Choose Logi-Ink" [level=2] [ref=e139]
+        - paragraph [ref=e140]: Built on strategy, performance, partnership, and transparent collaboration
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - img [ref=e145]
+          - heading "Strategy-Led Execution" [level=3] [ref=e149]
+          - paragraph [ref=e150]: Every engagement starts with discovery, measurable goals, and a roadmap that keeps teams aligned.
+        - generic [ref=e151]:
+          - img [ref=e154]
+          - heading "Performance Obsessed" [level=3] [ref=e156]
+          - paragraph [ref=e157]: We optimize for speed, accessibility, and conversions to deliver experiences that grow with your brand.
+        - generic [ref=e158]:
+          - img [ref=e161]
+          - heading "Embedded Partnership" [level=3] [ref=e167]
+          - paragraph [ref=e168]: High-touch collaboration, proactive communication, and shared ownership across every sprint.
+        - generic [ref=e169]:
+          - img [ref=e172]
+          - heading "Transparent Delivery" [level=3] [ref=e175]
+          - paragraph [ref=e176]: Real-time dashboards, sprint reviews, and open tooling ensure stakeholders stay informed and in control.
+    - generic [ref=e178]:
+      - generic [ref=e179]:
+        - heading "Client Testimonials" [level=2] [ref=e180]
+        - paragraph [ref=e181]: What our clients say about working with us
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - img [ref=e185]
+          - paragraph [ref=e187]: "\"Logi-Ink transformed our digital presence completely. Their expertise and attention to detail exceeded all expectations.\""
+          - generic [ref=e188]:
+            - heading "Sarah Johnson" [level=3] [ref=e189]
+            - paragraph [ref=e190]: CEO, TechStart Inc.
+        - generic [ref=e191]:
+          - img [ref=e193]
+          - paragraph [ref=e195]: "\"Outstanding work from start to finish. The team's creative approach and technical expertise delivered remarkable results.\""
+          - generic [ref=e196]:
+            - heading "Michael Chen" [level=3] [ref=e197]
+            - paragraph [ref=e198]: Founder, Digital Ventures
+        - generic [ref=e199]:
+          - img [ref=e201]
+          - paragraph [ref=e203]: "\"Professional, innovative, and results-driven. Logi-Ink helped us achieve our goals and more.\""
+          - generic [ref=e204]:
+            - heading "Emma Rodriguez" [level=3] [ref=e205]
+            - paragraph [ref=e206]: Marketing Director, Global Brands
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - heading "Our Impact" [level=2] [ref=e210]
+        - paragraph [ref=e211]: Numbers that speak for themselves
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - generic [ref=e214]: 0+
+          - heading "Projects Delivered" [level=3] [ref=e215]
+          - paragraph [ref=e216]:
+            - text: Successfully completed projects across various industries.
+            - link "View our portfolio" [ref=e217]:
+              - /url: /projects
+            - text: .
+        - generic [ref=e218]:
+          - generic [ref=e219]: 0%
+          - heading "Client Satisfaction" [level=3] [ref=e220]
+          - paragraph [ref=e221]: Clients who would recommend us to others
+        - generic [ref=e222]:
+          - generic [ref=e223]: 0+
+          - heading "Happy Clients" [level=3] [ref=e224]
+          - paragraph [ref=e225]: Long-term partnerships built on trust and results
+        - generic [ref=e226]:
+          - generic [ref=e227]: 0+
+          - heading "Years Experience" [level=3] [ref=e228]
+          - paragraph [ref=e229]: Delivering excellence in digital innovation
+    - generic [ref=e230]:
+      - generic:
+        - img
+      - generic [ref=e232]:
+        - heading "Ready to Transform Your Digital Presence?" [level=2] [ref=e233]
+        - paragraph [ref=e234]: Let's collaborate on your next big idea
+        - link "Get In Touch" [ref=e235]:
+          - /url: /contact
+      - generic:
+        - img
+  - contentinfo [ref=e236]:
+    - generic [ref=e237]:
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - link "Logi-Ink Logo LOGI-INK" [ref=e240]:
+            - /url: /
+            - img "Logi-Ink Logo" [ref=e242]
+            - heading "LOGI-INK" [level=3] [ref=e243]
+          - paragraph [ref=e244]: Digital innovation and creative solutions for the future.
+        - generic [ref=e245]:
+          - heading "Quick Links" [level=4] [ref=e246]
+          - list [ref=e247]:
+            - listitem [ref=e248]:
+              - link "> About" [ref=e249]:
+                - /url: /about
+            - listitem [ref=e250]:
+              - link "> Services" [ref=e251]:
+                - /url: /services
+            - listitem [ref=e252]:
+              - link "> Projects" [ref=e253]:
+                - /url: /projects
+            - listitem [ref=e254]:
+              - link "> Contact" [ref=e255]:
+                - /url: /contact
+        - generic [ref=e256]:
+          - heading "Connect" [level=4] [ref=e257]
+          - list [ref=e258]:
+            - listitem [ref=e259]:
+              - link "Visit our Facebook" [ref=e260]:
+                - /url: https://www.facebook.com/profile.php?id=61584223810824
+                - img [ref=e261]
+            - listitem [ref=e263]:
+              - link "Visit our Twitter" [ref=e264]:
+                - /url: https://twitter.com/logiink
+                - img [ref=e265]
+            - listitem [ref=e267]:
+              - link "Visit our Instagram" [ref=e268]:
+                - /url: https://www.instagram.com/logi.ink/
+                - img [ref=e269]
+            - listitem [ref=e273]:
+              - link "Visit our LinkedIn" [ref=e274]:
+                - /url: https://www.linkedin.com/company/logi-ink
+                - img [ref=e275]
+        - generic [ref=e278]:
+          - heading "Services" [level=4] [ref=e279]
+          - list [ref=e280]:
+            - listitem [ref=e281]:
+              - link "> All Services" [ref=e282]:
+                - /url: /services
+            - listitem [ref=e283]:
+              - link "> SEO Services" [ref=e284]:
+                - /url: /seo-services
+            - listitem [ref=e285]:
+              - link "> Pricing" [ref=e286]:
+                - /url: /pricing
+            - listitem [ref=e287]:
+              - link "> Portfolio" [ref=e288]:
+                - /url: /projects
+        - generic [ref=e289]:
+          - heading "Contact Info" [level=4] [ref=e290]
+          - list [ref=e291]:
+            - listitem [ref=e292]:
+              - link "Our address" [ref=e293]:
+                - /url: https://maps.app.goo.gl/kCMd8eXtQ2mzvgB39
+                - img [ref=e294]
+                - generic [ref=e297]:
+                  - generic [ref=e298]: 533 Andries Strydom st
+                  - generic [ref=e299]: Constantia Park
+                  - generic [ref=e300]: Pretoria
+            - listitem [ref=e301]:
+              - link "Call us" [ref=e302]:
+                - /url: tel:+27795523726
+                - img [ref=e303]
+                - generic [ref=e305]: +27 79 552 3726
+            - listitem [ref=e306]:
+              - link "Email us" [ref=e307]:
+                - /url: mailto:info@logi-ink.co.za
+                - img [ref=e308]
+                - generic [ref=e311]: info@logi-ink.co.za
+      - generic [ref=e313]:
+        - generic "Easter Egg" [ref=e314]: Made among the stars
+        - generic [ref=e315]: •
+        - generic [ref=e316]: © 2024 Logi-Ink. All rights reserved.
+        - generic [ref=e317]: "|"
+        - link "Privacy Policy" [ref=e318]:
+          - /url: /privacy-policy
+        - generic [ref=e319]: "|"
+        - link "Terms of Service" [ref=e320]:
+          - /url: /terms-of-service
+  - text: ↑
+```

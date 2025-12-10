@@ -143,6 +143,7 @@ export default defineConfig(({ command, mode }) => {
         pricing: resolve(__dirname, 'pricing.html'),
         seoServices: resolve(__dirname, 'seo-services.html'),
         reports: resolve(__dirname, 'reports.html'),
+        showcase: resolve(__dirname, 'showcase.html'), // Secret showcase page
         privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
         termsOfService: resolve(__dirname, 'terms-of-service.html'),
         sw: resolve(__dirname, 'sw.js'), // Include service worker in build

@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00ffff" />
+    <title>Three.js Backgrounds Showcase - Logi-Ink</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Explore 40 stunning Three.js background effects for hero sections. Interactive showcase of particle systems, geometric shapes, and shader-based animations."
+    />
+    <meta
+      name="keywords"
+      content="Three.js backgrounds, particle effects, web animations, hero section backgrounds, WebGL"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://logi-ink.co.za/showcase" />
+    <meta property="og:title" content="Three.js Backgrounds Showcase - Logi-Ink" />
+    <meta
+      property="og:description"
+      content="Explore 40 stunning Three.js background effects for hero sections."
+    />
+    <meta
+      property="og:image"
+      content="https://logi-ink.co.za/assets/images/banners/banner_home.webp"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://logi-ink.co.za/showcase" />
+    <meta name="twitter:title" content="Three.js Backgrounds Showcase - Logi-Ink" />
+    <meta
+      name="twitter:description"
+      content="Explore 40 stunning Three.js background effects for hero sections."
+    />
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <!-- Modulepreload for critical ES modules -->
+    <link rel="modulepreload" href="./js/main.js" />
+    <link rel="modulepreload" href="./js/core/navigation.js" />
+
+    <!-- Preconnect for third-party resources -->
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://logi-ink.co.za/showcase" />
+
+    <!-- Page Transition Preload -->
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- Critical CSS -->
+    <style>
+      @font-face {
+        font-family: 'Orbitron';
+        src: url('./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Rajdhani';
+        src: url('./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media = 'all'" />
+    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+
+    <!-- View Transitions API -->
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ARIA Live Region -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- include partials/navbar.html -->
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Showcase Section 1: Rotating Particles -->
+      <section class="showcase-section" data-bg="1">
+        <canvas id="threejs-showcase-1" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Rotating Particles</h2>
+          <p class="showcase-description">
+            Thousands of particles rotating in 3D space. Simple, elegant, and performant. Perfect
+            for tech/startup themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 2: Particle Swarm -->
+      <section class="showcase-section" data-bg="2">
+        <canvas id="threejs-showcase-2" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Swarm (Boids/Flocking)</h2>
+          <p class="showcase-description">
+            Organic flocking behavior with particles that move like bird flocks. Reacts to mouse
+            movement and forms natural clusters. Dynamic and interactive.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 3: Floating Geometric Shapes -->
+      <section class="showcase-section" data-bg="3">
+        <canvas id="threejs-showcase-3" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Floating Geometric Shapes</h2>
+          <p class="showcase-description">
+            Wireframe icosahedrons, octahedrons, or tetrahedrons floating and rotating in space.
+            Clean, modern aesthetic.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 4: Torus Grid with Parallax -->
+      <section class="showcase-section" data-bg="4">
+        <canvas id="threejs-showcase-4" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Torus Grid with Parallax</h2>
+          <p class="showcase-description">
+            Grid of torus shapes arranged in a pattern. Scroll-based parallax creates depth. Great
+            for portfolio/projects pages.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 5: Particle Rain -->
+      <section class="showcase-section" data-bg="5">
+        <canvas id="threejs-showcase-5" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Rain</h2>
+          <p class="showcase-description">
+            Particles falling from top to bottom with slight horizontal drift. Can include glow,
+            trails, or fade effects. Good for tech/data themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 6: Starfield -->
+      <section class="showcase-section" data-bg="6">
+        <canvas id="threejs-showcase-6" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Starfield</h2>
+          <p class="showcase-description">
+            Dense field of small particles creating a starry night effect. Can include twinkling
+            animation. Classic space theme.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 7: Wave Grid -->
+      <section class="showcase-section" data-bg="7">
+        <canvas id="threejs-showcase-7" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Wave Grid</h2>
+          <p class="showcase-description">
+            Grid of geometric shapes animated with sine waves. Creates flowing, organic movement
+            patterns. Smooth and mesmerizing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 8: Nebula Clouds -->
+      <section class="showcase-section" data-bg="8">
+        <canvas id="threejs-showcase-8" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Nebula Clouds</h2>
+          <p class="showcase-description">
+            Large, glowing particles with color gradients creating nebula-like formations.
+            Atmospheric and dreamy. Perfect for creative portfolios.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 9: Connected Particles -->
+      <section class="showcase-section" data-bg="9">
+        <canvas id="threejs-showcase-9" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Connected Particles (Constellation)</h2>
+          <p class="showcase-description">
+            Particles connected by lines, forming constellation-like patterns. Interactive - lines
+            appear/disappear based on distance. Network/data visualization feel.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 10: Geometric Prisms -->
+      <section class="showcase-section" data-bg="10">
+        <canvas id="threejs-showcase-10" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Geometric Prisms</h2>
+          <p class="showcase-description">
+            Rotating triangular prisms or pyramids with glass-like materials. Refractive and
+            reflective surfaces. Premium, sophisticated look.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 11: Particle Explosion -->
+      <section class="showcase-section" data-bg="11">
+        <canvas id="threejs-showcase-11" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Explosion</h2>
+          <p class="showcase-description">
+            Particles radiating outward from center points. Can be continuous or triggered. Dynamic
+            and energetic. Good for action/tech themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 12: Liquid Morphing Blobs -->
+      <section class="showcase-section" data-bg="12">
+        <canvas id="threejs-showcase-12" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Liquid Morphing Blobs</h2>
+          <p class="showcase-description">
+            Smooth, organic blob shapes that morph and flow. Uses metaballs or marching squares
+            algorithm. Fluid and modern aesthetic.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 13: Wireframe Globe -->
+      <section class="showcase-section" data-bg="13">
+        <canvas id="threejs-showcase-13" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Wireframe Globe</h2>
+          <p class="showcase-description">
+            3D wireframe sphere or globe rotating slowly. Can include latitude/longitude lines.
+            Geographic or global themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 14: Particle Vortex -->
+      <section class="showcase-section" data-bg="14">
+        <canvas id="threejs-showcase-14" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Vortex</h2>
+          <p class="showcase-description">
+            Particles spiraling inward or outward in a vortex pattern. Hypnotic, swirling motion.
+            Great for abstract/creative sites.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 15: Animated Grid Lines -->
+      <section class="showcase-section" data-bg="15">
+        <canvas id="threejs-showcase-15" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Animated Grid Lines</h2>
+          <p class="showcase-description">
+            3D grid lines that pulse, wave, or animate. Can respond to scroll or mouse. Tech/cyber
+            aesthetic.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 16: Particle Trails -->
+      <section class="showcase-section" data-bg="16">
+        <canvas id="threejs-showcase-16" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Trails</h2>
+          <p class="showcase-description">
+            Particles leaving trails behind as they move. Creates flowing, ribbon-like effects.
+            Dynamic and fluid motion.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 17: Geometric Kaleidoscope -->
+      <section class="showcase-section" data-bg="17">
+        <canvas id="threejs-showcase-17" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Geometric Kaleidoscope</h2>
+          <p class="showcase-description">
+            Symmetrical geometric patterns that rotate and morph. Creates kaleidoscope-like visual
+            effects. Artistic and mesmerizing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 18: Particle Fountain -->
+      <section class="showcase-section" data-bg="18">
+        <canvas id="threejs-showcase-18" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Fountain</h2>
+          <p class="showcase-description">
+            Particles rising from bottom like a fountain, then falling back down. Can include
+            gravity and bounce effects. Playful and dynamic.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 19: Shader-Based Noise -->
+      <section class="showcase-section" data-bg="19">
+        <canvas id="threejs-showcase-19" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Shader-Based Noise</h2>
+          <p class="showcase-description">
+            Procedural noise shader creating organic, flowing patterns. GPU-accelerated, very
+            performant. Abstract and modern.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 20: Particle Orbits -->
+      <section class="showcase-section" data-bg="20">
+        <canvas id="threejs-showcase-20" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Orbits</h2>
+          <p class="showcase-description">
+            Particles orbiting around central points in elliptical paths. Can create solar
+            system-like effects. Scientific or space themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 21: DNA Helix -->
+      <section class="showcase-section" data-bg="21">
+        <canvas id="threejs-showcase-21" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">DNA Helix</h2>
+          <p class="showcase-description">
+            Double helix structure with particles spiraling along two intertwined paths. Scientific
+            and elegant. Perfect for biotech/medical themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 22: Particle Chains -->
+      <section class="showcase-section" data-bg="22">
+        <canvas id="threejs-showcase-22" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Chains</h2>
+          <p class="showcase-description">
+            Particles connected in chains that flow and undulate. Creates organic, snake-like
+            movement patterns. Dynamic and fluid.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 23: Magnetic Field Lines -->
+      <section class="showcase-section" data-bg="23">
+        <canvas id="threejs-showcase-23" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Magnetic Field Lines</h2>
+          <p class="showcase-description">
+            Curved field lines representing magnetic fields. Particles follow curved paths creating
+            elegant, scientific visualizations. Physics/tech themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 24: Plasma Waves -->
+      <section class="showcase-section" data-bg="24">
+        <canvas id="threejs-showcase-24" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Plasma Waves</h2>
+          <p class="showcase-description">
+            Animated wave patterns with glowing particles. Creates plasma-like flowing effects.
+            Energetic and dynamic. Great for tech/energy themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 25: Fractal Trees -->
+      <section class="showcase-section" data-bg="25">
+        <canvas id="threejs-showcase-25" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Fractal Trees</h2>
+          <p class="showcase-description">
+            Recursive tree structures that branch and grow. Creates organic, natural patterns.
+            Perfect for nature/growth themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 26: Particle Clouds -->
+      <section class="showcase-section" data-bg="26">
+        <canvas id="threejs-showcase-26" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Clouds</h2>
+          <p class="showcase-description">
+            Soft, billowing cloud formations made of particles. Atmospheric and dreamy. Creates
+            gentle, flowing visual effects.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 27: Animated Ribbons -->
+      <section class="showcase-section" data-bg="27">
+        <canvas id="threejs-showcase-27" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Animated Ribbons</h2>
+          <p class="showcase-description">
+            Flowing ribbon shapes that twist and turn in 3D space. Elegant and smooth. Perfect for
+            creative/artistic portfolios.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 28: Crystal Formations -->
+      <section class="showcase-section" data-bg="28">
+        <canvas id="threejs-showcase-28" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Crystal Formations</h2>
+          <p class="showcase-description">
+            Geometric crystal structures that grow and morph. Creates sparkling, refractive effects.
+            Premium and sophisticated.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 29: Particle Streams -->
+      <section class="showcase-section" data-bg="29">
+        <canvas id="threejs-showcase-29" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Streams</h2>
+          <p class="showcase-description">
+            Flowing streams of particles that converge and diverge. Creates river-like or energy
+            flow effects. Dynamic and mesmerizing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 30: Hexagonal Grid -->
+      <section class="showcase-section" data-bg="30">
+        <canvas id="threejs-showcase-30" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Hexagonal Grid</h2>
+          <p class="showcase-description">
+            Animated hexagonal grid pattern with particles at vertices. Modern, tech aesthetic.
+            Great for gaming/tech themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 31: Particle Waves -->
+      <section class="showcase-section" data-bg="31">
+        <canvas id="threejs-showcase-31" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Waves</h2>
+          <p class="showcase-description">
+            Wave-based particle motion creating ocean-like or sound wave effects. Smooth and
+            rhythmic. Perfect for audio/water themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 32: Spiral Galaxy -->
+      <section class="showcase-section" data-bg="32">
+        <canvas id="threejs-showcase-32" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Spiral Galaxy</h2>
+          <p class="showcase-description">
+            Galaxy spiral arms with particles following spiral paths. Creates cosmic, astronomical
+            effects. Space/science themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 33: Particle Mesh -->
+      <section class="showcase-section" data-bg="33">
+        <canvas id="threejs-showcase-33" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Mesh</h2>
+          <p class="showcase-description">
+            Interconnected mesh of particles forming dynamic networks. Creates web-like or neural
+            network visualizations. Tech/data themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 34: Animated Tubes -->
+      <section class="showcase-section" data-bg="34">
+        <canvas id="threejs-showcase-34" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Animated Tubes</h2>
+          <p class="showcase-description">
+            Flowing tube structures that morph and connect. Creates tunnel or pipeline effects.
+            Modern and futuristic.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 35: Particle Fields -->
+      <section class="showcase-section" data-bg="35">
+        <canvas id="threejs-showcase-35" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Fields</h2>
+          <p class="showcase-description">
+            Field-based particle motion with forces affecting particle movement. Creates
+            physics-based, scientific visualizations.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 36: Geometric Mandala -->
+      <section class="showcase-section" data-bg="36">
+        <canvas id="threejs-showcase-36" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Geometric Mandala</h2>
+          <p class="showcase-description">
+            Rotating mandala pattern with symmetrical geometric shapes. Creates meditative, artistic
+            effects. Spiritual/artistic themes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 37: Particle Rings -->
+      <section class="showcase-section" data-bg="37">
+        <canvas id="threejs-showcase-37" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Rings</h2>
+          <p class="showcase-description">
+            Concentric particle rings that pulse and expand. Creates ripple or energy wave effects.
+            Dynamic and hypnotic.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 38: Animated Spheres -->
+      <section class="showcase-section" data-bg="38">
+        <canvas id="threejs-showcase-38" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Animated Spheres</h2>
+          <p class="showcase-description">
+            Morphing spheres that grow, shrink, and merge. Creates organic, bubble-like effects.
+            Playful and modern.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 39: Particle Swirls -->
+      <section class="showcase-section" data-bg="39">
+        <canvas id="threejs-showcase-39" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Particle Swirls</h2>
+          <p class="showcase-description">
+            Swirling particle patterns with multiple vortices. Creates abstract, artistic effects.
+            Creative and mesmerizing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Showcase Section 40: Procedural Terrain -->
+      <section class="showcase-section" data-bg="40">
+        <canvas id="threejs-showcase-40" class="threejs-canvas"></canvas>
+        <div class="showcase-overlay">
+          <h2 class="showcase-title">Procedural Terrain</h2>
+          <p class="showcase-description">
+            3D terrain generation with height maps and procedural noise. Creates landscape or
+            topographic effects. Nature/exploration themes.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- include partials/footer.html -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
+    <!-- Showcase Navigation Buttons -->
+    <div class="showcase-nav">
+      <button
+        class="showcase-nav-btn showcase-nav-up"
+        aria-label="Previous background"
+        title="Previous background"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M18 15l-6-6-6 6" />
+        </svg>
+      </button>
+      <button
+        class="showcase-nav-btn showcase-nav-down"
+        aria-label="Next background"
+        title="Next background"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

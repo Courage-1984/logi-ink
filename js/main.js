@@ -11,6 +11,7 @@ import { initScrollManager } from './core/scroll-manager.js';
 import { initNavigation } from './core/navigation.js';
 import { initScroll } from './core/scroll.js';
 import { initInteractions } from './utils/interactions.js';
+import { initHeroFullscreen } from './core/hero-fullscreen.js';
 
 // Non-critical modules (lazy loaded - see lazyLoadOnIdle calls below)
 // These are imported dynamically to reduce initial bundle size
@@ -69,6 +70,9 @@ const initOnReady = () => {
 
   // Critical: Initialize interactions (button hovers, etc.)
   initInteractions();
+
+  // Initialize hero fullscreen toggle (subtle UI for viewing Three.js backgrounds)
+  initHeroFullscreen();
 };
 
 // Defer non-critical work using requestIdleCallback
@@ -294,6 +298,11 @@ deferNonCritical(async () => {
   if (pathname.includes('/services') || pathname.includes('services.html')) {
     const { initServiceModals } = await import('./pages/services.js');
     initServiceModals();
+  }
+
+  if (pathname.includes('/showcase') || pathname.includes('showcase.html')) {
+    const { initShowcase } = await import('./pages/showcase.js');
+    initShowcase();
   }
 
   if (pathname.includes('/projects') || pathname.includes('projects.html')) {

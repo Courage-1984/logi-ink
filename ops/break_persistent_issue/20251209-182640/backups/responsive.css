@@ -1,0 +1,969 @@
+/**
+ * Responsive Styles Utility
+ * All responsive breakpoints and media queries
+ *
+ * ⚠️ IMPORTANT: This file MUST be imported last in main.css
+ *
+ * Enhanced Breakpoint System (Mobile-First):
+ * - xs: 0px (base/mobile) - default styles
+ * - sm: 640px (small tablets, large phones)
+ * - md: 768px (tablets)
+ * - lg: 1024px (small desktops)
+ * - xl: 1280px (desktops)
+ * - 2xl: 1536px (large desktops)
+ *
+ * 📝 NOTE: Font-size values in this file are intentionally hardcoded
+ * for fine-tuned responsive adjustments. These values (e.g., 0.9rem, 0.95rem, 1.2rem)
+ * are breakpoint-specific and intentionally differ from the standard font-size scale
+ * to achieve optimal typography at different screen sizes.
+ *
+ * 📝 NOTE: Some spacing values remain hardcoded for breakpoint-specific adjustments.
+ * Values inside clamp() functions are intentional for responsive spacing.
+ *
+ * 📝 NOTE: Container queries are used for component-level responsiveness.
+ * Media queries are used for viewport-level layout changes.
+ */
+
+/* ============================================
+   SMALL TABLETS / LARGE PHONES (640px+)
+   ============================================ */
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  .hero-content {
+    padding: 0 var(--space-6);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .btn {
+    padding: 0.95rem var(--space-8);
+  }
+}
+
+/* ============================================
+   TABLET STYLES (768px - 1023px)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .nav-container {
+    padding: 0 var(--space-8);
+  }
+
+  .logo-img {
+    height: 36px; /* Medium logo on tablet */
+  }
+
+  .logo-text {
+    /* Intentionally hardcoded for tablet breakpoint fine-tuning */
+    font-size: 1.3rem;
+  }
+
+  .nav-menu {
+    gap: var(--space-6);
+  }
+
+  .nav-link {
+    /* Intentionally hardcoded for tablet breakpoint fine-tuning */
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-12);
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .service-card {
+    padding: var(--space-8);
+  }
+
+  .hero-content {
+    padding: 0 var(--space-6);
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+    padding: 0 var(--space-4);
+  }
+
+  .hero-buttons {
+    gap: var(--space-4);
+  }
+
+  .btn {
+    padding: 0.9rem var(--space-8);
+    font-size: 0.95rem;
+  }
+
+  .project-image {
+    height: 300px;
+  }
+
+  .project-content {
+    padding: var(--space-8);
+  }
+
+  .project-content h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .footer-section:first-child {
+    grid-column: span 2;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .cta-content p {
+    /* Intentionally hardcoded for tablet breakpoint fine-tuning */
+    font-size: 1.1rem;
+  }
+
+  /* Contact Page - Tablet */
+  /* Note: Contact-specific responsive styles moved to pages/contact/_contact-responsive.css */
+}
+
+/* ============================================
+   DESKTOP STYLES (1024px+)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-8);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-8);
+    max-width: 100%;
+  }
+
+  /* When there are exactly 3 items, use 3 columns */
+  .services-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* When there are exactly 4 items, use 4 columns */
+  .services-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  }
+
+  .footer-section:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP STYLES (1280px+)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 var(--space-10);
+  }
+
+  .hero-content {
+    max-width: 1200px;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+}
+
+/* ============================================
+   EXTRA LARGE DESKTOP STYLES (1536px+)
+   ============================================ */
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 7vw, 6rem);
+  }
+}
+
+/* ============================================
+   MOBILE STYLES (Base - Mobile First)
+   ============================================ */
+
+/* Base mobile styles are defined first (mobile-first approach) */
+/* These styles apply to all screen sizes and are overridden for larger screens */
+
+/* ============================================
+   MOBILE OVERRIDES (max-width: 767px)
+   ============================================ */
+
+@media (max-width: 767px) {
+  /* Navigation */
+  .navbar {
+    /* Ensure navbar doesn't clip mobile menu */
+    overflow: visible !important;
+  }
+
+  .nav-container {
+    padding: 0 var(--space-6);
+    /* Ensure container doesn't clip mobile menu */
+    overflow: visible !important;
+  }
+
+  .logo-img {
+    height: 32px; /* Smaller logo on mobile */
+  }
+
+  .logo-text {
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  /* Hide nav-menu on desktop, show hamburger on mobile */
+  .nav-menu {
+    position: fixed !important;
+    left: -100% !important;
+    top: 70px !important;
+    flex-direction: column !important;
+    background: var(--bg-primary) !important;
+    backdrop-filter: none !important;
+    width: 100vw !important;
+    height: calc(100vh - 70px) !important;
+    text-align: center !important;
+    transition: left 0.3s ease !important;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5) !important;
+    padding: var(--space-8) 0 !important;
+    border-top: 1px solid rgba(0, 255, 255, 0.1) !important;
+    gap: 0 !important;
+    z-index: 10001 !important; /* Above navbar (10000) but below dropdowns (10020) */
+    overflow-y: auto !important;
+    /* Ensure menu is visible and above other content */
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    /* Reset any transforms that might interfere */
+    transform: none !important;
+    isolation: isolate;
+    /* Ensure menu is not hidden by other elements */
+    pointer-events: auto !important;
+    /* Force menu to be above everything */
+    will-change: left;
+  }
+
+  .nav-menu.active {
+    left: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    display: flex !important;
+    /* Force menu to be visible - highest priority */
+    z-index: 99999 !important;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    padding: var(--space-3) 0;
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-3) 0;
+    font-size: var(--font-size-base);
+  }
+
+  /* Mobile Dropdown Styles */
+  .nav-item-dropdown {
+    width: 100%;
+  }
+
+  .nav-item-dropdown > .nav-link {
+    justify-content: center;
+    position: relative;
+    padding-right: var(--space-8);
+  }
+
+  /* Mobile dropdown toggle button */
+  .nav-item-dropdown > .nav-link::after {
+    content: '';
+    position: absolute;
+    right: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--accent-cyan);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 8px var(--glow-cyan);
+  }
+
+  .nav-item-dropdown.active > .nav-link::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    margin-top: 0;
+    margin-left: var(--space-4);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-left: 2px solid rgba(0, 255, 255, 0.2);
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .nav-item-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 200px;
+    margin-top: var(--space-2);
+  }
+
+  .dropdown-menu .dropdown-link {
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.9rem;
+  }
+
+  .hamburger,
+  #hamburger {
+    display: flex !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 10002 !important; /* Above navbar (10000) and menu (10001) */
+    cursor: pointer !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Container and Spacing */
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  section {
+    padding: var(--space-12) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-base);
+    padding: 0 var(--space-2);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: 0 var(--space-4);
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    margin-bottom: var(--space-4);
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    margin-bottom: var(--space-6);
+    padding: 0 var(--space-2);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.9rem var(--space-8);
+    font-size: 0.95rem;
+  }
+
+  .btn-large {
+    padding: var(--space-4) 2.5rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+
+  .mouse {
+    width: 25px;
+    height: 40px;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .service-card {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--space-4);
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Project Cards */
+  .project-image {
+    height: 200px;
+  }
+
+  .project-content {
+    padding: var(--space-6);
+  }
+
+  .project-content h3 {
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 1.3rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .project-content p {
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 0.95rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .project-category {
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 0.8rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .project-tag {
+    font-size: var(--font-size-xs);
+    padding: 0.4rem var(--space-4);
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Projects Grid (from projects.html) */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  /* Projects Page Tags - Mobile */
+  .projects-page .project-tags {
+    top: var(--space-3);
+    right: var(--space-3);
+    max-width: calc(100% - 1.5rem);
+    gap: var(--space-1);
+  }
+
+  .projects-page .project-tag {
+    font-size: 0.65rem;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  /* CTA Section */
+  .cta-content {
+    padding: 0 var(--space-4);
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: var(--space-3);
+  }
+
+  .cta-content p {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-6);
+  }
+
+  /* CTA Section - Mobile Background Fix */
+  .cta-section {
+    background-attachment: scroll;
+    /* Change from fixed to scroll on mobile */
+  }
+
+  /* Parallax Sections - Mobile Background Fix */
+  .parallax-background {
+    background-attachment: scroll;
+    /* Change from fixed to scroll on mobile */
+  }
+
+  /* Footer */
+  .footer {
+    padding: var(--space-6) 0 var(--space-3);
+  }
+
+  .footer .container {
+    padding: 0 var(--space-8);
+  }
+
+  @media (max-width: 767px) {
+    .footer .container {
+      padding: 0 var(--space-6);
+    }
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-4);
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: var(--space-4);
+    grid-column: span 1 !important;
+    width: 100%;
+  }
+
+  .footer-section:first-child {
+    grid-column: span 1;
+  }
+
+  /* Social icons inline horizontal on mobile - centered in viewport */
+  .footer-section:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-social-list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Footer Bottom - Mobile */
+  .footer-bottom-content {
+    gap: var(--space-2);
+    font-size: 0.85rem;
+  }
+
+  /* Forms */
+  /* Note: Contact form styles moved to pages/contact/_contact-responsive.css */
+  form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form-group {
+    margin-bottom: var(--space-6);
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-2);
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: var(--space-4);
+    font-size: var(--font-size-base);
+  }
+
+  /* Contact Page - Mobile */
+  /* Note: Contact-specific responsive styles moved to pages/contact/_contact-responsive.css */
+
+  /* Tables */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: var(--space-6) 0;
+  }
+
+  th,
+  td {
+    padding: var(--space-3) var(--space-2);
+    font-size: 0.9rem;
+  }
+
+  /* Modals */
+  .modal-content {
+    width: 95%;
+    max-width: 95%;
+    padding: var(--space-6);
+    margin: var(--space-4);
+  }
+
+  .modal-close {
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 30px;
+    height: 30px;
+    font-size: var(--font-size-base);
+  }
+
+  /* Tabs */
+  .tab-list {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tab-button {
+    padding: var(--space-3) var(--space-6);
+    font-size: 0.9rem;
+  }
+
+  /* Accordions */
+  summary {
+    padding: var(--space-4);
+    font-size: 0.95rem;
+  }
+
+  details > *:not(summary) {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin: var(--space-4) 0;
+  }
+
+  /* Toast */
+  .toast {
+    min-width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+    bottom: var(--space-4);
+    right: var(--space-4);
+    left: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: var(--space-6);
+    right: var(--space-6);
+  }
+
+  /* Code Blocks */
+  pre {
+    padding: var(--space-4);
+    font-size: 0.85rem;
+    overflow-x: auto;
+  }
+
+  code {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.var(--space-12);
+  }
+
+  /* Blockquotes */
+  blockquote {
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-6) 0;
+    font-size: 0.95rem;
+  }
+
+  blockquote::before {
+    font-size: var(--font-size-5xl);
+  }
+
+  /* Empty State */
+  .empty-state {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .empty-state-icon {
+    font-size: var(--font-size-5xl);
+  }
+
+  /* Skeleton */
+  .skeleton-title {
+    height: var(--space-6);
+  }
+
+  .skeleton-text {
+    height: 0.875rem;
+  }
+
+  .skeleton-image {
+    height: 150px;
+  }
+
+  /* Loading Overlay */
+  .loading-overlay .spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE STYLES (max-width: 639px)
+   ============================================ */
+
+@media (max-width: 639px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .logo-img {
+    height: 28px; /* Smaller logo on very small screens */
+  }
+
+  .logo-text {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 9vw, 2.2rem);
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 8vw, 2rem);
+  }
+
+  .service-card,
+  .project-content {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .btn {
+    padding: 0.85rem var(--space-6);
+    font-size: 0.9rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.3rem, 8vw, 1.8rem);
+  }
+
+  /* CTA Section - Small Mobile Background Fix */
+  .cta-section {
+    background-attachment: scroll;
+    /* Ensure scroll on small mobile */
+  }
+
+  /* Parallax Sections - Small Mobile Background Fix */
+  .parallax-background {
+    background-attachment: scroll;
+    /* Ensure scroll on small mobile */
+  }
+
+  /* Contact Page - Small Mobile */
+  .contact-container {
+    padding: 0 0.75rem;
+  }
+
+  .contact-item {
+    padding: var(--space-5);
+  }
+
+  .contact-item h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .form-group label {
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: var(--space-3);
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 0.9rem;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+  }
+
+  .form-submit {
+    padding: 0.85rem var(--space-5);
+    /* Intentionally hardcoded for mobile breakpoint fine-tuning */
+    font-size: 0.9rem;
+  }
+
+  /* Mobile Performance Optimizations */
+  /* Note: Selective animation optimizations are handled in _performance-optimizations.css
+   * to avoid global overrides that break ambient background animations
+   */
+
+  /* Disable 3D transforms on mobile for better performance */
+  .card-3d,
+  .mouse-tilt-container {
+    transform: none !important;
+  }
+
+  /* Optimize scroll performance */
+  .scroll-reveal-3d {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+
+  /* Particles removed - no longer needed */
+
+  /* Simplify cursor effects on mobile */
+  .cursor-follow,
+  .cursor-dot {
+    display: none;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .navbar,
+  .footer,
+  .back-to-top,
+  .hamburger {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}

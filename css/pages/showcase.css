@@ -1,0 +1,216 @@
+/**
+ * Showcase Page Styles
+ * Styles for the Three.js backgrounds showcase page
+ */
+
+/* Showcase Section - Full viewport height */
+.showcase-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+/* Three.js Canvas - Full viewport, behind overlay */
+.showcase-section .threejs-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  pointer-events: none;
+}
+
+.showcase-section .threejs-canvas.is-loaded {
+  opacity: 1;
+}
+
+/* Showcase Overlay - Centered content with title and description */
+.showcase-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-4);
+  max-width: 90%;
+  pointer-events: none; /* Allow clicks to pass through to canvas */
+}
+
+/* Showcase Title - Subtle styling, hover trigger */
+.showcase-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  pointer-events: auto; /* Enable hover on title */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.showcase-title:hover,
+.showcase-title:focus {
+  opacity: 0.9;
+  transform: scale(1.05);
+  color: var(--accent-cyan);
+  text-shadow: 0 0 20px var(--glow-cyan);
+}
+
+/* Showcase Description - Hidden by default, shown on hover */
+.showcase-description {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--text-secondary);
+  margin-top: var(--space-4);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* Show description when title is hovered or focused */
+.showcase-title:hover + .showcase-description,
+.showcase-title:focus + .showcase-description,
+.showcase-overlay:hover .showcase-description {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .showcase-overlay {
+    max-width: 95%;
+    padding: var(--space-2);
+  }
+
+  .showcase-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .showcase-description {
+    font-size: clamp(0.875rem, 3vw, 1.125rem);
+    margin-top: var(--space-2);
+  }
+
+  /* On mobile, show description by default (no hover needed) */
+  .showcase-description {
+    opacity: 0.8;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* Showcase Navigation Buttons - Floating sticky buttons */
+.showcase-nav {
+  position: fixed;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none; /* Allow clicks to pass through container */
+}
+
+.showcase-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: var(--accent-cyan);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  pointer-events: auto; /* Enable clicks on buttons */
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+}
+
+.showcase-nav-btn:hover,
+.showcase-nav-btn:focus {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px var(--glow-cyan);
+  transform: scale(1.1);
+  color: var(--text-primary);
+}
+
+.showcase-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.showcase-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.showcase-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide up button on first section, hide down button on last section */
+.showcase-nav-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .showcase-nav {
+    right: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .showcase-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .showcase-nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .showcase-title,
+  .showcase-description,
+  .showcase-nav-btn {
+    transition: none;
+  }
+
+  .showcase-title:hover,
+  .showcase-title:focus {
+    transform: none;
+  }
+
+  .showcase-nav-btn:hover,
+  .showcase-nav-btn:focus {
+    transform: none;
+  }
+}
+

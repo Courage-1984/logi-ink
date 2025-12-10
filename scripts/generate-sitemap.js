@@ -56,12 +56,7 @@ const pages = [
     priority: 0.9,
     lastmod: new Date().toISOString().split('T')[0],
   },
-  {
-    url: 'reports',
-    changefreq: 'monthly',
-    priority: 0.5,
-    lastmod: new Date().toISOString().split('T')[0],
-  },
+  // Reports page excluded - secret/internal page (noindex, nofollow)
   {
     url: 'privacy-policy',
     changefreq: 'yearly',

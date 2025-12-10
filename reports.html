@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,6 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.youtube.com https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
     />
-
 
     <!-- SEO Meta Tags -->
     <meta
@@ -267,13 +266,13 @@
       .cursor-dot {
         position: fixed;
         pointer-events: none;
-        z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
+        z-index: 99999;
         opacity: 0;
-        transition: opacity 0.05s ease, transform 0.15s ease; /* Faster transition for immediate visibility */
-        will-change: transform, left, top; /* Performance optimization */
-        transform: translateZ(0); /* Force GPU acceleration */
-        left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
-        top: -9999px;
+        transition:
+          opacity 0.05s ease,
+          transform 0.15s ease;
+        will-change: transform, left, top;
+        transform: translateZ(0);
       }
       .cursor-dot {
         width: 6px;
@@ -281,10 +280,12 @@
         background: var(--accent-cyan);
         border-radius: 50%;
         box-shadow: 0 0 10px var(--glow-cyan);
+        left: -9999px;
+        top: -9999px;
       }
       @media (hover: hover) and (pointer: fine) {
         .cursor-dot {
-          opacity: 1; /* Immediate visibility on hover-capable devices */
+          opacity: 1;
         }
       }
       .navbar {
@@ -293,10 +294,11 @@
         width: 100%;
         background: rgba(10, 10, 10, 0.9);
         backdrop-filter: blur(10px);
-        z-index: 1000;
+        z-index: 10000;
         padding: var(--space-4) 0;
         border-bottom: 1px solid rgba(0, 255, 255, 0.1);
         transition: all 0.3s ease;
+        overflow: visible !important;
       }
       .navbar.scrolled {
         background: rgba(10, 10, 10, 0.95);
@@ -598,6 +600,12 @@
         margin-top: var(--space-8);
         z-index: 10;
         contain: layout style;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .mouse {
         width: 30px;
@@ -606,6 +614,11 @@
         border-radius: 15px;
         position: relative;
         box-shadow: 0 0 10px var(--glow-cyan);
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
       }
       .wheel {
         width: 4px;
@@ -613,51 +626,32 @@
         background: var(--accent-cyan);
         border-radius: 2px;
         position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        contain: layout style;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 7px;
+        transform: translateY(0);
         animation: scroll 2s infinite;
         box-shadow: 0 0 5px var(--glow-cyan);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
       }
       @keyframes scroll {
         0% {
-          top: 10px;
+          transform: translateY(0);
           opacity: 1;
         }
         100% {
-          top: 30px;
+          transform: translateY(17px);
           opacity: 0;
         }
       }
       @media (max-width: 768px) {
-        .nav-menu {
-          position: fixed;
-          top: 60px;
-          left: -100%;
-          width: 100%;
-          height: calc(100vh - 60px);
-          background: rgba(10, 10, 10, 0.98);
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          padding-top: var(--space-8);
-          gap: var(--space-8);
-          transition: left 0.3s ease;
-        }
-        .nav-menu.active {
-          left: 0;
-        }
         .hamburger {
-          display: flex;
-        }
-        .hamburger.active span:nth-child(1) {
-          transform: rotate(45deg) translate(8px, 8px);
-        }
-        .hamburger.active span:nth-child(2) {
-          opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -7px);
+          display: flex !important;
         }
         .hero-title {
           font-size: clamp(2rem, 6vw, 4rem);
@@ -672,6 +666,7 @@
     <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
     <link rel="stylesheet" href="css/main.css" />
 
+    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
     <!-- View Transitions API - Enable smooth page transitions -->
     <style>
       @view-transition {

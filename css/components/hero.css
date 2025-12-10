@@ -464,3 +464,112 @@
     opacity: 0;
   }
 }
+
+/* Hero Fullscreen Toggle Button */
+.hero-fullscreen-toggle {
+  position: fixed; /* Fixed to viewport, not relative to hero */
+  top: 80px; /* Below navbar (navbar is ~70px tall) */
+  right: 20px;
+  z-index: 10001; /* Above navbar (10000) and dropdown (10020), but below dropdown when open */
+  width: auto;
+  height: auto;
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+  color: rgba(0, 255, 255, 0.4); /* Muted cyan */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  padding: 0;
+  box-shadow: none;
+  font-size: 24px;
+  line-height: 1;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-shadow: none;
+}
+
+.hero-fullscreen-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Show button on hero hover */
+.hero:hover .hero-fullscreen-toggle {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Keep button visible when active (fullscreen mode) */
+.hero-fullscreen-toggle.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  color: rgba(0, 255, 255, 0.3); /* More muted in fullscreen */
+  z-index: 10001; /* Ensure it stays on top */
+}
+
+/* When fullscreen is active, move button to top and make it muted */
+body.hero-fullscreen-active .hero-fullscreen-toggle {
+  top: 20px;
+  z-index: 99999; /* Above everything in fullscreen mode */
+  color: rgba(0, 255, 255, 0.3); /* Muted in fullscreen */
+}
+
+/* Glow effect only on hover */
+.hero-fullscreen-toggle:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px var(--glow-cyan), 0 0 20px var(--glow-cyan);
+  z-index: 10001;
+}
+
+/* Remove outline on click, but keep for keyboard navigation (accessibility) */
+.hero-fullscreen-toggle:focus {
+  outline: none;
+}
+
+.hero-fullscreen-toggle:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+/* Fullscreen Mode Styles */
+body.hero-fullscreen-active {
+  overflow: hidden;
+}
+
+.hero.hero-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  padding: 0;
+  z-index: 99998; /* Below navbar but above everything else */
+}
+
+.hero.hero-fullscreen .hero-background {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.hero.hero-fullscreen .threejs-canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Hide fullscreen button on mobile (optional - can be enabled if needed) */
+@media (max-width: 768px) {
+  .hero-fullscreen-toggle {
+    display: none;
+  }
+}

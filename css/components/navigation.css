@@ -10,8 +10,10 @@
   padding: var(--space-4) var(--space-8);
   border-bottom: 1px solid rgba(0, 255, 255, 0.1);
   transition: all 0.3s ease;
-  /* Ensure dropdown menus can escape this stacking context */
-  overflow: visible;
+  /* Ensure dropdown menus and mobile menu can escape this stacking context */
+  overflow: visible !important;
+  /* Don't create an isolated stacking context that traps children */
+  isolation: auto;
 }
 
 .navbar.scrolled {
@@ -79,12 +81,26 @@
     0 0 30px var(--glow-cyan);
 }
 
+/* Desktop nav-menu styles - only apply on desktop to avoid mobile conflicts */
+@media (min-width: 768px) {
 .nav-menu {
   display: flex;
   list-style: none;
   gap: var(--space-8);
-  /* Ensure dropdown menus are not clipped */
-  overflow: visible;
+    /* Ensure dropdown menus are not clipped */
+    overflow: visible;
+    /* Desktop positioning */
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
+    /* Ensure menu is visible by default */
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .nav-link {
@@ -312,6 +328,8 @@
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
+  position: relative;
+  z-index: 10002; /* Above menu (10001) */
 }
 
 .hamburger span {

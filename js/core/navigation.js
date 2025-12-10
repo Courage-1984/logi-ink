@@ -54,26 +54,334 @@ export function initNavigation() {
   addScrollHandler(navbarScrollHandler);
 
   // Mobile Menu Toggle
+  console.log('[NAV DEBUG] Initializing navigation module...');
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  console.log('[NAV DEBUG] Element check:', {
+    hamburger: !!hamburger,
+    navMenu: !!navMenu,
+    navLinksCount: navLinks.length,
+    windowWidth: window.innerWidth,
+    isMobile: window.innerWidth <= 767
+  });
+
+  if (!hamburger) {
+    console.error('[NAV DEBUG] ❌ Hamburger button not found!');
+  }
+  if (!navMenu) {
+    console.error('[NAV DEBUG] ❌ Nav menu not found!');
+  }
+
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
+    console.log('[NAV DEBUG] ✅ Both elements found, setting up click handler');
+
+    // Log initial computed styles
+    const initialStyles = window.getComputedStyle(navMenu);
+    console.log('[NAV DEBUG] Initial navMenu computed styles:', {
+      display: initialStyles.display,
+      position: initialStyles.position,
+      left: initialStyles.left,
+      top: initialStyles.top,
+      width: initialStyles.width,
+      height: initialStyles.height,
+      visibility: initialStyles.visibility,
+      opacity: initialStyles.opacity,
+      zIndex: initialStyles.zIndex,
+      hasActiveClass: navMenu.classList.contains('active')
+    });
+
+    // Ensure menu is initially hidden on mobile
+    const isMobile = window.innerWidth <= 767;
+    console.log('[NAV DEBUG] Initial mobile check:', { isMobile, windowWidth: window.innerWidth });
+
+    if (isMobile) {
+      navMenu.classList.remove('active');
+      navMenu.setAttribute('aria-hidden', 'true');
+      // Force initial hidden state
+      navMenu.style.left = '-100%';
+      console.log('[NAV DEBUG] Set initial mobile hidden state');
+    }
+
+    hamburger.addEventListener('click', (e) => {
+      console.log('[NAV DEBUG] ========== HAMBURGER CLICKED ==========');
+      console.log('[NAV DEBUG] Event:', { type: e.type, target: e.target });
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wasActive = hamburger.classList.contains('active');
       const isActive = hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
+      const menuWasActive = navMenu.classList.contains('active');
+      const menuIsActive = navMenu.classList.toggle('active');
+
+      console.log('[NAV DEBUG] Toggle state:', {
+        hamburgerWasActive: wasActive,
+        hamburgerIsActive: isActive,
+        menuWasActive: menuWasActive,
+        menuIsActive: menuIsActive,
+        windowWidth: window.innerWidth,
+        isMobile: window.innerWidth <= 767
+      });
+
+      // Log classes after toggle
+      console.log('[NAV DEBUG] Classes after toggle:', {
+        hamburgerClasses: Array.from(hamburger.classList),
+        navMenuClasses: Array.from(navMenu.classList)
+      });
+
+      // Force visibility on mobile when active - use requestAnimationFrame to ensure DOM update
+      if (isActive && window.innerWidth <= 767) {
+        console.log('[NAV DEBUG] 🚀 Opening mobile menu...');
+
+        // CRITICAL: The CSS .nav-menu.active rule should handle this, but we'll force it with inline styles
+        // First, ensure the active class is applied (it should be from toggle above)
+        if (!navMenu.classList.contains('active')) {
+          navMenu.classList.add('active');
+          console.log('[NAV DEBUG] ⚠️ Active class was missing, added it');
+        }
+
+        // CRITICAL: Move menu to body to escape all stacking contexts (like we do with dropdowns)
+        const originalParent = navMenu.parentElement;
+        if (navMenu.parentElement !== document.body) {
+          console.log('[NAV DEBUG] 🔄 Moving menu to body to escape stacking context');
+          document.body.appendChild(navMenu);
+        }
+
+        // CRITICAL: Disable ALL transitions first to prevent CSS from animating
+        navMenu.style.setProperty('transition', 'none', 'important');
+        navMenu.style.setProperty('-webkit-transition', 'none', 'important');
+        navMenu.style.setProperty('-moz-transition', 'none', 'important');
+        navMenu.style.setProperty('-o-transition', 'none', 'important');
+
+        // Set ALL positioning styles IMMEDIATELY with !important
+        navMenu.style.setProperty('left', '0', 'important');
+        navMenu.style.setProperty('display', 'flex', 'important');
+        navMenu.style.setProperty('visibility', 'visible', 'important');
+        navMenu.style.setProperty('opacity', '1', 'important');
+        navMenu.style.setProperty('position', 'fixed', 'important');
+        navMenu.style.setProperty('z-index', '99999', 'important');
+        navMenu.style.setProperty('width', '100vw', 'important');
+        navMenu.style.setProperty('top', '70px', 'important');
+        navMenu.style.setProperty('height', 'calc(100vh - 70px)', 'important');
+        navMenu.style.setProperty('pointer-events', 'auto', 'important');
+        navMenu.style.setProperty('transform', 'none', 'important');
+        // CRITICAL: Force background color - menu might be transparent
+        navMenu.style.setProperty('background', 'rgba(10, 10, 10, 0.98)', 'important');
+        navMenu.style.setProperty('background-color', 'rgba(10, 10, 10, 0.98)', 'important');
+
+        // Store original parent for restoration
+        if (!navMenu.dataset.originalParent) {
+          navMenu.dataset.originalParent = originalParent ? originalParent.tagName + '.' + originalParent.className : 'unknown';
+        }
+
+        // Force immediate reflow
+        const forceReflow = navMenu.offsetHeight;
+
+        // Use double requestAnimationFrame to verify and log
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            // Force again after frames to ensure it sticks
+            navMenu.style.setProperty('left', '0', 'important');
+            navMenu.style.setProperty('transition', 'none', 'important');
+
+            // Force another reflow
+            navMenu.offsetHeight;
+
+            console.log('[NAV DEBUG] Inline styles set:', {
+              display: navMenu.style.display,
+              position: navMenu.style.position,
+              left: navMenu.style.left,
+              top: navMenu.style.top,
+              width: navMenu.style.width,
+              height: navMenu.style.height,
+              zIndex: navMenu.style.zIndex,
+              visibility: navMenu.style.visibility,
+              opacity: navMenu.style.opacity
+            });
+
+            // Get computed styles after setting inline
+            const computed = window.getComputedStyle(navMenu);
+            const rect = navMenu.getBoundingClientRect();
+
+            // Check which CSS rules are actually matching (including media queries)
+            const stylesheet = document.styleSheets;
+            let matchingRules = [];
+            let mediaQueryRules = [];
+            for (let sheet of stylesheet) {
+              try {
+                const rules = sheet.cssRules || sheet.rules;
+                for (let rule of rules) {
+                  // Check media queries
+                  if (rule.media) {
+                    for (let mediaRule of rule.cssRules || []) {
+                      if (mediaRule.selectorText && navMenu.matches(mediaRule.selectorText)) {
+                        mediaQueryRules.push({
+                          selector: mediaRule.selectorText,
+                          media: rule.media.mediaText,
+                          left: mediaRule.style?.left,
+                          position: mediaRule.style?.position,
+                          cssText: mediaRule.cssText?.substring(0, 200)
+                        });
+                      }
+                    }
+                  }
+                  // Check regular rules
+                  if (rule.selectorText && navMenu.matches(rule.selectorText)) {
+                    matchingRules.push({
+                      selector: rule.selectorText,
+                      left: rule.style?.left,
+                      position: rule.style?.position,
+                      cssText: rule.cssText?.substring(0, 200)
+                    });
+                  }
+                }
+              } catch (e) {
+                // Cross-origin stylesheet, skip
+              }
+            }
+            console.log('[NAV DEBUG] 🔍 Matching CSS rules:', matchingRules);
+            console.log('[NAV DEBUG] 🔍 Matching media query rules:', mediaQueryRules);
+
+            // Check if mobile media query is active
+            const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
+            console.log('[NAV DEBUG] 🔍 Mobile media query active?', {
+              matches: mobileMediaQuery.matches,
+              media: mobileMediaQuery.media,
+              windowWidth: window.innerWidth
+            });
+
+            console.log('[NAV DEBUG] ✅ After double requestAnimationFrame - Computed styles:', {
+              display: computed.display,
+              position: computed.position,
+              left: computed.left,
+              top: computed.top,
+              width: computed.width,
+              height: computed.height,
+              visibility: computed.visibility,
+              opacity: computed.opacity,
+              zIndex: computed.zIndex,
+              transform: computed.transform,
+              transition: computed.transition,
+              backgroundColor: computed.backgroundColor,
+              background: computed.background
+            });
+
+            // Check if any element is covering the menu
+            const elementsAtPoint = document.elementsFromPoint(rect.left + rect.width / 2, rect.top + 50);
+            const coveringElements = elementsAtPoint.filter(el =>
+              el !== navMenu &&
+              !navMenu.contains(el) &&
+              el !== document.body &&
+              el !== document.documentElement
+            );
+            console.log('[NAV DEBUG] 🔍 Elements covering menu center point:', coveringElements.map(el => ({
+              tag: el.tagName,
+              class: el.className,
+              id: el.id,
+              zIndex: window.getComputedStyle(el).zIndex,
+              position: window.getComputedStyle(el).position
+            })));
+
+            console.log('[NAV DEBUG] 🔍 Inline style left value:', navMenu.style.getPropertyValue('left'));
+            console.log('[NAV DEBUG] 🔍 Inline style left priority:', navMenu.style.getPropertyPriority('left'));
+
+            console.log('[NAV DEBUG] ✅ Bounding rect:', {
+              x: rect.x,
+              y: rect.y,
+              width: rect.width,
+              height: rect.height,
+              top: rect.top,
+              left: rect.left,
+              right: rect.right,
+              bottom: rect.bottom,
+              visible: rect.width > 0 && rect.height > 0
+            });
+
+            console.log('[NAV DEBUG] ✅ Element in viewport?', {
+              inViewport: rect.left >= 0 && rect.top >= 0 && rect.width > 0 && rect.height > 0,
+              offScreenLeft: rect.left < -rect.width,
+              offScreenRight: rect.left > window.innerWidth
+            });
+
+            // Check if parent elements are hiding it
+            let parent = navMenu.parentElement;
+            let depth = 0;
+            while (parent && depth < 5) {
+              const parentStyles = window.getComputedStyle(parent);
+              console.log(`[NAV DEBUG] Parent ${depth} (${parent.tagName}.${parent.className}):`, {
+                display: parentStyles.display,
+                visibility: parentStyles.visibility,
+                opacity: parentStyles.opacity,
+                overflow: parentStyles.overflow,
+                overflowX: parentStyles.overflowX,
+                overflowY: parentStyles.overflowY,
+                zIndex: parentStyles.zIndex,
+                position: parentStyles.position
+              });
+              parent = parent.parentElement;
+              depth++;
+            }
+          });
+        });
+      } else if (!isActive && window.innerWidth <= 767) {
+        console.log('[NAV DEBUG] 🔒 Closing mobile menu...');
+        requestAnimationFrame(() => {
+          navMenu.style.setProperty('left', '-100%', 'important');
+          console.log('[NAV DEBUG] Set left to -100%');
+          // Don't reset other styles immediately - let transition complete
+          setTimeout(() => {
+            // Restore menu to original parent
+            const originalParentSelector = navMenu.dataset.originalParent;
+            if (originalParentSelector && navMenu.parentElement === document.body) {
+              const navContainer = document.querySelector('.nav-container');
+              if (navContainer) {
+                navContainer.appendChild(navMenu);
+                console.log('[NAV DEBUG] 🔄 Restored menu to nav-container');
+              }
+            }
+
+            navMenu.style.removeProperty('display');
+            navMenu.style.removeProperty('visibility');
+            navMenu.style.removeProperty('opacity');
+            navMenu.style.removeProperty('position');
+            navMenu.style.removeProperty('z-index');
+            navMenu.style.removeProperty('width');
+            navMenu.style.removeProperty('top');
+            navMenu.style.removeProperty('height');
+            navMenu.style.removeProperty('left');
+            navMenu.style.removeProperty('background');
+            navMenu.style.removeProperty('background-color');
+            navMenu.style.removeProperty('transition');
+            console.log('[NAV DEBUG] Reset inline styles after transition');
+          }, 300);
+        });
+      } else {
+        console.log('[NAV DEBUG] ⚠️ Not mobile or not active - no mobile menu action');
+      }
 
       // Update ARIA attributes for accessibility
       hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       navMenu.setAttribute('aria-hidden', isActive ? 'false' : 'true');
 
+      // Prevent body scroll when menu is open on mobile
+      if (isActive && window.innerWidth <= 767) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+
       // Trap focus when menu is open
       if (isActive) {
         navMenu.setAttribute('tabindex', '-1');
-        const firstLink = navMenu.querySelector('.nav-link');
-        if (firstLink) {
-          firstLink.focus();
-        }
+        // Small delay to ensure menu is visible before focusing
+        setTimeout(() => {
+          const firstLink = navMenu.querySelector('.nav-link');
+          if (firstLink) {
+            firstLink.focus();
+          }
+        }, 100);
       } else {
         navMenu.removeAttribute('tabindex');
       }
@@ -98,17 +406,34 @@ export function initNavigation() {
           });
 
           // Toggle this dropdown
-          dropdownItem.classList.toggle('active');
+          const isDropdownActive = dropdownItem.classList.toggle('active');
+
+          // Update ARIA attributes for dropdown
+          const dropdownLink = dropdownItem.querySelector('.nav-link');
+          if (dropdownLink) {
+            dropdownLink.setAttribute('aria-expanded', isDropdownActive ? 'true' : 'false');
+          }
+
           return;
         }
 
         // For non-dropdown links or desktop, navigate normally
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        // Update ARIA attributes
-        hamburger.setAttribute('aria-expanded', 'false');
-        navMenu.setAttribute('aria-hidden', 'true');
-        navMenu.removeAttribute('tabindex');
+        // Only close menu on mobile
+        if (isMobile) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          // Reset inline styles
+          navMenu.style.display = '';
+          navMenu.style.visibility = '';
+          navMenu.style.opacity = '';
+          navMenu.style.left = '';
+          // Update ARIA attributes
+          hamburger.setAttribute('aria-expanded', 'false');
+          navMenu.setAttribute('aria-hidden', 'true');
+          navMenu.removeAttribute('tabindex');
+          // Restore body scroll
+          document.body.style.overflow = '';
+        }
       });
     });
   }
@@ -154,12 +479,16 @@ export function initNavigation() {
     const link = dropdownItem.querySelector('.nav-link');
     if (!link) return;
 
-    // Move dropdown to body to escape navbar stacking context
-    moveDropdownToBody(dropdownMenu, dropdownItem);
-
-    const linkRect = link.getBoundingClientRect();
-    dropdownMenu.style.top = `${linkRect.bottom + 4}px`; // 4px = margin-top: 0.25rem
-    dropdownMenu.style.left = `${linkRect.left}px`;
+    // Only move dropdown to body on desktop - keep in nav-menu on mobile
+    if (window.innerWidth > 767) {
+      moveDropdownToBody(dropdownMenu, dropdownItem);
+      const linkRect = link.getBoundingClientRect();
+      dropdownMenu.style.top = `${linkRect.bottom + 4}px`; // 4px = margin-top: 0.25rem
+      dropdownMenu.style.left = `${linkRect.left}px`;
+    } else {
+      // On mobile, ensure dropdown stays in nav-menu
+      restoreDropdownToParent(dropdownMenu);
+    }
   };
 
   // Update dropdown positions on hover (desktop) and when active (mobile)
@@ -214,34 +543,59 @@ export function initNavigation() {
       }
     });
 
-    // Mobile: Position when active and move to body
+    // Mobile: Keep dropdown in original parent (don't move to body)
     const observer = new MutationObserver(() => {
       if (window.innerWidth <= 767) {
-        if (item.classList.contains('active')) {
-          positionDropdown(item);
-        } else {
+        // On mobile, dropdowns should stay in their original parent
+        // CSS handles the display with max-height and opacity
+        // Don't move to body or use fixed positioning on mobile
+        if (!item.classList.contains('active')) {
+          // Ensure dropdown is restored to parent when inactive
           restoreDropdownToParent(dropdownMenu);
         }
+        // When active, dropdown stays in nav-menu (position: static per CSS)
       }
     });
     observer.observe(item, { attributes: true, attributeFilter: ['class'] });
 
     // Also position on window resize
     window.addEventListener('resize', () => {
-      if (item.classList.contains('active') || item.matches(':hover')) {
-        positionDropdown(item);
-      } else {
+      const isMobile = window.innerWidth <= 767;
+      if (isMobile) {
+        // On mobile, always restore dropdown to parent
         restoreDropdownToParent(dropdownMenu);
+      } else {
+        // On desktop, position dropdown if active or hovered
+        if (item.classList.contains('active') || item.matches(':hover')) {
+          positionDropdown(item);
+        } else {
+          restoreDropdownToParent(dropdownMenu);
+        }
       }
     });
   });
 
-  // Close dropdowns when clicking outside on mobile
+  // Close dropdowns and mobile menu when clicking outside on mobile
   document.addEventListener('click', (e) => {
     const isMobile = window.innerWidth <= 767;
     if (!isMobile) return;
 
+    // Close mobile menu if clicking outside
+    const clickedNavMenu = e.target.closest('.nav-menu');
+    const clickedHamburger = e.target.closest('#hamburger, .hamburger');
     const clickedDropdown = e.target.closest('.nav-item-dropdown');
+
+    if (!clickedNavMenu && !clickedHamburger) {
+      // Clicked outside menu and hamburger - close menu
+      hamburger?.classList.remove('active');
+      navMenu?.classList.remove('active');
+      hamburger?.setAttribute('aria-expanded', 'false');
+      navMenu?.setAttribute('aria-hidden', 'true');
+      navMenu?.removeAttribute('tabindex');
+      document.body.style.overflow = '';
+    }
+
+    // Close dropdowns if clicking outside them
     if (!clickedDropdown) {
       dropdownItems.forEach(item => {
         item.classList.remove('active');

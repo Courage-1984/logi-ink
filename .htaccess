@@ -35,6 +35,8 @@
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  # HTTP Strict Transport Security (HSTS) - Enforces HTTPS for 1 year, including subdomains
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
   # Content Security Policy
   # Relaxed CSP for static sites - allows inline scripts/styles and common sources
