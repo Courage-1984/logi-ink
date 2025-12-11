@@ -675,8 +675,344 @@ body:not(.easter-egg-active):not(.milky-way-ready) .milky-way-menu,
   transform: scale(1.05);
 }
 
+/* Galaxy Settings Panel */
+.galaxy-settings-panel {
+  position: fixed;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 2147483646; /* Just below max z-index */
+  font-family: var(--font-body);
+}
+
+.galaxy-settings-toggle {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--accent-cyan);
+  background: rgba(10, 10, 10, 0.9);
+  border-radius: 6px;
+  color: var(--accent-cyan);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 0 12px rgba(0, 255, 255, 0.3),
+    0 3px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.galaxy-settings-toggle:hover {
+  background: rgba(10, 10, 10, 0.95);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.galaxy-settings-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent-cyan);
+  transition: transform 0.3s ease;
+}
+
+.galaxy-settings-panel.expanded .galaxy-settings-toggle svg {
+  transform: rotate(180deg);
+}
+
+.galaxy-settings-content {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  width: 320px;
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.95);
+  border: 2px solid var(--accent-cyan);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.galaxy-settings-panel.expanded .galaxy-settings-content {
+  max-height: 600px;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden; /* Keep hidden to contain scrollable body */
+}
+
+.galaxy-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.galaxy-settings-header h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px var(--glow-cyan);
+}
+
+.galaxy-settings-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.galaxy-settings-close:hover {
+  color: var(--accent-cyan);
+  background: rgba(0, 255, 255, 0.1);
+  text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+.galaxy-settings-body {
+  padding: var(--space-4);
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0; /* Allows flex child to shrink below content size */
+}
+
+.galaxy-settings-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.galaxy-settings-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.galaxy-settings-body::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+  border-radius: 4px;
+  box-shadow: 0 0 8px var(--glow-cyan);
+}
+
+.galaxy-settings-body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan-dark);
+}
+
+.galaxy-settings-group {
+  margin-bottom: var(--space-6);
+}
+
+.galaxy-settings-group:last-child {
+  margin-bottom: 0;
+}
+
+.galaxy-settings-group h4 {
+  margin: 0 0 var(--space-3) 0;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.galaxy-settings-toggle-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.galaxy-settings-toggle-item:hover {
+  color: var(--accent-cyan);
+}
+
+.galaxy-settings-toggle-item input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.galaxy-settings-toggle-item input[type="checkbox"]:checked + .toggle-slider {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: var(--accent-cyan);
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.3),
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.galaxy-settings-toggle-item input[type="checkbox"]:checked + .toggle-slider::before {
+  transform: translateX(20px);
+  background: var(--accent-cyan);
+  box-shadow:
+    0 0 10px var(--glow-cyan),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.galaxy-settings-toggle-item:hover .toggle-label {
+  color: var(--text-primary);
+}
+
+.galaxy-settings-toggle-item input[type="checkbox"]:checked ~ .toggle-label {
+  color: var(--text-primary);
+}
+
+/* Slider controls */
+.galaxy-settings-slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+}
+
+.galaxy-settings-slider-item label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.galaxy-settings-slider-item label span {
+  color: var(--accent-cyan);
+  font-weight: var(--font-weight-semibold);
+  min-width: 50px;
+  text-align: right;
+}
+
+.galaxy-settings-slider-item input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.galaxy-settings-slider-item input[type="range"]:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+}
+
+.galaxy-settings-slider-item input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--accent-cyan);
+  border: 2px solid var(--bg-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    0 0 8px var(--glow-cyan),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.galaxy-settings-slider-item input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 12px var(--glow-cyan),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.galaxy-settings-slider-item input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--accent-cyan);
+  border: 2px solid var(--bg-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    0 0 8px var(--glow-cyan),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.galaxy-settings-slider-item input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 12px var(--glow-cyan),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.galaxy-settings-slider-item input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
+  .galaxy-settings-panel {
+    top: var(--space-2);
+    left: var(--space-2);
+  }
+
+  .galaxy-settings-content {
+    width: calc(100vw - var(--space-4));
+    max-width: 320px;
+  }
+
   .milky-way-exit {
     top: var(--space-4);
     right: var(--space-4);

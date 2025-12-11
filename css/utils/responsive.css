@@ -180,6 +180,30 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
+  /* About page - Our Expertise section: max 4 columns */
+  .expertise-section .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 100%;
+  }
+
+  /* SEO Services page - Our SEO Services section: max 4 columns */
+  .seo-services-section .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 100%;
+  }
+
+  /* Projects page - Portfolio section: max 3 columns */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 100%;
+  }
+
+  /* Projects page - Technologies We Use section: max 4 columns */
+  .technologies-section .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 100%;
+  }
+
   .footer-content {
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   }
@@ -205,6 +229,26 @@
 
   .section-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  /* About page - Our Expertise section: enforce max 4 columns */
+  .expertise-section .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* SEO Services page - Our SEO Services section: enforce max 4 columns */
+  .seo-services-section .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Projects page - Portfolio section: enforce max 3 columns */
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Projects page - Technologies We Use section: enforce max 4 columns */
+  .technologies-section .services-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -496,6 +540,12 @@
 
   /* Services Grid */
   .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Offer Grid - Mobile Fix */
+  .offer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }

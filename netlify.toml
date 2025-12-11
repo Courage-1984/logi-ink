@@ -1,0 +1,26 @@
+# Netlify Configuration
+# Redirects and build settings for Netlify deployment
+
+[[redirects]]
+  from = "http://www.logi-ink.co.za/*"
+  to = "https://logi-ink.co.za/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.logi-ink.co.za/*"
+  to = "https://logi-ink.co.za/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://logi-ink.co.za/*"
+  to = "https://logi-ink.co.za/:splat"
+  status = 301
+  force = true
+
+# Build settings
+[build]
+  publish = "dist"
+  command = "npm run build"
+

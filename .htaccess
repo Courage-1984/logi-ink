@@ -5,11 +5,19 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # SEO Protection: Redirect IP address and subdirectory access to domain (prevents duplicate content)
-  # Redirect direct IP access or subdirectory access to the canonical domain with HTTPS
+  # Force HTTPS - Redirect HTTP to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Redirect www to non-www (canonical domain)
+  # Redirects www.logi-ink.co.za to logi-ink.co.za for SEO consistency
+  RewriteCond %{HTTP_HOST} ^www\.logi-ink\.co\.za$ [NC]
+  RewriteRule ^(.*)$ https://logi-ink.co.za/$1 [R=301,L]
+
+  # SEO Protection: Redirect IP address and other domains to canonical domain (prevents duplicate content)
+  # Redirect direct IP access or other domains to the canonical domain with HTTPS
   # This ensures all traffic goes to https://logi-ink.co.za/ for SEO and security
   RewriteCond %{HTTP_HOST} !^logi-ink\.co\.za$ [NC]
-  RewriteCond %{HTTP_HOST} !^www\.logi-ink\.co\.za$ [NC]
   RewriteRule ^(.*)$ https://logi-ink.co.za/$1 [R=301,L]
 
   # Redirect .html to clean URL (301 permanent redirect)

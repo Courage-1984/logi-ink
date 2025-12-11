@@ -71,20 +71,7 @@ function generateSEOTags(config) {
     <meta property="og:site_name" content="Logi-Ink" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="${config.url}" />
-    <meta name="twitter:title" content="${config.title}" />
-    <meta
-      name="twitter:description"
-      content="${config.description}"
-    />
-    <meta
-      name="twitter:image"
-      content="https://logi-ink.co.za/logi-ink/assets/images/banners/banner_home.webp"
-    />
-    <meta name="twitter:site" content="@logiink" />
-    <meta name="twitter:creator" content="@logiink" />`;
+`;
 }
 
 // Template for structured data

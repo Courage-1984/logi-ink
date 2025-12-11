@@ -1,0 +1,10 @@
+# Netlify Redirects File
+# This file should be copied to the dist/ directory during build
+# Alternative to netlify.toml redirects - both work, but this is more traditional
+
+# Redirect www to non-www (handles both HTTP and HTTPS)
+www.logi-ink.co.za/*    https://logi-ink.co.za/:splat    301
+
+# Redirect HTTP to HTTPS (for non-www)
+http://logi-ink.co.za/*    https://logi-ink.co.za/:splat    301
+

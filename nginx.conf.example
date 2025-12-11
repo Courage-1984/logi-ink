@@ -5,6 +5,16 @@
 server {
     # ... other server configuration ...
 
+    # Redirect HTTP to HTTPS
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    }
+
+    # Redirect www to non-www (canonical domain)
+    if ($host = "www.logi-ink.co.za") {
+        return 301 https://logi-ink.co.za$request_uri;
+    }
+
     # Security Headers
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-Frame-Options "DENY" always;

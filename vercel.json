@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "source": "http://www.logi-ink.co.za/:path*",
+      "destination": "https://logi-ink.co.za/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://www.logi-ink.co.za/:path*",
+      "destination": "https://logi-ink.co.za/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://logi-ink.co.za/:path*",
+      "destination": "https://logi-ink.co.za/:path*",
+      "permanent": true
+    }
+  ]
+}
+

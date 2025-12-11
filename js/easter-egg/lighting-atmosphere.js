@@ -42,7 +42,7 @@ export function createAtmosphericGlow(THREE, planet, planetSize, color, intensit
     fragmentShader: `
       uniform vec3 color;
       uniform float intensity;
-      uniform vec3 cameraPosition;
+      // cameraPosition is automatically provided by Three.js, don't redeclare it
 
       varying vec3 vNormal;
       varying vec3 vWorldPosition;

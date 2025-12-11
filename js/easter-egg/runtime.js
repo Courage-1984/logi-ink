@@ -1,5 +1,11 @@
 import { isDevelopmentEnv, isMobileDevice } from '../utils/env.js';
-import { createSunTexture, createMoonTexture, createPlanetTexture } from './celestial-textures.js';
+import { initGPUCompute, isWebGPUAvailable } from './gpu-compute.js';
+import {
+  createSunTexture,
+  createMoonTexture,
+  createPlanetTexture,
+  getNormalScaleForPlanet,
+} from './celestial-textures.js';
 import { generateMultiLayerGalaxy } from './galaxy-generator.js';
 import { generateMultiLayerStarField, updateStarTwinkling } from './star-field.js';
 import {
@@ -49,6 +55,7 @@ import {
   updateNebula,
   updateStarFormingRegion,
 } from './nebula-clouds.js';
+import { initGalaxySettings, getSettingsState, cleanupGalaxySettings } from './galaxy-settings.js';
 
 /**
  * Easter Egg Module
@@ -73,6 +80,15 @@ let lastMouseX = 0;
 let lastMouseY = 0;
 let raycaster = null;
 let mouse2D = null;
+
+// Settings values (will be updated from settings UI)
+let scrollSensitivity = 0.025;
+let rotationSensitivity = 0.005;
+let autoRotateGalaxy = false;
+let autoRotateSpeed = 0.002;
+let galaxyRotationSpeedMultiplier = 1.0;
+let planetRotationSpeedMultiplier = 1.0;
+let orbitalSpeedMultiplier = 1.0;
 
 // Celestial bodies
 let sun = null;
@@ -265,6 +281,9 @@ export function activateEasterEgg() {
       milkyWayContainer.style.height = '100vh';
       milkyWayContainer.classList.add('active');
     }
+
+    // Initialize galaxy settings UI
+    initGalaxySettings(milkyWayContainer || document.body);
 
     const menu = document.querySelector('.milky-way-menu');
     if (menu) {
@@ -538,10 +557,34 @@ async function initMilkyWay() {
   milkyWayCamera.lookAt(0, 0, 0);
 
   // Renderer setup
-  milkyWayRenderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true,
-  });
+  // Check for WebGPU support first (better performance for compute shaders)
+  let useWebGPURenderer = false;
+  if (isWebGPUAvailable() && THREE.WebGPURenderer) {
+    try {
+      milkyWayRenderer = new THREE.WebGPURenderer({
+        antialias: true,
+        alpha: true,
+      });
+      useWebGPURenderer = true;
+      if (isDevelopmentEnv()) {
+        console.log('[Easter Egg] Using WebGPU renderer for better performance');
+      }
+    } catch (error) {
+      if (isDevelopmentEnv()) {
+        console.warn('[Easter Egg] WebGPU renderer failed, falling back to WebGL:', error);
+      }
+      useWebGPURenderer = false;
+    }
+  }
+
+  // Fallback to WebGL renderer
+  if (!milkyWayRenderer) {
+    milkyWayRenderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    });
+  }
+
   milkyWayRenderer.setSize(window.innerWidth, window.innerHeight);
   milkyWayRenderer.setPixelRatio(window.devicePixelRatio);
 
@@ -558,6 +601,23 @@ async function initMilkyWay() {
   canvas.style.background = 'transparent'; /* Transparent background */
 
   container.appendChild(canvas);
+
+  // Initialize GPU compute system (for particle updates)
+  milkyWayScene.userData.gpuCompute = null;
+  try {
+    const gpuCompute = await initGPUCompute(THREE, milkyWayRenderer);
+    if (gpuCompute && gpuCompute.available) {
+      milkyWayScene.userData.gpuCompute = gpuCompute;
+      if (isDevelopmentEnv()) {
+        console.log(`[Easter Egg] GPU compute initialized: ${gpuCompute.type}`);
+      }
+    }
+  } catch (error) {
+    if (isDevelopmentEnv()) {
+      console.warn('[Easter Egg] GPU compute initialization failed, using CPU fallback:', error);
+    }
+    // Continue with CPU-based updates
+  }
 
   // Initialize camera controls
   initCameraControls(THREE);
@@ -597,6 +657,22 @@ async function initMilkyWay() {
   // Create nebula and space clouds
   createNebulaAndClouds();
 
+  // Create particle effects (asteroid belts, comets, solar wind, space dust, space stations)
+  createParticleEffects();
+
+  // Create orbital trajectory visualization (initially hidden)
+  createOrbitalTrajectories();
+
+  // Initialize default settings in scene userData
+  milkyWayScene.userData.starTwinklingEnabled = true;
+  milkyWayScene.userData.atmospheresEnabled = true;
+  milkyWayScene.userData.nebulasEnabled = true;
+  milkyWayScene.userData.starFormingRegionsEnabled = true;
+  milkyWayScene.userData.dustCloudsEnabled = true;
+  if (milkyWayScene.userData.postProcessing) {
+    milkyWayScene.userData.postProcessing.enabled = true;
+  }
+
   // Debug: Log scene contents
   if (isDevelopmentEnv()) {
     console.log('[Easter Egg] Scene initialized:', {
@@ -612,6 +688,37 @@ async function initMilkyWay() {
 
   // Handle window resize
   window.addEventListener('resize', onMilkyWayResize);
+
+  // Setup settings event listeners (after all effects are created)
+  // Delay to ensure all scene objects are initialized
+  // Use a longer delay and verify objects exist before applying settings
+  setTimeout(() => {
+    setupSettingsListeners();
+
+    // Verify critical objects exist before applying settings
+    const verifyObjects = () => {
+      return milkyWayScene &&
+        milkyWayScene.userData.galaxyLayers &&
+        milkyWayScene.userData.starLayers &&
+        milkyWayScene.userData.planets &&
+        milkyWayScene.userData.centerStars &&
+        milkyWayScene.userData.particleEffects;
+    };
+
+    // Retry applying settings if objects aren't ready yet
+    const applySettingsWithRetry = (retries = 3) => {
+      if (verifyObjects() || retries === 0) {
+        const currentSettings = getSettingsState();
+        Object.keys(currentSettings).forEach(setting => {
+          applySetting(setting, currentSettings[setting]);
+        });
+      } else {
+        setTimeout(() => applySettingsWithRetry(retries - 1), 100);
+      }
+    };
+
+    applySettingsWithRetry();
+  }, 500);
 
   // Handle fullscreen changes (F11 browser fullscreen)
   const handleFullscreenChange = () => {
@@ -629,9 +736,9 @@ async function initMilkyWay() {
 
     if (menu.classList.contains('active')) {
       // If in fullscreen, move menu to fullscreen element or ensure it's visible
-      if (fullscreenElement !== null) {
+      if (fullscreenElement !== null && fullscreenElement !== undefined) {
         // Try to move menu to fullscreen element if it's not already there
-        if (fullscreenElement !== menu.parentElement) {
+        if (fullscreenElement !== menu.parentElement && fullscreenElement.appendChild) {
           fullscreenElement.appendChild(menu);
         }
 
@@ -880,14 +987,25 @@ function createCelestialBodies() {
 
   // Create Sun at the center with texture
   const sunGeometry = new THREE.SphereGeometry(3, 32, 32);
-  const sunTexture = createSunTexture(initialTextureResolution, THREE);
-  // Use MeshStandardMaterial which supports emissive
-  const sunMaterial = new THREE.MeshStandardMaterial({
+  const sunTextureResult = createSunTexture(initialTextureResolution, THREE, {
+    generateNormalMap: true,
+    normalStrength: 0.5, // Subtle for sun
+  });
+  // Handle both old format (texture) and new format ({map, normalMap})
+  const sunTexture = sunTextureResult.map || sunTextureResult;
+  const sunNormalMap = sunTextureResult.normalMap || null;
+  // Use MeshStandardMaterial which supports emissive and normal maps
+  const sunMaterialOptions = {
     map: sunTexture,
     color: 0xffff00,
     emissive: 0xffff00,
     emissiveIntensity: 1.5,
-  });
+  };
+  if (sunNormalMap) {
+    sunMaterialOptions.normalMap = sunNormalMap;
+    sunMaterialOptions.normalScale = new THREE.Vector2(0.5, 0.5); // Subtle normal scale for sun
+  }
+  const sunMaterial = new THREE.MeshStandardMaterial(sunMaterialOptions);
   sun = new THREE.Mesh(sunGeometry, sunMaterial);
   sun.position.set(0, 0, 0);
   milkyWayScene.add(sun);
@@ -988,20 +1106,41 @@ function createCelestialBodies() {
   ];
 
   planetConfigs.forEach((config, index) => {
-    // Create planet with texture
-    const planetGeometry = new THREE.SphereGeometry(config.size, 32, 32);
+    // Create planet with texture - using LOD for performance optimization
+    // High detail geometry (32 segments) for close-up views
+    const planetGeometryHigh = new THREE.SphereGeometry(config.size, 32, 32);
+    // Low detail geometry (16 segments) for distant views
+    const planetGeometryLow = new THREE.SphereGeometry(config.size, 16, 16);
 
     // Generate procedural texture for planet (lower resolution for faster loading)
-    const texture = createPlanetTexture(config.name, config.color, initialTextureResolution, THREE);
+    const textureResult = createPlanetTexture(config.name, config.color, initialTextureResolution, THREE, {
+      generateNormalMap: true,
+    });
+    // Handle both old format (texture) and new format ({map, normalMap})
+    const texture = textureResult.map || textureResult;
+    const normalMap = textureResult.normalMap || null;
+    const normalScale = normalMap ? getNormalScaleForPlanet(config.name) : undefined;
 
-    const planetMaterial = new THREE.MeshPhongMaterial({
+    const planetMaterialOptions = {
       map: texture,
       color: config.color,
       emissive: config.emissive || config.color,
       emissiveIntensity: 0.2,
       shininess: 30,
-    });
-    const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+    };
+    if (normalMap) {
+      planetMaterialOptions.normalMap = normalMap;
+      planetMaterialOptions.normalScale = new THREE.Vector2(normalScale, normalScale);
+    }
+    const planetMaterial = new THREE.MeshPhongMaterial(planetMaterialOptions);
+
+    // Create LOD system for planet (high detail <50 units, low detail >50 units)
+    const planetLOD = new THREE.LOD();
+    const planetHigh = new THREE.Mesh(planetGeometryHigh, planetMaterial);
+    const planetLow = new THREE.Mesh(planetGeometryLow, planetMaterial);
+    planetLOD.addLevel(planetHigh, 0); // High detail when <50 units
+    planetLOD.addLevel(planetLow, 50); // Low detail when >50 units
+    const planet = planetLOD;
 
     // Position planet in orbit with orbital inclination
     const angle = (index / planetConfigs.length) * Math.PI * 2;
@@ -1034,37 +1173,111 @@ function createCelestialBodies() {
     milkyWayScene.add(planet);
     planets.push(planet);
 
-    // Add moons to planets
+    // Store moon data for InstancedMesh (optimization: single draw call for all moons)
+    // Moons will be created after all planets are processed
+    planet.userData.moonConfigs = [];
     for (let m = 0; m < config.moons; m++) {
-      const moonGeometry = new THREE.SphereGeometry(config.size * 0.3, 16, 16);
-      // Create simple moon texture (lower resolution for faster loading)
-      const moonTexture = createMoonTexture(initialTextureResolution, THREE);
-      const moonMaterial = new THREE.MeshPhongMaterial({
-        map: moonTexture,
-        color: 0xcccccc,
-        emissive: 0x444444,
-        emissiveIntensity: 0.1,
-      });
-      const moon = new THREE.Mesh(moonGeometry, moonMaterial);
-
       const moonDistance = config.size * 1.5 + m * config.size * 0.5;
       const moonAngle = (m / config.moons) * Math.PI * 2;
-      moon.position.x = moonDistance;
-      moon.userData = {
+      planet.userData.moonConfigs.push({
         distance: moonDistance,
         angle: moonAngle,
         speed: config.speed * 1.5, // Moons orbit faster but still slower
         parentPlanet: planet,
-      };
-
-      planet.add(moon);
-      moons.push(moon);
+        size: config.size * 0.3,
+      });
     }
   });
+
+  // Create InstancedMesh for all moons (optimization: reduces 18+ draw calls to 1)
+  // Count total moons first
+  let totalMoons = 0;
+  planets.forEach(planet => {
+    if (planet.userData.moonConfigs) {
+      totalMoons += planet.userData.moonConfigs.length;
+    }
+  });
+
+  if (totalMoons > 0) {
+    // Create shared geometry and material for all moons
+    const moonGeometry = new THREE.SphereGeometry(1, 16, 16); // Base size 1, will be scaled per instance
+    const moonTextureResult = createMoonTexture(initialTextureResolution, THREE, {
+      generateNormalMap: true,
+      normalStrength: 1.5, // Stronger for craters
+    });
+    // Handle both old format (texture) and new format ({map, normalMap})
+    const moonTexture = moonTextureResult.map || moonTextureResult;
+    const moonNormalMap = moonTextureResult.normalMap || null;
+    const moonMaterialOptions = {
+      map: moonTexture,
+      color: 0xcccccc,
+      emissive: 0x444444,
+      emissiveIntensity: 0.1,
+    };
+    if (moonNormalMap) {
+      moonMaterialOptions.normalMap = moonNormalMap;
+      moonMaterialOptions.normalScale = new THREE.Vector2(1.5, 1.5); // Strong normal scale for craters
+    }
+    const moonMaterial = new THREE.MeshPhongMaterial(moonMaterialOptions);
+
+    // Create InstancedMesh for all moons
+    const moonInstances = new THREE.InstancedMesh(moonGeometry, moonMaterial, totalMoons);
+    moonInstances.instanceMatrix.setUsage(THREE.DynamicDrawUsage); // Will be updated every frame
+
+    // Store moon instance data for animation
+    milkyWayScene.userData.moonInstances = moonInstances;
+    milkyWayScene.userData.moonData = [];
+
+    // Initialize moon instances and store data
+    const dummy = new THREE.Object3D();
+    let moonIndex = 0;
+
+    planets.forEach(planet => {
+      if (planet.userData.moonConfigs) {
+        planet.userData.moonConfigs.forEach(moonConfig => {
+          // Calculate initial moon position relative to planet
+          const moonX = Math.cos(moonConfig.angle) * moonConfig.distance;
+          const moonZ = Math.sin(moonConfig.angle) * moonConfig.distance;
+
+          // Get planet world position
+          const planetWorldPos = new THREE.Vector3();
+          planet.getWorldPosition(planetWorldPos);
+
+          // Set transform for this instance
+          dummy.position.set(
+            planetWorldPos.x + moonX,
+            planetWorldPos.y,
+            planetWorldPos.z + moonZ
+          );
+          dummy.scale.set(moonConfig.size, moonConfig.size, moonConfig.size);
+          dummy.updateMatrix();
+          moonInstances.setMatrixAt(moonIndex, dummy.matrix);
+
+          // Store moon data for animation
+          milkyWayScene.userData.moonData.push({
+            index: moonIndex,
+            distance: moonConfig.distance,
+            angle: moonConfig.angle,
+            speed: moonConfig.speed,
+            parentPlanet: moonConfig.parentPlanet,
+            size: moonConfig.size,
+          });
+
+          moonIndex++;
+        });
+      }
+    });
+
+    moonInstances.instanceMatrix.needsUpdate = true;
+    milkyWayScene.add(moonInstances);
+  }
 
   // Setup dynamic lighting with shadows
   const lights = setupDynamicLighting(THREE, milkyWayScene, sun, planets, milkyWayRenderer);
   milkyWayScene.userData.lights = lights;
+  // Store lights for easy access in settings
+  milkyWayScene.userData.ambientLightObj = lights.ambientLight;
+  milkyWayScene.userData.directionalLight = lights.sunDirectionalLight;
 
   // Add atmospheric glow to planets
   const atmosphereConfigs = {
@@ -1075,6 +1288,13 @@ function createCelestialBodies() {
   };
   // Pass initial camera position to prevent first-frame atmosphere glitch
   addAtmospheresToPlanets(THREE, planets, atmosphereConfigs, milkyWayCamera.position.clone());
+  // Ensure all atmospheres are visible by default
+  planets.forEach(planet => {
+    const atmosphere = planet.userData.atmosphereMesh;
+    if (atmosphere) {
+      atmosphere.visible = true;
+    }
+  });
 
   // Store planets for lighting updates
   milkyWayScene.userData.planets = planets;
@@ -1095,8 +1315,139 @@ function createCelestialBodies() {
   milkyWayScene.userData.lagrangeGroups = [];
   largePlanets.forEach(planet => {
     const lagrangeGroup = createLagrangePointMarkers(THREE, planet, sun);
+    lagrangeGroup.visible = false; // Hidden by default (toggleable)
     milkyWayScene.add(lagrangeGroup);
     milkyWayScene.userData.lagrangeGroups.push(lagrangeGroup);
+  });
+}
+
+/**
+ * Create orbital trajectory visualization
+ * Draws orbital paths for planets and moons
+ */
+function createOrbitalTrajectories() {
+  if (!milkyWayScene || !THREE) {
+    return;
+  }
+
+  const planets = milkyWayScene.userData.planets;
+  const sun = milkyWayScene.userData.sun;
+
+  if (!planets || planets.length === 0 || !sun) {
+    return;
+  }
+
+  try {
+
+  // Store trajectory lines
+  milkyWayScene.userData.orbitalTrajectories = {
+    planetTrajectories: [],
+    moonTrajectories: [],
+  };
+
+  // Create planet orbital trajectories
+  planets.forEach(planet => {
+    const distance = planet.userData.distance;
+    const inclination = planet.userData.inclination || 0;
+    const segments = 128; // Number of segments for smooth circle
+
+    // Create geometry for orbital path
+    const points = [];
+    for (let i = 0; i <= segments; i++) {
+      const angle = (i / segments) * Math.PI * 2;
+      const flatX = Math.cos(angle) * distance;
+      const flatZ = Math.sin(angle) * distance;
+      // Apply orbital inclination
+      const x = flatX;
+      const y = flatZ * Math.sin(inclination);
+      const z = flatZ * Math.cos(inclination);
+      points.push(new THREE.Vector3(x, y, z));
+    }
+
+    const geometry = new THREE.BufferGeometry().setFromPoints(points);
+    const material = new THREE.LineBasicMaterial({
+      color: 0x00ffff,
+      opacity: 0.3,
+      transparent: true,
+      linewidth: 1,
+    });
+
+    const trajectory = new THREE.Line(geometry, material);
+    trajectory.visible = false; // Hidden by default
+    trajectory.userData.isOrbitalTrajectory = true;
+    trajectory.userData.planet = planet;
+    milkyWayScene.add(trajectory);
+    milkyWayScene.userData.orbitalTrajectories.planetTrajectories.push(trajectory);
+
+    // Create moon orbital trajectories
+    if (planet.userData.moonConfigs) {
+      planet.userData.moonConfigs.forEach(moonConfig => {
+        const moonDistance = moonConfig.distance;
+        const moonSegments = 64;
+
+        const moonPoints = [];
+        for (let i = 0; i <= moonSegments; i++) {
+          const angle = (i / moonSegments) * Math.PI * 2;
+          moonPoints.push(new THREE.Vector3(
+            Math.cos(angle) * moonDistance,
+            0,
+            Math.sin(angle) * moonDistance
+          ));
+        }
+
+        const moonGeometry = new THREE.BufferGeometry().setFromPoints(moonPoints);
+        const moonMaterial = new THREE.LineBasicMaterial({
+          color: 0x00ff88,
+          opacity: 0.2,
+          transparent: true,
+          linewidth: 1,
+        });
+
+        const moonTrajectory = new THREE.Line(moonGeometry, moonMaterial);
+        moonTrajectory.visible = false; // Hidden by default
+        moonTrajectory.userData.isMoonTrajectory = true;
+        moonTrajectory.userData.planet = planet;
+        moonTrajectory.userData.moonConfig = moonConfig;
+        milkyWayScene.add(moonTrajectory);
+        milkyWayScene.userData.orbitalTrajectories.moonTrajectories.push(moonTrajectory);
+      });
+    }
+  });
+  } catch (error) {
+    if (isDevelopmentEnv()) {
+      console.warn('[Easter Egg] Failed to create orbital trajectories:', error);
+    }
+    // Don't break the scene if trajectory creation fails
+  }
+}
+
+/**
+ * Update orbital trajectory positions (for moons, which orbit around planets)
+ */
+function updateOrbitalTrajectories() {
+  if (!milkyWayScene || !milkyWayScene.userData.orbitalTrajectories) {
+    return;
+  }
+
+  const { moonTrajectories } = milkyWayScene.userData.orbitalTrajectories;
+
+  // Update moon trajectory positions to follow their parent planets
+  moonTrajectories.forEach(trajectory => {
+    if (!trajectory.visible) {
+      return;
+    }
+
+    const planet = trajectory.userData.planet;
+    if (!planet) {
+      return;
+    }
+
+    // Get planet's world position
+    const planetWorldPos = new THREE.Vector3();
+    planet.getWorldPosition(planetWorldPos);
+
+    // Update trajectory position to match planet
+    trajectory.position.copy(planetWorldPos);
   });
 }
 
@@ -1129,6 +1480,7 @@ function createParticleEffects() {
       outerRadius: titanPlanet.userData.size * 2.5,
       size: 0.02,
     });
+    asteroidBelt.visible = true; // Ensure visible by default
     milkyWayScene.userData.particleEffects.asteroidBelts.push(asteroidBelt);
   }
 
@@ -1143,6 +1495,9 @@ function createParticleEffects() {
       orbitRadius: 80 + Math.random() * 40,
       orbitAngle: Math.random() * Math.PI * 2,
     });
+    // Ensure comet core and trail are visible
+    if (comet.core) comet.core.visible = true;
+    if (comet.trail) comet.trail.visible = true;
     milkyWayScene.userData.particleEffects.comets.push(comet);
   }
 
@@ -1153,6 +1508,7 @@ function createParticleEffects() {
     speed: 0.05,
     spread: 0.3,
   });
+  solarWind.visible = true; // Ensure visible by default
   milkyWayScene.userData.particleEffects.solarWind = solarWind;
 
   // Create space dust
@@ -1161,6 +1517,7 @@ function createParticleEffects() {
     size: 0.005,
     radius: 200,
   });
+  spaceDust.visible = true; // Ensure visible by default
   milkyWayScene.userData.particleEffects.spaceDust = spaceDust;
 
   // Add space stations to a few planets
@@ -1170,6 +1527,7 @@ function createParticleEffects() {
       distance: planet.userData.size * 2.5,
       size: 0.1,
     });
+    station.visible = true; // Ensure visible by default
     milkyWayScene.userData.particleEffects.spaceStations.push(station);
   });
 }
@@ -1186,6 +1544,9 @@ function createNebulaAndClouds() {
 
   // Create nebula field (3-4 nebulas)
   const nebulas = createNebulaField(THREE, milkyWayScene, 3);
+  nebulas.forEach(nebula => {
+    nebula.visible = true; // Ensure visible by default
+  });
   milkyWayScene.userData.nebulas = nebulas;
 
   // Create 1-2 star-forming regions (moved far from central galaxy)
@@ -1205,6 +1566,7 @@ function createNebulaAndClouds() {
       color: 0xff88ff,
       intensity: 1.5 + Math.random() * 0.5,
     });
+    region.visible = true; // Ensure visible by default
     if (region.userData.core && region.userData.core.material) {
       region.userData.baseIntensity = region.userData.core.material.emissiveIntensity;
     }
@@ -1230,7 +1592,457 @@ function createNebulaAndClouds() {
       color: 0x666666,
       density: 0.2 + Math.random() * 0.1,
     });
+    dustCloud.visible = true; // Ensure visible by default
     milkyWayScene.userData.dustClouds.push(dustCloud);
+  }
+}
+
+/**
+ * Setup settings event listeners
+ */
+function setupSettingsListeners() {
+  document.addEventListener('galaxy-setting-changed', (e) => {
+    const { setting, value } = e.detail;
+    if (isDevelopmentEnv()) {
+      console.log('[Galaxy Settings] Setting changed:', setting, '=', value);
+    }
+
+    // Update local variables for settings that need them (before applying)
+    if (setting === 'scrollSensitivity') {
+      scrollSensitivity = value;
+    } else if (setting === 'rotationSensitivity') {
+      rotationSensitivity = value;
+    } else if (setting === 'autoRotateGalaxy') {
+      autoRotateGalaxy = value;
+    } else if (setting === 'galaxyRotationSpeed') {
+      galaxyRotationSpeedMultiplier = value;
+    } else if (setting === 'planetRotationSpeed') {
+      planetRotationSpeedMultiplier = value;
+    } else if (setting === 'orbitalSpeed') {
+      orbitalSpeedMultiplier = value;
+    }
+
+    applySetting(setting, value);
+  });
+
+  // Apply initial settings
+  const initialState = getSettingsState();
+  if (isDevelopmentEnv()) {
+    console.log('[Galaxy Settings] Applying initial settings:', initialState);
+  }
+  Object.keys(initialState).forEach(setting => {
+    // Update local variables for settings that need them
+    if (setting === 'scrollSensitivity') {
+      scrollSensitivity = initialState[setting];
+    } else if (setting === 'rotationSensitivity') {
+      rotationSensitivity = initialState[setting];
+    } else if (setting === 'autoRotateGalaxy') {
+      autoRotateGalaxy = initialState[setting];
+    } else if (setting === 'galaxyRotationSpeed') {
+      galaxyRotationSpeedMultiplier = initialState[setting];
+    } else if (setting === 'planetRotationSpeed') {
+      planetRotationSpeedMultiplier = initialState[setting];
+    } else if (setting === 'orbitalSpeed') {
+      orbitalSpeedMultiplier = initialState[setting];
+    }
+    // Apply the setting
+    applySetting(setting, initialState[setting]);
+  });
+}
+
+/**
+ * Apply a setting change
+ */
+function applySetting(setting, value) {
+  if (!milkyWayScene) {
+    if (isDevelopmentEnv()) {
+      console.warn('[Galaxy Settings] Cannot apply setting:', setting, '- scene not initialized');
+    }
+    return;
+  }
+
+  if (isDevelopmentEnv()) {
+    console.log('[Galaxy Settings] Applying setting:', setting, '=', value, typeof value);
+  }
+
+  switch (setting) {
+    case 'showOrbitalTrajectories':
+      if (milkyWayScene.userData.orbitalTrajectories) {
+        const { planetTrajectories, moonTrajectories } = milkyWayScene.userData.orbitalTrajectories;
+        [...planetTrajectories, ...moonTrajectories].forEach(trajectory => {
+          trajectory.visible = value;
+        });
+      }
+      break;
+
+    case 'showLagrangePoints':
+      if (milkyWayScene.userData.lagrangeGroups) {
+        milkyWayScene.userData.lagrangeGroups.forEach(group => {
+          group.visible = value;
+        });
+      }
+      break;
+
+    case 'showSolarWind':
+      if (milkyWayScene.userData.particleEffects?.solarWind) {
+        milkyWayScene.userData.particleEffects.solarWind.visible = value;
+      }
+      break;
+
+    case 'showAsteroidBelts':
+      if (milkyWayScene.userData.particleEffects?.asteroidBelts) {
+        milkyWayScene.userData.particleEffects.asteroidBelts.forEach(belt => {
+          belt.visible = value;
+        });
+      }
+      break;
+
+    case 'showComets':
+      if (milkyWayScene.userData.particleEffects?.comets) {
+        milkyWayScene.userData.particleEffects.comets.forEach(comet => {
+          if (comet.core) comet.core.visible = value;
+          if (comet.trail) comet.trail.visible = value;
+        });
+      }
+      break;
+
+    case 'showSpaceDust':
+      if (milkyWayScene && milkyWayScene.userData.particleEffects?.spaceDust) {
+        milkyWayScene.userData.particleEffects.spaceDust.visible = value;
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Space dust visibility:', value);
+        }
+      } else if (isDevelopmentEnv()) {
+        console.warn('[Galaxy Settings] Cannot toggle space dust - not found', {
+          scene: !!milkyWayScene,
+          particleEffects: !!milkyWayScene?.userData?.particleEffects,
+          spaceDust: !!milkyWayScene?.userData?.particleEffects?.spaceDust
+        });
+      }
+      break;
+
+    case 'showSpaceStations':
+      if (milkyWayScene && milkyWayScene.userData.particleEffects?.spaceStations) {
+        let visibleCount = 0;
+        milkyWayScene.userData.particleEffects.spaceStations.forEach(station => {
+          if (station) {
+            station.visible = value;
+            if (value) visibleCount++;
+          }
+        });
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Space stations visibility:', value, 'count:', milkyWayScene.userData.particleEffects.spaceStations.length);
+        }
+      } else if (isDevelopmentEnv()) {
+        console.warn('[Galaxy Settings] Cannot toggle space stations - not found', {
+          scene: !!milkyWayScene,
+          particleEffects: !!milkyWayScene?.userData?.particleEffects,
+          spaceStations: !!milkyWayScene?.userData?.particleEffects?.spaceStations
+        });
+      }
+      break;
+
+    case 'showNebulas':
+      milkyWayScene.userData.nebulasEnabled = value;
+      if (milkyWayScene.userData.nebulas) {
+        milkyWayScene.userData.nebulas.forEach(nebula => {
+          nebula.visible = value;
+        });
+      }
+      // Also toggle star-forming regions and dust clouds (they're part of nebula effects)
+      if (milkyWayScene.userData.starFormingRegions) {
+        milkyWayScene.userData.starFormingRegionsEnabled = value;
+        milkyWayScene.userData.starFormingRegions.forEach(region => {
+          region.visible = value;
+        });
+      }
+      if (milkyWayScene.userData.dustClouds) {
+        milkyWayScene.userData.dustCloudsEnabled = value;
+        milkyWayScene.userData.dustClouds.forEach(cloud => {
+          cloud.visible = value;
+        });
+      }
+      break;
+
+    case 'showStarTwinkling':
+      // This is handled in the animation loop
+      if (milkyWayScene) {
+        milkyWayScene.userData.starTwinklingEnabled = value;
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Star twinkling:', value);
+        }
+      }
+      break;
+
+    case 'showAtmospheres':
+      // Toggle visibility of atmosphere meshes
+      milkyWayScene.userData.atmospheresEnabled = value;
+      if (milkyWayScene.userData.planets) {
+        milkyWayScene.userData.planets.forEach(planet => {
+          const atmosphere = planet.userData.atmosphereMesh;
+          if (atmosphere) {
+            atmosphere.visible = value;
+          }
+        });
+      }
+      break;
+
+    case 'showPostProcessing':
+      if (milkyWayScene.userData.postProcessing) {
+        milkyWayScene.userData.postProcessing.enabled = value;
+      }
+      break;
+
+    // Camera & Controls
+    case 'autoRotateGalaxy':
+      autoRotateGalaxy = value;
+      if (isDevelopmentEnv()) {
+        console.log('[Galaxy Settings] Auto-rotate galaxy:', value, 'variable set to:', autoRotateGalaxy);
+      }
+      break;
+
+    case 'scrollSensitivity':
+      scrollSensitivity = value;
+      break;
+
+    case 'rotationSensitivity':
+      rotationSensitivity = value;
+      break;
+
+    case 'showMoons':
+      if (milkyWayScene && milkyWayScene.userData.moonInstances) {
+        milkyWayScene.userData.moonInstances.visible = value;
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Moons visibility:', value, 'moonInstances exists:', !!milkyWayScene.userData.moonInstances);
+        }
+      } else if (isDevelopmentEnv()) {
+        console.warn('[Galaxy Settings] Cannot toggle moons - moonInstances not found', {
+          scene: !!milkyWayScene,
+          moonInstances: !!milkyWayScene?.userData?.moonInstances
+        });
+      }
+      break;
+
+    // Animation Speed
+    case 'galaxyRotationSpeed':
+      galaxyRotationSpeedMultiplier = value;
+      break;
+
+    case 'planetRotationSpeed':
+      planetRotationSpeedMultiplier = value;
+      break;
+
+    case 'orbitalSpeed':
+      orbitalSpeedMultiplier = value;
+      break;
+
+    // Visual Quality
+    case 'showStarField':
+      if (milkyWayScene && milkyWayScene.userData.starLayers && Array.isArray(milkyWayScene.userData.starLayers)) {
+        let visibleCount = 0;
+        milkyWayScene.userData.starLayers.forEach(layer => {
+          if (layer && layer.points) {
+            layer.points.visible = value;
+            if (value) visibleCount++;
+          }
+        });
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Star field visibility:', value, 'layers:', milkyWayScene.userData.starLayers.length, 'visible:', visibleCount);
+        }
+      } else if (isDevelopmentEnv()) {
+        console.warn('[Galaxy Settings] Cannot toggle star field - starLayers not found', {
+          scene: !!milkyWayScene,
+          starLayers: !!milkyWayScene?.userData?.starLayers,
+          isArray: Array.isArray(milkyWayScene?.userData?.starLayers)
+        });
+      }
+      break;
+
+    case 'galaxyCoreBrightness':
+      if (milkyWayScene && milkyWayScene.userData.centerStars) {
+        const centerStars = milkyWayScene.userData.centerStars;
+        const material = centerStars.material;
+        if (material) {
+          // Update opacity based on brightness (0-2 range)
+          material.opacity = Math.min(1, value);
+          material.transparent = value < 1;
+          // Also update color intensity
+          if (material.color) {
+            material.color.setRGB(value, value, value * 0.8);
+          }
+          if (isDevelopmentEnv()) {
+            console.log('[Galaxy Settings] Core brightness:', value, 'opacity:', material.opacity);
+          }
+        }
+      } else if (isDevelopmentEnv()) {
+        console.warn('[Galaxy Settings] Cannot update core brightness - centerStars not found', {
+          scene: !!milkyWayScene,
+          centerStars: !!milkyWayScene?.userData?.centerStars
+        });
+      }
+      break;
+
+    case 'showShadows':
+      const THREE = window.THREE;
+      if (milkyWayRenderer && THREE) {
+        milkyWayRenderer.shadowMap.enabled = value;
+        if (value) {
+          milkyWayRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        }
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Shadows:', value, 'renderer shadowMap enabled:', milkyWayRenderer.shadowMap.enabled);
+        }
+      } else if (isDevelopmentEnv()) {
+        console.warn('[Galaxy Settings] Cannot toggle shadows - renderer or THREE not available', {
+          renderer: !!milkyWayRenderer,
+          THREE: !!THREE
+        });
+      }
+      // Update all objects to cast/receive shadows
+      if (milkyWayScene) {
+        let meshCount = 0;
+        milkyWayScene.traverse((object) => {
+          if (object.isMesh) {
+            object.castShadow = value;
+            object.receiveShadow = value;
+            meshCount++;
+          }
+        });
+        if (isDevelopmentEnv()) {
+          console.log('[Galaxy Settings] Updated shadow settings for', meshCount, 'meshes');
+        }
+      }
+      break;
+
+    case 'antialiasing':
+      // Note: Antialiasing can only be changed on renderer creation
+      // This setting is stored but requires renderer recreation to take effect
+      if (milkyWayScene) {
+        milkyWayScene.userData.antialiasingEnabled = value;
+      }
+      break;
+
+    // Lighting
+    case 'sunGlowIntensity':
+      const sunObj = milkyWayScene.userData.sun;
+      if (sunObj && sunObj.material) {
+        sunObj.material.emissiveIntensity = value;
+      }
+      // Also update sun glow mesh
+      if (sunObj && sunObj.children.length > 0) {
+        const sunGlow = sunObj.children[0];
+        if (sunGlow && sunGlow.material) {
+          sunGlow.material.opacity = value * 0.2;
+        }
+      }
+      break;
+
+    case 'ambientLight':
+      if (milkyWayScene.userData.ambientLightObj) {
+        milkyWayScene.userData.ambientLightObj.intensity = value;
+      } else if (milkyWayScene.userData.lights && milkyWayScene.userData.lights.ambientLight) {
+        // Fallback to lights object
+        milkyWayScene.userData.lights.ambientLight.intensity = value;
+      }
+      break;
+
+    case 'showDirectionalLight':
+      if (milkyWayScene) {
+        if (milkyWayScene.userData.directionalLight) {
+          milkyWayScene.userData.directionalLight.visible = value;
+          if (isDevelopmentEnv()) {
+            console.log('[Galaxy Settings] Directional light visibility:', value, 'from userData.directionalLight');
+          }
+        } else if (milkyWayScene.userData.lights && milkyWayScene.userData.lights.sunDirectionalLight) {
+          // Fallback to lights object
+          milkyWayScene.userData.lights.sunDirectionalLight.visible = value;
+          if (isDevelopmentEnv()) {
+            console.log('[Galaxy Settings] Directional light visibility:', value, 'from lights.sunDirectionalLight');
+          }
+        } else if (isDevelopmentEnv()) {
+          console.warn('[Galaxy Settings] Cannot toggle directional light - not found', {
+            directionalLight: !!milkyWayScene.userData.directionalLight,
+            lights: !!milkyWayScene.userData.lights,
+            sunDirectionalLight: !!milkyWayScene.userData.lights?.sunDirectionalLight
+          });
+        }
+      }
+      break;
+
+    // Performance
+    case 'particleDensity':
+      // Store multiplier for particle effects
+      if (milkyWayScene) {
+        milkyWayScene.userData.particleDensityMultiplier = value;
+      }
+      break;
+
+    case 'lodDistance':
+      // Update LOD switching distance for planets
+      if (milkyWayScene && milkyWayScene.userData.planets) {
+        milkyWayScene.userData.planets.forEach(planet => {
+          if (planet.type === 'LOD' || planet.isLOD) {
+            // Update LOD levels
+            if (planet.levels && Array.isArray(planet.levels)) {
+              planet.levels.forEach((level, index) => {
+                if (index === 0) {
+                  level.distance = 0;
+                } else {
+                  level.distance = value;
+                }
+              });
+            }
+          }
+        });
+      }
+      break;
+
+    // UI/Information
+    case 'showPlanetLabels':
+      // Store setting for label rendering
+      if (milkyWayScene) {
+        milkyWayScene.userData.showPlanetLabels = value;
+      }
+      break;
+
+    case 'showDistanceInfo':
+      // Store setting for distance info rendering
+      if (milkyWayScene) {
+        milkyWayScene.userData.showDistanceInfo = value;
+      }
+      break;
+
+    case 'showGridOverlay':
+      // Create or toggle grid overlay
+      if (milkyWayScene) {
+        const THREE = window.THREE;
+        if (value && !milkyWayScene.userData.gridHelper && THREE) {
+          const gridHelper = new THREE.GridHelper(200, 20, 0x00ffff, 0x008888);
+          gridHelper.material.opacity = 0.3;
+          gridHelper.material.transparent = true;
+          milkyWayScene.add(gridHelper);
+          milkyWayScene.userData.gridHelper = gridHelper;
+          if (isDevelopmentEnv()) {
+            console.log('[Galaxy Settings] Grid overlay created');
+          }
+        } else if (!value && milkyWayScene.userData.gridHelper) {
+          milkyWayScene.remove(milkyWayScene.userData.gridHelper);
+          milkyWayScene.userData.gridHelper = null;
+          if (isDevelopmentEnv()) {
+            console.log('[Galaxy Settings] Grid overlay removed');
+          }
+        } else if (milkyWayScene.userData.gridHelper) {
+          milkyWayScene.userData.gridHelper.visible = value;
+          if (isDevelopmentEnv()) {
+            console.log('[Galaxy Settings] Grid overlay visibility:', value);
+          }
+        } else if (isDevelopmentEnv()) {
+          console.warn('[Galaxy Settings] Cannot create grid overlay - THREE not available', {
+            THREE: !!THREE
+          });
+        }
+      }
+      break;
   }
 }
 
@@ -1247,8 +2059,15 @@ function setupInteractiveControls() {
   container.addEventListener(
     'wheel',
     e => {
+      // Don't prevent default if the wheel event is over the settings panel
+      // This allows scrolling within the settings panel
+      const settingsPanel = document.querySelector('.galaxy-settings-panel');
+      if (settingsPanel && (settingsPanel.contains(e.target) || e.target.closest('.galaxy-settings-panel'))) {
+        return; // Let the settings panel handle the scroll
+      }
+
       e.preventDefault();
-      const delta = e.deltaY * 0.025; // Increased from 0.01 to 0.025 for 2.5x scroll sensitivity
+      const delta = e.deltaY * scrollSensitivity; // Use setting value
       const oldDistance = cameraDistance;
       cameraDistance = Math.max(1, Math.min(1000, cameraDistance + delta));
 
@@ -1264,46 +2083,111 @@ function setupInteractiveControls() {
     { passive: false }
   );
 
-  // Mouse down for drag rotation
-  container.addEventListener('mousedown', e => {
+  // Mouse/pointer down for drag rotation
+  // Use pointer events for better cross-browser compatibility
+  const handlePointerDown = (e) => {
+    // Don't handle events from settings panel
+    const settingsPanel = document.querySelector('.galaxy-settings-panel');
+    if (settingsPanel && (settingsPanel.contains(e.target) || e.target.closest('.galaxy-settings-panel'))) {
+      return; // Let the settings panel handle its own interactions
+    }
+
+    // Only handle primary button (left mouse button)
+    if (e.button !== 0 && e.pointerType === 'mouse') {
+      return;
+    }
+    e.preventDefault();
+    e.stopPropagation(); // Prevent event bubbling
     isMouseDown = true;
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
+    mouseDownX = e.clientX; // Store for click detection
+    mouseDownY = e.clientY; // Store for click detection
     // Visual feedback through custom cursor dot (system cursor is hidden)
     const cursorDot = document.querySelector('.cursor-dot');
     if (cursorDot) {
       cursorDot.style.transform = 'scale(2)';
     }
-  });
+  };
 
-  // Mouse up
-  document.addEventListener('mouseup', () => {
-    isMouseDown = false;
-    // Reset custom cursor dot scale
-    const cursorDot = document.querySelector('.cursor-dot');
-    if (cursorDot) {
-      cursorDot.style.transform = 'scale(1)';
+  container.addEventListener('mousedown', handlePointerDown);
+  container.addEventListener('pointerdown', handlePointerDown);
+
+  // Mouse/pointer up - handle on document to catch mouseup even if mouse leaves container
+  const handlePointerUp = (e) => {
+    // Only handle primary button (left mouse button) or if it's not a mouse event
+    if (e.pointerType === 'mouse' && e.button !== 0) {
+      return;
+    }
+    // Always reset isMouseDown, even if button check fails (safety measure)
+    if (isMouseDown) {
+      isMouseDown = false;
+      // Reset custom cursor dot scale
+      const cursorDot = document.querySelector('.cursor-dot');
+      if (cursorDot) {
+        cursorDot.style.transform = 'scale(1)';
+      }
+    }
+  };
+
+  document.addEventListener('mouseup', handlePointerUp);
+  document.addEventListener('pointerup', handlePointerUp);
+  // Also handle mouseleave to reset state if mouse leaves window
+  document.addEventListener('mouseleave', handlePointerUp);
+  container.addEventListener('mouseleave', (e) => {
+    // Only reset if mouse actually left (not just moved to child element)
+    if (!container.contains(e.relatedTarget)) {
+      handlePointerUp(e);
     }
   });
 
-  // Mouse move for rotation
-  document.addEventListener('mousemove', e => {
+  // Mouse/pointer move for rotation
+  const handlePointerMove = (e) => {
     if (!isMouseDown || !isEasterEggActive) {
+      return;
+    }
+
+    // Don't handle events from settings panel
+    const settingsPanel = document.querySelector('.galaxy-settings-panel');
+    if (settingsPanel && (settingsPanel.contains(e.target) || e.target.closest('.galaxy-settings-panel'))) {
+      // Reset drag state if mouse moves over settings panel
+      isMouseDown = false;
+      const cursorDot = document.querySelector('.cursor-dot');
+      if (cursorDot) {
+        cursorDot.style.transform = 'scale(1)';
+      }
+      return;
+    }
+
+    // Only prevent default if we're actually dragging (mouse button is down)
+    // Check if buttons property indicates left button is pressed
+    if (e.buttons === undefined || (e.buttons & 1) === 1) {
+      e.preventDefault();
+    } else {
+      // Mouse button is not actually pressed, reset state (Chrome fix)
+      isMouseDown = false;
+      const cursorDot = document.querySelector('.cursor-dot');
+      if (cursorDot) {
+        cursorDot.style.transform = 'scale(1)';
+      }
       return;
     }
 
     const deltaX = e.clientX - lastMouseX;
     const deltaY = e.clientY - lastMouseY;
 
-    cameraRotationY += deltaX * 0.005;
-    cameraRotationX += deltaY * 0.005;
+    cameraRotationY += deltaX * rotationSensitivity; // Use setting value
+    cameraRotationX += deltaY * rotationSensitivity; // Use setting value
 
     // Limit vertical rotation
     cameraRotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, cameraRotationX));
 
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
-  });
+  };
+
+  document.addEventListener('mousemove', handlePointerMove);
+  document.addEventListener('pointermove', handlePointerMove);
 
   // Custom cursor dot will provide visual feedback (system cursor is hidden)
 
@@ -1312,8 +2196,22 @@ function setupInteractiveControls() {
   mouse2D = new THREE.Vector2();
 
   // Add click handler for planets and sun
+  // Use a small threshold to distinguish clicks from drags
+  let mouseDownX = 0;
+  let mouseDownY = 0;
+  const CLICK_THRESHOLD = 5; // pixels - if mouse moved more than this, it's a drag, not a click
+
   container.addEventListener('click', e => {
-    if (!isEasterEggActive || isMouseDown) {
+    if (!isEasterEggActive) {
+      return;
+    }
+
+    // Check if this was actually a drag (mouse moved significantly)
+    const moveDistance = Math.sqrt(
+      Math.pow(e.clientX - mouseDownX, 2) + Math.pow(e.clientY - mouseDownY, 2)
+    );
+    if (moveDistance > CLICK_THRESHOLD) {
+      // This was a drag, not a click
       return;
     }
 
@@ -1334,11 +2232,27 @@ function setupInteractiveControls() {
     }
 
     // Check for planet intersections
-    const intersects = raycaster.intersectObjects(planets);
+    // Since planets are now LOD objects, we need to check recursively (includes children)
+    const intersects = raycaster.intersectObjects(planets, true); // true = recursive (check children)
 
     if (intersects.length > 0) {
-      const planet = intersects[0].object;
-      centerOnPlanet(planet);
+      // Get the actual planet object (might be LOD or child mesh)
+      let planet = intersects[0].object;
+
+      // If we hit a child mesh of LOD, traverse up to find the LOD parent
+      // This is necessary because LOD objects have child meshes that are actually hit by the raycaster
+      while (planet && planet.type !== 'LOD' && planet.parent) {
+        if (planet.parent.type === 'LOD') {
+          planet = planet.parent;
+          break;
+        }
+        planet = planet.parent;
+      }
+
+      // Ensure we have a valid planet (should be LOD or sun)
+      if (planet && (planet.type === 'LOD' || planet === sun)) {
+        centerOnPlanet(planet);
+      }
     }
   });
 }
@@ -1370,7 +2284,9 @@ function centerOnPlanet(planet) {
   const startRotationY = cameraRotationY;
 
   // Get planet position (sun is at 0,0,0, planets have userData with position)
-  const initialPlanetPos = planet.position.clone();
+  // For LOD objects, we need to get the world position
+  const initialPlanetPos = new THREE.Vector3();
+  planet.getWorldPosition(initialPlanetPos);
 
   // Determine target distance based on size
   let baseDistance;
@@ -1424,7 +2340,9 @@ function centerOnPlanet(planet) {
     const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
     // Calculate current planet position (it's orbiting)
-    const currentPlanetPos = planet.position.clone();
+    // For LOD objects, get world position
+    const currentPlanetPos = new THREE.Vector3();
+    planet.getWorldPosition(currentPlanetPos);
 
     // Interpolate distance smoothly from far to close
     const currentDistance = zoomStartDistance + (targetDistance - zoomStartDistance) * ease;
@@ -1488,28 +2406,53 @@ function animateMilkyWay() {
   // Update animation time for twinkling
   animationTime += 0.016; // Approximate frame time (60fps)
 
+  // Auto-rotate camera if enabled
+  if (autoRotateGalaxy && !centeredPlanet && !isAnimatingToPlanet) {
+    cameraRotationY += autoRotateSpeed;
+  }
+
   // Rotate multiple galaxy layers at different speeds (differential rotation)
   if (milkyWayScene && milkyWayScene.userData.galaxyLayers) {
     milkyWayScene.userData.galaxyLayers.forEach(layer => {
-      layer.points.rotation.y += layer.rotationSpeed;
+      layer.points.rotation.y += layer.rotationSpeed * galaxyRotationSpeedMultiplier;
     });
   }
 
   // Rotate center stars (galactic core)
   if (milkyWayScene && milkyWayScene.userData.centerStars) {
-    milkyWayScene.userData.centerStars.rotation.y += 0.0006;
-    milkyWayScene.userData.centerStars.rotation.x += 0.0003;
+    milkyWayScene.userData.centerStars.rotation.y += 0.0006 * galaxyRotationSpeedMultiplier;
+    milkyWayScene.userData.centerStars.rotation.x += 0.0003 * galaxyRotationSpeedMultiplier;
   }
 
-  // Update star field twinkling (disabled on mobile for better performance)
+  // Update star field twinkling (GPU-accelerated when available, otherwise CPU with optimizations)
   // On mobile, skip twinkling updates entirely to prevent glitchy/fast animations
-  if (milkyWayScene && milkyWayScene.userData.starLayers) {
+  // Also check if twinkling is enabled in settings
+  if (milkyWayScene && milkyWayScene.userData.starLayers && milkyWayScene.userData.starTwinklingEnabled !== false) {
     const isMobile = isMobileDevice();
     if (!isMobile) {
-      // Only update twinkling on desktop
-      milkyWayScene.userData.starLayers.forEach(layer => {
-        updateStarTwinkling(layer.points, animationTime, undefined, false);
-      });
+      const gpuCompute = milkyWayScene.userData.gpuCompute;
+
+      // Try GPU compute if available (WebGPU or WebGL2 transform feedback)
+      if (gpuCompute && gpuCompute.updateStarTwinkling) {
+        // GPU-accelerated update
+        milkyWayScene.userData.starLayers.forEach(layer => {
+          gpuCompute.updateStarTwinkling(layer.points, animationTime, false);
+        });
+      } else {
+        // CPU-based update with frame skipping optimization
+        // Store frame counter in scene userData
+        if (!milkyWayScene.userData.starTwinkleFrameCounter) {
+          milkyWayScene.userData.starTwinkleFrameCounter = 0;
+        }
+        milkyWayScene.userData.starTwinkleFrameCounter++;
+
+        // Update every 2 frames (reduces CPU load by 50% with minimal visual impact)
+        if (milkyWayScene.userData.starTwinkleFrameCounter % 2 === 0) {
+          milkyWayScene.userData.starLayers.forEach(layer => {
+            updateStarTwinkling(layer.points, animationTime, undefined, false);
+          });
+        }
+      }
     }
     // On mobile, skip twinkling entirely (stars remain static)
   }
@@ -1519,9 +2462,14 @@ function animateMilkyWay() {
     updateLighting(milkyWayScene.userData.sun, milkyWayScene.userData.lights);
   }
 
-  // Update atmospheric glows based on camera
-  if (milkyWayScene && milkyWayCamera && milkyWayScene.userData.planets) {
+  // Update atmospheric glows based on camera (if enabled in settings)
+  if (milkyWayScene && milkyWayCamera && milkyWayScene.userData.planets && milkyWayScene.userData.atmospheresEnabled !== false) {
     updateAtmospheres(milkyWayCamera, milkyWayScene.userData.planets);
+  }
+
+  // Update orbital trajectories (for moons that orbit around planets)
+  if (milkyWayScene && milkyWayScene.userData.orbitalTrajectories) {
+    updateOrbitalTrajectories();
   }
 
   // Update particle effects
@@ -1538,9 +2486,16 @@ function animateMilkyWay() {
       updateComet(comet);
     });
 
-    // Update solar wind
+    // Update solar wind (GPU-accelerated when available, otherwise CPU)
     if (effects.solarWind) {
-      updateSolarWind(effects.solarWind);
+      const gpuCompute = milkyWayScene.userData.gpuCompute;
+      if (gpuCompute && gpuCompute.updateSolarWind) {
+        // GPU-accelerated update (future implementation)
+        gpuCompute.updateSolarWind(effects.solarWind, animationTime * 0.016);
+      } else {
+        // CPU-based update
+        updateSolarWind(effects.solarWind);
+      }
     }
 
     // Update space stations
@@ -1549,17 +2504,27 @@ function animateMilkyWay() {
     });
   }
 
-  // Update nebula and clouds
-  if (milkyWayScene && milkyWayScene.userData.nebulas) {
+  // Update nebula and clouds (if enabled)
+  if (milkyWayScene && milkyWayScene.userData.nebulas && milkyWayScene.userData.nebulasEnabled !== false) {
     milkyWayScene.userData.nebulas.forEach(nebula => {
-      updateNebula(nebula, animationTime);
+      if (nebula.visible) {
+        updateNebula(nebula, animationTime);
+      }
     });
   }
 
-  if (milkyWayScene && milkyWayScene.userData.starFormingRegions) {
+  // Update star-forming regions (if enabled)
+  if (milkyWayScene && milkyWayScene.userData.starFormingRegions && milkyWayScene.userData.starFormingRegionsEnabled !== false) {
     milkyWayScene.userData.starFormingRegions.forEach(region => {
-      updateStarFormingRegion(region, animationTime);
+      if (region.visible) {
+        updateStarFormingRegion(region, animationTime);
+      }
     });
+  }
+
+  // Update dust clouds (if enabled - they're static but should respect visibility)
+  if (milkyWayScene && milkyWayScene.userData.dustClouds && milkyWayScene.userData.dustCloudsEnabled !== false) {
+    // Dust clouds are static, visibility is handled by the toggle
   }
 
   // Rotate sun (slower)
@@ -1581,7 +2546,7 @@ function animateMilkyWay() {
 
   // Animate planets in orbit
   planets.forEach(planet => {
-    planet.userData.angle += planet.userData.speed;
+    planet.userData.angle += planet.userData.speed * orbitalSpeedMultiplier;
 
     // Calculate position in flat orbit plane
     const flatX = Math.cos(planet.userData.angle) * planet.userData.distance;
@@ -1595,19 +2560,44 @@ function animateMilkyWay() {
 
     // Use realistic rotation speed (already set in createCelestialBodies)
     if (planet.userData.rotationSpeed) {
-      planet.rotation.y += planet.userData.rotationSpeed;
+      planet.rotation.y += planet.userData.rotationSpeed * planetRotationSpeedMultiplier;
     } else {
-      planet.rotation.y += 0.002; // Fallback
+      planet.rotation.y += 0.002 * planetRotationSpeedMultiplier; // Fallback
     }
   });
 
-  // Animate moons around their planets
-  moons.forEach(moon => {
-    moon.userData.angle += moon.userData.speed;
-    const parentPlanet = moon.userData.parentPlanet;
-    moon.position.x = Math.cos(moon.userData.angle) * moon.userData.distance;
-    moon.position.z = Math.sin(moon.userData.angle) * moon.userData.distance;
-  });
+  // Animate moons around their planets (using InstancedMesh for performance)
+  if (milkyWayScene && milkyWayScene.userData.moonInstances && milkyWayScene.userData.moonData) {
+    const moonInstances = milkyWayScene.userData.moonInstances;
+    const moonData = milkyWayScene.userData.moonData;
+    const dummy = new THREE.Object3D();
+
+    moonData.forEach(moon => {
+      // Update moon angle
+      moon.angle += moon.speed * orbitalSpeedMultiplier;
+
+      // Get parent planet position
+      const parentPlanet = moon.parentPlanet;
+      const planetWorldPos = new THREE.Vector3();
+      parentPlanet.getWorldPosition(planetWorldPos);
+
+      // Calculate moon position relative to planet
+      const moonX = Math.cos(moon.angle) * moon.distance;
+      const moonZ = Math.sin(moon.angle) * moon.distance;
+
+      // Set transform for this instance (relative to planet's world position)
+      dummy.position.set(
+        planetWorldPos.x + moonX,
+        planetWorldPos.y,
+        planetWorldPos.z + moonZ
+      );
+      dummy.scale.set(moon.size, moon.size, moon.size);
+      dummy.updateMatrix();
+      moonInstances.setMatrixAt(moon.index, dummy.matrix);
+    });
+
+    moonInstances.instanceMatrix.needsUpdate = true;
+  }
 
   // Update camera position based on interactive controls or centered planet
   if (milkyWayCamera) {
@@ -1631,7 +2621,9 @@ function animateMilkyWay() {
 
     if (centeredPlanet) {
       // If centered on a planet, keep looking at it (follow its orbit)
-      const planetPos = centeredPlanet.position.clone();
+      // For LOD objects, get world position
+      const planetPos = new THREE.Vector3();
+      centeredPlanet.getWorldPosition(planetPos);
 
       // Update camera position to maintain distance and rotation relative to planet
       const x =
@@ -1677,7 +2669,7 @@ function animateMilkyWay() {
 
   // Try to use post-processing if available, otherwise use standard render
   let rendered = false;
-  if (milkyWayScene && milkyWayScene.userData.postProcessing && milkyWayScene.userData.postProcessing.composer) {
+  if (milkyWayScene && milkyWayScene.userData.postProcessing && milkyWayScene.userData.postProcessing.composer && milkyWayScene.userData.postProcessing.enabled !== false) {
     try {
       const focusTarget = centeredPlanet ? centeredPlanet.position : new THREE.Vector3(0, 0, 0);
       updatePostProcessing(milkyWayCamera, cameraVelocity, focusTarget);
@@ -1811,7 +2803,11 @@ function exitMilkyWay() {
   // Clean up celestial bodies
   sun = null;
   planets = [];
-  moons = [];
+  // Moons are now part of InstancedMesh, cleaned up with scene disposal
+  if (milkyWayScene && milkyWayScene.userData.moonInstances) {
+    milkyWayScene.userData.moonInstances = null;
+    milkyWayScene.userData.moonData = null;
+  }
 
   // Reset interactive controls
   isMouseDown = false;
@@ -1851,6 +2847,9 @@ function exitMilkyWay() {
   if (document.fullscreenElement) {
     document.exitFullscreen().catch(() => {});
   }
+
+  // Cleanup settings UI
+  cleanupGalaxySettings();
 
   // Remove milky-way-ready class to restore content
   document.body.classList.remove('milky-way-ready');

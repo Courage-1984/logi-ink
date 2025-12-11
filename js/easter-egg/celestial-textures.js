@@ -24,16 +24,131 @@ import { fractalNoise, seamlessFractalNoise, fractalNoise3D } from './procedural
 // Texture cache to avoid regenerating
 const textureCache = new Map();
 
+// Normal map cache (stores normal maps separately)
+const normalMapCache = new Map();
+
 // Constants for pole-aware feature placement
 const MIN_POLE_SCALE_THRESHOLD = 0.1; // Minimum pole scale factor to place features (10% of normal size)
+
+/**
+ * Normalize a 3D vector
+ * @param {Array<number>} vec - Vector [x, y, z]
+ * @returns {Array<number>} Normalized vector
+ */
+function normalize(vec) {
+  const len = Math.sqrt(vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2]);
+  if (len === 0) return [0, 0, 1];
+  return [vec[0] / len, vec[1] / len, vec[2] / len];
+}
+
+/**
+ * Get height value from height data array
+ * @param {number} x - X coordinate
+ * @param {number} y - Y coordinate
+ * @param {Uint8Array|Float32Array} heightData - Height data array
+ * @param {number} width - Texture width
+ * @param {number} height - Texture height
+ * @param {boolean} seamless - Whether to wrap horizontally
+ * @returns {number} Height value (0-1)
+ */
+function getHeight(x, y, heightData, width, height, seamless = true) {
+  if (seamless) {
+    x = ((x % width) + width) % width; // Wrap X
+  } else {
+    x = Math.max(0, Math.min(width - 1, x));
+  }
+  y = Math.max(0, Math.min(height - 1, y)); // Clamp Y for poles
+
+  const idx = y * width + x;
+  const heightValue = heightData[idx];
+
+  // Normalize to 0-1 range
+  if (heightValue > 1.0) {
+    return heightValue / 255.0; // Uint8Array
+  }
+  return heightValue; // Float32Array (already 0-1)
+}
+
+/**
+ * Generate normal map from height data using Sobel filter
+ * Creates a normal map texture that adds 3D depth perception to flat textures
+ * @param {Uint8Array|Float32Array} heightData - Height values (0-255 or 0-1)
+ * @param {number} width - Texture width
+ * @param {number} height - Texture height
+ * @param {Object} THREE - Three.js library (required)
+ * @param {Object} options - Options
+ * @param {number} options.strength - Normal map strength (default: 1.0)
+ * @param {boolean} options.seamless - Whether to wrap horizontally (default: true)
+ * @returns {THREE.Texture} Normal map texture
+ */
+export function createNormalMapFromHeight(heightData, width, height, THREE, options = {}) {
+  THREE = THREE || (typeof window !== 'undefined' ? window.THREE : null);
+  if (!THREE) {
+    throw new Error('THREE.js must be loaded before creating normal maps. Pass THREE as fourth argument or ensure window.THREE is available.');
+  }
+
+  const strength = options.strength || 1.0;
+  const seamless = options.seamless !== false; // Default true
+
+  const normalData = new Uint8Array(width * height * 4);
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const idx = (y * width + x) * 4;
+
+      // Get height samples using Sobel filter
+      const hL = getHeight(x - 1, y, heightData, width, height, seamless);
+      const hR = getHeight(x + 1, y, heightData, width, height, seamless);
+      const hT = getHeight(x, y - 1, heightData, width, height, seamless);
+      const hB = getHeight(x, y + 1, heightData, width, height, seamless);
+
+      // Calculate gradients
+      const dx = (hR - hL) * strength;
+      const dy = (hB - hT) * strength;
+
+      // Calculate normal vector (tangent space)
+      // Negative gradients because we want normals pointing "up" from raised areas
+      const normal = normalize([-dx, -dy, 1.0]);
+
+      // Convert to RGB (0-255 range, stored as 0.5 + 0.5 * normal)
+      // This is the standard normal map encoding
+      normalData[idx] = Math.floor((normal[0] * 0.5 + 0.5) * 255);     // R = X
+      normalData[idx + 1] = Math.floor((normal[1] * 0.5 + 0.5) * 255); // G = Y
+      normalData[idx + 2] = Math.floor((normal[2] * 0.5 + 0.5) * 255); // B = Z
+      normalData[idx + 3] = 255;                                        // A = 1.0
+    }
+  }
+
+  // Create canvas and texture
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  const imageData = ctx.createImageData(width, height);
+  imageData.data.set(normalData);
+  ctx.putImageData(imageData, 0, 0);
+
+  // Create Three.js texture with proper settings
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.generateMipmaps = true;
+
+  return texture;
+}
 
 /**
  * Create complex sun texture with detailed solar features
  * Uses equirectangular projection for better sphere mapping
  * @param {number} resolution - Resolution multiplier (1.0 = 2048x1024, 0.5 = 1024x512, etc.)
  * @param {Object} THREE - Three.js library (required)
+ * @param {Object} options - Options
+ * @param {boolean} options.generateNormalMap - Generate normal map (default: true)
+ * @param {number} options.normalStrength - Normal map strength (default: 0.5, subtle for sun)
  */
-export function createSunTexture(resolution = 1.0, THREE = null) {
+export function createSunTexture(resolution = 1.0, THREE = null, options = {}) {
   THREE = THREE || (typeof window !== 'undefined' ? window.THREE : null);
   if (!THREE) {
     throw new Error('THREE.js must be loaded before creating textures. Pass THREE as second argument or ensure window.THREE is available.');
@@ -293,8 +408,11 @@ export function createSunTexture(resolution = 1.0, THREE = null) {
  * Uses equirectangular projection and noise-based generation
  * @param {number} resolution - Resolution multiplier (1.0 = 2048x1024, 0.5 = 1024x512, etc.)
  * @param {Object} THREE - Three.js library (required)
+ * @param {Object} options - Options
+ * @param {boolean} options.generateNormalMap - Generate normal map (default: true)
+ * @param {number} options.normalStrength - Normal map strength (default: 1.5)
  */
-export function createMoonTexture(resolution = 1.0, THREE = null) {
+export function createMoonTexture(resolution = 1.0, THREE = null, options = {}) {
   THREE = THREE || (typeof window !== 'undefined' ? window.THREE : null);
   if (!THREE) {
     throw new Error('THREE.js must be loaded before creating textures. Pass THREE as second argument or ensure window.THREE is available.');
@@ -543,8 +661,45 @@ export function createMoonTexture(resolution = 1.0, THREE = null) {
     magFilter: THREE.LinearFilter,
   });
 
+  // Generate normal map if requested (default: true for moons)
+  let normalMap = null;
+  const generateNormalMap = options?.generateNormalMap !== false; // Default true for moons
+  if (generateNormalMap) {
+    // Extract height data from final texture (brightness = height)
+    // Use the seamless data that was just put back to canvas
+    const finalImageData = ctx.getImageData(0, 0, width, height);
+    const heightData = new Uint8Array(width * height);
+    for (let i = 0; i < finalImageData.data.length; i += 4) {
+      const idx = i / 4;
+      // Convert RGB to grayscale (luminance) for height
+      const r = finalImageData.data[i];
+      const g = finalImageData.data[i + 1];
+      const b = finalImageData.data[i + 2];
+      const luminance = 0.299 * r + 0.587 * g + 0.114 * b; // Standard luminance formula
+      heightData[idx] = Math.floor(luminance);
+    }
+
+    // Generate normal map with appropriate strength for moons (stronger for craters)
+    normalMap = createNormalMapFromHeight(
+      heightData,
+      width,
+      height,
+      THREE,
+      { strength: options?.normalStrength || 1.5, seamless: true }
+    );
+
+    // Cache normal map
+    const normalCacheKey = `moon-normal-${resolution}`;
+    normalMapCache.set(normalCacheKey, normalMap);
+  }
+
   // Cache the texture
   textureCache.set(cacheKey, texture);
+
+  // Return both textures if normal map was generated
+  if (normalMap) {
+    return { map: texture, normalMap: normalMap };
+  }
   return texture;
 }
 
@@ -555,8 +710,11 @@ export function createMoonTexture(resolution = 1.0, THREE = null) {
  * @param {number} color - Planet color
  * @param {number} resolution - Resolution multiplier (1.0 = 2048x1024, 0.5 = 1024x512, etc.)
  * @param {Object} THREE - Three.js library (required)
+ * @param {Object} options - Options
+ * @param {boolean} options.generateNormalMap - Generate normal map (default: true)
+ * @param {number} options.normalStrength - Normal map strength (default: 1.0, varies by planet)
  */
-export function createPlanetTexture(name, color, resolution = 1.0, THREE = null) {
+export function createPlanetTexture(name, color, resolution = 1.0, THREE = null, options = {}) {
   THREE = THREE || (typeof window !== 'undefined' ? window.THREE : null);
   if (!THREE) {
     throw new Error('THREE.js must be loaded before creating textures. Pass THREE as fourth argument or ensure window.THREE is available.');
@@ -1209,7 +1367,85 @@ export function createPlanetTexture(name, color, resolution = 1.0, THREE = null)
     magFilter: THREE.LinearFilter,
   });
 
+  // Generate normal map if requested (default: true for planets)
+  let normalMap = null;
+  const generateNormalMap = options?.generateNormalMap !== false; // Default true
+  if (generateNormalMap) {
+    // Extract height data from final texture (brightness = height)
+    // Use the seamless data that was just put back to canvas
+    const finalImageData = ctx.getImageData(0, 0, width, height);
+    const heightData = new Uint8Array(width * height);
+    for (let i = 0; i < finalImageData.data.length; i += 4) {
+      const idx = i / 4;
+      // Convert RGB to grayscale (luminance) for height
+      const r = finalImageData.data[i];
+      const g = finalImageData.data[i + 1];
+      const b = finalImageData.data[i + 2];
+      const luminance = 0.299 * r + 0.587 * g + 0.114 * b; // Standard luminance formula
+      heightData[idx] = Math.floor(luminance);
+    }
+
+    // Get normal strength for this planet type (or use provided value)
+    const normalStrength = options?.normalStrength || getNormalStrengthForPlanet(name);
+
+    // Generate normal map
+    normalMap = createNormalMapFromHeight(
+      heightData,
+      width,
+      height,
+      THREE,
+      { strength: normalStrength, seamless: true }
+    );
+
+    // Cache normal map
+    const normalCacheKey = `planet-normal-${name}-${resolution}`;
+    normalMapCache.set(normalCacheKey, normalMap);
+  }
+
   // Cache the texture
   textureCache.set(cacheKey, texture);
+
+  // Return both textures if normal map was generated
+  if (normalMap) {
+    return { map: texture, normalMap: normalMap };
+  }
   return texture;
+}
+
+/**
+ * Get recommended normal map strength for a planet type
+ * @param {string} name - Planet name
+ * @returns {number} Normal strength (0.5-1.5)
+ */
+function getNormalStrengthForPlanet(name) {
+  const strengths = {
+    Pyro: 0.8,        // Volcanic - moderate detail
+    Crystal: 1.2,     // Ice crystals - strong detail
+    Terra: 1.0,       // Earth-like - moderate detail
+    Vermillion: 0.6,  // Gas/clouds - subtle detail
+    Titan: 0.7,       // Gas giant - subtle detail
+    Nebula: 0.9,      // Nebula clouds - moderate detail
+    Aurora: 1.1,      // Aurora effects - strong detail
+    Obsidian: 1.3,    // Rocky - very strong detail
+  };
+  return strengths[name] || 1.0;
+}
+
+/**
+ * Get recommended normal map scale for a planet type
+ * @param {string} name - Planet name
+ * @returns {number} Normal scale (0.5-2.0)
+ */
+export function getNormalScaleForPlanet(name) {
+  const scales = {
+    Pyro: 0.8,
+    Crystal: 1.2,
+    Terra: 1.0,
+    Vermillion: 0.6,
+    Titan: 0.7,
+    Nebula: 0.9,
+    Aurora: 1.1,
+    Obsidian: 1.5,
+  };
+  return scales[name] || 1.0;
 }

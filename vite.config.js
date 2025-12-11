@@ -634,6 +634,7 @@ export default defineConfig(({ command, mode }) => {
           'sitemap.xml',
           '404.html', // GitHub Pages clean URL routing handler
           '_headers', // Netlify/Vercel headers
+          '_redirects', // Netlify redirects file
           '.htaccess', // Apache security headers
           'nginx.conf.example', // Nginx config example (for reference)
         ];
