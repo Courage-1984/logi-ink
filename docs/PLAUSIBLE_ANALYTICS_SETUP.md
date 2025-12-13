@@ -3,7 +3,15 @@
 **Last Updated:** 2025-01-30  
 **Status:** ✅ Implemented
 
-This guide explains how to set up and use Custom Properties and Funnels in Plausible Analytics for the Logi-Ink website.
+This guide explains how to set up and use Custom Properties, Goals, and Funnels in Plausible Analytics for the Logi-Ink website.
+
+**⚠️ Important Setup Order:**
+1. **Custom Properties** (optional but recommended)
+2. **Goals** (required before funnels)
+   - Custom Event Goals
+   - Pageview Goals
+   - Scroll Depth Goals
+3. **Funnels** (requires goals to be set up first)
 
 ---
 
@@ -12,10 +20,14 @@ This guide explains how to set up and use Custom Properties and Funnels in Plaus
 1. [Overview](#overview)
 2. [Custom Properties Implementation](#custom-properties-implementation)
 3. [Setting Up Custom Properties in Plausible Dashboard](#setting-up-custom-properties-in-plausible-dashboard)
-4. [Funnels Setup Guide](#funnels-setup-guide)
-5. [Tracked Events Reference](#tracked-events-reference)
-6. [Testing & Verification](#testing--verification)
-7. [Troubleshooting](#troubleshooting)
+4. [Setting Up Goals in Plausible Dashboard](#setting-up-goals-in-plausible-dashboard) ⚠️ **Required before Funnels**
+   - [Custom Event Goals](#step-2-create-custom-event-goals)
+   - [Pageview Goals](#step-3-create-pageview-goals-recommended)
+   - [Scroll Depth Goals](#step-4-create-scroll-depth-goals-recommended)
+5. [Funnels Setup Guide](#funnels-setup-guide)
+6. [Tracked Events Reference](#tracked-events-reference)
+7. [Testing & Verification](#testing--verification)
+8. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -202,13 +214,276 @@ For each custom property you want to track, click **"Add property"** and enter:
 
 ---
 
+## Setting Up Goals in Plausible Dashboard
+
+**⚠️ IMPORTANT: You must set up Goals before creating Funnels. Funnels require goals to be configured first.**
+
+### What Are Goals?
+
+Goals allow you to track specific actions that visitors take on your site. In Plausible, goals can be:
+- **Custom Event Goals** - Track button clicks, form submissions, modal opens, etc.
+- **Pageview Goals** - Track visits to specific pages (e.g., `/contact`, `/thank-you`)
+
+Goals must be configured in your Plausible dashboard before they appear in your analytics. Once set up, you can use these goals to create funnels.
+
+### Step 1: Access Goals Settings
+
+1. Log in to your Plausible Analytics dashboard
+2. Select your site (`logi-ink.co.za`)
+3. Click on **Settings** in the left sidebar
+4. Navigate to **Goals** section
+
+### Step 2: Create Custom Event Goals
+
+For each custom event you're tracking, you need to create a goal. Click **"+ Add goal"** and follow these steps:
+
+#### Required Custom Event Goals
+
+Based on our implementation, you need to create goals for these events:
+
+1. **`Contact Form Submit`**
+   - **Goal Type:** Custom event
+   - **Event Name:** `Contact Form Submit` (must match exactly, including spaces and capitalization)
+   - **Description:** Tracks successful contact form submissions
+
+2. **`Service Modal Open`**
+   - **Goal Type:** Custom event
+   - **Event Name:** `Service Modal Open` (must match exactly)
+   - **Description:** Tracks when users open service detail modals
+
+3. **`Project View`**
+   - **Goal Type:** Custom event
+   - **Event Name:** `Project View` (must match exactly)
+   - **Description:** Tracks when users view project details
+
+4. **`CTA Click`**
+   - **Goal Type:** Custom event
+   - **Event Name:** `CTA Click` (must match exactly)
+   - **Description:** Tracks clicks on call-to-action buttons
+
+5. **`Pricing Interaction`** (Optional)
+   - **Goal Type:** Custom event
+   - **Event Name:** `Pricing Interaction` (must match exactly)
+   - **Description:** Tracks interactions on pricing page
+
+6. **`External Link Click`** (Optional)
+   - **Goal Type:** Custom event
+   - **Event Name:** `External Link Click` (must match exactly)
+   - **Description:** Tracks clicks on external links
+
+### Step 3: Create Pageview Goals (Recommended)
+
+Pageview goals track visits to specific pages. They're useful for measuring engagement and can be used in funnels. Here are recommended pageview goals for Logi-Ink:
+
+#### Essential Pageview Goals
+
+1. **Contact Page Visit**
+   - **Goal Type:** Pageview
+   - **Page Path:** `/contact`
+   - **Use Case:** Track how many visitors reach the contact page (conversion indicator)
+
+2. **Services Page Visit**
+   - **Goal Type:** Pageview
+   - **Page Path:** `/services`
+   - **Use Case:** Measure interest in service offerings
+
+3. **Pricing Page Visit**
+   - **Goal Type:** Pageview
+   - **Page Path:** `/pricing`
+   - **Use Case:** Track visitors researching pricing (high-intent traffic)
+
+4. **Projects/Portfolio Page Visit**
+   - **Goal Type:** Pageview
+   - **Page Path:** `/projects`
+   - **Use Case:** Measure interest in viewing portfolio work
+
+5. **SEO Services Page Visit**
+   - **Goal Type:** Pageview
+   - **Page Path:** `/seo-services`
+   - **Use Case:** Track interest in SEO services specifically
+
+#### Optional Pageview Goals
+
+6. **About Page Visit**
+   - **Goal Type:** Pageview
+   - **Page Path:** `/about`
+   - **Use Case:** Measure brand/company interest
+
+7. **Homepage Visit** (if you want to track it separately)
+   - **Goal Type:** Pageview
+   - **Page Path:** `/` or `/index.html`
+   - **Use Case:** Track landing page visits
+
+#### Grouping Pages with Wildcards
+
+You can use wildcards (`*`) to group similar pages:
+
+- **All Service Pages:** `/services*` (if you have sub-pages like `/services/web-design`)
+- **All Legal Pages:** `/privacy-policy` and `/terms-of-service` (create separate goals or group if needed)
+
+**Note:** Pageview goals don't require any code changes - Plausible automatically tracks pageviews. Just create the goals in your dashboard.
+
+### Step 4: Create Scroll Depth Goals (Recommended)
+
+Scroll depth tracking is **built into Plausible by default** - no code changes needed! You can see scroll depth data in your dashboard automatically. However, you can also create **Scroll Depth Goals** to track specific thresholds.
+
+Scroll depth goals help you understand:
+- How engaged visitors are with your content
+- Which pages have high engagement
+- Where visitors might be losing interest
+
+#### Recommended Scroll Depth Thresholds
+
+Common thresholds to track:
+- **25%** - Initial engagement (visitor is reading)
+- **50%** - Good engagement (visitor is interested)
+- **75%** - High engagement (visitor is very interested)
+- **100%** - Complete engagement (visitor read entire page)
+
+#### Essential Scroll Depth Goals
+
+Create scroll depth goals for your most important pages:
+
+1. **Homepage - 50% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 50%
+   - **Page Path:** `/` or `/index.html`
+   - **Use Case:** Measure if visitors are engaging with hero and key sections
+
+2. **Homepage - 100% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 100%
+   - **Page Path:** `/` or `/index.html`
+   - **Use Case:** Track visitors who read the entire homepage
+
+3. **Services Page - 75% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 75%
+   - **Page Path:** `/services`
+   - **Use Case:** Measure engagement with service details
+
+4. **Pricing Page - 50% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 50%
+   - **Page Path:** `/pricing`
+   - **Use Case:** Track if visitors are reading pricing information
+
+5. **Pricing Page - 100% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 100%
+   - **Page Path:** `/pricing`
+   - **Use Case:** Measure complete pricing page engagement (high-intent indicator)
+
+6. **Contact Page - 50% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 50%
+   - **Page Path:** `/contact`
+   - **Use Case:** Track if visitors are reading contact information before submitting
+
+7. **About Page - 75% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 75%
+   - **Page Path:** `/about`
+   - **Use Case:** Measure brand story engagement
+
+#### Optional Scroll Depth Goals
+
+8. **Projects Page - 50% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 50%
+   - **Page Path:** `/projects`
+   - **Use Case:** Track portfolio engagement
+
+9. **SEO Services Page - 75% Scroll Depth**
+   - **Goal Type:** Scroll Depth
+   - **Threshold:** 75%
+   - **Page Path:** `/seo-services`
+   - **Use Case:** Measure SEO services page engagement
+
+#### How to Create Scroll Depth Goals
+
+1. Go to **Settings** → **Goals**
+2. Click **"+ Add goal"**
+3. Select **"Scroll Depth"** as the goal trigger
+4. Choose scroll depth percentage (1% to 100%)
+5. Enter the page pathname (e.g., `/contact`)
+6. Click **"Add goal"**
+
+**Note:** Scroll depth goals only show "Uniques" and "CR (conversion rate)" metrics, not "Total" like pageview goals. This is because scrolling is measured continuously during a pageview.
+
+**Pro Tip:** Start with 50% and 100% thresholds for your most important pages. You can always add more granular thresholds (25%, 75%) later if needed.
+
+### Step 5: Verify Goals Are Tracking
+
+1. After creating goals, navigate back to your Plausible dashboard
+2. Scroll to the **Goal Conversions** section (bottom of dashboard)
+3. Goals will appear as soon as the first conversion has been tracked
+4. If you've already been sending events, you might see a link to "Add all custom event goals" - click it to automatically add all goals you've been tracking
+
+**For Scroll Depth:**
+- Scroll depth data is automatically available in the Top Pages report
+- Scroll depth goals will appear in Goal Conversions once visitors reach the threshold
+- You can see scroll depth percentage in the top row of metrics when filtering by a page
+
+### Important Notes
+
+- **Event names must match exactly** - The event name in your goal must match the event name in your code exactly (including spaces, capitalization, and punctuation)
+- **Goals appear after first conversion** - Goals won't show up until at least one conversion has been tracked
+- **You can edit goals later** - Click the "Edit goal" button next to any goal to modify it
+- **Goals are required for funnels** - You cannot create funnels without first setting up the goals that will be used as funnel steps
+
+### Quick Reference: Event Names
+
+Make sure these exact event names are used when creating goals:
+
+| Event Name (Use in Goal) | Code Implementation |
+|-------------------------|-------------------|
+| `Contact Form Submit` | `trackContactFormSubmission()` |
+| `Service Modal Open` | `trackServiceModalOpen()` |
+| `Project View` | `trackProjectView()` |
+| `CTA Click` | `trackCTAClick()` |
+| `Pricing Interaction` | `trackPricingInteraction()` |
+| `External Link Click` | `trackExternalLink()` |
+
+### Quick Reference: Pageview Goals
+
+Recommended pageview goals for Logi-Ink:
+
+| Goal Name | Page Path | Priority |
+|-----------|-----------|----------|
+| Contact Page Visit | `/contact` | Essential |
+| Services Page Visit | `/services` | Essential |
+| Pricing Page Visit | `/pricing` | Essential |
+| Projects Page Visit | `/projects` | Essential |
+| SEO Services Page Visit | `/seo-services` | Essential |
+| About Page Visit | `/about` | Optional |
+
+### Quick Reference: Scroll Depth Goals
+
+Recommended scroll depth goals (start with these):
+
+| Goal Name | Page Path | Threshold | Priority |
+|-----------|-----------|-----------|----------|
+| Homepage 50% Scroll | `/` | 50% | Essential |
+| Homepage 100% Scroll | `/` | 100% | Essential |
+| Services 75% Scroll | `/services` | 75% | Essential |
+| Pricing 50% Scroll | `/pricing` | 50% | Essential |
+| Pricing 100% Scroll | `/pricing` | 100% | Essential |
+| Contact 50% Scroll | `/contact` | 50% | Essential |
+| About 75% Scroll | `/about` | 75% | Optional |
+| Projects 50% Scroll | `/projects` | 50% | Optional |
+
+---
+
 ## Funnels Setup Guide
+
+**⚠️ PREREQUISITE: Complete the Goals setup above before creating funnels.**
 
 ### Understanding Funnels
 
-Funnels track a sequence of steps that users take before converting. Each step can be:
-- A **pageview goal** (visiting a specific page)
-- A **custom event** (triggering a specific action)
+Funnels track a sequence of steps that users take before converting. Each step must be:
+- A **pageview goal** (visiting a specific page) - must be set up as a goal first
+- A **custom event goal** (triggering a specific action) - must be set up as a goal first
 
 ### Recommended Funnels for Logi-Ink
 
@@ -216,11 +491,15 @@ Funnels track a sequence of steps that users take before converting. Each step c
 
 **Purpose:** Track users from landing to contact form submission
 
+**Required Goals (set up first):**
+- Pageview goal for `/contact` (optional, or use pageview directly)
+- Custom event goal: `Contact Form Submit`
+
 **Steps:**
-1. **Step 1:** Pageview → `/` (Home page)
-2. **Step 2:** Pageview → `/services` OR `/pricing` OR `/about` (Engagement)
-3. **Step 3:** Pageview → `/contact` (Contact page visit)
-4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion)
+1. **Step 1:** Pageview → `/` (Home page) - No goal needed, just use pageview
+2. **Step 2:** Pageview → `/services` OR `/pricing` OR `/about` (Engagement) - No goal needed
+3. **Step 3:** Pageview → `/contact` (Contact page visit) - Can use pageview directly or create pageview goal
+4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion) - **Requires goal setup**
 
 **Use Case:** Measure how many visitors start on homepage, engage with content, visit contact page, and actually submit the form.
 
@@ -228,11 +507,16 @@ Funnels track a sequence of steps that users take before converting. Each step c
 
 **Purpose:** Track users who discover services and then contact
 
+**Required Goals (set up first):**
+- Custom event goal: `Service Modal Open`
+- Custom event goal: `Contact Form Submit`
+- Pageview goal for `/contact` (optional)
+
 **Steps:**
-1. **Step 1:** Pageview → `/services` (Services page)
-2. **Step 2:** Custom Event → `Service Modal Open` (Service interest)
-3. **Step 3:** Pageview → `/contact` (Contact page visit)
-4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion)
+1. **Step 1:** Pageview → `/services` (Services page) - No goal needed
+2. **Step 2:** Custom Event → `Service Modal Open` (Service interest) - **Requires goal setup**
+3. **Step 3:** Pageview → `/contact` (Contact page visit) - Can use pageview directly
+4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion) - **Requires goal setup**
 
 **Use Case:** Measure service discovery → interest → contact → conversion flow.
 
@@ -240,11 +524,16 @@ Funnels track a sequence of steps that users take before converting. Each step c
 
 **Purpose:** Track users viewing portfolio and converting
 
+**Required Goals (set up first):**
+- Custom event goal: `Project View`
+- Custom event goal: `CTA Click`
+- Custom event goal: `Contact Form Submit`
+
 **Steps:**
-1. **Step 1:** Pageview → `/projects` (Projects page)
-2. **Step 2:** Custom Event → `Project View` (Project interest)
-3. **Step 3:** Custom Event → `CTA Click` (Call-to-action engagement)
-4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion)
+1. **Step 1:** Pageview → `/projects` (Projects page) - No goal needed
+2. **Step 2:** Custom Event → `Project View` (Project interest) - **Requires goal setup**
+3. **Step 3:** Custom Event → `CTA Click` (Call-to-action engagement) - **Requires goal setup**
+4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion) - **Requires goal setup**
 
 **Use Case:** Measure portfolio engagement → CTA click → form submission.
 
@@ -252,15 +541,22 @@ Funnels track a sequence of steps that users take before converting. Each step c
 
 **Purpose:** Track pricing page visitors to conversions
 
+**Required Goals (set up first):**
+- Custom event goal: `CTA Click`
+- Custom event goal: `Contact Form Submit`
+- Pageview goal for `/contact` (optional)
+
 **Steps:**
-1. **Step 1:** Pageview → `/pricing` (Pricing page)
-2. **Step 2:** Custom Event → `CTA Click` (Pricing CTA click)
-3. **Step 3:** Pageview → `/contact` (Contact page visit)
-4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion)
+1. **Step 1:** Pageview → `/pricing` (Pricing page) - No goal needed
+2. **Step 2:** Custom Event → `CTA Click` (Pricing CTA click) - **Requires goal setup**
+3. **Step 3:** Pageview → `/contact` (Contact page visit) - Can use pageview directly
+4. **Step 4:** Custom Event → `Contact Form Submit` (Conversion) - **Requires goal setup**
 
 **Use Case:** Measure pricing page effectiveness in driving conversions.
 
 ### How to Create a Funnel
+
+**⚠️ IMPORTANT: Make sure you've set up all required goals first (see Goals Setup section above).**
 
 1. **Access Funnel Settings:**
    - Log in to Plausible Analytics
@@ -273,13 +569,17 @@ Funnels track a sequence of steps that users take before converting. Each step c
 
 3. **Define Funnel Steps:**
    - Click **"Add step"** for each step in your funnel
-   - For pageview goals: Select "Pageview" and enter the path (e.g., `/contact`)
-   - For custom events: Select "Custom Event" and enter the event name (e.g., `Contact Form Submit`)
+   - **For pageviews:** Select "Pageview" and enter the path (e.g., `/contact`)
+     - You can use pageviews directly without creating a goal, OR use a pageview goal if you've created one
+   - **For custom events:** Select "Custom Event" and choose from the dropdown of goals you've created
+     - The dropdown will only show goals you've already set up
+     - Event names must match exactly (e.g., `Contact Form Submit`)
    - Add steps in the order users should complete them
+   - Minimum 2 steps, maximum 8 steps per funnel
 
 4. **Save Funnel:**
    - Click **"Save"** button
-   - Funnel will appear at the bottom of your dashboard once data starts flowing
+   - Funnel will appear at the bottom of your dashboard once the first visit has been tracked on the funnel steps
 
 ### Funnel Best Practices
 
