@@ -1,59 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd
+        http://www.google.com/schemas/sitemap-video/1.1
+        http://www.google.com/schemas/sitemap-video/1.1/sitemap-video.xsd">
   <url>
     <loc>https://logi-ink.co.za/</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>Logi-Ink - Digital Innovation &amp; Creative Solutions</image:title>
+      <image:caption>Professional web design and development services in Pretoria, South Africa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/responsive/banners/banner_home-1280w.webp</image:loc>
+      <image:title>Web Development Transforming Digital Experiences</image:title>
+      <image:caption>Modern web development and digital solutions</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://logi-ink.co.za/about</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>About Logi-Ink</image:title>
+      <image:caption>Learn about our team and mission</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://logi-ink.co.za/services</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>Services - Logi-Ink</image:title>
+      <image:caption>Comprehensive digital services including web design, development, SEO &amp; branding</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://logi-ink.co.za/projects</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>Projects - Logi-Ink</image:title>
+      <image:caption>Our portfolio of digital projects and case studies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/portfolio/image-corporate-website.png</image:loc>
+      <image:title>Corporate Website Project</image:title>
+      <image:caption>Professional corporate website design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/portfolio/image-e-commerce-platform.png</image:loc>
+      <image:title>E-Commerce Platform Project</image:title>
+      <image:caption>E-commerce platform development</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/portfolio/image-fintech-mobile-app.png</image:loc>
+      <image:title>Fintech Mobile App Project</image:title>
+      <image:caption>Fintech mobile application design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/portfolio/image-fitness-tracking-app.png</image:loc>
+      <image:title>Fitness Tracking App Project</image:title>
+      <image:caption>Fitness tracking application</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/portfolio/image-marketing-campaign.png</image:loc>
+      <image:title>Marketing Campaign Project</image:title>
+      <image:caption>Digital marketing campaign design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/portfolio/image-tech-startup-rebrand.png</image:loc>
+      <image:title>Tech Startup Rebrand Project</image:title>
+      <image:caption>Tech startup rebranding and design</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://logi-ink.co.za/assets/video/optimized/video-corporate-website-poster.jpg</video:thumbnail_loc>
+      <video:title>Corporate Website Video</video:title>
+      <video:description>Video showcase of corporate website project</video:description>
+      <video:content_loc>https://logi-ink.co.za/assets/video/optimized/video-corporate-website-hq.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://logi-ink.co.za/assets/video/optimized/video-e-commerce-platform-poster.jpg</video:thumbnail_loc>
+      <video:title>E-Commerce Platform Video</video:title>
+      <video:description>Video showcase of e-commerce platform project</video:description>
+      <video:content_loc>https://logi-ink.co.za/assets/video/optimized/video-e-commerce-platform-hq.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://logi-ink.co.za/assets/video/optimized/video-fintech-mobile-app-poster.jpg</video:thumbnail_loc>
+      <video:title>Fintech Mobile App Video</video:title>
+      <video:description>Video showcase of fintech mobile app project</video:description>
+      <video:content_loc>https://logi-ink.co.za/assets/video/optimized/video-fintech-mobile-app-hq.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://logi-ink.co.za/assets/video/optimized/video-fitness-tracking-app-poster.jpg</video:thumbnail_loc>
+      <video:title>Fitness Tracking App Video</video:title>
+      <video:description>Video showcase of fitness tracking app project</video:description>
+      <video:content_loc>https://logi-ink.co.za/assets/video/optimized/video-fitness-tracking-app-hq.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://logi-ink.co.za/assets/video/optimized/video-marketing-campaign-poster.jpg</video:thumbnail_loc>
+      <video:title>Marketing Campaign Video</video:title>
+      <video:description>Video showcase of marketing campaign project</video:description>
+      <video:content_loc>https://logi-ink.co.za/assets/video/optimized/video-marketing-campaign-hq.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://logi-ink.co.za/assets/video/optimized/video-tech-startup-rebrand-poster.jpg</video:thumbnail_loc>
+      <video:title>Tech Startup Rebrand Video</video:title>
+      <video:description>Video showcase of tech startup rebrand project</video:description>
+      <video:content_loc>https://logi-ink.co.za/assets/video/optimized/video-tech-startup-rebrand-hq.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://logi-ink.co.za/contact</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>Contact - Logi-Ink</image:title>
+      <image:caption>Get in touch with Logi-Ink for your digital needs</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://logi-ink.co.za/pricing</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>Pricing - Logi-Ink</image:title>
+      <image:caption>Affordable web design and development packages</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://logi-ink.co.za/seo-services</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://logi-ink.co.za/assets/images/og-image.png</image:loc>
+      <image:title>SEO Services - Logi-Ink</image:title>
+      <image:caption>Professional SEO services for South African businesses</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://logi-ink.co.za/privacy-policy</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://logi-ink.co.za/terms-of-service</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2025-12-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

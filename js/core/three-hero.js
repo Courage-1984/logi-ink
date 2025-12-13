@@ -35,9 +35,14 @@ async function initThreeJSHero(THREE) {
 
   try {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    // Use canvas dimensions if available, otherwise fallback to window dimensions
+    // Canvas will resize when CSS loads (handled by resize event listener)
+    const canvasRect = canvas.getBoundingClientRect();
+    const canvasWidth = canvasRect.width > 0 ? canvasRect.width : window.innerWidth;
+    const canvasHeight = canvasRect.height > 0 ? canvasRect.height : window.innerHeight;
+    const camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(canvasWidth, canvasHeight);
     // Limit pixel ratio on mobile (though we disable on mobile, keep this for tablets)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 

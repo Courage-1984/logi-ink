@@ -20,6 +20,11 @@
   RewriteCond %{HTTP_HOST} !^logi-ink\.co\.za$ [NC]
   RewriteRule ^(.*)$ https://logi-ink.co.za/$1 [R=301,L]
 
+  # IMPORTANT: Exclude static assets from clean URL rewriting
+  # Don't rewrite requests for CSS, JS, images, fonts, etc. (prevents CSS MIME type errors)
+  RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav|pdf|json|xml|webmanifest|manifest\.json|sw\.js)$ [NC]
+  RewriteRule ^ - [L]
+
   # Redirect .html to clean URL (301 permanent redirect)
   RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
   RewriteRule ^ /%1? [NC,L,R=301]

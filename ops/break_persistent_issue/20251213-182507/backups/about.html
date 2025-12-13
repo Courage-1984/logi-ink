@@ -1,0 +1,1779 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00ffff" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Logi-Ink" />
+
+    <title>About Us - Logi-Ink</title>
+
+    <!-- Security Headers -->
+    <!-- Note: X-Frame-Options only works via HTTP headers, not meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <!-- Content Security Policy (basic - enhance via server headers) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
+    />
+
+    <!-- Page Transition Preload - Prevent CLS on navigation -->
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- Prevent Active Link FOUC - Remove all active classes before first paint -->
+    <script>
+      // CRITICAL: Run immediately (synchronous blocking script) to prevent active link flash
+      // This MUST run before CSS paints to prevent all links showing as active/hover
+      (function () {
+        const initNav = function () {
+          const navLinks = document.querySelectorAll('.nav-link');
+          navLinks.forEach(link => {
+            // Remove active class and marks
+            link.classList.remove('active');
+            link.removeAttribute('data-active-initialized');
+            // Mark as initialized to enable hover states (after JS runs)
+            link.setAttribute('data-nav-initialized', 'true');
+          });
+        };
+
+        // Run immediately if DOM ready
+        if (document.readyState !== 'loading') {
+          initNav();
+        }
+
+        // Also run on DOMContentLoaded
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initNav, { once: true });
+        }
+
+        // Use MutationObserver as backup to catch links added after initial render
+        const observer = new MutationObserver(function (mutations) {
+          let hasNavLinks = document.querySelectorAll('.nav-link').length > 0;
+          if (hasNavLinks) {
+            initNav();
+            observer.disconnect(); // Stop observing once we've initialized
+          }
+        });
+
+        // Start observing when body exists
+        if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+        } else {
+          document.addEventListener(
+            'DOMContentLoaded',
+            function () {
+              observer.observe(document.body, { childList: true, subtree: true });
+            },
+            { once: true }
+          );
+        }
+      })();
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Meet Logi-Ink - a leading digital agency in Pretoria, South Africa. Expert team delivering web design, development & SEO services. Learn about our mission & values."
+    />
+    <meta
+      name="keywords"
+      content="about Logi-Ink, digital agency team, company mission, digital innovation team"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://logi-ink.co.za/about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Us - Logi-Ink" />
+    <meta
+      property="og:description"
+      content="Meet Logi-Ink - a leading digital agency in Pretoria, South Africa. Expert team delivering web design, development & SEO services. Learn about our mission & values."
+    />
+    <meta property="og:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta
+      property="og:image:secure_url"
+      content="https://logi-ink.co.za/assets/images/og-image.png"
+    />
+    <meta property="og:image:alt" content="About Us - Logi-Ink" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="logi-ink.co.za" />
+    <meta property="twitter:url" content="https://logi-ink.co.za/about" />
+    <meta name="twitter:title" content="About Us - Logi-Ink" />
+    <meta
+      name="twitter:description"
+      content="Meet Logi-Ink - a leading digital agency in Pretoria, South Africa. Expert team delivering web design, development & SEO services. Learn about our mission & values."
+    />
+    <meta name="twitter:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+
+    <!-- Preload critical resources -->
+
+    <!-- Preload critical fonts (self-hosted WOFF2 - Subsetted) -->
+    <link
+      rel="preload"
+      href="./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <!-- Modulepreload for critical ES modules -->
+    <link rel="modulepreload" href="./js/main.js" />
+    <link rel="modulepreload" href="./js/core/navigation.js" />
+
+    <!-- Preconnect for third-party resources -->
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js"></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+
+    <!-- Google tag (gtag.js) - Optimized loading using requestIdleCallback to avoid blocking main thread -->
+    <script>
+      // Defer Google Tag Manager using requestIdleCallback for non-blocking loading
+      (function () {
+        function loadGTM() {
+          // Initialize dataLayer
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-9PFB2D8G1B');
+
+          // Load gtag.js script asynchronously
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
+          document.head.appendChild(script);
+        }
+
+        // Use requestIdleCallback if available (non-blocking, loads during browser idle time)
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGTM, { timeout: 2000 });
+        } else if ('requestAnimationFrame' in window) {
+          // Fallback: Use requestAnimationFrame with delay
+          requestAnimationFrame(() => {
+            setTimeout(loadGTM, 1000);
+          });
+        } else {
+          // Final fallback: Load after page is fully loaded
+          window.addEventListener('load', loadGTM);
+        }
+      })();
+    </script>
+
+    <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://logi-ink.co.za/about" />
+    <!-- Critical CSS - Above-the-fold styles (inlined for faster FCP) -->
+    <style>
+      @font-face {
+        font-family: 'Orbitron';
+        src: url('./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Rajdhani';
+        src: url('./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      :root {
+        --font-heading: 'Orbitron', sans-serif;
+        --font-body: 'Rajdhani', sans-serif;
+        --font-mono: 'Courier New', 'Fira Code', monospace;
+        --font-weight-light: 300;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+        --font-weight-black: 900;
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+        --font-size-6xl: 3.75rem;
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #1a1a2e;
+        --bg-tertiary: #16213e;
+        --accent-cyan: #00ffff;
+        --accent-cyan-dark: #00cccc;
+        --accent-magenta: #ff00ff;
+        --accent-magenta-light: #ed12ff;
+        --accent-magenta-dark: #cc00cc;
+        --accent-green: #00ff00;
+        --accent-green-dark: #00cc00;
+        --accent-blue: #0066ff;
+        --accent-blue-dark: #0052cc;
+        --accent-pink: #ff0080;
+        --accent-pink-dark: #cc0066;
+        --accent-yellow: #ffff00;
+        --accent-gold: #ffb347;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --text-muted: #666666;
+        --glow-cyan: rgba(0, 255, 255, 0.5);
+        --glow-magenta: rgba(255, 0, 255, 0.5);
+        --glow-green: rgba(0, 255, 0, 0.5);
+        --glow-blue: rgba(0, 102, 255, 0.5);
+        --glow-pink: rgba(255, 0, 128, 0.5);
+        --glow-gold: rgba(255, 179, 71, 0.45);
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-7: 1.75rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-20: 5rem;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-cyan) var(--bg-primary);
+      }
+      body {
+        font-family: var(--font-body);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-heading);
+      }
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--accent-cyan);
+        color: var(--bg-primary);
+        padding: var(--space-4);
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        z-index: 2000;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent-magenta), var(--accent-cyan));
+        z-index: 10000;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px var(--glow-cyan);
+      }
+      .cursor-follow,
+      .cursor-dot {
+        position: fixed;
+        pointer-events: none;
+        z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
+        opacity: 0;
+        transition:
+          opacity 0.05s ease,
+          transform 0.15s ease; /* Faster transition for immediate visibility */
+        will-change: transform, left, top; /* Performance optimization */
+        transform: translateZ(0); /* Force GPU acceleration */
+        left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+        top: -9999px;
+      }
+      .cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent-cyan);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--glow-cyan);
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .cursor-dot {
+          opacity: 1; /* Immediate visibility on hover-capable devices */
+        }
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      .navbar.scrolled {
+        background: rgba(10, 10, 10, 0.95);
+        box-shadow: 0 2px 20px rgba(0, 255, 255, 0.1);
+      }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 var(--space-8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-text {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+          sans-serif;
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-black);
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px var(--glow-cyan);
+        transition: all 0.3s ease;
+      }
+      .logo-text.fonts-loaded {
+        font-family:
+          var(--font-heading),
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          sans-serif;
+      }
+      .logo-accent {
+        color: var(--accent-cyan);
+        text-shadow: 0 0 20px var(--glow-cyan);
+      }
+      .logo-text:hover {
+        text-shadow:
+          0 0 20px var(--glow-cyan),
+          0 0 30px var(--glow-cyan);
+      }
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: var(--space-8);
+      }
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-semibold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-cyan);
+        box-shadow: 0 0 10px var(--glow-cyan);
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover {
+        color: var(--accent-cyan);
+        text-shadow: 0 0 10px var(--glow-cyan);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .nav-link.active {
+        background: linear-gradient(
+          90deg,
+          #ed12ff 0%,
+          #ed12ff var(--scroll-progress, 0%),
+          var(--accent-cyan) var(--scroll-progress, 100%)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: none;
+        color: transparent;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--accent-cyan);
+        transition: all 0.3s ease;
+      }
+      .hero {
+        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        box-sizing: border-box;
+      }
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        contain: layout style;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 1200px;
+        padding: 0 var(--space-8);
+      }
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: var(--font-weight-black);
+        color: var(--text-primary);
+        margin-bottom: var(--space-6);
+        line-height: 1.2;
+        text-shadow: 0 0 30px var(--glow-cyan);
+      }
+      .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        color: var(--text-secondary);
+        margin-bottom: var(--space-8);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: var(--space-6);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: var(--space-4) var(--space-8);
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-bold);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-primary {
+        background: transparent;
+        color: var(--accent-cyan);
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--accent-cyan),
+          var(--accent-blue),
+          var(--accent-magenta),
+          var(--accent-cyan)
+        );
+        background-size: 300% 100%;
+        background-position: 0% 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+      .btn-primary:hover {
+        color: var(--bg-primary);
+        box-shadow: 0 0 30px var(--glow-cyan);
+      }
+      .btn-primary:hover::before {
+        opacity: 1;
+        animation: gradientMove 3s ease infinite;
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--accent-magenta);
+        border-color: var(--accent-magenta);
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+      }
+      .btn-secondary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--accent-magenta);
+        transition: left 0.3s ease;
+        z-index: -1;
+      }
+      .btn-secondary:hover {
+        color: var(--bg-primary);
+        box-shadow: 0 0 30px var(--glow-magenta);
+      }
+      .btn-secondary:hover::before {
+        left: 0;
+      }
+      .text-reveal {
+        display: block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: textReveal 1s ease forwards;
+      }
+      @keyframes textReveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .text-reveal.delay-1 {
+        animation-delay: 0.2s;
+      }
+      .text-reveal.delay-2 {
+        animation-delay: 0.4s;
+      }
+      .text-reveal.delay-3 {
+        animation-delay: 0.6s;
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      .fade-in.delay-4 {
+        animation-delay: 0.8s;
+      }
+      .fade-in.delay-5 {
+        animation-delay: 1s;
+      }
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        margin-top: var(--space-8);
+        z-index: 10;
+        contain: layout style;
+      }
+      .mouse {
+        width: 30px;
+        height: 50px;
+        border: 2px solid var(--accent-cyan);
+        border-radius: 15px;
+        position: relative;
+        box-shadow: 0 0 10px var(--glow-cyan);
+      }
+      .wheel {
+        width: 4px;
+        height: 10px;
+        background: var(--accent-cyan);
+        border-radius: 2px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll 2s infinite;
+        box-shadow: 0 0 5px var(--glow-cyan);
+      }
+      @keyframes scroll {
+        0% {
+          top: 10px;
+          opacity: 1;
+        }
+        100% {
+          top: 30px;
+          opacity: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 60px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 60px);
+          background: rgba(10, 10, 10, 0.98);
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding-top: var(--space-8);
+          gap: var(--space-8);
+          transition: left 0.3s ease;
+        }
+        .nav-menu.active {
+          left: 0;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(8px, 8px);
+        }
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+        .hero-title {
+          font-size: clamp(2rem, 6vw, 4rem);
+        }
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+
+    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
+    <!-- Preload CSS for faster loading -->
+    <link rel="preload" href="css/main.css" as="style" />
+
+    <!-- Load CSS asynchronously (non-blocking) using media query trick -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media = 'all'" />
+    <noscript>
+      <!-- Fallback if JavaScript is disabled -->
+      <link rel="stylesheet" href="css/main.css" />
+    </noscript>
+
+    <!-- View Transitions API - Enable smooth page transitions -->
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+
+    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
+    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
+    <script>
+      // Fallback for browsers that don't support onload on link elements
+      (function () {
+        var link = document.querySelector('link[href="css/main.css"][media="print"]');
+        if (link) {
+          var timeout = setTimeout(function () {
+            link.media = 'all';
+            link.onload = null;
+          }, 100);
+          link.onload = function () {
+            clearTimeout(timeout);
+            this.onload = null;
+          };
+        }
+      })();
+    </script>
+
+    <!-- Favicons -->
+    <!-- SVG favicon (modern browsers) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- PNG favicons (ordered from largest to smallest) -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- ICO fallback (legacy browsers) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Windows Tiles -->
+    <meta name="msapplication-TileColor" content="#00ffff" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00ffff" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About Us - Logi-Ink",
+        "url": "https://logi-ink.co.za/about",
+        "description": "Learn about Logi-Ink, our mission, values, and approach to digital innovation.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Logi-Ink",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://logi-ink.co.za/logo-150x150.png",
+            "width": 150,
+            "height": 150
+          }
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://logi-ink.co.za/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://logi-ink.co.za/about"
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- Main CSS -->
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ARIA Live Region for announcements -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- include partials/navbar.html -->
+
+    <!-- About Hero -->
+    <main id="main-content">
+      <section class="hero" style="min-height: 100vh; height: 100vh; padding-top: 100px">
+        <div class="hero-background">
+          <!-- Liquid Motion Background -->
+          <div class="liquid-background">
+            <div class="liquid-background__blob liquid-background__blob--one"></div>
+            <div class="liquid-background__blob liquid-background__blob--two"></div>
+            <div class="liquid-background__blob liquid-background__blob--three"></div>
+          </div>
+        </div>
+        <div class="hero-content">
+          <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem)">
+            <span class="text-reveal" style="color: var(--accent-cyan)">ABOUT</span>
+            <span class="text-reveal delay-1" style="color: var(--accent-magenta)"
+              >LOG<span class="logo-accent">I</span>-INK</span
+            >
+          </h1>
+          <p class="hero-subtitle fade-in delay-2">Pioneering the future of digital experiences</p>
+        </div>
+        <div class="scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="services-preview parallax-section mission-parallax">
+        <div class="parallax-background"></div>
+        <div class="parallax-overlay"></div>
+        <div class="container">
+          <div class="section-header scroll-reveal-3d" style="position: relative; z-index: 2">
+            <h2 class="section-title fade-in-up">Our Mission</h2>
+            <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">
+              Pushing the boundaries of digital innovation
+            </p>
+          </div>
+          <div
+            style="
+              max-width: 900px;
+              margin: 0 auto;
+              text-align: center;
+              position: relative;
+              z-index: 2;
+            "
+          >
+            <p
+              class="fade-in-up"
+              style="
+                font-size: 1.2rem;
+                color: var(--text-secondary);
+                line-height: 2;
+                margin-bottom: 2rem;
+                animation-delay: 0.2s;
+              "
+            >
+              At Logi-Ink, we believe in pushing the boundaries of digital innovation. We craft
+              immersive experiences that not only engage but transform businesses, driving stronger
+              connections and measurable results. Explore our
+              <a href="/services" style="color: var(--accent-cyan); text-decoration: underline"
+                >comprehensive services</a
+              >
+              or view our
+              <a href="/projects" style="color: var(--accent-cyan); text-decoration: underline"
+                >successful projects</a
+              >.
+            </p>
+            <p
+              class="fade-in-up"
+              style="
+                font-size: 1.1rem;
+                color: var(--text-secondary);
+                line-height: 2;
+                animation-delay: 0.4s;
+              "
+            >
+              Our team combines cutting-edge technology with creative excellence, delivering
+              solutions that stand out in an ever-evolving digital landscape. We're not just
+              developers and designers—we're digital architects building the future.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section class="featured-projects values-section">
+        <!-- Star Particles Background -->
+        <div class="values-stars"></div>
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Our Values</h2>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Innovation</h3>
+              <p>
+                We stay ahead of the curve, embracing new technologies and creative approaches to
+                solve complex challenges.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <h3>Excellence</h3>
+              <p>
+                Every project is delivered with meticulous attention to detail and a commitment to
+                exceeding expectations.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Partnership</h3>
+              <p>
+                We build lasting relationships with our clients, working collaboratively to achieve
+                shared success.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3>Impact</h3>
+              <p>
+                We measure success by the positive impact we create for businesses and their
+                customers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Approach Section -->
+      <section class="services-preview approach-section">
+        <div class="container">
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title fade-in-up">Our Approach</h2>
+            <p class="section-subtitle fade-in-up" style="animation-delay: 0.2s">
+              A proven process that delivers exceptional results
+            </p>
+          </div>
+          <div class="approach-timeline">
+            <!-- Step 1: Discovery -->
+            <div class="approach-step fade-in-up" style="animation-delay: 0.1s">
+              <div class="approach-step-number">01</div>
+              <div class="approach-step-content">
+                <div class="approach-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                </div>
+                <h3 class="approach-step-title">Discovery</h3>
+                <p class="approach-step-description">
+                  We dive deep into understanding your business, goals, and audience to create a
+                  strategic foundation for success.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2: Strategy -->
+            <div class="approach-step fade-in-up" style="animation-delay: 0.2s">
+              <div class="approach-step-number">02</div>
+              <div class="approach-step-content">
+                <div class="approach-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <h3 class="approach-step-title">Strategy</h3>
+                <p class="approach-step-description">
+                  We develop comprehensive strategies and roadmaps that align with your objectives
+                  and market opportunities.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3: Design -->
+            <div class="approach-step fade-in-up" style="animation-delay: 0.3s">
+              <div class="approach-step-number">03</div>
+              <div class="approach-step-content">
+                <div class="approach-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                </div>
+                <h3 class="approach-step-title">Design</h3>
+                <p class="approach-step-description">
+                  Creative concepts are brought to life through innovative design that balances
+                  aesthetics with functionality.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4: Development -->
+            <div class="approach-step fade-in-up" style="animation-delay: 0.4s">
+              <div class="approach-step-number">04</div>
+              <div class="approach-step-content">
+                <div class="approach-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="approach-step-title">Development</h3>
+                <p class="approach-step-description">
+                  Cutting-edge technology is implemented with precision, ensuring robust and
+                  scalable solutions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 5: Launch -->
+            <div class="approach-step fade-in-up" style="animation-delay: 0.5s">
+              <div class="approach-step-number">05</div>
+              <div class="approach-step-content">
+                <div class="approach-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <h3 class="approach-step-title">Launch</h3>
+                <p class="approach-step-description">
+                  Seamless deployment and go-live processes ensure your solution launches smoothly
+                  and successfully.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 6: Optimization -->
+            <div class="approach-step fade-in-up" style="animation-delay: 0.6s">
+              <div class="approach-step-number">06</div>
+              <div class="approach-step-content">
+                <div class="approach-step-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="approach-step-title">Optimization</h3>
+                <p class="approach-step-description">
+                  Continuous refinement and enhancement based on data and performance metrics to
+                  maximize results.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Members Section -->
+      <section class="featured-projects team-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">The creative minds behind Logi-Ink</p>
+          </div>
+          <div class="services-grid team-grid">
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div
+                class="profile-image-wrapper"
+                data-profile-image="./assets/images/people/person_1.png"
+                data-profile-name="John Doe"
+                data-profile-role="Lead Developer"
+                data-profile-description="10+ years of experience in full-stack development and architecture design."
+                data-profile-color="var(--accent-cyan)"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  margin: 0 auto 1.5rem;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 2px solid var(--accent-cyan);
+                  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+                "
+              >
+                <img
+                  src="./assets/images/people/person_1.png"
+                  alt="John Doe - Lead Developer"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="120"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </div>
+              <h3>John Doe</h3>
+              <p style="color: var(--accent-cyan); margin-bottom: 1rem">Lead Developer</p>
+              <p style="color: var(--text-secondary)">
+                10+ years of experience in full-stack development and architecture design.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div
+                class="profile-image-wrapper"
+                data-profile-image="./assets/images/people/person_2.png"
+                data-profile-name="Jane Smith"
+                data-profile-role="Creative Director"
+                data-profile-description="Expert in UX/UI design with a passion for creating intuitive digital experiences."
+                data-profile-color="var(--accent-magenta)"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  margin: 0 auto 1.5rem;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 2px solid var(--accent-magenta);
+                  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+                "
+              >
+                <img
+                  src="./assets/images/people/person_2.png"
+                  alt="Jane Smith - Creative Director"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="120"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </div>
+              <h3>Jane Smith</h3>
+              <p style="color: var(--accent-magenta); margin-bottom: 1rem">Creative Director</p>
+              <p style="color: var(--text-secondary)">
+                Expert in UX/UI design with a passion for creating intuitive digital experiences.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div
+                class="profile-image-wrapper"
+                data-profile-image="./assets/images/people/person_3.png"
+                data-profile-name="Mike Wilson"
+                data-profile-role="Project Manager"
+                data-profile-description="Ensures smooth project execution with excellent communication and organization skills."
+                data-profile-color="var(--accent-green)"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  margin: 0 auto 1.5rem;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 2px solid var(--accent-green);
+                  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+                "
+              >
+                <img
+                  src="./assets/images/people/person_3.png"
+                  alt="Mike Wilson - Project Manager"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="120"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </div>
+              <h3>Mike Wilson</h3>
+              <p style="color: var(--accent-green); margin-bottom: 1rem">Project Manager</p>
+              <p style="color: var(--text-secondary)">
+                Ensures smooth project execution with excellent communication and organization
+                skills.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div
+                class="profile-image-wrapper"
+                data-profile-image="./assets/images/people/person_4.png"
+                data-profile-name="Sarah Davis"
+                data-profile-role="Marketing Specialist"
+                data-profile-description="Drives growth through data-driven strategies and creative marketing campaigns."
+                data-profile-color="var(--accent-blue)"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  margin: 0 auto 1.5rem;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 2px solid var(--accent-blue);
+                  box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+                "
+              >
+                <img
+                  src="./assets/images/people/person_4.png"
+                  alt="Sarah Davis - Marketing Specialist"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="120"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </div>
+              <h3>Sarah Davis</h3>
+              <p style="color: var(--accent-blue); margin-bottom: 1rem">Marketing Specialist</p>
+              <p style="color: var(--text-secondary)">
+                Drives growth through data-driven strategies and creative marketing campaigns.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div
+                class="profile-image-wrapper"
+                data-profile-image="./assets/images/people/person_5.png"
+                data-profile-name="Alex Johnson"
+                data-profile-role="DevOps Engineer"
+                data-profile-description="Specializes in cloud infrastructure, CI/CD pipelines, and scalable system architecture."
+                data-profile-color="var(--accent-pink)"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  margin: 0 auto 1.5rem;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 2px solid var(--accent-pink);
+                  box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+                "
+              >
+                <img
+                  src="./assets/images/people/person_5.png"
+                  alt="Alex Johnson - DevOps Engineer"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="120"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </div>
+              <h3>Alex Johnson</h3>
+              <p style="color: var(--accent-pink); margin-bottom: 1rem">DevOps Engineer</p>
+              <p style="color: var(--text-secondary)">
+                Specializes in cloud infrastructure, CI/CD pipelines, and scalable system
+                architecture.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div
+                class="profile-image-wrapper"
+                data-profile-image="./assets/images/people/person_6.png"
+                data-profile-name="Emily Chen"
+                data-profile-role="UX Researcher"
+                data-profile-description="Conducts user research and usability testing to create data-driven design solutions."
+                data-profile-color="var(--accent-yellow)"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  margin: 0 auto 1.5rem;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 2px solid var(--accent-yellow);
+                  box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+                "
+              >
+                <img
+                  src="./assets/images/people/person_6.png"
+                  alt="Emily Chen - UX Researcher"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="120"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </div>
+              <h3>Emily Chen</h3>
+              <p style="color: var(--accent-yellow); margin-bottom: 1rem">UX Researcher</p>
+              <p style="color: var(--text-secondary)">
+                Conducts user research and usability testing to create data-driven design solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats/Achievements Section -->
+      <section class="services-preview achievements-section">
+        <div class="container">
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Our Achievements</h2>
+            <p class="section-subtitle">Milestones that define our journey</p>
+          </div>
+          <div class="services-grid">
+            <div
+              class="service-card mouse-tilt-container card-3d achievement-card-cyan"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                data-target="5"
+                data-suffix="+"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-cyan);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+              >
+                0+
+              </div>
+              <h3>Years in Business</h3>
+              <p style="color: var(--text-secondary)">
+                Dedicated to delivering excellence since our founding
+              </p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d achievement-card-magenta"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                data-target="150"
+                data-suffix="+"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-magenta);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+              >
+                0+
+              </div>
+              <h3>Projects Completed</h3>
+              <p style="color: var(--text-secondary)">
+                Successfully delivered projects across multiple industries
+              </p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d achievement-card-green"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                data-target="98"
+                data-suffix="%"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-green);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+              >
+                0%
+              </div>
+              <h3>Client Satisfaction</h3>
+              <p style="color: var(--text-secondary)">Clients who would recommend our services</p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d achievement-card-blue"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                data-target="50"
+                data-suffix="+"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-blue);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+              >
+                0+
+              </div>
+              <h3>Happy Clients</h3>
+              <p style="color: var(--text-secondary)">
+                Long-term partnerships built on trust and results
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technologies/Expertise Section -->
+      <section class="featured-projects expertise-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Our Expertise</h2>
+            <p class="section-subtitle">Technologies and skills we master</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Frontend Development</h3>
+              <p>React, Vue.js, Angular, Next.js, TypeScript, HTML5, CSS3, JavaScript</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3>Backend Development</h3>
+              <p>Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL, Microservices</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3>Design & Prototyping</h3>
+              <p>Figma, Adobe XD, Sketch, InVision, User Research, Design Systems</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3>Mobile Development</h3>
+              <p>React Native, Flutter, Swift, Kotlin, iOS, Android, Cross-platform</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3>Cloud & DevOps</h3>
+              <p>AWS, Azure, Docker, Kubernetes, CI/CD, Terraform, Infrastructure</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3>Digital Marketing</h3>
+              <p>SEO, SEM, Social Media, Content Strategy, Analytics, Growth Hacking</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <h3>Database & Data</h3>
+              <p>MongoDB, PostgreSQL, MySQL, Redis, Elasticsearch, Data Analytics, ETL</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <h3>AI & Machine Learning</h3>
+              <p>
+                Python, TensorFlow, PyTorch, NLP, Computer Vision, Predictive Analytics, Automation
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3 6h18M16 10a4 4 0 0 1-8 0"
+                  />
+                </svg>
+              </div>
+              <h3>E-Commerce Solutions</h3>
+              <p>
+                WooCommerce, Shopify, Magento, Payment Gateways, Inventory Management, Cart Systems
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3>Security & Compliance</h3>
+              <p>SSL/TLS, GDPR, OWASP, Penetration Testing, Security Audits, Data Protection</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3>Performance Optimization</h3>
+              <p>
+                Core Web Vitals, Caching Strategies, CDN, Code Splitting, Lazy Loading, Bundle
+                Optimization
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3>API Integration</h3>
+              <p>
+                REST, GraphQL, Webhooks, Third-party APIs, API Gateway, Microservices Architecture
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <!-- Top Curved Divider -->
+        <div class="portal-divider portal-divider-top">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+              </linearGradient>
+            </defs>
+            <path d="M0,120 Q360,0 720,60 T1440,120 L1440,0 L0,0 Z" fill="url(#topGradient)" />
+          </svg>
+        </div>
+
+        <!-- Portal Glow Effect -->
+        <div class="portal-glow"></div>
+
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's collaborate on your next big idea</p>
+            <a href="/contact" class="btn btn-primary btn-large">Get In Touch</a>
+          </div>
+        </div>
+
+        <!-- Bottom Curved Divider -->
+        <div class="portal-divider portal-divider-bottom">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+                <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+              </linearGradient>
+            </defs>
+            <path d="M0,0 Q360,120 720,60 T1440,0 L1440,120 L0,120 Z" fill="url(#bottomGradient)" />
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <!-- include partials/footer.html -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
+    <!-- Profile Image Modal -->
+    <div
+      class="profile-modal"
+      id="profile-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="profile-modal-name"
+    >
+      <button class="profile-modal-close" type="button" aria-label="Close profile modal">×</button>
+      <div class="profile-modal-content">
+        <div class="profile-modal-image-wrapper" id="profile-modal-image-wrapper">
+          <img id="profile-modal-image" src="" alt="" loading="eager" decoding="sync" />
+        </div>
+        <div class="profile-modal-info">
+          <h3 id="profile-modal-name"></h3>
+          <p id="profile-modal-role"></p>
+          <p id="profile-modal-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script>
+      // Profile Image Modal Handler
+      document.addEventListener('DOMContentLoaded', () => {
+        const profileModals = document.querySelectorAll('.profile-image-wrapper');
+        const modal = document.getElementById('profile-modal');
+        const modalImage = document.getElementById('profile-modal-image');
+        const modalImageWrapper = document.getElementById('profile-modal-image-wrapper');
+        const modalName = document.getElementById('profile-modal-name');
+        const modalRole = document.getElementById('profile-modal-role');
+        const modalDescription = document.getElementById('profile-modal-description');
+        const modalClose = document.querySelector('.profile-modal-close');
+
+        // Helper function to get CSS variable value
+        const getCSSVariable = varName => {
+          const root = document.documentElement;
+          return getComputedStyle(root).getPropertyValue(varName.trim()).trim();
+        };
+
+        // Open modal on profile image click
+        profileModals.forEach(wrapper => {
+          wrapper.addEventListener('click', e => {
+            e.stopPropagation();
+            const imageSrc = wrapper.getAttribute('data-profile-image');
+            const name = wrapper.getAttribute('data-profile-name');
+            const role = wrapper.getAttribute('data-profile-role');
+            const description = wrapper.getAttribute('data-profile-description');
+            const colorVar = wrapper.getAttribute('data-profile-color');
+
+            // Get computed color value from CSS variable
+            let computedColor = colorVar;
+            if (colorVar && colorVar.startsWith('var(')) {
+              const varName = colorVar.replace('var(', '').replace(')', '').trim();
+              computedColor = getCSSVariable(varName) || colorVar;
+            }
+
+            // Set modal content
+            modalImage.src = imageSrc;
+            modalImage.alt = `${name} - ${role}`;
+            modalName.textContent = name;
+            modalRole.textContent = role;
+            modalDescription.textContent = description;
+
+            // Set border color dynamically
+            modalImageWrapper.style.borderColor = computedColor;
+            modalImageWrapper.style.boxShadow = `0 0 50px ${computedColor}66`;
+
+            // Set role text color to match person's accent color
+            modalRole.style.color = computedColor;
+
+            // Show modal
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          });
+        });
+
+        // Close modal
+        const closeModal = () => {
+          modal.classList.remove('active');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        };
+
+        modalClose.addEventListener('click', closeModal);
+
+        // Close on backdrop click
+        modal.addEventListener('click', e => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

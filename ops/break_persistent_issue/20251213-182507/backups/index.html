@@ -1,0 +1,1548 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00ffff" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Logi-Ink" />
+
+    <title>Logi-Ink - Digital Innovation & Creative Solutions</title>
+
+    <!-- Security Headers -->
+    <!-- Note: X-Frame-Options only works via HTTP headers, not meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <!-- Content Security Policy (basic - enhance via server headers) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
+    />
+
+    <!-- Page Transition Preload - Prevent CLS on navigation -->
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- Prevent Active Link FOUC - Remove all active classes before first paint -->
+    <script>
+      // CRITICAL: Run immediately (synchronous blocking script) to prevent active link flash
+      // This MUST run before CSS paints to prevent all links showing as active/hover
+      (function() {
+        const initNav = function() {
+          const navLinks = document.querySelectorAll('.nav-link');
+          navLinks.forEach(link => {
+            // Remove active class and marks
+            link.classList.remove('active');
+            link.removeAttribute('data-active-initialized');
+            // Mark as initialized to enable hover states (after JS runs)
+            link.setAttribute('data-nav-initialized', 'true');
+          });
+        };
+
+        // Run immediately if DOM ready
+        if (document.readyState !== 'loading') {
+          initNav();
+        }
+
+        // Also run on DOMContentLoaded
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initNav, { once: true });
+        }
+
+        // Use MutationObserver as backup to catch links added after initial render
+        const observer = new MutationObserver(function(mutations) {
+          let hasNavLinks = document.querySelectorAll('.nav-link').length > 0;
+          if (hasNavLinks) {
+            initNav();
+            observer.disconnect(); // Stop observing once we've initialized
+          }
+        });
+
+        // Start observing when body exists
+        if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+        } else {
+          document.addEventListener('DOMContentLoaded', function() {
+            observer.observe(document.body, { childList: true, subtree: true });
+          }, { once: true });
+        }
+      })();
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Professional web design & development in Pretoria, South Africa. Affordable packages from R2,500. SEO-optimized, mobile-responsive websites. Get a free quote today!"
+    />
+    <meta
+      name="keywords"
+      content="digital agency, web development, creative solutions, digital innovation, web design, branding, digital transformation, affordable website design, website design packages, SEO services south africa, web development services, UI/UX design, digital marketing, e-commerce solutions"
+    />
+    <meta name="author" content="Logi-Ink" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://logi-ink.co.za/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta property="og:description" content="Professional web design & development in Pretoria, South Africa. Affordable packages from R2,500. SEO-optimized, mobile-responsive websites. Get a free quote today!" />
+    <meta property="og:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta property="og:image:secure_url" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta property="og:image:alt" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="logi-ink.co.za" />
+    <meta property="twitter:url" content="https://logi-ink.co.za/" />
+    <meta name="twitter:title" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta name="twitter:description" content="Professional web design & development in Pretoria, South Africa. Affordable packages from R2,500. SEO-optimized, mobile-responsive websites. Get a free quote today!" />
+    <meta name="twitter:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+
+
+    <!-- Preload critical resources -->
+
+    <!-- Preload hero banner with responsive srcset (browser selects optimal size for viewport) -->
+    <!-- Note: 1920w image not generated yet, using 1280w as max -->
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="
+        ./assets/images/responsive/banners/banner_home-320w.avif   320w,
+        ./assets/images/responsive/banners/banner_home-375w.avif   375w,
+        ./assets/images/responsive/banners/banner_home-480w.avif   480w,
+        ./assets/images/responsive/banners/banner_home-768w.avif   768w,
+        ./assets/images/responsive/banners/banner_home-1024w.avif 1024w,
+        ./assets/images/responsive/banners/banner_home-1280w.avif 1280w
+      "
+      imagesizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 1280px"
+      fetchpriority="high"
+    />
+
+    <!-- Preload critical fonts (self-hosted WOFF2 - Subsetted) -->
+    <link
+      rel="preload"
+      href="./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <!-- Modulepreload for critical ES modules -->
+    <link rel="modulepreload" href="./js/main.js" />
+    <link rel="modulepreload" href="./js/core/navigation.js" />
+
+    <!-- Preconnect for third-party resources -->
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Privacy-friendly analytics by Plausible - Deferred to reduce critical path impact -->
+    <script>
+      // Initialize Plausible queue (load script after user interaction or delay)
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+
+      // Load Plausible script after user interaction or 3 second delay
+      let plausibleLoaded = false;
+      function loadPlausible() {
+        if (plausibleLoaded) return;
+        plausibleLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js';
+        document.head.appendChild(script);
+      }
+
+      // Load on first user interaction
+      ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        document.addEventListener(event, loadPlausible, { once: true, passive: true });
+      });
+
+      // Fallback: Load after 3 seconds if no interaction
+      setTimeout(loadPlausible, 3000);
+    </script>
+
+    <!-- Google tag (gtag.js) - Deferred to reduce critical path impact -->
+    <script>
+      // Initialize GTM dataLayer (load script after user interaction or delay)
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-9PFB2D8G1B');
+
+      // Load GTM script after user interaction or longer delay
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+
+        // Load gtag.js script asynchronously
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
+        document.head.appendChild(script);
+      }
+
+      // Load on first user interaction
+      ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        document.addEventListener(event, loadGTM, { once: true, passive: true });
+      });
+
+      // Fallback: Load after 5 seconds if no interaction (longer delay than Plausible)
+      setTimeout(loadGTM, 5000);
+        document.head.appendChild(script);
+      }
+
+      // Load on first user interaction
+      ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        document.addEventListener(event, loadGTM, { once: true, passive: true });
+      });
+
+      // Fallback: Load after 5 seconds if no interaction (longer delay than Plausible)
+      setTimeout(loadGTM, 5000);
+    </script>
+
+    <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
+
+    <!-- Favicons -->
+    <!-- SVG favicon (modern browsers) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- PNG favicons (ordered from largest to smallest) -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- ICO fallback (legacy browsers) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Windows Tiles -->
+    <meta name="msapplication-TileColor" content="#00ffff" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00ffff" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://logi-ink.co.za/#organization",
+        "name": "Logi-Ink",
+        "alternateName": "Logi Ink",
+        "url": "https://logi-ink.co.za/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://logi-ink.co.za/logo-150x150.png",
+          "width": 150,
+          "height": 150
+        },
+        "description": "Digital Innovation & Creative Solutions - A digital agency specializing in web development, design, and digital transformation.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "533 Andries Strydom St",
+          "addressLocality": "Pretoria",
+          "postalCode": "0181",
+          "addressCountry": "ZA"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "info@logi-ink.co.za",
+          "telephone": "+27795523726",
+          "availableLanguage": ["English"],
+          "areaServed": "Worldwide"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61584223810824",
+          "https://www.instagram.com/logi.ink/"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://logi-ink.co.za/#localbusiness",
+        "name": "Logi-Ink",
+        "image": "https://logi-ink.co.za/logo-150x150.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "533 Andries Strydom St",
+          "addressLocality": "Constantia Park, Pretoria",
+          "addressRegion": "Gauteng",
+          "postalCode": "0181",
+          "addressCountry": "ZA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-25.7479",
+          "longitude": "28.2293"
+        },
+        "url": "https://logi-ink.co.za/",
+        "telephone": "+27795523726",
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "South Africa"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61584223810824",
+          "https://www.instagram.com/logi.ink/",
+          "https://business.google.com/n/2239660806201030393/profile?fid=11332148037707333605"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Logi-Ink",
+        "url": "https://logi-ink.co.za/",
+        "description": "Digital Innovation & Creative Solutions - A digital agency specializing in web development, design, and digital transformation.",
+        "publisher": {
+          "@id": "https://logi-ink.co.za/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://logi-ink.co.za/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://logi-ink.co.za/" />
+    <!-- Critical CSS - Above-the-fold styles (inlined for faster FCP) -->
+    <style>
+      @font-face {
+        font-family: 'Orbitron';
+        src: url('./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Rajdhani';
+        src: url('./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      :root {
+        --font-heading: 'Orbitron', sans-serif;
+        --font-body: 'Rajdhani', sans-serif;
+        --font-mono: 'Courier New', 'Fira Code', monospace;
+        --font-weight-light: 300;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+        --font-weight-black: 900;
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+        --font-size-6xl: 3.75rem;
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #1a1a2e;
+        --bg-tertiary: #16213e;
+        --accent-cyan: #00ffff;
+        --accent-cyan-dark: #00cccc;
+        --accent-magenta: #ff00ff;
+        --accent-magenta-light: #ed12ff;
+        --accent-magenta-dark: #cc00cc;
+        --accent-green: #00ff00;
+        --accent-green-dark: #00cc00;
+        --accent-blue: #0066ff;
+        --accent-blue-dark: #0052cc;
+        --accent-pink: #ff0080;
+        --accent-pink-dark: #cc0066;
+        --accent-yellow: #ffff00;
+        --accent-gold: #ffb347;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --text-muted: #666666;
+        --glow-cyan: rgba(0, 255, 255, 0.5);
+        --glow-magenta: rgba(255, 0, 255, 0.5);
+        --glow-green: rgba(0, 255, 0, 0.5);
+        --glow-blue: rgba(0, 102, 255, 0.5);
+        --glow-pink: rgba(255, 0, 128, 0.5);
+        --glow-gold: rgba(255, 179, 71, 0.45);
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-7: 1.75rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-20: 5rem;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-cyan) var(--bg-primary);
+      }
+      body {
+        font-family: var(--font-body);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-heading);
+      }
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--accent-cyan);
+        color: var(--bg-primary);
+        padding: var(--space-4);
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        z-index: 2000;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent-magenta), var(--accent-cyan));
+        z-index: 10000;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px var(--glow-cyan);
+      }
+      .cursor-follow,
+      .cursor-dot {
+        position: fixed;
+        pointer-events: none;
+        z-index: 99999; /* Maximum z-index to ensure cursor is always on top */
+        opacity: 0;
+        transition:
+          opacity 0.05s ease,
+          transform 0.15s ease; /* Faster transition for immediate visibility */
+        will-change: transform, left, top; /* Performance optimization */
+        transform: translateZ(0); /* Force GPU acceleration */
+        left: -9999px; /* Initial off-screen position (will be set by JS immediately) */
+        top: -9999px;
+      }
+      .cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent-cyan);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--glow-cyan);
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .cursor-dot {
+          opacity: 1; /* Immediate visibility on hover-capable devices */
+        }
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      .navbar.scrolled {
+        background: rgba(10, 10, 10, 0.95);
+        box-shadow: 0 2px 20px rgba(0, 255, 255, 0.1);
+      }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 var(--space-8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-text {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+          sans-serif;
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-black);
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px var(--glow-cyan);
+        transition: all 0.3s ease;
+      }
+      .logo-text.fonts-loaded {
+        font-family:
+          var(--font-heading),
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          sans-serif;
+      }
+      .logo-accent {
+        color: var(--accent-cyan);
+        text-shadow: 0 0 20px var(--glow-cyan);
+      }
+      .logo-text:hover {
+        text-shadow:
+          0 0 20px var(--glow-cyan),
+          0 0 30px var(--glow-cyan);
+      }
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: var(--space-8);
+      }
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-semibold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-cyan);
+        box-shadow: 0 0 10px var(--glow-cyan);
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover {
+        color: var(--accent-cyan);
+        text-shadow: 0 0 10px var(--glow-cyan);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .nav-link.active {
+        background: linear-gradient(
+          90deg,
+          #ed12ff 0%,
+          #ed12ff var(--scroll-progress, 0%),
+          var(--accent-cyan) var(--scroll-progress, 100%)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: none;
+        color: transparent;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--accent-cyan);
+        transition: all 0.3s ease;
+      }
+      .hero {
+        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        box-sizing: border-box;
+      }
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        contain: layout style;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 1200px;
+        padding: 0 var(--space-8);
+      }
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: var(--font-weight-black);
+        color: var(--text-primary);
+        margin-bottom: var(--space-6);
+        line-height: 1.2;
+        text-shadow: 0 0 30px var(--glow-cyan);
+      }
+      .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        color: var(--text-secondary);
+        margin-bottom: var(--space-8);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: var(--space-6);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: var(--space-4) var(--space-8);
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-bold);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-primary {
+        background: transparent;
+        color: var(--accent-cyan);
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--accent-cyan),
+          var(--accent-blue),
+          var(--accent-magenta),
+          var(--accent-cyan)
+        );
+        background-size: 300% 100%;
+        background-position: 0% 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+      .btn-primary:hover {
+        color: var(--bg-primary);
+        box-shadow: 0 0 30px var(--glow-cyan);
+      }
+      .btn-primary:hover::before {
+        opacity: 1;
+        animation: gradientMove 3s ease infinite;
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--accent-magenta);
+        border-color: var(--accent-magenta);
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+      }
+      .btn-secondary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--accent-magenta);
+        transition: left 0.3s ease;
+        z-index: -1;
+      }
+      .btn-secondary:hover {
+        color: var(--bg-primary);
+        box-shadow: 0 0 30px var(--glow-magenta);
+      }
+      .btn-secondary:hover::before {
+        left: 0;
+      }
+      .text-reveal {
+        display: block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: textReveal 1s ease forwards;
+      }
+      @keyframes textReveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .text-reveal.delay-1 {
+        animation-delay: 0.2s;
+      }
+      .text-reveal.delay-2 {
+        animation-delay: 0.4s;
+      }
+      .text-reveal.delay-3 {
+        animation-delay: 0.6s;
+      }
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      .fade-in.delay-4 {
+        animation-delay: 0.8s;
+      }
+      .fade-in.delay-5 {
+        animation-delay: 1s;
+      }
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        margin-top: var(--space-8);
+        z-index: 10;
+        contain: layout style;
+        /* Ensure perfect horizontal centering - no margins/padding that could offset */
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        /* Center the mouse element within scroll-indicator */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mouse {
+        width: 30px;
+        height: 50px;
+        border: 2px solid var(--accent-cyan);
+        border-radius: 15px;
+        position: relative;
+        box-shadow: 0 0 10px var(--glow-cyan);
+        /* Ensure perfect centering - no margins that could offset */
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
+      .wheel {
+        width: 4px;
+        height: 10px;
+        background: var(--accent-cyan);
+        border-radius: 2px;
+        position: absolute;
+        /* Prevent layout shifts */
+        contain: layout style;
+        /* Perfect horizontal centering using left/right with auto margins */
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 7px; /* Moved up slightly more */
+        /* Only use transform for vertical animation, not horizontal centering */
+        transform: translateY(0);
+        animation: scroll 2s infinite;
+        box-shadow: 0 0 5px var(--glow-cyan);
+        /* Ensure no other margins that could offset */
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(17px); /* Reduced further to move animation up */
+          opacity: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        /* Mobile menu styles removed - handled by responsive.css */
+        .hero-title {
+          font-size: clamp(2rem, 6vw, 4rem);
+        }
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+
+    <!-- Preload CSS for faster loading -->
+    <link rel="preload" href="css/main.css" as="style" />
+
+    <!-- Load CSS asynchronously (non-blocking) using media query trick -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript>
+      <!-- Fallback if JavaScript is disabled -->
+      <link rel="stylesheet" href="css/main.css">
+    </noscript>
+
+    <!-- View Transitions API - Enable smooth page transitions -->
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+
+    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
+    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
+    <script>
+      // Fallback for browsers that don't support onload on link elements
+      (function () {
+        var link = document.querySelector('link[href="css/main.css"][media="print"]');
+        if (link) {
+          var timeout = setTimeout(function () {
+            link.media = 'all';
+            link.onload = null;
+          }, 100);
+          link.onload = function () {
+            clearTimeout(timeout);
+            this.onload = null;
+          };
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ARIA Live Region for announcements -->
+    <div id="aria-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mouse Follow Effects -->
+    <div class="cursor-follow"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- include partials/navbar.html -->
+
+    <!-- Hero Section -->
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-background">
+          <!-- Three.js Canvas for Hero Background -->
+          <canvas id="threejs-hero-canvas" class="threejs-canvas"></canvas>
+
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="text-reveal">DIGITAL</span>
+              <span class="text-reveal delay-1">INNOVATION</span>
+              <span class="text-reveal delay-2">& CREATIVE</span>
+              <span class="text-reveal delay-3">SOLUTIONS</span>
+            </h1>
+            <p class="hero-subtitle fade-in delay-4">
+              We craft immersive digital experiences that engage, inspire, and transform your
+              business
+            </p>
+            <div class="hero-buttons fade-in delay-5">
+              <a href="/projects" class="btn btn-primary">View Our Work</a>
+              <a href="/contact" class="btn btn-secondary">Get Started</a>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Preview -->
+      <section class="services-preview specialized-services-section">
+        <div class="container">
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <p class="section-subtitle">Cutting-edge solutions for the digital age</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Web Development</h3>
+              <p>Custom websites and web applications built with modern technologies. Explore our <a href="/projects" style="color: var(--accent-cyan); text-decoration: underline;">portfolio</a> or view our <a href="/pricing" style="color: var(--accent-cyan); text-decoration: underline;">pricing packages</a>.</p>
+              <a href="/services" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3>UI/UX Design</h3>
+              <p>Intuitive interfaces that delight users and drive engagement. See our <a href="/projects" style="color: var(--accent-cyan); text-decoration: underline;">design work</a> or <a href="/contact" style="color: var(--accent-cyan); text-decoration: underline;">contact us</a> for a consultation.</p>
+              <a href="/services" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3>Brand Strategy</h3>
+              <p>Strategic branding that positions you ahead of the competition</p>
+              <a href="/services" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h3>Digital Marketing</h3>
+              <p>Data-driven campaigns that maximize your online presence. Check out our <a href="/seo-services" style="color: var(--accent-cyan); text-decoration: underline;">SEO services</a> or view our <a href="/pricing" style="color: var(--accent-cyan); text-decoration: underline;">marketing packages</a>.</p>
+              <a href="/services" class="service-link">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="featured-projects">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Showcasing our latest innovations</p>
+          </div>
+          <div class="projects-preview">
+            <div class="project-card-large mouse-tilt-container">
+              <div class="project-image">
+                <picture>
+                  <!-- AVIF format (best compression, modern browsers) -->
+                  <source
+                    type="image/avif"
+                    srcset="
+                      ./assets/images/responsive/banners/banner_home-320w.avif   320w,
+                      ./assets/images/responsive/banners/banner_home-375w.avif   375w,
+                      ./assets/images/responsive/banners/banner_home-480w.avif   480w,
+                      ./assets/images/responsive/banners/banner_home-768w.avif   768w,
+                      ./assets/images/responsive/banners/banner_home-1024w.avif 1024w,
+                      ./assets/images/responsive/banners/banner_home-1280w.avif 1280w
+                    "
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 1280px"
+                  />
+                  <!-- WebP format (fallback for older browsers) -->
+                  <source
+                    type="image/webp"
+                    srcset="
+                      ./assets/images/responsive/banners/banner_home-320w.webp   320w,
+                      ./assets/images/responsive/banners/banner_home-375w.webp   375w,
+                      ./assets/images/responsive/banners/banner_home-480w.webp   480w,
+                      ./assets/images/responsive/banners/banner_home-768w.webp   768w,
+                      ./assets/images/responsive/banners/banner_home-1024w.webp 1024w,
+                      ./assets/images/responsive/banners/banner_home-1280w.webp 1280w
+                    "
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 1280px"
+                  />
+                  <!-- Original format (final fallback) -->
+                  <img
+                    src="./assets/images/banners/banner_home.webp"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Professional web design and development services in Pretoria, South Africa - Logi-Ink digital agency"
+                    width="1920"
+                    height="1080"
+                  />
+                </picture>
+                <div class="project-overlay project-card-large-overlay"></div>
+                <div class="project-tag">Latest</div>
+              </div>
+              <div class="project-content">
+                <span class="project-category">Web Development</span>
+                <h3>Transforming Digital Experiences</h3>
+                <p>
+                  Revolutionary platform that merges cutting-edge technology with intuitive design
+                </p>
+                <a href="/projects" class="btn btn-outline">View Case Study →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technologies Section -->
+      <section class="services-preview">
+        <!-- Video Background Overlay -->
+        <div class="section-video-background" role="presentation" aria-hidden="true">
+          <div
+            id="background-video-container"
+            class="background-video-container"
+            data-video="ripples"
+            data-poster="ripples-poster.jpg"
+            data-path="assets/video/optimized"
+          ></div>
+        </div>
+
+        <!-- Video Overlay (for text readability) -->
+        <div class="section-video-overlay"></div>
+
+        <div class="container">
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Technologies We Master</h2>
+            <p class="section-subtitle">Cutting-edge tools and frameworks for modern development</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3>Frontend</h3>
+              <p>React, Vue.js, Angular, Next.js, TypeScript, Tailwind CSS</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3>Backend</h3>
+              <p>Node.js, Python, PHP, Java, .NET, REST APIs, GraphQL</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3>Mobile</h3>
+              <p>React Native, Flutter, Swift, Kotlin, iOS, Android</p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d" style="text-align: center">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3>Cloud & DevOps</h3>
+              <p>AWS, Azure, Docker, Kubernetes, CI/CD, Terraform</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Value Proposition Section -->
+      <section class="services-preview">
+        <div class="container">
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Why Teams Choose Logi-Ink</h2>
+            <p class="section-subtitle">
+              Built on strategy, performance, partnership, and transparent collaboration
+            </p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 3" />
+                  <circle cx="12" cy="12" r="1.5" />
+                </svg>
+              </div>
+              <h3>Strategy-Led Execution</h3>
+              <p>
+                Every engagement starts with discovery, measurable goals, and a roadmap that keeps
+                teams aligned.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="13 2 3 14 11 14 9 22 21 9 13 9 15 2" />
+                </svg>
+              </div>
+              <h3>Performance Obsessed</h3>
+              <p>
+                We optimize for speed, accessibility, and conversions to deliver experiences that
+                grow with your brand.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 17l-3 3-3-3" />
+                  <path d="M21 7l-3-3-3 3" />
+                  <path d="M3 20l6-6" />
+                  <path d="M21 4l-6 6" />
+                  <path d="M10 14l4-4" />
+                </svg>
+              </div>
+              <h3>Embedded Partnership</h3>
+              <p>
+                High-touch collaboration, proactive communication, and shared ownership across every
+                sprint.
+              </p>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div class="service-icon">
+                <div class="icon-glow"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M3 3h18v13H3z" />
+                  <path d="M3 18h18" />
+                  <path d="M7 21h10" />
+                  <path d="M8 12l2.5-2.5L12 12l3-3 3 3" />
+                </svg>
+              </div>
+              <h3>Transparent Delivery</h3>
+              <p>
+                Real-time dashboards, sprint reviews, and open tooling ensure stakeholders stay
+                informed and in control.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="featured-projects testimonials-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle">What our clients say about working with us</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card mouse-tilt-container card-3d">
+              <div style="margin-bottom: 1.5rem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="var(--accent-cyan)"
+                  width="40"
+                  height="40"
+                  style="opacity: 0.5"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                "
+              >
+                "Logi-Ink transformed our digital presence completely. Their expertise and attention
+                to detail exceeded all expectations."
+              </p>
+              <div>
+                <h3
+                  style="
+                    color: var(--accent-cyan);
+                    margin-bottom: 0.5rem;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                  "
+                >
+                  Sarah Johnson
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem">CEO, TechStart Inc.</p>
+              </div>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div style="margin-bottom: 1.5rem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="var(--accent-magenta)"
+                  width="40"
+                  height="40"
+                  style="opacity: 0.5"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                "
+              >
+                "Outstanding work from start to finish. The team's creative approach and technical
+                expertise delivered remarkable results."
+              </p>
+              <div>
+                <h3
+                  style="
+                    color: var(--accent-magenta);
+                    margin-bottom: 0.5rem;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                  "
+                >
+                  Michael Chen
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem">Founder, Digital Ventures</p>
+              </div>
+            </div>
+            <div class="service-card mouse-tilt-container card-3d">
+              <div style="margin-bottom: 1.5rem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="var(--accent-green)"
+                  width="40"
+                  height="40"
+                  style="opacity: 0.5"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                "
+              >
+                "Professional, innovative, and results-driven. Logi-Ink helped us achieve our goals
+                and more."
+              </p>
+              <div>
+                <h3
+                  style="
+                    color: var(--accent-green);
+                    margin-bottom: 0.5rem;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                  "
+                >
+                  Emma Rodriguez
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem">
+                  Marketing Director, Global Brands
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="services-preview">
+        <div class="container">
+          <div class="section-header scroll-reveal-3d">
+            <h2 class="section-title">Our Impact</h2>
+            <p class="section-subtitle">Numbers that speak for themselves</p>
+          </div>
+          <div class="services-grid">
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-cyan"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-cyan);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="150"
+                data-suffix="+"
+              >
+                0
+              </div>
+              <h3>Projects Delivered</h3>
+              <p style="color: var(--text-secondary)">
+                Successfully completed projects across various industries. <a href="/projects" style="color: var(--accent-cyan); text-decoration: underline;">View our portfolio</a>.
+              </p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-magenta"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-magenta);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="98"
+                data-suffix="%"
+              >
+                0
+              </div>
+              <h3>Client Satisfaction</h3>
+              <p style="color: var(--text-secondary)">Clients who would recommend us to others</p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-green"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-green);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="50"
+                data-suffix="+"
+              >
+                0
+              </div>
+              <h3>Happy Clients</h3>
+              <p style="color: var(--text-secondary)">
+                Long-term partnerships built on trust and results
+              </p>
+            </div>
+            <div
+              class="service-card mouse-tilt-container card-3d impact-card-blue"
+              style="text-align: center"
+            >
+              <div
+                class="count-number"
+                style="
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  color: var(--accent-blue);
+                  margin-bottom: 1rem;
+                  font-family: 'Orbitron', sans-serif;
+                  font-weight: 900;
+                "
+                data-target="5"
+                data-suffix="+"
+              >
+                0
+              </div>
+              <h3>Years Experience</h3>
+              <p style="color: var(--text-secondary)">
+                Delivering excellence in digital innovation
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <!-- Top Curved Divider -->
+        <div class="portal-divider portal-divider-top">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+              </linearGradient>
+            </defs>
+            <path d="M0,120 Q360,0 720,60 T1440,120 L1440,0 L0,0 Z" fill="url(#topGradient)" />
+          </svg>
+        </div>
+
+        <!-- Portal Glow Effect -->
+        <div class="portal-glow"></div>
+
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's collaborate on your next big idea</p>
+            <a href="/contact" class="btn btn-primary btn-large">Get In Touch</a>
+          </div>
+        </div>
+
+        <!-- Bottom Curved Divider -->
+        <div class="portal-divider portal-divider-bottom">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: var(--bg-secondary); stop-opacity: 0" />
+                <stop offset="100%" style="stop-color: var(--bg-secondary); stop-opacity: 1" />
+              </linearGradient>
+            </defs>
+            <path d="M0,0 Q360,120 720,60 T1440,0 L1440,120 L0,120 Z" fill="url(#bottomGradient)" />
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <!-- include partials/footer.html -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"></a>
+
+    <!-- Three.js will be loaded dynamically when needed via js/utils/three-loader.js -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

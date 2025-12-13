@@ -46,6 +46,7 @@ export async function loadThreeJS() {
   }
 
   // CDN mode: Load from Cloudflare CDN
+  // Use requestIdleCallback to defer loading during browser idle time (non-blocking)
   threeJSPromise = new Promise((resolve, reject) => {
     // Check if script already exists
     const existingScript = document.querySelector('script[src*="three.js"]');
@@ -64,6 +65,8 @@ export async function loadThreeJS() {
       return;
     }
 
+    // Function to actually load the script
+    const loadScript = () => {
     // Create script element
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
@@ -95,6 +98,21 @@ export async function loadThreeJS() {
 
     // Append to document
     document.head.appendChild(script);
+    };
+
+    // Use requestIdleCallback if available to load during idle time (non-blocking)
+    // Reduced timeout for faster loading on desktop (CSS is now async, so we can load sooner)
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadScript, { timeout: 1000 }); // Reduced from 3000ms to 1000ms
+    } else if ('requestAnimationFrame' in window) {
+      // Fallback: Use requestAnimationFrame with shorter delay
+      requestAnimationFrame(() => {
+        setTimeout(loadScript, 200); // Reduced from 500ms to 200ms
+      });
+    } else {
+      // Final fallback: Load immediately
+      loadScript();
+    }
   });
 
   return threeJSPromise;

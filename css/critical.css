@@ -29,11 +29,19 @@
 }
 
 @font-face {
+  font-family: 'Orbitron';
+  src: url('../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; /* Critical for logo - use swap for faster display */
+}
+
+@font-face {
   font-family: 'Rajdhani';
   src: url('../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap; /* Critical font - use swap for faster display */
+  font-display: swap; /* Critical body font - preloaded, use swap for faster display */
 }
 
 /* ============================================
@@ -233,10 +241,18 @@ h6 {
   background: rgba(10, 10, 10, 0.9);
   backdrop-filter: blur(10px);
   z-index: 10000; /* Match navigation.css - high z-index to ensure navbar is above hero sections */
-  padding: var(--space-4) 0;
+  padding: var(--space-4) var(--space-8);
   border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Only transition specific properties */
   overflow: visible !important; /* Ensure mobile menu can escape */
+  /* Prevent CLS - fixed height to prevent layout shifts */
+  height: 72px; /* Fixed height: padding (1rem top + 1rem bottom = 2rem = 32px) + logo (40px) = 72px */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  /* Removed view-transition-name to prevent CSS state persistence in bfcache */
+  /* According to MDN: view-transition-name values persist in bfcache during navigation */
+  /* This was causing navbar active/hover states to flash on page load */
 }
 
 .navbar.scrolled {
@@ -246,40 +262,42 @@ h6 {
 
 .nav-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 var(--space-8);
+  padding: 0 var(--space-16);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%; /* Fill navbar height */
+}
+
+/* Font metric matching fallback for Orbitron Black (900) - must be in critical CSS */
+@font-face {
+  font-family: 'Orbitron-Fallback';
+  src: local('Arial');
+  size-adjust: 105%;
+  ascent-override: 95%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+  font-weight: 900;
 }
 
 .logo-text {
-  /* Use system fonts only for immediate render - no custom font blocking */
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-    sans-serif;
+  /* Use Orbitron with metric-matched fallback immediately after - prevents CLS */
+  /* Order: Orbitron (custom) -> Orbitron-Fallback (metric-matched) -> system fonts */
+  font-family: 'Orbitron', 'Orbitron-Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-black);
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 2px;
   text-shadow: 0 0 10px var(--glow-cyan);
-  transition: all 0.3s ease;
-  /* Orbitron will be added via JavaScript after fonts load to prevent render blocking */
-}
-
-.logo-text.fonts-loaded {
-  /* Apply Orbitron after fonts are confirmed loaded */
-  font-family:
-    var(--font-heading),
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    sans-serif;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Prevent CLS - fixed dimensions */
+  height: 1.2em; /* Fixed height to prevent layout shift */
+  line-height: 1.2; /* Consistent line height */
+  display: inline-block; /* Ensures height applies */
+  vertical-align: middle; /* Align with logo image */
 }
 
 .logo-accent {
@@ -291,6 +309,18 @@ h6 {
   text-shadow:
     0 0 20px var(--glow-cyan),
     0 0 30px var(--glow-cyan);
+}
+
+/* Hide navbar text until fonts are loaded */
+.fonts-loading .logo-text,
+.fonts-loading .nav-link {
+  visibility: hidden;
+}
+
+.fonts-loaded .logo-text,
+.fonts-loaded .nav-link {
+  visibility: visible;
+  transition: visibility 0s, opacity 0.2s ease, transform 0.3s ease;
 }
 
 .nav-menu {
@@ -307,8 +337,155 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
   overflow: hidden;
+  /* Prevent hover/active states during view transitions and initial load */
+  pointer-events: auto;
+}
+
+/* CRITICAL: Disable all nav-link hover/active states during view transitions */
+:active-view-transition-type(back) .nav-link:hover,
+:active-view-transition-type(forward) .nav-link:hover,
+:active-view-transition-type(swap) .nav-link:hover,
+html:has(.page-transition-preload) .nav-link:hover,
+html:has(.page-transition-preload) .nav-link.active {
+  /* Disable hover effects during transitions */
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+:active-view-transition-type(back) .nav-link:hover::after,
+:active-view-transition-type(forward) .nav-link:hover::after,
+:active-view-transition-type(swap) .nav-link:hover::after,
+html:has(.page-transition-preload) .nav-link:hover::after {
+  transform: scaleX(0) !important;
+  width: 0 !important;
+}
+
+/* CRITICAL: Hide navbar completely by default and during view transitions */
+/* Default: navbar is hidden until JavaScript explicitly shows it */
+.navbar {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Only show navbar when explicitly initialized AND after a delay to let View Transition complete */
+.navbar.nav-initialized {
+  /* Visibility is controlled by inline style in JavaScript after View Transition completes */
+  /* CSS rule exists for fallback, but JavaScript removes inline style to show navbar */
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: visibility 0s, opacity 0.1s ease !important;
+}
+
+/* Additional protection during View Transitions */
+:active-view-transition-type(back) .navbar,
+:active-view-transition-type(forward) .navbar,
+:active-view-transition-type(swap) .navbar,
+html:has(.page-transition-preload) .navbar {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Once initialized, show navbar with smooth fade-in */
+.navbar.nav-initialized {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: visibility 0s, opacity 0.1s ease !important;
+}
+
+/* CRITICAL: Disable ALL nav-link hover states globally by default - affects old and new page during View Transitions */
+.navbar:not(.nav-initialized) .nav-link:hover,
+:active-view-transition-type(back) .nav-link:hover,
+:active-view-transition-type(forward) .nav-link:hover,
+:active-view-transition-type(swap) .nav-link:hover,
+html:has(.page-transition-preload) .nav-link:hover {
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+.navbar:not(.nav-initialized) .nav-link:hover::after,
+:active-view-transition-type(back) .nav-link:hover::after,
+:active-view-transition-type(forward) .nav-link:hover::after,
+:active-view-transition-type(swap) .nav-link:hover::after,
+html:has(.page-transition-preload) .nav-link:hover::after {
+  transform: scaleX(0) !important;
+  width: 0 !important;
+}
+
+/* Only enable hover states after navbar is initialized */
+/* Only enable hover states after navbar is initialized AND link has data-nav-initialized */
+.navbar.nav-initialized .nav-link[data-nav-initialized]:hover {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px var(--glow-cyan);
+}
+
+.navbar.nav-initialized .nav-link[data-nav-initialized]:hover::after {
+  width: 100%;
+}
+
+/* CRITICAL: Hide ALL active states by default - only show after navbar AND link are initialized */
+/* This prevents flash during view transitions and initial load */
+.navbar:not(.nav-initialized) .nav-link.active {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+/* CRITICAL: Disable ALL .nav-link.active states globally by default - highest specificity */
+/* This affects both old and new page during View Transitions */
+.nav-link.active:not([data-active-initialized]),
+.navbar .nav-link.active:not([data-active-initialized]),
+.navbar:not(.nav-initialized) .nav-link.active,
+:active-view-transition-type(back) .nav-link.active,
+:active-view-transition-type(forward) .nav-link.active,
+:active-view-transition-type(swap) .nav-link.active,
+html:has(.page-transition-preload) .nav-link.active {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+/* Only show active gradient when navbar is initialized AND link has data-active-initialized */
+.navbar.nav-initialized .nav-link.active[data-active-initialized] {
+  background: linear-gradient(
+    90deg,
+    #ed12ff 0%,
+    #ed12ff var(--scroll-progress, 0%),
+    var(--accent-cyan) var(--scroll-progress, 100%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  color: transparent;
+}
+
+.navbar.nav-initialized .nav-link.active[data-active-initialized]:hover {
+  background: linear-gradient(
+    90deg,
+    #ed12ff 0%,
+    #ed12ff var(--scroll-progress, 0%),
+    var(--accent-cyan) var(--scroll-progress, 100%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.navbar.nav-initialized .nav-link.active[data-active-initialized]::after {
+  transform: scaleX(1);
 }
 
 .nav-link::after {
@@ -323,28 +500,11 @@ h6 {
   transition: width 0.3s ease;
 }
 
-.nav-link:hover {
-  color: var(--accent-cyan);
-  text-shadow: 0 0 10px var(--glow-cyan);
-}
+/* Duplicate rules removed - see lines 360-379 for the original protection rules */
 
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.nav-link.active {
-  background: linear-gradient(
-    90deg,
-    #ed12ff 0%,
-    #ed12ff var(--scroll-progress, 0%),
-    var(--accent-cyan) var(--scroll-progress, 100%)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  color: transparent;
-}
+/* REMOVED: .nav-link.active rule that was causing flash */
+/* The correct rule is .navbar.nav-initialized .nav-link.active[data-active-initialized] above */
+/* This rule was overriding the protection rules and showing active state without initialization */
 
 /* Mobile Navigation */
 .hamburger {
@@ -413,6 +573,18 @@ h6 {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Hide hero text until fonts are loaded */
+.fonts-loading .hero-title,
+.fonts-loading .hero-subtitle {
+  visibility: hidden;
+}
+
+.fonts-loaded .hero-title,
+.fonts-loaded .hero-subtitle {
+  visibility: visible;
+  transition: visibility 0s, opacity 0.2s ease;
 }
 
 .hero-buttons {

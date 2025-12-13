@@ -32,8 +32,18 @@
   src: url('../assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
-  font-display: optional; /* Used by logo (LCP element) - optional prevents render blocking */
-  /* System font fallback ensures immediate render, font swaps in if available within 100ms */
+  font-display: swap; /* Changed to swap for logo to prevent invisible text */
+}
+
+/* Font metric matching fallback for Orbitron Black (900) to prevent CLS */
+@font-face {
+  font-family: 'Orbitron-Fallback';
+  src: local('Arial');
+  size-adjust: 105%;
+  ascent-override: 95%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+  font-weight: 900;
 }
 
 /* Rajdhani Font - Body Text (Subsetted) */
@@ -50,7 +60,7 @@
   src: url('../assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap; /* Critical font - use swap for faster display */
+  font-display: swap; /* Critical body font - preloaded, use swap for faster display */
 }
 
 @font-face {

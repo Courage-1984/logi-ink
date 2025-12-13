@@ -1,7 +1,8 @@
 # Google Business Profile Optimization Guide
 
 **Last Updated:** 2025-01-30  
-**Business Profile URL:** https://business.google.com/n/2239660806201030393
+**Business Profile URL:** https://business.google.com/n/2239660806201030393/profile?fid=11332148037707333605  
+**URL Updated:** 2025-12-11
 
 ---
 

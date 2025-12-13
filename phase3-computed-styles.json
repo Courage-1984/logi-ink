@@ -1,0 +1,51 @@
+// Phase 3: Check if pagereveal is firing and capture computed styles
+const result = {
+  pagerevealFired: window.logiInkPagerevealFired || false,
+  navbar: (() => {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return null;
+    const computed = window.getComputedStyle(navbar);
+    return {
+      classes: Array.from(navbar.classList),
+      computedStyles: {
+        height: computed.height,
+        minHeight: computed.minHeight,
+        maxHeight: computed.maxHeight,
+        display: computed.display,
+        position: computed.position,
+        zIndex: computed.zIndex,
+        overflow: computed.overflow,
+        contain: computed.contain,
+        viewTransitionName: computed.viewTransitionName,
+        boxSizing: computed.boxSizing
+      },
+      boundingBox: navbar.getBoundingClientRect(),
+      offsetHeight: navbar.offsetHeight,
+      scrollHeight: navbar.scrollHeight,
+      clientHeight: navbar.clientHeight
+    };
+  })(),
+  navLinks: Array.from(document.querySelectorAll('.nav-link')).slice(0, 3).map(link => {
+    const computed = window.getComputedStyle(link);
+    return {
+      text: link.textContent.trim(),
+      classes: Array.from(link.classList),
+      attributes: {
+        dataNavInit: link.hasAttribute('data-nav-initialized'),
+        dataActiveInit: link.hasAttribute('data-active-initialized')
+      },
+      computedStyles: {
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+        backgroundClip: computed.backgroundClip,
+        webkitTextFillColor: computed.webkitTextFillColor,
+        textShadow: computed.textShadow,
+        position: computed.position,
+        display: computed.display,
+        height: computed.height,
+        lineHeight: computed.lineHeight
+      }
+    };
+  })
+};
+JSON.stringify(result, null, 2);

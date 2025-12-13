@@ -1,0 +1,34 @@
+// Phase 3: Computed Style Audit
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.nav-link');
+const audit = {
+  timestamp: new Date().toISOString(),
+  url: window.location.href,
+  navbar: {
+    classes: Array.from(navbar?.classList || []),
+    hasNavInitialized: navbar?.classList.contains('nav-initialized'),
+    computedStyles: navbar ? {
+      display: window.getComputedStyle(navbar).display,
+      visibility: window.getComputedStyle(navbar).visibility,
+      opacity: window.getComputedStyle(navbar).opacity,
+      height: window.getComputedStyle(navbar).height,
+      minHeight: window.getComputedStyle(navbar).minHeight
+    } : null
+  },
+  navLinks: Array.from(navLinks).slice(0, 3).map(link => ({
+    text: link.textContent.trim(),
+    classes: Array.from(link.classList),
+    hasActive: link.classList.contains('active'),
+    hasNavInitialized: link.hasAttribute('data-nav-initialized'),
+    hasActiveInitialized: link.hasAttribute('data-active-initialized'),
+    computedStyles: {
+      color: window.getComputedStyle(link).color,
+      backgroundColor: window.getComputedStyle(link).backgroundColor,
+      backgroundClip: window.getComputedStyle(link).backgroundClip,
+      webkitTextFillColor: window.getComputedStyle(link).webkitTextFillColor,
+      textShadow: window.getComputedStyle(link).textShadow,
+      opacity: window.getComputedStyle(link).opacity
+    }
+  }))
+};
+JSON.stringify(audit, null, 2);

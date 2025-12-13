@@ -8,9 +8,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] - 2025-01-30
 
 ### Added
+- **Galaxy Settings UI System**: Comprehensive settings panel for galaxy easter egg customization
+  - Added `js/easter-egg/galaxy-settings.js` module with 19+ settings organized into logical groups
+  - Settings categories: Camera & Controls, Animation Speed, Visual Quality, Lighting, Performance, UI/Information, Orbital Visualization, Particle Effects, Visual Effects
+  - Real-time settings updates via custom event system
+  - Collapsible settings panel with scrollable content (top-left corner)
+  - Toggle switches for boolean settings and range sliders for numeric values with live value display
+  - Created comprehensive documentation (`docs/GALAXY_SETTINGS_UI.md`)
+- **Google Business Profile Integration**: Complete integration of Google Business Profile across the website
+  - Added Google Business Profile URL to LocalBusiness structured data (contact.html, index.html)
+  - Added "View on Google" and "Get Directions" buttons on contact page
+  - Added Google Business Profile link to footer social links
+  - Created comprehensive optimization guide (`docs/GOOGLE_BUSINESS_PROFILE_OPTIMIZATION.md`)
+- **Website Visibility Improvement Guide**: Created comprehensive SEO and visibility guide (`docs/WEBSITE_VISIBILITY_IMPROVEMENT_GUIDE.md`) covering content strategy, link building, local SEO, social media integration, and conversion optimization
+- **URL Redirects Configuration**: Added redirects for www and HTTP to HTTPS across all hosting platforms
+  - Updated `.htaccess` with www to non-www and HTTP to HTTPS redirects
+  - Updated `nginx.conf.example` with redirect server blocks
+  - Created `netlify.toml` for Netlify deployments
+  - Created `vercel.json` for Vercel deployments
+  - Created `_redirects` file for Netlify (alternative method)
+  - Updated `vite.config.js` to copy `_redirects` to dist during build
 - **Logo Structured Data for Google Search Results**: Updated all Organization schemas to use ImageObject format with logo-150x150.png for optimal display in Google search results. All pages now include proper logo structured data following Google's recommended format.
 
+### Fixed
+- **Galaxy Settings Double "Show" Prefix Bug**: Fixed settings conversion logic that was adding duplicate "show" prefix to setting names
+  - Updated `idToSettingKey` function in `galaxy-settings.js` to detect existing "show" prefix and skip adding another
+  - Settings with HTML IDs like `setting-show-star-field` now correctly convert to `showStarField` instead of `showShowStarField`
+  - All 19+ settings now work correctly (auto-rotate, moons, star field, shadows, core brightness, directional light, space dust, space stations, star twinkling, planet labels, distance info, grid overlay, etc.)
+  - Added robust null checks and initialization delay to ensure settings apply after scene objects are fully initialized
+
 ### Changed
+- **Social Media Links**: Removed all Twitter and LinkedIn references from the website
+  - Removed Twitter and LinkedIn links from footer (`partials/footer.html`)
+  - Removed Twitter and LinkedIn from contact page social links
+  - Removed Twitter Card meta tags from all HTML pages
+  - Removed Twitter and LinkedIn URLs from structured data `sameAs` arrays
+  - Updated SEO generation scripts to remove Twitter meta tag generation
+- **Google Maps Links**: Updated all Google Maps links to new short URL (`https://maps.app.goo.gl/8DWBKtV9eKXy8ko97`)
+  - Updated footer address link
+  - Updated contact page "Get Directions" button
+  - Updated documentation (`docs/GOOGLE_MAPS_AND_BUSINESS_PROFILE_URLS.md`)
+- **Contact Page Buttons**: Fixed clickability issue with Address block buttons
+  - Added explicit `z-index` and `pointer-events: auto` to `.contact-actions` wrapper
+  - Added `z-index: 11` and `pointer-events: auto` to `.contact-quick-action` buttons
+  - Added `z-index: 1` to `.contact-item` for proper stacking context
 - **Easter Egg Organization**: Moved all galaxy easter egg code to dedicated `js/easter-egg/` folder
   - Moved `js/core/easter-egg.js` → `js/easter-egg/easter-egg.js`
   - Moved `js/modules/easter-egg/runtime.js` → `js/easter-egg/runtime.js`

@@ -1,0 +1,27 @@
+// Phase 1: Capture initial DOM state and nav link states
+const navLinks = document.querySelectorAll('.nav-link');
+const navbar = document.querySelector('.navbar');
+const snapshot = {
+  timestamp: new Date().toISOString(),
+  url: window.location.href,
+  navbar: {
+    classes: Array.from(navbar?.classList || []),
+    hasNavInitialized: navbar?.classList.contains('nav-initialized') || false
+  },
+  navLinks: Array.from(navLinks).map(link => ({
+    text: link.textContent.trim(),
+    href: link.getAttribute('href'),
+    classes: Array.from(link.classList),
+    hasActive: link.classList.contains('active'),
+    dataNavInitialized: link.hasAttribute('data-nav-initialized'),
+    dataActiveInitialized: link.hasAttribute('data-active-initialized'),
+    computedStyles: {
+      color: window.getComputedStyle(link).color,
+      backgroundColor: window.getComputedStyle(link).backgroundColor,
+      backgroundClip: window.getComputedStyle(link).backgroundClip,
+      webkitTextFillColor: window.getComputedStyle(link).webkitTextFillColor,
+      textShadow: window.getComputedStyle(link).textShadow
+    }
+  }))
+};
+JSON.stringify(snapshot, null, 2);

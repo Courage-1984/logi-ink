@@ -1,9 +1,33 @@
+<!-- Navbar Skeleton (shown during loading, removed after navbar initializes) -->
+<nav class="navbar-skeleton" id="navbarSkeleton" aria-hidden="false" aria-label="Loading navigation">
+  <span class="sr-only">Loading navigation, please wait...</span>
+  <div class="navbar-skeleton-container">
+    <!-- Logo skeleton - match actual structure: .logo > .logo-link > (img + text) -->
+    <div class="navbar-skeleton-logo">
+      <div class="navbar-skeleton-logo-link">
+        <div class="navbar-skeleton-logo-img skeleton"></div>
+        <div class="navbar-skeleton-logo-text skeleton"></div>
+      </div>
+    </div>
+    <!-- Nav links skeleton (desktop only) -->
+    <div class="navbar-skeleton-menu">
+      <div class="navbar-skeleton-link skeleton"></div>
+      <div class="navbar-skeleton-link skeleton"></div>
+      <div class="navbar-skeleton-link skeleton"></div>
+      <div class="navbar-skeleton-link skeleton"></div>
+      <div class="navbar-skeleton-link skeleton"></div>
+    </div>
+    <!-- Hamburger skeleton (mobile only) -->
+    <div class="navbar-skeleton-hamburger skeleton"></div>
+  </div>
+</nav>
+
 <!-- Navigation -->
-<nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar" style="visibility: hidden; opacity: 0;" aria-hidden="true">
   <div class="nav-container">
     <div class="logo">
       <a href="/" class="logo-link">
-        <img src="/logo.svg" alt="Logi-Ink Logo" class="logo-img" />
+        <img src="/logo.svg" alt="Logi-Ink Logo" class="logo-img" width="40" height="40" />
         <span class="logo-text">LOG<span class="logo-accent">I</span>-INK</span>
       </a>
     </div>

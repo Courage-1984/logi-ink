@@ -1,9 +1,16 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#00ffff" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Logi-Ink" />
+
     <title>Website Design Packages & Pricing | Logi-Ink</title>
 
     <!-- Security Headers -->
@@ -16,6 +23,60 @@
       content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
     />
 
+    <!-- Page Transition Preload - Prevent CLS on navigation -->
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- Prevent Active Link FOUC - Remove all active classes before first paint -->
+    <script>
+      // CRITICAL: Run immediately (synchronous blocking script) to prevent active link flash
+      // This MUST run before CSS paints to prevent all links showing as active/hover
+      // During View Transitions, the browser paints the new page immediately, so we must
+      // clear states synchronously without waiting for readyState or DOMContentLoaded
+      (function () {
+        // Run immediately - no readyState checks, no event listeners
+        // This ensures it runs BEFORE the browser paints the new page during View Transitions
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbar = document.querySelector('.navbar');
+
+        // Remove active classes from all links (if they exist)
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          link.removeAttribute('data-active-initialized');
+          link.removeAttribute('data-nav-initialized');
+        });
+
+        // CRITICAL: Remove nav-initialized class from navbar to enable CSS protection
+        // If this class persists from bfcache, protection CSS (.navbar:not(.nav-initialized)) won't work
+        if (navbar) {
+          navbar.classList.remove('nav-initialized');
+        }
+
+        // Also set up MutationObserver for links added after initial render (HTML includes, etc.)
+        // This is a backup safety measure, but the above should catch most cases
+        if (document.body) {
+          const observer = new MutationObserver(function () {
+            const newNavLinks = document.querySelectorAll('.nav-link:not([data-nav-fixed])');
+            newNavLinks.forEach(link => {
+              link.classList.remove('active');
+              link.removeAttribute('data-active-initialized');
+              link.removeAttribute('data-nav-initialized');
+              link.setAttribute('data-nav-fixed', 'true'); // Mark as fixed to avoid re-processing
+            });
+            const newNavbar = document.querySelector('.navbar:not(.nav-state-cleared)');
+            if (newNavbar) {
+              newNavbar.classList.remove('nav-initialized');
+              newNavbar.classList.add('nav-state-cleared');
+            }
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+      })();
+    </script>
 
     <!-- SEO Meta Tags -->
     <meta
@@ -31,45 +92,74 @@
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://logi-ink.co.za/pricing" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Website Design Packages & Pricing | Logi-Ink" />
     <meta
       property="og:description"
       content="Affordable website design packages in Pretoria, South Africa. Starting from R2,500. Includes hosting, SEO & support. Transparent pricing - get a free quote today!"
     />
+    <meta property="og:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
     <meta
-      property="og:image"
-      content="https://logi-ink.co.za/assets/images/banners/banner_home.webp"
+      property="og:image:secure_url"
+      content="https://logi-ink.co.za/assets/images/og-image.png"
     />
+    <meta property="og:image:alt" content="Website Design Packages & Pricing | Logi-Ink" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:site_name" content="Logi-Ink" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_ZA" />
 
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="logi-ink.co.za" />
+    <meta property="twitter:url" content="https://logi-ink.co.za/pricing" />
+    <meta name="twitter:title" content="Website Design Packages & Pricing | Logi-Ink" />
+    <meta
+      name="twitter:description"
+      content="Affordable website design packages in Pretoria, South Africa. Starting from R2,500. Includes hosting, SEO & support. Transparent pricing - get a free quote today!"
+    />
+    <meta name="twitter:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+
+    <!-- Hide navbar and hero text until fonts load (prevents FOUT) -->
+    <script>
+      // CRITICAL: Add fonts-loading class immediately to hide text before first paint
+      document.documentElement.classList.add('fonts-loading');
+    </script>
 
     <!-- Preload critical fonts -->
     <link
       rel="preload"
       href="./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
       as="font"
+      type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       href="./assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2"
       as="font"
+      type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       href="./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
       as="font"
+      type="font/woff2"
       crossorigin="anonymous"
     />
 
     <!-- Modulepreload for critical ES modules -->
     <link rel="modulepreload" href="./js/main.js" />
     <link rel="modulepreload" href="./js/core/navigation.js" />
+
+    <!-- DNS Prefetch for external resources (lighter than preconnect, runs earlier) -->
+    <link rel="dns-prefetch" href="https://plausible.io" />
+    <link rel="dns-prefetch" href="https://formspree.io" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Preconnect for third-party resources -->
     <link rel="preconnect" href="https://plausible.io" crossorigin />
@@ -91,24 +181,39 @@
       plausible.init();
     </script>
 
-    <!-- Google tag (gtag.js) - Deferred to load after page is interactive -->
+    <!-- Google tag (gtag.js) - Optimized loading using requestIdleCallback to avoid blocking main thread -->
     <script>
-      // Defer Google Tag Manager to reduce initial JavaScript load
-      window.addEventListener('load', () => {
-        // Initialize dataLayer
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-9PFB2D8G1B');
+      // Defer Google Tag Manager using requestIdleCallback for non-blocking loading
+      (function () {
+        function loadGTM() {
+          // Initialize dataLayer
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-9PFB2D8G1B');
 
-        // Load gtag.js script asynchronously
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
-        document.head.appendChild(script);
-      });
+          // Load gtag.js script asynchronously
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
+          document.head.appendChild(script);
+        }
+
+        // Use requestIdleCallback if available (non-blocking, loads during browser idle time)
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGTM, { timeout: 2000 });
+        } else if ('requestAnimationFrame' in window) {
+          // Fallback: Use requestAnimationFrame with delay
+          requestAnimationFrame(() => {
+            setTimeout(loadGTM, 1000);
+          });
+        } else {
+          // Final fallback: Load after page is fully loaded
+          window.addEventListener('load', loadGTM);
+        }
+      })();
     </script>
 
     <!-- Canonical URL -->
@@ -659,7 +764,15 @@
     </style>
 
     <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
-    <link rel="stylesheet" href="css/main.css" />
+    <!-- Preload CSS for faster loading -->
+    <link rel="preload" href="css/main.css" as="style" />
+
+    <!-- Load CSS asynchronously (non-blocking) using media query trick -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media = 'all'" />
+    <noscript>
+      <!-- Fallback if JavaScript is disabled -->
+      <link rel="stylesheet" href="css/main.css" />
+    </noscript>
 
     <!-- View Transitions API - Enable smooth page transitions -->
     <style>
@@ -709,6 +822,42 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://logi-ink.co.za/#organization",
+        "name": "Logi-Ink",
+        "alternateName": "Logi Ink",
+        "url": "https://logi-ink.co.za/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://logi-ink.co.za/logo-150x150.png",
+          "width": 150,
+          "height": 150
+        },
+        "description": "Digital Innovation & Creative Solutions - A digital agency specializing in web development, design, and digital transformation.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "533 Andries Strydom St",
+          "addressLocality": "Pretoria",
+          "postalCode": "0181",
+          "addressCountry": "ZA"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "info@logi-ink.co.za",
+          "telephone": "+27795523726",
+          "availableLanguage": ["English"],
+          "areaServed": "Worldwide"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61584223810824",
+          "https://www.instagram.com/logi.ink/"
+        ]
+      }
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -912,7 +1061,10 @@
                   R7,500
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.9rem">
-                  Perfect for small businesses. See our <a href="/services" style="color: var(--accent-cyan); text-decoration: underline;">full service list</a>.
+                  Perfect for small businesses. See our
+                  <a href="/services" style="color: var(--accent-cyan); text-decoration: underline"
+                    >full service list</a
+                  >.
                 </p>
               </div>
               <ul

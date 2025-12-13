@@ -1,0 +1,38 @@
+// Phase 1: Capture DOM state IMMEDIATELY after navigation (during flash)
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.nav-link');
+const snapshot = {
+  timestamp: new Date().toISOString(),
+  url: window.location.href,
+  phase: 'during-navigation-flash',
+  navbar: {
+    classes: Array.from(navbar?.classList || []),
+    hasNavInitialized: navbar?.classList.contains('nav-initialized') || false,
+    computedStyles: navbar ? {
+      viewTransitionName: window.getComputedStyle(navbar).viewTransitionName,
+      position: window.getComputedStyle(navbar).position
+    } : null
+  },
+  navLinks: Array.from(navLinks).map(link => {
+    const computed = window.getComputedStyle(link);
+    return {
+      text: link.textContent.trim(),
+      classes: Array.from(link.classList),
+      hasActive: link.classList.contains('active'),
+      attributes: {
+        dataNavInit: link.hasAttribute('data-nav-initialized'),
+        dataActiveInit: link.hasAttribute('data-active-initialized')
+      },
+      computedStyles: {
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+        backgroundClip: computed.backgroundClip,
+        webkitTextFillColor: computed.webkitTextFillColor,
+        textShadow: computed.textShadow
+      },
+      appearsActive: computed.backgroundClip !== 'border-box' && computed.webkitTextFillColor === 'rgba(0, 0, 0, 0)',
+      appearsHovered: computed.textShadow !== 'none' && computed.textShadow !== '' && computed.color !== 'rgb(176, 176, 176)'
+    };
+  })
+};
+JSON.stringify(snapshot, null, 2);

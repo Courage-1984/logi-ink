@@ -3,32 +3,67 @@
  * View Transitions API is enabled via CSS @view-transition { navigation: auto; }
  * The browser automatically handles smooth transitions between pages.
  *
- * This module ensures Three.js backgrounds initialize after transitions complete
- * and handles any transition-related cleanup.
+ * CRITICAL: This module excludes navbar from View Transition snapshots to prevent
+ * navbar flash during navigation. Based on MDN View Transition API documentation:
+ * https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API/Using
  */
-
 export function initPageTransitions() {
-  // With @view-transition { navigation: auto; } in CSS, the browser handles
-  // transitions automatically. We just need to ensure Three.js initializes
-  // after the transition completes.
-
-  // Listen for view transition events to ensure proper initialization
   if (typeof document !== 'undefined' && 'startViewTransition' in document) {
-    // Listen for pagereveal event (fired when new page is revealed)
-    window.addEventListener('pagereveal', (event) => {
-      if (event.viewTransition) {
-        // Wait for transition to complete before initializing heavy resources
-        event.viewTransition.finished.then(() => {
-          // Three.js will be initialized by main.js, but we ensure it happens
-          // after the transition completes to prevent visual glitches
-          // The main.js initialization already uses requestIdleCallback, so
-          // this is just an extra safety measure
-        });
+    // pageswap: Fired when document is about to be unloaded (old page)
+    // Exclude navbar from snapshot by setting view-transition-name: none BEFORE snapshot
+    window.addEventListener('pageswap', async (event) => {
+      if (!event.viewTransition) return;
+
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        // CRITICAL: Exclude navbar from root snapshot by setting view-transition-name: none
+        // This prevents the old page's navbar (with active states) from appearing in the transition
+        navbar.style.viewTransitionName = 'none';
+        console.log('[PAGESWAP] Excluded navbar from transition snapshot');
+
+        // Remove view-transition-name after snapshot is captured to prevent bfcache persistence
+        // MDN: "If we left them set, they would persist in the page state saved in bfcache"
+        await event.viewTransition.ready; // Wait for snapshot to be captured
+        navbar.style.viewTransitionName = '';
+        console.log('[PAGESWAP] Cleared view-transition-name after snapshot');
       }
+    });
+
+    // pagereveal: Fired when new page is first rendered (new page)
+    // Clear navbar states and exclude navbar from snapshot
+    window.addEventListener('pagereveal', async (event) => {
+      if (!event.viewTransition) return;
+
+      const navbar = document.querySelector('.navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      if (navbar) {
+        // Exclude navbar from new page snapshot too
+        navbar.style.viewTransitionName = 'none';
+
+        // Clear all navbar states
+        navbar.classList.remove('nav-initialized');
+        navbar.style.visibility = 'hidden';
+        navbar.style.opacity = '0';
+      }
+
+      // Clear all link states
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        link.removeAttribute('data-active-initialized');
+        link.removeAttribute('data-nav-initialized');
+      });
+
+      // Remove view-transition-name after snapshot is captured
+      await event.viewTransition.ready;
+      if (navbar) {
+        navbar.style.viewTransitionName = '';
+      }
+
+      console.log('[PAGEREVEAL] Navbar excluded from transition, states cleared');
     });
   }
 
-  // Note: We no longer intercept link clicks or use window.location.href
-  // The browser handles navigation automatically with View Transitions API
+  // Note: The browser handles navigation automatically with View Transitions API
   // when @view-transition { navigation: auto; } is set in CSS
 }

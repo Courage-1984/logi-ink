@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#00ffff" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Logi-Ink" />
+
     <title>Three.js Backgrounds Showcase - Logi-Ink</title>
 
     <!-- Security Headers -->
@@ -15,6 +22,61 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
     />
+
+    <!-- Page Transition Preload - Prevent CLS on navigation -->
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- Prevent Active Link FOUC - Remove all active classes before first paint -->
+    <script>
+      // CRITICAL: Run immediately (synchronous blocking script) to prevent active link flash
+      // This MUST run before CSS paints to prevent all links showing as active/hover
+      // During View Transitions, the browser paints the new page immediately, so we must
+      // clear states synchronously without waiting for readyState or DOMContentLoaded
+      (function() {
+        // Run immediately - no readyState checks, no event listeners
+        // This ensures it runs BEFORE the browser paints the new page during View Transitions
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbar = document.querySelector('.navbar');
+
+        // Remove active classes from all links (if they exist)
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          link.removeAttribute('data-active-initialized');
+          link.removeAttribute('data-nav-initialized');
+        });
+
+        // CRITICAL: Remove nav-initialized class from navbar to enable CSS protection
+        // If this class persists from bfcache, protection CSS (.navbar:not(.nav-initialized)) won't work
+        if (navbar) {
+          navbar.classList.remove('nav-initialized');
+        }
+
+        // Also set up MutationObserver for links added after initial render (HTML includes, etc.)
+        // This is a backup safety measure, but the above should catch most cases
+        if (document.body) {
+          const observer = new MutationObserver(function() {
+            const newNavLinks = document.querySelectorAll('.nav-link:not([data-nav-fixed])');
+            newNavLinks.forEach(link => {
+              link.classList.remove('active');
+              link.removeAttribute('data-active-initialized');
+              link.removeAttribute('data-nav-initialized');
+              link.setAttribute('data-nav-fixed', 'true'); // Mark as fixed to avoid re-processing
+            });
+            const newNavbar = document.querySelector('.navbar:not(.nav-state-cleared)');
+            if (newNavbar) {
+              newNavbar.classList.remove('nav-initialized');
+              newNavbar.classList.add('nav-state-cleared');
+            }
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+      })();
+    </script>
 
     <!-- SEO Meta Tags -->
     <meta
@@ -28,31 +90,46 @@
     <meta name="author" content="Logi-Ink" />
     <meta name="robots" content="noindex, nofollow" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://logi-ink.co.za/showcase" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Three.js Backgrounds Showcase - Logi-Ink" />
-    <meta
-      property="og:description"
-      content="Explore 40 stunning Three.js background effects for hero sections."
-    />
-    <meta
-      property="og:image"
-      content="https://logi-ink.co.za/assets/images/banners/banner_home.webp"
-    />
+    <meta property="og:description" content="Explore 40 stunning Three.js background effects for hero sections." />
+    <meta property="og:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta property="og:image:secure_url" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta property="og:image:alt" content="Three.js Backgrounds Showcase - Logi-Ink" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content="Logi-Ink" />
+    <meta property="og:locale" content="en_ZA" />
 
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="logi-ink.co.za" />
+    <meta property="twitter:url" content="https://logi-ink.co.za/showcase" />
+    <meta name="twitter:title" content="Three.js Backgrounds Showcase - Logi-Ink" />
+    <meta name="twitter:description" content="Explore 40 stunning Three.js background effects for hero sections." />
+    <meta name="twitter:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+
+
+    <!-- Hide navbar and hero text until fonts load (prevents FOUT) -->
+    <script>
+      // CRITICAL: Add fonts-loading class immediately to hide text before first paint
+      document.documentElement.classList.add('fonts-loading');
+    </script>
 
     <!-- Preload critical fonts -->
     <link
       rel="preload"
       href="./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
-      as="font"
+      as="font" type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       href="./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
-      as="font"
+      as="font" type="font/woff2"
       crossorigin="anonymous"
     />
 
@@ -102,6 +179,9 @@
     </style>
 
     <!-- Load CSS -->
+    <!-- Preload CSS for faster loading -->
+    <link rel="preload" href="css/main.css" as="style" />
+
     <link rel="stylesheet" href="css/main.css" media="print" onload="this.media = 'all'" />
     <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
 

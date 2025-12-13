@@ -1,9 +1,16 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#00ffff" />
+
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Logi-Ink" />
+
     <title>Logi-Ink - Digital Innovation & Creative Solutions</title>
 
     <!-- Security Headers -->
@@ -18,6 +25,63 @@
       content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://plausible.io https://formspree.io https://www.google-analytics.com https://www.googletagmanager.com https:; frame-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com; media-src 'self' data: https: blob:; object-src 'none'; base-uri 'self';"
     />
 
+    <!-- Page Transition Preload - Prevent CLS on navigation -->
+    <script>
+      if (sessionStorage.getItem('logiInk:pendingTransition')) {
+        document.documentElement.classList.add('page-transition-preload');
+        sessionStorage.removeItem('logiInk:pendingTransition');
+      }
+    </script>
+
+    <!-- Prevent Active Link FOUC - Remove all active classes before first paint -->
+    <script>
+      // CRITICAL: Run immediately (synchronous blocking script) to prevent active link flash
+      // This MUST run before CSS paints to prevent all links showing as active/hover
+      // During View Transitions, the browser paints the new page immediately, so we must
+      // clear states synchronously without waiting for readyState or DOMContentLoaded
+      (function() {
+        // Run immediately - no readyState checks, no event listeners
+        // This ensures it runs BEFORE the browser paints the new page during View Transitions
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbar = document.querySelector('.navbar');
+
+        // Remove active classes from all links (if they exist)
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          link.removeAttribute('data-active-initialized');
+          link.removeAttribute('data-nav-initialized');
+        });
+
+        // CRITICAL: Remove nav-initialized class from navbar to enable CSS protection
+        // If this class persists from bfcache, protection CSS (.navbar:not(.nav-initialized)) won't work
+        // Also ensure inline hidden styles are set (from navbar.html) to prevent flash
+        if (navbar) {
+          navbar.classList.remove('nav-initialized');
+          navbar.style.visibility = 'hidden';
+          navbar.style.opacity = '0';
+        }
+
+        // Also set up MutationObserver for links added after initial render (HTML includes, etc.)
+        // This is a backup safety measure, but the above should catch most cases
+        if (document.body) {
+          const observer = new MutationObserver(function() {
+            const newNavLinks = document.querySelectorAll('.nav-link:not([data-nav-fixed])');
+            newNavLinks.forEach(link => {
+              link.classList.remove('active');
+              link.removeAttribute('data-active-initialized');
+              link.removeAttribute('data-nav-initialized');
+              link.setAttribute('data-nav-fixed', 'true'); // Mark as fixed to avoid re-processing
+            });
+            const newNavbar = document.querySelector('.navbar:not(.nav-state-cleared)');
+            if (newNavbar) {
+              newNavbar.classList.remove('nav-initialized');
+              newNavbar.classList.add('nav-state-cleared');
+            }
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+      })();
+    </script>
 
     <!-- SEO Meta Tags -->
     <meta
@@ -33,25 +97,33 @@
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://logi-ink.co.za/" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Logi-Ink - Digital Innovation & Creative Solutions" />
-    <meta
-      property="og:description"
-      content="Professional web design & development in Pretoria, South Africa. Affordable packages from R2,500. SEO-optimized, mobile-responsive websites. Get a free quote today!"
-    />
-    <meta
-      property="og:image"
-      content="https://logi-ink.co.za/assets/images/banners/banner_home.webp"
-    />
+    <meta property="og:description" content="Professional web design & development in Pretoria, South Africa. Affordable packages from R2,500. SEO-optimized, mobile-responsive websites. Get a free quote today!" />
+    <meta property="og:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta property="og:image:secure_url" content="https://logi-ink.co.za/assets/images/og-image.png" />
+    <meta property="og:image:alt" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:site_name" content="Logi-Ink" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="logi-ink.co.za" />
+    <meta property="twitter:url" content="https://logi-ink.co.za/" />
+    <meta name="twitter:title" content="Logi-Ink - Digital Innovation & Creative Solutions" />
+    <meta name="twitter:description" content="Professional web design & development in Pretoria, South Africa. Affordable packages from R2,500. SEO-optimized, mobile-responsive websites. Get a free quote today!" />
+    <meta name="twitter:image" content="https://logi-ink.co.za/assets/images/og-image.png" />
 
 
     <!-- Preload critical resources -->
 
     <!-- Preload hero banner with responsive srcset (browser selects optimal size for viewport) -->
+    <!-- Note: 1920w image not generated yet, using 1280w as max -->
     <link
       rel="preload"
       as="image"
@@ -61,29 +133,39 @@
         ./assets/images/responsive/banners/banner_home-480w.avif   480w,
         ./assets/images/responsive/banners/banner_home-768w.avif   768w,
         ./assets/images/responsive/banners/banner_home-1024w.avif 1024w,
-        ./assets/images/responsive/banners/banner_home-1920w.avif 1920w
+        ./assets/images/responsive/banners/banner_home-1280w.avif 1280w
       "
-      imagesizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
+      imagesizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 1280px"
       fetchpriority="high"
     />
 
+    <!-- Hide navbar and hero text until fonts load (prevents FOUT) -->
+    <script>
+      // CRITICAL: Add fonts-loading class immediately to hide text before first paint
+      document.documentElement.classList.add('fonts-loading');
+    </script>
+
     <!-- Preload critical fonts (self-hosted WOFF2 - Subsetted) -->
+    <!-- Preloading with type="font/woff2" for faster parsing and better priority -->
     <link
       rel="preload"
       href="./assets/fonts/Orbitron/woff2/Orbitron-Regular-subset.woff2"
       as="font"
+      type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       href="./assets/fonts/Orbitron/woff2/Orbitron-Black-subset.woff2"
       as="font"
+      type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
       href="./assets/fonts/Rajdhani/woff2/Rajdhani-Regular-subset.woff2"
       as="font"
+      type="font/woff2"
       crossorigin="anonymous"
     />
 
@@ -91,14 +173,20 @@
     <link rel="modulepreload" href="./js/main.js" />
     <link rel="modulepreload" href="./js/core/navigation.js" />
 
+    <!-- DNS Prefetch for external resources (lighter than preconnect, runs earlier) -->
+    <link rel="dns-prefetch" href="https://plausible.io" />
+    <link rel="dns-prefetch" href="https://formspree.io" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
     <!-- Preconnect for third-party resources -->
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js"></script>
+    <!-- Privacy-friendly analytics by Plausible - Deferred to reduce critical path impact -->
     <script>
+      // Initialize Plausible queue (load script after user interaction or delay)
       ((window.plausible =
         window.plausible ||
         function () {
@@ -110,26 +198,67 @@
             plausible.o = i || {};
           }));
       plausible.init();
+
+      // Load Plausible script after user interaction or 3 second delay
+      let plausibleLoaded = false;
+      function loadPlausible() {
+        if (plausibleLoaded) return;
+        plausibleLoaded = true;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://plausible.io/js/pa-JlHvqG5_ERiEOnliHJxYr.js';
+        document.head.appendChild(script);
+      }
+
+      // Load on first user interaction
+      ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        document.addEventListener(event, loadPlausible, { once: true, passive: true });
+      });
+
+      // Fallback: Load after 3 seconds if no interaction
+      setTimeout(loadPlausible, 3000);
     </script>
 
-    <!-- Google tag (gtag.js) - Deferred to load after page is interactive -->
+    <!-- Google tag (gtag.js) - Deferred to reduce critical path impact -->
     <script>
-      // Defer Google Tag Manager to reduce initial JavaScript load
-      window.addEventListener('load', () => {
-        // Initialize dataLayer
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-9PFB2D8G1B');
+      // Initialize GTM dataLayer (load script after user interaction or delay)
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-9PFB2D8G1B');
+
+      // Load GTM script after user interaction or longer delay
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
 
         // Load gtag.js script asynchronously
         const script = document.createElement('script');
         script.async = true;
         script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9PFB2D8G1B';
         document.head.appendChild(script);
+      }
+
+      // Load on first user interaction
+      ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        document.addEventListener(event, loadGTM, { once: true, passive: true });
       });
+
+      // Fallback: Load after 5 seconds if no interaction (longer delay than Plausible)
+      setTimeout(loadGTM, 5000);
+        document.head.appendChild(script);
+      }
+
+      // Load on first user interaction
+      ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        document.addEventListener(event, loadGTM, { once: true, passive: true });
+      });
+
+      // Fallback: Load after 5 seconds if no interaction (longer delay than Plausible)
+      setTimeout(loadGTM, 5000);
     </script>
 
     <!-- Stylesheet (includes self-hosted fonts via @font-face) -->
@@ -230,7 +359,7 @@
         "sameAs": [
           "https://www.facebook.com/profile.php?id=61584223810824",
           "https://www.instagram.com/logi.ink/",
-          "https://business.google.com/n/2239660806201030393"
+          "https://business.google.com/n/2239660806201030393/profile?fid=11332148037707333605"
         ]
       }
     </script>
@@ -799,8 +928,15 @@
       }
     </style>
 
-    <!-- Load remaining CSS synchronously (development mode - avoids service worker issues) -->
-    <link rel="stylesheet" href="css/main.css" />
+    <!-- Preload CSS for faster loading -->
+    <link rel="preload" href="css/main.css" as="style" />
+
+    <!-- Load CSS asynchronously (non-blocking) using media query trick -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript>
+      <!-- Fallback if JavaScript is disabled -->
+      <link rel="stylesheet" href="css/main.css">
+    </noscript>
 
     <!-- View Transitions API - Enable smooth page transitions -->
     <style>
@@ -958,7 +1094,7 @@
                       ./assets/images/responsive/banners/banner_home-1024w.avif 1024w,
                       ./assets/images/responsive/banners/banner_home-1280w.avif 1280w
                     "
-                    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px"
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 1280px"
                   />
                   <!-- WebP format (fallback for older browsers) -->
                   <source
@@ -971,14 +1107,13 @@
                       ./assets/images/responsive/banners/banner_home-1024w.webp 1024w,
                       ./assets/images/responsive/banners/banner_home-1280w.webp 1280w
                     "
-                    sizes="(max-width: 320px) 320px, (max-width: 375px) 375px, (max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1280px"
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 1280px"
                   />
                   <!-- Original format (final fallback) -->
                   <img
                     src="./assets/images/banners/banner_home.webp"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="sync"
+                    loading="lazy"
+                    decoding="async"
                     alt="Professional web design and development services in Pretoria, South Africa - Logi-Ink digital agency"
                     width="1920"
                     height="1080"

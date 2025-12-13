@@ -1,0 +1,41 @@
+// Phase 1: Capture DOM state immediately after navigation (during flash)
+const navLinks = document.querySelectorAll('.nav-link');
+const navbar = document.querySelector('.navbar');
+const snapshot = {
+  timestamp: new Date().toISOString(),
+  url: window.location.href,
+  viewTransition: {
+    active: document.activeViewTransition !== null,
+    type: document.activeViewTransition?.navigationType || null
+  },
+  navbar: {
+    classes: Array.from(navbar?.classList || []),
+    hasNavInitialized: navbar?.classList.contains('nav-initialized') || false,
+    computedStyles: {
+      viewTransitionName: window.getComputedStyle(navbar).viewTransitionName
+    }
+  },
+  navLinks: Array.from(navLinks).map(link => {
+    const computed = window.getComputedStyle(link);
+    return {
+      text: link.textContent.trim(),
+      href: link.getAttribute('href'),
+      classes: Array.from(link.classList),
+      hasActive: link.classList.contains('active'),
+      dataNavInitialized: link.hasAttribute('data-nav-initialized'),
+      dataActiveInitialized: link.hasAttribute('data-active-initialized'),
+      computedStyles: {
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+        backgroundClip: computed.backgroundClip,
+        webkitTextFillColor: computed.webkitTextFillColor,
+        textShadow: computed.textShadow,
+        opacity: computed.opacity
+      },
+      // Check if link appears as active/hover visually
+      appearsActive: computed.color !== 'rgb(176, 176, 176)' && computed.color !== 'rgb(255, 255, 255)',
+      appearsHovered: computed.textShadow !== 'none' && computed.textShadow !== ''
+    };
+  })
+};
+JSON.stringify(snapshot, null, 2);

@@ -287,6 +287,18 @@
   padding-top: 0;
 }
 
+/* Hide hero text until fonts are loaded */
+.fonts-loading .hero-title,
+.fonts-loading .hero-subtitle {
+  visibility: hidden;
+}
+
+.fonts-loaded .hero-title,
+.fonts-loaded .hero-subtitle {
+  visibility: visible;
+  transition: visibility 0s, opacity 0.2s ease;
+}
+
 /* Hero Title Span Colors */
 .hero-title span:nth-child(1) {
   color: var(--accent-cyan);
@@ -326,12 +338,14 @@
   margin-bottom: var(--space-8);
 }
 
-/* Text Reveal Animation */
+/* Text Reveal Animation - GPU-accelerated */
 .text-reveal {
   display: block;
   opacity: 0;
   transform: translateY(20px);
   animation: textReveal 1s ease forwards !important;
+  will-change: transform, opacity; /* Hint browser to use GPU acceleration */
+  backface-visibility: hidden; /* Prevent flickering on mobile */
 }
 
 @keyframes textReveal {
@@ -483,7 +497,8 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  /* Only transition composited properties */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   pointer-events: none;
   padding: 0;
   box-shadow: none;

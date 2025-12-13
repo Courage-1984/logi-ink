@@ -30,6 +30,16 @@ if (typeof window !== 'undefined') {
   autoUnregisterServiceWorkers();
 }
 
+// CRITICAL: Initialize font loader immediately (before DOM ready)
+// This hides navbar and hero text until fonts are loaded to prevent FOUT
+import { initFontLoader } from './utils/font-loader.js';
+if (typeof document !== 'undefined') {
+  // Add fonts-loading class immediately to hide text
+  document.documentElement.classList.add('fonts-loading');
+  // Initialize font loader
+  initFontLoader();
+}
+
 // Lazy load easter egg module (lightweight initialization - heavy 3D loads on activation)
 let easterEggModule = null;
 
@@ -221,6 +231,8 @@ const initThreeHeroWhenIdle = async () => {
       await document.activeViewTransition.finished;
     }
 
+    // No need to wait for CSS - Three.js will use window dimensions as fallback
+    // Canvas will resize when CSS loads (handled by resize event listener)
     const { initThreeHero, pauseThreeHero, resumeThreeHero } = await import('./core/three-hero.js');
     initThreeHero();
 
@@ -270,18 +282,19 @@ const initThreeHeroWhenIdle = async () => {
 };
 
 // Wait for page to be interactive, then use idle callback for faster loading
+// Reduced timeout since CSS is now async (doesn't block render)
 if (document.readyState === 'complete') {
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(initThreeHeroWhenIdle, { timeout: 500 }); // Faster: 500ms max wait
+    requestIdleCallback(initThreeHeroWhenIdle, { timeout: 200 }); // Faster: 200ms max wait (reduced from 500ms)
   } else {
-    setTimeout(initThreeHeroWhenIdle, 500); // Fallback: 500ms delay
+    setTimeout(initThreeHeroWhenIdle, 200); // Fallback: 200ms delay (reduced from 500ms)
   }
 } else {
   window.addEventListener('load', () => {
     if ('requestIdleCallback' in window) {
-      requestIdleCallback(initThreeHeroWhenIdle, { timeout: 500 });
+      requestIdleCallback(initThreeHeroWhenIdle, { timeout: 200 }); // Faster: 200ms max wait
     } else {
-      setTimeout(initThreeHeroWhenIdle, 500);
+      setTimeout(initThreeHeroWhenIdle, 200); // Fallback: 200ms delay
     }
   });
 }

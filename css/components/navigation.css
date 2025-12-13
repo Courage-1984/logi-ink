@@ -9,11 +9,17 @@
   z-index: 10000; /* High z-index to ensure navbar is above hero sections */
   padding: var(--space-4) var(--space-8);
   border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Only transition specific properties, not 'all' */
   /* Ensure dropdown menus and mobile menu can escape this stacking context */
   overflow: visible !important;
   /* Don't create an isolated stacking context that traps children */
   isolation: auto;
+  /* Prevent CLS - fixed height to prevent layout shifts */
+  height: 72px; /* Fixed height: padding (1rem top + 1rem bottom = 2rem = 32px) + logo (40px) = 72px */
+  box-sizing: border-box;
+  /* Prevent height changes on scroll */
+  display: flex;
+  align-items: center;
 }
 
 .navbar.scrolled {
@@ -23,11 +29,13 @@
 
 .nav-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 var(--space-16);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%; /* Fill navbar height */
   /* Ensure dropdown menus are not clipped */
   overflow: visible;
 }
@@ -37,38 +45,60 @@
   align-items: center;
   gap: var(--space-3);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Only transition composited properties */
+  height: 40px; /* Fixed height to match logo image */
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .logo-img {
   height: 40px;
-  width: auto;
+  width: 40px; /* Explicit width to prevent CLS - matches HTML width attribute */
   display: block;
   filter: drop-shadow(0 0 10px var(--glow-cyan));
-  transition: all 0.3s ease;
+  /* Only transition composited properties */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Prevent layout shift - reserve space immediately */
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  object-fit: contain; /* Ensure SVG scales correctly within dimensions */
 }
 
 .logo-link:hover .logo-img {
   filter: drop-shadow(0 0 15px var(--glow-magenta)) drop-shadow(0 0 25px var(--glow-magenta));
+  transform: scale(1.05); /* Add subtle scale for better performance than filter-only */
 }
 
 .logo-text {
-  /* Use system fonts only for immediate render - no custom font blocking */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  /* Use Orbitron with metric-matched fallback immediately after - prevents CLS */
+  /* Order: Orbitron (custom) -> Orbitron-Fallback (metric-matched) -> system fonts */
+  font-family: 'Orbitron', 'Orbitron-Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-black);
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 2px;
   text-shadow: 0 0 10px var(--glow-cyan);
-  transition: all 0.3s ease;
-  /* Orbitron will be added via JavaScript after fonts load to prevent render blocking */
+  /* Only transition composited properties */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* Prevent CLS - fixed dimensions */
+  height: 1.2em; /* Fixed height to prevent layout shift */
+  line-height: 1.2; /* Consistent line height */
+  display: inline-block; /* Ensures height applies */
+  vertical-align: middle; /* Align with logo image */
 }
 
-.logo-text.fonts-loaded {
-  /* Apply Orbitron after fonts are confirmed loaded */
-  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+/* Hide navbar text until fonts are loaded */
+.fonts-loading .logo-text,
+.fonts-loading .nav-link {
+  visibility: hidden;
 }
+
+.fonts-loaded .logo-text,
+.fonts-loaded .nav-link {
+  visibility: visible;
+  transition: visibility 0s, opacity 0.2s ease, transform 0.3s ease;
+}
+
+/* Remove .fonts-loaded class handling - now using font stack directly */
 
 .logo-accent {
   color: var(--accent-cyan);
@@ -79,6 +109,7 @@
   text-shadow:
     0 0 20px var(--glow-cyan),
     0 0 30px var(--glow-cyan);
+  transform: scale(1.02); /* Add subtle scale for better performance */
 }
 
 /* Desktop nav-menu styles - only apply on desktop to avoid mobile conflicts */
@@ -111,7 +142,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  transition: all 0.3s ease;
+  /* Only transition composited properties for better performance */
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
   overflow: hidden;
 }
 
@@ -129,17 +161,91 @@
   transition: transform 0.3s ease;
 }
 
-.nav-link:hover {
+/* CRITICAL: Hide navbar completely by default and during view transitions */
+/* Default: navbar is hidden until JavaScript explicitly shows it */
+.navbar {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Only show navbar when explicitly initialized AND after a delay to let View Transition complete */
+.navbar.nav-initialized {
+  /* Visibility is controlled by inline style in JavaScript after View Transition completes */
+  /* CSS rule exists for fallback, but JavaScript removes inline style to show navbar */
+  visibility: visible !important;
+  opacity: 1 !important;
+  /* Faster but smooth transition - synchronized with skeleton fade-out */
+  transition: visibility 0s, opacity 0.15s ease-out !important;
+}
+
+/* Additional protection during View Transitions */
+:active-view-transition-type(back) .navbar,
+:active-view-transition-type(forward) .navbar,
+:active-view-transition-type(swap) .navbar,
+html:has(.page-transition-preload) .navbar {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* CRITICAL: Disable ALL nav-link hover states globally by default - affects old and new page during View Transitions */
+.navbar:not(.nav-initialized) .nav-link:hover,
+:active-view-transition-type(back) .nav-link:hover,
+:active-view-transition-type(forward) .nav-link:hover,
+:active-view-transition-type(swap) .nav-link:hover,
+html:has(.page-transition-preload) .nav-link:hover {
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+.navbar:not(.nav-initialized) .nav-link:hover::after,
+:active-view-transition-type(back) .nav-link:hover::after,
+:active-view-transition-type(forward) .nav-link:hover::after,
+:active-view-transition-type(swap) .nav-link:hover::after,
+html:has(.page-transition-preload) .nav-link:hover::after {
+  transform: scaleX(0) !important;
+  width: 0 !important;
+}
+
+/* Only enable hover states after navbar is initialized AND link has data-nav-initialized */
+.navbar.nav-initialized .nav-link[data-nav-initialized]:hover {
   color: var(--accent-cyan);
   text-shadow: 0 0 10px var(--glow-cyan);
 }
 
-.nav-link:hover::after {
+.navbar.nav-initialized .nav-link[data-nav-initialized]:hover::after {
   transform: scaleX(1);
 }
 
-/* Scroll-based color change effect for active nav link */
-.nav-link.active {
+/* CRITICAL: Hide ALL active states by default - only show after navbar AND link are initialized */
+/* This prevents flash during view transitions and initial load */
+.navbar:not(.nav-initialized) .nav-link.active {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+/* CRITICAL: Disable ALL .nav-link.active states globally by default - highest specificity */
+/* This affects both old and new page during View Transitions */
+.nav-link.active:not([data-active-initialized]),
+.navbar .nav-link.active:not([data-active-initialized]),
+.navbar:not(.nav-initialized) .nav-link.active,
+:active-view-transition-type(back) .nav-link.active,
+:active-view-transition-type(forward) .nav-link.active,
+:active-view-transition-type(swap) .nav-link.active,
+html:has(.page-transition-preload) .nav-link.active {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+/* Only show active gradient when navbar is initialized AND link has data-active-initialized */
+.navbar.nav-initialized .nav-link.active[data-active-initialized] {
   background: linear-gradient(
     90deg,
     var(--accent-magenta-light) 0%,
@@ -150,10 +256,10 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
-  color: transparent; /* Ensure text is transparent */
+  color: transparent;
 }
 
-.nav-link.active:hover {
+.navbar.nav-initialized .nav-link.active[data-active-initialized]:hover {
   background: linear-gradient(
     90deg,
     var(--accent-magenta-light) 0%,
@@ -166,7 +272,7 @@
   text-shadow: none;
 }
 
-.nav-link.active::after {
+.navbar.nav-initialized .nav-link.active[data-active-initialized]::after {
   transform: scaleX(1);
 }
 
@@ -339,3 +445,169 @@
   box-shadow: 0 0 10px var(--glow-cyan);
   transition: all 0.3s ease;
 }
+
+/* ============================================
+   NAVBAR SKELETON LOADER
+   ============================================ */
+
+/* Navbar skeleton - matches navbar dimensions exactly to prevent CLS */
+.navbar-skeleton {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px; /* Exact match to navbar height */
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 10001; /* Above navbar (10000) during transition */
+  padding: var(--space-4) var(--space-8);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  /* Faster but smooth transition - synchronized with navbar fade-in */
+  transition: opacity 0.15s ease-out;
+  pointer-events: none; /* Non-interactive during loading */
+  /* Match navbar overflow and isolation for exact layout matching */
+  overflow: visible !important;
+  isolation: auto;
+}
+
+.navbar-skeleton.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar-skeleton-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-16); /* Match .nav-container padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; /* Fill navbar height */
+  overflow: visible; /* Match .nav-container overflow */
+  /* NO gap property - match actual .nav-container which uses space-between without gap */
+}
+
+/* Logo skeleton - match actual logo structure: .logo wrapper (if any) > .logo-link > (img + text) */
+.navbar-skeleton-logo {
+  /* Match .logo wrapper - ensure it doesn't affect flex layout */
+  flex-shrink: 0; /* Prevent logo from shrinking in flex container */
+}
+
+.navbar-skeleton-logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3); /* 12px gap between img and text - match .logo-link */
+  height: 40px; /* Match .logo-link height */
+  flex-shrink: 0; /* Match .logo-link flex-shrink - prevent shrinking */
+  /* Don't set explicit width - let it size naturally like actual .logo-link */
+  /* The actual .logo-link doesn't have an explicit width, so we shouldn't either */
+}
+
+.navbar-skeleton-logo-img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0; /* Match .logo-img flex-shrink */
+  border-radius: 4px;
+}
+
+/* Logo text: font-size-2xl (1.5rem = 24px), letter-spacing 2px, Orbitron Black weight 900 */
+/* "LOG I -INK" with Orbitron at 24px + 2px letter-spacing ≈ 180-190px */
+.navbar-skeleton-logo-text {
+  /* Match .logo-text dimensions - use fixed width to match actual text width */
+  /* Actual "LOG I -INK" text at 24px with 2px letter-spacing is approximately 185px */
+  width: 185px; /* Fixed width to match actual logo-text computed width */
+  height: 1.2em; /* Match .logo-text height (1.2 * 24px = 28.8px) */
+  line-height: 1.2; /* Match .logo-text line-height */
+  display: inline-block; /* Match .logo-text display */
+  vertical-align: middle; /* Match .logo-text vertical-align */
+  border-radius: 4px;
+  /* Note: Cannot use width: auto on empty div - will collapse to 0 or min-width */
+  /* Must use explicit width to match actual text width */
+}
+
+/* Nav menu skeleton (desktop only) - match actual nav-menu structure */
+.navbar-skeleton-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-8); /* 32px gap - match nav-menu gap */
+  align-items: center;
+  /* Match nav-menu positioning */
+  position: relative;
+  overflow: visible;
+  flex-shrink: 0; /* Prevent menu from shrinking - ensure exact positioning */
+  /* Don't set explicit width - let it size naturally like actual .nav-menu */
+  /* The actual .nav-menu doesn't have an explicit width, so we shouldn't either */
+}
+
+/* Nav links: font-size-base (1rem = 16px), font-weight-semibold (600), uppercase, letter-spacing 1px */
+.navbar-skeleton-link {
+  height: 1em; /* Match nav-link line-height (1em = 16px base font size) */
+  border-radius: 4px;
+  position: relative; /* Match nav-link position: relative */
+}
+
+/* Specific widths for each nav link to match actual uppercase text lengths */
+/* Font: 16px (1rem), semibold (600), uppercase, letter-spacing: 1px */
+/* Calculated based on text length * character width with letter-spacing */
+.navbar-skeleton-link:nth-child(1) {
+  width: 48px; /* "HOME" - 4 letters */
+}
+
+.navbar-skeleton-link:nth-child(2) {
+  width: 60px; /* "ABOUT" - 5 letters */
+}
+
+.navbar-skeleton-link:nth-child(3) {
+  width: 96px; /* "SERVICES" - 8 letters */
+}
+
+.navbar-skeleton-link:nth-child(4) {
+  width: 96px; /* "PROJECTS" - 8 letters */
+}
+
+.navbar-skeleton-link:nth-child(5) {
+  width: 120px; /* "CONTACT US" - 10 letters + 1 space */
+}
+
+/* Hamburger skeleton (mobile only) - match actual hamburger dimensions */
+.navbar-skeleton-hamburger {
+  display: none; /* Hidden on desktop */
+  width: 25px; /* Match hamburger span width */
+  height: 19px; /* Match hamburger height (3 spans of 3px + 2 gaps of 5px = 3*3 + 2*5 = 9 + 10 = 19px) */
+  border-radius: 4px;
+  position: relative; /* Match hamburger position */
+  flex-direction: column; /* Match hamburger flex-direction */
+  gap: 5px; /* Match hamburger gap */
+}
+
+/* Mobile: Show hamburger skeleton, hide nav menu skeleton */
+@media (max-width: 767px) {
+  .navbar-skeleton-menu {
+    display: none;
+  }
+
+  .navbar-skeleton-hamburger {
+    display: flex; /* Match hamburger display: flex when visible */
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-skeleton {
+    transition: opacity 0.01s ease; /* Instant for reduced motion */
+  }
+
+  .navbar-skeleton .skeleton {
+    animation: none; /* Disable shimmer animation */
+    background: var(--bg-secondary); /* Solid color instead */
+  }
+
+  .navbar.nav-initialized {
+    transition: visibility 0s, opacity 0.01s ease !important; /* Instant for reduced motion */
+  }
+}
+

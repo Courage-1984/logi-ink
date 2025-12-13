@@ -412,6 +412,8 @@ js/
 ├── easter-egg/           # ✅ EXISTS - Galaxy easter egg feature (dedicated folder)
 │   ├── easter-egg.js     # ✅ EXISTS - Easter egg trigger/initialization
 │   ├── runtime.js        # ✅ EXISTS - Milky Way 3D scene runtime (single wrapper UI hiding/restoration, navbar/footer handling)
+│   ├── galaxy-settings.js # ✅ EXISTS - Comprehensive settings UI system (19+ settings: camera controls, animation speeds, visual quality, lighting, performance, particle effects)
+│   ├── gpu-compute.js    # ✅ EXISTS - GPU compute utility module with WebGPU shaders for particle systems
 │   ├── celestial-textures.js # ✅ EXISTS - Procedural texture generation (THREE parameter, MIN_POLE_SCALE_THRESHOLD, pole-aware scaling, seamless noise, quadratic feature scaling)
 │   ├── texture-wrapping.js # ✅ EXISTS - Seamless texture wrapping utilities (featherPoles, isSafeForPolePlacement, multi-pixel blending)
 │   ├── procedural-noise.js # ✅ EXISTS - Procedural noise generation (fractal, seamless, 3D noise)
@@ -483,7 +485,7 @@ export function initModuleName() {
   - URL rewriting handled by Vite middleware (dev/preview), `.htaccess` (Apache), or native support (GitHub Pages, Netlify, Vercel)
 - All pages should include:
   - **Security Headers** - Meta tags for X-Frame-Options, CSP, etc.
-  - **SEO Meta Tags** - Open Graph, Twitter Cards, descriptions (use clean URLs in `og:url`, `twitter:url`, canonical)
+  - **SEO Meta Tags** - Open Graph, descriptions (use clean URLs in `og:url`, canonical)
   - **Structured Data** - JSON-LD schemas (Organization, WebSite, etc.) with clean URLs
   - **Resource Hints** - Modulepreload for critical ES modules (`main.js`, `core/navigation.js`), preconnect for third-party resources (Plausible analytics)
   - **Font Preload** - Preload critical fonts (Orbitron Regular, Rajdhani Regular) with `crossorigin="anonymous"`
@@ -553,7 +555,6 @@ assets/
     <!-- SEO Meta Tags -->
     <meta name="description" content="Page description" />
     <!-- Open Graph tags -->
-    <!-- Twitter Card tags -->
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -614,7 +615,12 @@ assets/
     <!-- Web App Manifest -->
     <link rel="manifest" href="/site.webmanifest" />
 
-    <link rel="stylesheet" href="css/main.css" />
+    <!-- Load CSS asynchronously (non-blocking) using media query trick -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript>
+      <!-- Fallback if JavaScript is disabled -->
+      <link rel="stylesheet" href="css/main.css">
+    </noscript>
     <!-- ... -->
   </head>
   <body>
@@ -900,7 +906,7 @@ If new code introduces a new pattern, update the documentation and architecture 
 
 1. Create HTML file in root (e.g., `new-page.html`)
 2. **Use clean URLs in all links:** Link to `/new-page` (not `/new-page.html`)
-3. **Update SEO metadata:** Use clean URLs in canonical, Open Graph, and Twitter Card URLs
+3. **Update SEO metadata:** Use clean URLs in canonical and Open Graph URLs
 4. Create page-specific CSS in `css/pages/page-name.css` if needed
 5. Create page-specific JS in `js/pages/page-name.js` if needed
 6. Import CSS in `css/main.css`
@@ -1122,7 +1128,7 @@ If new code introduces a new pattern, update the documentation and architecture 
 
 ### SEO Optimization
 
-- ✅ **Meta Tags** - Open Graph, Twitter Cards, descriptions on all pages
+- ✅ **Meta Tags** - Open Graph, descriptions on all pages
 - ✅ **Structured Data** - JSON-LD schemas (Organization with ImageObject logo format using logo-150x150.png for Google search results, WebSite, Service, BreadcrumbList, FAQPage, ContactPage)
 - ✅ **Canonical URLs** - Added to all pages for SEO
 - ✅ **Sitemap** - Auto-generated `sitemap.xml` (run `npm run generate-sitemap`)
@@ -1130,6 +1136,8 @@ If new code introduces a new pattern, update the documentation and architecture 
 - ✅ **Plausible Analytics** - Privacy-first analytics script loaded after page load event (reduces Core Web Vitals impact), with preconnect for early connection
 - ✅ **Favicons** - Comprehensive favicon implementation with SVG, multiple PNG sizes (16x16, 32x32, 48x48, 64x64, 96x96), ICO fallback, Apple Touch Icon, Windows Tiles (browserconfig.xml), Safari Pinned Tab, and Web App Manifest integration. All favicon files are automatically copied to dist root during builds.
 - ✅ **Logos** - Logo files (logo.svg, logo-1024x1024.png, logo-150x150.png) are automatically copied to dist root during builds. Structured data uses ImageObject format with logo-150x150.png for optimal Google search results display.
+- ✅ **Google Business Profile Integration** - Google Business Profile URL added to LocalBusiness structured data, contact page buttons ("View on Google", "Get Directions"), and footer social links. See `docs/GOOGLE_BUSINESS_PROFILE_OPTIMIZATION.md` for complete optimization guide.
+- ✅ **URL Redirects** - Configured redirects for www to non-www and HTTP to HTTPS across all hosting platforms (Apache `.htaccess`, Netlify `netlify.toml` and `_redirects`, Vercel `vercel.json`, Nginx `nginx.conf.example`)
 - ✅ **Documentation** - See `docs/SEO_AND_SECURITY_IMPLEMENTATION.md` for details
 
 ### Accessibility
@@ -1165,6 +1173,8 @@ If new code introduces a new pattern, update the documentation and architecture 
 - ✅ **easter-egg/** - Dedicated folder for galaxy easter egg feature (13 modules)
   - `easter-egg.js` - Trigger/initialization
   - `runtime.js` - Milky Way 3D scene runtime (UI hiding/restoration with single wrapper approach, navbar/footer handling)
+  - `galaxy-settings.js` - Comprehensive settings UI system (19+ settings: camera controls, animation speeds, visual quality, lighting, performance, particle effects, real-time updates via custom events)
+  - `gpu-compute.js` - GPU compute utility module with WebGPU shaders for star twinkling and solar wind (CPU fallback, persistent buffer caching, async readback)
   - `celestial-textures.js` - Procedural texture generation for sun, planets, moons (THREE parameter support, MIN_POLE_SCALE_THRESHOLD constant, pole-aware scaling, seamless noise, quadratic feature scaling, advanced blending)
   - `texture-wrapping.js` - Seamless texture wrapping utilities (featherPoles for pole distortion, isSafeForPolePlacement, multi-pixel blending)
   - `procedural-noise.js` - Procedural noise generation (fractal, seamless, 3D noise support)
@@ -1204,7 +1214,10 @@ If new code introduces a new pattern, update the documentation and architecture 
 - **`docs/VIDEO_BACKGROUND_GUIDE.md`** - Workflow for sourcing and optimising hero videos
 - **`docs/PERFORMANCE_OPTIMIZATION_ANALYSIS.md`** - Performance optimization recommendations and analysis
 - **`docs/AUDIO_CDN_RECOMMENDATIONS.md`** - Audio asset optimization and CDN recommendations
-- **`docs/SOCIAL_MEDIA_IMAGE_GENERATORS.md`** - Guide for generating OG and Twitter Card images
+- **`docs/SOCIAL_MEDIA_IMAGE_GENERATORS.md`** - Guide for generating OG images
+- **`docs/WEBSITE_VISIBILITY_IMPROVEMENT_GUIDE.md`** - Complete guide for improving website visibility, SEO, link building, content strategy, and conversion optimization
+- **`docs/GOOGLE_BUSINESS_PROFILE_OPTIMIZATION.md`** - Google Business Profile setup, optimization, and maintenance guide
+- **`docs/GOOGLE_MAPS_AND_BUSINESS_PROFILE_URLS.md`** - Guide for managing Google Maps and Business Profile URLs
 - **This file (`.cursor/rules/cursorrules.mdc`)** - Project structure and conventions (MUST READ FIRST)
 
 ### When Stuck
@@ -1257,11 +1270,11 @@ If new code introduces a new pattern, update the documentation and architecture 
 
 ---
 
-**Last Updated:** 2025-01-30 (Ruler/guides system hookup fix: removed old DOM-based implementation, properly integrated Canvas-based ruler-guides.js module. Documentation overhaul: generate/ folder added to project structure, documentation aligned with implementation, redundant docs consolidated to archive/. Clean URLs implementation: all internal links now use clean URLs without .html extensions, Vite middleware for dev/preview, .htaccess rewrite rules for Apache, updated sitemap and SEO metadata, JavaScript modules updated to handle clean URLs)
+**Last Updated:** 2025-01-30 (Google Business Profile integration: added to structured data, contact page buttons, footer links, optimization guide. URL redirects: configured www to non-www and HTTP to HTTPS for Apache, Netlify, Vercel, Nginx. Social media cleanup: removed Twitter and LinkedIn references. Map links: updated to new Google Maps short URL. Contact page: fixed button clickability with z-index and pointer-events. Documentation: added visibility improvement guide, Google Business Profile optimization guide, updated all documentation indexes)
 **Migration Status:** ✅ Complete - All CSS/JS migrated, build system configured, HTML includes implemented
-**Component Count:** 20 CSS components, 9 core JS modules (including three-hero), 11 JS utils (accessibility.js, env.js, error-handler.js, interactions.js, performance.js, ripples-lazyload.js, three-loader.js, toast.js, dynamic-prefetch.js, web-worker-helper.js, lazy-background-images.js), 1 JS easter-egg folder (13 modules: easter-egg.js, runtime.js, celestial-textures.js, texture-wrapping.js, procedural-noise.js, celestial-mechanics.js, camera-controls.js, galaxy-generator.js, star-field.js, lighting-atmosphere.js, nebula-clouds.js, particle-effects.js, post-processing.js), 4 JS pages, 4 CSS pages, 9 utility CSS files, 1 CSS easter-egg folder, 2 HTML partials (navbar, footer)
-**Performance:** ✅ Service Worker (optimized cache strategy: stale-while-revalidate for hashed assets, cache-first for static), Self-Hosted Fonts (optimized font-display: swap for critical, optional for non-critical), Critical CSS, Image Optimization (fetchpriority, decoding attributes), Code Splitting, CSS Purging (disabled), CSS Minification (disabled), CSS Code Splitting (disabled), Compression (Gzip/Brotli), Web Vitals Tracking (LCP, CLS, INP via `web-vitals` → Plausible), Dynamic Three.js Loading (pre-loaded), Error Handling, Mobile Performance, Texture Loading Optimization, Optimized Particle Generation, Dynamic Resource Hints (prefetch on hover/focus), Modulepreload for critical ES modules, Analytics loaded after page load, Video lazy loading
-**Security & SEO:** ✅ Security Headers, CSP, SRI Infrastructure, SEO Meta Tags, Structured Data (FAQ, Contact, Organization with ImageObject logo format using logo-150x150.png for Google search results), Canonical URLs, Accessibility Features, Sitemap, Robots.txt, Comprehensive Favicon Implementation (SVG, PNG sizes including extras, ICO, Apple Touch, Windows Tiles, Safari Pinned Tab), Logo Files (logo.svg, logo-1024x1024.png, logo-150x150.png)
+**Component Count:** 20 CSS components, 9 core JS modules (including three-hero), 11 JS utils (accessibility.js, env.js, error-handler.js, interactions.js, performance.js, ripples-lazyload.js, three-loader.js, toast.js, dynamic-prefetch.js, web-worker-helper.js, lazy-background-images.js), 1 JS easter-egg folder (15 modules: easter-egg.js, runtime.js, galaxy-settings.js, gpu-compute.js, celestial-textures.js, texture-wrapping.js, procedural-noise.js, celestial-mechanics.js, camera-controls.js, galaxy-generator.js, star-field.js, lighting-atmosphere.js, nebula-clouds.js, particle-effects.js, post-processing.js), 4 JS pages, 4 CSS pages, 9 utility CSS files, 1 CSS easter-egg folder, 2 HTML partials (navbar, footer)
+**Performance:** ✅ Service Worker (optimized cache strategy: stale-while-revalidate for hashed assets, cache-first for static), Self-Hosted Fonts (optimized font-display: swap for critical, optional for non-critical), **CSS Async Loading (media query trick - non-blocking render)**, Image Optimization (fetchpriority, decoding attributes), Code Splitting, CSS Purging (disabled), CSS Minification (disabled), CSS Code Splitting (disabled), Compression (Gzip/Brotli), Web Vitals Tracking (LCP, CLS, INP via `web-vitals` → Plausible), Dynamic Three.js Loading (optimized for async CSS), Error Handling, Mobile Performance, Texture Loading Optimization, Optimized Particle Generation, Dynamic Resource Hints (prefetch on hover/focus), Modulepreload for critical ES modules, Analytics loaded after page load, Video lazy loading
+**Security & SEO:** ✅ Security Headers, CSP, SRI Infrastructure, SEO Meta Tags, Structured Data (FAQ, Contact, Organization with ImageObject logo format using logo-150x150.png for Google search results), Canonical URLs, Accessibility Features, Sitemap, Robots.txt, Comprehensive Favicon Implementation (SVG, PNG sizes including extras, ICO, Apple Touch, Windows Tiles, Safari Pinned Tab), Logo Files (logo.svg, logo-1024x1024.png, logo-150x150.png), Google Business Profile Integration (structured data, contact buttons, footer links), URL Redirects (www to non-www, HTTP to HTTPS for all hosting platforms)
 **Configuration Files:** ✅ ESLint v9 (flat config), Prettier, EditorConfig, Git Attributes, VS Code Settings, browserconfig.xml
-**Recent Updates:** ✅ **Ruler/Guides System Hookup Fix** (2025-01-30: removed old DOM-based ruler/guides implementation from main.js, properly hooked up Canvas-based ruler-guides.js module with initRulerGuides() call, fixed indentation issues that were breaking JavaScript structure), **Generate Folder Documentation** (generate/ folder added to project structure, documentation aligned with implementation, export library updated to html-to-image v1.11.11, CLS prevention improvements documented, redundant docs consolidated to archive/), **Clean URLs** (all internal links use clean URLs without .html extensions, Vite middleware for dev/preview, .htaccess for Apache, GitHub Pages native support, updated sitemap and SEO metadata), **CSS import syntax modernization** (changed from `@import url()` to `@import` for Vite compatibility), **CSS import in JS** (added `import '../css/main.css'` to js/main.js to ensure Vite processes nested imports), **CSS variables fix** (removed circular references, all accent colors now have actual hex values), **Component modularization** (cards, forms, contact, and projects pages now use subdirectories with index.css files for better organization), **HTML include plugin** (removed verbose logging for cleaner dev output), HTML include system (Vite plugin for processing `<!-- include partials/... -->` comments at build time), modularized navbar and footer partials, comprehensive favicon implementation, sessionStorage-backed page transitions, error handling, performance tracking, Three.js optimization, CSP, SRI, accessibility enhancements, mobile performance, texture modularization, galaxy loading optimizations, orbital inclinations, improved seamless texture wrapping, easter egg organization, celestial texture improvements, celestial mechanics improvements, runtime improvements, post-processing improvements, lighting improvements, particle effects improvements, camera controls improvements, audio assets support, performance optimizations
+**Recent Updates:** ✅ **CSS Async Loading (Media Query Trick)** (2025-12-13: implemented async CSS loading across all HTML files using `media="print"` trick, eliminates render-blocking CSS, improves FCP by ~400-500ms on mobile, see `docs/CSS_MEDIA_QUERY_TRICK_IMPLEMENTED.md`), **Three.js Loading Optimization** (2025-12-13: fixed Three.js background loading delays after CSS async changes, removed blocking waits, simplified canvas dimension handling, reduced loading timeouts, see `docs/THREE_JS_LOADING_FIX.md`), **Ruler/Guides System Hookup Fix** (2025-01-30: removed old DOM-based ruler/guides implementation from main.js, properly hooked up Canvas-based ruler-guides.js module with initRulerGuides() call, fixed indentation issues that were breaking JavaScript structure), **Generate Folder Documentation** (generate/ folder added to project structure, documentation aligned with implementation, export library updated to html-to-image v1.11.11, CLS prevention improvements documented, redundant docs consolidated to archive/), **Clean URLs** (all internal links use clean URLs without .html extensions, Vite middleware for dev/preview, .htaccess for Apache, GitHub Pages native support, updated sitemap and SEO metadata), **CSS import syntax modernization** (changed from `@import url()` to `@import` for Vite compatibility), **CSS import in JS** (added `import '../css/main.css'` to js/main.js to ensure Vite processes nested imports), **CSS variables fix** (removed circular references, all accent colors now have actual hex values), **Component modularization** (cards, forms, contact, and projects pages now use subdirectories with index.css files for better organization), **HTML include plugin** (removed verbose logging for cleaner dev output), HTML include system (Vite plugin for processing `<!-- include partials/... -->` comments at build time), modularized navbar and footer partials, comprehensive favicon implementation, sessionStorage-backed page transitions, error handling, performance tracking, Three.js optimization, CSP, SRI, accessibility enhancements, mobile performance, texture modularization, galaxy loading optimizations, orbital inclinations, improved seamless texture wrapping, easter egg organization, celestial texture improvements, celestial mechanics improvements, runtime improvements, post-processing improvements, lighting improvements, particle effects improvements, camera controls improvements, audio assets support, performance optimizations
 **Remember:** Always update this file when making structural changes to the project!

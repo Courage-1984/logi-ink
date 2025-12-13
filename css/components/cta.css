@@ -22,7 +22,7 @@
   text-align: center;
   overflow: hidden;
   padding: var(--space-20) 0;
-  transition: background-image 0.3s ease;
+  /* Remove background-image transition (non-composited) - use opacity fade instead */
   min-height: 400px; /* Ensure section has height even without background */
   }
 

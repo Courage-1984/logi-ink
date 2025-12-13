@@ -354,13 +354,93 @@
 
 /* Reduce animations on mobile devices for better performance */
 @media (max-width: 768px) {
-  /* Disable non-essential animations on mobile */
+  /* Disable non-essential animations on mobile - CRITICAL for LCP */
   .fade-in-up,
   .scroll-reveal-3d,
   .text-reveal {
     animation: none !important;
+    opacity: 1 !important; /* Immediately visible for LCP */
+    transform: none !important;
+    will-change: auto !important; /* Remove will-change on mobile when animation disabled */
+  }
+
+  /* Ensure hero title (LCP element) is immediately visible on mobile */
+  .hero-title .text-reveal {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
+  }
+
+  /* CRITICAL: Ensure LCP element (delay-2) is immediately visible */
+  .hero-title .text-reveal.delay-2 {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    animation-delay: 0s !important;
+  }
+
+  /* CRITICAL: Ensure hero subtitle (potential LCP element) is immediately visible */
+  .hero-subtitle.fade-in {
+    opacity: 1 !important;
+    animation: none !important;
+    animation-delay: 0s !important;
+  }
+
+  .hero-subtitle.delay-4 {
+    animation-delay: 0s !important;
+  }
+
+  /* Remove non-composited SVG filters on mobile (use box-shadow instead) */
+  .service-icon svg,
+  .service-card .service-icon svg {
+    filter: none !important; /* Remove drop-shadow filters on mobile */
+  }
+
+  /* Remove filter effects on buttons and other elements */
+  .btn,
+  .service-card,
+  .project-card {
+    filter: none !important;
+  }
+
+  /* Remove text-shadow animations on mobile (non-composited) */
+  .hero-title span,
+  .logo-text,
+  .section-title {
+    text-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Remove letter-spacing transitions on mobile */
+  .hero-title,
+  .section-title,
+  .btn {
+    letter-spacing: normal !important;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease !important;
+  }
+
+  /* Remove scrollbar-color transitions on mobile */
+  .cyan-scrollbar,
+  .magenta-scrollbar,
+  .green-scrollbar,
+  .blue-scrollbar,
+  .pink-scrollbar {
+    scrollbar-color: auto !important;
+    transition: none !important;
+  }
+
+  /* Disable scroll-reveal-3d animation on mobile (uses non-composited properties) */
+  .scroll-reveal-3d {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: var(--space-16) !important; /* Set static value to prevent margin-bottom transitions */
+    transition: none !important;
+  }
+
+  /* Remove background-image transitions on mobile (non-composited) */
+  .cta-section {
+    transition: none !important;
   }
 
   /* Reduce animation complexity for essential animations */
@@ -376,11 +456,16 @@
     transform: none !important;
   }
 
-  /* Simplify hover effects on mobile */
+  /* Simplify hover effects on mobile - use transform instead of layout properties */
   .service-card:hover,
   .project-card:hover,
   .project-card-large:hover {
-    transform: none !important;
+    transform: scale(1.01) !important; /* Subtle scale instead of layout changes */
+  }
+
+  /* Optimize button hover on mobile */
+  .btn:hover {
+    transform: scale(1.01) !important; /* Subtle scale */
   }
 }
 
@@ -388,12 +473,14 @@
    ANIMATION UTILITY CLASSES
    ============================================ */
 
-/* Text Reveal Utility */
+/* Text Reveal Utility - GPU-accelerated animation */
 .text-reveal {
   display: block;
   opacity: 0;
   transform: translateY(20px);
   animation: textReveal 1s ease forwards;
+  will-change: transform, opacity; /* Hint browser to use GPU acceleration */
+  backface-visibility: hidden; /* Prevent flickering on mobile */
 }
 
 .text-reveal.delay-1 {

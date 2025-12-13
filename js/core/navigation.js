@@ -6,41 +6,8 @@
 import { addScrollHandler } from './scroll-manager.js';
 
 export function initNavigation() {
-  // Apply Orbitron font to logo after it loads (prevents render blocking)
-  const applyLogoFont = () => {
-    const logoText = document.querySelector('.logo-text');
-    if (!logoText) return;
-
-    // Check if Orbitron font is loaded using Font Loading API
-    if ('fonts' in document) {
-      // Wait for fonts to be ready, then check if Orbitron is loaded
-      document.fonts.ready.then(() => {
-        // Check if Orbitron Black (900 weight) is loaded
-        if (document.fonts.check('900 1rem "Orbitron"')) {
-          logoText.classList.add('fonts-loaded');
-        }
-      });
-
-      // Also try direct check after a short delay (font might load before ready fires)
-      setTimeout(() => {
-        if (document.fonts.check('900 1rem "Orbitron"')) {
-          logoText.classList.add('fonts-loaded');
-        }
-      }, 100);
-    } else {
-      // Fallback: wait a bit then apply (for browsers without Font Loading API)
-      setTimeout(() => {
-        logoText.classList.add('fonts-loaded');
-      }, 200);
-    }
-  };
-
-  // Apply font immediately if DOM is ready, otherwise wait
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyLogoFont);
-  } else {
-    applyLogoFont();
-  }
+  // Font is now loaded directly via CSS font stack with metric-matched fallback
+  // No JavaScript font loading needed - prevents CLS with font metric matching
 
   // Navigation Scroll Effect
   const navbarScrollHandler = () => {
@@ -176,153 +143,152 @@ export function initNavigation() {
           navMenu.dataset.originalParent = originalParent ? originalParent.tagName + '.' + originalParent.className : 'unknown';
         }
 
-        // Force immediate reflow
-        const forceReflow = navMenu.offsetHeight;
-
-        // Use double requestAnimationFrame to verify and log
+        // Batch all style reads/writes to avoid forced reflows
+        // Use requestAnimationFrame to batch DOM reads after writes
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            // Force again after frames to ensure it sticks
+            // Apply style changes
             navMenu.style.setProperty('left', '0', 'important');
             navMenu.style.setProperty('transition', 'none', 'important');
 
-            // Force another reflow
-            navMenu.offsetHeight;
+            // Batch all geometric property reads in a single frame to avoid forced reflows
+            requestAnimationFrame(() => {
+              // Read all geometric properties at once (batched)
+              const height = navMenu.offsetHeight;
+              const computed = window.getComputedStyle(navMenu);
+              const rect = navMenu.getBoundingClientRect();
 
-            console.log('[NAV DEBUG] Inline styles set:', {
-              display: navMenu.style.display,
-              position: navMenu.style.position,
-              left: navMenu.style.left,
-              top: navMenu.style.top,
-              width: navMenu.style.width,
-              height: navMenu.style.height,
-              zIndex: navMenu.style.zIndex,
-              visibility: navMenu.style.visibility,
-              opacity: navMenu.style.opacity
-            });
+              console.log('[NAV DEBUG] Inline styles set:', {
+                display: navMenu.style.display,
+                position: navMenu.style.position,
+                left: navMenu.style.left,
+                top: navMenu.style.top,
+                width: navMenu.style.width,
+                height: navMenu.style.height,
+                zIndex: navMenu.style.zIndex,
+                visibility: navMenu.style.visibility,
+                opacity: navMenu.style.opacity
+              });
 
-            // Get computed styles after setting inline
-            const computed = window.getComputedStyle(navMenu);
-            const rect = navMenu.getBoundingClientRect();
-
-            // Check which CSS rules are actually matching (including media queries)
-            const stylesheet = document.styleSheets;
-            let matchingRules = [];
-            let mediaQueryRules = [];
-            for (let sheet of stylesheet) {
-              try {
-                const rules = sheet.cssRules || sheet.rules;
-                for (let rule of rules) {
-                  // Check media queries
-                  if (rule.media) {
-                    for (let mediaRule of rule.cssRules || []) {
-                      if (mediaRule.selectorText && navMenu.matches(mediaRule.selectorText)) {
-                        mediaQueryRules.push({
-                          selector: mediaRule.selectorText,
-                          media: rule.media.mediaText,
-                          left: mediaRule.style?.left,
-                          position: mediaRule.style?.position,
-                          cssText: mediaRule.cssText?.substring(0, 200)
-                        });
+              // Check which CSS rules are actually matching (including media queries)
+              const stylesheet = document.styleSheets;
+              let matchingRules = [];
+              let mediaQueryRules = [];
+              for (let sheet of stylesheet) {
+                try {
+                  const rules = sheet.cssRules || sheet.rules;
+                  for (let rule of rules) {
+                    // Check media queries
+                    if (rule.media) {
+                      for (let mediaRule of rule.cssRules || []) {
+                        if (mediaRule.selectorText && navMenu.matches(mediaRule.selectorText)) {
+                          mediaQueryRules.push({
+                            selector: mediaRule.selectorText,
+                            media: rule.media.mediaText,
+                            left: mediaRule.style?.left,
+                            position: mediaRule.style?.position,
+                            cssText: mediaRule.cssText?.substring(0, 200)
+                          });
+                        }
                       }
                     }
+                    // Check regular rules
+                    if (rule.selectorText && navMenu.matches(rule.selectorText)) {
+                      matchingRules.push({
+                        selector: rule.selectorText,
+                        left: rule.style?.left,
+                        position: rule.style?.position,
+                        cssText: rule.cssText?.substring(0, 200)
+                      });
+                    }
                   }
-                  // Check regular rules
-                  if (rule.selectorText && navMenu.matches(rule.selectorText)) {
-                    matchingRules.push({
-                      selector: rule.selectorText,
-                      left: rule.style?.left,
-                      position: rule.style?.position,
-                      cssText: rule.cssText?.substring(0, 200)
-                    });
-                  }
+                } catch (e) {
+                  // Cross-origin stylesheet, skip
                 }
-              } catch (e) {
-                // Cross-origin stylesheet, skip
               }
-            }
-            console.log('[NAV DEBUG] 🔍 Matching CSS rules:', matchingRules);
-            console.log('[NAV DEBUG] 🔍 Matching media query rules:', mediaQueryRules);
+              console.log('[NAV DEBUG] 🔍 Matching CSS rules:', matchingRules);
+              console.log('[NAV DEBUG] 🔍 Matching media query rules:', mediaQueryRules);
 
-            // Check if mobile media query is active
-            const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
-            console.log('[NAV DEBUG] 🔍 Mobile media query active?', {
-              matches: mobileMediaQuery.matches,
-              media: mobileMediaQuery.media,
-              windowWidth: window.innerWidth
-            });
-
-            console.log('[NAV DEBUG] ✅ After double requestAnimationFrame - Computed styles:', {
-              display: computed.display,
-              position: computed.position,
-              left: computed.left,
-              top: computed.top,
-              width: computed.width,
-              height: computed.height,
-              visibility: computed.visibility,
-              opacity: computed.opacity,
-              zIndex: computed.zIndex,
-              transform: computed.transform,
-              transition: computed.transition,
-              backgroundColor: computed.backgroundColor,
-              background: computed.background
-            });
-
-            // Check if any element is covering the menu
-            const elementsAtPoint = document.elementsFromPoint(rect.left + rect.width / 2, rect.top + 50);
-            const coveringElements = elementsAtPoint.filter(el =>
-              el !== navMenu &&
-              !navMenu.contains(el) &&
-              el !== document.body &&
-              el !== document.documentElement
-            );
-            console.log('[NAV DEBUG] 🔍 Elements covering menu center point:', coveringElements.map(el => ({
-              tag: el.tagName,
-              class: el.className,
-              id: el.id,
-              zIndex: window.getComputedStyle(el).zIndex,
-              position: window.getComputedStyle(el).position
-            })));
-
-            console.log('[NAV DEBUG] 🔍 Inline style left value:', navMenu.style.getPropertyValue('left'));
-            console.log('[NAV DEBUG] 🔍 Inline style left priority:', navMenu.style.getPropertyPriority('left'));
-
-            console.log('[NAV DEBUG] ✅ Bounding rect:', {
-              x: rect.x,
-              y: rect.y,
-              width: rect.width,
-              height: rect.height,
-              top: rect.top,
-              left: rect.left,
-              right: rect.right,
-              bottom: rect.bottom,
-              visible: rect.width > 0 && rect.height > 0
-            });
-
-            console.log('[NAV DEBUG] ✅ Element in viewport?', {
-              inViewport: rect.left >= 0 && rect.top >= 0 && rect.width > 0 && rect.height > 0,
-              offScreenLeft: rect.left < -rect.width,
-              offScreenRight: rect.left > window.innerWidth
-            });
-
-            // Check if parent elements are hiding it
-            let parent = navMenu.parentElement;
-            let depth = 0;
-            while (parent && depth < 5) {
-              const parentStyles = window.getComputedStyle(parent);
-              console.log(`[NAV DEBUG] Parent ${depth} (${parent.tagName}.${parent.className}):`, {
-                display: parentStyles.display,
-                visibility: parentStyles.visibility,
-                opacity: parentStyles.opacity,
-                overflow: parentStyles.overflow,
-                overflowX: parentStyles.overflowX,
-                overflowY: parentStyles.overflowY,
-                zIndex: parentStyles.zIndex,
-                position: parentStyles.position
+              // Check if mobile media query is active
+              const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
+              console.log('[NAV DEBUG] 🔍 Mobile media query active?', {
+                matches: mobileMediaQuery.matches,
+                media: mobileMediaQuery.media,
+                windowWidth: window.innerWidth
               });
-              parent = parent.parentElement;
-              depth++;
-            }
+
+              console.log('[NAV DEBUG] ✅ After double requestAnimationFrame - Computed styles:', {
+                display: computed.display,
+                position: computed.position,
+                left: computed.left,
+                top: computed.top,
+                width: computed.width,
+                height: computed.height,
+                visibility: computed.visibility,
+                opacity: computed.opacity,
+                zIndex: computed.zIndex,
+                transform: computed.transform,
+                transition: computed.transition,
+                backgroundColor: computed.backgroundColor,
+                background: computed.background
+              });
+
+              // Check if any element is covering the menu
+              const elementsAtPoint = document.elementsFromPoint(rect.left + rect.width / 2, rect.top + 50);
+              const coveringElements = elementsAtPoint.filter(el =>
+                el !== navMenu &&
+                !navMenu.contains(el) &&
+                el !== document.body &&
+                el !== document.documentElement
+              );
+              console.log('[NAV DEBUG] 🔍 Elements covering menu center point:', coveringElements.map(el => ({
+                tag: el.tagName,
+                class: el.className,
+                id: el.id,
+                zIndex: window.getComputedStyle(el).zIndex,
+                position: window.getComputedStyle(el).position
+              })));
+
+              console.log('[NAV DEBUG] 🔍 Inline style left value:', navMenu.style.getPropertyValue('left'));
+              console.log('[NAV DEBUG] 🔍 Inline style left priority:', navMenu.style.getPropertyPriority('left'));
+
+              console.log('[NAV DEBUG] ✅ Bounding rect:', {
+                x: rect.x,
+                y: rect.y,
+                width: rect.width,
+                height: rect.height,
+                top: rect.top,
+                left: rect.left,
+                right: rect.right,
+                bottom: rect.bottom,
+                visible: rect.width > 0 && rect.height > 0
+              });
+
+              console.log('[NAV DEBUG] ✅ Element in viewport?', {
+                inViewport: rect.left >= 0 && rect.top >= 0 && rect.width > 0 && rect.height > 0,
+                offScreenLeft: rect.left < -rect.width,
+                offScreenRight: rect.left > window.innerWidth
+              });
+
+              // Check if parent elements are hiding it
+              let parent = navMenu.parentElement;
+              let depth = 0;
+              while (parent && depth < 5) {
+                const parentStyles = window.getComputedStyle(parent);
+                console.log(`[NAV DEBUG] Parent ${depth} (${parent.tagName}.${parent.className}):`, {
+                  display: parentStyles.display,
+                  visibility: parentStyles.visibility,
+                  opacity: parentStyles.opacity,
+                  overflow: parentStyles.overflow,
+                  overflowX: parentStyles.overflowX,
+                  overflowY: parentStyles.overflowY,
+                  zIndex: parentStyles.zIndex,
+                  position: parentStyles.position
+                });
+                parent = parent.parentElement;
+                depth++;
+              }
+            });
           });
         });
       } else if (!isActive && window.innerWidth <= 767) {
@@ -627,10 +593,19 @@ export function initNavigation() {
       normalizedCurrentPage = normalizedCurrentPage.substring(1);
     }
 
+    // First pass: Remove all active classes to prevent FOUC
     navLinks.forEach(link => {
-      const href = link.getAttribute('href') || '';
-      // Remove active class first
       link.classList.remove('active');
+      link.removeAttribute('data-active-initialized');
+    });
+
+    // Second pass: Find the matching link and mark it as active (only ONE link should be active)
+    let activeLinkFound = false;
+    navLinks.forEach(link => {
+      // Stop if we already found an active link (prevent multiple active states)
+      if (activeLinkFound) return;
+
+      const href = link.getAttribute('href') || '';
 
       // Normalize href for comparison (remove .html if present, handle leading slash)
       let normalizedHref = href;
@@ -645,18 +620,17 @@ export function initNavigation() {
         normalizedHref = normalizedHref.substring(1);
       }
 
-      // Check if this link matches the current page
-      // Match exact path, or if both are root
+      // Check if this link matches the current page - use STRICT matching only
+      // Match exact normalized paths to prevent multiple matches
       const hrefMatches =
-        normalizedHref === normalizedCurrentPage ||
-        (normalizedHref === '/' && normalizedCurrentPage === '/') ||
-        (normalizedHref === '/' && currentPage === '/') ||
-        (normalizedHref === currentPage) ||
-        (normalizedPathname === href || normalizedPathname === normalizedHref) ||
-        (pathname === href);
+        (normalizedHref === '/' && (normalizedCurrentPage === '/' || normalizedPathname === '/')) ||
+        (normalizedHref !== '/' && (normalizedHref === normalizedCurrentPage || normalizedHref === normalizedPathname.replace(/^\//, '')));
 
       if (hrefMatches) {
+        // CRITICAL: Set data-active-initialized BEFORE adding active class to prevent flash
+        link.setAttribute('data-active-initialized', 'true');
         link.classList.add('active');
+        activeLinkFound = true; // Prevent multiple active links
         // Also mark parent dropdown as active if this is a dropdown link
         const dropdownItem = link.closest('.nav-item-dropdown');
         if (dropdownItem) {
@@ -815,8 +789,59 @@ export function initNavigation() {
     });
   };
 
-  // Set active link based on current page on load
+  // Set active link based on current page on load - run IMMEDIATELY to prevent FOUC
+  // Use synchronous execution to ensure it runs before first paint
   setActiveNavLinkByPage();
+
+  // Mark all nav links as initialized (enables hover states)
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.setAttribute('data-nav-initialized', 'true');
+  });
+
+  // CRITICAL: Mark navbar as initialized to enable all visual states
+  // Navbar is hidden by default (via CSS and inline styles) and will be shown
+  // after View Transition completes (handled in page-transitions.js pagereveal)
+  const navbar = document.querySelector('.navbar');
+  const navbarSkeleton = document.querySelector('.navbar-skeleton');
+
+  if (navbar) {
+    navbar.classList.add('nav-initialized');
+
+    // Fast but smooth synchronized transition: fade out skeleton + fade in navbar simultaneously
+    // Both use 0.15s ease-out for a seamless crossfade
+    const showNavbar = () => {
+      // Start both transitions simultaneously for smooth crossfade
+      if (navbarSkeleton) {
+        navbarSkeleton.classList.add('hidden');
+        navbarSkeleton.setAttribute('aria-hidden', 'true');
+
+        // Remove skeleton from DOM after transition completes (150ms)
+        setTimeout(() => {
+          if (navbarSkeleton && navbarSkeleton.parentNode) {
+            navbarSkeleton.parentNode.removeChild(navbarSkeleton);
+          }
+        }, 150); // Match transition duration
+      }
+
+      // Show navbar simultaneously with skeleton fade-out for smooth crossfade
+      navbar.setAttribute('aria-hidden', 'false');
+      navbar.style.visibility = '';
+      navbar.style.opacity = '';
+    };
+
+    // Show navbar immediately if no View Transition is active
+    // If View Transition is active, page-transitions.js will handle visibility
+    if (!document.activeViewTransition) {
+      // Use single requestAnimationFrame for immediate but smooth transition
+      requestAnimationFrame(showNavbar);
+    } else {
+      // Wait for View Transition to complete
+      document.activeViewTransition.finished.then(showNavbar);
+    }
+  }
+
+  // Note: data-active-initialized is now set synchronously in setActiveNavLinkByPage()
+  // No need for requestAnimationFrame - prevents flash gap
 
   // Re-check active states after navigation (for SPA-like behavior)
   window.addEventListener('popstate', () => {
